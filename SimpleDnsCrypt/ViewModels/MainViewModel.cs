@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Dynamic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net.NetworkInformation;
@@ -70,8 +71,8 @@ namespace SimpleDnsCrypt.ViewModels
 
 
             LocalizeDictionary.Instance.SetCurrentThreadCulture = true;
-            LocalizeDictionary.Instance.Culture = Thread.CurrentThread.CurrentCulture;
-
+            //LocalizeDictionary.Instance.Culture = Thread.CurrentThread.CurrentCulture;
+            LocalizeDictionary.Instance.Culture = new CultureInfo("en");
 
             if (!IsAdministrator())
             {

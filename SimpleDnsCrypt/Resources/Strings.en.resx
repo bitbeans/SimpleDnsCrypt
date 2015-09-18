@@ -242,7 +242,7 @@
     <value>Special Thanks to</value>
   </data>
   <data name="about_thanks_frank_title" xml:space="preserve">
-    <value>Frank DenisFrank Denis (@jedisct1) - https://dnscrypt.org (@jedisct1)</value>
+    <value>Frank Denis (@jedisct1) - https://dnscrypt.org (@jedisct1)</value>
   </data>
   <data name="about_thanks_frank_text" xml:space="preserve">
     <value>- for developing libsodium and DNSCrypt!</value>
