@@ -1,0 +1,15 @@
+﻿<Application x:Class="SimpleDnsCrypt.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:SimpleDnsCrypt">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary>
+                    <local:SimpleDnsCryptBootstraper x:Key="Bootstrapper"/>
+                </ResourceDictionary>
+                <ResourceDictionary Source="/SimpleDnsCrypt;component/ResourceDictionaries/ResourceLibrary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,7 @@
+﻿<controls:MetroWindow x:Class="SimpleDnsCrypt.Windows.BaseMessageDialogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+        ShowTitleBar="False" ShowCloseButton="False" ShowMinButton="False" ShowInTaskbar="False" ShowMaxRestoreButton="False" WindowStyle="None" Topmost="True" ResizeMode="NoResize" IsTabStop="False" WindowStartupLocation="CenterScreen">
+    <Grid/>
+</controls:MetroWindow>
