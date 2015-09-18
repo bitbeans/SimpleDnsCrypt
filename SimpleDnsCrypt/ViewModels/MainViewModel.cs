@@ -71,8 +71,7 @@ namespace SimpleDnsCrypt.ViewModels
 
 
             LocalizeDictionary.Instance.SetCurrentThreadCulture = true;
-            //LocalizeDictionary.Instance.Culture = Thread.CurrentThread.CurrentCulture;
-            LocalizeDictionary.Instance.Culture = new CultureInfo("en");
+            LocalizeDictionary.Instance.Culture = Thread.CurrentThread.CurrentCulture;
 
             if (!IsAdministrator())
             {
