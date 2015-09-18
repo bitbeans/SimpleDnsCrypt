@@ -126,7 +126,7 @@ namespace SimpleDnsCrypt.ViewModels
         /// <summary>
         ///     Return value of the MessageBox.
         /// </summary>
-        public MessageBoxResult Result { get; private set; } = MessageBoxResult.None;
+        public MessageBoxResult Result { get; private set; } 
 
         /// <summary>
         ///     Manage click of No button.

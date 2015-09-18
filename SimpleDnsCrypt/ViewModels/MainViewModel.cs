@@ -69,7 +69,6 @@ namespace SimpleDnsCrypt.ViewModels
             _windowManager = windowManager;
             eventAggregator.Subscribe(this);
 
-
             LocalizeDictionary.Instance.SetCurrentThreadCulture = true;
             LocalizeDictionary.Instance.Culture = Thread.CurrentThread.CurrentCulture;
 
