@@ -14,7 +14,14 @@ namespace Uninstall
 
         private static void Main(string[] args)
         {
-            UninstallKnownServices();
+            try
+            {
+                UninstallKnownServices();
+            }
+            finally
+            {
+                Environment.Exit(0);
+            }
         }
 
         internal static void UninstallKnownServices()

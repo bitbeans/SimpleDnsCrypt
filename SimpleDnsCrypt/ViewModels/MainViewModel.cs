@@ -173,12 +173,22 @@ namespace SimpleDnsCrypt.ViewModels
             // if there is no selected resolver, add a default resolver
             if (PrimaryResolver == null)
             {
-                var tmpResolver = dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.PrimaryBackupResolverName));
+                var tmpResolver = dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultPrimaryResolverName));
                 if (tmpResolver == null)
                 {
-                    tmpResolver = dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.SecondaryBackupResolverName));
+                    tmpResolver = dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultPrimaryBackupResolverName));
                 }
                 PrimaryResolver = tmpResolver;
+            }
+
+            if (SecondaryResolver == null)
+            {
+                var tmpResolver = dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultSecondaryResolverName));
+                if (tmpResolver == null)
+                {
+                    tmpResolver = dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultSecondaryBackupResolverName));
+                }
+                SecondaryResolver = tmpResolver;
             }
 
 
@@ -213,7 +223,6 @@ namespace SimpleDnsCrypt.ViewModels
                     Global.PrimaryResolverAddress,
                     Global.PrimaryResolverPort);
             }
-
 
             _secondaryResolverTitle = string.Format("{0} ({1}:{2})",
                 LocalizationEx.GetUiString("default_settings_secondary_header", Thread.CurrentThread.CurrentCulture),
