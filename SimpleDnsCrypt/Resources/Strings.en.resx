@@ -194,7 +194,7 @@
     <value>Refresh public resolver list</value>
   </data>
   <data name="advanced_settings_refresh_resolver_text" xml:space="preserve">
-    <value>Refresh the list of public resolvers (all downloads are validate with a minisgn signature)</value>
+    <value>Refresh the list of public resolvers (all downloads are validated with a minisgn signature)</value>
   </data>
   <data name="advanced_settings_debug_title" xml:space="preserve">
     <value>Debug Mode</value>

@@ -187,7 +187,7 @@ namespace SimpleDnsCrypt.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Refresh the list of public resolvers (all downloads are validate with a minisgn signature) ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Refresh the list of public resolvers (all downloads are validated with a minisgn signature) ähnelt.
         /// </summary>
         internal static string advanced_settings_refresh_resolver_text {
             get {
