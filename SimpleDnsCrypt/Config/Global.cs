@@ -11,6 +11,11 @@
         public const string ApplicationName = "Simple DNSCrypt";
 
         /// <summary>
+        ///     Remote URI where the application will find the update informations.
+        /// </summary>
+        public const string ApplicationUpdateUri = "https://raw.githubusercontent.com/bitbeans/SimpleDnsCrypt/master/update.yml";
+
+        /// <summary>
         ///     URL to the dnscrypt-resolvers.csv (hosted on github).
         /// </summary>
         public const string ResolverUrl =

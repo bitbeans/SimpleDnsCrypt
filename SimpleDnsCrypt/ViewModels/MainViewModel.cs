@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
+using System.Diagnostics;
 using System.Dynamic;
-using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net.NetworkInformation;
@@ -39,14 +39,11 @@ namespace SimpleDnsCrypt.ViewModels
         private bool _isWorkingOnSecondaryService;
         private int _overlayDependencies;
         private List<string> _plugins;
-
-
         private DnsCryptProxyEntry _primaryResolver;
         private string _primaryResolverTitle;
         private List<DnsCryptProxyEntry> _resolvers;
         private DnsCryptProxyEntry _secondaryResolver;
         private string _secondaryResolverTitle;
-
         private bool _showHiddenCards;
         private bool _useTcpOnly;
 
@@ -81,6 +78,7 @@ namespace SimpleDnsCrypt.ViewModels
                 Environment.Exit(1);
             }
 
+            // do a simple check, if all needed files are available
             if (!ValidateDnsCryptProxyFolder())
             {
                 _windowManager.ShowMetroMessageBox(
@@ -170,23 +168,26 @@ namespace SimpleDnsCrypt.ViewModels
                 Environment.Exit(1);
             }
 
-            // if there is no selected resolver, add a default resolver
+            // if there is no selected primary resolver, add a default resolver
             if (PrimaryResolver == null)
             {
                 var tmpResolver = dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultPrimaryResolverName));
                 if (tmpResolver == null)
                 {
-                    tmpResolver = dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultPrimaryBackupResolverName));
+                    tmpResolver =
+                        dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultPrimaryBackupResolverName));
                 }
                 PrimaryResolver = tmpResolver;
             }
 
+            // if there is no selected secondary resolver, add a default resolver
             if (SecondaryResolver == null)
             {
                 var tmpResolver = dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultSecondaryResolverName));
                 if (tmpResolver == null)
                 {
-                    tmpResolver = dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultSecondaryBackupResolverName));
+                    tmpResolver =
+                        dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultSecondaryBackupResolverName));
                 }
                 SecondaryResolver = tmpResolver;
             }
@@ -228,6 +229,9 @@ namespace SimpleDnsCrypt.ViewModels
                 LocalizationEx.GetUiString("default_settings_secondary_header", Thread.CurrentThread.CurrentCulture),
                 Global.SecondaryResolverAddress,
                 Global.SecondaryResolverPort);
+
+            // check for new version on every application start
+            UpdateAsync();
         }
 
         /// <summary>
@@ -243,6 +247,9 @@ namespace SimpleDnsCrypt.ViewModels
 
         public CollectionViewSource LocalNetworkInterfaces { get; set; }
 
+        /// <summary>
+        ///     The list of loaded resolvers.
+        /// </summary>
         public List<DnsCryptProxyEntry> Resolvers
         {
             get { return _resolvers; }
@@ -365,6 +372,55 @@ namespace SimpleDnsCrypt.ViewModels
         {
             _overlayDependencies--;
             NotifyOfPropertyChange(() => IsOverlayVisible);
+        }
+
+        /// <summary>
+        ///     Method to check if there is a new application version available.
+        /// </summary>
+        private async void UpdateAsync()
+        {
+            try
+            {
+                var update = await ApplicationUpdater.CheckForRemoteUpdateAsync();
+                if (update.CanUpdate)
+                {
+                    var boxType = (update.Update.Type == UpdateType.Standard) ? BoxType.Default : BoxType.Warning;
+                    var boxText = (update.Update.Type == UpdateType.Standard)
+                        ? LocalizationEx.GetUiString("dialog_message_update_standard_text",
+                            Thread.CurrentThread.CurrentCulture)
+                        : LocalizationEx.GetUiString("dialog_message_update_critical_text",
+                            Thread.CurrentThread.CurrentCulture);
+                    var boxTitle = (update.Update.Type == UpdateType.Standard)
+                        ? LocalizationEx.GetUiString("dialog_message_update_standard_title",
+                            Thread.CurrentThread.CurrentCulture)
+                        : LocalizationEx.GetUiString("dialog_message_update_critical_title",
+                            Thread.CurrentThread.CurrentCulture);
+                    var userResult =
+                        _windowManager.ShowMetroMessageBox(
+                            string.Format(boxText, update.Update.Version), boxTitle,
+                            MessageBoxButton.YesNo, boxType);
+
+                    if (userResult != MessageBoxResult.Yes) return;
+                    var updateViewModel = new UpdateViewModel(update.Update)
+                    {
+                        DisplayName =
+                            LocalizationEx.GetUiString("window_update_title", Thread.CurrentThread.CurrentCulture)
+                    };
+                    dynamic settings = new ExpandoObject();
+                    settings.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+                    settings.Owner = GetView();
+                    var result = _windowManager.ShowDialog(updateViewModel, null, settings);
+                    if (!result) return;
+                    if (!File.Exists(updateViewModel.InstallerPath)) return;
+                    // start the installer
+                    Process.Start(updateViewModel.InstallerPath);
+                    // kill running application
+                    Process.GetCurrentProcess().Kill();
+                }
+            }
+            catch (Exception)
+            {
+            }
         }
 
         private void ReloadResolver(DnsCryptProxyType dnsCryptProxyType)
@@ -583,6 +639,10 @@ namespace SimpleDnsCrypt.ViewModels
             }
         }
 
+        /// <summary>
+        ///     Click event for the network cards.
+        /// </summary>
+        /// <param name="localNetworkInterface">The clicked network card.</param>
         public void NetworkCardClicked(LocalNetworkInterface localNetworkInterface)
         {
             if (localNetworkInterface == null) return;
@@ -661,6 +721,11 @@ namespace SimpleDnsCrypt.ViewModels
 
         #region Advanced Settings
 
+        /// <summary>
+        ///     Uninstall all installed dnscrypt-proxy services.
+        /// </summary>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
+        /// <exception cref="NetworkInformationException"></exception>
         public async void UninstallServices()
         {
             var result = _windowManager.ShowMetroMessageBox(
@@ -697,6 +762,14 @@ namespace SimpleDnsCrypt.ViewModels
             }
         }
 
+        /// <summary>
+        ///     Refresh the resolver list from the newest csv file.
+        /// </summary>
+        /// <exception cref="UnauthorizedAccessException"></exception>
+        /// <exception cref="NotSupportedException"></exception>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
+        /// <exception cref="ArgumentException"></exception>
+        /// <exception cref="ArgumentNullException"></exception>
         public async void RefreshResolverList()
         {
             IsRefreshingResolverList = true;

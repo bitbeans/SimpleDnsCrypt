@@ -266,4 +266,40 @@ The logs are stored in a local file.</value>
   <data name="dialog_plugins_save_button_tooltip" xml:space="preserve">
     <value>OK</value>
   </data>
+  <data name="dialog_message_update_standard_text" xml:space="preserve">
+    <value>There is a new Simple DNSCrypt version ({0}) available. Do you want to update now?</value>
+  </data>
+  <data name="dialog_message_update_standard_title" xml:space="preserve">
+    <value>Application Update</value>
+  </data>
+  <data name="window_update_title" xml:space="preserve">
+    <value>Stay tuned</value>
+  </data>
+  <data name="yes" xml:space="preserve">
+    <value>yes</value>
+  </data>
+  <data name="no" xml:space="preserve">
+    <value>no</value>
+  </data>
+  <data name="ok" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="cancel" xml:space="preserve">
+    <value>cancel</value>
+  </data>
+  <data name="dialog_update_title" xml:space="preserve">
+    <value>Downloads</value>
+  </data>
+  <data name="dialog_update_signature" xml:space="preserve">
+    <value>Signature</value>
+  </data>
+  <data name="dialog_update_installer" xml:space="preserve">
+    <value>Installer</value>
+  </data>
+  <data name="dialog_message_update_critical_title" xml:space="preserve">
+    <value>Critical Application Update</value>
+  </data>
+  <data name="dialog_message_update_critical_text" xml:space="preserve">
+    <value>There is a new Simple DNSCrypt version ({0}) available. The update is marked as critical, so you really should to the update now! Do you want to update now?</value>
+  </data>
 </root>

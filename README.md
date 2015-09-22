@@ -16,7 +16,7 @@ Missing features:
 
 ### Installation
 
-To install Simple DNSCrypt use the [latest MSI package](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.2.4/SimpleDNSCrypt.msi).
+To install Simple DNSCrypt use the [latest MSI package](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.2.5/SimpleDNSCrypt.msi).
 You don`t need to download the dnscrypt-resolvers.csv or the dnscrypt-proxy package at all.
 Both are included in the msi package, the dnscrypt-resolvers.csv can be updated from inside the software (and will be verified with minisign).
 
@@ -25,12 +25,15 @@ The MSI package and the SimpleDnsCrypt.exe are signed via a *COMODO RSA Code Sig
 The files are signed under the name: *EAM Experience Area Münsingen GmbH*
 
 You also can verify the MSI package with [minisign](https://jedisct1.github.io/minisign/).
-The minisign [signature](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.2.4/SimpleDNSCrypt.msi.minisig) can be verified with the following command:
+The minisign [signature](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.2.5/SimpleDNSCrypt.msi.minisig) can be verified with the following command:
 
 	minisign -Vm SimpleDNSCrypt.msi -P RWTSM+4BNNvkZPNkHgE88ETlhWa+0HDzU5CN8TvbyvmhVUcr6aQXfssV
 
 #### Uninstall
 To uninstall Simple DNSCrypt and dnscrypt-proxy, just go to the windows Control Panel (Programs and Features) and search for Simple DNSCrypt.
+
+#### Updates
+Simple DNSCrypt will automatically check for new versions on startup.
 
 
 ### Overview
@@ -99,6 +102,7 @@ If you don`t like this software, there are two similar projects:
 - Caliburn Micro [doc](http://caliburnmicro.com/) [:octocat:](https://github.com/Caliburn-Micro/Caliburn.Micro/) 
 - MahApps Metro [doc](http://mahapps.com/) [:octocat:](https://github.com/MahApps/MahApps.Metro) 
 - minisign-net [:octocat:](https://github.com/bitbeans/minisign-net) 
+- YamlDotNet [:octocat:](https://github.com/aaubry/YamlDotNet) 
 
 ### Special Thanks
 

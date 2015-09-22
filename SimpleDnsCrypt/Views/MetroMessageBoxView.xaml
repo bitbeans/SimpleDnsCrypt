@@ -5,6 +5,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:cal="http://www.caliburnproject.org"
         xmlns:converter="clr-namespace:SimpleDnsCrypt.Converter"
+        xmlns:lex="http://wpflocalizeextension.codeplex.com"
+        lex:LocalizeDictionary.DesignCulture="en"
+        lex:ResxLocalizationProvider.DefaultAssembly="SimpleDnsCrypt"
+        lex:ResxLocalizationProvider.DefaultDictionary="Strings"
         mc:Ignorable="d" Height="200">
 
     <UserControl.Resources>
@@ -27,10 +31,10 @@
             <TextBlock Grid.Row="1" Text="{Binding Path=Message}" TextWrapping="Wrap" Margin="6,6,0,0" Style="{DynamicResource ModalTextStyle}" />
 
             <StackPanel Grid.Row="2" HorizontalAlignment="Right" Margin="0,0,10,10" Orientation="Horizontal">
-                <Button Width="70" Margin="10,0,0,0" Style="{DynamicResource AccentedSquareButtonStyle}" Cursor="Hand" Background="{Binding MessageBoxType, Converter={StaticResource MessageBoxTypeToColor}}" Visibility="{Binding Path=IsYesButtonVisible, Converter={StaticResource VisibilityConverter}}" cal:Message.Attach="Yes" Content="Yes" />
-                <Button Width="70" Margin="10,0,0,0" Style="{DynamicResource AccentedSquareButtonStyle}" Cursor="Hand" Background="{Binding MessageBoxType, Converter={StaticResource MessageBoxTypeToColor}}" Visibility="{Binding Path=IsNoButtonVisible, Converter={StaticResource VisibilityConverter}}" cal:Message.Attach="No" Content="No" />
-                <Button Width="70" Margin="10,0,0,0" Style="{DynamicResource AccentedSquareButtonStyle}" Cursor="Hand" Background="{Binding MessageBoxType, Converter={StaticResource MessageBoxTypeToColor}}" Visibility="{Binding Path=IsOkButtonVisible, Converter={StaticResource VisibilityConverter}}" cal:Message.Attach="Ok" Content="OK" />
-                <Button Width="70" Margin="10,0,0,0" IsCancel="True" Style="{DynamicResource AccentedSquareButtonStyle}" Cursor="Hand" Background="{Binding MessageBoxType, Converter={StaticResource MessageBoxTypeToColor}}" Visibility="{Binding Path=IsCancelButtonVisible, Converter={StaticResource VisibilityConverter}}" cal:Message.Attach="Cancel" Content="Cancel" />
+                <Button Width="70" Margin="10,0,0,0" Style="{DynamicResource AccentedSquareButtonStyle}" Cursor="Hand" Background="{Binding MessageBoxType, Converter={StaticResource MessageBoxTypeToColor}}" Visibility="{Binding Path=IsYesButtonVisible, Converter={StaticResource VisibilityConverter}}" cal:Message.Attach="Yes" Content="{lex:Loc Key=yes}" />
+                <Button Width="70" Margin="10,0,0,0" Style="{DynamicResource AccentedSquareButtonStyle}" Cursor="Hand" Background="{Binding MessageBoxType, Converter={StaticResource MessageBoxTypeToColor}}" Visibility="{Binding Path=IsNoButtonVisible, Converter={StaticResource VisibilityConverter}}" cal:Message.Attach="No" Content="{lex:Loc Key=no}" />
+                <Button Width="70" Margin="10,0,0,0" Style="{DynamicResource AccentedSquareButtonStyle}" Cursor="Hand" Background="{Binding MessageBoxType, Converter={StaticResource MessageBoxTypeToColor}}" Visibility="{Binding Path=IsOkButtonVisible, Converter={StaticResource VisibilityConverter}}" cal:Message.Attach="Ok" Content="{lex:Loc Key=ok}" />
+                <Button Width="70" Margin="10,0,0,0" IsCancel="True" Style="{DynamicResource AccentedSquareButtonStyle}" Cursor="Hand" Background="{Binding MessageBoxType, Converter={StaticResource MessageBoxTypeToColor}}" Visibility="{Binding Path=IsCancelButtonVisible, Converter={StaticResource VisibilityConverter}}" cal:Message.Attach="Cancel" Content="{lex:Loc Key=cancel}" />
             </StackPanel>
         </Grid>
     </Border>

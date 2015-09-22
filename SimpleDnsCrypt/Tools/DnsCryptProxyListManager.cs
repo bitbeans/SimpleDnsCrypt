@@ -34,11 +34,13 @@ namespace SimpleDnsCrypt.Tools
                     var publicKey = Minisign.LoadPublicKeyFromString(Global.PublicKey);
                     var valid = Minisign.ValidateSignature(resolverList, loadedSignature, publicKey);
 
-                    File.WriteAllBytes(Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder,
-                                          Global.DnsCryptProxyResolverListName), resolverList);
-                    File.WriteAllText(Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder,
-                                          Global.DnsCryptProxySignatureFileName), signature);
-
+                    if (valid)
+                    {
+                        File.WriteAllBytes(Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder,
+                            Global.DnsCryptProxyResolverListName), resolverList);
+                        File.WriteAllText(Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder,
+                            Global.DnsCryptProxySignatureFileName), signature);
+                    }
                     return valid;
                 }
                 return false;

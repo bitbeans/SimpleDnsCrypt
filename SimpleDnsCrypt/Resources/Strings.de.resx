@@ -265,4 +265,40 @@
   <data name="dialog_plugins_save_button_tooltip" xml:space="preserve">
     <value>OK</value>
   </data>
+  <data name="window_update_title" xml:space="preserve">
+    <value>Bitte warten</value>
+  </data>
+  <data name="dialog_message_update_standard_title" xml:space="preserve">
+    <value>Anwendungsaktualisierung</value>
+  </data>
+  <data name="dialog_message_update_standard_text" xml:space="preserve">
+    <value>Es ist eine neue Simple DNSCrypt Version ({0}) verfügbar. Möchten Sie die Aktualisierung jetzt durchführen?</value>
+  </data>
+  <data name="no" xml:space="preserve">
+    <value>Nein</value>
+  </data>
+  <data name="yes" xml:space="preserve">
+    <value>Ja</value>
+  </data>
+  <data name="cancel" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="ok" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="dialog_update_title" xml:space="preserve">
+    <value>Downloads</value>
+  </data>
+  <data name="dialog_update_signature" xml:space="preserve">
+    <value>Signatur</value>
+  </data>
+  <data name="dialog_update_installer" xml:space="preserve">
+    <value>Installer</value>
+  </data>
+  <data name="dialog_message_update_critical_title" xml:space="preserve">
+    <value>Kritische Anwendungsaktualisierung</value>
+  </data>
+  <data name="dialog_message_update_critical_text" xml:space="preserve">
+    <value>Es ist eine neue Simple DNSCrypt Version ({0}) verfügbar. Die Aktualisierung ist als kritisch markiert, Sie sollten diese Aktualisierung jetzt durchführen! Möchten Sie die Aktualisierung jetzt durchführen?</value>
+  </data>
 </root>

@@ -250,6 +250,15 @@ namespace SimpleDnsCrypt.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die cancel ähnelt.
+        /// </summary>
+        internal static string cancel {
+            get {
+                return ResourceManager.GetString("cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die DNSSEC ähnelt.
         /// </summary>
         internal static string default_settings_dnssec {
@@ -439,6 +448,42 @@ namespace SimpleDnsCrypt.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die There is a new Simple DNSCrypt version ({0}) available. The update is marked as critical, so you really should to the update now! Do you want to update now? ähnelt.
+        /// </summary>
+        internal static string dialog_message_update_critical_text {
+            get {
+                return ResourceManager.GetString("dialog_message_update_critical_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Critical Application Update ähnelt.
+        /// </summary>
+        internal static string dialog_message_update_critical_title {
+            get {
+                return ResourceManager.GetString("dialog_message_update_critical_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die There is a new Simple DNSCrypt version ({0}) available. Do you want to update now? ähnelt.
+        /// </summary>
+        internal static string dialog_message_update_standard_text {
+            get {
+                return ResourceManager.GetString("dialog_message_update_standard_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Application Update ähnelt.
+        /// </summary>
+        internal static string dialog_message_update_standard_title {
+            get {
+                return ResourceManager.GetString("dialog_message_update_standard_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die OK ähnelt.
         /// </summary>
         internal static string dialog_plugins_save_button_tooltip {
@@ -462,6 +507,33 @@ namespace SimpleDnsCrypt.Resources {
         internal static string dialog_uninstall_title {
             get {
                 return ResourceManager.GetString("dialog_uninstall_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Installer ähnelt.
+        /// </summary>
+        internal static string dialog_update_installer {
+            get {
+                return ResourceManager.GetString("dialog_update_installer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Signature ähnelt.
+        /// </summary>
+        internal static string dialog_update_signature {
+            get {
+                return ResourceManager.GetString("dialog_update_signature", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Downloads ähnelt.
+        /// </summary>
+        internal static string dialog_update_title {
+            get {
+                return ResourceManager.GetString("dialog_update_title", resourceCulture);
             }
         }
         
@@ -530,6 +602,24 @@ namespace SimpleDnsCrypt.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die no ähnelt.
+        /// </summary>
+        internal static string no {
+            get {
+                return ResourceManager.GetString("no", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Ok ähnelt.
+        /// </summary>
+        internal static string ok {
+            get {
+                return ResourceManager.GetString("ok", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die About ähnelt.
         /// </summary>
         internal static string tab_about {
@@ -562,6 +652,24 @@ namespace SimpleDnsCrypt.Resources {
         internal static string window_plugin_title {
             get {
                 return ResourceManager.GetString("window_plugin_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Stay tuned ähnelt.
+        /// </summary>
+        internal static string window_update_title {
+            get {
+                return ResourceManager.GetString("window_update_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die yes ähnelt.
+        /// </summary>
+        internal static string yes {
+            get {
+                return ResourceManager.GetString("yes", resourceCulture);
             }
         }
     }
