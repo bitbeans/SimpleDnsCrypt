@@ -123,6 +123,11 @@
         public const int ServiceUninstallTime = 2500;
 
         /// <summary>
+        ///     The name of the logfile, for the logging plugin.
+        /// </summary>
+        public const string DefaultLogFileName = "dns.log";
+
+        /// <summary>
         ///     List of interfaces, marked as hidden.
         /// </summary>
         public static readonly string[] NetworkInterfaceBlacklist =
@@ -147,6 +152,7 @@
             "dnscrypt-resolvers.csv.minisig",
             "hostip.exe",
             "libdcplugin_ldns_aaaa_blocking.dll",
+            "libdcplugin_logging.dll",
             "libeay32.dll",
             "libgcc_s_dw2-1.dll",
             "libldns-1.dll",

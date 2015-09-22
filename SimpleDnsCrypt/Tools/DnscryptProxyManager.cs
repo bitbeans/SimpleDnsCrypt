@@ -94,9 +94,8 @@ namespace SimpleDnsCrypt.Tools
             try
             {
                 var dnscryptService = new ServiceController {ServiceName = DnsCryptProxy.DisplayName};
-                dnscryptService.
-                    Stop();
-                Start();
+                dnscryptService.Stop();
+                dnscryptService.Start();
                 return (dnscryptService.Status == ServiceControllerStatus.Running);
             }
             catch (Exception)

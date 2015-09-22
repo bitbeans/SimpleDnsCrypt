@@ -439,6 +439,15 @@ namespace SimpleDnsCrypt.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die OK ähnelt.
+        /// </summary>
+        internal static string dialog_plugins_save_button_tooltip {
+            get {
+                return ResourceManager.GetString("dialog_plugins_save_button_tooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Successful ähnelt.
         /// </summary>
         internal static string dialog_success_title {
@@ -489,6 +498,34 @@ namespace SimpleDnsCrypt.Resources {
         internal static string ipv6_speed_plugin_title {
             get {
                 return ResourceManager.GetString("ipv6_speed_plugin_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Select a log folder ähnelt.
+        /// </summary>
+        internal static string log_plugin_select_folder {
+            get {
+                return ResourceManager.GetString("log_plugin_select_folder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die This plugin logs the DNS queries received by the proxy.
+        ///The logs are stored in a local file. ähnelt.
+        /// </summary>
+        internal static string log_plugin_text {
+            get {
+                return ResourceManager.GetString("log_plugin_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Logging ähnelt.
+        /// </summary>
+        internal static string log_plugin_title {
+            get {
+                return ResourceManager.GetString("log_plugin_title", resourceCulture);
             }
         }
         
