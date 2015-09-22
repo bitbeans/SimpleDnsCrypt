@@ -36,10 +36,27 @@ To uninstall Simple DNSCrypt and dnscrypt-proxy, just go to the windows Control 
 ### Overview
 
 #### Standard Settings
-![beta 0.2.1](https://raw.githubusercontent.com/bitbeans/SimpleDnsCrypt/master/img/standard.png)
+![standard view](https://raw.githubusercontent.com/bitbeans/SimpleDnsCrypt/master/img/standard.png)
 
 #### Advanced Settings
-![beta 0.2.1](https://raw.githubusercontent.com/bitbeans/SimpleDnsCrypt/master/img/advanced.png)
+![advanced view](https://raw.githubusercontent.com/bitbeans/SimpleDnsCrypt/master/img/advanced.png)
+
+##### Plugins
+
+![plugin view](https://raw.githubusercontent.com/bitbeans/SimpleDnsCrypt/master/img/plugins.png)
+
+Simple DNSCrypt currently supports two plugins:
+
+**libdcplugin_ldns_aaaa_blocking**
+
+If your network doesn't support IPv6, chances are that your applications are still constantly trying to resolve IPv6 addresses, causing unnecessary slowdowns.
+
+This plugin causes the proxy to immediately reply to IPv6 requests, without having to send a useless request to upstream resolvers, and having to wait for a response.
+
+**libdcplugin_logging**
+
+This plugin logs the DNS queries received by the proxy. The logs are stored in a local file.
+You can choose the folder, where dnscrypt-proxy will store the logfile (dns.log).
 
 ### Compatibility
 
