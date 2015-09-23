@@ -59,16 +59,17 @@ namespace SimpleDnsCrypt.ViewModels
         /// </summary>
         /// <param name="windowManager">The current window manager.</param>
         /// <param name="eventAggregator">The event aggregator.</param>
-        /// <param name="dnsCrypt"></param>
         [ImportingConstructor]
         private MainViewModel(IWindowManager windowManager, IEventAggregator eventAggregator)
         {
             _windowManager = windowManager;
             eventAggregator.Subscribe(this);
 
+            // automatically use the correct translations if available (fallback: en)
             LocalizeDictionary.Instance.SetCurrentThreadCulture = true;
             LocalizeDictionary.Instance.Culture = Thread.CurrentThread.CurrentCulture;
 
+            // this is already defined in the app.manifest, but to be sure check it again
             if (!IsAdministrator())
             {
                 _windowManager.ShowMetroMessageBox(
@@ -261,6 +262,9 @@ namespace SimpleDnsCrypt.ViewModels
             }
         }
 
+        /// <summary>
+        ///     The selected primary resolver.
+        /// </summary>
         public DnsCryptProxyEntry PrimaryResolver
         {
             get { return _primaryResolver; }
@@ -273,6 +277,9 @@ namespace SimpleDnsCrypt.ViewModels
             }
         }
 
+        /// <summary>
+        ///     The selected secondary resolver.
+        /// </summary>
         public DnsCryptProxyEntry SecondaryResolver
         {
             get { return _secondaryResolver; }
@@ -285,6 +292,9 @@ namespace SimpleDnsCrypt.ViewModels
             }
         }
 
+        /// <summary>
+        ///     Show or hide the filtered network cards.
+        /// </summary>
         public bool ShowHiddenCards
         {
             get { return _showHiddenCards; }
@@ -296,6 +306,9 @@ namespace SimpleDnsCrypt.ViewModels
             }
         }
 
+        /// <summary>
+        ///     Formatted name of the primary resolver.
+        /// </summary>
         public string PrimaryResolverTitle
         {
             get { return _primaryResolverTitle; }
@@ -306,6 +319,9 @@ namespace SimpleDnsCrypt.ViewModels
             }
         }
 
+        /// <summary>
+        ///     Formatted name of the secondary resolver.
+        /// </summary>
         public string SecondaryResolverTitle
         {
             get { return _secondaryResolverTitle; }
@@ -316,6 +332,9 @@ namespace SimpleDnsCrypt.ViewModels
             }
         }
 
+        /// <summary>
+        ///     Controls the primary resolver.
+        /// </summary>
         public bool IsPrimaryResolverRunning
         {
             get { return _isPrimaryResolverRunning; }
@@ -326,6 +345,9 @@ namespace SimpleDnsCrypt.ViewModels
             }
         }
 
+        /// <summary>
+        ///     Controls the secondary resolver.
+        /// </summary>
         public bool IsSecondaryResolverRunning
         {
             get { return _isSecondaryResolverRunning; }
@@ -336,6 +358,9 @@ namespace SimpleDnsCrypt.ViewModels
             }
         }
 
+        /// <summary>
+        ///     Show or hide the progress bar for the primary resolver.
+        /// </summary>
         public bool IsWorkingOnPrimaryService
         {
             get { return _isWorkingOnPrimaryService; }
@@ -346,6 +371,9 @@ namespace SimpleDnsCrypt.ViewModels
             }
         }
 
+        /// <summary>
+        ///     Show or hide the progress bar for the secondary resolver.
+        /// </summary>
         public bool IsWorkingOnSecondaryService
         {
             get { return _isWorkingOnSecondaryService; }

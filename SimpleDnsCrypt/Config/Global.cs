@@ -43,6 +43,16 @@
         public const string SecondaryResolverAddress = "127.0.0.2";
 
         /// <summary>
+        ///     Local address the primary resolver will listen on.
+        /// </summary>
+        public const string PrimaryResolverAddress6 = "::FFFF:127.0.0.1";
+
+        /// <summary>
+        ///     Local address the secondary resolver will listen on.
+        /// </summary>
+        public const string SecondaryResolverAddress6 = "::FFFF:127.0.0.2";
+
+        /// <summary>
         ///     Address for the global gateway.
         /// </summary>
         public const string GlobalGatewayAddress = "0.0.0.0";

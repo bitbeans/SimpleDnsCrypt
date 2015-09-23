@@ -70,7 +70,12 @@ namespace SimpleDnsCrypt.Tools
         internal static bool IsUsingDnsCrypt(LocalNetworkInterface localNetworkInterface)
         {
             var dns = new List<string> {Global.PrimaryResolverAddress, Global.SecondaryResolverAddress};
+            var dns6 = new List<string> { Global.PrimaryResolverAddress6, Global.SecondaryResolverAddress6 };
             if ((localNetworkInterface.Ipv4Dns.Contains(dns[0])) || (localNetworkInterface.Ipv4Dns.Contains(dns[1])))
+            {
+                return true;
+            }
+            if ((localNetworkInterface.Ipv6Dns.Contains(dns6[0])) || (localNetworkInterface.Ipv6Dns.Contains(dns6[1])))
             {
                 return true;
             }
@@ -110,7 +115,7 @@ namespace SimpleDnsCrypt.Tools
         }
 
         /// <summary>
-        ///     Set's the IPv4 DNS Servers of an interface.
+        ///     Set's the IPv4 or IPv6 DNS Servers of an interface.
         /// </summary>
         /// <param name="localNetworkInterface">The interface to work with.</param>
         /// <param name="dnsServers">List of dns servers to set.</param>
