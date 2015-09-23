@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Caliburn.Micro;
 using minisign;
+using SimpleDnsCrypt.Config;
 using SimpleDnsCrypt.Models;
 using SimpleDnsCrypt.Tools;
 
@@ -130,7 +131,7 @@ namespace SimpleDnsCrypt.ViewModels
                     var trustedCommentBinary = Encoding.UTF8.GetBytes(trimmedComment);
                     var loadedSignature = Minisign.LoadSignature(Convert.FromBase64String(s[1]), trustedCommentBinary,
                         Convert.FromBase64String(s[3]));
-                    var publicKey = Minisign.LoadPublicKeyFromString(update.Publickey);
+                    var publicKey = Minisign.LoadPublicKeyFromString(Global.PublicKey);
                     var valid = Minisign.ValidateSignature(_installer, loadedSignature, publicKey);
 
                     if (valid)
