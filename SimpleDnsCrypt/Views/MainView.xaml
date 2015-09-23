@@ -292,7 +292,7 @@
                                     </StackPanel>
                                 </Border>
                                 <Border BorderThickness="1" Background="#19E27021" Padding="20,10" Margin="7,0,0,0"
-                                        IsEnabled="{Binding IsWorkingOnSecondaryService, Converter={StaticResource ReverseBoolToEnabledConverter}}">
+                                        IsEnabled="False">
                                     <Border.BorderBrush>
                                         <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile"
                                                       Opacity="0.4">
@@ -504,7 +504,7 @@
                                                                    Margin="0" HorizontalAlignment="Center"
                                                                    VerticalAlignment="Center" />
                                         <controls:ToggleSwitchButton
-                                            IsEnabled="{Binding IsWorkingOnSecondaryService, Converter={StaticResource ReverseBoolToEnabledConverter}}"
+                                            IsEnabled="False"
                                             Grid.Row="1" Grid.Column="2" Cursor="Hand"
                                             IsChecked="{Binding IsSecondaryResolverRunning}"
                                             HorizontalAlignment="Right">
