@@ -285,7 +285,7 @@ Catatan tersebut disimpan di berkas lokal.</value>
     <value>batal</value>
   </data>
   <data name="ok" xml:space="preserve">
-    <value>Ok</value>
+    <value>OK</value>
   </data>
   <data name="dialog_update_title" xml:space="preserve">
     <value>Unduhan</value>
