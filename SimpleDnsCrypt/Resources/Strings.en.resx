@@ -179,7 +179,7 @@
     <value>Can`t load: {0} or {1}.</value>
   </data>
   <data name="dialog_message_missing_proxy_files" xml:space="preserve">
-    <value>There were not found all the necessary files in dnscrypt proxy folder, reinstalling the application is recommended.</value>
+    <value>Not all the necessary files in dnscrypt proxy folder are found, reinstalling the application is recommended.</value>
   </data>
   <data name="dialog_message_bad_privileges" xml:space="preserve">
     <value>You must run this application as administrator.</value>
@@ -188,13 +188,13 @@
     <value>Speed up on missing IPv6</value>
   </data>
   <data name="ipv6_speed_plugin_text" xml:space="preserve">
-    <value>If IPv6 connectivity is not available on your network, this plugin avoids waiting for responses about IPv6 addresses from upstream resolvers. This can improve your web browsing experience.</value>
+    <value>If IPv6 connectivity is not available on your network, this plugin disable waiting for responses about IPv6 addresses from upstream resolvers. This can improve your web browsing experience.</value>
   </data>
   <data name="advanced_settings_refresh_resolver_title" xml:space="preserve">
     <value>Refresh public resolver list</value>
   </data>
   <data name="advanced_settings_refresh_resolver_text" xml:space="preserve">
-    <value>Refresh the list of public resolvers (all downloads are validated with a minisgn signature)</value>
+    <value>Refresh the list of public resolvers (all downloads are validated with a minisign signature)</value>
   </data>
   <data name="advanced_settings_debug_title" xml:space="preserve">
     <value>Debug Mode</value>
@@ -282,7 +282,7 @@ The logs are stored in a local file.</value>
     <value>no</value>
   </data>
   <data name="ok" xml:space="preserve">
-    <value>Ok</value>
+    <value>OK</value>
   </data>
   <data name="cancel" xml:space="preserve">
     <value>cancel</value>
@@ -300,6 +300,6 @@ The logs are stored in a local file.</value>
     <value>Critical Application Update</value>
   </data>
   <data name="dialog_message_update_critical_text" xml:space="preserve">
-    <value>There is a new Simple DNSCrypt version ({0}) available. The update is marked as critical, so you really should to the update now! Do you want to update now?</value>
+    <value>There is a new Simple DNSCrypt version ({0}) available. The update is marked as critical, so you really should do the update now! Do you want to update now?</value>
   </data>
 </root>
