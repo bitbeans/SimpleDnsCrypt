@@ -179,7 +179,7 @@
     <value>Can`t load: {0} or {1}.</value>
   </data>
   <data name="dialog_message_missing_proxy_files" xml:space="preserve">
-    <value>There were not found all the necessary files in dnscrypt proxy folder, reinstalling the application is recommended.</value>
+    <value>Not all the necessary files in dnscrypt proxy folder are found, reinstalling the application is recommended.</value>
   </data>
   <data name="dialog_message_bad_privileges" xml:space="preserve">
     <value>You must run this application as administrator.</value>
@@ -285,7 +285,7 @@ The logs are stored in a local file.</value>
     <value>cancel</value>
   </data>
   <data name="ok" xml:space="preserve">
-    <value>Ok</value>
+    <value>OK</value>
   </data>
   <data name="dialog_update_title" xml:space="preserve">
     <value>Downloads</value>
@@ -300,6 +300,6 @@ The logs are stored in a local file.</value>
     <value>Critical Application Update</value>
   </data>
   <data name="dialog_message_update_critical_text" xml:space="preserve">
-    <value>There is a new Simple DNSCrypt version ({0}) available. The update is marked as critical, so you really should to the update now! Do you want to update now?</value>
+    <value>There is a new Simple DNSCrypt version ({0}) available. The update is marked as critical, so you really should do the update now! Do you want to update now?</value>
   </data>
 </root>
