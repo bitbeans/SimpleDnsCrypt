@@ -91,7 +91,7 @@ namespace SimpleDnsCrypt
                     {
                         Content = view,
                         ResizeMode = ResizeMode.CanResizeWithGrip,
-                        SizeToContent = SizeToContent.Manual
+                        SizeToContent = SizeToContent.Height
                     };
                 }
                 window.SetValue(View.IsGeneratedProperty, true);

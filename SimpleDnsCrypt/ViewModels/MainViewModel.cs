@@ -83,7 +83,8 @@ namespace SimpleDnsCrypt.ViewModels
             if (!ValidateDnsCryptProxyFolder())
             {
                 _windowManager.ShowMetroMessageBox(
-                    LocalizationEx.GetUiString("dialog_message_missing_proxy_files", Thread.CurrentThread.CurrentCulture),
+                    LocalizationEx.GetUiString("dialog_message_missing_proxy_files",
+                        Thread.CurrentThread.CurrentCulture),
                     LocalizationEx.GetUiString("dialog_error_title", Thread.CurrentThread.CurrentCulture),
                     MessageBoxButton.OK, BoxType.Error);
                 Environment.Exit(1);
@@ -162,7 +163,8 @@ namespace SimpleDnsCrypt.ViewModels
             {
                 _windowManager.ShowMetroMessageBox(
                     string.Format(
-                        LocalizationEx.GetUiString("dialog_message_missing_file", Thread.CurrentThread.CurrentCulture),
+                        LocalizationEx.GetUiString("dialog_message_missing_file",
+                            Thread.CurrentThread.CurrentCulture),
                         proxyList, proxyListSignature),
                     LocalizationEx.GetUiString("dialog_error_title", Thread.CurrentThread.CurrentCulture),
                     MessageBoxButton.OK, BoxType.Error);
@@ -184,7 +186,8 @@ namespace SimpleDnsCrypt.ViewModels
             // if there is no selected secondary resolver, add a default resolver
             if (SecondaryResolver == null)
             {
-                var tmpResolver = dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultSecondaryResolverName));
+                var tmpResolver =
+                    dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultSecondaryResolverName));
                 if (tmpResolver == null)
                 {
                     tmpResolver =
@@ -210,18 +213,22 @@ namespace SimpleDnsCrypt.ViewModels
                 }
             }
 
-            if (PrimaryDnsCryptProxyManager.DnsCryptProxy.Parameter.LocalAddress.Contains(Global.GlobalGatewayAddress))
+            if (
+                PrimaryDnsCryptProxyManager.DnsCryptProxy.Parameter.LocalAddress.Contains(
+                    Global.GlobalGatewayAddress))
             {
                 _actAsGlobalGateway = true;
                 _primaryResolverTitle = string.Format("{0} ({1}:53)",
-                    LocalizationEx.GetUiString("default_settings_primary_header", Thread.CurrentThread.CurrentCulture),
+                    LocalizationEx.GetUiString("default_settings_primary_header",
+                        Thread.CurrentThread.CurrentCulture),
                     Global.GlobalGatewayAddress);
             }
             else
             {
                 _actAsGlobalGateway = false;
                 _primaryResolverTitle = string.Format("{0} ({1}:{2})",
-                    LocalizationEx.GetUiString("default_settings_primary_header", Thread.CurrentThread.CurrentCulture),
+                    LocalizationEx.GetUiString("default_settings_primary_header",
+                        Thread.CurrentThread.CurrentCulture),
                     Global.PrimaryResolverAddress,
                     Global.PrimaryResolverPort);
             }
@@ -654,9 +661,12 @@ namespace SimpleDnsCrypt.ViewModels
             }
         }
 
+        /// <summary>
+        ///     Load the local network cards.
+        /// </summary>
         private void LoadNetworkCards()
         {
-            var localNetworkInterfaces = LocalNetworkInterfaceManager.GetLocalNetworkInterfaces(ShowHiddenCards);
+            var localNetworkInterfaces = LocalNetworkInterfaceManager.GetLocalNetworkInterfaces(ShowHiddenCards, false);
             _localNetworkInterfaces.Clear();
             if (localNetworkInterfaces.Count != 0)
             {
@@ -754,6 +764,7 @@ namespace SimpleDnsCrypt.ViewModels
         /// </summary>
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         /// <exception cref="NetworkInformationException"></exception>
+        /// <exception cref="ArgumentNullException"></exception>
         public async void UninstallServices()
         {
             var result = _windowManager.ShowMetroMessageBox(
@@ -778,14 +789,17 @@ namespace SimpleDnsCrypt.ViewModels
             _isSecondaryResolverRunning = SecondaryDnsCryptProxyManager.IsDnsCryptProxyRunning();
             NotifyOfPropertyChange(() => IsSecondaryResolverRunning);
 
-            // recover the network interfaces
-            foreach (var nic in LocalNetworkInterfaceManager.GetLocalNetworkInterfaces())
+            // recover the network interfaces (also the hidden and down cards)
+            foreach (var nic in LocalNetworkInterfaceManager.GetLocalNetworkInterfaces(true, false))
             {
                 if (nic.UseDnsCrypt)
                 {
                     LocalNetworkInterfaceManager.SetNameservers(nic, new List<string>(), NetworkInterfaceComponent.IPv4);
-                    _localNetworkInterfaces.SingleOrDefault(n => n.Description.Equals(nic.Description)).UseDnsCrypt =
-                        false;
+                    var card = _localNetworkInterfaces.SingleOrDefault(n => n.Description.Equals(nic.Description));
+                    if (card != null)
+                    {
+                        card.UseDnsCrypt = false;
+                    }
                 }
             }
         }
@@ -817,6 +831,7 @@ namespace SimpleDnsCrypt.ViewModels
                     DnsCryptProxyListManager.ReadProxyList(proxyList, proxyListSignature, true);
                 if (dnsProxyList != null && dnsProxyList.Any())
                 {
+                    _resolvers.Clear();
                     foreach (var dnsProxy in dnsProxyList)
                     {
                         if (

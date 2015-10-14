@@ -115,7 +115,7 @@
                                                 <controls:Tile Cursor="Hand" Title="{Binding Name}"
                                                                TitleFontSize="{Binding Name, Converter={StaticResource TextLengthToFontSizeConverter}}"
                                                                ToolTip="{Binding Description}"
-                                                               Background="{Binding UseDnsCrypt, Converter={StaticResource InUseToBackgroundConverter}}"
+                                                               Background="{Binding Converter={StaticResource InUseToBackgroundConverter}}"
                                                                TiltFactor="1" Width="Auto" Height="100"
                                                                HorizontalAlignment="Left">
                                                     <Grid>

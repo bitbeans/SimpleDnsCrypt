@@ -5,6 +5,7 @@ using System.ComponentModel.Composition.Hosting;
 using System.ComponentModel.Composition.Primitives;
 using System.Linq;
 using System.Windows;
+using System.Windows.Threading;
 using Caliburn.Micro;
 using SimpleDnsCrypt.ViewModels;
 
@@ -19,6 +20,20 @@ namespace SimpleDnsCrypt
         {
             AppDomain.CurrentDomain.AssemblyLoad += CurrentDomain_AssemblyLoad;
             Initialize();
+        }
+
+        /// <summary>
+        ///     Catch all unhandled exceptions and show a Windows Form MessageBox.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected override void OnUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
+        {
+            Execute.OnUIThread(
+                () =>
+                    MessageBox.Show(
+                        string.Format("Message: {0}\nStackTrace: {1}", e.Exception.Message, e.Exception.StackTrace),
+                        "Error", MessageBoxButton.OK, MessageBoxImage.Error));
         }
 
         protected override void OnStartup(object sender, StartupEventArgs e)

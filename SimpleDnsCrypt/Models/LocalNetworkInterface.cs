@@ -14,6 +14,7 @@ namespace SimpleDnsCrypt.Models
         private bool _ipv6Support;
         private bool _ipv4Support;
         private bool _useDnsCrypt;
+        private OperationalStatus _operationalStatus;
 
         public LocalNetworkInterface()
         {
@@ -27,6 +28,19 @@ namespace SimpleDnsCrypt.Models
             set {
                 _name = value;
                 NotifyOfPropertyChange(() => Name);
+            }
+        }
+
+        /// <summary>
+        /// The status of the network card (up/down)
+        /// </summary>
+        public OperationalStatus OperationalStatus
+        {
+            get { return _operationalStatus; }
+            set
+            {
+                _operationalStatus = value;
+                NotifyOfPropertyChange(() => OperationalStatus);
             }
         }
 

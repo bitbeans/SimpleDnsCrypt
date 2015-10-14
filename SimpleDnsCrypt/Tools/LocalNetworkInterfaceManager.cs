@@ -13,25 +13,31 @@ using SimpleDnsCrypt.Models;
 namespace SimpleDnsCrypt.Tools
 {
     /// <summary>
-    /// Class to manage the local network interfaces.
+    ///     Class to manage the local network interfaces.
     /// </summary>
     internal static class LocalNetworkInterfaceManager
     {
         /// <summary>
-        /// Get a list of the local network interfaces.
+        ///     Get a list of the local network interfaces.
         /// </summary>
         /// <param name="showHiddenCards">Show hidden cards.</param>
+        /// <param name="showOnlyOperationalUp">Include only connected network cards.</param>
         /// <returns>A (filtered) list of the local network interfaces.</returns>
         /// <exception cref="NetworkInformationException">A Windows system function call failed. </exception>
-        internal static List<LocalNetworkInterface> GetLocalNetworkInterfaces(bool showHiddenCards = false)
+        /// <exception cref="ArgumentNullException"></exception>
+        internal static List<LocalNetworkInterface> GetLocalNetworkInterfaces(bool showHiddenCards = false, bool showOnlyOperationalUp = true)
         {
             var interfaces = new List<LocalNetworkInterface>();
             foreach (var nic in NetworkInterface.GetAllNetworkInterfaces())
             {
-                if (nic.OperationalStatus != OperationalStatus.Up)
+                if (showOnlyOperationalUp)
                 {
-                    continue;
+                    if (nic.OperationalStatus != OperationalStatus.Up)
+                    {
+                        continue;
+                    }
                 }
+
                 if (!showHiddenCards)
                 {
                     var add = true;
@@ -52,7 +58,8 @@ namespace SimpleDnsCrypt.Tools
                     Ipv4Dns = GetDnsServerList(nic.Id, NetworkInterfaceComponent.IPv4),
                     Ipv6Dns = GetDnsServerList(nic.Id, NetworkInterfaceComponent.IPv6),
                     Ipv4Support = nic.Supports(NetworkInterfaceComponent.IPv4),
-                    Ipv6Support = nic.Supports(NetworkInterfaceComponent.IPv6)
+                    Ipv6Support = nic.Supports(NetworkInterfaceComponent.IPv6),
+                    OperationalStatus = nic.OperationalStatus
                 };
 
                 localNetworkInterface.UseDnsCrypt = IsUsingDnsCrypt(localNetworkInterface);
