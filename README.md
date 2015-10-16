@@ -9,12 +9,13 @@ The dnscrypt-proxy software is written and maintained by Frank Denis (@jedisct1)
 
 Missing features:
 
-- Secondary resolver support (soon available)
-- IPv6 support
+- Secondary resolver support (soon available) - see https://github.com/bitbeans/SimpleDnsCrypt/issues/3
+- IPv6 support - see https://github.com/bitbeans/SimpleDnsCrypt/issues/1
+- Custom ports - see https://github.com/bitbeans/SimpleDnsCrypt/issues/7
 
 ### Installation
 
-To install Simple DNSCrypt use the [latest MSI package](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.2.6/SimpleDNSCrypt.msi).
+To install Simple DNSCrypt use the [latest MSI package](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.2.7/SimpleDNSCrypt.msi).
 You don`t need to download the dnscrypt-resolvers.csv or the dnscrypt-proxy package at all.
 Both are included in the msi package, the dnscrypt-resolvers.csv can be updated from inside the software (and will be verified with minisign).
 
@@ -23,7 +24,7 @@ The MSI package and the SimpleDnsCrypt.exe are signed via a *COMODO RSA Code Sig
 The files are signed under the name: *EAM Experience Area Münsingen GmbH*
 
 You also can verify the MSI package with [minisign](https://jedisct1.github.io/minisign/).
-The minisign [signature](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.2.6/SimpleDNSCrypt.msi.minisig) can be verified with the following command:
+The minisign [signature](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.2.7/SimpleDNSCrypt.msi.minisig) can be verified with the following command:
 
 	minisign -Vm SimpleDNSCrypt.msi -P RWTSM+4BNNvkZPNkHgE88ETlhWa+0HDzU5CN8TvbyvmhVUcr6aQXfssV
 
@@ -65,7 +66,7 @@ This software was tested on:
 
 |             | 32 bit      | 64 bit     |
 | :----------- | :-----------: | :-----------: | 
-| Windows 7    | untested        | untested        | 
+| Windows 7    | untested        | tested        | 
 | Windows 8.1     | untested        | tested       | 
 | Windows 10     | untested        | tested        | 
 
