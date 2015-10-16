@@ -155,7 +155,9 @@
             "Microsoft ISATAP",
             "Microsoft-ISATAP",
             "Teredo Tunneling Pseudo-Interface",
-            "Microsoft Wi-Fi Direct Virtual"
+            "Microsoft Wi-Fi Direct Virtual",
+            "Von Microsoft gehosteter",
+            "Microsoft hosted"
         };
 
         /// <summary>
