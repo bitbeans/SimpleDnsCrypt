@@ -154,7 +154,8 @@
             "Software Loopback",
             "Microsoft ISATAP",
             "Microsoft-ISATAP",
-            "Teredo Tunneling Pseudo-Interface"
+            "Teredo Tunneling Pseudo-Interface",
+            "Microsoft Wi-Fi Direct Virtual"
         };
 
         /// <summary>
