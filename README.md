@@ -9,9 +9,9 @@ The dnscrypt-proxy software is written and maintained by Frank Denis (@jedisct1)
 
 Missing features:
 
-- Secondary resolver support (soon available) - see https://github.com/bitbeans/SimpleDnsCrypt/issues/3
-- IPv6 support - see https://github.com/bitbeans/SimpleDnsCrypt/issues/1
-- Custom ports - see https://github.com/bitbeans/SimpleDnsCrypt/issues/7
+- Secondary resolver support (soon available) - see [#3](https://github.com/bitbeans/SimpleDnsCrypt/issues/3)
+- IPv6 support - see [#1](https://github.com/bitbeans/SimpleDnsCrypt/issues/1)
+- Custom ports - see [#7](https://github.com/bitbeans/SimpleDnsCrypt/issues/7)
 
 ### Installation
 
