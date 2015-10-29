@@ -29,7 +29,7 @@ The minisign [signature](https://github.com/bitbeans/SimpleDnsCrypt/releases/dow
 	minisign -Vm SimpleDNSCrypt.msi -P RWTSM+4BNNvkZPNkHgE88ETlhWa+0HDzU5CN8TvbyvmhVUcr6aQXfssV
 
 #### Uninstall
-To uninstall Simple DNSCrypt and dnscrypt-proxy, just go to the windows Control Panel (Programs and Features) and search for Simple DNSCrypt.
+To uninstall Simple DNSCrypt and dnscrypt-proxy, just go to the Windows Control Panel (Programs and Features) and search for Simple DNSCrypt.
 
 #### Updates
 Simple DNSCrypt will automatically check for new versions on startup.
@@ -53,7 +53,7 @@ Simple DNSCrypt currently supports two plugins:
 
 If your network doesn't support IPv6, chances are that your applications are still constantly trying to resolve IPv6 addresses, causing unnecessary slowdowns.
 
-This plugin causes the proxy to immediately reply to IPv6 requests, without having to send a useless request to upstream resolvers, and having to wait for a response.
+This plugin causes the proxy to reply immediately to IPv6 requests, without having to send a useless request to upstream resolvers, and having to wait for a response.
 
 **libdcplugin_logging**
 
@@ -80,11 +80,11 @@ This software targets .NET 4.5.
 
 SimpleDNSCrypt currently speaks the following languages:
 
-- english
-- german
-- indonesia (@christantoan)
+- English
+- German
+- Indonesia (@christantoan)
 
-If you are able to translate the the resx files into more languages, please feel free to send a pull request. 
+If you are able to translate the resx files into more languages, please feel free to send a pull request. 
 
 
 ### Alternative Software
