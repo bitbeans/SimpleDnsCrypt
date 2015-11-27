@@ -291,6 +291,9 @@
     <Resource Include="Resources\Entypo-license.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="msvcr100.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="costura32\libsodium.dll" />
     <EmbeddedResource Include="costura64\libsodium-64.dll" />
     <Content Include="Dependencies\minisign.dll" />
