@@ -417,7 +417,7 @@ namespace SimpleDnsCrypt.ViewModels
         {
             try
             {
-                var update = await ApplicationUpdater.CheckForRemoteUpdateAsync().ConfigureAwait(false);
+                var update = await ApplicationUpdater.CheckForRemoteUpdateAsync().ConfigureAwait(true);
                 if (update.CanUpdate)
                 {
                     var boxType = (update.Update.Type == UpdateType.Standard) ? BoxType.Default : BoxType.Warning;

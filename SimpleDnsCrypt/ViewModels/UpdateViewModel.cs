@@ -121,8 +121,8 @@ namespace SimpleDnsCrypt.ViewModels
             {
                 IsUpdatingSignature = true;
                 IsUpdatingInstaller = true;
-                await DownloadSignatureAsync(update.Signature);
-                await DownloadInstallerAsync(update.Installer);
+                await DownloadSignatureAsync(update.Signature).ConfigureAwait(false);
+                await DownloadInstallerAsync(update.Installer).ConfigureAwait(false);
 
                 if ((IsInstallerDownloaded) && (IsSignatureDownloaded))
                 {
@@ -131,7 +131,7 @@ namespace SimpleDnsCrypt.ViewModels
                     var trustedCommentBinary = Encoding.UTF8.GetBytes(trimmedComment);
                     var loadedSignature = Minisign.LoadSignature(Convert.FromBase64String(s[1]), trustedCommentBinary,
                         Convert.FromBase64String(s[3]));
-                    var publicKey = Minisign.LoadPublicKeyFromString(Global.PublicKey);
+                    var publicKey = Minisign.LoadPublicKeyFromString(Global.ApplicationUpdatePublicKey);
                     var valid = Minisign.ValidateSignature(_installer, loadedSignature, publicKey);
 
                     if (valid)

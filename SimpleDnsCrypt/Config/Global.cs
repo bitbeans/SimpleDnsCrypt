@@ -15,10 +15,15 @@
         /// </summary>
         public const string ApplicationUpdateUri = "https://raw.githubusercontent.com/bitbeans/SimpleDnsCrypt/master/update.yml";
 
-        /// <summary>
-        ///     URL to the dnscrypt-resolvers.csv (hosted on github).
-        /// </summary>
-        public const string ResolverUrl =
+		/// <summary>
+		///		The public key to validate the installer.
+		/// </summary>
+	    public const string ApplicationUpdatePublicKey = "RWTSM+4BNNvkZPNkHgE88ETlhWa+0HDzU5CN8TvbyvmhVUcr6aQXfssV";
+
+		/// <summary>
+		///     URL to the dnscrypt-resolvers.csv (hosted on github).
+		/// </summary>
+		public const string ResolverUrl =
             "https://raw.githubusercontent.com/jedisct1/dnscrypt-proxy/master/dnscrypt-resolvers.csv";
 
         /// <summary>

@@ -20,7 +20,7 @@ namespace SimpleDnsCrypt.Tools
                 var currentVersion = Assembly.GetExecutingAssembly().GetName().Version;
 
                 remoteUpdate.CanUpdate = false;
-                var remoteUpdateData = await DownloadRemoteUpdateFileAsync();
+                var remoteUpdateData = await DownloadRemoteUpdateFileAsync().ConfigureAwait(false);
 
                 if (remoteUpdateData != null)
                 {
@@ -67,7 +67,7 @@ namespace SimpleDnsCrypt.Tools
             using (var client = new HttpClient())
             {
                 var getDataTask = client.GetByteArrayAsync(Global.ApplicationUpdateUri);
-                return await getDataTask;
+                return await getDataTask.ConfigureAwait(false);
             }
         }
 
@@ -76,7 +76,7 @@ namespace SimpleDnsCrypt.Tools
             using (var client = new HttpClient())
             {
                 var getDataTask = client.GetByteArrayAsync(uri);
-                return await getDataTask;
+                return await getDataTask.ConfigureAwait(false);
             }
         }
 
@@ -85,7 +85,7 @@ namespace SimpleDnsCrypt.Tools
             using (var client = new HttpClient())
             {
                 var getDataTask = client.GetStringAsync(uri);
-                var resolverList = await getDataTask;
+                var resolverList = await getDataTask.ConfigureAwait(false);
                 return resolverList;
             }
         }
