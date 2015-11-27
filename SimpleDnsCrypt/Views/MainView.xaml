@@ -26,6 +26,7 @@
                                                 FalseIcon="{StaticResource appbar_close}" />
             <converter:InUseToBackgroundConverter x:Key="InUseToBackgroundConverter" />
             <converter:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+            <converter:ReverseBoolToVisibilityConverter x:Key="ReverseBoolToVisibilityConverter" />
             <converter:BoolToStateColorConverter x:Key="BoolToStateColorConverter" />
             <converter:TextLengthToFontSizeConverter x:Key="TextLengthToFontSizeConverter" />
             <converter:ReverseBoolToEnabledConverter x:Key="ReverseBoolToEnabledConverter" />
@@ -183,6 +184,8 @@
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="Auto" />
                                                 <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="Auto" />
                                                 <ColumnDefinition Width="*" />
                                             </Grid.ColumnDefinitions>
                                             <TextBlock Grid.Column="0" Grid.Row="0" Text="&#xf132;"
@@ -200,6 +203,14 @@
                                                        Foreground="#FF8ab329" FontSize="18"
                                                        Opacity="0.7" Margin="5,0,0,3" FontWeight="Bold">
                                             </TextBlock>
+                                            <controls:NumericUpDown Visibility="{Binding ActAsGlobalGateway, Converter={StaticResource ReverseBoolToVisibilityConverter}}" ToolTip="{lex:Loc Key=default_settings_info_port}" Grid.Column="2" Grid.Row="0" Height="27" Minimum="53" Maximum="65535" Interval="1" Value="{Binding PrimaryResolver.LocalPort}" StringFormat="127.0.0.1:{0}" Margin="5,0,0,0"/>
+                                            <Button Visibility="{Binding ActAsGlobalGateway, Converter={StaticResource ReverseBoolToVisibilityConverter}}" Background="#FFFFFFFF" Grid.Column="3" Grid.Row="0" Height="35" Width="35" VerticalAlignment="Top" Cursor="Hand" x:Name="SavePrimaryPort" ToolTip="{lex:Loc Key=default_settings_save_port}" Style="{DynamicResource MetroCircleButtonStyle}">
+                                                <Rectangle Fill="#FF8ab329" Width="12" Height="12">
+                                                    <Rectangle.OpacityMask>
+                                                        <VisualBrush Visual="{DynamicResource appbar_save}" Stretch="Fill" />
+                                                    </Rectangle.OpacityMask>
+                                                </Rectangle>
+                                            </Button>
                                         </Grid>
                                         <TextBlock
                                             Text="{lex:Loc Key=default_settings_primary_text}"
@@ -224,6 +235,7 @@
                                                    HorizontalAlignment="Left">
                                             </Label>
                                             <ComboBox Grid.Row="0" Grid.Column="1" Width="230"
+                                                      ToolTip="{Binding PrimaryResolver.FullName}"
                                                       ItemsSource="{Binding Resolvers}"
                                                       SelectedItem="{Binding PrimaryResolver}"
                                                       IsEnabled="True"
@@ -245,6 +257,7 @@
                                                    HorizontalAlignment="Left">
                                             </Label>
                                             <TextBox Grid.Row="2" Grid.Column="1" IsReadOnly="True"
+                                                     ToolTip="{Binding PrimaryResolver.ProviderName}" ToolTipService.ShowOnDisabled="True"
                                                      Text="{Binding PrimaryResolver.ProviderName}" IsEnabled="False"
                                                      VerticalAlignment="Center" Width="230" HorizontalAlignment="Left" />
                                             <Label Foreground="#FF575757" Grid.Row="3" Grid.Column="0"
@@ -356,6 +369,7 @@
                                                    HorizontalAlignment="Left">
                                             </Label>
                                             <ComboBox Grid.Row="0" Grid.Column="1" Width="230"
+                                                      ToolTip="{Binding SecondaryResolver.FullName}"
                                                       ItemsSource="{Binding Resolvers}"
                                                       SelectedItem="{Binding SecondaryResolver}"
                                                       IsEnabled="True"
@@ -378,6 +392,7 @@
                                                    HorizontalAlignment="Left">
                                             </Label>
                                             <TextBox Grid.Row="2" Grid.Column="1" IsReadOnly="True"
+                                                     ToolTip="{Binding SecondaryResolver.ProviderName}" ToolTipService.ShowOnDisabled="True"
                                                      Text="{Binding SecondaryResolver.ProviderName}" IsEnabled="False"
                                                      VerticalAlignment="Center" Width="230" HorizontalAlignment="Left" />
                                             <Label Foreground="#FF575757" Grid.Row="3" Grid.Column="0"

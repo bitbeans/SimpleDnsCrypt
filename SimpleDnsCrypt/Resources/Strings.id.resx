@@ -302,4 +302,10 @@ Catatan tersebut disimpan di berkas lokal.</value>
   <data name="dialog_message_update_critical_text" xml:space="preserve">
     <value>Tersedia Simple DNSCrypt baru versi ({0}). Pembaruan tersebut penting, jadi Anda sebaiknya segera melakukan pembaruan! Apakah Anda ingin memperbarui sekarang?</value>
   </data>
+  <data name="default_settings_save_port" xml:space="preserve">
+    <value>Simpan</value>
+  </data>
+  <data name="default_settings_info_port" xml:space="preserve">
+    <value>DNSCrypt akan mendengarkan pada port ini (default: 53)</value>
+  </data>
 </root>

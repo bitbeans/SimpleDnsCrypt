@@ -332,7 +332,7 @@ namespace SimpleDnsCrypt.Tools
             try
             {
                 var proxyName = Global.PrimaryResolverServiceName;
-                var proxyPort = Global.PrimaryResolverPort;
+	            var proxyPort = DnsCryptProxy.Parameter.LocalPort;
                 if (dnsCryptProxyType != DnsCryptProxyType.Primary)
                 {
                     proxyName = Global.SecondaryResolverServiceName;
@@ -349,7 +349,7 @@ namespace SimpleDnsCrypt.Tools
                     parameters = localMachine.OpenSubKey(
                         @"SYSTEM\\CurrentControlSet\\Services\\" + proxyName + "\\Parameters", true);
                 }
-
+				
                 parameters.SetValue("ResolverName", DnsCryptProxy.Parameter.ResolverName, RegistryValueKind.String);
                 parameters.SetValue("Plugins", DnsCryptProxy.Parameter.Plugins, RegistryValueKind.MultiString);
                 parameters.SetValue("LocalAddress", DnsCryptProxy.Parameter.LocalAddress + ":" + proxyPort,
@@ -415,8 +415,11 @@ namespace SimpleDnsCrypt.Tools
                             DnsCryptProxy.Parameter.EphemeralKeys = Convert.ToBoolean(parameters.GetValue(parameterName));
                             break;
                         case "LocalAddress":
-                            DnsCryptProxy.Parameter.LocalAddress = (string) parameters.GetValue(parameterName);
-                            break;
+							// the LocalAddress is stored in the following format: 127.0.0.1:53
+		                    var mergedAddress = ((string) parameters.GetValue(parameterName)).Split(':');
+                            DnsCryptProxy.Parameter.LocalAddress = mergedAddress[0];
+							DnsCryptProxy.Parameter.LocalPort = Convert.ToInt32(mergedAddress[1]);
+							break;
                         case "Plugins":
                             DnsCryptProxy.Parameter.Plugins = (string[]) parameters.GetValue(parameterName);
                             break;

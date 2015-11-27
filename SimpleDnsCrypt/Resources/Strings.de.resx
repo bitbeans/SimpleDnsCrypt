@@ -301,4 +301,10 @@
   <data name="dialog_message_update_critical_text" xml:space="preserve">
     <value>Es ist eine neue Simple DNSCrypt Version ({0}) verfügbar. Die Aktualisierung ist als kritisch markiert, Sie sollten diese Aktualisierung jetzt durchführen! Möchten Sie die Aktualisierung jetzt durchführen?</value>
   </data>
+  <data name="default_settings_save_port" xml:space="preserve">
+    <value>Speichern</value>
+  </data>
+  <data name="default_settings_info_port" xml:space="preserve">
+    <value>DNSCrypt wird auf diesem Port lauschen (Standard: 53)</value>
+  </data>
 </root>

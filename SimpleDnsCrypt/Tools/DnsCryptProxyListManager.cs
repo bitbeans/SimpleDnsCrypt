@@ -22,8 +22,8 @@ namespace SimpleDnsCrypt.Tools
         {
             try
             {
-                var resolverList = await DownloadResolverListAsync();
-                var signature = await DownloadSignatureAsync();
+                var resolverList = await DownloadResolverListAsync().ConfigureAwait(false);
+                var signature = await DownloadSignatureAsync().ConfigureAwait(false);
                 if ((resolverList != null) && (signature != null))
                 {
                     //TODO: add an overload to minisign-net
@@ -59,7 +59,7 @@ namespace SimpleDnsCrypt.Tools
             using (var client = new HttpClient())
             {
                 var getDataTask = client.GetByteArrayAsync(Global.ResolverUrl);
-                var resolverList = await getDataTask;
+                var resolverList = await getDataTask.ConfigureAwait(false);
                 return resolverList;
             }
         }
@@ -69,7 +69,7 @@ namespace SimpleDnsCrypt.Tools
             using (var client = new HttpClient())
             {
                 var getDataTask = client.GetStringAsync(Global.SignatureUrl);
-                var resolverList = await getDataTask;
+                var resolverList = await getDataTask.ConfigureAwait(false);
                 return resolverList;
             }
         }
@@ -108,7 +108,8 @@ namespace SimpleDnsCrypt.Tools
                             ResolverAddress = ClearString(s[10]),
                             ProviderName = ClearString(s[11]),
                             ProviderPublicKey = ClearString(s[12]),
-                            ProviderPublicKeyTextRecord = ClearString(s[13])
+                            ProviderPublicKeyTextRecord = ClearString(s[13]),
+							LocalPort = Global.PrimaryResolverPort //set the default port 
                         };
                         if (!tmp.Description.Equals("Description"))
                         {

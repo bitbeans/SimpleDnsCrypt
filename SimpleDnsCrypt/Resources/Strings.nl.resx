@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
+  <!--
 		Microsoft ResX Schema
 
 		Version 1.3
 
-		The primary goals of this format is to allow a simple XML format 
-		that is mostly human readable. The generation and parsing of the 
-		various data types are done through the TypeConverter classes 
+		The primary goals of this format is to allow a simple XML format
+		that is mostly human readable. The generation and parsing of the
+		various data types are done through the TypeConverter classes
 		associated with the data types.
 
 		Example:
@@ -26,35 +26,35 @@
 			[base64 mime encoded string representing a byte array form of the .NET Framework object]
 		</data>
 
-		There are any number of "resheader" rows that contain simple 
+		There are any number of "resheader" rows that contain simple
 		name/value pairs.
 
-		Each data row contains a name, and value. The row also contains a 
-		type or mimetype. Type corresponds to a .NET class that support 
-		text/value conversion through the TypeConverter architecture. 
-		Classes that don't support this are serialized and stored with the 
+		Each data row contains a name, and value. The row also contains a
+		type or mimetype. Type corresponds to a .NET class that support
+		text/value conversion through the TypeConverter architecture.
+		Classes that don't support this are serialized and stored with the
 		mimetype set.
 
-		The mimetype is used for serialized objects, and tells the 
-		ResXResourceReader how to depersist the object. This is currently not 
+		The mimetype is used for serialized objects, and tells the
+		ResXResourceReader how to depersist the object. This is currently not
 		extensible. For a given mimetype the value must be set accordingly:
 
-		Note - application/x-microsoft.net.object.binary.base64 is the format 
-		that the ResXResourceWriter will generate, however the reader can 
+		Note - application/x-microsoft.net.object.binary.base64 is the format
+		that the ResXResourceWriter will generate, however the reader can
 		read any of the formats listed below.
 
 		mimetype: application/x-microsoft.net.object.binary.base64
-		value   : The object must be serialized with 
+		value   : The object must be serialized with
 			: System.Serialization.Formatters.Binary.BinaryFormatter
 			: and then encoded with base64 encoding.
 
 		mimetype: application/x-microsoft.net.object.soap.base64
-		value   : The object must be serialized with 
+		value   : The object must be serialized with
 			: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
 			: and then encoded with base64 encoding.
 
 		mimetype: application/x-microsoft.net.object.bytearray.base64
-		value   : The object must be serialized into a byte array 
+		value   : The object must be serialized into a byte array
 			: using a System.ComponentModel.TypeConverter
 			: and then encoded with base64 encoding.
 	-->
@@ -98,214 +98,214 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="default_settings_network_cards" xml:space="preserve">
-    <value>Network Cards</value>
+    <value>Netwerkkaarten</value>
   </data>
   <data name="default_settings_show_hidden_cards" xml:space="preserve">
-    <value>Show hidden cards</value>
+    <value>Toon verborgen kaarten</value>
   </data>
   <data name="tab_standard_settings" xml:space="preserve">
-    <value>Standard Settings</value>
+    <value>Standaardinstellingen</value>
   </data>
   <data name="tab_about" xml:space="preserve">
-    <value>About</value>
+    <value>Over</value>
   </data>
   <data name="tab_advanced_settings" xml:space="preserve">
-    <value>Advanced Settings</value>
+    <value>Geavanceerde instellingen</value>
   </data>
   <data name="default_settings_services" xml:space="preserve">
     <value>Services</value>
   </data>
   <data name="default_settings_primary_text" xml:space="preserve">
-    <value>The first resolver</value>
+    <value>1ste DNS-omzetter</value>
   </data>
   <data name="default_settings_secondary_text" xml:space="preserve">
-    <value>The second resolver (optional)</value>
+    <value>2de DNS-omzetter (optioneel)</value>
   </data>
   <data name="default_settings_primary_service" xml:space="preserve">
-    <value>Primary DNSCrypt Service</value>
+    <value>Primaire DNSCrypt Dienst</value>
   </data>
   <data name="default_settings_secondary_service" xml:space="preserve">
-    <value>Secondary DNSCrypt Service</value>
+    <value>Secundaire DNSCrypt Dienst</value>
   </data>
   <data name="default_settings_resolver" xml:space="preserve">
-    <value>Resolver</value>
+    <value>Omzetter</value>
   </data>
   <data name="default_settings_server_address" xml:space="preserve">
-    <value>Server Address</value>
+    <value>Server Adres</value>
   </data>
   <data name="default_settings_dnssec" xml:space="preserve">
     <value>DNSSEC</value>
   </data>
   <data name="default_settings_no_logs" xml:space="preserve">
-    <value>No Logs</value>
+    <value>Geen Logs</value>
   </data>
   <data name="default_settings_name" xml:space="preserve">
-    <value>Name (FQDN)</value>
+    <value>Naam (FQDN)</value>
   </data>
   <data name="default_settings_public_key" xml:space="preserve">
-    <value>Public Key</value>
+    <value>Publieke Sleutel</value>
   </data>
   <data name="default_settings_secondary_header" xml:space="preserve">
-    <value>Secondary Resolver</value>
+    <value>Secundaire Omzetter</value>
   </data>
   <data name="default_settings_primary_header" xml:space="preserve">
-    <value>Primary Resolver</value>
+    <value>Primaire Omzetter</value>
   </data>
   <data name="global_ipv6_disabled" xml:space="preserve">
-    <value>IPv6 disabled</value>
+    <value>IPv6 uitgeschakeld</value>
   </data>
   <data name="dialog_error_title" xml:space="preserve">
-    <value>Error</value>
+    <value>Fout</value>
   </data>
   <data name="dialog_success_title" xml:space="preserve">
-    <value>Successful</value>
+    <value>Succesvol</value>
   </data>
   <data name="dialog_uninstall_title" xml:space="preserve">
-    <value>Uninstall Services</value>
+    <value>Services Verwijderen</value>
   </data>
   <data name="dialog_warning_title" xml:space="preserve">
-    <value>Warning</value>
+    <value>Opgepast</value>
   </data>
   <data name="dialog_message_refresh_failed" xml:space="preserve">
-    <value>Failed to refresh the resolver list.</value>
+    <value>De lijst met omzetters kon niet ververst worden.</value>
   </data>
   <data name="window_plugin_title" xml:space="preserve">
-    <value>Available extensions</value>
+    <value>Beschikbare extensies</value>
   </data>
   <data name="dialog_message_uninstall" xml:space="preserve">
-    <value>Do you want to remove all installed windows services?</value>
+    <value>Wilt u alle geïnstalleerde windows services verwijderen?</value>
   </data>
   <data name="dialog_message_missing_file" xml:space="preserve">
-    <value>Can`t load: {0} or {1}.</value>
+    <value>Kan niet laden: {0} of {1}.</value>
   </data>
   <data name="dialog_message_missing_proxy_files" xml:space="preserve">
-    <value>Not all the necessary files in dnscrypt proxy folder are found, reinstalling the application is recommended.</value>
+    <value>Niet alle benodige bestanden zijn in de dnscrypt proxy map aanwezig, een herinstallatie van dnscrypt proxy wordt aanbevolen.</value>
   </data>
   <data name="dialog_message_bad_privileges" xml:space="preserve">
-    <value>You must run this application as administrator.</value>
+    <value>U dient dit programma als administrator uit te voeren.</value>
   </data>
   <data name="ipv6_speed_plugin_title" xml:space="preserve">
-    <value>Speed up on missing IPv6</value>
+    <value>Ontbrekende IPv6 versnellen</value>
   </data>
   <data name="ipv6_speed_plugin_text" xml:space="preserve">
-    <value>If IPv6 connectivity is not available on your network, this plugin disable waiting for responses about IPv6 addresses from upstream resolvers. This can improve your web browsing experience.</value>
+    <value>Als IPv6 connectiviteit niet beschikbaar is op uw netwerk, zal deze plugin het wachten op antwoorden voor IPv6 adressen door dnscrypt omzetters uitschakelen. Dit kan uw browser ervaring verbeteren.</value>
   </data>
   <data name="advanced_settings_refresh_resolver_title" xml:space="preserve">
-    <value>Refresh public resolver list</value>
+    <value>Publieke omzetterslijst vernieuwen</value>
   </data>
   <data name="advanced_settings_refresh_resolver_text" xml:space="preserve">
-    <value>Refresh the list of public resolvers (all downloads are validated with a minisign signature)</value>
+    <value>Vernieuwen de lijst met publieke omzetters (alle downloads zijn gevalideerd dmv een minisign handtekening)</value>
   </data>
   <data name="advanced_settings_debug_title" xml:space="preserve">
     <value>Debug Mode</value>
   </data>
   <data name="advanced_settings_refresh_resolver_button" xml:space="preserve">
-    <value>Download List</value>
+    <value>Download Lijst</value>
   </data>
   <data name="advanced_settings_uninstall_title" xml:space="preserve">
-    <value>Uninstall Services</value>
+    <value>Services Verwijderen</value>
   </data>
   <data name="advanced_settings_uninstall_text" xml:space="preserve">
-    <value>Remove all installed windows services</value>
+    <value>Verwijder alle geïnstalleerde windows services</value>
   </data>
   <data name="advanced_settings_uninstall_button" xml:space="preserve">
-    <value>Uninstall all services</value>
+    <value>Verwijder alle services</value>
   </data>
   <data name="advanced_settings_plugins_title" xml:space="preserve">
     <value>Plugins</value>
   </data>
   <data name="advanced_settings_plugins_text" xml:space="preserve">
-    <value>Enable or disable extra settings with plugins</value>
+    <value>Schakel extra instellingen in of uit met plugins</value>
   </data>
   <data name="advanced_settings_plugins_button" xml:space="preserve">
-    <value>Open plugin manager</value>
+    <value>Pluginbeheerder openen</value>
   </data>
   <data name="advanced_settings_transport_tcp_title" xml:space="preserve">
-    <value>Transport Settings</value>
+    <value>Transportinstellingen</value>
   </data>
   <data name="advanced_settings_transport_tcp_text" xml:space="preserve">
-    <value>Use TCP port 443 instead of UDP port 443 (TCP is slower than UDP)</value>
+    <value>Gebruik TCP poort 443 in plaats van UDP poort 443 (TCP is trager dan UDP)</value>
   </data>
   <data name="advanced_settings_global_resolver_title" xml:space="preserve">
-    <value>Global Resolver</value>
+    <value>Globale Omzetter</value>
   </data>
   <data name="advanced_settings_global_resolver_text" xml:space="preserve">
-    <value>If you want this computer to act as gateway device for others (eg: smartphones or other computers)</value>
+    <value>Indien u wilt dat deze computer als gateway fungeert voor andere toestellen (bv: smartphones of andere computers)</value>
   </data>
   <data name="about_used_software" xml:space="preserve">
-    <value>Used software</value>
+    <value>Gebruikte software</value>
   </data>
   <data name="about_license" xml:space="preserve">
-    <value>License</value>
+    <value>Licentie</value>
   </data>
   <data name="about_special_thanks" xml:space="preserve">
-    <value>Special Thanks to</value>
+    <value>Met grote dank aan</value>
   </data>
   <data name="about_thanks_frank_title" xml:space="preserve">
     <value>Frank Denis (@jedisct1) - https://dnscrypt.org (@jedisct1)</value>
   </data>
   <data name="about_thanks_frank_text" xml:space="preserve">
-    <value>- for developing libsodium and DNSCrypt!</value>
+    <value>- voor het ontwikkelen van libsodium en DNSCrypt!</value>
   </data>
   <data name="about_thanks_bytejail_text" xml:space="preserve">
-    <value>- for funding this project!</value>
+    <value>- voor het financieren van dit project!</value>
   </data>
   <data name="about_thanks_bytejail_title" xml:space="preserve">
-    <value>The EAM GmbH and bytejail - https://bytejail.com</value>
+    <value>EAM GmbH en bytejail - https://bytejail.com</value>
   </data>
   <data name="log_plugin_text" xml:space="preserve">
-    <value>This plugin logs the DNS queries received by the proxy.
-The logs are stored in a local file.</value>
+    <value>Deze plugin logt alle DNS queris ontvangen door de proxy.
+De logs worden in een lokaal bestand bewaard.</value>
   </data>
   <data name="log_plugin_title" xml:space="preserve">
     <value>Logging</value>
   </data>
   <data name="log_plugin_select_folder" xml:space="preserve">
-    <value>Select a log folder</value>
+    <value>Selecteer een log folder</value>
   </data>
   <data name="dialog_plugins_save_button_tooltip" xml:space="preserve">
     <value>OK</value>
   </data>
   <data name="dialog_message_update_standard_text" xml:space="preserve">
-    <value>There is a new Simple DNSCrypt version ({0}) available. Do you want to update now?</value>
+    <value>Er is een nieuwe Simple DNSCrypt versie ({0}) beschikbaar. Wilt u nu updaten?</value>
   </data>
   <data name="dialog_message_update_standard_title" xml:space="preserve">
-    <value>Application Update</value>
+    <value>Programma Update</value>
   </data>
   <data name="window_update_title" xml:space="preserve">
-    <value>Stay tuned</value>
+    <value>Blijf up-to-date</value>
   </data>
   <data name="yes" xml:space="preserve">
-    <value>yes</value>
+    <value>ja</value>
   </data>
   <data name="no" xml:space="preserve">
-    <value>no</value>
+    <value>nee</value>
   </data>
   <data name="ok" xml:space="preserve">
     <value>OK</value>
   </data>
   <data name="cancel" xml:space="preserve">
-    <value>cancel</value>
+    <value>annuleer</value>
   </data>
   <data name="dialog_update_title" xml:space="preserve">
     <value>Downloads</value>
   </data>
   <data name="dialog_update_signature" xml:space="preserve">
-    <value>Signature</value>
+    <value>Handtekening</value>
   </data>
   <data name="dialog_update_installer" xml:space="preserve">
-    <value>Installer</value>
+    <value>Installatie</value>
   </data>
   <data name="dialog_message_update_critical_title" xml:space="preserve">
-    <value>Critical Application Update</value>
+    <value>Kritische Programma Update</value>
   </data>
   <data name="dialog_message_update_critical_text" xml:space="preserve">
-    <value>There is a new Simple DNSCrypt version ({0}) available. The update is marked as critical, so you really should do the update now! Do you want to update now?</value>
+    <value>Er is een nieuwe Simple DNSCrypt versie ({0}) beschikbaar. De update wordt als kritisch beschouwd, dus u wordt aangeraden de update meteen door te voeren! Wilt u nu updaten?</value>
   </data>
   <data name="default_settings_save_port" xml:space="preserve">
     <value>Save</value>
   </data>
   <data name="default_settings_info_port" xml:space="preserve">
-    <value>DNSCrypt will listen on this port (default: 53)</value>
+    <value>DNSCrypt zal op deze poort te luisteren (standaard: 53)</value>
   </data>
 </root>

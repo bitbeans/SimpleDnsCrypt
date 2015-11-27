@@ -268,6 +268,15 @@ namespace SimpleDnsCrypt.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die DNSCrypt will listen on this port (default: 53) ähnelt.
+        /// </summary>
+        internal static string default_settings_info_port {
+            get {
+                return ResourceManager.GetString("default_settings_info_port", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Name (FQDN) ähnelt.
         /// </summary>
         internal static string default_settings_name {
@@ -336,6 +345,15 @@ namespace SimpleDnsCrypt.Resources {
         internal static string default_settings_resolver {
             get {
                 return ResourceManager.GetString("default_settings_resolver", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Save ähnelt.
+        /// </summary>
+        internal static string default_settings_save_port {
+            get {
+                return ResourceManager.GetString("default_settings_save_port", resourceCulture);
             }
         }
         
@@ -421,7 +439,7 @@ namespace SimpleDnsCrypt.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die There were not found all the necessary files in dnscrypt proxy folder, reinstalling the application is recommended. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Not all the necessary files in dnscrypt proxy folder are found, reinstalling the application is recommended. ähnelt.
         /// </summary>
         internal static string dialog_message_missing_proxy_files {
             get {
@@ -448,7 +466,7 @@ namespace SimpleDnsCrypt.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die There is a new Simple DNSCrypt version ({0}) available. The update is marked as critical, so you really should to the update now! Do you want to update now? ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die There is a new Simple DNSCrypt version ({0}) available. The update is marked as critical, so you really should do the update now! Do you want to update now? ähnelt.
         /// </summary>
         internal static string dialog_message_update_critical_text {
             get {
@@ -611,7 +629,7 @@ namespace SimpleDnsCrypt.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Ok ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die OK ähnelt.
         /// </summary>
         internal static string ok {
             get {

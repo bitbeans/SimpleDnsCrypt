@@ -142,10 +142,15 @@
         /// </summary>
         public const string DefaultLogFileName = "dns.log";
 
-        /// <summary>
-        ///     List of interfaces, marked as hidden.
-        /// </summary>
-        public static readonly string[] NetworkInterfaceBlacklist =
+	    /// <summary>
+	    ///     If true, the resolver list will be downloaded on application start.
+	    /// </summary>
+	    public const bool UpdateResolverListOnStart = true;
+
+		/// <summary>
+		///     List of interfaces, marked as hidden.
+		/// </summary>
+		public static readonly string[] NetworkInterfaceBlacklist =
         {
             "Microsoft Virtual",
             "Hamachi Network",
@@ -157,8 +162,9 @@
             "Teredo Tunneling Pseudo-Interface",
             "Microsoft Wi-Fi Direct Virtual",
             "Von Microsoft gehosteter",
-            "Microsoft hosted"
-        };
+            "Microsoft hosted",
+			"Virtueller Microsoft-Adapter"
+		};
 
         /// <summary>
         ///     List of files must exist.

@@ -76,5 +76,10 @@ namespace SimpleDnsCrypt.Models
         ///     The TXT entry of the providers resolver.
         /// </summary>
         public string ProviderPublicKeyTextRecord { get; set; }
-    }
+
+		/// <summary>
+		///     The local port (not part of the CSV file).
+		/// </summary>
+		public int LocalPort { get; set; }
+	}
 }

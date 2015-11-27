@@ -302,4 +302,10 @@ The logs are stored in a local file.</value>
   <data name="dialog_message_update_critical_text" xml:space="preserve">
     <value>There is a new Simple DNSCrypt version ({0}) available. The update is marked as critical, so you really should do the update now! Do you want to update now?</value>
   </data>
+  <data name="default_settings_save_port" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="default_settings_info_port" xml:space="preserve">
+    <value>DNSCrypt will listen on this port (default: 53)</value>
+  </data>
 </root>

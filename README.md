@@ -11,7 +11,6 @@ Missing features:
 
 - Secondary resolver support (soon available) - see [#3](https://github.com/bitbeans/SimpleDnsCrypt/issues/3)
 - IPv6 support - see [#1](https://github.com/bitbeans/SimpleDnsCrypt/issues/1)
-- Custom ports - see [#7](https://github.com/bitbeans/SimpleDnsCrypt/issues/7)
 
 ### Installation
 
@@ -83,6 +82,7 @@ SimpleDNSCrypt currently speaks the following languages:
 - english
 - german
 - indonesia (@christantoan)
+- dutch (Tim Tyteca)
 
 If you are able to translate the the resx files into more languages, please feel free to send a pull request. 
 
