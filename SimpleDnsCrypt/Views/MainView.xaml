@@ -853,53 +853,6 @@
                                     </Grid>
                                 </StackPanel>
                             </Border>
-                            <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,14,0,0">
-                                <Border.BorderBrush>
-                                    <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile"
-                                                  Opacity="0.4">
-                                        <DrawingBrush.Drawing>
-                                            <DrawingGroup>
-                                                <GeometryDrawing Brush="#FF8ab329">
-                                                    <GeometryDrawing.Geometry>
-                                                        <GeometryGroup>
-                                                            <RectangleGeometry Rect="0,0,50,50" />
-                                                            <RectangleGeometry Rect="50,50,50,50" />
-                                                        </GeometryGroup>
-                                                    </GeometryDrawing.Geometry>
-                                                </GeometryDrawing>
-                                            </DrawingGroup>
-                                        </DrawingBrush.Drawing>
-                                    </DrawingBrush>
-                                </Border.BorderBrush>
-                                <StackPanel Orientation="Vertical">
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="Auto" />
-                                            <ColumnDefinition Width="Auto" />
-                                            <ColumnDefinition Width="*" />
-                                        </Grid.ColumnDefinitions>
-                                        <TextBlock Grid.Column="0" Grid.Row="0" Text="&#xf121;"
-                                                   FontFamily="/Resources/fontawesome-webfont.ttf#FontAwesome"
-                                                   FontSize="20"
-                                                   HorizontalAlignment="Left" VerticalAlignment="Center"
-                                                   Foreground="#FF8ab329">
-                                            <TextBlock.OpacityMask>
-                                                <SolidColorBrush Color="Black" Opacity="0.7" />
-                                            </TextBlock.OpacityMask>
-                                        </TextBlock>
-                                        <TextBlock Grid.Column="1" Grid.Row="0" Text="{lex:Loc Key=advanced_settings_debug_title}"
-                                                   TextWrapping="Wrap" VerticalAlignment="Center"
-                                                   Foreground="#FF8ab329" FontSize="20"
-                                                   Opacity="0.7" Margin="5,0,0,3" FontWeight="Bold">
-                                        </TextBlock>
-                                    </Grid>
-                                    <controls:ToggleSwitchButton
-                                        IsEnabled="True" Cursor="Hand"
-                                        IsChecked="{Binding IsDebugModeEnabled}"
-                                        HorizontalAlignment="Right" VerticalAlignment="Top">
-                                    </controls:ToggleSwitchButton>
-                                </StackPanel>
-                            </Border>
                         </StackPanel>
                     </TabItem.Content>
                 </TabItem>

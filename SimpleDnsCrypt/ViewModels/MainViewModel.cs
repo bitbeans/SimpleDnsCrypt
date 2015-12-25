@@ -30,7 +30,6 @@ namespace SimpleDnsCrypt.ViewModels
 
         private readonly IWindowManager _windowManager;
         private bool _actAsGlobalGateway;
-        private bool _isDebugModeEnabled;
         private bool _isPrimaryResolverRunning;
         private bool _isRefreshingResolverList;
         private bool _isSecondaryResolverRunning;
@@ -92,7 +91,6 @@ namespace SimpleDnsCrypt.ViewModels
 
             DisplayName = string.Format("{0} {1} ({2})", Global.ApplicationName, VersionUtilities.PublishVersion,
                 LocalizationEx.GetUiString("global_ipv6_disabled", Thread.CurrentThread.CurrentCulture));
-            _isDebugModeEnabled = false;
             _resolvers = new List<DnsCryptProxyEntry>();
             _isWorkingOnPrimaryService = false;
             _isWorkingOnSecondaryService = false;
@@ -590,25 +588,6 @@ namespace SimpleDnsCrypt.ViewModels
                         Thread.Sleep(Global.ServiceStartTime);
                         _isPrimaryResolverRunning = PrimaryDnsCryptProxyManager.IsDnsCryptProxyRunning();
                         NotifyOfPropertyChange(() => IsPrimaryResolverRunning);
-
-                        if (IsDebugModeEnabled)
-                        {
-                            if (installResult.Success)
-                            {
-                                _windowManager.ShowMetroMessageBox(
-                                    installResult.StandardOutput,
-                                    LocalizationEx.GetUiString("dialog_success_title",
-                                        Thread.CurrentThread.CurrentCulture),
-                                    MessageBoxButton.OK, BoxType.Default);
-                            }
-                            else
-                            {
-                                _windowManager.ShowMetroMessageBox(
-                                    installResult.StandardOutput,
-                                    LocalizationEx.GetUiString("dialog_error_title", Thread.CurrentThread.CurrentCulture),
-                                    MessageBoxButton.OK, BoxType.Error);
-                            }
-                        }
                     }
                 }
                 IsWorkingOnPrimaryService = false;
@@ -644,25 +623,6 @@ namespace SimpleDnsCrypt.ViewModels
                         Thread.Sleep(Global.ServiceStartTime);
                         _isSecondaryResolverRunning = SecondaryDnsCryptProxyManager.IsDnsCryptProxyRunning();
                         NotifyOfPropertyChange(() => IsSecondaryResolverRunning);
-
-                        if (IsDebugModeEnabled)
-                        {
-                            if (installResult.Success)
-                            {
-                                _windowManager.ShowMetroMessageBox(
-                                    installResult.StandardOutput,
-                                    LocalizationEx.GetUiString("dialog_success_title",
-                                        Thread.CurrentThread.CurrentCulture),
-                                    MessageBoxButton.OK, BoxType.Default);
-                            }
-                            else
-                            {
-                                _windowManager.ShowMetroMessageBox(
-                                    installResult.StandardOutput,
-                                    LocalizationEx.GetUiString("dialog_error_title", Thread.CurrentThread.CurrentCulture),
-                                    MessageBoxButton.OK, BoxType.Error);
-                            }
-                        }
                     }
                 }
                 IsWorkingOnSecondaryService = false;
@@ -973,17 +933,6 @@ namespace SimpleDnsCrypt.ViewModels
                 NotifyOfPropertyChange(() => IsUninstallingServices);
             }
         }
-
-        public bool IsDebugModeEnabled
-        {
-            get { return _isDebugModeEnabled; }
-            set
-            {
-                _isDebugModeEnabled = value;
-                NotifyOfPropertyChange(() => IsDebugModeEnabled);
-            }
-        }
-
         #endregion
     }
 }
