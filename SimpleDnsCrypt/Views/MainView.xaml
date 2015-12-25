@@ -590,7 +590,7 @@
                                                                    Foreground="{DynamicResource AccentColorBrush}"
                                                                    Margin="15,16" HorizontalAlignment="Center"
                                                                    VerticalAlignment="Center" Grid.ColumnSpan="2" />
-                                        <Button x:Name="RefreshResolverList" Grid.Column="2"
+                                        <Button x:Name="RefreshResolverListAsync" Grid.Column="2"
                                                 IsEnabled="{Binding IsRefreshingResolverList, Converter={StaticResource ReverseBoolToEnabledConverter}}"
                                                 Cursor="Hand" Width="180" Content="{lex:Loc Key=advanced_settings_refresh_resolver_button}"
                                                 Margin="0,10,0,0" Style="{StaticResource AccentedSquareButtonStyle}"

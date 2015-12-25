@@ -32,7 +32,8 @@ namespace SimpleDnsCrypt.ViewModels
         private bool _actAsGlobalGateway;
         private bool _isPrimaryResolverRunning;
         private bool _isRefreshingResolverList;
-        private bool _isSecondaryResolverRunning;
+		private bool _updateResolverListOnStart;
+		private bool _isSecondaryResolverRunning;
         private bool _isUninstallingServices;
         private bool _isWorkingOnPrimaryService;
         private bool _isWorkingOnSecondaryService;
@@ -92,6 +93,8 @@ namespace SimpleDnsCrypt.ViewModels
             DisplayName = string.Format("{0} {1} ({2})", Global.ApplicationName, VersionUtilities.PublishVersion,
                 LocalizationEx.GetUiString("global_ipv6_disabled", Thread.CurrentThread.CurrentCulture));
             _resolvers = new List<DnsCryptProxyEntry>();
+			//TODO: make UpdateResolverListOnStart configurable by user
+			_updateResolverListOnStart = Global.UpdateResolverListOnStart;
             _isWorkingOnPrimaryService = false;
             _isWorkingOnSecondaryService = false;
 
@@ -129,16 +132,13 @@ namespace SimpleDnsCrypt.ViewModels
                 Global.DnsCryptProxyFolder, Global.DnsCryptProxyResolverListName);
             var proxyListSignature = Path.Combine(Directory.GetCurrentDirectory(),
                 Global.DnsCryptProxyFolder, Global.DnsCryptProxySignatureFileName);
-			//TODO: make UpdateResolverListOnStart configurable
-			if (!File.Exists(proxyList) || !File.Exists(proxyListSignature) || Global.UpdateResolverListOnStart)
+			if (!File.Exists(proxyList) || !File.Exists(proxyListSignature) || UpdateResolverListOnStart)
             {
-				// download and verify the proxy list if there is none.
-				// it`s a really small file, so go on.
-	            RefreshResolverList();
-                //DnsCryptProxyListManager.UpdateResolverListAsync().ConfigureAwait(false);
-            }
+				// download and verify the proxy list if there is no one.
+				AsyncHelpers.RunSync(DnsCryptProxyListManager.UpdateResolverListAsync);
+			}
 
-            var dnsProxyList =
+			var dnsProxyList =
                 DnsCryptProxyListManager.ReadProxyList(proxyList, proxyListSignature, true);
             if (dnsProxyList != null && dnsProxyList.Any())
             {
@@ -173,8 +173,8 @@ namespace SimpleDnsCrypt.ViewModels
                 Environment.Exit(1);
             }
 
-            // if there is no selected primary resolver, add a default resolver
-            if (PrimaryResolver == null)
+			// if there is no selected primary resolver, add a default resolver
+			if (PrimaryResolver == null)
             {
                 var tmpResolver = dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultPrimaryResolverName));
                 if (tmpResolver == null)
@@ -313,10 +313,23 @@ namespace SimpleDnsCrypt.ViewModels
             }
         }
 
-        /// <summary>
-        ///     Formatted name of the primary resolver.
-        /// </summary>
-        public string PrimaryResolverTitle
+		/// <summary>
+		///     Update the resolver csv on startup.
+		/// </summary>
+		public bool UpdateResolverListOnStart
+		{
+			get { return _updateResolverListOnStart; }
+			set
+			{
+				_updateResolverListOnStart = value;
+				NotifyOfPropertyChange(() => UpdateResolverListOnStart);
+			}
+		}
+
+		/// <summary>
+		///     Formatted name of the primary resolver.
+		/// </summary>
+		public string PrimaryResolverTitle
         {
             get { return _primaryResolverTitle; }
             set
@@ -419,8 +432,8 @@ namespace SimpleDnsCrypt.ViewModels
                 var update = await ApplicationUpdater.CheckForRemoteUpdateAsync().ConfigureAwait(true);
                 if (update.CanUpdate)
                 {
-                    var boxType = (update.Update.Type == UpdateType.Standard) ? BoxType.Default : BoxType.Warning;
-                    var boxText = (update.Update.Type == UpdateType.Standard)
+                    var boxType = update.Update.Type == UpdateType.Standard ? BoxType.Default : BoxType.Warning;
+                    var boxText = update.Update.Type == UpdateType.Standard
                         ? LocalizationEx.GetUiString("dialog_message_update_standard_text",
                             Thread.CurrentThread.CurrentCulture)
                         : LocalizationEx.GetUiString("dialog_message_update_critical_text",
@@ -773,17 +786,17 @@ namespace SimpleDnsCrypt.ViewModels
             }
         }
 
-        /// <summary>
-        ///     Refresh the resolver list from the newest csv file.
-        /// </summary>
-        /// <exception cref="UnauthorizedAccessException"></exception>
-        /// <exception cref="NotSupportedException"></exception>
-        /// <exception cref="ArgumentOutOfRangeException"></exception>
-        /// <exception cref="ArgumentException"></exception>
-        /// <exception cref="ArgumentNullException"></exception>
-        public async void RefreshResolverList()
+		/// <summary>
+		///     Refresh the resolver list from the newest csv file.
+		/// </summary>
+		/// <exception cref="UnauthorizedAccessException"></exception>
+		/// <exception cref="NotSupportedException"></exception>
+		/// <exception cref="ArgumentOutOfRangeException"></exception>
+		/// <exception cref="ArgumentException"></exception>
+		/// <exception cref="ArgumentNullException"></exception>
+		public async void RefreshResolverListAsync()
         {
-            IsRefreshingResolverList = true;
+			IsRefreshingResolverList = true;
             var state = await DnsCryptProxyListManager.UpdateResolverListAsync().ConfigureAwait(false);
             await Task.Run(() =>
             {
@@ -800,7 +813,7 @@ namespace SimpleDnsCrypt.ViewModels
                     DnsCryptProxyListManager.ReadProxyList(proxyList, proxyListSignature, true);
                 if (dnsProxyList != null && dnsProxyList.Any())
                 {
-                    _resolvers.Clear();
+					Resolvers.Clear();
                     foreach (var dnsProxy in dnsProxyList)
                     {
                         if (
@@ -808,14 +821,16 @@ namespace SimpleDnsCrypt.ViewModels
                                 PrimaryDnsCryptProxyManager.DnsCryptProxy.Parameter.ProviderKey))
                         {
                             _primaryResolver = dnsProxy;
-                        }
+							// restore the local port
+							_primaryResolver.LocalPort = PrimaryDnsCryptProxyManager.DnsCryptProxy.Parameter.LocalPort;
+						}
                         if (
                             dnsProxy.ProviderPublicKey.Equals(
                                 SecondaryDnsCryptProxyManager.DnsCryptProxy.Parameter.ProviderKey))
                         {
                             _secondaryResolver = dnsProxy;
                         }
-                        _resolvers.Add(dnsProxy);
+						Resolvers.Add(dnsProxy);
                     }
                 }
             }
@@ -825,6 +840,7 @@ namespace SimpleDnsCrypt.ViewModels
                     LocalizationEx.GetUiString("dialog_message_refresh_failed", Thread.CurrentThread.CurrentCulture),
                     LocalizationEx.GetUiString("dialog_warning_title", Thread.CurrentThread.CurrentCulture),
                     MessageBoxButton.OK, BoxType.Warning);
+	            
             }
             IsRefreshingResolverList = false;
         }

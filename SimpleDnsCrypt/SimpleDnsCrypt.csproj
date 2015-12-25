@@ -148,6 +148,7 @@
       <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
     <Compile Include="Tools\ApplicationUpdater.cs" />
+    <Compile Include="Tools\AsyncHelpers.cs" />
     <Compile Include="Tools\DnsCryptProxyListManager.cs" />
     <Compile Include="Tools\DnscryptProxyManager.cs" />
     <Compile Include="Tools\IShell.cs" />
