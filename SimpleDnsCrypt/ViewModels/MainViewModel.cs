@@ -705,7 +705,8 @@ namespace SimpleDnsCrypt.ViewModels
                 {
                     if (!string.IsNullOrEmpty(PrimaryResolver.ProviderPublicKey))
                     {
-                        if (PrimaryDnsCryptProxyManager.DnsCryptProxy.IsReady)
+						// only add the local address if the proxy is running 
+						if (PrimaryDnsCryptProxyManager.DnsCryptProxy.IsReady && PrimaryDnsCryptProxyManager.IsDnsCryptProxyRunning())
                         {
                             dns.Add(Global.PrimaryResolverAddress);
                         }
@@ -715,7 +716,8 @@ namespace SimpleDnsCrypt.ViewModels
                 {
                     if (!string.IsNullOrEmpty(SecondaryResolver.ProviderPublicKey))
                     {
-                        if (SecondaryDnsCryptProxyManager.DnsCryptProxy.IsReady)
+						// only add the local address if the proxy is running 
+						if (SecondaryDnsCryptProxyManager.DnsCryptProxy.IsReady && SecondaryDnsCryptProxyManager.IsDnsCryptProxyRunning())
                         {
                             dns.Add(Global.SecondaryResolverAddress);
                         }
@@ -724,6 +726,7 @@ namespace SimpleDnsCrypt.ViewModels
 				var status = LocalNetworkInterfaceManager.SetNameservers(localNetworkInterface, dns, NetworkInterfaceComponent.IPv4);
                 localNetworkInterface.UseDnsCrypt = status;
             }
+	        LoadNetworkCards();
         }
 
         #region Helper
