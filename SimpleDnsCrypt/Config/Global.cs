@@ -105,22 +105,22 @@
         /// <summary>
         ///     The default pimary resolver, if no resolver is set (on start up)
         /// </summary>
-        public const string DefaultPrimaryResolverName = "dnsmachine.net-de";
+        public const string DefaultPrimaryResolverName = "dnscrypt.me";
 
         /// <summary>
         ///     The backup primary resolver, if DefaultPrimaryResolverName is not in the list.
         /// </summary>
-        public const string DefaultPrimaryBackupResolverName = "fvz-rec-de-fra-01";
+        public const string DefaultPrimaryBackupResolverName = "dnscrypt.org-fr";
 
         /// <summary>
         ///     The default secondary resolver, if no resolver is set (on start up)
         /// </summary>
-        public const string DefaultSecondaryResolverName = "dnscrypt.org-fr";
+        public const string DefaultSecondaryResolverName = "d0wn-random-ns1";
 
         /// <summary>
         ///     The backup secondary resolver, if DefaultSecondaryResolverName is not in the list.
         /// </summary>
-        public const string DefaultSecondaryBackupResolverName = "4armed";
+        public const string DefaultSecondaryBackupResolverName = "dnscrypt.org-fr";
 
         /// <summary>
         ///     Time we wait on a service restart (ms).
