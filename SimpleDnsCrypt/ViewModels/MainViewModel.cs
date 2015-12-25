@@ -132,11 +132,12 @@ namespace SimpleDnsCrypt.ViewModels
             var proxyListSignature = Path.Combine(Directory.GetCurrentDirectory(),
                 Global.DnsCryptProxyFolder, Global.DnsCryptProxySignatureFileName);
 			//TODO: make UpdateResolverListOnStart configurable
-			if (!File.Exists(proxyList) || Global.UpdateResolverListOnStart)
+			if (!File.Exists(proxyList) || !File.Exists(proxyListSignature) || Global.UpdateResolverListOnStart)
             {
-                // download and verify the proxy list if there is none.
-                // it`s a really small file, so go on.
-                DnsCryptProxyListManager.UpdateResolverListAsync();
+				// download and verify the proxy list if there is none.
+				// it`s a really small file, so go on.
+	            RefreshResolverList();
+                //DnsCryptProxyListManager.UpdateResolverListAsync().ConfigureAwait(false);
             }
 
             var dnsProxyList =
