@@ -5,3 +5,4 @@ Those listed below have contributed to `SimpleDnsCrypt`, and are the copyright h
  * @bitbeans - Christian Hermann <c.hermann@bitbeans.de>
  * @christantoan
  * @tuphamnguyen
+ * @thedroidgeek

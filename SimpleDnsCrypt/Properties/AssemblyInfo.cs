@@ -6,7 +6,7 @@ using System.Windows;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Simple DNSCrypt")]
-[assembly: AssemblyCopyright("Copyright © 2015 Christian Hermann")]
+[assembly: AssemblyCopyright("Copyright © 2015 - 2016 Christian Hermann")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
