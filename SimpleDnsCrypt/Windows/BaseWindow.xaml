@@ -4,7 +4,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
         xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
-        Title="SimpleDnsCrypt" MinWidth="800" Width="800" MinHeight="720" Height="720" SizeToContent="WidthAndHeight"
+        Title="SimpleDnsCrypt" MinWidth="800" Width="800" MinHeight="360" SizeToContent="WidthAndHeight"
         GlowBrush="{DynamicResource AccentColorBrush}" 
         Icon="../Images/simplednscrypt.ico" ShowIconOnTitleBar="False" 
         WindowStartupLocation="CenterScreen" TitleCaps="False" Topmost="False" ShowMaxRestoreButton="False" ResizeMode="CanResizeWithGrip" ShowInTaskbar="True" ShowMinButton="True"
