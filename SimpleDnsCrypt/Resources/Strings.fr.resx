@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+		Microsoft ResX Schema
+
+		Version 1.3
+
+		The primary goals of this format is to allow a simple XML format 
+		that is mostly human readable. The generation and parsing of the 
+		various data types are done through the TypeConverter classes 
+		associated with the data types.
+
+		Example:
+
+		... ado.net/XML headers & schema ...
+		<resheader name="resmimetype">text/microsoft-resx</resheader>
+		<resheader name="version">1.3</resheader>
+		<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+		<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+		<data name="Name1">this is my long string</data>
+		<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+		<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+			[base64 mime encoded serialized .NET Framework object]
+		</data>
+		<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+			[base64 mime encoded string representing a byte array form of the .NET Framework object]
+		</data>
+
+		There are any number of "resheader" rows that contain simple 
+		name/value pairs.
+
+		Each data row contains a name, and value. The row also contains a 
+		type or mimetype. Type corresponds to a .NET class that support 
+		text/value conversion through the TypeConverter architecture. 
+		Classes that don't support this are serialized and stored with the 
+		mimetype set.
+
+		The mimetype is used for serialized objects, and tells the 
+		ResXResourceReader how to depersist the object. This is currently not 
+		extensible. For a given mimetype the value must be set accordingly:
+
+		Note - application/x-microsoft.net.object.binary.base64 is the format 
+		that the ResXResourceWriter will generate, however the reader can 
+		read any of the formats listed below.
+
+		mimetype: application/x-microsoft.net.object.binary.base64
+		value   : The object must be serialized with 
+			: System.Serialization.Formatters.Binary.BinaryFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.soap.base64
+		value   : The object must be serialized with 
+			: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.bytearray.base64
+		value   : The object must be serialized into a byte array 
+			: using a System.ComponentModel.TypeConverter
+			: and then encoded with base64 encoding.
+	-->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="default_settings_network_cards" xml:space="preserve">
+    <value>Cartes Réseaux</value>
+  </data>
+  <data name="default_settings_show_hidden_cards" xml:space="preserve">
+    <value>Montrer les cartes cachées</value>
+  </data>
+  <data name="tab_standard_settings" xml:space="preserve">
+    <value>Réglages standards</value>
+  </data>
+  <data name="tab_about" xml:space="preserve">
+    <value>A propos</value>
+  </data>
+  <data name="tab_advanced_settings" xml:space="preserve">
+    <value>Réglages avancés</value>
+  </data>
+  <data name="default_settings_services" xml:space="preserve">
+    <value>Services</value>
+  </data>
+  <data name="default_settings_primary_text" xml:space="preserve">
+    <value>Le premier résolveur</value>
+  </data>
+  <data name="default_settings_secondary_text" xml:space="preserve">
+    <value>Le second résolveur (optionel)</value>
+  </data>
+  <data name="default_settings_primary_service" xml:space="preserve">
+    <value>Service DNSCrypt primaire</value>
+  </data>
+  <data name="default_settings_secondary_service" xml:space="preserve">
+    <value>Service DNSCrypt secondaire</value>
+  </data>
+  <data name="default_settings_resolver" xml:space="preserve">
+    <value>Résolveur</value>
+  </data>
+  <data name="default_settings_server_address" xml:space="preserve">
+    <value>Adresse serveur</value>
+  </data>
+  <data name="default_settings_dnssec" xml:space="preserve">
+    <value>DNSSEC</value>
+  </data>
+  <data name="default_settings_no_logs" xml:space="preserve">
+    <value>Pas de Logs</value>
+  </data>
+  <data name="default_settings_name" xml:space="preserve">
+    <value>Nom (FQDN)</value>
+  </data>
+  <data name="default_settings_public_key" xml:space="preserve">
+    <value>Clé publique</value>
+  </data>
+  <data name="default_settings_secondary_header" xml:space="preserve">
+    <value>Résolveur Secondaire</value>
+  </data>
+  <data name="default_settings_primary_header" xml:space="preserve">
+    <value>Résolveur Primaire</value>
+  </data>
+  <data name="global_ipv6_disabled" xml:space="preserve">
+    <value>IPv6 désactivé</value>
+  </data>
+  <data name="dialog_error_title" xml:space="preserve">
+    <value>Erreur</value>
+  </data>
+  <data name="dialog_success_title" xml:space="preserve">
+    <value>Succes</value>
+  </data>
+  <data name="dialog_uninstall_title" xml:space="preserve">
+    <value>Désinstallation des services</value>
+  </data>
+  <data name="dialog_warning_title" xml:space="preserve">
+    <value>Attention</value>
+  </data>
+  <data name="dialog_message_refresh_failed" xml:space="preserve">
+    <value>Echec de mis a jour de la liste des serveurs</value>
+  </data>
+  <data name="window_plugin_title" xml:space="preserve">
+    <value>Extensions disponibles</value>
+  </data>
+  <data name="dialog_message_uninstall" xml:space="preserve">
+    <value>Voulez vous désinstaller les services windows?</value>
+  </data>
+  <data name="dialog_message_missing_file" xml:space="preserve">
+    <value>Ne peus pas charger: {0} ou {1}.</value>
+  </data>
+  <data name="dialog_message_missing_proxy_files" xml:space="preserve">
+    <value>Tous les fichiers nécessaires n'ont pas été trouvé dans le dossier dnscrypt,Réinstaller l'application est recommandé</value>
+  </data>
+  <data name="dialog_message_bad_privileges" xml:space="preserve">
+    <value>Vous dever lancer l'application en tant qu'administrateur</value>
+  </data>
+  <data name="ipv6_speed_plugin_title" xml:space="preserve">
+    <value>Accelerer par les parametres IPV6 manquant</value>
+  </data>
+  <data name="ipv6_speed_plugin_text" xml:space="preserve">
+    <value>Si la connectivité IPv6 n'est pas disponibles sur votre réseau, ce plugin désactive l'attente des réponses sur les adresses IPv6 de résolveurs amont. Cela peut améliorer votre expérience de navigation web.</value>
+  </data>
+  <data name="advanced_settings_refresh_resolver_title" xml:space="preserve">
+    <value>Mettre à jour de la liste des résolveurs</value>
+  </data>
+  <data name="advanced_settings_refresh_resolver_text" xml:space="preserve">
+    <value>Mettre à jour la liste des résolveurs (Les téléchargements sont validés avec une  signature)</value>
+  </data>
+  <data name="advanced_settings_debug_title" xml:space="preserve">
+    <value>Mode Débogage</value>
+  </data>
+  <data name="advanced_settings_refresh_resolver_button" xml:space="preserve">
+    <value>Télécharger la liste</value>
+  </data>
+  <data name="advanced_settings_uninstall_title" xml:space="preserve">
+    <value>Désinstaller les services</value>
+  </data>
+  <data name="advanced_settings_uninstall_text" xml:space="preserve">
+    <value>Supprimer tous les services windows</value>
+  </data>
+  <data name="advanced_settings_uninstall_button" xml:space="preserve">
+    <value>Désinstaller les services</value>
+  </data>
+  <data name="advanced_settings_plugins_title" xml:space="preserve">
+    <value>Extensions</value>
+  </data>
+  <data name="advanced_settings_plugins_text" xml:space="preserve">
+    <value>Activer ou désactiver les réglages avec les extensions</value>
+  </data>
+  <data name="advanced_settings_plugins_button" xml:space="preserve">
+    <value>Ouvrir les gestionnaire d'extensions</value>
+  </data>
+  <data name="advanced_settings_transport_tcp_title" xml:space="preserve">
+    <value>Réglage du transport</value>
+  </data>
+  <data name="advanced_settings_transport_tcp_text" xml:space="preserve">
+    <value>Utiliser le port TCP 443 au lieu du port UDP 443 (TCP est plus lent qu' UDP)</value>
+  </data>
+  <data name="advanced_settings_global_resolver_title" xml:space="preserve">
+    <value>Résolveur Principal</value>
+  </data>
+  <data name="advanced_settings_global_resolver_text" xml:space="preserve">
+    <value>Si vous souhaitez que cet ordinateur soit une passerelle pour les autres (Par ex: smartphones ou autres PCs)</value>
+  </data>
+  <data name="about_used_software" xml:space="preserve">
+    <value>Logiciels utilisés</value>
+  </data>
+  <data name="about_license" xml:space="preserve">
+    <value>License</value>
+  </data>
+  <data name="about_special_thanks" xml:space="preserve">
+    <value>Remerciement Special à</value>
+  </data>
+  <data name="about_thanks_frank_title" xml:space="preserve">
+    <value>Frank Denis (@jedisct1) - https://dnscrypt.org (@jedisct1)</value>
+  </data>
+  <data name="about_thanks_frank_text" xml:space="preserve">
+    <value>- pour le developpement de  libsodium et DNSCrypt!</value>
+  </data>
+  <data name="about_thanks_bytejail_text" xml:space="preserve">
+    <value>- Pour avoir crée ce projet!</value>
+  </data>
+  <data name="about_thanks_bytejail_title" xml:space="preserve">
+    <value>The EAM GmbH and bytejail - https://bytejail.com</value>
+  </data>
+  <data name="log_plugin_text" xml:space="preserve">
+    <value>Cette extension enregistre les requettes DNS reçues par le proxy.
+Les enregistrements sont stockés dans un fichier local.</value>
+  </data>
+  <data name="log_plugin_title" xml:space="preserve">
+    <value>Enregistrement</value>
+  </data>
+  <data name="log_plugin_select_folder" xml:space="preserve">
+    <value>Selectionnner un dossier d'enregistrement</value>
+  </data>
+  <data name="dialog_plugins_save_button_tooltip" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="dialog_message_update_standard_text" xml:space="preserve">
+    <value>Il y a une nouvelle version de Simple DNSCrypt ({0}) disponible. Voulez vous faire la mise à jour maintenant ?</value>
+  </data>
+  <data name="dialog_message_update_standard_title" xml:space="preserve">
+    <value>Mis à jour de l'application</value>
+  </data>
+  <data name="window_update_title" xml:space="preserve">
+    <value>Rester connecté</value>
+  </data>
+  <data name="yes" xml:space="preserve">
+    <value>oui</value>
+  </data>
+  <data name="no" xml:space="preserve">
+    <value>non</value>
+  </data>
+  <data name="ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="cancel" xml:space="preserve">
+    <value>Abandoner</value>
+  </data>
+  <data name="dialog_update_title" xml:space="preserve">
+    <value>Telechargement</value>
+  </data>
+  <data name="dialog_update_signature" xml:space="preserve">
+    <value>Signature</value>
+  </data>
+  <data name="dialog_update_installer" xml:space="preserve">
+    <value>Installeur</value>
+  </data>
+  <data name="dialog_message_update_critical_title" xml:space="preserve">
+    <value>Mis à jour critique de l'application</value>
+  </data>
+  <data name="dialog_message_update_critical_text" xml:space="preserve">
+    <value>Il y a une nouvelle version de Simple DNSCrypt ({0}) disponible. Cette mise à jour est critique alors vous devriez faire une mise à jour! Voulez vous mettre à jour maintenant?</value>
+  </data>
+  <data name="default_settings_save_port" xml:space="preserve">
+    <value>Sauvegarder</value>
+  </data>
+  <data name="default_settings_info_port" xml:space="preserve">
+    <value>DNSCrypt écoutera sur ce port (default: 53)</value>
+  </data>
+</root>

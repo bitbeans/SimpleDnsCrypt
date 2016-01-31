@@ -81,6 +81,7 @@ SimpleDNSCrypt currently speaks the following languages:
 
 - Dutch (Tim Tyteca)
 - English
+- France (@didihu)
 - German
 - Indonesia (@christantoan)
 
