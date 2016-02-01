@@ -1,12 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDnsCrypt", "SimpleDnsCrypt\SimpleDnsCrypt.csproj", "{E7F52FEB-433A-4FA3-8053-13C211FA0A8A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1DC86CD2-86D6-40F5-9A0C-233B565067B9}"
 	ProjectSection(SolutionItems) = preProject
+		Contributors.md = Contributors.md
 		LICENSE.md = LICENSE.md
 		README.md = README.md
 		update.yml = update.yml
