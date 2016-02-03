@@ -82,9 +82,9 @@ SimpleDNSCrypt currently speaks the following languages:
 
 - Dutch (Tim Tyteca)
 - English
-- France (@didihu)
+- French (@didihu)
 - German
-- Indonesia (@christantoan)
+- Indonesian (@christantoan)
 
 If you are able to translate the resx files into more languages, please feel free to send a pull request. 
 
