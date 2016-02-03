@@ -185,7 +185,7 @@
             "libeay32.dll",
             "libgcc_s_dw2-1.dll",
             "libldns-1.dll",
-            "libsodium-13.dll",
+            "libsodium-18.dll",
             "libwinpthread-1.dll"
         };
     }

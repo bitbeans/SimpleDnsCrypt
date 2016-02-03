@@ -65,7 +65,7 @@ This software was tested on:
 
 |             | 32 bit      | 64 bit     |
 | :----------- | :-----------: | :-----------: | 
-| Windows 7    | untested        | tested        | 
+| Windows 7    | tested        | tested        | 
 | Windows 8.1     | untested        | tested       | 
 | Windows 10     | untested        | tested        | 
 
@@ -73,7 +73,8 @@ Feel free to report your success or failure: [here](https://github.com/bitbeans/
 
 ### Requirements
 
-This software targets .NET 4.5.
+- This software targets .NET 4.5.
+- It also requires Visual C++ Redistributable for Visual Studio 2015 x86.
 
 ### Translations
 
