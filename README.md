@@ -14,7 +14,7 @@ Missing features:
 
 ### Installation
 
-To install Simple DNSCrypt use the [latest MSI package](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.2.8/SimpleDNSCrypt.msi).
+To install Simple DNSCrypt use the [latest MSI package](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.3.0/SimpleDNSCrypt.msi).
 You don`t need to download the dnscrypt-resolvers.csv or the dnscrypt-proxy package at all.
 Both are included in the msi package, the dnscrypt-resolvers.csv can be updated from inside the software (and will be verified with minisign).
 
@@ -23,7 +23,7 @@ The MSI package and the SimpleDnsCrypt.exe are signed via a *COMODO RSA Code Sig
 The files are signed under the name: *EAM Experience Area Münsingen GmbH*
 
 You also can verify the MSI package with [minisign](https://jedisct1.github.io/minisign/).
-The minisign [signature](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.2.8/SimpleDNSCrypt.msi.minisig) can be verified with the following command:
+The minisign [signature](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.3.0/SimpleDNSCrypt.msi.minisig) can be verified with the following command:
 
 	minisign -Vm SimpleDNSCrypt.msi -P RWTSM+4BNNvkZPNkHgE88ETlhWa+0HDzU5CN8TvbyvmhVUcr6aQXfssV
 
@@ -67,7 +67,7 @@ This software was tested on:
 | :----------- | :-----------: | :-----------: | 
 | Windows 7    | tested        | tested        | 
 | Windows 8.1     | untested        | tested       | 
-| Windows 10     | untested        | tested        | 
+| Windows 10     | tested        | tested        | 
 
 Feel free to report your success or failure: [here](https://github.com/bitbeans/SimpleDnsCrypt/issues/5)
 
