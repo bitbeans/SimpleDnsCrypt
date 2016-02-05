@@ -59,6 +59,16 @@ This plugin causes the proxy to reply immediately to IPv6 requests, without havi
 This plugin logs the DNS queries received by the proxy. The logs are stored in a local file.
 You can choose the folder, where dnscrypt-proxy will store the logfile (dns.log).
 
+**libdcplugin_ldns_blocking**
+
+This plugin returns a REFUSED response if the query name is in a list of blacklisted names, or if at least one of the returned IP addresses happens to be in a list of blacklisted IPs.
+
+A file should list one entry per line.
+
+IPv4 and IPv6 addresses are supported. For names, leading and trailing wildcards (*) are also supported (e.g. *xxx*, *.example.com, ads.*)
+
+**Note:** If the file(s) is/are empty, the service may **not** start!
+
 ### Compatibility
 
 This software was tested on:
