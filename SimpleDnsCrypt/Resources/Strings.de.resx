@@ -307,4 +307,16 @@
   <data name="default_settings_info_port" xml:space="preserve">
     <value>DNSCrypt wird auf diesem Port lauschen (Standard: 53)</value>
   </data>
+  <data name="block_plugin_title" xml:space="preserve">
+    <value>Blockieren von Adressen und Domains</value>
+  </data>
+  <data name="block_plugin_sub_domains_header" xml:space="preserve">
+    <value>Domains blockieren</value>
+  </data>
+  <data name="block_plugin_sub_addresses_header" xml:space="preserve">
+    <value>IP Adressen blockieren</value>
+  </data>
+  <data name="block_plugin_text" xml:space="preserve">
+    <value>Dieses Plugin gibt als Response REFUSED zurück, falls die Anfrage in der Domain-Blacklist oder in der IP-Blacklist aufgeführt ist.</value>
+  </data>
 </root>

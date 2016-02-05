@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Diagnostics;
 using System.Dynamic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net.NetworkInformation;
@@ -69,8 +70,8 @@ namespace SimpleDnsCrypt.ViewModels
             LocalizeDictionary.Instance.SetCurrentThreadCulture = true;
             LocalizeDictionary.Instance.Culture = Thread.CurrentThread.CurrentCulture;
 
-            // this is already defined in the app.manifest, but to be sure check it again
-            if (!IsAdministrator())
+			// this is already defined in the app.manifest, but to be sure check it again
+			if (!IsAdministrator())
             {
                 _windowManager.ShowMetroMessageBox(
                     LocalizationEx.GetUiString("dialog_message_bad_privileges", Thread.CurrentThread.CurrentCulture),

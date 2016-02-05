@@ -308,4 +308,16 @@ The logs are stored in a local file.</value>
   <data name="default_settings_info_port" xml:space="preserve">
     <value>DNSCrypt will listen on this port (default: 53)</value>
   </data>
+  <data name="block_plugin_title" xml:space="preserve">
+    <value>Block addresses and domains</value>
+  </data>
+  <data name="block_plugin_text" xml:space="preserve">
+    <value>This plugin returns a REFUSED response if the query name is in a list of blacklisted names, or if at least one of the returned IP addresses happens to be in a list of blacklisted IPs.</value>
+  </data>
+  <data name="block_plugin_sub_domains_header" xml:space="preserve">
+    <value>Block domains</value>
+  </data>
+  <data name="block_plugin_sub_addresses_header" xml:space="preserve">
+    <value>Block addresses</value>
+  </data>
 </root>

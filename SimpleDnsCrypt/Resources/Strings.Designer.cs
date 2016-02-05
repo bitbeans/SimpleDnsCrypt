@@ -250,6 +250,42 @@ namespace SimpleDnsCrypt.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Block addresses ähnelt.
+        /// </summary>
+        internal static string block_plugin_sub_addresses_header {
+            get {
+                return ResourceManager.GetString("block_plugin_sub_addresses_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Block domains ähnelt.
+        /// </summary>
+        internal static string block_plugin_sub_domains_header {
+            get {
+                return ResourceManager.GetString("block_plugin_sub_domains_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die This plugin returns a REFUSED response if the query name is in a list of blacklisted names, or if at least one of the returned IP addresses happens to be in a list of blacklisted IPs. ähnelt.
+        /// </summary>
+        internal static string block_plugin_text {
+            get {
+                return ResourceManager.GetString("block_plugin_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Block addresses and domains ähnelt.
+        /// </summary>
+        internal static string block_plugin_title {
+            get {
+                return ResourceManager.GetString("block_plugin_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die cancel ähnelt.
         /// </summary>
         internal static string cancel {

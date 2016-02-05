@@ -13,16 +13,17 @@
              lex:ResxLocalizationProvider.DefaultDictionary="Strings"
              d:DataContext="{d:DesignInstance Type=viewModels:PluginManagerViewModel, IsDesignTimeCreatable=True}"
              cal:Bind.AtDesignTime="True"
-             mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="470">
+             mc:Ignorable="d" d:DesignHeight="900" d:DesignWidth="470">
     <UserControl.Resources>
         <ResourceDictionary>
             <converter:ReverseBoolToEnabledConverter x:Key="ReverseBoolToEnabledConverter" />
             <converter:EnabledToColorConverter x:Key="EnabledToColorConverter" />
         </ResourceDictionary>
     </UserControl.Resources>
-    <Grid Background="#198AB328">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid Background="#198AB328">
         <Border BorderThickness="1" Grid.Row="0" Grid.Column="0" Background="#198AB328" Margin="10"
-                Padding="10" Width="450">
+                Padding="10">
             <Border.BorderBrush>
                 <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile" Opacity="0.4">
                     <DrawingBrush.Drawing>
@@ -39,11 +40,10 @@
                     </DrawingBrush.Drawing>
                 </DrawingBrush>
             </Border.BorderBrush>
-            <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Vertical" Width="450">
                 <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,10,0,0">
                     <Border.BorderBrush>
-                        <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile"
-                                      Opacity="0.4">
+                        <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile" Opacity="0.4">
                             <DrawingBrush.Drawing>
                                 <DrawingGroup>
                                     <GeometryDrawing Brush="#FF8ab329">
@@ -66,28 +66,94 @@
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <TextBlock Grid.Column="0" Grid.Row="0" Text="&#xf018;"
-                                       FontFamily="/Resources/fontawesome-webfont.ttf#FontAwesome"
-                                       FontSize="20"
-                                       HorizontalAlignment="Left" VerticalAlignment="Center"
-                                       Foreground="#FF8ab329">
+						   FontFamily="/Resources/fontawesome-webfont.ttf#FontAwesome"
+						   FontSize="20"
+						   HorizontalAlignment="Left" VerticalAlignment="Center"
+						   Foreground="#FF8ab329">
                                 <TextBlock.OpacityMask>
                                     <SolidColorBrush Color="Black" Opacity="0.7" />
                                 </TextBlock.OpacityMask>
                             </TextBlock>
                             <TextBlock Grid.Column="1" Grid.Row="0" Text="{lex:Loc Key=ipv6_speed_plugin_title}"
-                                       TextWrapping="Wrap" VerticalAlignment="Center"
-                                       Foreground="#FF8ab329" FontSize="20"
-                                       Opacity="0.7" Margin="5,0,0,3" FontWeight="Bold">
+						   TextWrapping="Wrap" VerticalAlignment="Center"
+						   Foreground="#FF8ab329" FontSize="20"
+						   Opacity="0.7" Margin="5,0,0,3" FontWeight="Bold">
                             </TextBlock>
                         </Grid>
                         <TextBlock
-                            Text="{lex:Loc Key=ipv6_speed_plugin_text}"
-                            TextWrapping="Wrap" Foreground="#FF575757" FontSize="14">
+				Text="{lex:Loc Key=ipv6_speed_plugin_text}"
+				TextWrapping="Wrap" Foreground="#FF575757" FontSize="14">
                         </TextBlock>
                         <controls:ToggleSwitchButton
-                            IsEnabled="True" Cursor="Hand"
-                            IsChecked="{Binding BlockIpv6Plugin}"
-                            HorizontalAlignment="Right" VerticalAlignment="Top">
+				IsEnabled="True" Cursor="Hand"
+				IsChecked="{Binding BlockIpv6Plugin}"
+				HorizontalAlignment="Right" VerticalAlignment="Top">
+                        </controls:ToggleSwitchButton>
+                    </StackPanel>
+                </Border>
+                <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,10,0,0">
+                    <Border.BorderBrush>
+                        <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile"
+						  Opacity="0.4">
+                            <DrawingBrush.Drawing>
+                                <DrawingGroup>
+                                    <GeometryDrawing Brush="#FF8ab329">
+                                        <GeometryDrawing.Geometry>
+                                            <GeometryGroup>
+                                                <RectangleGeometry Rect="0,0,50,50" />
+                                                <RectangleGeometry Rect="50,50,50,50" />
+                                            </GeometryGroup>
+                                        </GeometryDrawing.Geometry>
+                                    </GeometryDrawing>
+                                </DrawingGroup>
+                            </DrawingBrush.Drawing>
+                        </DrawingBrush>
+                    </Border.BorderBrush>
+                    <StackPanel Orientation="Vertical">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Grid.Row="0" Text="&#xf1d8;"
+						   FontFamily="/Resources/fontawesome-webfont.ttf#FontAwesome"
+						   FontSize="20"
+						   HorizontalAlignment="Left" VerticalAlignment="Center"
+						   Foreground="#FF8ab329">
+                                <TextBlock.OpacityMask>
+                                    <SolidColorBrush Color="Black" Opacity="0.7" />
+                                </TextBlock.OpacityMask>
+                            </TextBlock>
+                            <TextBlock Grid.Column="1" Grid.Row="0" Text="{lex:Loc Key=log_plugin_title}"
+						   TextWrapping="Wrap" VerticalAlignment="Center"
+						   Foreground="#FF8ab329" FontSize="20"
+						   Opacity="0.7" Margin="5,0,0,3" FontWeight="Bold">
+                            </TextBlock>
+                        </Grid>
+                        <TextBlock
+				Text="{lex:Loc Key=log_plugin_text}"
+				TextWrapping="Wrap" Foreground="#FF575757" FontSize="14">
+                        </TextBlock>
+                        <StackPanel Margin="0,5,0,0" Orientation="Horizontal">
+                            <TextBox Height="26" Width="330" Text="{Binding LogPluginPath}" IsReadOnly="True"
+						 IsEnabled="False" HorizontalAlignment="Left" />
+                            <Button
+					ToolTip="{lex:Loc Key=log_plugin_select_folder}" x:Name="SelectFolder"
+					HorizontalAlignment="Center" Margin="15,0,0,0" Height="46" VerticalAlignment="Center"
+					Width="46" Cursor="Hand" Style="{DynamicResource MetroCircleButtonStyle}"
+					Background="#FFFFFFFF" IsEnabled="{Binding LogPlugin, Converter={StaticResource ReverseBoolToEnabledConverter}}">
+                                <Rectangle Fill="{Binding LogPlugin, Converter={StaticResource EnabledToColorConverter}}" Width="20" Height="20">
+                                    <Rectangle.OpacityMask>
+                                        <VisualBrush Visual="{DynamicResource appbar_page_select}" Stretch="Uniform" />
+                                    </Rectangle.OpacityMask>
+                                </Rectangle>
+                            </Button>
+                        </StackPanel>
+                        <controls:ToggleSwitchButton
+				IsEnabled="True" Cursor="Hand"
+				IsChecked="{Binding LogPlugin}"
+				HorizontalAlignment="Right" VerticalAlignment="Top">
                         </controls:ToggleSwitchButton>
                     </StackPanel>
                 </Border>
@@ -116,7 +182,7 @@
                                 <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" Grid.Row="0" Text="&#xf1d8;"
+                            <TextBlock Grid.Column="0" Grid.Row="0" Text="&#xf05e;"
                                        FontFamily="/Resources/fontawesome-webfont.ttf#FontAwesome"
                                        FontSize="20"
                                        HorizontalAlignment="Left" VerticalAlignment="Center"
@@ -125,21 +191,46 @@
                                     <SolidColorBrush Color="Black" Opacity="0.7" />
                                 </TextBlock.OpacityMask>
                             </TextBlock>
-                            <TextBlock Grid.Column="1" Grid.Row="0" Text="{lex:Loc Key=log_plugin_title}"
+                                <TextBlock Grid.Column="1" Grid.Row="0" Text="{lex:Loc Key=block_plugin_title}"
                                        TextWrapping="Wrap" VerticalAlignment="Center"
                                        Foreground="#FF8ab329" FontSize="20"
                                        Opacity="0.7" Margin="5,0,0,3" FontWeight="Bold">
                             </TextBlock>
                         </Grid>
                         <TextBlock
-                            Text="{lex:Loc Key=log_plugin_text}"
+                            Text="{lex:Loc Key=block_plugin_text}"
                             TextWrapping="Wrap" Foreground="#FF575757" FontSize="14">
                         </TextBlock>
+                            <TextBlock Text="{lex:Loc Key=block_plugin_sub_domains_header}"
+                                       TextWrapping="Wrap" VerticalAlignment="Center"
+                                       Foreground="#FF8ab329" FontSize="16"
+                                       Opacity="0.7" Margin="5,5,0,-5" FontWeight="Bold">
+                        </TextBlock>
                         <StackPanel Margin="0,5,0,0" Orientation="Horizontal">
-                            <TextBox Height="26" Width="330" Text="{Binding LogPluginPath}" IsReadOnly="True"
+                            <TextBox Height="26" Width="330" Text="{Binding DomainBlacklistPath}" IsReadOnly="True"
                                      IsEnabled="False" HorizontalAlignment="Left" />
                             <Button
-                                ToolTip="{lex:Loc Key=log_plugin_select_folder}" x:Name="SelectFolder"
+                                ToolTip="{lex:Loc Key=log_plugin_select_folder}" x:Name="SelectDomainBlacklist"
+                                HorizontalAlignment="Center" Margin="15,0,0,0" Height="46" VerticalAlignment="Center"
+                                Width="46" Cursor="Hand" Style="{DynamicResource MetroCircleButtonStyle}"
+                                Background="#FFFFFFFF" IsEnabled="{Binding LogPlugin, Converter={StaticResource ReverseBoolToEnabledConverter}}">
+                                <Rectangle Fill="{Binding LogPlugin, Converter={StaticResource EnabledToColorConverter}}" Width="20" Height="20">
+                                    <Rectangle.OpacityMask>
+                                        <VisualBrush Visual="{DynamicResource appbar_page_select}" Stretch="Uniform" />
+                                    </Rectangle.OpacityMask>
+                                </Rectangle>
+                            </Button>
+                        </StackPanel>
+                            <TextBlock Text="{lex:Loc Key=block_plugin_sub_addresses_header}"
+                                       TextWrapping="Wrap" VerticalAlignment="Center"
+                                       Foreground="#FF8ab329" FontSize="16"
+                                       Opacity="0.7" Margin="5,0,0,-5" FontWeight="Bold">
+                        </TextBlock>
+                        <StackPanel Margin="0,5,0,0" Orientation="Horizontal">
+                            <TextBox Height="26" Width="330" Text="{Binding AddressBlacklistPath}" IsReadOnly="True"
+                                     IsEnabled="False" HorizontalAlignment="Left" />
+                            <Button
+                                ToolTip="{lex:Loc Key=log_plugin_select_folder}" x:Name="SelectAddressBlacklist"
                                 HorizontalAlignment="Center" Margin="15,0,0,0" Height="46" VerticalAlignment="Center"
                                 Width="46" Cursor="Hand" Style="{DynamicResource MetroCircleButtonStyle}"
                                 Background="#FFFFFFFF" IsEnabled="{Binding LogPlugin, Converter={StaticResource ReverseBoolToEnabledConverter}}">
@@ -152,7 +243,7 @@
                         </StackPanel>
                         <controls:ToggleSwitchButton
                             IsEnabled="True" Cursor="Hand"
-                            IsChecked="{Binding LogPlugin}"
+                            IsChecked="{Binding BlacklistPlugin}"
                             HorizontalAlignment="Right" VerticalAlignment="Top">
                         </controls:ToggleSwitchButton>
                     </StackPanel>
@@ -171,4 +262,5 @@
             </StackPanel>
         </Border>
     </Grid>
+    </ScrollViewer>
 </UserControl>
