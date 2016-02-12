@@ -7,3 +7,4 @@ Those listed below have contributed to `SimpleDnsCrypt`, and are the copyright h
  * @tuphamnguyen
  * @thedroidgeek
  * @didihu
+ * @jerryhou85

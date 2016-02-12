@@ -90,6 +90,7 @@ Feel free to report your success or failure: [here](https://github.com/bitbeans/
 
 SimpleDNSCrypt currently speaks the following languages:
 
+- Simplified Chinese (@jerryhou85)
 - Dutch (Tim Tyteca)
 - English
 - French (@didihu)
