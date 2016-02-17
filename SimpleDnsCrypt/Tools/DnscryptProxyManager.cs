@@ -361,18 +361,61 @@ namespace SimpleDnsCrypt.Tools
                 parameters.SetValue("EphemeralKeys", Convert.ToInt32(DnsCryptProxy.Parameter.EphemeralKeys),
                     RegistryValueKind.DWord);
                 parameters.SetValue("TCPOnly", Convert.ToInt32(DnsCryptProxy.Parameter.TcpOnly), RegistryValueKind.DWord);
-
-				var service =
-					localMachine.OpenSubKey(@"SYSTEM\\CurrentControlSet\\Services\\" + proxyName, true);
-
-				service.SetValue("ImagePath", @"C:\Program Files (x86)\bitbeans\Simple DNSCrypt\dnscrypt-proxy\dnscrypt-proxy.exe2", RegistryValueKind.ExpandString);
 				return true;
             }
-            catch (Exception exception)
+            catch (Exception)
             {
                 return false;
             }
         }
+
+		/// <summary>
+		/// Add quotation marks for existing installations.
+		/// This fixes a vulnerability, where the dnscrypt-proxy 
+		/// path contains spaces.
+		/// </summary>
+		/// <remarks>Thanks to Roland Krüger!</remarks>
+		/// <param name="dnsCryptProxyType"></param>
+		public void FixImagePath(DnsCryptProxyType dnsCryptProxyType)
+	    {
+			var proxyName = Global.PrimaryResolverServiceName;
+			if (dnsCryptProxyType != DnsCryptProxyType.Primary)
+			{
+				proxyName = Global.SecondaryResolverServiceName;
+			}
+
+			var localMachine = Registry.LocalMachine;
+			var main = localMachine.OpenSubKey(
+				@"SYSTEM\\CurrentControlSet\\Services\\" + proxyName, true);
+
+			if (main == null)
+			{
+				return;
+			}
+		    var imagePath = string.Empty;
+			foreach (var mainName in main.GetValueNames())
+			{
+				switch (mainName)
+				{
+					case "ImagePath":
+						imagePath = (string)main.GetValue(mainName);
+						break;
+				}
+			}
+
+		    if (string.IsNullOrEmpty(imagePath)) return;
+
+		    if (!imagePath.StartsWith("\""))
+		    {
+			    imagePath = "\"" + imagePath;
+		    }
+
+			if (!imagePath.EndsWith("\""))
+			{
+				imagePath = imagePath + "\"";
+			}
+			main.SetValue("ImagePath", imagePath, RegistryValueKind.ExpandString);
+	    }
 
         /// <summary>
         ///     Read the current registry values.
@@ -382,7 +425,8 @@ namespace SimpleDnsCrypt.Tools
         {
             try
             {
-                var proxyName = Global.PrimaryResolverServiceName;
+	            FixImagePath(dnsCryptProxyType);
+				var proxyName = Global.PrimaryResolverServiceName;
                 if (dnsCryptProxyType != DnsCryptProxyType.Primary)
                 {
                     proxyName = Global.SecondaryResolverServiceName;
