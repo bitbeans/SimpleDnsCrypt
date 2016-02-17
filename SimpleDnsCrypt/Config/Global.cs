@@ -191,22 +191,5 @@ namespace SimpleDnsCrypt.Config
             "libsodium-18.dll",
             "libwinpthread-1.dll"
         };
-
-		/// <summary>
-		///     Checksums for DnsCryptProxyFiles (blake2b, without key).
-		/// </summary>
-		public static readonly Dictionary<string, string> DnsCryptProxyChecksumFiles = new Dictionary<string, string>()
-		{
-			{ "dnscrypt-proxy.exe","72d83da74358817a34d27e3ea18840b9bb4e59a8a0cd47428635bfbfc4338007b4c15d69b1cdde35acf250243e8b57cb542a82be5812d7f1764ca859ccea179b" },
-			{ "hostip.exe","792d285cc638b3d3b95bf5fd644a05dfb136478c627066eb03b364d7f690e1402103930d48d02367ccf1f74ef81318159b621f90baf3fa956464f8ab2c241bcd" },
-			{ "libdcplugin_ldns_aaaa_blocking.dll","88773c02f224138fd18d7117dc7ed142a5a251b785ae8008a8339cdd1abaf30a9f81a9e194c6d67e41f1ac14351edadc1e0dff8b0e6fa06463e88a7eb10e7207" },
-			{ "libdcplugin_logging.dll","1b849f7e54406850432477676df7ce590661f18d051b045be254d1ecb42372555c95e513ebb6eda7a2c082929f0b745a067f36a2673857beda0519a6ba771676" },
-			{ "libdcplugin_ldns_blocking.dll","3512e52524a194cc17e8d9c624390753c874e5e0175d5adcac7d8588515ee3d9b9087a72ebfcfff3c361fa88518aa8d78dcaecb58b2efa78d15ed9361421c839" },
-			{ "libeay32.dll","538ba7955efd189acd892652dc1f6f36fb4ffb55dfcde88bf5b5372d248a77a9e9099e248d2b867054db84b92b5c42dafb43f1d5980ad2e39813f920e4392582" },
-			{ "libgcc_s_dw2-1.dll","e3eb1ff32ecfb985209941345810aab8ab2858cd0502937ec6a0c605cffb7e7569417c437c8a399e5c7939156ac6c9c78a9095a0f6d988b26039c5b3891adf2d" },
-			{ "libldns-1.dll","0e031bba0d50f9b5aafe7d7d8872aa790e384574015c2da173547d0c8cca445f7dd1505595b8736be146748b3753f7de5bf9770f7c29dda7e082a1f0aab09d9f" },
-			{ "libsodium-18.dll","1b5476ebc3b2f3ededa871deb06d4ef156d048b757258931e0293c04103cd9d0035c30cdc0d0eaf9434e00091952d4ea201c304f7288a2269119085de4ebab43" },
-			{ "libwinpthread-1.dll","f810fc15372ed43123bdfbffe4a1c03a70a42b46bd8cc76ba6238db691de964307924cc12dd7ee48d7680f8e9b7525487e580491c06a879ae1ebc898ef3edd0c" }
-		};
 	}
 }

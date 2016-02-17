@@ -735,16 +735,15 @@ namespace SimpleDnsCrypt.ViewModels
 				{
 					return false;
 				}
-				else
+				// exclude this check on dev folders
+				if (proxyFilePath.Contains("bin\\Debug") || proxyFilePath.Contains("bin\\Release")) continue;
+				// dnscrypt-resolvers.* files are signed with minisign
+				if (!proxyFile.StartsWith("dnscrypt-resolvers."))
 				{
-					if (Global.DnsCryptProxyChecksumFiles.ContainsKey(proxyFile))
+					// check if the file is signed
+					if (!AuthenticodeTools.IsTrusted(proxyFilePath))
 					{
-						var localChecksum = Utilities.BinaryToHex(GenericHash.Hash(File.ReadAllBytes(proxyFilePath), null, 64));
-						var checksum = Global.DnsCryptProxyChecksumFiles[proxyFile];
-						if (!localChecksum.SequenceEqual(checksum))
-						{
-							return false;
-						}
+						return false;
 					}
 				}
 			}

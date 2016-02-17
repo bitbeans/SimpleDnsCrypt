@@ -175,9 +175,9 @@ namespace SimpleDnsCrypt.Tools
                 const int timeout = 9000;
                 using (var process = new Process())
                 {
-                    process.StartInfo.FileName = Path.Combine(Directory.GetCurrentDirectory(),
-                        Global.DnsCryptProxyFolder, Global.DnsCryptProxyExecutableName);
-                    process.StartInfo.Arguments = "--uninstall";
+	                process.StartInfo.FileName = Path.Combine(Directory.GetCurrentDirectory(),
+		                Global.DnsCryptProxyFolder, Global.DnsCryptProxyExecutableName);
+					process.StartInfo.Arguments = "--uninstall";
                     process.StartInfo.UseShellExecute = false;
                     process.StartInfo.CreateNoWindow = true;
                     process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
@@ -247,9 +247,9 @@ namespace SimpleDnsCrypt.Tools
                     arguments += " -E";
                     using (var process = new Process())
                     {
-                        process.StartInfo.FileName = Path.Combine(Directory.GetCurrentDirectory(),
-                            Global.DnsCryptProxyFolder, Global.DnsCryptProxyExecutableName);
-                        process.StartInfo.Arguments = arguments;
+	                    process.StartInfo.FileName = Path.Combine(Directory.GetCurrentDirectory(),
+		                    Global.DnsCryptProxyFolder, Global.DnsCryptProxyExecutableName);
+	                    process.StartInfo.Arguments = arguments;
                         process.StartInfo.UseShellExecute = false;
                         process.StartInfo.CreateNoWindow = true;
                         process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
@@ -340,7 +340,7 @@ namespace SimpleDnsCrypt.Tools
                 }
 
                 var localMachine = Registry.LocalMachine;
-                var parameters = localMachine.OpenSubKey(
+				var parameters = localMachine.OpenSubKey(
                     @"SYSTEM\\CurrentControlSet\\Services\\" + proxyName + "\\Parameters", true);
 
                 if (parameters == null)
@@ -361,9 +361,14 @@ namespace SimpleDnsCrypt.Tools
                 parameters.SetValue("EphemeralKeys", Convert.ToInt32(DnsCryptProxy.Parameter.EphemeralKeys),
                     RegistryValueKind.DWord);
                 parameters.SetValue("TCPOnly", Convert.ToInt32(DnsCryptProxy.Parameter.TcpOnly), RegistryValueKind.DWord);
-                return true;
+
+				var service =
+					localMachine.OpenSubKey(@"SYSTEM\\CurrentControlSet\\Services\\" + proxyName, true);
+
+				service.SetValue("ImagePath", @"C:\Program Files (x86)\bitbeans\Simple DNSCrypt\dnscrypt-proxy\dnscrypt-proxy.exe2", RegistryValueKind.ExpandString);
+				return true;
             }
-            catch (Exception)
+            catch (Exception exception)
             {
                 return false;
             }
