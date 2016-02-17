@@ -15,6 +15,7 @@ using Caliburn.Micro;
 using SimpleDnsCrypt.Config;
 using SimpleDnsCrypt.Models;
 using SimpleDnsCrypt.Tools;
+using Sodium;
 using WPFLocalizeExtension.Engine;
 
 namespace SimpleDnsCrypt.ViewModels
@@ -729,11 +730,22 @@ namespace SimpleDnsCrypt.ViewModels
 		{
 			foreach (var proxyFile in Global.DnsCryptProxyFiles)
 			{
-				//TODO: we also could do a security check with some blake2b checksums
-				if (!File.Exists(Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder,
-					proxyFile)))
+				var proxyFilePath = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, proxyFile);
+				if (!File.Exists(proxyFilePath))
 				{
 					return false;
+				}
+				else
+				{
+					if (Global.DnsCryptProxyChecksumFiles.ContainsKey(proxyFile))
+					{
+						var localChecksum = Utilities.BinaryToHex(GenericHash.Hash(File.ReadAllBytes(proxyFilePath), null, 64));
+						var checksum = Global.DnsCryptProxyChecksumFiles[proxyFile];
+						if (!localChecksum.SequenceEqual(checksum))
+						{
+							return false;
+						}
+					}
 				}
 			}
 			return true;

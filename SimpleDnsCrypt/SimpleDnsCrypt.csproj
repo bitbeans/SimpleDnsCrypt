@@ -306,8 +306,6 @@
     <Content Include="dnscrypt-proxy\libsodium-18.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <EmbeddedResource Include="costura32\libsodium.dll" />
-    <EmbeddedResource Include="costura64\libsodium-64.dll" />
     <Content Include="dnscrypt-proxy\dnscrypt-proxy.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
