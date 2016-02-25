@@ -370,11 +370,11 @@ namespace SimpleDnsCrypt.Tools
         }
 
 		/// <summary>
-		/// Add quotation marks for existing installations.
+		///	Add quotation marks for existing installations.
 		/// This fixes a vulnerability, where the dnscrypt-proxy 
 		/// path contains spaces.
 		/// </summary>
-		/// <remarks>Thanks to Roland Krüger!</remarks>
+		/// <remarks>Thanks to Roland Krüger @rugk!</remarks>
 		/// <param name="dnsCryptProxyType"></param>
 		public void FixImagePath(DnsCryptProxyType dnsCryptProxyType)
 	    {
