@@ -44,16 +44,16 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Caliburn.Micro, Version=2.0.2.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
-      <HintPath>..\packages\Caliburn.Micro.Core.3.0.0-beta1\lib\net45\Caliburn.Micro.dll</HintPath>
+    <Reference Include="Caliburn.Micro, Version=3.0.1.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.Core.3.0.1\lib\net45\Caliburn.Micro.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Caliburn.Micro.Platform, Version=2.0.2.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
-      <HintPath>..\packages\Caliburn.Micro.3.0.0-beta1\lib\net45\Caliburn.Micro.Platform.dll</HintPath>
+    <Reference Include="Caliburn.Micro.Platform, Version=3.0.1.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.3.0.1\lib\net45\Caliburn.Micro.Platform.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Caliburn.Micro.Platform.Core, Version=2.0.2.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
-      <HintPath>..\packages\Caliburn.Micro.3.0.0-beta1\lib\net45\Caliburn.Micro.Platform.Core.dll</HintPath>
+    <Reference Include="Caliburn.Micro.Platform.Core, Version=3.0.1.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.3.0.1\lib\net45\Caliburn.Micro.Platform.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="MahApps.Metro, Version=1.2.4.0, Culture=neutral, PublicKeyToken=f4fb5a3c4d1e5b4f, processorArchitecture=MSIL">
@@ -76,7 +76,7 @@
     <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\MahApps.Metro.1.2.4.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <HintPath>..\packages\Caliburn.Micro.3.0.1\lib\net45\System.Windows.Interactivity.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Xml" />
@@ -95,8 +95,8 @@
       <HintPath>..\packages\WpfLocalizeExtension.2.3.2\lib\net35\WPFLocalizeExtension.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="XAMLMarkupExtensions, Version=1.2.1.4, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\XAMLMarkupExtensions.1.2.1.4\lib\net40\XAMLMarkupExtensions.dll</HintPath>
+    <Reference Include="XAMLMarkupExtensions, Version=1.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\XAMLMarkupExtensions.1.2.2\lib\net40\XAMLMarkupExtensions.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="YamlDotNet, Version=3.8.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -132,6 +132,14 @@
     <Compile Include="Models\InterfaceListView.cs" />
     <Compile Include="Models\InterfaceListViewItem.cs" />
     <Compile Include="Models\LocalNetworkInterface.cs" />
+    <Page Include="Resources\Icons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\IconsNonShared.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Styles\Common.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -192,10 +200,6 @@
     <Page Include="ResourceDictionaries\ResourceLibrary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Resources\Icons.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\MainView.xaml">
       <SubType>Designer</SubType>
@@ -285,8 +289,8 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <Resource Include="Resources\fontawesome-webfont.ttf" />
     <Resource Include="Resources\Entypo.ttf" />
+    <Resource Include="Resources\fontawesome-webfont.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -294,12 +298,6 @@
     </None>
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <Resource Include="Resources\WindowsIcons-license.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\Entypo-license.txt" />
-  </ItemGroup>
   <ItemGroup>
     <Content Include="dnscrypt-proxy\libdcplugin_ldns_blocking.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -331,6 +329,8 @@
     <Content Include="dnscrypt-proxy\libwinpthread-1.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Resources\Entypo-license.txt" />
+    <Resource Include="Resources\WindowsIcons-license.txt" />
     <Resource Include="FodyWeavers.xml" />
     <Resource Include="Images\simplednscrypt.ico" />
   </ItemGroup>
