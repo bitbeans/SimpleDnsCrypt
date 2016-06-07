@@ -15,7 +15,6 @@ using Caliburn.Micro;
 using SimpleDnsCrypt.Config;
 using SimpleDnsCrypt.Models;
 using SimpleDnsCrypt.Tools;
-using Sodium;
 using WPFLocalizeExtension.Engine;
 
 namespace SimpleDnsCrypt.ViewModels
@@ -725,7 +724,7 @@ namespace SimpleDnsCrypt.ViewModels
 		/// <summary>
 		///     Check the dnscrypt-proxy directory on completeness.
 		/// </summary>
-		/// <returns><c>true</c> if alle files are available, otherwise <c>false</c></returns>
+		/// <returns><c>true</c> if all files are available, otherwise <c>false</c></returns>
 		private static bool ValidateDnsCryptProxyFolder()
 		{
 			foreach (var proxyFile in Global.DnsCryptProxyFiles)

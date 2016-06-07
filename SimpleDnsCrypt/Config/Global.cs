@@ -107,22 +107,22 @@ namespace SimpleDnsCrypt.Config
         /// <summary>
         ///     The default pimary resolver, if no resolver is set (on start up)
         /// </summary>
-        public const string DefaultPrimaryResolverName = "dnscrypt.me";
+        public const string DefaultPrimaryResolverName = "dnscrypt.org-fr";
 
         /// <summary>
         ///     The backup primary resolver, if DefaultPrimaryResolverName is not in the list.
         /// </summary>
-        public const string DefaultPrimaryBackupResolverName = "dnscrypt.org-fr";
+        public const string DefaultPrimaryBackupResolverName = "d0wn-random-ns1";
 
         /// <summary>
         ///     The default secondary resolver, if no resolver is set (on start up)
         /// </summary>
-        public const string DefaultSecondaryResolverName = "d0wn-random-ns1";
+        public const string DefaultSecondaryResolverName = "d0wn-random-ns2";
 
         /// <summary>
         ///     The backup secondary resolver, if DefaultSecondaryResolverName is not in the list.
         /// </summary>
-        public const string DefaultSecondaryBackupResolverName = "dnscrypt.org-fr";
+        public const string DefaultSecondaryBackupResolverName = "dnscrypt.eu-nl";
 
         /// <summary>
         ///     Time we wait on a service restart (ms).

@@ -58,6 +58,7 @@ namespace SimpleDnsCrypt.Tools
         /// <returns><c>true</c> if the service is running, otherwise <c>false</c></returns>
         public bool IsDnsCryptProxyRunning()
         {
+	        if (DnsCryptProxy.DisplayName == null) return false;
             try
             {
                 if (!DnsCryptProxy.IsReady) return false;

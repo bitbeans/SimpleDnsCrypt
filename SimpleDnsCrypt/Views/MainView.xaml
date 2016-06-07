@@ -887,7 +887,7 @@
                                                 The MIT License (MIT)
                                                 <LineBreak />
                                                 <LineBreak />
-                                                Copyright (c) 2015 Christian Hermann
+                                                Copyright (c) 2015 - 2016 Christian Hermann
                                                 <LineBreak />
                                                 <LineBreak />
                                                 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -925,6 +925,8 @@
                                             <TextBlock FontSize="14" Foreground="#FF575757" Margin="0,3,0,0" Width="450"
                                                        TextWrapping="Wrap"
                                                        tools:NavigationService.Text="{lex:Loc Key=about_thanks_bytejail_text}" />
+                                            
+                                            <Image Source="/SimpleDnsCrypt;component/Images/bytejail_logo.png" Width="250" Stretch="UniformToFill" Margin="0,30,0,0"/>
                                         </StackPanel>
                                     </StackPanel>
                                 </Border>
