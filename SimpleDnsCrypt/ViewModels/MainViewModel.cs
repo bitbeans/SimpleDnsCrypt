@@ -64,7 +64,6 @@ namespace SimpleDnsCrypt.ViewModels
 		{
 			_windowManager = windowManager;
 			eventAggregator.Subscribe(this);
-
 			// automatically use the correct translations if available (fallback: en)
 			LocalizeDictionary.Instance.SetCurrentThreadCulture = true;
 			LocalizeDictionary.Instance.Culture = Thread.CurrentThread.CurrentCulture;
@@ -78,7 +77,6 @@ namespace SimpleDnsCrypt.ViewModels
 					MessageBoxButton.OK, BoxType.Error);
 				Environment.Exit(1);
 			}
-
 			// do a simple check, if all needed files are available
 			if (!ValidateDnsCryptProxyFolder())
 			{
@@ -89,7 +87,6 @@ namespace SimpleDnsCrypt.ViewModels
 					MessageBoxButton.OK, BoxType.Error);
 				Environment.Exit(1);
 			}
-
 			DisplayName = string.Format("{0} {1} ({2})", Global.ApplicationName, VersionUtilities.PublishVersion,
 				LocalizationEx.GetUiString("global_ipv6_disabled", Thread.CurrentThread.CurrentCulture));
 			_resolvers = new List<DnsCryptProxyEntry>();
@@ -97,12 +94,10 @@ namespace SimpleDnsCrypt.ViewModels
 			_updateResolverListOnStart = Global.UpdateResolverListOnStart;
 			_isWorkingOnPrimaryService = false;
 			_isWorkingOnSecondaryService = false;
-
 			LocalNetworkInterfaces = new CollectionViewSource { Source = _localNetworkInterfaces };
 			PrimaryDnsCryptProxyManager = new DnsCryptProxyManager(DnsCryptProxyType.Primary);
 			SecondaryDnsCryptProxyManager = new DnsCryptProxyManager(DnsCryptProxyType.Secondary);
 			ShowHiddenCards = false;
-
 
 			if (PrimaryDnsCryptProxyManager.DnsCryptProxy.Parameter.TcpOnly ||
 				SecondaryDnsCryptProxyManager.DnsCryptProxy.Parameter.TcpOnly)
@@ -127,7 +122,6 @@ namespace SimpleDnsCrypt.ViewModels
 					_plugins = new List<string>();
 				}
 			}
-
 			var proxyList = Path.Combine(Directory.GetCurrentDirectory(),
 				Global.DnsCryptProxyFolder, Global.DnsCryptProxyResolverListName);
 			var proxyListSignature = Path.Combine(Directory.GetCurrentDirectory(),
