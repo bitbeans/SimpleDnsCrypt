@@ -8,5 +8,5 @@ Those listed below have contributed to `SimpleDnsCrypt`, and are the copyright h
  * @thedroidgeek
  * @didihu
  * @jerryhou85
- * @rugk - Roland Krüger <rugk@posteo.de>
+ * @rugk - <rugk@posteo.de>
  

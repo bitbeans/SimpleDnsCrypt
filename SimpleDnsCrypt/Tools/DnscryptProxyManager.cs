@@ -375,7 +375,7 @@ namespace SimpleDnsCrypt.Tools
 		/// This fixes a vulnerability, where the dnscrypt-proxy 
 		/// path contains spaces.
 		/// </summary>
-		/// <remarks>Thanks to Roland Krüger @rugk!</remarks>
+		/// <remarks>Thanks to @rugk!</remarks>
 		/// <param name="dnsCryptProxyType"></param>
 		public void FixImagePath(DnsCryptProxyType dnsCryptProxyType)
 	    {
