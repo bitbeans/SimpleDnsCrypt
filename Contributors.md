@@ -9,4 +9,4 @@ Those listed below have contributed to `SimpleDnsCrypt`, and are the copyright h
  * @didihu
  * @jerryhou85
  * @rugk - <rugk@posteo.de>
- 
+ * Vlad - <elfriob@ya.ru>
