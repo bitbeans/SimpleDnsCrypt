@@ -736,7 +736,7 @@ namespace SimpleDnsCrypt.ViewModels
 					// check if the file is signed
 					if (!AuthenticodeTools.IsTrusted(proxyFilePath))
 					{
-						return false;
+                        return false;
 					}
 				}
 			}
