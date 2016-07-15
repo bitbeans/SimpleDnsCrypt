@@ -98,226 +98,226 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="default_settings_network_cards" xml:space="preserve">
-    <value>Network Cards</value>
+    <value>Ağ Kartları</value>
   </data>
   <data name="default_settings_show_hidden_cards" xml:space="preserve">
-    <value>Show hidden cards</value>
+    <value>Gizlenmiş arayüzleri göster</value>
   </data>
   <data name="tab_standard_settings" xml:space="preserve">
-    <value>Standard Settings</value>
+    <value>Ayarlar</value>
   </data>
   <data name="tab_about" xml:space="preserve">
-    <value>About</value>
+    <value>Hakkında</value>
   </data>
   <data name="tab_advanced_settings" xml:space="preserve">
-    <value>Advanced Settings</value>
+    <value>Gelişmiş Ayarlar</value>
   </data>
   <data name="default_settings_services" xml:space="preserve">
-    <value>Services</value>
+    <value>Servisler</value>
   </data>
   <data name="default_settings_primary_text" xml:space="preserve">
-    <value>The first resolver</value>
+    <value>Birincil Çözümleyici</value>
   </data>
   <data name="default_settings_secondary_text" xml:space="preserve">
-    <value>The second resolver (optional)</value>
+    <value>İkincil Çözümleyici (opsiyonel)</value>
   </data>
   <data name="default_settings_primary_service" xml:space="preserve">
-    <value>Primary DNSCrypt Service</value>
+    <value>Birincil DNSCrypt Servisi</value>
   </data>
   <data name="default_settings_secondary_service" xml:space="preserve">
-    <value>Secondary DNSCrypt Service</value>
+    <value>İkincil DNSCrypt Servisi</value>
   </data>
   <data name="default_settings_resolver" xml:space="preserve">
-    <value>Resolver</value>
+    <value>Çözümleyici</value>
   </data>
   <data name="default_settings_server_address" xml:space="preserve">
-    <value>Server Address</value>
+    <value>Sunucu adresi</value>
   </data>
   <data name="default_settings_dnssec" xml:space="preserve">
     <value>DNSSEC</value>
   </data>
   <data name="default_settings_no_logs" xml:space="preserve">
-    <value>No Logs</value>
+    <value>Kayıt Tutmuyor</value>
   </data>
   <data name="default_settings_name" xml:space="preserve">
-    <value>Name (FQDN)</value>
+    <value>İsim (FQDN)</value>
   </data>
   <data name="default_settings_public_key" xml:space="preserve">
-    <value>Public Key</value>
+    <value>Açık Anahyar</value>
   </data>
   <data name="default_settings_secondary_header" xml:space="preserve">
-    <value>Secondary Resolver</value>
+    <value>İkincil DNS çözümleyici</value>
   </data>
   <data name="default_settings_primary_header" xml:space="preserve">
-    <value>Primary Resolver</value>
+    <value>Birincil DNS çözümleyici</value>
   </data>
   <data name="global_ipv6_disabled" xml:space="preserve">
-    <value>IPv6 disabled</value>
+    <value>IPv6 devre dışı bırakıldı</value>
   </data>
   <data name="dialog_error_title" xml:space="preserve">
-    <value>Error</value>
+    <value>Hata</value>
   </data>
   <data name="dialog_success_title" xml:space="preserve">
-    <value>Successful</value>
+    <value>Başarıyla tamamlandı</value>
   </data>
   <data name="dialog_uninstall_title" xml:space="preserve">
-    <value>Uninstall Services</value>
+    <value>Servisleri Kaldır</value>
   </data>
   <data name="dialog_warning_title" xml:space="preserve">
-    <value>Warning</value>
+    <value>Uyarı</value>
   </data>
   <data name="dialog_message_refresh_failed" xml:space="preserve">
-    <value>Failed to refresh the resolver list.</value>
+    <value>Çözümleyici listesi yenilenemedi.</value>
   </data>
   <data name="window_plugin_title" xml:space="preserve">
-    <value>Available extensions</value>
+    <value>Kullanabilinen Eklentiler</value>
   </data>
   <data name="dialog_message_uninstall" xml:space="preserve">
-    <value>Do you want to remove all installed windows services?</value>
+    <value>Bütün windows servislerini kaldırmak ister misinz?</value>
   </data>
   <data name="dialog_message_missing_file" xml:space="preserve">
-    <value>Can`t load: {0} or {1}.</value>
+    <value>Yüklenemedi: {0} ya da {1}.</value>
   </data>
   <data name="dialog_message_missing_proxy_files" xml:space="preserve">
-    <value>Not all the necessary files in dnscrypt proxy folder are found, reinstalling the application is recommended.</value>
+    <value>Dnscrypt proxy klasöründeki bütün gerekli dosyalar bulunamadı, uygulamayı tekrar yüklemeniz önerilir.</value>
   </data>
   <data name="dialog_message_bad_privileges" xml:space="preserve">
-    <value>You must run this application as administrator.</value>
+    <value>Bu uygulamayı yönetici olarak çalıştırmalısınız.</value>
   </data>
   <data name="ipv6_speed_plugin_title" xml:space="preserve">
-    <value>Speed up on missing IPv6</value>
+    <value>IPv6 Hızlandırma</value>
   </data>
   <data name="ipv6_speed_plugin_text" xml:space="preserve">
-    <value>If IPv6 connectivity is not available on your network, this plugin disable waiting for responses about IPv6 addresses from upstream resolvers. This can improve your web browsing experience.</value>
+    <value>Eğer IPv6 ağınızda desteklenmiyorsa , Bu eklenti IPv6 addresinden çözümleme beklemez.. Bu sizin internette gezinmenizi hızlandırır..</value>
   </data>
   <data name="advanced_settings_refresh_resolver_title" xml:space="preserve">
-    <value>Refresh public resolver list</value>
+    <value>Çözümleyici Listesini yenile</value>
   </data>
   <data name="advanced_settings_refresh_resolver_text" xml:space="preserve">
-    <value>Refresh the list of public resolvers (all downloads are validated with a minisign signature)</value>
+    <value>Çözümleyici listesini yenile (indirilen liste küçük imza ile kontrol edilir.)</value>
   </data>
   <data name="advanced_settings_debug_title" xml:space="preserve">
-    <value>Debug Mode</value>
+    <value>Geliştirici modu</value>
   </data>
   <data name="advanced_settings_refresh_resolver_button" xml:space="preserve">
-    <value>Download List</value>
+    <value>Listeyi indir</value>
   </data>
   <data name="advanced_settings_uninstall_title" xml:space="preserve">
-    <value>Uninstall Services</value>
+    <value>Servisleri Kaldır</value>
   </data>
   <data name="advanced_settings_uninstall_text" xml:space="preserve">
-    <value>Remove all installed windows services</value>
+    <value>Yüklenen bütün windows servislerini kaldır</value>
   </data>
   <data name="advanced_settings_uninstall_button" xml:space="preserve">
-    <value>Uninstall all services</value>
+    <value>Bütün Servisleri kaldır</value>
   </data>
   <data name="advanced_settings_plugins_title" xml:space="preserve">
-    <value>Plugins</value>
+    <value>Eklentiler</value>
   </data>
   <data name="advanced_settings_plugins_text" xml:space="preserve">
-    <value>Enable or disable extra settings with plugins</value>
+    <value>Ekstra eklenti aç ya da kapat</value>
   </data>
   <data name="advanced_settings_plugins_button" xml:space="preserve">
-    <value>Open plugin manager</value>
+    <value>Eklenti Yöneticisini aç</value>
   </data>
   <data name="advanced_settings_transport_tcp_title" xml:space="preserve">
-    <value>Transport Settings</value>
+    <value>İletişim Seçenekleri</value>
   </data>
   <data name="advanced_settings_transport_tcp_text" xml:space="preserve">
-    <value>Use TCP port 443 instead of UDP port 443 (TCP is slower than UDP)</value>
+    <value>UDP port 443 yerine TCP port 443 kullan (TCP, UDP'ye göre daha yavaştır.)</value> 
   </data>
   <data name="advanced_settings_global_resolver_title" xml:space="preserve">
-    <value>Global Resolver</value>
+    <value>Genel Çözücü</value>
   </data>
   <data name="advanced_settings_global_resolver_text" xml:space="preserve">
-    <value>If you want this computer to act as gateway device for others (eg: smartphones or other computers)</value>
+    <value>Bu bilgisayarınızı diğer cihazlarınız için ağ geçidi olarak kullanmak ister misiniz?(eg: akıllı telefonlar ya da diğer bilgisayarlar)</value>
   </data>
   <data name="about_used_software" xml:space="preserve">
-    <value>Used software</value>
+    <value>Kullanılan yazılımlar</value>
   </data>
   <data name="about_license" xml:space="preserve">
-    <value>License</value>
+    <value>Lisans</value>
   </data>
   <data name="about_special_thanks" xml:space="preserve">
-    <value>Special Thanks to</value>
+    <value>Özel olarak teşekkürlerimizi sunarız</value>
   </data>
   <data name="about_thanks_frank_title" xml:space="preserve">
     <value>Frank Denis (@jedisct1) - https://dnscrypt.org (@jedisct1)</value>
   </data>
   <data name="about_thanks_frank_text" xml:space="preserve">
-    <value>- for developing libsodium and DNSCrypt!</value>
+    <value>- libsodium ve DNSCrypt'ı geliştirdikleri için.!</value>
   </data>
   <data name="about_thanks_bytejail_text" xml:space="preserve">
-    <value>- for funding this project!</value>
+    <value>- finansal destek sağladıkları için!</value>
   </data>
   <data name="about_thanks_bytejail_title" xml:space="preserve">
-    <value>The EAM GmbH and bytejail - https://bytejail.com</value>
+    <value>The EAM GmbH ve bytejail - https://bytejail.com</value>
   </data>
   <data name="log_plugin_text" xml:space="preserve">
-    <value>This plugin logs the DNS queries received by the proxy.
-The logs are stored in a local file.</value>
+    <value>Bu eklenti proxy'den gelen DNS çözümlemelerini kayıt altına alıyor.
+Kayıtlar bilgisayarınızda bir dosyada tutuluyor..</value>
   </data>
   <data name="log_plugin_title" xml:space="preserve">
-    <value>Logging</value>
+    <value>Kayıt</value>
   </data>
   <data name="log_plugin_select_folder" xml:space="preserve">
-    <value>Select a log folder</value>
+    <value>Klasör seçiniz</value>
   </data>
   <data name="dialog_plugins_save_button_tooltip" xml:space="preserve">
-    <value>OK</value>
+    <value>Tamam</value>
   </data>
   <data name="dialog_message_update_standard_text" xml:space="preserve">
-    <value>There is a new Simple DNSCrypt version ({0}) available. Do you want to update now?</value>
+    <value>Yeni bir Simple DNSCrypt versiyonu ({0}) mevcut. Güncellemek ister misiniz?</value>
   </data>
   <data name="dialog_message_update_standard_title" xml:space="preserve">
-    <value>Application Update</value>
+    <value>Güncelleme</value>
   </data>
   <data name="window_update_title" xml:space="preserve">
-    <value>Stay tuned</value>
+    <value>Bizi takip etmeye devam edin.</value>
   </data>
   <data name="yes" xml:space="preserve">
-    <value>yes</value>
+    <value>Evet</value>
   </data>
   <data name="no" xml:space="preserve">
-    <value>no</value>
+    <value>Hayır</value>
   </data>
   <data name="ok" xml:space="preserve">
-    <value>OK</value>
+    <value>Tamam</value>
   </data>
   <data name="cancel" xml:space="preserve">
-    <value>cancel</value>
+    <value>Vazgeç</value>
   </data>
   <data name="dialog_update_title" xml:space="preserve">
-    <value>Downloads</value>
+    <value>İndir</value>
   </data>
   <data name="dialog_update_signature" xml:space="preserve">
-    <value>Signature</value>
+    <value>İmza</value>
   </data>
   <data name="dialog_update_installer" xml:space="preserve">
-    <value>Installer</value>
+    <value>Yükleyici</value>
   </data>
   <data name="dialog_message_update_critical_title" xml:space="preserve">
-    <value>Critical Application Update</value>
+    <value>Kritik Güncelleme</value>
   </data>
   <data name="dialog_message_update_critical_text" xml:space="preserve">
-    <value>There is a new Simple DNSCrypt version ({0}) available. The update is marked as critical, so you really should do the update now! Do you want to update now?</value>
+    <value>Yeni bir Simple DNSCrypt versiyonu ({0}) mevcut. Bu güncelleme kritik olarak işaretlenmiş, bu güncellemeyi yapmanızı şiddetle öneririz! Güncellemek ister misiniz??</value>
   </data>
   <data name="default_settings_save_port" xml:space="preserve">
-    <value>Save</value>
+    <value>Kaydet</value>
   </data>
   <data name="default_settings_info_port" xml:space="preserve">
-    <value>DNSCrypt will listen on this port (default: 53)</value>
+    <value>DNSCrypt bu portu kullansın (default: 53)</value>
   </data>
   <data name="block_plugin_title" xml:space="preserve">
-    <value>Block addresses and domains</value>
+    <value>Adres ve Alan adı engelle</value>
   </data>
   <data name="block_plugin_text" xml:space="preserve">
     <value>This plugin returns a REFUSED response if the query name is in a list of blacklisted names, or if at least one of the returned IP addresses happens to be in a list of blacklisted IPs.</value>
   </data>
   <data name="block_plugin_sub_domains_header" xml:space="preserve">
-    <value>Block domains</value>
+    <value>Alan adı engelle</value>
   </data>
   <data name="block_plugin_sub_addresses_header" xml:space="preserve">
-    <value>Block addresses</value>
+    <value>Adres engelle</value>
   </data>
 </root>
