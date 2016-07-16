@@ -91,7 +91,7 @@ namespace SimpleDnsCrypt.Tools
 
 					if (!string.IsNullOrEmpty(storedConfiguration.SecondaryResolver))
 					{
-						_primaryResolver = storedConfiguration.SecondaryResolver.Trim().ToLower();
+						_secondaryResolver = storedConfiguration.SecondaryResolver.Trim().ToLower();
 					}
 				}
 			}
