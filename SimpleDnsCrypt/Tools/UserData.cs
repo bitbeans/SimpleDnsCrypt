@@ -16,6 +16,8 @@ namespace SimpleDnsCrypt.Tools
 		private string _language;
 		private string _primaryResolver;
 		private string _secondaryResolver;
+		private int _primaryResolverPort;
+		private int _secondaryResolverPort;
 
 		public UserData(string configFile)
 		{
@@ -24,6 +26,8 @@ namespace SimpleDnsCrypt.Tools
 			_language = "auto";
 			_primaryResolver = "auto";
 			_secondaryResolver = "auto";
+			_primaryResolverPort = Global.PrimaryResolverPort;
+			_secondaryResolverPort = Global.SecondaryResolverPort;
 			// load configuration file (if exists) and overwrite the default values
 			LoadConfigurationFile();
 			// update the configuration file
@@ -61,6 +65,28 @@ namespace SimpleDnsCrypt.Tools
 			{
 				if (value.Equals(_secondaryResolver)) return;
 				_secondaryResolver = value;
+			}
+		}
+
+		[YamlIgnore]
+		public int PrimaryResolverPort
+		{
+			get { return _primaryResolverPort; }
+			set
+			{
+				if (value.Equals(_primaryResolverPort)) return;
+				_primaryResolverPort = value;
+			}
+		}
+
+		[YamlIgnore]
+		public int SecondaryResolverPort
+		{
+			get { return _secondaryResolverPort; }
+			set
+			{
+				if (value.Equals(_secondaryResolverPort)) return;
+				_secondaryResolverPort = value;
 			}
 		}
 
