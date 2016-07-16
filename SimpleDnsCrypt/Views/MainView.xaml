@@ -15,7 +15,7 @@
              lex:LocalizeDictionary.DesignCulture="en"
              lex:ResxLocalizationProvider.DefaultAssembly="SimpleDnsCrypt"
              lex:ResxLocalizationProvider.DefaultDictionary="Strings"
-             mc:Ignorable="d" d:DesignHeight="720" d:DesignWidth="800">
+             mc:Ignorable="d" d:DesignHeight="690" d:DesignWidth="800">
     <UserControl.Resources>
         <ResourceDictionary>
             <converter:InterfaceTypeToIconConverter x:Key="InterfaceTypeToIconConverter"
@@ -441,7 +441,7 @@
                                         </StackPanel>
                                     </Border>
                                 </UniformGrid>
-                                <Border BorderThickness="1" Background="#198AB328" Padding="20,10" Margin="0,14,0,0">
+                                <Border BorderThickness="1" Background="#198AB328" Padding="20,10" Margin="0,14,0,0" MinHeight="125">
                                     <Border.BorderBrush>
                                         <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile"
                                                       Opacity="0.4">
