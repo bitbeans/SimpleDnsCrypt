@@ -168,7 +168,8 @@ namespace SimpleDnsCrypt.Config
             "Microsoft-ISATAP",
             "Teredo Tunneling Pseudo-Interface",
             "Microsoft Wi-Fi Direct Virtual",
-            "Von Microsoft gehosteter",
+			"Microsoft Teredo Tunneling Adapter",
+			"Von Microsoft gehosteter",
             "Microsoft hosted",
 			"Virtueller Microsoft-Adapter"
 		};
