@@ -164,6 +164,7 @@
     <Compile Include="Tools\LocalizationEx.cs" />
     <Compile Include="Tools\LocalNetworkInterfaceManager.cs" />
     <Compile Include="Tools\NavigationService.cs" />
+    <Compile Include="Tools\UserData.cs" />
     <Compile Include="Tools\VersionUtilities.cs" />
     <Compile Include="Tools\WindowManagerExtensions.cs" />
     <Compile Include="ViewModels\Interfaces\IMetroMessageBox.cs" />

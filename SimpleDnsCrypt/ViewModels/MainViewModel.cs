@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Diagnostics;
 using System.Dynamic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net.NetworkInformation;
@@ -28,11 +29,12 @@ namespace SimpleDnsCrypt.ViewModels
 		private readonly BindableCollection<LocalNetworkInterface> _localNetworkInterfaces =
 			new BindableCollection<LocalNetworkInterface>();
 
+		private readonly UserData _userData;
+
 		private readonly IWindowManager _windowManager;
 		private bool _actAsGlobalGateway;
 		private bool _isPrimaryResolverRunning;
 		private bool _isRefreshingResolverList;
-		private bool _updateResolverListOnStart;
 		private bool _isSecondaryResolverRunning;
 		private bool _isUninstallingServices;
 		private bool _isWorkingOnPrimaryService;
@@ -45,6 +47,7 @@ namespace SimpleDnsCrypt.ViewModels
 		private DnsCryptProxyEntry _secondaryResolver;
 		private string _secondaryResolverTitle;
 		private bool _showHiddenCards;
+		private bool _updateResolverListOnStart;
 		private bool _useTcpOnly;
 
 		/// <summary>
@@ -64,9 +67,13 @@ namespace SimpleDnsCrypt.ViewModels
 		{
 			_windowManager = windowManager;
 			eventAggregator.Subscribe(this);
+			_userData = new UserData(Path.Combine(Directory.GetCurrentDirectory(), Global.UserConfigurationFile));
 			// automatically use the correct translations if available (fallback: en)
 			LocalizeDictionary.Instance.SetCurrentThreadCulture = true;
-			LocalizeDictionary.Instance.Culture = Thread.CurrentThread.CurrentCulture;
+			// overwrite language detection 
+			LocalizeDictionary.Instance.Culture = _userData.Language.Equals("auto")
+				? Thread.CurrentThread.CurrentCulture
+				: new CultureInfo(_userData.Language);
 
 			// this is already defined in the app.manifest, but to be sure check it again
 			if (!IsAdministrator())
@@ -94,13 +101,13 @@ namespace SimpleDnsCrypt.ViewModels
 			_updateResolverListOnStart = Global.UpdateResolverListOnStart;
 			_isWorkingOnPrimaryService = false;
 			_isWorkingOnSecondaryService = false;
-			LocalNetworkInterfaces = new CollectionViewSource { Source = _localNetworkInterfaces };
+			LocalNetworkInterfaces = new CollectionViewSource {Source = _localNetworkInterfaces};
 			PrimaryDnsCryptProxyManager = new DnsCryptProxyManager(DnsCryptProxyType.Primary);
 			SecondaryDnsCryptProxyManager = new DnsCryptProxyManager(DnsCryptProxyType.Secondary);
 			ShowHiddenCards = false;
 
 			if (PrimaryDnsCryptProxyManager.DnsCryptProxy.Parameter.TcpOnly ||
-				SecondaryDnsCryptProxyManager.DnsCryptProxy.Parameter.TcpOnly)
+			    SecondaryDnsCryptProxyManager.DnsCryptProxy.Parameter.TcpOnly)
 			{
 				_useTcpOnly = true;
 			}
@@ -170,26 +177,42 @@ namespace SimpleDnsCrypt.ViewModels
 			// if there is no selected primary resolver, add a default resolver
 			if (PrimaryResolver == null)
 			{
-				var tmpResolver = dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultPrimaryResolverName));
-				if (tmpResolver == null)
+				DnsCryptProxyEntry defaultResolver;
+				// first check the config file
+				if (_userData.PrimaryResolver.Equals("auto"))
 				{
-					tmpResolver =
-						dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultPrimaryBackupResolverName));
+					// automatic, so choose the DefaultPrimaryResolver
+					defaultResolver = dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultPrimaryResolverName)) ??
+					                  dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultPrimaryBackupResolverName));
 				}
-				PrimaryResolver = tmpResolver;
+				else
+				{
+					defaultResolver = dnsProxyList.SingleOrDefault(d => d.Name.Equals(_userData.PrimaryResolver)) ??
+					                  (dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultPrimaryResolverName)) ??
+					                   dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultPrimaryBackupResolverName)));
+				}
+				PrimaryResolver = defaultResolver;
 			}
 
 			// if there is no selected secondary resolver, add a default resolver
 			if (SecondaryResolver == null)
 			{
-				var tmpResolver =
-					dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultSecondaryResolverName));
-				if (tmpResolver == null)
+				DnsCryptProxyEntry defaultResolver;
+				// first check the config file
+				if (_userData.SecondaryResolver.Equals("auto"))
 				{
-					tmpResolver =
-						dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultSecondaryBackupResolverName));
+					// automatic, so choose the DefaultPrimaryResolver
+					defaultResolver = dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultSecondaryResolverName)) ??
+									  dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultSecondaryBackupResolverName));
 				}
-				SecondaryResolver = tmpResolver;
+				else
+				{
+					defaultResolver = dnsProxyList.SingleOrDefault(d => d.Name.Equals(_userData.SecondaryResolver)) ??
+									  (dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultSecondaryResolverName)) ??
+									   dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultSecondaryBackupResolverName)));
+				}
+
+				SecondaryResolver = defaultResolver;
 			}
 
 
@@ -223,8 +246,8 @@ namespace SimpleDnsCrypt.ViewModels
 			{
 				_actAsGlobalGateway = false;
 				_primaryResolverTitle = string.Format("{0}",
-				   LocalizationEx.GetUiString("default_settings_primary_header",
-					   Thread.CurrentThread.CurrentCulture));
+					LocalizationEx.GetUiString("default_settings_primary_header",
+						Thread.CurrentThread.CurrentCulture));
 			}
 
 			_secondaryResolverTitle = string.Format("{0} ({1}:{2})",
@@ -273,6 +296,8 @@ namespace SimpleDnsCrypt.ViewModels
 			{
 				if (value.Equals(_primaryResolver)) return;
 				_primaryResolver = value;
+				_userData.PrimaryResolver = _primaryResolver.Name;
+				_userData.SaveConfigurationFile();
 				ReloadResolver(DnsCryptProxyType.Primary);
 				NotifyOfPropertyChange(() => PrimaryResolver);
 			}
@@ -288,6 +313,8 @@ namespace SimpleDnsCrypt.ViewModels
 			{
 				if (value.Equals(_secondaryResolver)) return;
 				_secondaryResolver = value;
+				_userData.SecondaryResolver = _secondaryResolver.Name;
+				_userData.SaveConfigurationFile();
 				ReloadResolver(DnsCryptProxyType.Secondary);
 				NotifyOfPropertyChange(() => SecondaryResolver);
 			}
@@ -432,7 +459,7 @@ namespace SimpleDnsCrypt.ViewModels
 							Thread.CurrentThread.CurrentCulture)
 						: LocalizationEx.GetUiString("dialog_message_update_critical_text",
 							Thread.CurrentThread.CurrentCulture);
-					var boxTitle = (update.Update.Type == UpdateType.Standard)
+					var boxTitle = update.Update.Type == UpdateType.Standard
 						? LocalizationEx.GetUiString("dialog_message_update_standard_title",
 							Thread.CurrentThread.CurrentCulture)
 						: LocalizationEx.GetUiString("dialog_message_update_critical_title",
@@ -706,7 +733,7 @@ namespace SimpleDnsCrypt.ViewModels
 		{
 			try
 			{
-				return (new WindowsPrincipal(WindowsIdentity.GetCurrent()))
+				return new WindowsPrincipal(WindowsIdentity.GetCurrent())
 					.IsInRole(WindowsBuiltInRole.Administrator);
 			}
 			catch (Exception)
@@ -736,7 +763,7 @@ namespace SimpleDnsCrypt.ViewModels
 					// check if the file is signed
 					if (!AuthenticodeTools.IsTrusted(proxyFilePath))
 					{
-                        return false;
+						return false;
 					}
 				}
 			}
@@ -844,7 +871,6 @@ namespace SimpleDnsCrypt.ViewModels
 					LocalizationEx.GetUiString("dialog_message_refresh_failed", Thread.CurrentThread.CurrentCulture),
 					LocalizationEx.GetUiString("dialog_warning_title", Thread.CurrentThread.CurrentCulture),
 					MessageBoxButton.OK, BoxType.Warning);
-
 			}
 			IsRefreshingResolverList = false;
 		}
@@ -953,6 +979,7 @@ namespace SimpleDnsCrypt.ViewModels
 				NotifyOfPropertyChange(() => IsUninstallingServices);
 			}
 		}
+
 		#endregion
 	}
 }
