@@ -131,6 +131,7 @@
     <Compile Include="Models\DnsCryptProxyType.cs" />
     <Compile Include="Models\InterfaceListView.cs" />
     <Compile Include="Models\InterfaceListViewItem.cs" />
+    <Compile Include="Models\Language.cs" />
     <Compile Include="Models\LocalNetworkInterface.cs" />
     <Page Include="Resources\Icons.xaml">
       <Generator>MSBuild:Compile</Generator>

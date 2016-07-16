@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.Composition;
 using System.Diagnostics;
 using System.Dynamic;
@@ -39,6 +40,7 @@ namespace SimpleDnsCrypt.ViewModels
 		private bool _isUninstallingServices;
 		private bool _isWorkingOnPrimaryService;
 		private bool _isWorkingOnSecondaryService;
+		private ObservableCollection<Language> _languages;
 		private int _overlayDependencies;
 		private List<string> _plugins;
 		private DnsCryptProxyEntry _primaryResolver;
@@ -46,6 +48,7 @@ namespace SimpleDnsCrypt.ViewModels
 		private List<DnsCryptProxyEntry> _resolvers;
 		private DnsCryptProxyEntry _secondaryResolver;
 		private string _secondaryResolverTitle;
+		private Language _selectedLanguage;
 		private bool _showHiddenCards;
 		private bool _updateResolverListOnStart;
 		private bool _useTcpOnly;
@@ -68,12 +71,17 @@ namespace SimpleDnsCrypt.ViewModels
 			_windowManager = windowManager;
 			eventAggregator.Subscribe(this);
 			_userData = new UserData(Path.Combine(Directory.GetCurrentDirectory(), Global.UserConfigurationFile));
+			// fill the language combobox
+			_languages = LocalizationEx.GetSupportedLanguages();
 			// automatically use the correct translations if available (fallback: en)
 			LocalizeDictionary.Instance.SetCurrentThreadCulture = true;
 			// overwrite language detection 
 			LocalizeDictionary.Instance.Culture = _userData.Language.Equals("auto")
 				? Thread.CurrentThread.CurrentCulture
 				: new CultureInfo(_userData.Language);
+			// select the current language in the combobox
+			_selectedLanguage =
+				_languages.SingleOrDefault(l => l.ShortCode.Equals(LocalizeDictionary.Instance.Culture.TwoLetterISOLanguageName));
 
 			// this is already defined in the app.manifest, but to be sure check it again
 			if (!IsAdministrator())
@@ -203,13 +211,13 @@ namespace SimpleDnsCrypt.ViewModels
 				{
 					// automatic, so choose the DefaultPrimaryResolver
 					defaultResolver = dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultSecondaryResolverName)) ??
-									  dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultSecondaryBackupResolverName));
+					                  dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultSecondaryBackupResolverName));
 				}
 				else
 				{
 					defaultResolver = dnsProxyList.SingleOrDefault(d => d.Name.Equals(_userData.SecondaryResolver)) ??
-									  (dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultSecondaryResolverName)) ??
-									   dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultSecondaryBackupResolverName)));
+					                  (dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultSecondaryResolverName)) ??
+					                   dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultSecondaryBackupResolverName)));
 				}
 
 				SecondaryResolver = defaultResolver;
@@ -257,6 +265,33 @@ namespace SimpleDnsCrypt.ViewModels
 
 			// check for new version on every application start
 			UpdateAsync();
+		}
+
+		public Language SelectedLanguage
+		{
+			get { return _selectedLanguage; }
+			set
+			{
+				if (value.Equals(_selectedLanguage)) return;
+				_selectedLanguage = value;
+				LocalizationEx.SetCulture(_selectedLanguage.ShortCode);
+				_userData.Language = _selectedLanguage.ShortCode;
+				_userData.SaveConfigurationFile();
+				DisplayName = string.Format("{0} {1} ({2})", Global.ApplicationName, VersionUtilities.PublishVersion,
+				LocalizationEx.GetUiString("global_ipv6_disabled", Thread.CurrentThread.CurrentCulture));
+				NotifyOfPropertyChange(() => SelectedLanguage);
+			}
+		}
+
+		public ObservableCollection<Language> Languages
+		{
+			get { return _languages; }
+			set
+			{
+				if (value.Equals(_languages)) return;
+				_languages = value;
+				NotifyOfPropertyChange(() => Languages);
+			}
 		}
 
 		/// <summary>
