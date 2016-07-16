@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
 		Microsoft ResX Schema
@@ -242,7 +242,7 @@
     <value>Special Thanks to</value>
   </data>
   <data name="about_thanks_frank_title" xml:space="preserve">
-    <value>Frank Denis (@jedisct1) - https://dnscrypt.org (@jedisct1)</value>
+    <value>Frank Denis (@jedisct1) - https://dnscrypt.org</value>
   </data>
   <data name="about_thanks_frank_text" xml:space="preserve">
     <value>- for developing libsodium and DNSCrypt!</value>

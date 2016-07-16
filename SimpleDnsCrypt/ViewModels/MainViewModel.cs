@@ -267,6 +267,9 @@ namespace SimpleDnsCrypt.ViewModels
 			UpdateAsync();
 		}
 
+		/// <summary>
+		///		The currently selected language.
+		/// </summary>
 		public Language SelectedLanguage
 		{
 			get { return _selectedLanguage; }
@@ -283,6 +286,9 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 		}
 
+		/// <summary>
+		///		List of all available languages.
+		/// </summary>
 		public ObservableCollection<Language> Languages
 		{
 			get { return _languages; }
