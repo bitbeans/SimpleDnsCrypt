@@ -28,10 +28,22 @@
 			"https://raw.githubusercontent.com/jedisct1/dnscrypt-proxy/master/dnscrypt-resolvers.csv";
 
 		/// <summary>
+		///     Backup URL to the dnscrypt-resolvers.csv.
+		/// </summary>
+		public const string ResolverBackupUrl =
+			"https://download.dnscrypt.org/dnscrypt-proxy/dnscrypt-resolvers.csv";
+		
+		/// <summary>
 		///     URL to the minisign signature, to verify the downloaded dnscrypt-resolvers.csv (hosted on github).
 		/// </summary>
 		public const string SignatureUrl =
 			"https://raw.githubusercontent.com/jedisct1/dnscrypt-proxy/master/dnscrypt-resolvers.csv.minisig";
+
+		/// <summary>
+		///     URL to the minisign signature, to verify the downloaded dnscrypt-resolvers.csv.
+		/// </summary>
+		public const string SignatureBackupUrl =
+			"https://download.dnscrypt.org/dnscrypt-proxy/dnscrypt-resolvers.csv.minisig";
 
 		/// <summary>
 		///     Minisign public key, to verify the dnscrypt-resolvers.csv.

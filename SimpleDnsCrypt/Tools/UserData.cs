@@ -18,6 +18,8 @@ namespace SimpleDnsCrypt.Tools
 		private string _secondaryResolver;
 		private int _primaryResolverPort;
 		private int _secondaryResolverPort;
+		private bool _useIpv6;
+		private bool _updateResolverListOnStart;
 
 		public UserData(string configFile)
 		{
@@ -26,6 +28,8 @@ namespace SimpleDnsCrypt.Tools
 			_language = "auto";
 			_primaryResolver = "auto";
 			_secondaryResolver = "auto";
+			_useIpv6 = false;
+			_updateResolverListOnStart = Global.UpdateResolverListOnStart;
 			_primaryResolverPort = Global.PrimaryResolverPort;
 			_secondaryResolverPort = Global.SecondaryResolverPort;
 			// load configuration file (if exists) and overwrite the default values
@@ -55,6 +59,26 @@ namespace SimpleDnsCrypt.Tools
 			{
 				if (value.Equals(_primaryResolver)) return;
 				_primaryResolver = value;
+			}
+		}
+
+		public bool UpdateResolverListOnStart
+		{
+			get { return _updateResolverListOnStart; }
+			set
+			{
+				if (value.Equals(_updateResolverListOnStart)) return;
+				_updateResolverListOnStart = value;
+			}
+		}
+
+		public bool UseIpv6
+		{
+			get { return _useIpv6; }
+			set
+			{
+				if (value.Equals(_useIpv6)) return;
+				_useIpv6 = value;
 			}
 		}
 
@@ -109,6 +133,13 @@ namespace SimpleDnsCrypt.Tools
 						var l = storedConfiguration.Language.Trim().ToLower();
 						_language = Global.SupportedLanguages.Contains(l) ? l : "auto";
 					}
+					else
+					{
+						_language = "auto";
+					}
+
+					_useIpv6 = storedConfiguration.UseIpv6;
+					_updateResolverListOnStart = storedConfiguration.UpdateResolverListOnStart;
 
 					if (!string.IsNullOrEmpty(storedConfiguration.PrimaryResolver))
 					{
@@ -119,6 +150,8 @@ namespace SimpleDnsCrypt.Tools
 					{
 						_secondaryResolver = storedConfiguration.SecondaryResolver.Trim().ToLower();
 					}
+
+					
 				}
 			}
 			catch (Exception)

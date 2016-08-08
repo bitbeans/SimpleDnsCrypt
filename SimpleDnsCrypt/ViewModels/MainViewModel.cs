@@ -31,7 +31,6 @@ namespace SimpleDnsCrypt.ViewModels
 			new BindableCollection<LocalNetworkInterface>();
 
 		private readonly UserData _userData;
-
 		private readonly IWindowManager _windowManager;
 		private bool _actAsGlobalGateway;
 		private bool _isPrimaryResolverRunning;
@@ -102,13 +101,21 @@ namespace SimpleDnsCrypt.ViewModels
 					MessageBoxButton.OK, BoxType.Error);
 				Environment.Exit(1);
 			}
-			DisplayName = string.Format("{0} {1} ({2})", Global.ApplicationName, VersionUtilities.PublishVersion,
+			if (_userData.UseIpv6)
+			{
+				DisplayName = string.Format("{0} {1}", Global.ApplicationName, VersionUtilities.PublishVersion);
+			}
+			else
+			{
+				DisplayName = string.Format("{0} {1} ({2})", Global.ApplicationName, VersionUtilities.PublishVersion,
 				LocalizationEx.GetUiString("global_ipv6_disabled", Thread.CurrentThread.CurrentCulture));
+			}
+			
 			_resolvers = new List<DnsCryptProxyEntry>();
-			//TODO: make UpdateResolverListOnStart configurable by user
-			_updateResolverListOnStart = Global.UpdateResolverListOnStart;
+			_updateResolverListOnStart = _userData.UpdateResolverListOnStart;
 			_isWorkingOnPrimaryService = false;
 			_isWorkingOnSecondaryService = false;
+			
 			LocalNetworkInterfaces = new CollectionViewSource {Source = _localNetworkInterfaces};
 			PrimaryDnsCryptProxyManager = new DnsCryptProxyManager(DnsCryptProxyType.Primary);
 			SecondaryDnsCryptProxyManager = new DnsCryptProxyManager(DnsCryptProxyType.Secondary);
@@ -148,7 +155,7 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 
 			var dnsProxyList =
-				DnsCryptProxyListManager.ReadProxyList(proxyList, proxyListSignature, true);
+				DnsCryptProxyListManager.ReadProxyList(proxyList, proxyListSignature, _userData.UseIpv6);
 			if (dnsProxyList != null && dnsProxyList.Any())
 			{
 				foreach (var dnsProxy in dnsProxyList)
@@ -280,8 +287,15 @@ namespace SimpleDnsCrypt.ViewModels
 				LocalizationEx.SetCulture(_selectedLanguage.ShortCode);
 				_userData.Language = _selectedLanguage.ShortCode;
 				_userData.SaveConfigurationFile();
-				DisplayName = string.Format("{0} {1} ({2})", Global.ApplicationName, VersionUtilities.PublishVersion,
-				LocalizationEx.GetUiString("global_ipv6_disabled", Thread.CurrentThread.CurrentCulture));
+				if (_userData.UseIpv6)
+				{
+					DisplayName = string.Format("{0} {1}", Global.ApplicationName, VersionUtilities.PublishVersion);
+				}
+				else
+				{
+					DisplayName = string.Format("{0} {1} ({2})", Global.ApplicationName, VersionUtilities.PublishVersion,
+					LocalizationEx.GetUiString("global_ipv6_disabled", Thread.CurrentThread.CurrentCulture));
+				}
 				if (_actAsGlobalGateway)
 				{
 					PrimaryResolverTitle = string.Format("{0} ({1}:{2})",
@@ -746,11 +760,14 @@ namespace SimpleDnsCrypt.ViewModels
 			{
 				var status = LocalNetworkInterfaceManager.SetNameservers(localNetworkInterface, new List<string>(),
 					NetworkInterfaceComponent.IPv4);
+				LocalNetworkInterfaceManager.SetNameservers(localNetworkInterface, new List<string>(),
+					NetworkInterfaceComponent.IPv6);
 				localNetworkInterface.UseDnsCrypt = !status;
 			}
 			else
 			{
-				var dns = new List<string>();
+				var dns4 = new List<string>();
+				var dns6 = new List<string>();
 				if (PrimaryResolver != null)
 				{
 					if (!string.IsNullOrEmpty(PrimaryResolver.ProviderPublicKey))
@@ -758,7 +775,11 @@ namespace SimpleDnsCrypt.ViewModels
 						// only add the local address if the proxy is running 
 						if (PrimaryDnsCryptProxyManager.DnsCryptProxy.IsReady && PrimaryDnsCryptProxyManager.IsDnsCryptProxyRunning())
 						{
-							dns.Add(Global.PrimaryResolverAddress);
+							dns4.Add(Global.PrimaryResolverAddress);
+							if (_userData.UseIpv6)
+							{
+								dns6.Add(Global.PrimaryResolverAddress6);
+							}
 						}
 					}
 				}
@@ -769,11 +790,18 @@ namespace SimpleDnsCrypt.ViewModels
 						// only add the local address if the proxy is running 
 						if (SecondaryDnsCryptProxyManager.DnsCryptProxy.IsReady && SecondaryDnsCryptProxyManager.IsDnsCryptProxyRunning())
 						{
-							dns.Add(Global.SecondaryResolverAddress);
+							dns4.Add(Global.SecondaryResolverAddress);
+							if (_userData.UseIpv6)
+							{
+								dns6.Add(Global.SecondaryResolverAddress6);
+							}
 						}
 					}
 				}
-				var status = LocalNetworkInterfaceManager.SetNameservers(localNetworkInterface, dns, NetworkInterfaceComponent.IPv4);
+				var status = LocalNetworkInterfaceManager.SetNameservers(localNetworkInterface, dns4, NetworkInterfaceComponent.IPv4);
+				if (_userData.UseIpv6) {
+					LocalNetworkInterfaceManager.SetNameservers(localNetworkInterface, dns6, NetworkInterfaceComponent.IPv6);
+				}
 				localNetworkInterface.UseDnsCrypt = status;
 			}
 			LoadNetworkCards();
@@ -897,7 +925,7 @@ namespace SimpleDnsCrypt.ViewModels
 				var proxyListSignature = Path.Combine(Directory.GetCurrentDirectory(),
 					Global.DnsCryptProxyFolder, Global.DnsCryptProxySignatureFileName);
 				var dnsProxyList =
-					DnsCryptProxyListManager.ReadProxyList(proxyList, proxyListSignature, true);
+					DnsCryptProxyListManager.ReadProxyList(proxyList, proxyListSignature, _userData.UseIpv6);
 				if (dnsProxyList != null && dnsProxyList.Any())
 				{
 					Resolvers.Clear();

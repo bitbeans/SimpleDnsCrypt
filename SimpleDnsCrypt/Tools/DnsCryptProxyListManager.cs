@@ -4,7 +4,6 @@ using System.IO;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 using minisign;
 using Microsoft.VisualBasic.FileIO;
 using SimpleDnsCrypt.Config;
@@ -57,23 +56,47 @@ namespace SimpleDnsCrypt.Tools
 
         private static async Task<byte[]> DownloadResolverListAsync()
         {
-            using (var client = new HttpClient())
-            {
-                var getDataTask = client.GetByteArrayAsync(Global.ResolverUrl);
-                var resolverList = await getDataTask.ConfigureAwait(false);
-                return resolverList;
-            }
+	        try
+	        {
+		        using (var client = new HttpClient())
+		        {
+			        var getDataTask = client.GetByteArrayAsync(Global.ResolverUrl);
+			        var resolverList = await getDataTask.ConfigureAwait(false);
+			        return resolverList;
+		        }
+	        }
+	        catch (HttpRequestException)
+	        {
+				using (var client = new HttpClient())
+				{
+					var getDataTask = client.GetByteArrayAsync(Global.ResolverBackupUrl);
+					var resolverList = await getDataTask.ConfigureAwait(false);
+					return resolverList;
+				}
+			}
         }
 
         private static async Task<string> DownloadSignatureAsync()
         {
-            using (var client = new HttpClient())
-            {
-                var getDataTask = client.GetStringAsync(Global.SignatureUrl);
-                var resolverList = await getDataTask.ConfigureAwait(false);
-                return resolverList;
-            }
-        }
+	        try
+	        {
+		        using (var client = new HttpClient())
+		        {
+			        var getDataTask = client.GetStringAsync(Global.SignatureUrl);
+			        var resolverList = await getDataTask.ConfigureAwait(false);
+			        return resolverList;
+		        }
+	        }
+			catch (HttpRequestException)
+			{
+				using (var client = new HttpClient())
+				{
+					var getDataTask = client.GetStringAsync(Global.SignatureBackupUrl);
+					var resolverList = await getDataTask.ConfigureAwait(false);
+					return resolverList;
+				}
+			}
+		}
 
         public static List<DnsCryptProxyEntry> ReadProxyList(string proxyListFile, string proxyListSignature, bool filterIpv6 = true)
         {
