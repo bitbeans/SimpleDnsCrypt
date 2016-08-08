@@ -282,6 +282,21 @@ namespace SimpleDnsCrypt.ViewModels
 				_userData.SaveConfigurationFile();
 				DisplayName = string.Format("{0} {1} ({2})", Global.ApplicationName, VersionUtilities.PublishVersion,
 				LocalizationEx.GetUiString("global_ipv6_disabled", Thread.CurrentThread.CurrentCulture));
+				if (_actAsGlobalGateway)
+				{
+					PrimaryResolverTitle = string.Format("{0} ({1}:{2})",
+						LocalizationEx.GetUiString("default_settings_primary_header", Thread.CurrentThread.CurrentCulture),
+						Global.GlobalGatewayAddress, Global.PrimaryResolverPort);
+				}
+				else
+				{
+					PrimaryResolverTitle = string.Format("{0}",
+					LocalizationEx.GetUiString("default_settings_primary_header", Thread.CurrentThread.CurrentCulture));
+				}
+				SecondaryResolverTitle = string.Format("{0} ({1}:{2})",
+				LocalizationEx.GetUiString("default_settings_secondary_header", Thread.CurrentThread.CurrentCulture),
+				Global.SecondaryResolverAddress,
+				Global.SecondaryResolverPort);
 				NotifyOfPropertyChange(() => SelectedLanguage);
 			}
 		}
