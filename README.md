@@ -98,6 +98,7 @@ SimpleDNSCrypt currently speaks the following languages:
 - Indonesian (@christantoan)
 - Russian (Vlad)
 - Turkish (@emirgian)
+- Spanish (@bcien)
 
 If you are able to translate the resx files into more languages, please feel free to send a pull request. 
 

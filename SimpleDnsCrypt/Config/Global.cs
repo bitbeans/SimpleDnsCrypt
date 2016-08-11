@@ -212,6 +212,6 @@
 		/// <summary>
 		///     Languages, the config file can handle.
 		/// </summary>
-		public static readonly string[] SupportedLanguages = {"de", "en", "fr", "id", "nl", "ru", "tr", "zh"};
+		public static readonly string[] SupportedLanguages = {"de", "en", "es", "fr", "id", "nl", "ru", "tr", "zh"};
 	}
 }
