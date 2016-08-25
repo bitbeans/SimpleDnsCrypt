@@ -11,3 +11,5 @@ Those listed below have contributed to `SimpleDnsCrypt`, and are the copyright h
  * @rugk - <rugk@posteo.de>
  * Vlad - <elfriob@ya.ru>
  * @emirgian
+ * @bcien
+ * @eson57

@@ -99,6 +99,7 @@ SimpleDNSCrypt currently speaks the following languages:
 - Russian (Vlad)
 - Turkish (@emirgian)
 - Spanish (@bcien)
+- Swedish (@eson57)
 
 If you are able to translate the resx files into more languages, please feel free to send a pull request. 
 
