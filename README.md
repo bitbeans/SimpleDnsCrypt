@@ -88,18 +88,20 @@ Feel free to report your success or failure: [here](https://github.com/bitbeans/
 
 ### Translations
 
-SimpleDNSCrypt currently speaks the following languages:
+SimpleDNSCrypt currently speaks the following languages (11):
 
-- Simplified Chinese (@jerryhou85)
+- Danish (@simonclausen)
 - Dutch (Tim Tyteca)
 - English
 - French (@didihu)
 - German
 - Indonesian (@christantoan)
 - Russian (Vlad)
-- Turkish (@emirgian)
+- Simplified Chinese (@jerryhou85)
 - Spanish (@bcien)
 - Swedish (@eson57)
+- Turkish (@emirgian)
+
 
 If you are able to translate the resx files into more languages, please feel free to send a pull request. 
 
