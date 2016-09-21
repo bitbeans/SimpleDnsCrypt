@@ -33,8 +33,7 @@ To uninstall Simple DNSCrypt and dnscrypt-proxy, just go to the Windows Control 
 ### ![Alt text](img/icons/16x16.png "Updates") Updates
 Simple DNSCrypt will automatically check for new versions on startup.
 
-
-### Overview
+# ![Alt text](img/icons/32x32.png "Overview") Overview
 
 #### Standard Settings
 ![standard view](https://raw.githubusercontent.com/bitbeans/SimpleDnsCrypt/master/img/standard.png)
@@ -70,24 +69,24 @@ IPv4 and IPv6 addresses are supported. For names, leading and trailing wildcards
 **Note:** If the file(s) is/are empty, the service may **not** start!
 
 
-### Compatibility
+# ![Alt text](img/icons/32x32.png "Compatibility") Compatibility
 
 This software was tested on:
 
 |             | 32 bit      | 64 bit     |
 | :----------- | :-----------: | :-----------: | 
 | Windows 7    | tested        | tested        | 
-| Windows 8.1     | untested        | tested       | 
+| Windows 8.1     | tested        | tested       | 
 | Windows 10     | tested        | tested        | 
 
 Feel free to report your success or failure: [here](https://github.com/bitbeans/SimpleDnsCrypt/issues/5)
 
-### Requirements
+# ![Alt text](img/icons/32x32.png "Requirements") Requirements
 
 - This software targets .NET 4.5.
 - It also requires Visual C++ Redistributable for Visual Studio 2015 x86.
 
-### Translations
+# ![Alt text](img/icons/32x32.png "Translations") Translations
 
 SimpleDNSCrypt currently speaks the following languages (11):
 
@@ -106,16 +105,21 @@ SimpleDNSCrypt currently speaks the following languages (11):
 
 If you are able to translate the resx files into more languages, please feel free to send a pull request. 
 
+# ![Alt text](img/icons/32x32.png "Want to say thanks?") Want to say thanks?
 
-### Alternative Software
+If you don`t like this software, there are two similar projects:
+
+* Hit the :star: Star :star: button
+* <a href='https://pledgie.com/campaigns/32588'><img alt='Click here to lend your support to: Simple DNSCrypt and make a donation at pledgie.com !' src='https://pledgie.com/campaigns/32588.png?skin_name=chrome' border='0' ></a>
+
+# ![Alt text](img/icons/32x32.png "Alternative Software") Alternative Software
 
 If you don`t like this software, there are two similar projects:
 
 - [DNSCrypt WinClient](https://github.com/Noxwizard/dnscrypt-winclient): the original DNSCrypt user interface for Windows.
 - [DNSCrypt Windows Service Manager](http://simonclausen.dk/projects/dnscrypt-winservicemgr/): a full-featured DNSCrypt user interface for Windows.
 
-
-### Used Software
+# ![Alt text](img/icons/32x32.png "Used Software") Used Software
 
 - libsodium-net [doc](https://www.gitbook.com/book/bitbeans/libsodium-net/details) [:octocat:](https://github.com/adamcaudill/libsodium-net)
 - WPF Localize Extension [doc](https://wpflocalizeextension.codeplex.com/) [:octocat:](https://github.com/SeriousM/WPFLocalizationExtension) 
@@ -124,11 +128,11 @@ If you don`t like this software, there are two similar projects:
 - minisign-net [:octocat:](https://github.com/bitbeans/minisign-net) 
 - YamlDotNet [:octocat:](https://github.com/aaubry/YamlDotNet) 
 
-### Special Thanks
+# ![Alt text](img/icons/32x32.png "Special Thanks") Special Thanks
 
 Frank Denis (@jedisct1) for developing [libsodium](https://github.com/jedisct1/libsodium) and [DNSCrypt](https://dnscrypt.org)
   
 The EAM GmbH and [bytejail](https://bytejail.com) for funding this project
 
-### License
+# ![Alt text](img/icons/32x32.png "License") License
 [MIT](https://en.wikipedia.org/wiki/MIT_License)
