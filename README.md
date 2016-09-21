@@ -1,24 +1,24 @@
-# Simple DNSCrypt
+# ![Alt text](img/icons/64x64.png "Simple DNSCrypt") Simple DNSCrypt
 
 Simple DNSCrypt is a simple management tool to configure dnscrypt-proxy on windows based systems.
 
 If you are looking for an only command line tool, you can use the [dnscrypt-proxy](https://dnscrypt.org/) software. There are pre-compiled versions for any os.
 The dnscrypt-proxy software is written and maintained by Frank Denis (@jedisct1).
 
-### Status
+# ![Alt text](img/icons/32x32.png "Status") Status
 
 Missing features:
 
 - Secondary resolver support (soon available) - see [#3](https://github.com/bitbeans/SimpleDnsCrypt/issues/3) and https://github.com/jedisct1/dnscrypt-proxy/issues/418
 - IPv6 support - see [#1](https://github.com/bitbeans/SimpleDnsCrypt/issues/1)
 
-### Installation
+# ![Alt text](img/icons/32x32.png "Installation") Installation
 
 To install Simple DNSCrypt use the [latest MSI package](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.3.6/SimpleDNSCrypt.msi).
 You don`t need to download the dnscrypt-resolvers.csv or the dnscrypt-proxy package at all.
 Both are included in the msi package, the dnscrypt-resolvers.csv can be updated from inside the software (and will be verified with minisign).
 
-#### File Signing
+### ![Alt text](img/icons/16x16.png "File Signing") File Signing
 The MSI package and the SimpleDnsCrypt.exe are signed via a *COMODO RSA Code Signing CA*. 
 The files are signed under the name: *EAM Experience Area Münsingen GmbH*
 
@@ -27,10 +27,10 @@ The minisign [signature](https://github.com/bitbeans/SimpleDnsCrypt/releases/dow
 
 	minisign -Vm SimpleDNSCrypt.msi -P RWTSM+4BNNvkZPNkHgE88ETlhWa+0HDzU5CN8TvbyvmhVUcr6aQXfssV
 
-#### Uninstall
+### ![Alt text](img/icons/16x16.png "Uninstall") Uninstall
 To uninstall Simple DNSCrypt and dnscrypt-proxy, just go to the Windows Control Panel (Programs and Features) and search for Simple DNSCrypt.
 
-#### Updates
+### ![Alt text](img/icons/16x16.png "Updates") Updates
 Simple DNSCrypt will automatically check for new versions on startup.
 
 
@@ -68,6 +68,7 @@ A file should list one entry per line.
 IPv4 and IPv6 addresses are supported. For names, leading and trailing wildcards (*) are also supported (e.g. *xxx*, *.example.com, ads.*)
 
 **Note:** If the file(s) is/are empty, the service may **not** start!
+
 
 ### Compatibility
 
