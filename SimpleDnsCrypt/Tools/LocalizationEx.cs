@@ -37,6 +37,7 @@ namespace SimpleDnsCrypt.Tools
 				new Language {Name = "Spanish", ShortCode = "es", CultureCode = "es-ES"},
 				new Language {Name = "French", ShortCode = "fr", CultureCode = "fr-FR"},
 				new Language {Name = "Indonesian", ShortCode = "id", CultureCode = "id-ID"},
+				new Language {Name = "Italian", ShortCode = "it", CultureCode = "it-IT"},
 				new Language {Name = "Dutch", ShortCode = "nl", CultureCode = "nl-NL"},
 				new Language {Name = "Russian", ShortCode = "ru", CultureCode = "ru-RU"},
 				new Language {Name = "Swedish", ShortCode = "sv", CultureCode = "sv-SV"},
