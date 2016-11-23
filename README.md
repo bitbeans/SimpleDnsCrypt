@@ -88,13 +88,14 @@ Feel free to report your success or failure: [here](https://github.com/bitbeans/
 
 # ![Alt text](img/icons/32x32.png "Translations") Translations
 
-SimpleDNSCrypt currently speaks the following languages (11):
+SimpleDNSCrypt currently speaks the following languages (12):
 
 - Danish (@simonclausen)
 - Dutch (Tim Tyteca)
 - English
 - French (@didihu)
 - German
+- Italian (@ShellAddicted)
 - Indonesian (@christantoan)
 - Russian (Vlad)
 - Simplified Chinese (@jerryhou85)
@@ -106,8 +107,6 @@ SimpleDNSCrypt currently speaks the following languages (11):
 If you are able to translate the resx files into more languages, please feel free to send a pull request. 
 
 # ![Alt text](img/icons/32x32.png "Want to say thanks?") Want to say thanks?
-
-If you don`t like this software, there are two similar projects:
 
 * Hit the :star: Star :star: button
 * <a href='https://pledgie.com/campaigns/32588'><img alt='Click here to lend your support to: Simple DNSCrypt and make a donation at pledgie.com !' src='https://pledgie.com/campaigns/32588.png?skin_name=chrome' border='0' ></a>
