@@ -128,17 +128,17 @@
 		/// <summary>
 		///     The backup primary resolver, if DefaultPrimaryResolverName is not in the list.
 		/// </summary>
-		public const string DefaultPrimaryBackupResolverName = "d0wn-random-ns1";
+		public const string DefaultPrimaryBackupResolverName = "ns0.dnscrypt.is";
 
 		/// <summary>
 		///     The default secondary resolver, if no resolver is set (on start up)
 		/// </summary>
-		public const string DefaultSecondaryResolverName = "d0wn-random-ns2";
+		public const string DefaultSecondaryResolverName = "dnscrypt.eu-nl";
 
 		/// <summary>
 		///     The backup secondary resolver, if DefaultSecondaryResolverName is not in the list.
 		/// </summary>
-		public const string DefaultSecondaryBackupResolverName = "dnscrypt.eu-nl";
+		public const string DefaultSecondaryBackupResolverName = "dnscrypt.eu-dk";
 
 		/// <summary>
 		///     Time we wait on a service restart (ms).
@@ -202,6 +202,7 @@
 		public static readonly string[] DnsCryptProxyFiles =
 		{
 			"dnscrypt-proxy.exe",
+			"dnscrypt-proxy-secondary.exe",
 			"dnscrypt-resolvers.csv",
 			"dnscrypt-resolvers.csv.minisig",
 			"hostip.exe",

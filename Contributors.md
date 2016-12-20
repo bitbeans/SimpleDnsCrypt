@@ -14,3 +14,4 @@ Those listed below have contributed to `SimpleDnsCrypt`, and are the copyright h
  * @bcien
  * @eson57
  * @simonclausen
+ * @ShellAddicted
