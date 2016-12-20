@@ -9,12 +9,11 @@ The dnscrypt-proxy software is written and maintained by Frank Denis (@jedisct1)
 
 Missing features:
 
-- Secondary resolver support (soon available) - see [#3](https://github.com/bitbeans/SimpleDnsCrypt/issues/3) and https://github.com/jedisct1/dnscrypt-proxy/issues/418
 - IPv6 support - see [#1](https://github.com/bitbeans/SimpleDnsCrypt/issues/1)
 
 # ![Alt text](img/icons/32x32.png "Installation") Installation
 
-To install Simple DNSCrypt use the [latest MSI package](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.3.6/SimpleDNSCrypt.msi).
+To install Simple DNSCrypt use the [latest MSI package](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.3.7/SimpleDNSCrypt.msi).
 You don`t need to download the dnscrypt-resolvers.csv or the dnscrypt-proxy package at all.
 Both are included in the msi package, the dnscrypt-resolvers.csv can be updated from inside the software (and will be verified with minisign).
 
@@ -23,7 +22,7 @@ The MSI package and the SimpleDnsCrypt.exe are signed via a *COMODO RSA Code Sig
 The files are signed under the name: *EAM Experience Area Münsingen GmbH*
 
 You also can verify the MSI package with [minisign](https://jedisct1.github.io/minisign/).
-The minisign [signature](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.3.6/SimpleDNSCrypt.msi.minisig) can be verified with the following command:
+The minisign [signature](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.3.7/SimpleDNSCrypt.msi.minisig) can be verified with the following command:
 
 	minisign -Vm SimpleDNSCrypt.msi -P RWTSM+4BNNvkZPNkHgE88ETlhWa+0HDzU5CN8TvbyvmhVUcr6aQXfssV
 
