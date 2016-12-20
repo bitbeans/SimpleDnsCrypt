@@ -32,6 +32,7 @@
             <converter:ReverseBoolToEnabledConverter x:Key="ReverseBoolToEnabledConverter" />
             <converter:MultiReverseBoolToEnabledConverter x:Key="MultiReverseBoolToEnabledConverter" />
             <converter:MultiReverseBoolToVisibilityConverter x:Key="MultiReverseBoolToVisibilityConverter" />
+            <converter:LocalDateConverter x:Key="LocalDateConverter" />
         </ResourceDictionary>
     </UserControl.Resources>
     <ScrollViewer VerticalScrollBarVisibility="Auto">
@@ -306,7 +307,7 @@
                                         </StackPanel>
                                     </Border>
                                     <Border BorderThickness="1" Background="#19E27021" Padding="20,10" Margin="7,0,0,0"
-                                            IsEnabled="False">
+                                            IsEnabled="{Binding IsWorkingOnSecondaryService, Converter={StaticResource ReverseBoolToEnabledConverter}}">
                                         <Border.BorderBrush>
                                             <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile"
                                                           Opacity="0.4">
@@ -520,7 +521,7 @@
                                                                        Margin="0" HorizontalAlignment="Center"
                                                                        VerticalAlignment="Center" />
                                             <controls:ToggleSwitchButton
-                                                IsEnabled="False"
+                                                IsEnabled="{Binding IsWorkingOnSecondaryService, Converter={StaticResource ReverseBoolToEnabledConverter}}"
                                                 Grid.Row="1" Grid.Column="2" Cursor="Hand"
                                                 IsChecked="{Binding IsSecondaryResolverRunning}"
                                                 HorizontalAlignment="Right">
@@ -574,6 +575,12 @@
                                                        Foreground="#FF8ab329" FontSize="20"
                                                        Opacity="0.7" Margin="5,0,0,3" FontWeight="Bold">
                                             </TextBlock>
+                                            <TextBlock Grid.Column="2" Grid.Row="0" Text="{Binding ProxyListLastWriteTime, Converter={StaticResource LocalDateConverter}}"
+                                                       TextWrapping="Wrap" VerticalAlignment="Center"
+                                                       Foreground="#FF8ab329" FontSize="20"
+                                                       Opacity="0.7" Margin="5,0,0,3" FontWeight="Bold">
+                                            </TextBlock>
+                                            
                                         </Grid>
                                         <TextBlock
                                             Text="{lex:Loc Key=advanced_settings_refresh_resolver_text}"

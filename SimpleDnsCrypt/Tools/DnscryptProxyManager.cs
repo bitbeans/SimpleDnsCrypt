@@ -96,6 +96,7 @@ namespace SimpleDnsCrypt.Tools
             {
                 var dnscryptService = new ServiceController {ServiceName = DnsCryptProxy.DisplayName};
                 dnscryptService.Stop();
+				Thread.Sleep(1000);
                 dnscryptService.Start();
                 return (dnscryptService.Status == ServiceControllerStatus.Running);
             }
@@ -176,10 +177,10 @@ namespace SimpleDnsCrypt.Tools
                 const int timeout = 9000;
                 using (var process = new Process())
                 {
-	                process.StartInfo.FileName = Path.Combine(Directory.GetCurrentDirectory(),
-		                Global.DnsCryptProxyFolder, Global.DnsCryptProxyExecutableName);
-					process.StartInfo.Arguments = "--uninstall";
-                    process.StartInfo.UseShellExecute = false;
+	                process.StartInfo.FileName = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, DnsCryptProxy.Type == DnsCryptProxyType.Primary ? Global.DnsCryptProxyExecutableName : Global.DnsCryptProxyExecutableSecondaryName);
+	                process.StartInfo.Arguments = "--uninstall";
+					process.StartInfo.Arguments += " --service-name=" + DnsCryptProxy.DisplayName;
+					process.StartInfo.UseShellExecute = false;
                     process.StartInfo.CreateNoWindow = true;
                     process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
                     process.Start();
@@ -238,18 +239,19 @@ namespace SimpleDnsCrypt.Tools
                     }
                     if (DnsCryptProxy.Type == DnsCryptProxyType.Primary)
                     {
-                        arguments += " -a " + Global.PrimaryResolverAddress + ":" + Global.PrimaryResolverPort;
+	                    arguments += " --service-name="+ Global.PrimaryResolverServiceName;
+						arguments += " -a " + Global.PrimaryResolverAddress + ":" + Global.PrimaryResolverPort;
                     }
                     else
                     {
-                        arguments += " -a " + Global.SecondaryResolverAddress + ":" + Global.SecondaryResolverPort;
+						arguments += " --service-name=" + Global.SecondaryResolverServiceName;
+						arguments += " -a " + Global.SecondaryResolverAddress + ":" + Global.SecondaryResolverPort;
                     }
                     // always use ephermeral keys
                     arguments += " -E";
                     using (var process = new Process())
                     {
-	                    process.StartInfo.FileName = Path.Combine(Directory.GetCurrentDirectory(),
-		                    Global.DnsCryptProxyFolder, Global.DnsCryptProxyExecutableName);
+	                    process.StartInfo.FileName = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, DnsCryptProxy.Type == DnsCryptProxyType.Primary ? Global.DnsCryptProxyExecutableName : Global.DnsCryptProxyExecutableSecondaryName);
 	                    process.StartInfo.Arguments = arguments;
                         process.StartInfo.UseShellExecute = false;
                         process.StartInfo.CreateNoWindow = true;

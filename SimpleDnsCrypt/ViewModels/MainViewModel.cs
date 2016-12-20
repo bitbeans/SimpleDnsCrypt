@@ -357,6 +357,20 @@ namespace SimpleDnsCrypt.ViewModels
 		}
 
 		/// <summary>
+		///		Get the last write time of the resolver csv.
+		/// </summary>
+		public DateTime ProxyListLastWriteTime
+		{
+			get
+			{
+				var proxyList = Path.Combine(Directory.GetCurrentDirectory(),
+					Global.DnsCryptProxyFolder, Global.DnsCryptProxyResolverListName);
+				var fileInfo = new FileInfo(proxyList);
+				return fileInfo.LastWriteTime;
+			}
+		}
+
+		/// <summary>
 		///     The selected primary resolver.
 		/// </summary>
 		public DnsCryptProxyEntry PrimaryResolver
@@ -957,6 +971,7 @@ namespace SimpleDnsCrypt.ViewModels
 					MessageBoxButton.OK, BoxType.Warning);
 			}
 			IsRefreshingResolverList = false;
+			NotifyOfPropertyChange(() => ProxyListLastWriteTime);
 		}
 
 		public bool ActAsGlobalGateway

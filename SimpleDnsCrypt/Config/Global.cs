@@ -116,6 +116,11 @@
 		public const string DnsCryptProxyExecutableName = "dnscrypt-proxy.exe";
 
 		/// <summary>
+		///     The name of the dnscrypt-proxy executable.
+		/// </summary>
+		public const string DnsCryptProxyExecutableSecondaryName = "dnscrypt-proxy-secondary.exe";
+
+		/// <summary>
 		///     The default pimary resolver, if no resolver is set (on start up)
 		/// </summary>
 		public const string DefaultPrimaryResolverName = "dnscrypt.org-fr";
@@ -187,7 +192,8 @@
 			"Microsoft Teredo Tunneling Adapter",
 			"Von Microsoft gehosteter",
 			"Microsoft hosted",
-			"Virtueller Microsoft-Adapter"
+			"Virtueller Microsoft-Adapter",
+			"TAP"
 		};
 
 		/// <summary>
@@ -202,8 +208,7 @@
 			"libdcplugin_ldns_aaaa_blocking.dll",
 			"libdcplugin_logging.dll",
 			"libdcplugin_ldns_blocking.dll",
-			"libeay32.dll",
-			"libgcc_s_dw2-1.dll",
+			"libcrypto-40.dll",
 			"libldns-1.dll",
 			"libsodium-18.dll",
 			"libwinpthread-1.dll"

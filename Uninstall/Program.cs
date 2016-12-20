@@ -48,7 +48,8 @@ namespace Uninstall
                         {
                             process.StartInfo.FileName = dnsCryptoProxyExecutablePath;
                             process.StartInfo.Arguments = "--uninstall";
-                            process.StartInfo.UseShellExecute = false;
+							process.StartInfo.Arguments += " --service-name=" + service;
+							process.StartInfo.UseShellExecute = false;
                             process.StartInfo.CreateNoWindow = true;
                             process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
                             process.Start();
