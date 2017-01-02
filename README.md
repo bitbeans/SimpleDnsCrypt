@@ -102,7 +102,6 @@ SimpleDNSCrypt currently speaks the following languages (12):
 - Swedish (@eson57)
 - Turkish (@emirgian)
 
-
 If you are able to translate the resx files into more languages, please feel free to send a pull request. 
 
 # ![Alt text](img/icons/32x32.png "Want to say thanks?") Want to say thanks?

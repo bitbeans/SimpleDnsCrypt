@@ -12,6 +12,7 @@ using System.Security.Principal;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Data;
 using Caliburn.Micro;
 using SimpleDnsCrypt.Config;
@@ -27,6 +28,9 @@ namespace SimpleDnsCrypt.ViewModels
 	[Export]
 	public sealed class MainViewModel : Screen, IShell
 	{
+		public static MainViewModel Instance { get; set; }
+
+
 		private readonly BindableCollection<LocalNetworkInterface> _localNetworkInterfaces =
 			new BindableCollection<LocalNetworkInterface>();
 
@@ -52,6 +56,8 @@ namespace SimpleDnsCrypt.ViewModels
 		private bool _updateResolverListOnStart;
 		private bool _useTcpOnly;
 
+		public BlockViewModel BlockViewModel { get; }
+
 		/// <summary>
 		///     MainViewModel construcor for XAML.
 		/// </summary>
@@ -67,6 +73,7 @@ namespace SimpleDnsCrypt.ViewModels
 		[ImportingConstructor]
 		private MainViewModel(IWindowManager windowManager, IEventAggregator eventAggregator)
 		{
+			Instance = this;
 			_windowManager = windowManager;
 			eventAggregator.Subscribe(this);
 			_userData = new UserData(Path.Combine(Directory.GetCurrentDirectory(), Global.UserConfigurationFile));
@@ -272,6 +279,7 @@ namespace SimpleDnsCrypt.ViewModels
 
 			// check for new version on every application start
 			UpdateAsync();
+			BlockViewModel = new BlockViewModel(_windowManager);
 		}
 
 		/// <summary>
@@ -581,7 +589,7 @@ namespace SimpleDnsCrypt.ViewModels
 			ReloadResolver(DnsCryptProxyType.Primary);
 		}
 
-		private void ReloadResolver(DnsCryptProxyType dnsCryptProxyType)
+		public void ReloadResolver(DnsCryptProxyType dnsCryptProxyType)
 		{
 			if (dnsCryptProxyType == DnsCryptProxyType.Primary)
 			{
@@ -632,7 +640,6 @@ namespace SimpleDnsCrypt.ViewModels
 				EphemeralKeys = true,
 				TcpOnly = UseTcpOnly
 			};
-
 			if (dnsCryptProxyType == DnsCryptProxyType.Primary)
 			{
 				if (ActAsGlobalGateway)
@@ -1024,6 +1031,19 @@ namespace SimpleDnsCrypt.ViewModels
 			{
 				_plugins = value;
 				NotifyOfPropertyChange(() => Plugins);
+			}
+		}
+
+		public void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+			var source = e.Source as TabControl;
+			if (source != null)
+			{
+				var t = source;
+				if (t.SelectedIndex == 2)
+				{
+					BlockViewModel.SetPlugins(Plugins);
+				}
 			}
 		}
 

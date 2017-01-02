@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Uninstall")]
-[assembly: AssemblyCopyright("Copyright © 2015 - 2016 Christian Hermann")]
+[assembly: AssemblyCopyright("Copyright © 2015 - 2017 Christian Hermann")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]

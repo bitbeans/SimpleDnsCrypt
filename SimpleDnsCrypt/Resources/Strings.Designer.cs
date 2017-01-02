@@ -250,6 +250,177 @@ namespace SimpleDnsCrypt.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to building list . . ..
+        /// </summary>
+        internal static string blacklist_building_list {
+            get {
+                return ResourceManager.GetString("blacklist_building_list", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add new address rule.
+        /// </summary>
+        internal static string blacklist_button_add_address {
+            get {
+                return ResourceManager.GetString("blacklist_button_add_address", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add new local domain rule.
+        /// </summary>
+        internal static string blacklist_button_add_local_domain {
+            get {
+                return ResourceManager.GetString("blacklist_button_add_local_domain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add new remote domain rule (URL).
+        /// </summary>
+        internal static string blacklist_button_add_remote_domain {
+            get {
+                return ResourceManager.GetString("blacklist_button_add_remote_domain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Build address blacklist.
+        /// </summary>
+        internal static string blacklist_button_build_address {
+            get {
+                return ResourceManager.GetString("blacklist_button_build_address", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Build domain blacklist.
+        /// </summary>
+        internal static string blacklist_button_build_domain {
+            get {
+                return ResourceManager.GetString("blacklist_button_build_domain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove address entry.
+        /// </summary>
+        internal static string blacklist_button_remove_address {
+            get {
+                return ResourceManager.GetString("blacklist_button_remove_address", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove domain entry.
+        /// </summary>
+        internal static string blacklist_button_remove_domain {
+            get {
+                return ResourceManager.GetString("blacklist_button_remove_domain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select address blacklist file.
+        /// </summary>
+        internal static string blacklist_button_select_address_blacklist {
+            get {
+                return ResourceManager.GetString("blacklist_button_select_address_blacklist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select domain blacklist file.
+        /// </summary>
+        internal static string blacklist_button_select_domain_blacklist {
+            get {
+                return ResourceManager.GetString("blacklist_button_select_domain_blacklist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to entries.
+        /// </summary>
+        internal static string blacklist_entries {
+            get {
+                return ResourceManager.GetString("blacklist_entries", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to set blacklist.
+        /// </summary>
+        internal static string blacklist_modal_empty_list_header {
+            get {
+                return ResourceManager.GetString("blacklist_modal_empty_list_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A blacklist file can not be empty.
+        /// </summary>
+        internal static string blacklist_modal_empty_list_text {
+            get {
+                return ResourceManager.GetString("blacklist_modal_empty_list_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New address rule.
+        /// </summary>
+        internal static string blacklist_modal_new_address_rule_header {
+            get {
+                return ResourceManager.GetString("blacklist_modal_new_address_rule_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Example: 172.16.144.8, 172.16.*, [fdb2:cd9e:c9f8:861a:c1ab:94e3:ef95:1ec0].
+        /// </summary>
+        internal static string blacklist_modal_new_address_rule_text {
+            get {
+                return ResourceManager.GetString("blacklist_modal_new_address_rule_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New local domain rule.
+        /// </summary>
+        internal static string blacklist_modal_new_local_domain_rule_header {
+            get {
+                return ResourceManager.GetString("blacklist_modal_new_local_domain_rule_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Example: *.example.com, ads.*, *sex*.
+        /// </summary>
+        internal static string blacklist_modal_new_local_domain_rule_text {
+            get {
+                return ResourceManager.GetString("blacklist_modal_new_local_domain_rule_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New remote domain rule.
+        /// </summary>
+        internal static string blacklist_modal_new_remote_domain_rule_header {
+            get {
+                return ResourceManager.GetString("blacklist_modal_new_remote_domain_rule_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Example: https://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt.
+        /// </summary>
+        internal static string blacklist_modal_new_remote_domain_rule_text {
+            get {
+                return ResourceManager.GetString("blacklist_modal_new_remote_domain_rule_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Block addresses.
         /// </summary>
         internal static string block_plugin_sub_addresses_header {
@@ -259,11 +430,29 @@ namespace SimpleDnsCrypt.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Block addresses with custom rules (eg: 10.1.4.99, 172.16.*).
+        /// </summary>
+        internal static string block_plugin_sub_addresses_text {
+            get {
+                return ResourceManager.GetString("block_plugin_sub_addresses_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Block domains.
         /// </summary>
         internal static string block_plugin_sub_domains_header {
             get {
                 return ResourceManager.GetString("block_plugin_sub_domains_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Block domains with local rules or remote files.
+        /// </summary>
+        internal static string block_plugin_sub_domains_text {
+            get {
+                return ResourceManager.GetString("block_plugin_sub_domains_text", resourceCulture);
             }
         }
         
@@ -282,6 +471,42 @@ namespace SimpleDnsCrypt.Resources {
         internal static string block_plugin_title {
             get {
                 return ResourceManager.GetString("block_plugin_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to seconds.
+        /// </summary>
+        internal static string cache_plugin_seconds {
+            get {
+                return ResourceManager.GetString("cache_plugin_seconds", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A simple, zero-configuration DNS response cache..
+        /// </summary>
+        internal static string cache_plugin_text {
+            get {
+                return ResourceManager.GetString("cache_plugin_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DNS response cache.
+        /// </summary>
+        internal static string cache_plugin_title {
+            get {
+                return ResourceManager.GetString("cache_plugin_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TTL (cache time).
+        /// </summary>
+        internal static string cache_plugin_ttl {
+            get {
+                return ResourceManager.GetString("cache_plugin_ttl", resourceCulture);
             }
         }
         
@@ -688,6 +913,15 @@ namespace SimpleDnsCrypt.Resources {
         internal static string tab_advanced_settings {
             get {
                 return ResourceManager.GetString("tab_advanced_settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Block and Blacklist.
+        /// </summary>
+        internal static string tab_block {
+            get {
+                return ResourceManager.GetString("tab_block", resourceCulture);
             }
         }
         

@@ -56,8 +56,8 @@
       <HintPath>..\packages\Caliburn.Micro.3.0.2\lib\net45\Caliburn.Micro.Platform.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MahApps.Metro, Version=1.3.0.0, Culture=neutral, PublicKeyToken=f4fb5a3c4d1e5b4f, processorArchitecture=MSIL">
-      <HintPath>..\packages\MahApps.Metro.1.3.0\lib\net45\MahApps.Metro.dll</HintPath>
+    <Reference Include="MahApps.Metro, Version=1.4.0.42, Culture=neutral, PublicKeyToken=f4fb5a3c4d1e5b4f, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.4.0\lib\net45\MahApps.Metro.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
@@ -76,7 +76,7 @@
     <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Caliburn.Micro.3.0.2\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <HintPath>..\packages\MahApps.Metro.1.4.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Xml" />
@@ -130,6 +130,7 @@
     <Compile Include="Models\DnsCryptProxyEntry.cs" />
     <Compile Include="Models\DnsCryptProxyParameter.cs" />
     <Compile Include="Models\DnsCryptProxyType.cs" />
+    <Compile Include="Models\DomainBlacklist.cs" />
     <Compile Include="Models\InterfaceListView.cs" />
     <Compile Include="Models\InterfaceListViewItem.cs" />
     <Compile Include="Models\Language.cs" />
@@ -163,12 +164,14 @@
     <Compile Include="Tools\DnsCryptProxyListManager.cs" />
     <Compile Include="Tools\DnscryptProxyManager.cs" />
     <Compile Include="Tools\IShell.cs" />
+    <Compile Include="Tools\ListHelpers.cs" />
     <Compile Include="Tools\LocalizationEx.cs" />
     <Compile Include="Tools\LocalNetworkInterfaceManager.cs" />
     <Compile Include="Tools\NavigationService.cs" />
     <Compile Include="Tools\UserData.cs" />
     <Compile Include="Tools\VersionUtilities.cs" />
     <Compile Include="Tools\WindowManagerExtensions.cs" />
+    <Compile Include="ViewModels\BlockViewModel.cs" />
     <Compile Include="ViewModels\Interfaces\IMetroMessageBox.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\MetroMessageBoxViewModel.cs" />
@@ -247,13 +250,22 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Resource Include="data\README.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Content Include="dnscrypt-proxy\dnscrypt-proxy-secondary.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="dnscrypt-proxy\libcrypto-40.dll">
+    <Content Include="dnscrypt-proxy\libcrypto-41.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="dnscrypt-proxy\libdcplugin_cache.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="dnscrypt-proxy\libgcc_s_sjlj-1.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="dnscrypt-proxy\libldns-2.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="msvcrt.dll">
@@ -357,9 +369,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="dnscrypt-proxy\libdcplugin_logging.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="dnscrypt-proxy\libldns-1.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="dnscrypt-proxy\libwinpthread-1.dll">

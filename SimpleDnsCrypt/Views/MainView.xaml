@@ -33,6 +33,7 @@
             <converter:MultiReverseBoolToEnabledConverter x:Key="MultiReverseBoolToEnabledConverter" />
             <converter:MultiReverseBoolToVisibilityConverter x:Key="MultiReverseBoolToVisibilityConverter" />
             <converter:LocalDateConverter x:Key="LocalDateConverter" />
+            <converter:EnabledToColorConverter x:Key="EnabledToColorConverter" />
         </ResourceDictionary>
     </UserControl.Resources>
     <ScrollViewer VerticalScrollBarVisibility="Auto">
@@ -55,7 +56,9 @@
                         </DrawingBrush.Drawing>
                     </DrawingBrush>
                 </Border.BorderBrush>
-                <controls:MetroTabControl>
+
+                <TabControl controls:TabControlHelper.Transition="Right"
+                            cal:Message.Attach="[Event SelectionChanged] = [Action TabControl_SelectionChanged($this,$eventArgs)]">
                     <TabItem Padding="10,2,10,2" Height="39" VerticalAlignment="Top"
                              Header="{lex:Loc Key=tab_standard_settings}">
                         <TabItem.Content>
@@ -140,11 +143,13 @@
                                                             <Rectangle Grid.Column="1" Grid.Row="0"
                                                                        Visibility="{Binding UseDnsCrypt, Converter={StaticResource BoolToVisibilityConverter}}"
                                                                        Fill="#FFFFFF" Width="12" Height="12"
-                                                                       VerticalAlignment="Top" HorizontalAlignment="Right"
+                                                                       VerticalAlignment="Top"
+                                                                       HorizontalAlignment="Right"
                                                                        Margin="0,-20,7,0">
                                                                 <Rectangle.OpacityMask>
-                                                                    <VisualBrush Visual="{DynamicResource appbar_check}"
-                                                                                 Stretch="Uniform" />
+                                                                    <VisualBrush
+                                                                        Visual="{DynamicResource appbar_check}"
+                                                                        Stretch="Uniform" />
                                                                 </Rectangle.OpacityMask>
                                                             </Rectangle>
                                                         </Grid>
@@ -205,11 +210,23 @@
                                                            Foreground="#FF8ab329" FontSize="18"
                                                            Opacity="0.7" Margin="5,0,0,3" FontWeight="Bold">
                                                 </TextBlock>
-                                                <controls:NumericUpDown Visibility="{Binding ActAsGlobalGateway, Converter={StaticResource ReverseBoolToVisibilityConverter}}" ToolTip="{lex:Loc Key=default_settings_info_port}" Grid.Column="2" Grid.Row="0" Height="27" Minimum="53" Maximum="65535" Interval="1" Value="{Binding PrimaryResolver.LocalPort}" StringFormat="127.0.0.1:{0}" Margin="5,0,0,0"/>
-                                                <Button Visibility="{Binding ActAsGlobalGateway, Converter={StaticResource ReverseBoolToVisibilityConverter}}" Background="#FFFFFFFF" Grid.Column="3" Grid.Row="0" Height="35" Width="35" VerticalAlignment="Top" Cursor="Hand" x:Name="SavePrimaryPort" ToolTip="{lex:Loc Key=default_settings_save_port}" Style="{DynamicResource MetroCircleButtonStyle}">
+                                                <controls:NumericUpDown
+                                                    Visibility="{Binding ActAsGlobalGateway, Converter={StaticResource ReverseBoolToVisibilityConverter}}"
+                                                    ToolTip="{lex:Loc Key=default_settings_info_port}" Grid.Column="2"
+                                                    Grid.Row="0" Height="27" Minimum="53" Maximum="65535" Interval="1"
+                                                    Value="{Binding PrimaryResolver.LocalPort}"
+                                                    StringFormat="127.0.0.1:{0}" Margin="5,0,0,0" />
+                                                <Button
+                                                    Visibility="{Binding ActAsGlobalGateway, Converter={StaticResource ReverseBoolToVisibilityConverter}}"
+                                                    Background="#FFFFFFFF" Grid.Column="3" Grid.Row="0" Height="35"
+                                                    Width="35" VerticalAlignment="Top" Cursor="Hand"
+                                                    x:Name="SavePrimaryPort"
+                                                    ToolTip="{lex:Loc Key=default_settings_save_port}"
+                                                    Style="{DynamicResource MetroCircleButtonStyle}">
                                                     <Rectangle Fill="#FF8ab329" Width="12" Height="12">
                                                         <Rectangle.OpacityMask>
-                                                            <VisualBrush Visual="{DynamicResource appbar_save}" Stretch="Fill" />
+                                                            <VisualBrush Visual="{DynamicResource appbar_save}"
+                                                                         Stretch="Fill" />
                                                         </Rectangle.OpacityMask>
                                                     </Rectangle>
                                                 </Button>
@@ -251,17 +268,22 @@
                                                        HorizontalAlignment="Left">
                                                 </Label>
                                                 <TextBox Grid.Row="1" Grid.Column="1" IsReadOnly="True"
-                                                         Text="{Binding PrimaryResolver.ResolverAddress}" IsEnabled="False"
-                                                         VerticalAlignment="Center" Width="230" HorizontalAlignment="Left" />
+                                                         Text="{Binding PrimaryResolver.ResolverAddress}"
+                                                         IsEnabled="False"
+                                                         VerticalAlignment="Center" Width="230"
+                                                         HorizontalAlignment="Left" />
                                                 <Label Foreground="#FF575757" Grid.Row="2" Grid.Column="0"
                                                        Content="{lex:Loc Key=default_settings_name}"
                                                        VerticalAlignment="Center"
                                                        HorizontalAlignment="Left">
                                                 </Label>
                                                 <TextBox Grid.Row="2" Grid.Column="1" IsReadOnly="True"
-                                                         ToolTip="{Binding PrimaryResolver.ProviderName}" ToolTipService.ShowOnDisabled="True"
-                                                         Text="{Binding PrimaryResolver.ProviderName}" IsEnabled="False"
-                                                         VerticalAlignment="Center" Width="230" HorizontalAlignment="Left" />
+                                                         ToolTip="{Binding PrimaryResolver.ProviderName}"
+                                                         ToolTipService.ShowOnDisabled="True"
+                                                         Text="{Binding PrimaryResolver.ProviderName}"
+                                                         IsEnabled="False"
+                                                         VerticalAlignment="Center" Width="230"
+                                                         HorizontalAlignment="Left" />
                                                 <Label Foreground="#FF575757" Grid.Row="3" Grid.Column="0"
                                                        Content="{lex:Loc Key=default_settings_public_key}"
                                                        VerticalAlignment="Center"
@@ -394,9 +416,12 @@
                                                        HorizontalAlignment="Left">
                                                 </Label>
                                                 <TextBox Grid.Row="2" Grid.Column="1" IsReadOnly="True"
-                                                         ToolTip="{Binding SecondaryResolver.ProviderName}" ToolTipService.ShowOnDisabled="True"
-                                                         Text="{Binding SecondaryResolver.ProviderName}" IsEnabled="False"
-                                                         VerticalAlignment="Center" Width="230" HorizontalAlignment="Left" />
+                                                         ToolTip="{Binding SecondaryResolver.ProviderName}"
+                                                         ToolTipService.ShowOnDisabled="True"
+                                                         Text="{Binding SecondaryResolver.ProviderName}"
+                                                         IsEnabled="False"
+                                                         VerticalAlignment="Center" Width="230"
+                                                         HorizontalAlignment="Left" />
                                                 <Label Foreground="#FF575757" Grid.Row="3" Grid.Column="0"
                                                        Content="{lex:Loc Key=default_settings_public_key}"
                                                        VerticalAlignment="Center"
@@ -442,7 +467,8 @@
                                         </StackPanel>
                                     </Border>
                                 </UniformGrid>
-                                <Border BorderThickness="1" Background="#198AB328" Padding="20,10" Margin="0,14,0,0" MinHeight="125">
+                                <Border BorderThickness="1" Background="#198AB328" Padding="20,10" Margin="0,14,0,0"
+                                        MinHeight="125">
                                     <Border.BorderBrush>
                                         <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile"
                                                       Opacity="0.4">
@@ -497,7 +523,8 @@
                                                    VerticalAlignment="Bottom"
                                                    HorizontalAlignment="Left" Margin="0,0,0,5">
                                             </Label>
-                                            <controls:MetroProgressBar IsIndeterminate="True" Grid.Row="0" Grid.Column="1"
+                                            <controls:MetroProgressBar IsIndeterminate="True" Grid.Row="0"
+                                                                       Grid.Column="1"
                                                                        Visibility="{Binding IsWorkingOnPrimaryService, Converter={StaticResource BoolToVisibilityConverter}}"
                                                                        Width="250"
                                                                        Foreground="{DynamicResource AccentColorBrush}"
@@ -514,7 +541,8 @@
                                                    VerticalAlignment="Bottom"
                                                    HorizontalAlignment="Left" Margin="0,0,0,5">
                                             </Label>
-                                            <controls:MetroProgressBar IsIndeterminate="True" Grid.Row="1" Grid.Column="1"
+                                            <controls:MetroProgressBar IsIndeterminate="True" Grid.Row="1"
+                                                                       Grid.Column="1"
                                                                        Visibility="{Binding IsWorkingOnSecondaryService, Converter={StaticResource BoolToVisibilityConverter}}"
                                                                        Width="250"
                                                                        Foreground="{DynamicResource AccentColorBrush}"
@@ -570,17 +598,19 @@
                                                     <SolidColorBrush Color="Black" Opacity="0.7" />
                                                 </TextBlock.OpacityMask>
                                             </TextBlock>
-                                            <TextBlock Grid.Column="1" Grid.Row="0" Text="{lex:Loc Key=advanced_settings_refresh_resolver_title}"
+                                            <TextBlock Grid.Column="1" Grid.Row="0"
+                                                       Text="{lex:Loc Key=advanced_settings_refresh_resolver_title}"
                                                        TextWrapping="Wrap" VerticalAlignment="Center"
                                                        Foreground="#FF8ab329" FontSize="20"
                                                        Opacity="0.7" Margin="5,0,0,3" FontWeight="Bold">
                                             </TextBlock>
-                                            <TextBlock Grid.Column="2" Grid.Row="0" Text="{Binding ProxyListLastWriteTime, Converter={StaticResource LocalDateConverter}}"
+                                            <TextBlock Grid.Column="2" Grid.Row="0"
+                                                       Text="{Binding ProxyListLastWriteTime, Converter={StaticResource LocalDateConverter}}"
                                                        TextWrapping="Wrap" VerticalAlignment="Center"
                                                        Foreground="#FF8ab329" FontSize="20"
                                                        Opacity="0.7" Margin="5,0,0,3" FontWeight="Bold">
                                             </TextBlock>
-                                            
+
                                         </Grid>
                                         <TextBlock
                                             Text="{lex:Loc Key=advanced_settings_refresh_resolver_text}"
@@ -600,8 +630,10 @@
                                                                        VerticalAlignment="Center" Grid.ColumnSpan="2" />
                                             <Button x:Name="RefreshResolverListAsync" Grid.Column="2"
                                                     IsEnabled="{Binding IsRefreshingResolverList, Converter={StaticResource ReverseBoolToEnabledConverter}}"
-                                                    Cursor="Hand" Width="180" Content="{lex:Loc Key=advanced_settings_refresh_resolver_button}"
-                                                    Margin="0,10,0,0" Style="{StaticResource AccentedSquareButtonStyle}"
+                                                    Cursor="Hand" Width="180"
+                                                    Content="{lex:Loc Key=advanced_settings_refresh_resolver_button}"
+                                                    Margin="0,10,0,0"
+                                                    Style="{StaticResource AccentedSquareButtonStyle}"
                                                     HorizontalAlignment="Right" />
                                         </Grid>
                                     </StackPanel>
@@ -640,7 +672,8 @@
                                                     <SolidColorBrush Color="Black" Opacity="0.7" />
                                                 </TextBlock.OpacityMask>
                                             </TextBlock>
-                                            <TextBlock Grid.Column="1" Grid.Row="0" Text="{lex:Loc Key=advanced_settings_global_resolver_title}"
+                                            <TextBlock Grid.Column="1" Grid.Row="0"
+                                                       Text="{lex:Loc Key=advanced_settings_global_resolver_title}"
                                                        TextWrapping="Wrap" VerticalAlignment="Center"
                                                        Foreground="#FF8ab329" FontSize="20"
                                                        Opacity="0.7" Margin="5,0,0,3" FontWeight="Bold">
@@ -705,7 +738,8 @@
                                                     <SolidColorBrush Color="Black" Opacity="0.7" />
                                                 </TextBlock.OpacityMask>
                                             </TextBlock>
-                                            <TextBlock Grid.Column="1" Grid.Row="0" Text="{lex:Loc Key=advanced_settings_transport_tcp_title}"
+                                            <TextBlock Grid.Column="1" Grid.Row="0"
+                                                       Text="{lex:Loc Key=advanced_settings_transport_tcp_title}"
                                                        TextWrapping="Wrap" VerticalAlignment="Center"
                                                        Foreground="#FF8ab329" FontSize="20"
                                                        Opacity="0.7" Margin="5,0,0,3" FontWeight="Bold">
@@ -782,7 +816,8 @@
                                                     <SolidColorBrush Color="Black" Opacity="0.7" />
                                                 </TextBlock.OpacityMask>
                                             </TextBlock>
-                                            <TextBlock Grid.Column="1" Grid.Row="0" Text="{lex:Loc Key=advanced_settings_plugins_title}"
+                                            <TextBlock Grid.Column="1" Grid.Row="0"
+                                                       Text="{lex:Loc Key=advanced_settings_plugins_title}"
                                                        TextWrapping="Wrap" VerticalAlignment="Center"
                                                        Foreground="#FF8ab329" FontSize="20"
                                                        Opacity="0.7" Margin="5,0,0,3" FontWeight="Bold">
@@ -793,7 +828,8 @@
                                             TextWrapping="Wrap" Foreground="#FF575757" FontSize="14">
                                         </TextBlock>
                                         <Button x:Name="OpenPluginManager" Cursor="Hand" Width="180"
-                                                Content="{lex:Loc Key=advanced_settings_plugins_button}" Margin="0,10,0,0"
+                                                Content="{lex:Loc Key=advanced_settings_plugins_button}"
+                                                Margin="0,10,0,0"
                                                 Style="{StaticResource AccentedSquareButtonStyle}"
                                                 HorizontalAlignment="Right" />
                                     </StackPanel>
@@ -832,7 +868,8 @@
                                                     <SolidColorBrush Color="Black" Opacity="0.7" />
                                                 </TextBlock.OpacityMask>
                                             </TextBlock>
-                                            <TextBlock Grid.Column="1" Grid.Row="0" Text="{lex:Loc Key=advanced_settings_uninstall_title}"
+                                            <TextBlock Grid.Column="1" Grid.Row="0"
+                                                       Text="{lex:Loc Key=advanced_settings_uninstall_title}"
                                                        TextWrapping="Wrap" VerticalAlignment="Center"
                                                        Foreground="#FF8ab329" FontSize="20"
                                                        Opacity="0.7" Margin="5,0,0,3" FontWeight="Bold">
@@ -855,12 +892,391 @@
                                                                        VerticalAlignment="Center" />
                                             <Button Grid.Column="1" x:Name="UninstallServices"
                                                     IsEnabled="{Binding IsUninstallingServices, Converter={StaticResource ReverseBoolToEnabledConverter}}"
-                                                    Cursor="Hand" Width="180" Content="{lex:Loc Key=advanced_settings_uninstall_button}"
-                                                    Margin="0,10,0,0" Style="{StaticResource AccentedSquareButtonStyle}"
+                                                    Cursor="Hand" Width="180"
+                                                    Content="{lex:Loc Key=advanced_settings_uninstall_button}"
+                                                    Margin="0,10,0,0"
+                                                    Style="{StaticResource AccentedSquareButtonStyle}"
                                                     HorizontalAlignment="Right" />
                                         </Grid>
                                     </StackPanel>
                                 </Border>
+                            </StackPanel>
+                        </TabItem.Content>
+                    </TabItem>
+                    <TabItem Padding="10,2,10,2" Height="39" VerticalAlignment="Top" Header="{lex:Loc Key=tab_block}"
+                             DataContext="{Binding BlockViewModel}">
+                        <TabItem.Content>
+                            <StackPanel Orientation="Vertical" Margin="0,10,0,0">
+                                <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,0,0,0">
+                                    <Border.BorderBrush>
+                                        <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile"
+                                                      Opacity="0.4">
+                                            <DrawingBrush.Drawing>
+                                                <DrawingGroup>
+                                                    <GeometryDrawing Brush="#FF8ab329">
+                                                        <GeometryDrawing.Geometry>
+                                                            <GeometryGroup>
+                                                                <RectangleGeometry Rect="0,0,50,50" />
+                                                                <RectangleGeometry Rect="50,50,50,50" />
+                                                            </GeometryGroup>
+                                                        </GeometryDrawing.Geometry>
+                                                    </GeometryDrawing>
+                                                </DrawingGroup>
+                                            </DrawingBrush.Drawing>
+                                        </DrawingBrush>
+                                    </Border.BorderBrush>
+                                    <StackPanel Orientation="Vertical">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="&#xf05e;"
+                                                       FontFamily="/Resources/fontawesome-webfont.ttf#FontAwesome"
+                                                       FontSize="20"
+                                                       HorizontalAlignment="Left" VerticalAlignment="Center"
+                                                       Foreground="#FF8ab329">
+                                                <TextBlock.OpacityMask>
+                                                    <SolidColorBrush Color="Black" Opacity="0.7" />
+                                                </TextBlock.OpacityMask>
+                                            </TextBlock>
+                                            <TextBlock Grid.Column="1" Grid.Row="0" Text="{lex:Loc Key=block_plugin_sub_domains_header}"
+                                                       TextWrapping="Wrap" VerticalAlignment="Center"
+                                                       Foreground="#FF8ab329" FontSize="20"
+                                                       Opacity="0.7" Margin="5,0,0,3" FontWeight="Bold">
+                                            </TextBlock>
+
+                                        </Grid>
+                                        <TextBlock
+                                            Text="{lex:Loc Key=block_plugin_sub_domains_text}"
+                                            TextWrapping="Wrap" Foreground="#FF575757" FontSize="14">
+                                        </TextBlock>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition></RowDefinition>
+                                                <RowDefinition></RowDefinition>
+                                            </Grid.RowDefinitions>
+                                            <ListView BorderBrush="#198AB328"
+                                                      IsEnabled="{Binding IsWorking, Converter={StaticResource ReverseBoolToEnabledConverter}}"
+                                                      ScrollViewer.VerticalScrollBarVisibility="Visible"
+                                                      ScrollViewer.CanContentScroll="True" Margin="10" Grid.Column="0"
+                                                      Grid.Row="0" Height="110"
+                                                      SelectedItem="{Binding Path=SelectedDomainBlockRule}"
+                                                      ItemsSource="{Binding Path=DomainRuleCollection}"
+                                                      Grid.ColumnSpan="2">
+                                                <ListView.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <Label Content="{Binding Rule}" FontSize="10"
+                                                               Foreground="#FF575757" />
+                                                    </DataTemplate>
+                                                </ListView.ItemTemplate>
+                                            </ListView>
+                                            <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Vertical">
+                                                <StackPanel Margin="0,5,0,0" Orientation="Horizontal">
+                                                    <StackPanel Orientation="Vertical">
+                                                        <TextBox Height="26" Width="330"
+                                                                 Text="{Binding DomainBlacklistPath}" IsReadOnly="True"
+                                                                 IsEnabled="{Binding IsWorking, Converter={StaticResource ReverseBoolToEnabledConverter}}"
+                                                                 HorizontalAlignment="Left" />
+                                                        <TextBlock Foreground="#FF8ab329" FontSize="10"
+                                                                   Text="{Binding DomainBlacklistPathInfoString}">
+                                                        </TextBlock>
+                                                    </StackPanel>
+                                                    <Button ToolTip="{lex:Loc Key=blacklist_button_select_domain_blacklist}"
+                                                            HorizontalAlignment="Center" Margin="15,0,0,0" Height="46"
+                                                            VerticalAlignment="Center"
+                                                            Width="46" Cursor="Hand"
+                                                            Style="{DynamicResource MetroCircleButtonStyle}"
+                                                            Background="#FFFFFFFF"
+                                                            IsEnabled="{Binding DomainBlacklistPlugin, Converter={StaticResource ReverseBoolToEnabledConverter}}">
+                                                        <i:Interaction.Triggers>
+                                                            <i:EventTrigger EventName="Click">
+                                                                <cal:ActionMessage MethodName="SelectDomainBlacklist" />
+                                                            </i:EventTrigger>
+                                                        </i:Interaction.Triggers>
+                                                        <Rectangle
+                                                            Fill="{Binding DomainBlacklistPlugin, Converter={StaticResource EnabledToColorConverter}}"
+                                                            Width="20" Height="20">
+                                                            <Rectangle.OpacityMask>
+                                                                <VisualBrush
+                                                                    Visual="{DynamicResource appbar_page_select}"
+                                                                    Stretch="Uniform" />
+                                                            </Rectangle.OpacityMask>
+                                                        </Rectangle>
+                                                    </Button>
+                                                </StackPanel>
+                                                <controls:ToggleSwitchButton
+                                                    IsEnabled="{Binding IsWorking, Converter={StaticResource ReverseBoolToEnabledConverter}}"
+                                                    Cursor="Hand"
+                                                    IsChecked="{Binding DomainBlacklistPlugin}"
+                                                    HorizontalAlignment="Right" VerticalAlignment="Top">
+                                                </controls:ToggleSwitchButton>
+                                            </StackPanel>
+                                            <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Vertical"
+                                                        Margin="10" Grid.ColumnSpan="2">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Button Background="#FFFFFFFF" Height="46" Width="46"
+                                                            VerticalAlignment="Top" Cursor="Hand" ToolTip="{lex:Loc Key=blacklist_button_add_local_domain}"
+                                                            IsEnabled="{Binding IsWorking, Converter={StaticResource ReverseBoolToEnabledConverter}}"
+                                                            Style="{DynamicResource MetroCircleButtonStyle}">
+                                                        <i:Interaction.Triggers>
+                                                            <i:EventTrigger EventName="Click">
+                                                                <cal:ActionMessage MethodName="AddLocalDomainBlockRule" />
+                                                            </i:EventTrigger>
+                                                        </i:Interaction.Triggers>
+                                                        <Rectangle Fill="#FF8ab329" Width="20" Height="20">
+                                                            <Rectangle.OpacityMask>
+                                                                <VisualBrush Visual="{DynamicResource appbar_user_add}"
+                                                                             Stretch="Fill" />
+                                                            </Rectangle.OpacityMask>
+                                                        </Rectangle>
+                                                    </Button>
+                                                    <Button Background="#FFFFFFFF" Height="46" Width="46"
+                                                            VerticalAlignment="Top" Cursor="Hand" ToolTip="{lex:Loc Key=blacklist_button_add_remote_domain}"
+                                                            IsEnabled="{Binding IsWorking, Converter={StaticResource ReverseBoolToEnabledConverter}}"
+                                                            Style="{DynamicResource MetroCircleButtonStyle}">
+                                                        <i:Interaction.Triggers>
+                                                            <i:EventTrigger EventName="Click">
+                                                                <cal:ActionMessage
+                                                                    MethodName="AddRemoteDomainBlockRule" />
+                                                            </i:EventTrigger>
+                                                        </i:Interaction.Triggers>
+                                                        <Rectangle Fill="#FF8ab329" Width="20" Height="20">
+                                                            <Rectangle.OpacityMask>
+                                                                <VisualBrush
+                                                                    Visual="{DynamicResource appbar_cloud_add}"
+                                                                    Stretch="Fill" />
+                                                            </Rectangle.OpacityMask>
+                                                        </Rectangle>
+                                                    </Button>
+                                                    <Button Background="#FFFFFFFF" Height="46" Width="46"
+                                                            VerticalAlignment="Top" Cursor="Hand" ToolTip="{lex:Loc Key=blacklist_button_remove_domain}"
+                                                            IsEnabled="{Binding IsWorking, Converter={StaticResource ReverseBoolToEnabledConverter}}"
+                                                            Style="{DynamicResource MetroCircleButtonStyle}">
+                                                        <i:Interaction.Triggers>
+                                                            <i:EventTrigger EventName="Click">
+                                                                <cal:ActionMessage
+                                                                    MethodName="RemoveSelectedDomainBlockRule" />
+                                                            </i:EventTrigger>
+                                                        </i:Interaction.Triggers>
+                                                        <Rectangle Fill="#FF8ab329" Width="20" Height="20">
+                                                            <Rectangle.OpacityMask>
+                                                                <VisualBrush Visual="{DynamicResource appbar_delete}"
+                                                                             Stretch="Fill" />
+                                                            </Rectangle.OpacityMask>
+                                                        </Rectangle>
+                                                    </Button>
+                                                    <Button Background="#FFFFFFFF" Height="46" Width="46"
+                                                            VerticalAlignment="Top" Cursor="Hand" ToolTip="{lex:Loc Key=blacklist_button_build_domain}"
+                                                            Style="{DynamicResource MetroCircleButtonStyle}"
+                                                            IsEnabled="{Binding IsWorking, Converter={StaticResource ReverseBoolToEnabledConverter}}">
+                                                        <i:Interaction.Triggers>
+                                                            <i:EventTrigger EventName="Click">
+                                                                <cal:ActionMessage MethodName="BuildDomainBlacklist" />
+                                                            </i:EventTrigger>
+                                                        </i:Interaction.Triggers>
+                                                        <Rectangle Fill="#FF8ab329" Width="20" Height="20">
+                                                            <Rectangle.OpacityMask>
+                                                                <VisualBrush Visual="{DynamicResource appbar_brick}"
+                                                                             Stretch="Fill" />
+                                                            </Rectangle.OpacityMask>
+                                                        </Rectangle>
+                                                    </Button>
+                                                </StackPanel>
+                                                <controls:MetroProgressBar IsIndeterminate="True"
+                                                                           Visibility="{Binding IsWorking, Converter={StaticResource BoolToVisibilityConverter}}"
+                                                                           Width="220"
+                                                                           Foreground="{DynamicResource AccentColorBrush}"
+                                                                           Margin="0" />
+                                            </StackPanel>
+                                        </Grid>
+                                    </StackPanel>
+                                </Border>
+
+                                <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,10,0,0">
+                                    <Border.BorderBrush>
+                                        <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile"
+                                                      Opacity="0.4">
+                                            <DrawingBrush.Drawing>
+                                                <DrawingGroup>
+                                                    <GeometryDrawing Brush="#FF8ab329">
+                                                        <GeometryDrawing.Geometry>
+                                                            <GeometryGroup>
+                                                                <RectangleGeometry Rect="0,0,50,50" />
+                                                                <RectangleGeometry Rect="50,50,50,50" />
+                                                            </GeometryGroup>
+                                                        </GeometryDrawing.Geometry>
+                                                    </GeometryDrawing>
+                                                </DrawingGroup>
+                                            </DrawingBrush.Drawing>
+                                        </DrawingBrush>
+                                    </Border.BorderBrush>
+                                    <StackPanel Orientation="Vertical">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="&#xf05e;"
+                                                       FontFamily="/Resources/fontawesome-webfont.ttf#FontAwesome"
+                                                       FontSize="20"
+                                                       HorizontalAlignment="Left" VerticalAlignment="Center"
+                                                       Foreground="#FF8ab329">
+                                                <TextBlock.OpacityMask>
+                                                    <SolidColorBrush Color="Black" Opacity="0.7" />
+                                                </TextBlock.OpacityMask>
+                                            </TextBlock>
+                                            <TextBlock Grid.Column="1" Grid.Row="0" Text="{lex:Loc Key=block_plugin_sub_addresses_header}"
+                                                       TextWrapping="Wrap" VerticalAlignment="Center"
+                                                       Foreground="#FF8ab329" FontSize="20"
+                                                       Opacity="0.7" Margin="5,0,0,3" FontWeight="Bold">
+                                            </TextBlock>
+
+                                        </Grid>
+                                        <TextBlock
+                                            Text="{lex:Loc Key=block_plugin_sub_addresses_text}"
+                                            TextWrapping="Wrap" Foreground="#FF575757" FontSize="14">
+                                        </TextBlock>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition></RowDefinition>
+                                                <RowDefinition></RowDefinition>
+                                            </Grid.RowDefinitions>
+                                            <ListView BorderBrush="#198AB328"
+                                                      IsEnabled="{Binding IsWorking, Converter={StaticResource ReverseBoolToEnabledConverter}}"
+                                                      ScrollViewer.VerticalScrollBarVisibility="Visible"
+                                                      ScrollViewer.CanContentScroll="True" Margin="10" Height="110"
+                                                      Grid.Column="0" Grid.Row="0"
+                                                      SelectedItem="{Binding Path=SelectedAddressBlockRule}"
+                                                      ItemsSource="{Binding Path=AddressRuleCollection}"
+                                                      Grid.ColumnSpan="2">
+                                                <ListView.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <Label Content="{Binding}" FontSize="10" Foreground="#FF575757" />
+                                                    </DataTemplate>
+                                                </ListView.ItemTemplate>
+                                            </ListView>
+
+                                            <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Vertical">
+                                                <StackPanel Margin="0,5,0,0" Orientation="Horizontal">
+                                                    <StackPanel Orientation="Vertical">
+                                                        <TextBox Height="26" Width="330"
+                                                                 Text="{Binding AddressBlacklistPath}"
+                                                                 IsReadOnly="True"
+                                                                 IsEnabled="{Binding IsWorking, Converter={StaticResource ReverseBoolToEnabledConverter}}"
+                                                                 HorizontalAlignment="Left" />
+                                                        <TextBlock Foreground="#FF8ab329" FontSize="10"
+                                                                   Text="{Binding AddressBlacklistPathInfoString}">
+                                                        </TextBlock>
+                                                    </StackPanel>
+                                                    <Button ToolTip="{lex:Loc Key=blacklist_button_select_address_blacklist}"
+                                                            HorizontalAlignment="Center" Margin="15,0,0,0" Height="46"
+                                                            VerticalAlignment="Center"
+                                                            Width="46" Cursor="Hand"
+                                                            Style="{DynamicResource MetroCircleButtonStyle}"
+                                                            Background="#FFFFFFFF"
+                                                            IsEnabled="{Binding AddressBlacklistPlugin, Converter={StaticResource ReverseBoolToEnabledConverter}}">
+                                                        <i:Interaction.Triggers>
+                                                            <i:EventTrigger EventName="Click">
+                                                                <cal:ActionMessage MethodName="SelectAddressBlacklist" />
+                                                            </i:EventTrigger>
+                                                        </i:Interaction.Triggers>
+                                                        <Rectangle
+                                                            Fill="{Binding AddressBlacklistPlugin, Converter={StaticResource EnabledToColorConverter}}"
+                                                            Width="20" Height="20">
+                                                            <Rectangle.OpacityMask>
+                                                                <VisualBrush
+                                                                    Visual="{DynamicResource appbar_page_select}"
+                                                                    Stretch="Uniform" />
+                                                            </Rectangle.OpacityMask>
+                                                        </Rectangle>
+                                                    </Button>
+                                                </StackPanel>
+                                                <controls:ToggleSwitchButton
+                                                    IsEnabled="{Binding IsWorking, Converter={StaticResource ReverseBoolToEnabledConverter}}"
+                                                    Cursor="Hand"
+                                                    IsChecked="{Binding AddressBlacklistPlugin}"
+                                                    HorizontalAlignment="Right" VerticalAlignment="Top">
+                                                </controls:ToggleSwitchButton>
+                                            </StackPanel>
+
+
+                                            <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal"
+                                                        Margin="10" Grid.ColumnSpan="2">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Button Background="#FFFFFFFF" Height="46" Width="46"
+                                                            VerticalAlignment="Top" Cursor="Hand" ToolTip="{lex:Loc Key=blacklist_button_add_address}"
+                                                            IsEnabled="{Binding IsWorking, Converter={StaticResource ReverseBoolToEnabledConverter}}"
+                                                            Style="{DynamicResource MetroCircleButtonStyle}">
+                                                        <i:Interaction.Triggers>
+                                                            <i:EventTrigger EventName="Click">
+                                                                <cal:ActionMessage MethodName="AddAddressBlockRule" />
+                                                            </i:EventTrigger>
+                                                        </i:Interaction.Triggers>
+                                                        <Rectangle Fill="#FF8ab329" Width="20" Height="20">
+                                                            <Rectangle.OpacityMask>
+                                                                <VisualBrush Visual="{DynamicResource appbar_user_add}"
+                                                                             Stretch="Fill" />
+                                                            </Rectangle.OpacityMask>
+                                                        </Rectangle>
+                                                    </Button>
+                                                    <Button Background="#FFFFFFFF" Height="46" Width="46"
+                                                            VerticalAlignment="Top" Cursor="Hand" ToolTip="{lex:Loc Key=blacklist_button_remove_address}"
+                                                            IsEnabled="{Binding IsWorking, Converter={StaticResource ReverseBoolToEnabledConverter}}"
+                                                            Style="{DynamicResource MetroCircleButtonStyle}">
+                                                        <i:Interaction.Triggers>
+                                                            <i:EventTrigger EventName="Click">
+                                                                <cal:ActionMessage
+                                                                    MethodName="RemoveSelectedAddressBlockRule" />
+                                                            </i:EventTrigger>
+                                                        </i:Interaction.Triggers>
+                                                        <Rectangle Fill="#FF8ab329" Width="20" Height="20">
+                                                            <Rectangle.OpacityMask>
+                                                                <VisualBrush Visual="{DynamicResource appbar_delete}"
+                                                                             Stretch="Fill" />
+                                                            </Rectangle.OpacityMask>
+                                                        </Rectangle>
+                                                    </Button>
+                                                    <Button Background="#FFFFFFFF" Height="46" Width="46"
+                                                            VerticalAlignment="Top" Cursor="Hand" ToolTip="{lex:Loc Key=blacklist_button_build_address}"
+                                                            Style="{DynamicResource MetroCircleButtonStyle}"
+                                                            IsEnabled="{Binding IsWorking, Converter={StaticResource ReverseBoolToEnabledConverter}}">
+                                                        <i:Interaction.Triggers>
+                                                            <i:EventTrigger EventName="Click">
+                                                                <cal:ActionMessage MethodName="BuildAddressBlacklist" />
+                                                            </i:EventTrigger>
+                                                        </i:Interaction.Triggers>
+                                                        <Rectangle Fill="#FF8ab329" Width="20" Height="20">
+                                                            <Rectangle.OpacityMask>
+                                                                <VisualBrush Visual="{DynamicResource appbar_brick}"
+                                                                             Stretch="Fill" />
+                                                            </Rectangle.OpacityMask>
+                                                        </Rectangle>
+                                                    </Button>
+                                                </StackPanel>
+                                                <controls:MetroProgressBar IsIndeterminate="True"
+                                                                           Visibility="{Binding IsWorking, Converter={StaticResource BoolToVisibilityConverter}}"
+                                                                           Width="220"
+                                                                           Foreground="{DynamicResource AccentColorBrush}"
+                                                                           Margin="0" />
+                                            </StackPanel>
+
+
+                                        </Grid>
+                                    </StackPanel>
+                                </Border>
+
+
                             </StackPanel>
                         </TabItem.Content>
                     </TabItem>
@@ -888,8 +1304,10 @@
                                     </Border.BorderBrush>
                                     <StackPanel Orientation="Vertical">
                                         <StackPanel Orientation="Vertical">
-                                            <TextBlock FontSize="20" Foreground="#FF8ab329" Text="{lex:Loc Key=about_license}"/>
-                                            <TextBlock FontSize="10" Foreground="#FF575757" Margin="0,10,0,0" Width="450"
+                                            <TextBlock FontSize="20" Foreground="#FF8ab329"
+                                                       Text="{lex:Loc Key=about_license}" />
+                                            <TextBlock FontSize="10" Foreground="#FF575757" Margin="0,10,0,0"
+                                                       Width="450"
                                                        TextWrapping="Wrap">
                                                 The MIT License (MIT)
                                                 <LineBreak />
@@ -919,21 +1337,27 @@
                                             </TextBlock>
                                         </StackPanel>
                                         <StackPanel Orientation="Vertical" Margin="0,20,0,0">
-                                            <TextBlock FontSize="20" Foreground="#FF8ab329" Text="{lex:Loc Key=about_special_thanks}"/>
-                                            <TextBlock FontSize="18" Foreground="#FF575757" Margin="0,10,0,0" Width="450"
+                                            <TextBlock FontSize="20" Foreground="#FF8ab329"
+                                                       Text="{lex:Loc Key=about_special_thanks}" />
+                                            <TextBlock FontSize="18" Foreground="#FF575757" Margin="0,10,0,0"
+                                                       Width="450"
                                                        TextWrapping="Wrap"
                                                        tools:NavigationService.Text="{lex:Loc Key=about_thanks_frank_title}" />
-                                            <TextBlock FontSize="14" Foreground="#FF575757" Margin="0,3,0,0" Width="450"
+                                            <TextBlock FontSize="14" Foreground="#FF575757" Margin="0,3,0,0"
+                                                       Width="450"
                                                        TextWrapping="Wrap"
                                                        tools:NavigationService.Text="{lex:Loc Key=about_thanks_frank_text}" />
-                                            <TextBlock FontSize="18" Foreground="#FF575757" Margin="0,10,0,0" Width="450"
+                                            <TextBlock FontSize="18" Foreground="#FF575757" Margin="0,10,0,0"
+                                                       Width="450"
                                                        TextWrapping="Wrap"
                                                        tools:NavigationService.Text="{lex:Loc Key=about_thanks_bytejail_title}" />
-                                            <TextBlock FontSize="14" Foreground="#FF575757" Margin="0,3,0,0" Width="450"
+                                            <TextBlock FontSize="14" Foreground="#FF575757" Margin="0,3,0,0"
+                                                       Width="450"
                                                        TextWrapping="Wrap"
                                                        tools:NavigationService.Text="{lex:Loc Key=about_thanks_bytejail_text}" />
-                                            
-                                            <Image Source="/SimpleDnsCrypt;component/Images/bytejail_logo.png" Width="250" Stretch="UniformToFill" Margin="0,30,0,0"/>
+
+                                            <Image Source="/SimpleDnsCrypt;component/Images/bytejail_logo.png"
+                                                   Width="250" Stretch="UniformToFill" Margin="0,30,0,0" />
                                         </StackPanel>
                                     </StackPanel>
                                 </Border>
@@ -958,16 +1382,17 @@
                                         </DrawingBrush>
                                     </Border.BorderBrush>
                                     <StackPanel Width="240">
-                                        <TextBlock FontSize="20" Foreground="#FF8ab329" Text="{lex:Loc Key=about_used_software}"/>
+                                        <TextBlock FontSize="20" Foreground="#FF8ab329"
+                                                   Text="{lex:Loc Key=about_used_software}" />
                                         <TextBlock FontSize="10" Foreground="#FF575757"
-                                                       tools:NavigationService.Text="Project Site: https://simplednscrypt.org&#x0a;&#x0a;Caliburn.Micro&#x0a;https://github.com/Caliburn-Micro/Caliburn.Micro&#x0a;MahApps.Metro&#x0a;https://github.com/MahApps/MahApps.Metro&#x0a;libsodium-net&#x0a;https://github.com/adamcaudill/libsodium-net&#x0a;minisign-net&#x0a;https://github.com/bitbeans/minisign-net&#x0a;WPF LocalizationExtension&#x0a;https://github.com/SeriousM/WPFLocalizationExtension&#x0a;YamlDotNet&#x0a;https://github.com/aaubry/YamlDotNet"
-                                                       TextWrapping="Wrap" />
+                                                   tools:NavigationService.Text="Project Site: https://simplednscrypt.org&#x0a;&#x0a;Caliburn.Micro&#x0a;https://github.com/Caliburn-Micro/Caliburn.Micro&#x0a;MahApps.Metro&#x0a;https://github.com/MahApps/MahApps.Metro&#x0a;libsodium-net&#x0a;https://github.com/adamcaudill/libsodium-net&#x0a;minisign-net&#x0a;https://github.com/bitbeans/minisign-net&#x0a;WPF LocalizationExtension&#x0a;https://github.com/SeriousM/WPFLocalizationExtension&#x0a;YamlDotNet&#x0a;https://github.com/aaubry/YamlDotNet"
+                                                   TextWrapping="Wrap" />
                                     </StackPanel>
                                 </Border>
                             </StackPanel>
                         </TabItem.Content>
                     </TabItem>
-                </controls:MetroTabControl>
+                </TabControl>
             </Border>
         </Grid>
     </ScrollViewer>

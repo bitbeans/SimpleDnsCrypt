@@ -125,7 +125,7 @@ namespace SimpleDnsCrypt.Tools
 				if (!File.Exists(_configFile)) return;
 				using (var userDataConfigFile = new StreamReader(_configFile))
 				{
-					var deserializer = new Deserializer(namingConvention: new PascalCaseNamingConvention());
+					var deserializer = new DeserializerBuilder().WithNamingConvention(new PascalCaseNamingConvention()).Build();
 					var storedConfiguration = deserializer.Deserialize<UserData>(userDataConfigFile);
 
 					if (!string.IsNullOrEmpty(storedConfiguration.Language))
@@ -166,7 +166,7 @@ namespace SimpleDnsCrypt.Tools
 				var userDataFile = Path.Combine(Directory.GetCurrentDirectory(), _configFile);
 				using (var userDataConfigFile = new StreamWriter(userDataFile))
 				{
-					var serializer = new Serializer(namingConvention: new PascalCaseNamingConvention());
+					var serializer = new SerializerBuilder().WithNamingConvention(new PascalCaseNamingConvention()).Build();
 					serializer.Serialize(userDataConfigFile, this);
 				}
 			}

@@ -194,7 +194,7 @@
     <value>Aktualisieren der öffentlichen Resolver Liste</value>
   </data>
   <data name="advanced_settings_refresh_resolver_text" xml:space="preserve">
-    <value>Aktualisieren der List von öffentlichen Resolvern (alle Downloads werden mit einer minisgn Signaur validiert)</value>
+    <value>Aktualisieren der List von öffentlichen Resolvern (alle Downloads werden mit einer minisgn Signtaur validiert)</value>
   </data>
   <data name="advanced_settings_debug_title" xml:space="preserve">
     <value>Debug-Modus</value>
@@ -318,5 +318,83 @@
   </data>
   <data name="block_plugin_text" xml:space="preserve">
     <value>Dieses Plugin gibt als Response REFUSED zurück, falls die Anfrage in der Domain-Blacklist oder in der IP-Blacklist aufgeführt ist.</value>
+  </data>
+  <data name="blacklist_entries" xml:space="preserve">
+    <value>Einträge</value>
+  </data>
+  <data name="blacklist_building_list" xml:space="preserve">
+    <value>Erstelle Liste . . .</value>
+  </data>
+  <data name="blacklist_button_add_address" xml:space="preserve">
+    <value>Neue Adress Regel</value>
+  </data>
+  <data name="blacklist_button_add_local_domain" xml:space="preserve">
+    <value>Neue lokale Domain Regel</value>
+  </data>
+  <data name="blacklist_button_add_remote_domain" xml:space="preserve">
+    <value>Neue entfernte Domain Regel (URL)</value>
+  </data>
+  <data name="blacklist_button_remove_domain" xml:space="preserve">
+    <value>Domain-Regel entfernen</value>
+  </data>
+  <data name="blacklist_button_remove_address" xml:space="preserve">
+    <value>Adress-Regel entfernen</value>
+  </data>
+  <data name="blacklist_button_build_domain" xml:space="preserve">
+    <value>Domain-Blackliste erzeugen</value>
+  </data>
+  <data name="blacklist_button_build_address" xml:space="preserve">
+    <value>Adress-Blackliste erzeugen</value>
+  </data>
+  <data name="blacklist_button_select_domain_blacklist" xml:space="preserve">
+    <value>Wähle Domain-Blacklist Datei</value>
+  </data>
+  <data name="blacklist_button_select_address_blacklist" xml:space="preserve">
+    <value>Wähle Adress-Blacklist Datei</value>
+  </data>
+  <data name="cache_plugin_title" xml:space="preserve">
+    <value>DNS Antwort Cache</value>
+  </data>
+  <data name="cache_plugin_ttl" xml:space="preserve">
+    <value>TTL (Cache Zeit)</value>
+  </data>
+  <data name="cache_plugin_seconds" xml:space="preserve">
+    <value>Sekunden</value>
+  </data>
+  <data name="cache_plugin_text" xml:space="preserve">
+    <value>Ein einfacher DNS Cache (ohne Konfiguration)</value>
+  </data>
+  <data name="blacklist_modal_new_remote_domain_rule_header" xml:space="preserve">
+    <value>Neue entfernte Regel (URL)</value>
+  </data>
+  <data name="blacklist_modal_new_local_domain_rule_header" xml:space="preserve">
+    <value>Neue lokale Regel</value>
+  </data>
+  <data name="blacklist_modal_new_address_rule_header" xml:space="preserve">
+    <value>Neue Adress Regel</value>
+  </data>
+  <data name="blacklist_modal_empty_list_text" xml:space="preserve">
+    <value>Eine Blacklist-Datei darf nicht leer sein</value>
+  </data>
+  <data name="blacklist_modal_empty_list_header" xml:space="preserve">
+    <value>Blackliste konnte nicht gesetzt werden</value>
+  </data>
+  <data name="block_plugin_sub_addresses_text" xml:space="preserve">
+    <value>Adressen blockieren (bsp: 10.1.4.99, 172.16.*)</value>
+  </data>
+  <data name="block_plugin_sub_domains_text" xml:space="preserve">
+    <value>Domains mit lokalen Regeln oder entfernten Listen blockieren</value>
+  </data>
+  <data name="blacklist_modal_new_address_rule_text" xml:space="preserve">
+    <value>Beispiel: 172.16.144.8, 172.16.*, [fdb2:cd9e:c9f8:861a:c1ab:94e3:ef95:1ec0]</value>
+  </data>
+  <data name="blacklist_modal_new_local_domain_rule_text" xml:space="preserve">
+    <value>Beispiel: *.example.com, ads.*, *sex*</value>
+  </data>
+  <data name="blacklist_modal_new_remote_domain_rule_text" xml:space="preserve">
+    <value>Beispiel: https://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt</value>
+  </data>
+  <data name="tab_block" xml:space="preserve">
+    <value>Blockieren und Blacklist</value>
   </data>
 </root>

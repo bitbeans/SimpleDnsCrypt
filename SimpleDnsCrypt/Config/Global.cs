@@ -209,8 +209,9 @@
 			"libdcplugin_ldns_aaaa_blocking.dll",
 			"libdcplugin_logging.dll",
 			"libdcplugin_ldns_blocking.dll",
-			"libcrypto-40.dll",
-			"libldns-1.dll",
+			"libdcplugin_cache.dll",
+			"libcrypto-41.dll",
+			"libldns-2.dll",
 			"libsodium-18.dll",
 			"libwinpthread-1.dll"
 		};
@@ -219,5 +220,23 @@
 		///     Languages, the config file can handle.
 		/// </summary>
 		public static readonly string[] SupportedLanguages = {"de", "da", "en", "es", "fr", "id", "it", "nl", "ru", "sv", "tr", "zh"};
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public const string DomainBlacklistConfigFile = "domains-blacklist.yaml";
+		/// <summary>
+		/// 
+		/// </summary>
+		public const string DomainBlacklistFile = "domains-blacklist.txt";
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public const string AddressBlacklistConfigFile = "addresses-blacklist.yaml";
+		/// <summary>
+		/// 
+		/// </summary>
+		public const string AddressBlacklistFile = "addresses-blacklist.txt";
 	}
 }
