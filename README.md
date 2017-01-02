@@ -11,6 +11,8 @@ Missing features:
 
 - IPv6 support - see [#1](https://github.com/bitbeans/SimpleDnsCrypt/issues/1)
 
+dnscrypt-proxy version: **1.9.1**
+
 # ![Alt text](img/icons/32x32.png "Installation") Installation
 
 To install Simple DNSCrypt use the [latest MSI package](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.3.7/SimpleDNSCrypt.msi).
@@ -44,6 +46,10 @@ Simple DNSCrypt will automatically check for new versions on startup.
 
 ![plugin view](https://raw.githubusercontent.com/bitbeans/SimpleDnsCrypt/master/img/plugins.png)
 
+##### Block and Blacklist
+
+![plugin view](https://raw.githubusercontent.com/bitbeans/SimpleDnsCrypt/master/img/blacklist.png)
+
 Simple DNSCrypt currently supports two plugins:
 
 **libdcplugin_ldns_aaaa_blocking**
@@ -56,6 +62,11 @@ This plugin causes the proxy to reply immediately to IPv6 requests, without havi
 
 This plugin logs the DNS queries received by the proxy. The logs are stored in a local file.
 You can choose the folder, where dnscrypt-proxy will store the logfile (dns.log).
+
+**libdcplugin_cache**
+
+This plugin implements a simple, zero-configuration DNS response cache.
+The mimimum time to keep a record in cache can be specified in the cache plugin: 60 - 86400 seconds.
 
 **libdcplugin_ldns_blocking**
 
