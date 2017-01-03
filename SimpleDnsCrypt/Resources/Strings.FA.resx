@@ -354,13 +354,13 @@
     <value>انتخاب فایل لیست سیاه آدرس</value>
   </data>
   <data name="block_plugin_sub_addresses_text" xml:space="preserve">
-    <value>مسدودسازی آدرس با قانون سفارشی (مثال: 10.1.4.99, 172.16.*)</value>
+    <value>مسدودسازی آدرس با قانون سفارشی (: 10.1.4.99, 172.16.*)</value>
   </data>
   <data name="block_plugin_sub_domains_text" xml:space="preserve">
     <value>مسدودسازی دامین با قوانین محلی یا فایل های ریموت</value>
   </data>
   <data name="blacklist_modal_new_address_rule_text" xml:space="preserve">
-    <value>مثال: 172.16.144.8, 172.16.*, [fdb2:cd9e:c9f8:861a:c1ab:94e3:ef95:1ec0]</value>
+    <value>‏172.16.144.8, 172.16.*, [fdb2:cd9e:c9f8:861a:c1ab:94e3:ef95:1ec0] :مثال</value>
   </data>
   <data name="blacklist_modal_new_address_rule_header" xml:space="preserve">
     <value>افزودن دستور جدید برای آدرس</value>
@@ -384,21 +384,21 @@
     <value>مثال: https://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt</value>
   </data>
   <data name="cache_plugin_text" xml:space="preserve">
-    <value>یک حافظه کش ساده و بدون نیاز به پیکربندی برای DNS.</value>
+    <value>.DNS یک حافظه کش ساده و بدون نیاز به پیکربندی برای</value>
   </data>
   <data name="cache_plugin_ttl" xml:space="preserve">
-    <value>TTL (مدت زمان کش کردن)</value>
+    <value>TTL (حداکثر زمان کش کردن درخواست ها)</value>
   </data>
   <data name="cache_plugin_seconds" xml:space="preserve">
     <value>ثانیه</value>
   </data>
   <data name="cache_plugin_title" xml:space="preserve">
-    <value>حافظه کش پاسخ های DNS</value>
+    <value>DNS حافظه کش پاسخ های</value>
   </data>
   <data name="tab_block" xml:space="preserve">
     <value>مسدود سازی و لیست سیاه</value>
   </data>
   <data name="default_settings_analyse_button_tooltip" xml:space="preserve">
-    <value>کسبت اطلاعات تکمیلی درباره</value>
+    <value>کسب اطلاعات تکمیلی درباره تحلیلگر</value>
   </data>
 </root>
