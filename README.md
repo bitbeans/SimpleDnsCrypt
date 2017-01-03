@@ -135,6 +135,8 @@ If you don`t like this software, there are two similar projects:
 - MahApps Metro [doc](http://mahapps.com/) [:octocat:](https://github.com/MahApps/MahApps.Metro) 
 - minisign-net [:octocat:](https://github.com/bitbeans/minisign-net) 
 - YamlDotNet [:octocat:](https://github.com/aaubry/YamlDotNet) 
+- helper-net [:octocat:](https://github.com/bitbeans/helper-net) 
+- DNS [:octocat:](https://github.com/kapetan/dns) 
 
 # ![Alt text](img/icons/32x32.png "Special Thanks") Special Thanks
 
