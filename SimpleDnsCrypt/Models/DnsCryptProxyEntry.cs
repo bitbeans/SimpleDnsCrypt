@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using SimpleDnsCrypt.Tools;
 
 namespace SimpleDnsCrypt.Models
 {
@@ -81,5 +82,32 @@ namespace SimpleDnsCrypt.Models
 		///     The local port (not part of the CSV file).
 		/// </summary>
 		public int LocalPort { get; set; }
-	}
+
+		/// <summary>
+		/// Some optional data.
+		/// </summary>
+		public DnsCryptProxyEntryExtra Extra { get; set; }
+
+	    public string DisplayName
+	    {
+		    get
+		    {
+			    if (Extra != null)
+			    {
+				    if (DnssecValidation)
+				    {
+					    return string.Format("{0}ms - {1} [DNSSEC]", Extra.ResponseTime, FullName);
+				    }
+				    else
+				    {
+						return string.Format("{0}ms - {1}", Extra.ResponseTime, FullName);
+					}
+			    }
+			    else
+			    {
+				    return FullName;
+			    }
+		    }
+	    }
+    }
 }

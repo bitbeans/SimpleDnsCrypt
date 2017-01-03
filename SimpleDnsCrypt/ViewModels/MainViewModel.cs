@@ -41,6 +41,7 @@ namespace SimpleDnsCrypt.ViewModels
 		private bool _isRefreshingResolverList;
 		private bool _isSecondaryResolverRunning;
 		private bool _isUninstallingServices;
+		private bool _isAnalysing;
 		private bool _isWorkingOnPrimaryService;
 		private bool _isWorkingOnSecondaryService;
 		private ObservableCollection<Language> _languages;
@@ -122,7 +123,8 @@ namespace SimpleDnsCrypt.ViewModels
 			_updateResolverListOnStart = _userData.UpdateResolverListOnStart;
 			_isWorkingOnPrimaryService = false;
 			_isWorkingOnSecondaryService = false;
-			
+			_isAnalysing = false;
+
 			LocalNetworkInterfaces = new CollectionViewSource {Source = _localNetworkInterfaces};
 			PrimaryDnsCryptProxyManager = new DnsCryptProxyManager(DnsCryptProxyType.Primary);
 			SecondaryDnsCryptProxyManager = new DnsCryptProxyManager(DnsCryptProxyType.Secondary);
@@ -492,6 +494,19 @@ namespace SimpleDnsCrypt.ViewModels
 		}
 
 		/// <summary>
+		///		
+		/// </summary>
+		public bool IsAnalysing
+		{
+			get { return _isAnalysing; }
+			set
+			{
+				_isAnalysing = value;
+				NotifyOfPropertyChange(() => IsAnalysing);
+			}
+		}
+
+		/// <summary>
 		///     Show or hide the progress bar for the primary resolver.
 		/// </summary>
 		public bool IsWorkingOnPrimaryService
@@ -826,6 +841,41 @@ namespace SimpleDnsCrypt.ViewModels
 				localNetworkInterface.UseDnsCrypt = status;
 			}
 			LoadNetworkCards();
+		}
+
+		/// <summary>
+		///		Get some extra information of the resolvers.
+		/// </summary>
+		/// <remarks>Note: no IPv6 support, for now.</remarks>
+		public async void AnalyseResolvers()
+		{
+			try
+			{
+				IsAnalysing = true;
+				await Task.Run(() =>
+				{
+					for (var r = 0; r < _resolvers.Count; r++)
+					{
+						var dnsCryptProxyEntryExtra = AnalyseProxy.Analyse(_resolvers[r]);
+						if (dnsCryptProxyEntryExtra != null)
+						{
+							_resolvers[r].Extra = dnsCryptProxyEntryExtra;
+							if (!dnsCryptProxyEntryExtra.Succeeded)
+							{
+								_resolvers.RemoveAt(r);
+							}
+						}
+					}
+					_resolvers.Sort((a, b) => a.Extra.ResponseTime.CompareTo(b.Extra.ResponseTime));
+				}).ConfigureAwait(false);
+				NotifyOfPropertyChange(() => Resolvers);
+				IsAnalysing = false;
+			}
+			catch (Exception)
+			{
+				IsAnalysing = false;
+			}
+			NotifyOfPropertyChange(() => Resolvers);
 		}
 
 		#region Helper

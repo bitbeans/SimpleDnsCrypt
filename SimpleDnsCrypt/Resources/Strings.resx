@@ -398,4 +398,7 @@ The logs are stored in a local file.</value>
   <data name="tab_block" xml:space="preserve">
     <value>Block and Blacklist</value>
   </data>
+  <data name="default_settings_analyse_button_tooltip" xml:space="preserve">
+    <value>Get some extra info about the resolvers</value>
+  </data>
 </root>

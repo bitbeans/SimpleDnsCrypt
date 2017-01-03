@@ -253,15 +253,27 @@
                                                        VerticalAlignment="Center"
                                                        HorizontalAlignment="Left">
                                                 </Label>
-                                                <ComboBox Grid.Row="0" Grid.Column="1" Width="230"
+                                                <ComboBox Grid.Row="0" Grid.Column="1" Width="190"
                                                           ToolTip="{Binding PrimaryResolver.FullName}"
                                                           ItemsSource="{Binding Resolvers}"
                                                           SelectedItem="{Binding PrimaryResolver}"
-                                                          IsEnabled="True"
-                                                          DisplayMemberPath="FullName"
+                                                          IsEnabled="{Binding IsAnalysing, Converter={StaticResource ReverseBoolToEnabledConverter}}"
+                                                          DisplayMemberPath="DisplayName"
                                                           Margin="0"
                                                           SelectedIndex="-1"
                                                           VerticalAlignment="Center" HorizontalAlignment="Left" />
+                                                <Button Background="#FFFFFFFF" Grid.Column="1" Grid.Row="0" Height="35"
+                                                    Width="35" VerticalAlignment="Top" Cursor="Hand" IsEnabled="{Binding IsAnalysing, Converter={StaticResource ReverseBoolToEnabledConverter}}" 
+                                                    x:Name="AnalyseResolvers" HorizontalAlignment="Right"
+                                                    ToolTip="{lex:Loc Key=default_settings_analyse_button_tooltip}"
+                                                    Style="{DynamicResource MetroCircleButtonStyle}">
+                                                    <Rectangle Fill="#FF8ab329" Width="12" Height="12">
+                                                        <Rectangle.OpacityMask>
+                                                            <VisualBrush Visual="{DynamicResource appbar_clock}"
+                                                                         Stretch="Fill" />
+                                                        </Rectangle.OpacityMask>
+                                                    </Rectangle>
+                                                </Button>
                                                 <Label Foreground="#FF575757" Grid.Row="1" Grid.Column="0"
                                                        Content="{lex:Loc Key=default_settings_server_address}"
                                                        VerticalAlignment="Center"
@@ -396,8 +408,8 @@
                                                           ToolTip="{Binding SecondaryResolver.FullName}"
                                                           ItemsSource="{Binding Resolvers}"
                                                           SelectedItem="{Binding SecondaryResolver}"
-                                                          IsEnabled="True"
-                                                          DisplayMemberPath="FullName"
+                                                          IsEnabled="{Binding IsAnalysing, Converter={StaticResource ReverseBoolToEnabledConverter}}"
+                                                          DisplayMemberPath="DisplayName"
                                                           Margin="0"
                                                           SelectedIndex="-1"
                                                           VerticalAlignment="Center" HorizontalAlignment="Left" />
@@ -1396,4 +1408,4 @@
             </Border>
         </Grid>
     </ScrollViewer>
-</UserControl>
+</UserControl> 

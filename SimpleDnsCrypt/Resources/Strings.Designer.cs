@@ -520,6 +520,15 @@ namespace SimpleDnsCrypt.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Get some extra info about the resolvers.
+        /// </summary>
+        internal static string default_settings_analyse_button_tooltip {
+            get {
+                return ResourceManager.GetString("default_settings_analyse_button_tooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to DNSSEC.
         /// </summary>
         internal static string default_settings_dnssec {

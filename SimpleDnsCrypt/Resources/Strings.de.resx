@@ -397,4 +397,7 @@
   <data name="tab_block" xml:space="preserve">
     <value>Blockieren und Blacklist</value>
   </data>
+  <data name="default_settings_analyse_button_tooltip" xml:space="preserve">
+    <value>Weitere Informationen über die vorhandenen Resolver abfragen</value>
+  </data>
 </root>
