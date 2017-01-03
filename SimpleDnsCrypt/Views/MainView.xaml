@@ -266,7 +266,7 @@
                                                     Width="35" VerticalAlignment="Top" Cursor="Hand" IsEnabled="{Binding IsAnalysing, Converter={StaticResource ReverseBoolToEnabledConverter}}" 
                                                     x:Name="AnalyseResolvers" HorizontalAlignment="Right"
                                                     ToolTip="{lex:Loc Key=default_settings_analyse_button_tooltip}"
-                                                    Style="{DynamicResource MetroCircleButtonStyle}">
+                                                    Style="{DynamicResource MetroCircleButtonStyle}" Margin="3,0,0,0">
                                                     <Rectangle Fill="#FF8ab329" Width="12" Height="12">
                                                         <Rectangle.OpacityMask>
                                                             <VisualBrush Visual="{DynamicResource appbar_clock}"

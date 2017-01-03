@@ -30,12 +30,14 @@ namespace SimpleDnsCrypt.Tools
 		public static DnsCryptProxyEntryExtra Analyse(DnsCryptProxyEntry dnsCryptProxyEntry)
 		{
 			var dnsCryptProxyEntryExtra = new DnsCryptProxyEntryExtra();
+			
 			try
 			{
-				var address = "";
+				string address;
 				var port = 443;
 				if (dnsCryptProxyEntry.ResolverAddress.Contains(":"))
 				{
+					if (dnsCryptProxyEntry.ResolverAddress.StartsWith("[")) return null;
 					var t = dnsCryptProxyEntry.ResolverAddress.Split(':');
 					address = t[0];
 					port = Convert.ToInt32(t[1]);

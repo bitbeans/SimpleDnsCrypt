@@ -49,7 +49,7 @@ namespace SimpleDnsCrypt.ViewModels
 		private List<string> _plugins;
 		private DnsCryptProxyEntry _primaryResolver;
 		private string _primaryResolverTitle;
-		private List<DnsCryptProxyEntry> _resolvers;
+		private ObservableCollection<DnsCryptProxyEntry> _resolvers;
 		private DnsCryptProxyEntry _secondaryResolver;
 		private string _secondaryResolverTitle;
 		private Language _selectedLanguage;
@@ -119,7 +119,7 @@ namespace SimpleDnsCrypt.ViewModels
 				LocalizationEx.GetUiString("global_ipv6_disabled", Thread.CurrentThread.CurrentCulture));
 			}
 			
-			_resolvers = new List<DnsCryptProxyEntry>();
+			_resolvers = new ObservableCollection<DnsCryptProxyEntry>();
 			_updateResolverListOnStart = _userData.UpdateResolverListOnStart;
 			_isWorkingOnPrimaryService = false;
 			_isWorkingOnSecondaryService = false;
@@ -164,7 +164,7 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 
 			var dnsProxyList =
-				DnsCryptProxyListManager.ReadProxyList(proxyList, proxyListSignature, _userData.UseIpv6);
+				DnsCryptProxyListManager.ReadProxyList(proxyList, proxyListSignature, !_userData.UseIpv6);
 			if (dnsProxyList != null && dnsProxyList.Any())
 			{
 				foreach (var dnsProxy in dnsProxyList)
@@ -355,7 +355,7 @@ namespace SimpleDnsCrypt.ViewModels
 		/// <summary>
 		///     The list of loaded resolvers.
 		/// </summary>
-		public List<DnsCryptProxyEntry> Resolvers
+		public ObservableCollection<DnsCryptProxyEntry> Resolvers
 		{
 			get { return _resolvers; }
 			set
@@ -854,21 +854,22 @@ namespace SimpleDnsCrypt.ViewModels
 				IsAnalysing = true;
 				await Task.Run(() =>
 				{
-					for (var r = 0; r < _resolvers.Count; r++)
+					var tmpResolvers = _resolvers.ToList();
+					for (var r = 0; r < tmpResolvers.Count; r++)
 					{
-						var dnsCryptProxyEntryExtra = AnalyseProxy.Analyse(_resolvers[r]);
+						var dnsCryptProxyEntryExtra = AnalyseProxy.Analyse(tmpResolvers[r]);
 						if (dnsCryptProxyEntryExtra != null)
 						{
-							_resolvers[r].Extra = dnsCryptProxyEntryExtra;
+							tmpResolvers[r].Extra = dnsCryptProxyEntryExtra;
 							if (!dnsCryptProxyEntryExtra.Succeeded)
 							{
-								_resolvers.RemoveAt(r);
+								tmpResolvers.RemoveAt(r);
 							}
 						}
 					}
-					_resolvers.Sort((a, b) => a.Extra.ResponseTime.CompareTo(b.Extra.ResponseTime));
+					tmpResolvers.Sort((a, b) => a.Extra.ResponseTime.CompareTo(b.Extra.ResponseTime));
+					Resolvers = new ObservableCollection<DnsCryptProxyEntry>(tmpResolvers);
 				}).ConfigureAwait(false);
-				NotifyOfPropertyChange(() => Resolvers);
 				IsAnalysing = false;
 			}
 			catch (Exception)
