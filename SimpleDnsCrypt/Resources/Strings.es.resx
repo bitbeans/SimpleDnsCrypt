@@ -101,7 +101,7 @@
     <value>Tarjetas de red</value>
   </data>
   <data name="default_settings_show_hidden_cards" xml:space="preserve">
-    <value>Mostrar tarjetas invisibles</value>
+    <value>Mostrar tarjetas ocultas</value>
   </data>
   <data name="tab_standard_settings" xml:space="preserve">
     <value>Configuración estándar</value>
@@ -143,7 +143,7 @@
     <value>Nombre (FQDN)</value>
   </data>
   <data name="default_settings_public_key" xml:space="preserve">
-    <value>Llave pública</value>
+    <value>Clave pública</value>
   </data>
   <data name="default_settings_secondary_header" xml:space="preserve">
     <value>Servidor DNS secundario</value>
@@ -173,7 +173,7 @@
     <value>Extensiones disponibles</value>
   </data>
   <data name="dialog_message_uninstall" xml:space="preserve">
-    <value>Desea remover todos los servicios de windows instalados?</value>
+    <value>¿Desea desinstalar todos los servicios de Windows instalados?</value>
   </data>
   <data name="dialog_message_missing_file" xml:space="preserve">
     <value>No es posible leer: {0} o {1}.</value>
@@ -185,7 +185,7 @@
     <value>Esta aplicación debe ser ejecutada con derechos de administrador.</value>
   </data>
   <data name="ipv6_speed_plugin_title" xml:space="preserve">
-    <value>Acelera en ausencia de IPv6</value>
+    <value>Aceleración en ausencia de IPv6</value>
   </data>
   <data name="ipv6_speed_plugin_text" xml:space="preserve">
     <value>Si las conexiones IPv6 no están disponible en la red, este plugin deshabilita la espera de respuestas para direcciones IPv6 desde los servidores DNS (upstream resolvers). Esto puede mejorar su experiencia de navegación.</value>
@@ -206,7 +206,7 @@
     <value>Desinstalar servicios</value>
   </data>
   <data name="advanced_settings_uninstall_text" xml:space="preserve">
-    <value>Remover todos los servicios de windows instalados</value>
+    <value>Desinstalar todos los servicios de Windows instalados</value>
   </data>
   <data name="advanced_settings_uninstall_button" xml:space="preserve">
     <value>Desinstalar todos los servicios</value>
@@ -221,7 +221,7 @@
     <value>Abrir administrador de complementos</value>
   </data>
   <data name="advanced_settings_transport_tcp_title" xml:space="preserve">
-    <value>Configuración de protocolo</value>
+    <value>Configuración de protocolo de transporte TCP</value>
   </data>
   <data name="advanced_settings_transport_tcp_text" xml:space="preserve">
     <value>Usar TCP en puerto 443 en vez de UDP en puerto 443 (TCP es más lento que UDP)</value>
@@ -230,7 +230,7 @@
     <value>Servidor DNS global</value>
   </data>
   <data name="advanced_settings_global_resolver_text" xml:space="preserve">
-    <value>Si desea que este computador actúe como portal (gateway) para otros equipos (por ejemplo teléfonos celulares u otros computadores)</value>
+    <value>Si desea que este computador actúe como pasarela (gateway) para otros equipos (por ejemplo teléfonos celulares u otros computadores)</value>
   </data>
   <data name="about_used_software" xml:space="preserve">
     <value>Software utilizado</value>
@@ -245,10 +245,10 @@
     <value>Frank Denis (@jedisct1) - https://dnscrypt.org</value>
   </data>
   <data name="about_thanks_frank_text" xml:space="preserve">
-    <value>- por el desarrollo de libsodium y DNSCrypt!</value>
+    <value>- ¡por el desarrollo de libsodium y DNSCrypt!</value>
   </data>
   <data name="about_thanks_bytejail_text" xml:space="preserve">
-    <value>- por financiar este proyecto!</value>
+    <value>- ¡por financiar este proyecto!</value>
   </data>
   <data name="about_thanks_bytejail_title" xml:space="preserve">
     <value>A EAM GmbH y bytejail - https://bytejail.com</value>
@@ -267,7 +267,7 @@ El historial es guardado en un archivo local.</value>
     <value>OK</value>
   </data>
   <data name="dialog_message_update_standard_text" xml:space="preserve">
-    <value>Existe una nueva versión ({0}) de Simple DNSCrypt disponible. Desea actualizarla ahora?</value>
+    <value>Existe una nueva versión ({0}) de Simple DNSCrypt disponible. ¿Desea actualizarla ahora?</value>
   </data>
   <data name="dialog_message_update_standard_title" xml:space="preserve">
     <value>Actualización de la aplicación</value>
@@ -300,7 +300,7 @@ El historial es guardado en un archivo local.</value>
     <value>Actualización importante de la aplicación</value>
   </data>
   <data name="dialog_message_update_critical_text" xml:space="preserve">
-    <value>Existe una nueva versión ({0}) de Simple DNSCrypt disponible. Esta actualización ha sido marcada como crítica, por lo que es recomendable actualizar ahora. Desea actualizar ahora?</value>
+    <value>Existe una nueva versión ({0}) de Simple DNSCrypt disponible. Esta actualización ha sido marcada como crítica, ¡por lo que debería actualizar ahora! ¿Desea actualizar ahora?</value>
   </data>
   <data name="default_settings_save_port" xml:space="preserve">
     <value>Guardar</value>
@@ -312,7 +312,7 @@ El historial es guardado en un archivo local.</value>
     <value>Bloquear direcciones y dominios</value>
   </data>
   <data name="block_plugin_text" xml:space="preserve">
-    <value>Este complemento retorna una respuesta REFUSED si se realiza una solicitud cuyo nombre está en la lista de dominios bloqueados, o si al menos una de las direcciones IP retornadas está presente en la lista de direcciones IP bloqueadas.</value>
+    <value>Este complemento devuelve una respuesta REFUSED (rechazada) si se realiza una solicitud cuyo nombre está en la lista de dominios bloqueados o si al menos una de las direcciones IP devueltas está presente en la lista de direcciones IP bloqueadas.</value>
   </data>
   <data name="block_plugin_sub_domains_header" xml:space="preserve">
     <value>Bloquear dominios</value>
