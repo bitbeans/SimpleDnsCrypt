@@ -194,7 +194,7 @@
     <value>Aktualisieren der öffentlichen Resolver Liste</value>
   </data>
   <data name="advanced_settings_refresh_resolver_text" xml:space="preserve">
-    <value>Aktualisieren der List von öffentlichen Resolvern (alle Downloads werden mit einer minisgn Signtaur validiert)</value>
+    <value>Aktualisieren der List von öffentlichen Resolvern (alle Downloads werden mit einer minisgn Signatur validiert)</value>
   </data>
   <data name="advanced_settings_debug_title" xml:space="preserve">
     <value>Debug-Modus</value>
@@ -398,6 +398,6 @@
     <value>Blockieren und Blacklist</value>
   </data>
   <data name="default_settings_analyse_button_tooltip" xml:space="preserve">
-    <value>Weitere Informationen über die vorhandenen Resolver abfragen</value>
+    <value>Weitere Informationen über die vorhandenen Resolver abfragen (nur IPv4)</value>
   </data>
 </root>
