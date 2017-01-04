@@ -26,12 +26,29 @@ namespace SimpleDnsCrypt.ViewModels
 		{
 			_logLines = new ObservableCollection<LogLine>();
 			_isLogging = false;
+			RefreshPluginData();
+		}
 
-			foreach (var plugin in MainViewModel.Instance.Plugins)
+		public void RefreshPluginData()
+		{
+			try
 			{
-				if (!plugin.StartsWith(Global.LibdcpluginLogging)) continue;
-				var a = plugin.Split(',');
-				_logFile = a[1];
+				var found = false;
+				foreach (var plugin in MainViewModel.Instance.Plugins)
+				{
+					if (!plugin.StartsWith(Global.LibdcpluginLogging)) continue;
+					var a = plugin.Split(',');
+					LogFile = a[1];
+					found = true;
+				}
+				if (!found)
+				{
+					LogFile = string.Empty;
+				}
+			}
+			catch (Exception)
+			{
+				LogFile = string.Empty;
 			}
 		}
 

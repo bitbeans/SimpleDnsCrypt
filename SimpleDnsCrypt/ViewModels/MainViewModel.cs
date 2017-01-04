@@ -1099,6 +1099,10 @@ namespace SimpleDnsCrypt.ViewModels
 				{
 					BlockViewModel.SetPlugins(Plugins);
 				}
+				if (t.SelectedIndex == 3)
+				{
+					LogViewModel.RefreshPluginData();
+				}
 			}
 		}
 
