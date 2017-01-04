@@ -332,6 +332,10 @@
       <SubType>Designer</SubType>
       <DependentUpon>Strings.resx</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Strings.fa.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Strings.sv.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Strings.resx</DependentUpon>
