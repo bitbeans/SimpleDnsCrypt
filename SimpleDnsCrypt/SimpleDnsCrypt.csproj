@@ -127,6 +127,7 @@
     <Compile Include="Converter\InterfaceTypeToIconConverter.cs" />
     <Compile Include="Converter\InUseToBackgroundConverter.cs" />
     <Compile Include="Converter\LocalDateConverter.cs" />
+    <Compile Include="Converter\LogTypeToColorConverter.cs" />
     <Compile Include="Converter\MessageBoxTypeToColor.cs" />
     <Compile Include="Converter\MultiReverseBoolToEnabledConverter.cs" />
     <Compile Include="Converter\MultiReverseBoolToVisibilityConverter.cs" />

@@ -34,6 +34,7 @@
             <converter:MultiReverseBoolToVisibilityConverter x:Key="MultiReverseBoolToVisibilityConverter" />
             <converter:LocalDateConverter x:Key="LocalDateConverter" />
             <converter:EnabledToColorConverter x:Key="EnabledToColorConverter" />
+            <converter:LogTypeToColorConverter x:Key="LogTypeToColorConverter" />
         </ResourceDictionary>
     </UserControl.Resources>
     <ScrollViewer VerticalScrollBarVisibility="Auto">
