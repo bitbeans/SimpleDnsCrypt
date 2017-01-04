@@ -98,7 +98,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="default_settings_network_cards" xml:space="preserve">
-    <value>کارت های شبکه</value>
+    <value>رابط های شبکه</value>
   </data>
   <data name="default_settings_show_hidden_cards" xml:space="preserve">
     <value>نمایش رابط های مخفی</value>
@@ -116,16 +116,16 @@
     <value>سرویس ها</value>
   </data>
   <data name="default_settings_primary_text" xml:space="preserve">
-    <value>اولین تحلیلگر</value>
+    <value>تحلیلگر اول</value>
   </data>
   <data name="default_settings_secondary_text" xml:space="preserve">
-    <value>تحلیلگر جایگزین (انتخابی)</value>
+    <value>(تحلیلگر جایگزین (انتخابی</value>
   </data>
   <data name="default_settings_primary_service" xml:space="preserve">
-    <value>سرویس اصلی</value>
+    <value>DNSCrypt سرویس اصلی</value>
   </data>
   <data name="default_settings_secondary_service" xml:space="preserve">
-    <value>سرویس جایگزین</value>
+    <value>DNSCrypt سرویس دوم</value>
   </data>
   <data name="default_settings_resolver" xml:space="preserve">
     <value>تحلیل کننده</value>
@@ -134,25 +134,25 @@
     <value>آدرس سرور</value>
   </data>
   <data name="default_settings_dnssec" xml:space="preserve">
-    <value>سرویس رمزگذاری</value>
+    <value>ایمن DNS</value>
   </data>
   <data name="default_settings_no_logs" xml:space="preserve">
     <value>عدم ثبت گزارش</value>
   </data>
   <data name="default_settings_name" xml:space="preserve">
-    <value>نامل کامل دامنه</value>
+    <value>‏(FQDN) نام دامین</value>
   </data>
   <data name="default_settings_public_key" xml:space="preserve">
     <value>کلید عمومی</value>
   </data>
   <data name="default_settings_secondary_header" xml:space="preserve">
-    <value>تحلیلگر دوم</value>
+    <value>تحلیلگر دوم‎</value>
   </data>
   <data name="default_settings_primary_header" xml:space="preserve">
     <value>تحلیلگر اصلی</value>
   </data>
   <data name="global_ipv6_disabled" xml:space="preserve">
-    <value>آی پی ورژن 6 غیرفعال</value>
+    <value>‏غیرفعال IPv6</value>
   </data>
   <data name="dialog_error_title" xml:space="preserve">
     <value>خطا</value>
@@ -167,7 +167,7 @@
     <value>اخطار</value>
   </data>
   <data name="dialog_message_refresh_failed" xml:space="preserve">
-    <value>شکست در بروزرسانی لیست تحلیلگرها.</value>
+    <value>.شکست در بروزرسانی لیست تحلیلگرها</value>
   </data>
   <data name="window_plugin_title" xml:space="preserve">
     <value>پلاگین های قابل استفاده</value>
@@ -176,28 +176,31 @@
     <value>آیا مایل به حذف کامل سرویس های مربوطه در سیستم عامل هستید؟</value>
   </data>
   <data name="dialog_message_missing_file" xml:space="preserve">
-    <value>عدم بارگذاری: {0} یا {1}.</value>
+    <value>عدم بارگذاری: ‎{0} or {1}.</value>
   </data>
   <data name="dialog_message_missing_proxy_files" xml:space="preserve">
-    <value>برخی از فایل های راه انداز نرم افزار در دایرکتوری آن یافت نشد. توصیه به نصب مجدد نرم افزار.</value>
+    <value>.برخی از فایل های ضروری راه انداز نرم افزار در دایرکتوری آن یافت نشد. توصیه به نصب مجدد نرم افزار</value>
   </data>
   <data name="dialog_message_bad_privileges" xml:space="preserve">
-    <value>شما باید نرم افزار را با دسترسی مدیر سیستم اجرا نمایید.</value>
+    <value>.شما باید نرم افزار را با دسترسی مدیر سیستم اجرا نمایید</value>
   </data>
   <data name="ipv6_speed_plugin_title" xml:space="preserve">
-    <value>افزایش سرعت در دسترس نبودن آی پی ورژن 6</value>
+    <value>‏IPv6 افزایش سرعت در هنگام دردسترس نبودن‏</value>
   </data>
   <data name="ipv6_speed_plugin_text" xml:space="preserve">
-    <value> در صورت در دسترس نبودن ارتباط آی پی ورژن 6 در شبکه شما، این پلاگین انتظار برای پاسخگویی در رابطه با آی پی نسخه 6 را غیرفعال خواهد نمود. این امر میتواند باعث بهبود وبگردی شود.</value>
+    <value>،در شبکه IPv6 در صورت عدم دسترسی به ارتباط
+.این پلاگین انتظار برای پاسخگویی از مقصد را غیرفعال خواهد نمود
+.این عمل میتواند باعث بهبود وبگردی گردد‏
+    </value>
   </data>
   <data name="advanced_settings_refresh_resolver_title" xml:space="preserve">
-    <value>نوسازی لیست تحلیگرهای عمومی</value>
+    <value>نوسازی لیست تحلیگرهای همگانی</value>
   </data>
   <data name="advanced_settings_refresh_resolver_text" xml:space="preserve">
-    <value>نوسازی لیست مروبوط به تحلیلگرهای عمومی (تمام دریافتی ها از طریق امضا آنها مورد اعتبارسنجی قرار میگیرند.)</value>
+    <value>(آنها مورد اعتبارسنجی قرار میگیرند minisign نوسازی لیست مربوط به تحلیلگرهای همگانی (تمام دریافتی ها از طریق امضای‏</value>
   </data>
   <data name="advanced_settings_debug_title" xml:space="preserve">
-    <value>مد عیب یابی</value>
+    <value>حالت عیب یابی</value>
   </data>
   <data name="advanced_settings_refresh_resolver_button" xml:space="preserve">
     <value>دریافت لیست</value>
@@ -215,7 +218,7 @@
     <value>پلاگین ها</value>
   </data>
   <data name="advanced_settings_plugins_text" xml:space="preserve">
-    <value>فعال و غیرفعالسازی قابلیت های بیشتر با پلاگین ها</value>
+    <value>دسترسی به قابلیت های بیشتر با فعالسازی پلاگین ها</value>
   </data>
   <data name="advanced_settings_plugins_button" xml:space="preserve">
     <value>بازکردن پلاگین منیجر</value>
@@ -224,13 +227,17 @@
     <value>تنظیمات انتقال</value>
   </data>
   <data name="advanced_settings_transport_tcp_text" xml:space="preserve">
-    <value>Use TCP port 443 instead of UDP port 443 (TCP is slower than UDP)</value>
+    <value>(UDP:443) به جای استفاده از پروتکل‏(TCP:443) استفاده از پروتکل
+[‏است UDP ‏ کندتر ازTCP]
+    </value>
   </data>
   <data name="advanced_settings_global_resolver_title" xml:space="preserve">
     <value>تحلیلگر همگانی</value>
   </data>
   <data name="advanced_settings_global_resolver_text" xml:space="preserve">
-    <value>اگر مایل هستید تا این کامپیوتر به عنوان یک تحلیلگر برای سایرین عمل نماید. (همانند:اسمارت فون ها یا سایر دستگاه ها)</value>
+    <value>اگر مایل هستید تا این دستگاه به عنوان یک تحلیلگر برای سایر دستگاه های شبکه عمل نماید
+(همانند: اسمارت فون ها یا سایر دستگاه ها)
+    </value>
   </data>
   <data name="about_used_software" xml:space="preserve">
     <value>نرم افزار های استفاده شده</value>
@@ -245,7 +252,7 @@
     <value>Frank Denis (@jedisct1) - https://dnscrypt.org</value>
   </data>
   <data name="about_thanks_frank_text" xml:space="preserve">
-    <value>- برای توسعه دادن به پروژه!</value>
+    <value>- DNSCrypt و libsodium برای توسعه پروژه های!</value>
   </data>
   <data name="about_thanks_bytejail_text" xml:space="preserve">
     <value>- برای حمایت مالی از پروژه!</value>
@@ -254,14 +261,14 @@
     <value>The EAM GmbH and bytejail - https://bytejail.com</value>
   </data>
   <data name="log_plugin_text" xml:space="preserve">
-    <value>این پلاگین تمام درخواست  ها و کوئری های دریافت شده توسط پراکسی را لاگ می کند.
-این لاگ به عنوان یک فایل محلی ذخیره خواهد شد.</value>
+    <value>.این پلاگین تمام کوئری های دریافت شده توسط پراکسی را لاگ می کند
+.این لاگ به عنوان یک فایل محلی ذخیره خواهد شد</value>
   </data>
   <data name="log_plugin_title" xml:space="preserve">
     <value>ثبت لاگ</value>
   </data>
   <data name="log_plugin_select_folder" xml:space="preserve">
-    <value>یک فولدر را انتخاب کنید</value>
+    <value>فولدر لاگ را انتخاب کنید</value>
   </data>
   <data name="dialog_plugins_save_button_tooltip" xml:space="preserve">
     <value>تایید</value>
@@ -297,7 +304,7 @@
     <value>نصب کننده</value>
   </data>
   <data name="dialog_message_update_critical_title" xml:space="preserve">
-    <value>مورد بحرانی بروزرسانی اپلیکیشن</value>
+    <value>مورد بروزرسانی بحرانی اپلیکیشن</value>
   </data>
   <data name="dialog_message_update_critical_text" xml:space="preserve">
     <value>در حال حاضر نسخه جدید ({0}) در دسترس قرار گرفته. این بروزرسانی به عنوان بحرانی نشانه گذاری شده. به این معنا که شما واقعا هرچه زودتر باید آن را دریافت کنید. آیا مایل هستید هم اکنون بروزرسانی را شروع کنید؟</value>
@@ -306,16 +313,16 @@
     <value>ذخیره</value>
   </data>
   <data name="default_settings_info_port" xml:space="preserve">
-    <value>DNSCrypt will listen on this port (default: 53)</value>
+    <value>(‏ بر روی این پورت فعالیت خواهد کرد(پیشفرض: 53DNSCrypt</value>
   </data>
   <data name="block_plugin_title" xml:space="preserve">
     <value>مسدود سازی آدرس ها و دامین ها</value>
   </data>
   <data name="block_plugin_text" xml:space="preserve">
-    <value>این پلاگین درخواست هایی را که به موارد لیست سیاه ارسال شوند، با پاسخ رد شده مواجه خواهد نمود، و در صورتی که حداقل یکی از آی پی های تحلیل شده برگشتی هم در لیست سیاه قرار داشته باشند درخواست منع خواهد شد.</value>
+    <value>.این پلاگین درخواست هایی را که به موارد لیست سیاه ارسال شوند، با پاسخ رد شده مواجه خواهد نمود، و در صورتی که حداقل یکی از آی پی های تحلیل شده برگشتی هم در لیست سیاه قرار داشته باشند درخواست منع خواهد شد</value>
   </data>
   <data name="block_plugin_sub_domains_header" xml:space="preserve">
-    <value>دامنه های مسدود</value>
+    <value>دامین های مسدود</value>
   </data>
   <data name="block_plugin_sub_addresses_header" xml:space="preserve">
     <value>آدرس های مسدود</value>
@@ -324,22 +331,22 @@
     <value>ورودی ها</value>
   </data>
   <data name="blacklist_building_list" xml:space="preserve">
-    <value>در حال ایجاد لیست . . .</value>
+    <value>. . . در حال ایجاد لیست</value>
   </data>
   <data name="blacklist_button_build_address" xml:space="preserve">
     <value>ساخت لیست سیاه آدرس</value>
   </data>
   <data name="blacklist_button_build_domain" xml:space="preserve">
-    <value>ساخت لیست سیاه دامنه</value>
+    <value>ساخت لیست سیاه دامین</value>
   </data>
   <data name="blacklist_button_remove_address" xml:space="preserve">
     <value>حذف آدرس ورودی</value>
   </data>
   <data name="blacklist_button_remove_domain" xml:space="preserve">
-    <value>حذف دامنه ورودی</value>
+    <value>حذف دامین ورودی</value>
   </data>
   <data name="blacklist_button_add_remote_domain" xml:space="preserve">
-    <value>افزودن دستور جدید برای آدرس ریموت (URL)</value>
+    <value>‏(URL) افزودن دستور جدید برای دامین ریموت‏</value>
   </data>
   <data name="blacklist_button_add_local_domain" xml:space="preserve">
     <value>افزودن دستور جدید برای دامین محلی</value>
@@ -348,34 +355,35 @@
     <value>افزودن دستور جدید برای آدرس</value>
   </data>
   <data name="blacklist_button_select_domain_blacklist" xml:space="preserve">
-    <value>انتخاب فایل لیست سیاه دامنه</value>
+    <value>انتخاب فایل لیست سیاه دامین</value>
   </data>
   <data name="blacklist_button_select_address_blacklist" xml:space="preserve">
     <value>انتخاب فایل لیست سیاه آدرس</value>
   </data>
   <data name="block_plugin_sub_addresses_text" xml:space="preserve">
-    <value>مسدودسازی آدرس با قانون سفارشی (: 10.1.4.99, 172.16.*)</value>
+    <value>(مسدود سازی آدرس با قالب سفارشی ‏(مثال: 10.1.4.99, *.172.16</value>
   </data>
   <data name="block_plugin_sub_domains_text" xml:space="preserve">
     <value>مسدودسازی دامین با قوانین محلی یا فایل های ریموت</value>
   </data>
   <data name="blacklist_modal_new_address_rule_text" xml:space="preserve">
-    <value>‏172.16.144.8, 172.16.*, [fdb2:cd9e:c9f8:861a:c1ab:94e3:ef95:1ec0] :مثال</value>
+    <value> [fdb2:cd9e:c9f8:861a:c1ab:94e3:ef95:1ec0] :مثال
+172.16.144.8, 172.16.*</value>
   </data>
   <data name="blacklist_modal_new_address_rule_header" xml:space="preserve">
-    <value>افزودن دستور جدید برای آدرس</value>
+    <value>دستور جدید برای آدرس</value>
   </data>
   <data name="blacklist_modal_empty_list_text" xml:space="preserve">
-    <value>یک فایل لیست سیاه نمیتواند بدون مقدار باشد.</value>
+    <value>.یک فایل لیست سیاه نمیتواند بدون مقدار باشد‏</value>
   </data>
   <data name="blacklist_modal_empty_list_header" xml:space="preserve">
     <value>شکست در تنظیم لیست سیاه</value>
   </data>
   <data name="blacklist_modal_new_local_domain_rule_header" xml:space="preserve">
-    <value>افزودن دستور برای دامین محلی</value>
+    <value>دستور جدید برای دامین محلی</value>
   </data>
   <data name="blacklist_modal_new_remote_domain_rule_header" xml:space="preserve">
-    <value>افزودن دستور برای ریموت دامین</value>
+    <value>دستور جدید برای ریموت دامین</value>
   </data>
   <data name="blacklist_modal_new_local_domain_rule_text" xml:space="preserve">
     <value>مثال: *.example.com, ads.*, *sex*</value>
@@ -399,6 +407,6 @@
     <value>مسدود سازی و لیست سیاه</value>
   </data>
   <data name="default_settings_analyse_button_tooltip" xml:space="preserve">
-    <value>کسب اطلاعات تکمیلی درباره تحلیلگر</value>
+    <value>‏(IPV4 ‏کسب اطلاعات تکمیلی درباره تحلیلگر (فقط</value>
   </data>
 </root>
