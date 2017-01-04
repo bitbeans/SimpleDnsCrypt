@@ -862,6 +862,24 @@ namespace SimpleDnsCrypt.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add selected to local domain blacklist.
+        /// </summary>
+        internal static string log_button_add_to_blacklist {
+            get {
+                return ResourceManager.GetString("log_button_add_to_blacklist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entries in LiveLog:.
+        /// </summary>
+        internal static string log_entries {
+            get {
+                return ResourceManager.GetString("log_entries", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Select a log folder.
         /// </summary>
         internal static string log_plugin_select_folder {
@@ -886,6 +904,15 @@ namespace SimpleDnsCrypt.Resources {
         internal static string log_plugin_title {
             get {
                 return ResourceManager.GetString("log_plugin_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Source:.
+        /// </summary>
+        internal static string log_source {
+            get {
+                return ResourceManager.GetString("log_source", resourceCulture);
             }
         }
         
@@ -931,6 +958,15 @@ namespace SimpleDnsCrypt.Resources {
         internal static string tab_block {
             get {
                 return ResourceManager.GetString("tab_block", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Live Log.
+        /// </summary>
+        internal static string tab_log {
+            get {
+                return ResourceManager.GetString("tab_log", resourceCulture);
             }
         }
         

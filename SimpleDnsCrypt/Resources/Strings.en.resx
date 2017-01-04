@@ -401,4 +401,16 @@ The logs are stored in a local file.</value>
   <data name="default_settings_analyse_button_tooltip" xml:space="preserve">
     <value>Get some extra info about the resolvers (only IPv4)</value>
   </data>
+  <data name="tab_log" xml:space="preserve">
+    <value>Live Log</value>
+  </data>
+  <data name="log_entries" xml:space="preserve">
+    <value>Entries in LiveLog:</value>
+  </data>
+  <data name="log_source" xml:space="preserve">
+    <value>Source:</value>
+  </data>
+  <data name="log_button_add_to_blacklist" xml:space="preserve">
+    <value>Add selected to local domain blacklist</value>
+  </data>
 </root>

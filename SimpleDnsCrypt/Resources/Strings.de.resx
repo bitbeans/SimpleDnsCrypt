@@ -400,4 +400,16 @@
   <data name="default_settings_analyse_button_tooltip" xml:space="preserve">
     <value>Weitere Informationen über die vorhandenen Resolver abfragen (nur IPv4)</value>
   </data>
+  <data name="tab_log" xml:space="preserve">
+    <value>Live Log</value>
+  </data>
+  <data name="log_entries" xml:space="preserve">
+    <value>Einträge in LiveLog:</value>
+  </data>
+  <data name="log_source" xml:space="preserve">
+    <value>Quelle:</value>
+  </data>
+  <data name="log_button_add_to_blacklist" xml:space="preserve">
+    <value>Ausgewählte zu Blacklist hinzufügen</value>
+  </data>
 </root>
