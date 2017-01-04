@@ -26,7 +26,6 @@ namespace SimpleDnsCrypt.ViewModels
 	[Export]
 	public class BlockViewModel : Screen
 	{
-		private const string LibdcpluginLdns = "libdcplugin_ldns_blocking.dll";
 		private readonly IWindowManager _windowManager;
 
 		public List<string> Plugins
@@ -84,7 +83,7 @@ namespace SimpleDnsCrypt.ViewModels
 			_plugins = plugins;
 			foreach (var plugin in _plugins)
 			{
-				if (plugin.StartsWith(LibdcpluginLdns))
+				if (plugin.StartsWith(Global.LibdcpluginLdns))
 				{
 					var a = plugin.Split(',');
 
@@ -287,7 +286,7 @@ namespace SimpleDnsCrypt.ViewModels
 							var foundPluginString = false;
 							for (var p = 0; p < _plugins.Count; p++)
 							{
-								if (_plugins[p].StartsWith(LibdcpluginLdns))
+								if (_plugins[p].StartsWith(Global.LibdcpluginLdns))
 								{
 									foundPluginString = true;
 									var pluginPartList = _plugins[p].Split(',').ToList();
@@ -309,7 +308,7 @@ namespace SimpleDnsCrypt.ViewModels
 							}
 							if (!foundPluginString)
 							{
-								_plugins.Add(LibdcpluginLdns + ",--ips=" + _addressBlacklistPath);
+								_plugins.Add(Global.LibdcpluginLdns + ",--ips=" + _addressBlacklistPath);
 							}
 						}
 						else
@@ -333,7 +332,7 @@ namespace SimpleDnsCrypt.ViewModels
 					AddressBlacklistPathInfoString = string.Empty;
 					for (var p = 0; p < _plugins.Count; p++)
 					{
-						if (_plugins[p].StartsWith(LibdcpluginLdns))
+						if (_plugins[p].StartsWith(Global.LibdcpluginLdns))
 						{
 							var pluginPartList = _plugins[p].Split(',').ToList();
 							if (pluginPartList.Count > 0)
@@ -377,7 +376,7 @@ namespace SimpleDnsCrypt.ViewModels
 							var foundPluginString = false;
 							for (var p = 0; p < _plugins.Count; p++)
 							{
-								if (_plugins[p].StartsWith(LibdcpluginLdns))
+								if (_plugins[p].StartsWith(Global.LibdcpluginLdns))
 								{
 									foundPluginString = true;
 									var pluginPartList = _plugins[p].Split(',').ToList();
@@ -399,7 +398,7 @@ namespace SimpleDnsCrypt.ViewModels
 							}
 							if (!foundPluginString)
 							{
-								_plugins.Add(LibdcpluginLdns + ",--domains=" + _domainBlacklistPath);
+								_plugins.Add(Global.LibdcpluginLdns + ",--domains=" + _domainBlacklistPath);
 							}
 						}
 						else
@@ -423,7 +422,7 @@ namespace SimpleDnsCrypt.ViewModels
 					DomainBlacklistPathInfoString = string.Empty;
 					for (var p = 0; p < _plugins.Count; p++)
 					{
-						if (_plugins[p].StartsWith(LibdcpluginLdns))
+						if (_plugins[p].StartsWith(Global.LibdcpluginLdns))
 						{
 							var pluginPartList = _plugins[p].Split(',').ToList();
 							if (pluginPartList.Count > 0)

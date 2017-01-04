@@ -238,5 +238,10 @@
 		/// 
 		/// </summary>
 		public const string AddressBlacklistFile = "addresses-blacklist.txt";
+
+		public const string LibdcpluginLdns = "libdcplugin_ldns_blocking.dll";
+		public const string LibdcpluginLdnsIpv6 = "libdcplugin_ldns_aaaa_blocking.dll";
+		public const string LibdcpluginLogging = "libdcplugin_logging.dll";
+		public const string LibdcpluginCache = "libdcplugin_cache.dll";
 	}
 }

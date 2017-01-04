@@ -14,10 +14,6 @@ namespace SimpleDnsCrypt.ViewModels
 	[Export]
 	public sealed class PluginManagerViewModel : Screen
 	{
-		private const string LibdcpluginLdnsIpv6 = "libdcplugin_ldns_aaaa_blocking.dll";
-		private const string LibdcpluginLogging = "libdcplugin_logging.dll";
-		private const string LibdcpluginCache = "libdcplugin_cache.dll";
-
 		private bool _blockIpv6Plugin;
 		private bool _logPlugin;
 		private string _logPluginPath;
@@ -59,11 +55,11 @@ namespace SimpleDnsCrypt.ViewModels
 				_blockIpv6Plugin = value;
 				if (value)
 				{
-					Plugins.Add(LibdcpluginLdnsIpv6);
+					Plugins.Add(Global.LibdcpluginLdnsIpv6);
 				}
 				else
 				{
-					Plugins.Remove(LibdcpluginLdnsIpv6);
+					Plugins.Remove(Global.LibdcpluginLdnsIpv6);
 				}
 				NotifyOfPropertyChange(() => BlockIpv6Plugin);
 			}
@@ -82,18 +78,18 @@ namespace SimpleDnsCrypt.ViewModels
 				{
 					foreach (var plugin in Plugins)
 					{
-						if (plugin.StartsWith(LibdcpluginCache))
+						if (plugin.StartsWith(Global.LibdcpluginCache))
 						{
 							Plugins.Remove(plugin);
 						}
 					}
-					Plugins.Add(LibdcpluginCache + ",--min-ttl=" + CachePluginTtl);
+					Plugins.Add(Global.LibdcpluginCache + ",--min-ttl=" + CachePluginTtl);
 				}
 				else
 				{
 					foreach (var plugin in Plugins)
 					{
-						if (plugin.StartsWith(LibdcpluginCache))
+						if (plugin.StartsWith(Global.LibdcpluginCache))
 						{
 							Plugins.Remove(plugin);
 							NotifyOfPropertyChange(() => CachePlugin);
@@ -130,7 +126,7 @@ namespace SimpleDnsCrypt.ViewModels
 				{
 					if (LogPluginPath != null && Directory.Exists(Path.GetDirectoryName(LogPluginPath)))
 					{
-						Plugins.Add(LibdcpluginLogging + "," + LogPluginPath);
+						Plugins.Add(Global.LibdcpluginLogging + "," + LogPluginPath);
 						_logPlugin = true;
 					}
 					else
@@ -142,7 +138,7 @@ namespace SimpleDnsCrypt.ViewModels
 				{
 					foreach (var plugin in Plugins)
 					{
-						if (plugin.StartsWith(LibdcpluginLogging))
+						if (plugin.StartsWith(Global.LibdcpluginLogging))
 						{
 							Plugins.Remove(plugin);
 							NotifyOfPropertyChange(() => LogPlugin);
@@ -193,17 +189,17 @@ namespace SimpleDnsCrypt.ViewModels
 			_plugins = plugins;
 			foreach (var plugin in _plugins)
 			{
-				if (plugin.Equals(LibdcpluginLdnsIpv6))
+				if (plugin.Equals(Global.LibdcpluginLdnsIpv6))
 				{
 					_blockIpv6Plugin = true;
 				}
-				if (plugin.StartsWith(LibdcpluginLogging))
+				if (plugin.StartsWith(Global.LibdcpluginLogging))
 				{
 					var a = plugin.Split(',');
 					_logPluginPath = a[1];
 					_logPlugin = true;
 				}
-				if (plugin.StartsWith(LibdcpluginCache))
+				if (plugin.StartsWith(Global.LibdcpluginCache))
 				{
 					var a = plugin.Split(',');
 					if (a[1].StartsWith("--min-ttl"))
