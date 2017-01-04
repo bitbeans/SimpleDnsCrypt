@@ -520,7 +520,7 @@ namespace SimpleDnsCrypt.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Get some extra info about the resolvers.
+        ///   Looks up a localized string similar to Get some extra info about the resolvers (only IPv4).
         /// </summary>
         internal static string default_settings_analyse_button_tooltip {
             get {

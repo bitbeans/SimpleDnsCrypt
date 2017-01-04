@@ -616,22 +616,24 @@ namespace SimpleDnsCrypt.ViewModels
 		{
 			try
 			{
-				//
 				if (IsWorking) return;
 				IsWorking = true;
 				DomainBlacklistPathInfoString = LocalizationEx.GetUiString("blacklist_building_list",
 					Thread.CurrentThread.CurrentCulture);
 				var domainBlacklist = await GenerateDomainBlacklist(DomainBlacklist).ConfigureAwait(false);
-				File.WriteAllLines(Path.Combine("data", Global.DomainBlacklistFile), domainBlacklist);
-				DomainBlacklistPath = Path.Combine(Directory.GetCurrentDirectory(), "data", Global.DomainBlacklistFile);
-				UpdateDomainBlacklistPathInfoString();
-				if (DomainBlacklistPlugin)
+				if (domainBlacklist != null)
 				{
-					SavePlugin();
+					File.WriteAllLines(Path.Combine("data", Global.DomainBlacklistFile), domainBlacklist);
+					DomainBlacklistPath = Path.Combine(Directory.GetCurrentDirectory(), "data", Global.DomainBlacklistFile);
+					UpdateDomainBlacklistPathInfoString();
+					if (DomainBlacklistPlugin)
+					{
+						SavePlugin();
+					}
 				}
 				IsWorking = false;
 			}
-			catch (Exception)
+			catch (Exception exception)
 			{
 				IsWorking = false;
 			}
@@ -663,11 +665,19 @@ namespace SimpleDnsCrypt.ViewModels
 
 		private static async Task<string> FetchRemoteList(string requestUri)
 		{
-			using (var client = new HttpClient())
+			try
 			{
-				var getDataTask = client.GetStringAsync(requestUri);
-				return await getDataTask.ConfigureAwait(false);
+				using (var client = new HttpClient())
+				{
+					var getDataTask = client.GetStringAsync(requestUri);
+					return await getDataTask.ConfigureAwait(false);
+				}
 			}
+			catch (Exception)
+			{
+
+			}
+			return null;
 		}
 
 
@@ -703,8 +713,11 @@ namespace SimpleDnsCrypt.ViewModels
 				foreach (var remoteRule in domainBlacklist.RemoteRules)
 				{
 					var r = await FetchRemoteList(remoteRule.Rule).ConfigureAwait(false);
-					var remote = ParseBlacklist(r);
-					allNames.AddUnique(remote);
+					if (r != null)
+					{
+						var remote = ParseBlacklist(r);
+						allNames.AddUnique(remote);
+					}
 				}
 
 				return allNames;

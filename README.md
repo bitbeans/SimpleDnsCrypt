@@ -15,7 +15,7 @@ dnscrypt-proxy version: **1.9.1**
 
 # ![Alt text](img/icons/32x32.png "Installation") Installation
 
-To install Simple DNSCrypt use the [latest MSI package](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.3.7/SimpleDNSCrypt.msi).
+To install Simple DNSCrypt use the [latest MSI package](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.3.9/SimpleDNSCrypt.msi).
 You don`t need to download the dnscrypt-resolvers.csv or the dnscrypt-proxy package at all.
 Both are included in the msi package, the dnscrypt-resolvers.csv can be updated from inside the software (and will be verified with minisign).
 
@@ -24,7 +24,7 @@ The MSI package and the SimpleDnsCrypt.exe are signed via a *COMODO RSA Code Sig
 The files are signed under the name: *EAM Experience Area Münsingen GmbH*
 
 You also can verify the MSI package with [minisign](https://jedisct1.github.io/minisign/).
-The minisign [signature](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.3.7/SimpleDNSCrypt.msi.minisig) can be verified with the following command:
+The minisign [signature](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.3.9/SimpleDNSCrypt.msi.minisig) can be verified with the following command:
 
 	minisign -Vm SimpleDNSCrypt.msi -P RWTSM+4BNNvkZPNkHgE88ETlhWa+0HDzU5CN8TvbyvmhVUcr6aQXfssV
 
@@ -93,7 +93,7 @@ Feel free to report your success or failure: [here](https://github.com/bitbeans/
 
 # ![Alt text](img/icons/32x32.png "Requirements") Requirements
 
-- This software targets .NET 4.5.
+- This software targets .NET 4.6.
 - It also requires Visual C++ Redistributable for Visual Studio 2015 x86.
 
 # ![Alt text](img/icons/32x32.png "Translations") Translations
