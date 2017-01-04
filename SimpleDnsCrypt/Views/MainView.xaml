@@ -1397,7 +1397,7 @@
                                         <TextBlock FontSize="20" Foreground="#FF8ab329"
                                                    Text="{lex:Loc Key=about_used_software}" />
                                         <TextBlock FontSize="10" Foreground="#FF575757"
-                                                   tools:NavigationService.Text="Project Site: https://simplednscrypt.org&#x0a;&#x0a;Caliburn.Micro&#x0a;https://github.com/Caliburn-Micro/Caliburn.Micro&#x0a;MahApps.Metro&#x0a;https://github.com/MahApps/MahApps.Metro&#x0a;libsodium-net&#x0a;https://github.com/adamcaudill/libsodium-net&#x0a;minisign-net&#x0a;https://github.com/bitbeans/minisign-net&#x0a;WPF LocalizationExtension&#x0a;https://github.com/SeriousM/WPFLocalizationExtension&#x0a;YamlDotNet&#x0a;https://github.com/aaubry/YamlDotNet"
+                                                   tools:NavigationService.Text="Project Site: https://simplednscrypt.org&#x0a;&#x0a;Caliburn.Micro&#x0a;https://github.com/Caliburn-Micro/Caliburn.Micro&#x0a;MahApps.Metro&#x0a;https://github.com/MahApps/MahApps.Metro&#x0a;libsodium-net&#x0a;https://github.com/adamcaudill/libsodium-net&#x0a;minisign-net&#x0a;https://github.com/bitbeans/minisign-net&#x0a;WPF LocalizationExtension&#x0a;https://github.com/SeriousM/WPFLocalizationExtension&#x0a;YamlDotNet&#x0a;https://github.com/aaubry/YamlDotNet&#x0a;helper-net&#x0a;https://github.com/bitbeans/helper-net&#x0a;DNS&#x0a;https://github.com/kapetan/dns"
                                                    TextWrapping="Wrap" />
                                     </StackPanel>
                                 </Border>
