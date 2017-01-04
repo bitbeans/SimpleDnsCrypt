@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Text;
 using DNS.Client;
 using DNS.Protocol;
@@ -54,33 +56,45 @@ namespace SimpleDnsCrypt.Tools
 				var sw = Stopwatch.StartNew();
 				var response = request.Resolve();
 				sw.Stop();
-				var data = response.AnswerRecords[0].Data;
 
-				if (Encoding.ASCII.GetString(ArrayHelper.SubArray(data, 0, 9)).Equals("|DNSC\0\u0001\0\0"))
+				foreach (var answerRecord in response.AnswerRecords)
 				{
-					var certificate = ExtractCertificate(ArrayHelper.SubArray(data, 9), providerKey);
-					if (certificate != null)
+					var certificates = new List<Certificate>();
+					var tr = Encoding.ASCII.GetString(ArrayHelper.SubArray(answerRecord.Data, 0, 9));
+					if (tr.Equals("|DNSC\0\u0001\0\0") || tr.Equals("|DNSC\0\u0002\0\0"))
 					{
-						dnsCryptProxyEntryExtra.Certificate = certificate;
-						if (certificate.Valid)
+						var certificate = ExtractCertificate(ArrayHelper.SubArray(answerRecord.Data, 9), providerKey);
+						if (certificate != null)
 						{
+							if (certificate.Valid)
+							{
+								certificates.Add(certificate);
+							}
+						}
+					}
+					if (certificates.Count > 0)
+					{
+						var newestCertificate = certificates.OrderByDescending(item => item.Serial).FirstOrDefault();
+						if (newestCertificate != null)
+						{
+							dnsCryptProxyEntryExtra.Certificate = newestCertificate;
 							dnsCryptProxyEntryExtra.Succeeded = true;
 						}
 						else
 						{
-							dnsCryptProxyEntryExtra.Succeeded = false;
+							return null;
 						}
 					}
 					else
 					{
-						dnsCryptProxyEntryExtra.Succeeded = false;
+						return null;
 					}
 				}
 				dnsCryptProxyEntryExtra.ResponseTime = sw.ElapsedMilliseconds;
 			}
 			catch (Exception)
 			{
-				dnsCryptProxyEntryExtra.Succeeded = false;
+				return null;
 			}
 			return dnsCryptProxyEntryExtra;
 		}

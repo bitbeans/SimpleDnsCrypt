@@ -30,7 +30,6 @@ namespace SimpleDnsCrypt.ViewModels
 	{
 		public static MainViewModel Instance { get; set; }
 
-
 		private readonly BindableCollection<LocalNetworkInterface> _localNetworkInterfaces =
 			new BindableCollection<LocalNetworkInterface>();
 
@@ -49,7 +48,7 @@ namespace SimpleDnsCrypt.ViewModels
 		private List<string> _plugins;
 		private DnsCryptProxyEntry _primaryResolver;
 		private string _primaryResolverTitle;
-		private ObservableCollection<DnsCryptProxyEntry> _resolvers;
+		private List<DnsCryptProxyEntry> _resolvers;
 		private DnsCryptProxyEntry _secondaryResolver;
 		private string _secondaryResolverTitle;
 		private Language _selectedLanguage;
@@ -99,6 +98,7 @@ namespace SimpleDnsCrypt.ViewModels
 					MessageBoxButton.OK, BoxType.Error);
 				Environment.Exit(1);
 			}
+
 			// do a simple check, if all needed files are available
 			if (!ValidateDnsCryptProxyFolder())
 			{
@@ -119,7 +119,7 @@ namespace SimpleDnsCrypt.ViewModels
 				LocalizationEx.GetUiString("global_ipv6_disabled", Thread.CurrentThread.CurrentCulture));
 			}
 			
-			_resolvers = new ObservableCollection<DnsCryptProxyEntry>();
+			_resolvers = new List<DnsCryptProxyEntry>();
 			_updateResolverListOnStart = _userData.UpdateResolverListOnStart;
 			_isWorkingOnPrimaryService = false;
 			_isWorkingOnSecondaryService = false;
@@ -355,7 +355,7 @@ namespace SimpleDnsCrypt.ViewModels
 		/// <summary>
 		///     The list of loaded resolvers.
 		/// </summary>
-		public ObservableCollection<DnsCryptProxyEntry> Resolvers
+		public List<DnsCryptProxyEntry> Resolvers
 		{
 			get { return _resolvers; }
 			set
@@ -852,31 +852,31 @@ namespace SimpleDnsCrypt.ViewModels
 			try
 			{
 				IsAnalysing = true;
+				var tmpResolvers = new List<DnsCryptProxyEntry>();
 				await Task.Run(() =>
 				{
-					var tmpResolvers = _resolvers.ToList();
-					for (var r = 0; r < tmpResolvers.Count; r++)
+					for (var r = 0; r < _resolvers.Count; r++)
 					{
-						var dnsCryptProxyEntryExtra = AnalyseProxy.Analyse(tmpResolvers[r]);
+						var dnsCryptProxyEntryExtra = AnalyseProxy.Analyse(_resolvers[r]);
 						if (dnsCryptProxyEntryExtra != null)
 						{
-							tmpResolvers[r].Extra = dnsCryptProxyEntryExtra;
-							if (!dnsCryptProxyEntryExtra.Succeeded)
+							if (dnsCryptProxyEntryExtra.Succeeded && (dnsCryptProxyEntryExtra.ResponseTime > 0))
 							{
-								tmpResolvers.RemoveAt(r);
+								var dnsCryptProxyEntry = _resolvers[r];
+								dnsCryptProxyEntry.Extra = dnsCryptProxyEntryExtra;
+								tmpResolvers.Add(dnsCryptProxyEntry);
 							}
 						}
 					}
 					tmpResolvers.Sort((a, b) => a.Extra.ResponseTime.CompareTo(b.Extra.ResponseTime));
-					Resolvers = new ObservableCollection<DnsCryptProxyEntry>(tmpResolvers);
 				}).ConfigureAwait(false);
+				Resolvers = tmpResolvers;
 				IsAnalysing = false;
 			}
 			catch (Exception)
 			{
 				IsAnalysing = false;
 			}
-			NotifyOfPropertyChange(() => Resolvers);
 		}
 
 		#region Helper
@@ -1000,13 +1000,14 @@ namespace SimpleDnsCrypt.ViewModels
 					DnsCryptProxyListManager.ReadProxyList(proxyList, proxyListSignature, _userData.UseIpv6);
 				if (dnsProxyList != null && dnsProxyList.Any())
 				{
-					Resolvers.Clear();
+					var tmpResolvers = new List<DnsCryptProxyEntry>();
 					foreach (var dnsProxy in dnsProxyList)
 					{
 						if (
 							dnsProxy.ProviderPublicKey.Equals(
 								PrimaryDnsCryptProxyManager.DnsCryptProxy.Parameter.ProviderKey))
 						{
+
 							_primaryResolver = dnsProxy;
 							// restore the local port
 							_primaryResolver.LocalPort = PrimaryDnsCryptProxyManager.DnsCryptProxy.Parameter.LocalPort;
@@ -1017,8 +1018,9 @@ namespace SimpleDnsCrypt.ViewModels
 						{
 							_secondaryResolver = dnsProxy;
 						}
-						Resolvers.Add(dnsProxy);
+						tmpResolvers.Add(dnsProxy);
 					}
+					Resolvers = tmpResolvers;
 				}
 			}
 			else

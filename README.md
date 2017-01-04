@@ -93,7 +93,7 @@ Feel free to report your success or failure: [here](https://github.com/bitbeans/
 
 # ![Alt text](img/icons/32x32.png "Requirements") Requirements
 
-- This software targets .NET 4.5.
+- This software targets .NET 4.6.
 - It also requires Visual C++ Redistributable for Visual Studio 2015 x86.
 
 # ![Alt text](img/icons/32x32.png "Translations") Translations
