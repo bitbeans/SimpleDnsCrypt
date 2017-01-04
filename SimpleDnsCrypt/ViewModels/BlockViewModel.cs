@@ -162,7 +162,7 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 		}
 
-		private void SaveDomainBlacklist()
+		public void SaveDomainBlacklist()
 		{
 			try
 			{
@@ -701,7 +701,7 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 		}
 
-		public static async Task<List<string>> GenerateDomainBlacklist(DomainBlacklist domainBlacklist)
+		public async Task<List<string>> GenerateDomainBlacklist(DomainBlacklist domainBlacklist)
 		{
 			var allNames = new List<string>();
 			try
@@ -760,7 +760,7 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 		}
 
-		private static IEnumerable<string> ParseBlacklist(IEnumerable<string> lines, bool trusted = false)
+		public IEnumerable<string> ParseBlacklist(IEnumerable<string> lines, bool trusted = false)
 		{
 			var names = new List<string>();
 			var rxComment = new Regex(@"^(#|$)");
@@ -811,7 +811,7 @@ namespace SimpleDnsCrypt.ViewModels
 		}
 
 
-		private static IEnumerable<string> ParseBlacklist(string blacklist, bool trusted = false)
+		public IEnumerable<string> ParseBlacklist(string blacklist, bool trusted = false)
 		{
 			var lines = blacklist.Split(new[] {'\r', '\n'}, StringSplitOptions.RemoveEmptyEntries);
 			return ParseBlacklist(lines, trusted);

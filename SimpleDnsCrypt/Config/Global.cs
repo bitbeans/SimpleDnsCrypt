@@ -225,6 +225,7 @@
 		/// 
 		/// </summary>
 		public const string DomainBlacklistConfigFile = "domains-blacklist.yaml";
+
 		/// <summary>
 		/// 
 		/// </summary>
@@ -234,6 +235,7 @@
 		/// 
 		/// </summary>
 		public const string AddressBlacklistConfigFile = "addresses-blacklist.yaml";
+
 		/// <summary>
 		/// 
 		/// </summary>

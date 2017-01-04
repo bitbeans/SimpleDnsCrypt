@@ -160,6 +160,8 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Compile Include="Models\LogLine.cs" />
+    <Compile Include="Models\LogLineType.cs" />
     <Compile Include="Models\ProcessResult.cs" />
     <Compile Include="Models\RemoteUpdate.cs" />
     <Compile Include="Resources\Strings.Designer.cs">
@@ -183,6 +185,7 @@
     <Compile Include="Tools\WindowManagerExtensions.cs" />
     <Compile Include="ViewModels\BlockViewModel.cs" />
     <Compile Include="ViewModels\Interfaces\IMetroMessageBox.cs" />
+    <Compile Include="ViewModels\LogViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\MetroMessageBoxViewModel.cs" />
     <Compile Include="ViewModels\PluginManagerViewModel.cs" />

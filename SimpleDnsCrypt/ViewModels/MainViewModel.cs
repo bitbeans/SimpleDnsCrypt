@@ -57,6 +57,7 @@ namespace SimpleDnsCrypt.ViewModels
 		private bool _useTcpOnly;
 
 		public BlockViewModel BlockViewModel { get; }
+		public LogViewModel LogViewModel { get; }
 
 		/// <summary>
 		///     MainViewModel construcor for XAML.
@@ -282,6 +283,7 @@ namespace SimpleDnsCrypt.ViewModels
 			// check for new version on every application start
 			UpdateAsync();
 			BlockViewModel = new BlockViewModel(_windowManager);
+			LogViewModel = new LogViewModel();
 		}
 
 		/// <summary>
