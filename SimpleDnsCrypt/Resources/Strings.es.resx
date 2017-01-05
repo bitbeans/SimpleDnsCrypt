@@ -320,4 +320,109 @@ El historial es guardado en un archivo local.</value>
   <data name="block_plugin_sub_addresses_header" xml:space="preserve">
     <value>Bloquear direcciones</value>
   </data>
+  <data name="blacklist_entries" xml:space="preserve">
+    <value>entradas</value>
+  </data>
+  <data name="blacklist_building_list" xml:space="preserve">
+    <value>creando lista . . .</value>
+  </data>
+  <data name="blacklist_button_build_address" xml:space="preserve">
+    <value>Crear dirección de lista de bloqueo</value>
+  </data>
+  <data name="blacklist_button_build_domain" xml:space="preserve">
+    <value>Crear dominio de lista de bloqueo</value>
+  </data>
+  <data name="blacklist_button_remove_address" xml:space="preserve">
+    <value>Quitar campo de dirección</value>
+  </data>
+  <data name="blacklist_button_remove_domain" xml:space="preserve">
+    <value>Quitar campo de dominio</value>
+  </data>
+  <data name="blacklist_button_add_remote_domain" xml:space="preserve">
+    <value>Añadir regla de nuevo dominio remoto (URL)</value>
+  </data>
+  <data name="blacklist_button_add_local_domain" xml:space="preserve">
+    <value>Añadir regla de nuevo dominio local</value>
+  </data>
+  <data name="blacklist_button_add_address" xml:space="preserve">
+    <value>Añadir regla de nueva dirección</value>
+  </data>
+  <data name="blacklist_button_select_domain_blacklist" xml:space="preserve">
+    <value>Seleccionar fichero de lista de bloqueo de dominios</value>
+  </data>
+  <data name="blacklist_button_select_address_blacklist" xml:space="preserve">
+    <value>Seleccionar fichero de lista de bloqueo de direcciones</value>
+  </data>
+  <data name="block_plugin_sub_addresses_text" xml:space="preserve">
+    <value>Bloquear direcciones con reglas personalizadas (p. ej.: 10.1.4.99, 172.16.*)</value>
+  </data>
+  <data name="block_plugin_sub_domains_text" xml:space="preserve">
+    <value>Bloquear dominios con reglas locales o ficheros remotos</value>
+  </data>
+  <data name="blacklist_modal_new_address_rule_text" xml:space="preserve">
+    <value>Ejemplo: 172.16.144.8, 172.16.*, [fdb2:cd9e:c9f8:861a:c1ab:94e3:ef95:1ec0]</value>
+  </data>
+  <data name="blacklist_modal_new_address_rule_header" xml:space="preserve">
+    <value>Nueva reglar de dirección</value>
+  </data>
+  <data name="blacklist_modal_empty_list_text" xml:space="preserve">
+    <value>Un fichero de lista de bloqueo no puede estar vacío</value>
+  </data>
+  <data name="blacklist_modal_empty_list_header" xml:space="preserve">
+    <value>Error al definir una lista de bloqueo</value>
+  </data>
+  <data name="blacklist_modal_new_local_domain_rule_header" xml:space="preserve">
+    <value>Nueva regla de dominio local</value>
+  </data>
+  <data name="blacklist_modal_new_remote_domain_rule_header" xml:space="preserve">
+    <value>Nueva regla de dominio remoto</value>
+  </data>
+  <data name="blacklist_modal_new_local_domain_rule_text" xml:space="preserve">
+    <value>Ejemplo: *.example.com, ads.*, *sex*</value>
+  </data>
+  <data name="blacklist_modal_new_remote_domain_rule_text" xml:space="preserve">
+    <value>Ejemplo: https://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt</value>
+  </data>
+  <data name="cache_plugin_text" xml:space="preserve">
+    <value>Caché de respuestas DNS simple y sin necesidad de configuración adicional.</value>
+  </data>
+  <data name="cache_plugin_ttl" xml:space="preserve">
+    <value>TTL (tiempo de caché)</value>
+  </data>
+  <data name="cache_plugin_seconds" xml:space="preserve">
+    <value>segundos</value>
+  </data>
+  <data name="cache_plugin_title" xml:space="preserve">
+    <value>Caché de respuestas DNS</value>
+  </data>
+  <data name="tab_block" xml:space="preserve">
+    <value>Bloqueo y Lista de bloqueo</value>
+  </data>
+  <data name="default_settings_analyse_button_tooltip" xml:space="preserve">
+    <value>Conseguir información adicional sobre los servidores DNS (únicamente IPv4)</value>
+  </data>
+  <data name="tab_log" xml:space="preserve">
+    <value>Archivo de registro</value>
+  </data>
+  <data name="log_entries" xml:space="preserve">
+    <value>Entradas en el archivo de registro:</value>
+  </data>
+  <data name="log_source" xml:space="preserve">
+    <value>Fuente:</value>
+  </data>
+  <data name="log_button_add_to_blacklist" xml:space="preserve">
+    <value>Añadir a la lista de bloqueos de dominio local</value>
+  </data>
+  <data name="log_modal_no_log_file_text" xml:space="preserve">
+    <value>No existe un archivo de registro. Habilite primero el complemento de registro.</value>
+  </data>
+  <data name="log_modal_no_log_file_header" xml:space="preserve">
+    <value>No existe un archivo de registro</value>
+  </data>
+  <data name="log_modal_add_rule_header" xml:space="preserve">
+    <value>Nuevo campo en lista de bloqueo</value>
+  </data>
+  <data name="log_modal_add_rule_text" xml:space="preserve">
+    <value>Puede modificar el campo antes de añadirlo a la lista de bloqueo: </value>
+  </data>
 </root>
