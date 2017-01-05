@@ -137,7 +137,7 @@
                             </TextBlock>
                             <StackPanel Margin="0,5,0,0" Orientation="Horizontal">
                                 <TextBox Height="26" Width="330" Text="{Binding LogPluginPath}" IsReadOnly="True"
-                                         IsEnabled="False" HorizontalAlignment="Left" />
+                                         IsEnabled="True" HorizontalAlignment="Left" />
                                 <Button
                                     ToolTip="{lex:Loc Key=log_plugin_select_folder}" x:Name="SelectFolder"
                                     HorizontalAlignment="Center" Margin="15,0,0,0" Height="46"

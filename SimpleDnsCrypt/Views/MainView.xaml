@@ -1393,20 +1393,20 @@
                                             </Grid.RowDefinitions>
                                             <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="0"
                                                         VerticalAlignment="Center" Margin="10,0,0,0">
-                                                <TextBlock Foreground="#FF575757" FontSize="14"
+                                                <TextBlock Foreground="#FF575757" FontSize="12" VerticalAlignment="Center"
                                                            Text="{lex:Loc Key=log_entries}">
                                                 </TextBlock>
-                                                <TextBlock Foreground="#FF575757" FontSize="14" FontWeight="Bold"
-                                                           Text="{Binding LogLines.Count}" Margin="2,0,0,0">
+                                                <TextBlock Foreground="#FF575757" FontSize="12" FontWeight="Bold" VerticalAlignment="Center"
+                                                           Text="{Binding LogLines.Count}" Margin="2,1,0,0">
                                                 </TextBlock>
                                             </StackPanel>
-                                            <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="1"
-                                                        VerticalAlignment="Center" Margin="10,0,0,0">
-                                                <TextBlock Foreground="#FF575757" FontSize="14"
+                                            <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"
+                                                        VerticalAlignment="Center" Margin="10,2,0,0">
+                                                <TextBlock Foreground="#FF575757" FontSize="12" VerticalAlignment="Center"
                                                            Text="{lex:Loc Key=log_source}">
                                                 </TextBlock>
-                                                <TextBlock Foreground="#FF575757" FontSize="14" FontWeight="Bold"
-                                                           Text="{Binding LogFile}" Margin="2,0,0,0">
+                                                <TextBlock Foreground="#FF575757" FontSize="12" FontWeight="Bold" VerticalAlignment="Center"
+                                                           Text="{Binding LogFile}" Margin="2,1,0,0">
                                                 </TextBlock>
                                             </StackPanel>
                                             <Button Grid.Column="1" Grid.Row="0"

@@ -25,7 +25,7 @@ namespace SimpleDnsCrypt.Converter
 				case LogLineType.WKS:
 					return "#FF8ab329";
 				case LogLineType.PTR:
-					return "#FF8ab329";
+					return "#FF2a3b68";
 				case LogLineType.MX:
 					return "#FF8ab329";
 				case LogLineType.TXT:

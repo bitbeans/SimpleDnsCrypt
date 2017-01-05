@@ -169,7 +169,10 @@ namespace SimpleDnsCrypt.ViewModels
 		{
 			try
 			{
-				var dialog = new FolderBrowserDialog();
+				var dialog = new FolderBrowserDialog
+				{
+					SelectedPath = Path.Combine(Directory.GetCurrentDirectory(), "data")
+				};
 				var result = dialog.ShowDialog();
 				if (result != DialogResult.OK) return;
 				LogPluginPath = Path.Combine(dialog.SelectedPath, Global.DefaultLogFileName);
