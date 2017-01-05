@@ -413,4 +413,16 @@ The logs are stored in a local file.</value>
   <data name="log_button_add_to_blacklist" xml:space="preserve">
     <value>Add selected to local domain blacklist</value>
   </data>
+  <data name="log_modal_no_log_file_text" xml:space="preserve">
+    <value>There is no logfile to show. Please enable the logging plugin first.</value>
+  </data>
+  <data name="log_modal_no_log_file_header" xml:space="preserve">
+    <value>Missing Logfile</value>
+  </data>
+  <data name="log_modal_add_rule_header" xml:space="preserve">
+    <value>New Blacklist Entry</value>
+  </data>
+  <data name="log_modal_add_rule_text" xml:space="preserve">
+    <value>You can modify the entry before you add them to the blacklist: </value>
+  </data>
 </root>

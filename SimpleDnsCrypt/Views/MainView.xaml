@@ -264,10 +264,12 @@
                                                           SelectedIndex="-1"
                                                           VerticalAlignment="Center" HorizontalAlignment="Left" />
                                                 <Button Background="#FFFFFFFF" Grid.Column="1" Grid.Row="0" Height="35"
-                                                    Width="35" VerticalAlignment="Top" Cursor="Hand" IsEnabled="{Binding IsAnalysing, Converter={StaticResource ReverseBoolToEnabledConverter}}" 
-                                                    x:Name="AnalyseResolvers" HorizontalAlignment="Right"
-                                                    ToolTip="{lex:Loc Key=default_settings_analyse_button_tooltip}"
-                                                    Style="{DynamicResource MetroCircleButtonStyle}" Margin="3,0,0,0">
+                                                        Width="35" VerticalAlignment="Top" Cursor="Hand"
+                                                        IsEnabled="{Binding IsAnalysing, Converter={StaticResource ReverseBoolToEnabledConverter}}"
+                                                        x:Name="AnalyseResolvers" HorizontalAlignment="Right"
+                                                        ToolTip="{lex:Loc Key=default_settings_analyse_button_tooltip}"
+                                                        Style="{DynamicResource MetroCircleButtonStyle}"
+                                                        Margin="3,0,0,0">
                                                     <Rectangle Fill="#FF8ab329" Width="12" Height="12">
                                                         <Rectangle.OpacityMask>
                                                             <VisualBrush Visual="{DynamicResource appbar_clock}"
@@ -954,7 +956,8 @@
                                                     <SolidColorBrush Color="Black" Opacity="0.7" />
                                                 </TextBlock.OpacityMask>
                                             </TextBlock>
-                                            <TextBlock Grid.Column="1" Grid.Row="0" Text="{lex:Loc Key=block_plugin_sub_domains_header}"
+                                            <TextBlock Grid.Column="1" Grid.Row="0"
+                                                       Text="{lex:Loc Key=block_plugin_sub_domains_header}"
                                                        TextWrapping="Wrap" VerticalAlignment="Center"
                                                        Foreground="#FF8ab329" FontSize="20"
                                                        Opacity="0.7" Margin="5,0,0,3" FontWeight="Bold">
@@ -1000,13 +1003,14 @@
                                                                    Text="{Binding DomainBlacklistPathInfoString}">
                                                         </TextBlock>
                                                     </StackPanel>
-                                                    <Button ToolTip="{lex:Loc Key=blacklist_button_select_domain_blacklist}"
-                                                            HorizontalAlignment="Center" Margin="15,0,0,0" Height="46"
-                                                            VerticalAlignment="Center"
-                                                            Width="46" Cursor="Hand"
-                                                            Style="{DynamicResource MetroCircleButtonStyle}"
-                                                            Background="#FFFFFFFF"
-                                                            IsEnabled="{Binding DomainBlacklistPlugin, Converter={StaticResource ReverseBoolToEnabledConverter}}">
+                                                    <Button
+                                                        ToolTip="{lex:Loc Key=blacklist_button_select_domain_blacklist}"
+                                                        HorizontalAlignment="Center" Margin="15,0,0,0" Height="46"
+                                                        VerticalAlignment="Center"
+                                                        Width="46" Cursor="Hand"
+                                                        Style="{DynamicResource MetroCircleButtonStyle}"
+                                                        Background="#FFFFFFFF"
+                                                        IsEnabled="{Binding DomainBlacklistPlugin, Converter={StaticResource ReverseBoolToEnabledConverter}}">
                                                         <i:Interaction.Triggers>
                                                             <i:EventTrigger EventName="Click">
                                                                 <cal:ActionMessage MethodName="SelectDomainBlacklist" />
@@ -1034,7 +1038,8 @@
                                                         Margin="10" Grid.ColumnSpan="2">
                                                 <StackPanel Orientation="Horizontal">
                                                     <Button Background="#FFFFFFFF" Height="46" Width="46"
-                                                            VerticalAlignment="Top" Cursor="Hand" ToolTip="{lex:Loc Key=blacklist_button_add_local_domain}"
+                                                            VerticalAlignment="Top" Cursor="Hand"
+                                                            ToolTip="{lex:Loc Key=blacklist_button_add_local_domain}"
                                                             IsEnabled="{Binding IsWorking, Converter={StaticResource ReverseBoolToEnabledConverter}}"
                                                             Style="{DynamicResource MetroCircleButtonStyle}">
                                                         <i:Interaction.Triggers>
@@ -1050,7 +1055,8 @@
                                                         </Rectangle>
                                                     </Button>
                                                     <Button Background="#FFFFFFFF" Height="46" Width="46"
-                                                            VerticalAlignment="Top" Cursor="Hand" ToolTip="{lex:Loc Key=blacklist_button_add_remote_domain}"
+                                                            VerticalAlignment="Top" Cursor="Hand"
+                                                            ToolTip="{lex:Loc Key=blacklist_button_add_remote_domain}"
                                                             IsEnabled="{Binding IsWorking, Converter={StaticResource ReverseBoolToEnabledConverter}}"
                                                             Style="{DynamicResource MetroCircleButtonStyle}">
                                                         <i:Interaction.Triggers>
@@ -1068,7 +1074,8 @@
                                                         </Rectangle>
                                                     </Button>
                                                     <Button Background="#FFFFFFFF" Height="46" Width="46"
-                                                            VerticalAlignment="Top" Cursor="Hand" ToolTip="{lex:Loc Key=blacklist_button_remove_domain}"
+                                                            VerticalAlignment="Top" Cursor="Hand"
+                                                            ToolTip="{lex:Loc Key=blacklist_button_remove_domain}"
                                                             IsEnabled="{Binding IsWorking, Converter={StaticResource ReverseBoolToEnabledConverter}}"
                                                             Style="{DynamicResource MetroCircleButtonStyle}">
                                                         <i:Interaction.Triggers>
@@ -1085,7 +1092,8 @@
                                                         </Rectangle>
                                                     </Button>
                                                     <Button Background="#FFFFFFFF" Height="46" Width="46"
-                                                            VerticalAlignment="Top" Cursor="Hand" ToolTip="{lex:Loc Key=blacklist_button_build_domain}"
+                                                            VerticalAlignment="Top" Cursor="Hand"
+                                                            ToolTip="{lex:Loc Key=blacklist_button_build_domain}"
                                                             Style="{DynamicResource MetroCircleButtonStyle}"
                                                             IsEnabled="{Binding IsWorking, Converter={StaticResource ReverseBoolToEnabledConverter}}">
                                                         <i:Interaction.Triggers>
@@ -1145,7 +1153,8 @@
                                                     <SolidColorBrush Color="Black" Opacity="0.7" />
                                                 </TextBlock.OpacityMask>
                                             </TextBlock>
-                                            <TextBlock Grid.Column="1" Grid.Row="0" Text="{lex:Loc Key=block_plugin_sub_addresses_header}"
+                                            <TextBlock Grid.Column="1" Grid.Row="0"
+                                                       Text="{lex:Loc Key=block_plugin_sub_addresses_header}"
                                                        TextWrapping="Wrap" VerticalAlignment="Center"
                                                        Foreground="#FF8ab329" FontSize="20"
                                                        Opacity="0.7" Margin="5,0,0,3" FontWeight="Bold">
@@ -1192,13 +1201,14 @@
                                                                    Text="{Binding AddressBlacklistPathInfoString}">
                                                         </TextBlock>
                                                     </StackPanel>
-                                                    <Button ToolTip="{lex:Loc Key=blacklist_button_select_address_blacklist}"
-                                                            HorizontalAlignment="Center" Margin="15,0,0,0" Height="46"
-                                                            VerticalAlignment="Center"
-                                                            Width="46" Cursor="Hand"
-                                                            Style="{DynamicResource MetroCircleButtonStyle}"
-                                                            Background="#FFFFFFFF"
-                                                            IsEnabled="{Binding AddressBlacklistPlugin, Converter={StaticResource ReverseBoolToEnabledConverter}}">
+                                                    <Button
+                                                        ToolTip="{lex:Loc Key=blacklist_button_select_address_blacklist}"
+                                                        HorizontalAlignment="Center" Margin="15,0,0,0" Height="46"
+                                                        VerticalAlignment="Center"
+                                                        Width="46" Cursor="Hand"
+                                                        Style="{DynamicResource MetroCircleButtonStyle}"
+                                                        Background="#FFFFFFFF"
+                                                        IsEnabled="{Binding AddressBlacklistPlugin, Converter={StaticResource ReverseBoolToEnabledConverter}}">
                                                         <i:Interaction.Triggers>
                                                             <i:EventTrigger EventName="Click">
                                                                 <cal:ActionMessage MethodName="SelectAddressBlacklist" />
@@ -1228,7 +1238,8 @@
                                                         Margin="10" Grid.ColumnSpan="2">
                                                 <StackPanel Orientation="Horizontal">
                                                     <Button Background="#FFFFFFFF" Height="46" Width="46"
-                                                            VerticalAlignment="Top" Cursor="Hand" ToolTip="{lex:Loc Key=blacklist_button_add_address}"
+                                                            VerticalAlignment="Top" Cursor="Hand"
+                                                            ToolTip="{lex:Loc Key=blacklist_button_add_address}"
                                                             IsEnabled="{Binding IsWorking, Converter={StaticResource ReverseBoolToEnabledConverter}}"
                                                             Style="{DynamicResource MetroCircleButtonStyle}">
                                                         <i:Interaction.Triggers>
@@ -1244,7 +1255,8 @@
                                                         </Rectangle>
                                                     </Button>
                                                     <Button Background="#FFFFFFFF" Height="46" Width="46"
-                                                            VerticalAlignment="Top" Cursor="Hand" ToolTip="{lex:Loc Key=blacklist_button_remove_address}"
+                                                            VerticalAlignment="Top" Cursor="Hand"
+                                                            ToolTip="{lex:Loc Key=blacklist_button_remove_address}"
                                                             IsEnabled="{Binding IsWorking, Converter={StaticResource ReverseBoolToEnabledConverter}}"
                                                             Style="{DynamicResource MetroCircleButtonStyle}">
                                                         <i:Interaction.Triggers>
@@ -1261,7 +1273,8 @@
                                                         </Rectangle>
                                                     </Button>
                                                     <Button Background="#FFFFFFFF" Height="46" Width="46"
-                                                            VerticalAlignment="Top" Cursor="Hand" ToolTip="{lex:Loc Key=blacklist_button_build_address}"
+                                                            VerticalAlignment="Top" Cursor="Hand"
+                                                            ToolTip="{lex:Loc Key=blacklist_button_build_address}"
                                                             Style="{DynamicResource MetroCircleButtonStyle}"
                                                             IsEnabled="{Binding IsWorking, Converter={StaticResource ReverseBoolToEnabledConverter}}">
                                                         <i:Interaction.Triggers>
@@ -1347,7 +1360,7 @@
                                         <ListView SelectedItem="{Binding SelectedLogLine}" BorderBrush="#198AB328"
                                                   Foreground="#FF575757" FontSize="12" SelectionMode="Single"
                                                   ItemsSource="{Binding LogLines, Mode=OneWay}" Margin="10"
-                                                  VerticalAlignment="Top" Height="400" Background="#198AB328"
+                                                  VerticalAlignment="Top" Height="450" Background="#198AB328"
                                                   VirtualizingStackPanel.VirtualizationMode="Recycling">
                                             <ListView.ItemTemplate>
                                                 <DataTemplate>
@@ -1370,11 +1383,15 @@
                                         </ListView>
                                         <Grid>
                                             <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="150" />
-                                                <ColumnDefinition Width="300" />
+                                                <ColumnDefinition Width="400" />
+
                                                 <ColumnDefinition Width="*" />
                                             </Grid.ColumnDefinitions>
-                                            <StackPanel Orientation="Horizontal" Grid.Column="0"
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition />
+                                                <RowDefinition />
+                                            </Grid.RowDefinitions>
+                                            <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="0"
                                                         VerticalAlignment="Center" Margin="10,0,0,0">
                                                 <TextBlock Foreground="#FF575757" FontSize="14"
                                                            Text="{lex:Loc Key=log_entries}">
@@ -1383,14 +1400,16 @@
                                                            Text="{Binding LogLines.Count}" Margin="2,0,0,0">
                                                 </TextBlock>
                                             </StackPanel>
-                                            <StackPanel Orientation="Horizontal" Grid.Column="1"
+                                            <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="1"
                                                         VerticalAlignment="Center" Margin="10,0,0,0">
-                                                <TextBlock Foreground="#FF575757" FontSize="14" Text="{lex:Loc Key=log_source}"></TextBlock>
-                                                <TextBlock Foreground="#FF575757" FontSize="14" FontWeight="Bold" 
+                                                <TextBlock Foreground="#FF575757" FontSize="14"
+                                                           Text="{lex:Loc Key=log_source}">
+                                                </TextBlock>
+                                                <TextBlock Foreground="#FF575757" FontSize="14" FontWeight="Bold"
                                                            Text="{Binding LogFile}" Margin="2,0,0,0">
                                                 </TextBlock>
                                             </StackPanel>
-                                            <Button Grid.Column="2"
+                                            <Button Grid.Column="1" Grid.Row="0"
                                                     Width="250"
                                                     Cursor="Hand"
                                                     Content="{lex:Loc Key=log_button_add_to_blacklist}"
@@ -1524,4 +1543,4 @@
             </Border>
         </Grid>
     </ScrollViewer>
-</UserControl> 
+</UserControl>    

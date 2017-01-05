@@ -880,6 +880,42 @@ namespace SimpleDnsCrypt.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to New Blacklist Entry.
+        /// </summary>
+        internal static string log_modal_add_rule_header {
+            get {
+                return ResourceManager.GetString("log_modal_add_rule_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You can modify the entry before you add them to the blacklist: .
+        /// </summary>
+        internal static string log_modal_add_rule_text {
+            get {
+                return ResourceManager.GetString("log_modal_add_rule_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Missing Logfile.
+        /// </summary>
+        internal static string log_modal_no_log_file_header {
+            get {
+                return ResourceManager.GetString("log_modal_no_log_file_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There is no logfile to show. Please enable the logging plugin first..
+        /// </summary>
+        internal static string log_modal_no_log_file_text {
+            get {
+                return ResourceManager.GetString("log_modal_no_log_file_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Select a log folder.
         /// </summary>
         internal static string log_plugin_select_folder {

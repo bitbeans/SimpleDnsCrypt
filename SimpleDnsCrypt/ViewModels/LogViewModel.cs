@@ -1,29 +1,33 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel.Composition;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
 using Caliburn.Micro;
+using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
 using SimpleDnsCrypt.Config;
 using SimpleDnsCrypt.Models;
+using SimpleDnsCrypt.Tools;
 
 namespace SimpleDnsCrypt.ViewModels
 {
 	[Export]
 	public class LogViewModel : Screen
 	{
+		private readonly IWindowManager _windowManager;
 		private bool _isLogging;
 		private string _logFile;
 		private ObservableCollection<LogLine> _logLines;
 		private LogLine _selectedLogLine;
 
 		[ImportingConstructor]
-		public LogViewModel()
+		public LogViewModel(IWindowManager windowManager)
 		{
+			_windowManager = windowManager;
 			_logLines = new ObservableCollection<LogLine>();
 			_isLogging = false;
 			RefreshPluginData();
@@ -44,11 +48,15 @@ namespace SimpleDnsCrypt.ViewModels
 				if (!found)
 				{
 					LogFile = string.Empty;
+					IsLogging = false;
+					LogLines.Clear();
 				}
 			}
 			catch (Exception)
 			{
 				LogFile = string.Empty;
+				IsLogging = false;
+				LogLines.Clear();
 			}
 		}
 
@@ -139,11 +147,19 @@ namespace SimpleDnsCrypt.ViewModels
 						else
 						{
 							IsLogging = false;
+							_windowManager.ShowMetroMessageBox(
+								LocalizationEx.GetUiString("log_modal_no_log_file_text", Thread.CurrentThread.CurrentCulture),
+								LocalizationEx.GetUiString("log_modal_no_log_file_header", Thread.CurrentThread.CurrentCulture),
+								MessageBoxButton.OK, BoxType.Warning);
 						}
 					}
 					else
 					{
 						IsLogging = false;
+						_windowManager.ShowMetroMessageBox(
+							LocalizationEx.GetUiString("log_modal_no_log_file_text", Thread.CurrentThread.CurrentCulture),
+							LocalizationEx.GetUiString("log_modal_no_log_file_header", Thread.CurrentThread.CurrentCulture),
+							MessageBoxButton.OK, BoxType.Warning);
 					}
 				}
 				else
@@ -166,20 +182,31 @@ namespace SimpleDnsCrypt.ViewModels
 		{
 			try
 			{
-				if (SelectedLogLine != null)
+				if (SelectedLogLine == null) return;
+				var newRule = SelectedLogLine.Remote.ToLower().Trim();
+				var metroWindow = Application.Current.MainWindow as MetroWindow;
+				var metroDialogSettings = new MetroDialogSettings
 				{
-					var newRule = SelectedLogLine.Remote.ToLower().Trim();
-					var response = MainViewModel.Instance.BlockViewModel.ParseBlacklist(newRule, true);
-					if (response.Count() != 1) return;
-					if (MainViewModel.Instance.BlockViewModel.DomainBlacklist.LocalRules.FirstOrDefault(l => l.Rule.Equals(newRule)) !=
-						null) return;
-					MainViewModel.Instance.BlockViewModel.DomainBlacklist.LocalRules.Add(new LocaleRule { Rule = newRule });
-					MainViewModel.Instance.BlockViewModel.SaveDomainBlacklist();
-				}
+					AffirmativeButtonText = LocalizationEx.GetUiString("ok", Thread.CurrentThread.CurrentCulture),
+					NegativeButtonText = LocalizationEx.GetUiString("cancel", Thread.CurrentThread.CurrentCulture),
+					DefaultText = newRule
+				};
+				var result =
+					metroWindow.ShowModalInputExternal(
+						LocalizationEx.GetUiString("log_modal_add_rule_header", Thread.CurrentThread.CurrentCulture),
+						LocalizationEx.GetUiString("log_modal_add_rule_text", Thread.CurrentThread.CurrentCulture), metroDialogSettings);
+				if (result == null) return;
+				var newCustomRule = result.ToLower().Trim();
+				var response = MainViewModel.Instance.BlockViewModel.ParseBlacklist(newCustomRule, true);
+				if (response.Count() != 1) return;
+				if (
+					MainViewModel.Instance.BlockViewModel.DomainBlacklist.LocalRules.FirstOrDefault(l => l.Rule.Equals(newCustomRule)) !=
+					null) return;
+				MainViewModel.Instance.BlockViewModel.DomainBlacklist.LocalRules.Add(new LocaleRule {Rule = newCustomRule});
+				MainViewModel.Instance.BlockViewModel.SaveDomainBlacklist();
 			}
 			catch (Exception)
 			{
-
 			}
 		}
 	}

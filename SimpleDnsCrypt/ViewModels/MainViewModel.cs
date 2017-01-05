@@ -283,7 +283,7 @@ namespace SimpleDnsCrypt.ViewModels
 			// check for new version on every application start
 			UpdateAsync();
 			BlockViewModel = new BlockViewModel(_windowManager);
-			LogViewModel = new LogViewModel();
+			LogViewModel = new LogViewModel(_windowManager);
 		}
 
 		/// <summary>

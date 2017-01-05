@@ -404,12 +404,24 @@
     <value>Live Log</value>
   </data>
   <data name="log_entries" xml:space="preserve">
-    <value>Einträge in LiveLog:</value>
+    <value>Einträge im Live Log:</value>
   </data>
   <data name="log_source" xml:space="preserve">
     <value>Quelle:</value>
   </data>
   <data name="log_button_add_to_blacklist" xml:space="preserve">
     <value>Ausgewählte zu Blacklist hinzufügen</value>
+  </data>
+  <data name="log_modal_no_log_file_header" xml:space="preserve">
+    <value>Keine Logdatei gefunden</value>
+  </data>
+  <data name="log_modal_add_rule_header" xml:space="preserve">
+    <value>Neuer Blacklist Eintrag</value>
+  </data>
+  <data name="log_modal_no_log_file_text" xml:space="preserve">
+    <value>Es wurde keine Logdatei gefunden, bitte aktivieren Sie zuerst das Log-Plugin.</value>
+  </data>
+  <data name="log_modal_add_rule_text" xml:space="preserve">
+    <value>Sie können den Eintrag editieren, bevor Sie ihn der Blackliste hinzufügen.</value>
   </data>
 </root>

@@ -87,11 +87,11 @@ namespace SimpleDnsCrypt.ViewModels
 				}
 				else
 				{
-					foreach (var plugin in Plugins)
+					for (int i = Plugins.Count - 1; i >= 0; i--)
 					{
-						if (plugin.StartsWith(Global.LibdcpluginCache))
+						if (Plugins[i].StartsWith(Global.LibdcpluginCache))
 						{
-							Plugins.Remove(plugin);
+							Plugins.RemoveAt(i);
 							NotifyOfPropertyChange(() => CachePlugin);
 						}
 					}
@@ -136,11 +136,11 @@ namespace SimpleDnsCrypt.ViewModels
 				}
 				else
 				{
-					foreach (var plugin in Plugins)
+					for (int i = Plugins.Count - 1; i >= 0; i--)
 					{
-						if (plugin.StartsWith(Global.LibdcpluginLogging))
+						if (Plugins[i].StartsWith(Global.LibdcpluginLogging))
 						{
-							Plugins.Remove(plugin);
+							Plugins.RemoveAt(i);
 							NotifyOfPropertyChange(() => LogPlugin);
 						}
 					}
