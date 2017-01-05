@@ -308,4 +308,123 @@ Catatan tersebut disimpan di berkas lokal.</value>
   <data name="default_settings_info_port" xml:space="preserve">
     <value>DNSCrypt akan mendengarkan pada port ini (default: 53)</value>
   </data>
+  <data name="block_plugin_title" xml:space="preserve">
+    <value>Blokir alamat dan domain</value>
+  </data>
+  <data name="block_plugin_text" xml:space="preserve">
+    <value>Plugin ini mengembalikan jawaban REFUSED jika permintaan ada di daftar blacklist, atau jika salah satu IP ada di dalam daftar IP yang di-blacklist.</value>
+  </data>
+  <data name="block_plugin_sub_domains_header" xml:space="preserve">
+    <value>Blokir domain</value>
+  </data>
+  <data name="block_plugin_sub_addresses_header" xml:space="preserve">
+    <value>Blokir alamat</value>
+  </data>
+  <data name="blacklist_entries" xml:space="preserve">
+    <value>daftar</value>
+  </data>
+  <data name="blacklist_building_list" xml:space="preserve">
+    <value>menyusun list . . .</value>
+  </data>
+  <data name="blacklist_button_build_address" xml:space="preserve">
+    <value>Susun blacklist alamat</value>
+  </data>
+  <data name="blacklist_button_build_domain" xml:space="preserve">
+    <value>Susun blacklist domain</value>
+  </data>
+  <data name="blacklist_button_remove_address" xml:space="preserve">
+    <value>Hapus entri alamat</value>
+  </data>
+  <data name="blacklist_button_remove_domain" xml:space="preserve">
+    <value>Hapus entri domain</value>
+  </data>
+  <data name="blacklist_button_add_remote_domain" xml:space="preserve">
+    <value>Tambah aturan domain remot (URL)</value>
+  </data>
+  <data name="blacklist_button_add_local_domain" xml:space="preserve">
+    <value>Tambah aturan domain lokal</value>
+  </data>
+  <data name="blacklist_button_add_address" xml:space="preserve">
+    <value>Tambah aturan alamat</value>
+  </data>
+  <data name="blacklist_button_select_domain_blacklist" xml:space="preserve">
+    <value>Pilih berkas blacklist domain</value>
+  </data>
+  <data name="blacklist_button_select_address_blacklist" xml:space="preserve">
+    <value>Pilih berkas blacklist alamat</value>
+  </data>
+  <data name="block_plugin_sub_addresses_text" xml:space="preserve">
+    <value>Blokir alamat dengan aturan custom: (contoh: 10.1.4.99, 172.16.*)</value>
+  </data>
+  <data name="block_plugin_sub_domains_text" xml:space="preserve">
+    <value>Blokir domain dengan aturan lokal atau berkas remot</value>
+  </data>
+  <data name="blacklist_modal_new_address_rule_text" xml:space="preserve">
+    <value>Contoh: 172.16.144.8, 172.16.*, [fdb2:cd9e:c9f8:861a:c1ab:94e3:ef95:1ec0]</value>
+  </data>
+  <data name="blacklist_modal_new_address_rule_header" xml:space="preserve">
+    <value>Aturan alamat baru</value>
+  </data>
+  <data name="blacklist_modal_empty_list_text" xml:space="preserve">
+    <value>Berkas blacklist tidak boleh kosong</value>
+  </data>
+  <data name="blacklist_modal_empty_list_header" xml:space="preserve">
+    <value>Gagal untuk men-set blacklist</value>
+  </data>
+  <data name="blacklist_modal_new_local_domain_rule_header" xml:space="preserve">
+    <value>Aturan domain lokal baru</value>
+  </data>
+  <data name="blacklist_modal_new_remote_domain_rule_header" xml:space="preserve">
+    <value>Aturan domain remot baru</value>
+  </data>
+  <data name="blacklist_modal_new_local_domain_rule_text" xml:space="preserve">
+    <value>Contoh: *.example.com, ads.*, *sex*</value>
+  </data>
+  <data name="blacklist_modal_new_remote_domain_rule_text" xml:space="preserve">
+    <value>Contoh: https://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt</value>
+  </data>
+  <data name="cache_plugin_text" xml:space="preserve">
+    <value>A simple, zero-configuration DNS response cache.</value>
+    <value>Cache respons DNS yang simpel dan tanpa pengaturan.</value>
+  </data>
+  <data name="cache_plugin_ttl" xml:space="preserve">
+    <value>TTL (waktu cache)</value>
+  </data>
+  <data name="cache_plugin_seconds" xml:space="preserve">
+    <value>detik</value>
+  </data>
+  <data name="cache_plugin_title" xml:space="preserve">
+    <value>Cache respons DNS</value>
+  </data>
+  <data name="tab_block" xml:space="preserve">
+    <value>Pemblokiran dan Blacklist</value>
+  </data>
+  <data name="default_settings_analyse_button_tooltip" xml:space="preserve">
+    <value>Get some extra info about the resolvers (only IPv4)</value>
+    <value>Dapatkan informasi tambahan tentang resolver (hanya IPv4)</value>
+  </data>
+  <data name="tab_log" xml:space="preserve">
+    <value>Log Langsung</value>
+  </data>
+  <data name="log_entries" xml:space="preserve">
+    <value>Daftar di Log Langsung:</value>
+  </data>
+  <data name="log_source" xml:space="preserve">
+    <value>Sumber:</value>
+  </data>
+  <data name="log_button_add_to_blacklist" xml:space="preserve">
+    <value>Tambahkan entri terpilih ke blacklist domain lokal</value>
+  </data>
+  <data name="log_modal_no_log_file_text" xml:space="preserve">
+    <value>Tidak ada berkas log untuk ditampilkan. Aktifkan plugin logging terlebih dahulu.</value>
+  </data>
+  <data name="log_modal_no_log_file_header" xml:space="preserve">
+    <value>Berkas Log Tidak Ditemukan</value>
+  </data>
+  <data name="log_modal_add_rule_header" xml:space="preserve">
+    <value>Entri Blacklist Baru</value>
+  </data>
+  <data name="log_modal_add_rule_text" xml:space="preserve">
+    <value>Anda bisa mengubah entri sebelum menambahkannya ke blacklist: </value>
+  </data>
 </root>
