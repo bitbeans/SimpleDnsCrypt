@@ -56,7 +56,7 @@ Simple DNSCrypt will automatically check for new versions on startup.
 
 ![plugin view](https://raw.githubusercontent.com/bitbeans/SimpleDnsCrypt/master/img/livelog.png)
 
-Simple DNSCrypt currently supports two plugins:
+Simple DNSCrypt currently supports four plugins:
 
 **libdcplugin_ldns_aaaa_blocking**
 
