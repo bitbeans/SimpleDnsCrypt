@@ -112,7 +112,7 @@ SimpleDNSCrypt currently speaks the following languages (13):
 - Persian/Farsi (@robin98)
 - Russian (Vlad)
 - Simplified Chinese (@jerryhou85)
-- Spanish (@bcien)
+- Spanish (@bcien) (@pablomh)
 - Swedish (@eson57)
 - Turkish (@emirgian)
 
