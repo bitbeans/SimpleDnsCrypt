@@ -104,7 +104,7 @@
     <value>نمایش رابط های مخفی</value>
   </data>
   <data name="tab_standard_settings" xml:space="preserve">
-    <value>تنظیمات استاندارد</value>
+    <value>تنظیمات پایه</value>
   </data>
   <data name="tab_about" xml:space="preserve">
     <value>درباره</value>
@@ -116,10 +116,10 @@
     <value>سرویس ها</value>
   </data>
   <data name="default_settings_primary_text" xml:space="preserve">
-    <value>تحلیلگر اول</value>
+    <value>تحلیلگر اصلی</value>
   </data>
   <data name="default_settings_secondary_text" xml:space="preserve">
-    <value>(تحلیلگر جایگزین (انتخابی</value>
+    <value>(تحلیلگر دوم (انتخابی</value>
   </data>
   <data name="default_settings_primary_service" xml:space="preserve">
     <value>DNSCrypt سرویس اصلی</value>
@@ -146,10 +146,10 @@
     <value>کلید عمومی</value>
   </data>
   <data name="default_settings_secondary_header" xml:space="preserve">
-    <value>تحلیلگر دوم‎</value>
+    <value>Secondary Resolver</value>
   </data>
   <data name="default_settings_primary_header" xml:space="preserve">
-    <value>تحلیلگر اصلی</value>
+    <value>Primary Resolver</value>
   </data>
   <data name="global_ipv6_disabled" xml:space="preserve">
     <value>‏غیرفعال IPv6</value>
@@ -295,7 +295,7 @@
     <value>لغو</value>
   </data>
   <data name="dialog_update_title" xml:space="preserve">
-    <value>دریافتی ها</value>
+    <value>دانلودها</value>
   </data>
   <data name="dialog_update_signature" xml:space="preserve">
     <value>امضا</value>
@@ -346,13 +346,13 @@
     <value>حذف دامین ورودی</value>
   </data>
   <data name="blacklist_button_add_remote_domain" xml:space="preserve">
-    <value>‏(URL) افزودن دستور جدید برای دامین ریموت‏</value>
+    <value>‏(URL) افزودن قوانین دامین از فایل ریموت‏</value>
   </data>
   <data name="blacklist_button_add_local_domain" xml:space="preserve">
-    <value>افزودن دستور جدید برای دامین محلی</value>
+    <value>افزودن دستی قوانین دامین به صورت محلی</value>
   </data>
   <data name="blacklist_button_add_address" xml:space="preserve">
-    <value>افزودن دستور جدید برای آدرس</value>
+    <value>افزودن قوانین برای آدرس</value>
   </data>
   <data name="blacklist_button_select_domain_blacklist" xml:space="preserve">
     <value>انتخاب فایل لیست سیاه دامین</value>
@@ -364,14 +364,14 @@
     <value>(مسدود سازی آدرس با قالب سفارشی ‏(مثال: 10.1.4.99, *.172.16</value>
   </data>
   <data name="block_plugin_sub_domains_text" xml:space="preserve">
-    <value>مسدودسازی دامین با قوانین محلی یا فایل های ریموت</value>
+    <value>مسدودسازی دامین با قوانین محلی یا وارد کردن فایل متنی قوانین از آدرس فایل ریموت</value>
   </data>
   <data name="blacklist_modal_new_address_rule_text" xml:space="preserve">
     <value> [fdb2:cd9e:c9f8:861a:c1ab:94e3:ef95:1ec0] :مثال
 172.16.144.8, 172.16.*</value>
   </data>
   <data name="blacklist_modal_new_address_rule_header" xml:space="preserve">
-    <value>دستور جدید برای آدرس</value>
+    <value>دستور جدید برای قوانین آدرس</value>
   </data>
   <data name="blacklist_modal_empty_list_text" xml:space="preserve">
     <value>.یک فایل لیست سیاه نمیتواند بدون مقدار باشد‏</value>
@@ -380,10 +380,14 @@
     <value>شکست در تنظیم لیست سیاه</value>
   </data>
   <data name="blacklist_modal_new_local_domain_rule_header" xml:space="preserve">
-    <value>دستور جدید برای دامین محلی</value>
+    <value>دستور جدید برای قوانین دامین
+(محلی)    
+    </value>
   </data>
   <data name="blacklist_modal_new_remote_domain_rule_header" xml:space="preserve">
-    <value>دستور جدید برای ریموت دامین</value>
+    <value>دستور جدید برای قوانین دامین
+(آدرس فایل ریموت)
+    </value>
   </data>
   <data name="blacklist_modal_new_local_domain_rule_text" xml:space="preserve">
     <value>مثال: *.example.com, ads.*, *sex*</value>
@@ -408,5 +412,29 @@
   </data>
   <data name="default_settings_analyse_button_tooltip" xml:space="preserve">
     <value>‏(IPV4 ‏کسب اطلاعات تکمیلی درباره تحلیلگر (فقط</value>
+  </data>
+  <data name="tab_log" xml:space="preserve">
+    <value>لاگ های درجریان</value>
+  </data>
+  <data name="log_entries" xml:space="preserve">
+    <value>موارد ورودی لاگ های در جریان:</value>
+  </data>
+  <data name="log_source" xml:space="preserve">
+    <value>فایل منبع لاگ:</value>
+  </data>
+  <data name="log_button_add_to_blacklist" xml:space="preserve">
+    <value>افزودن مورد انتخاب شده به لیست سیاه محلی</value>
+  </data>
+  <data name="log_modal_no_log_file_text" xml:space="preserve">
+    <value>.در حال حاضر فایل منبع لاگ برای نمایش در دسترس نمی باشد. لطفا ابتدا پلاگین ثبت لاگ را فعال نمایید</value>
+  </data>
+  <data name="log_modal_no_log_file_header" xml:space="preserve">
+    <value>.فایل منبع لاگ مفقود شده</value>
+  </data>
+  <data name="log_modal_add_rule_header" xml:space="preserve">
+    <value>ورودی جدید لیست سیاه</value>
+  </data>
+  <data name="log_modal_add_rule_text" xml:space="preserve">
+    <value>شما میتوانید قبل از وارد کردن ورودی به لیست سیاه، آن را ویرایش کنید: </value>
   </data>
 </root>
