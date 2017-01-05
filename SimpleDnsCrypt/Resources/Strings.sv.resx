@@ -320,4 +320,109 @@ Loggarna lagras i en lokal fil.</value>
   <data name="block_plugin_sub_addresses_header" xml:space="preserve">
     <value>Blockera adresser</value>
   </data>
+  <data name="blacklist_entries" xml:space="preserve">
+    <value>poster</value>
+  </data>
+  <data name="blacklist_building_list" xml:space="preserve">
+    <value>skapar lista . . .</value>
+  </data>
+  <data name="blacklist_button_add_address" xml:space="preserve">
+    <value>Lägg till ny adressregel</value>
+  </data>
+  <data name="blacklist_button_add_local_domain" xml:space="preserve">
+    <value>Lägg till ny lokal domänregel</value>
+  </data>
+  <data name="blacklist_button_add_remote_domain" xml:space="preserve">
+    <value>Lägg till ny fjärrdomänregel (URL)</value>
+  </data>
+  <data name="blacklist_button_remove_domain" xml:space="preserve">
+    <value>Ta bort domänpost</value>
+  </data>
+  <data name="blacklist_button_remove_address" xml:space="preserve">
+    <value>Ta bort adresspost</value>
+  </data>
+  <data name="blacklist_button_build_domain" xml:space="preserve">
+    <value>Skapa svartlista för domäner</value>
+  </data>
+  <data name="blacklist_button_build_address" xml:space="preserve">
+    <value>Skapa svartlista för adresser</value>
+  </data>
+  <data name="blacklist_button_select_domain_blacklist" xml:space="preserve">
+    <value>Välj fil för svartlistade domäner</value>
+  </data>
+  <data name="blacklist_button_select_address_blacklist" xml:space="preserve">
+    <value>Välj fil för svartlistade adresser</value>
+  </data>
+  <data name="block_plugin_sub_domains_text" xml:space="preserve">
+    <value>Blockera domäner med lokala regler eller fjärrfiler</value>
+  </data>
+  <data name="block_plugin_sub_addresses_text" xml:space="preserve">
+    <value>Blockera adresser med anpassade regler (exempel: 10.1.4.99, 172.16.*)</value>
+  </data>
+  <data name="blacklist_modal_empty_list_header" xml:space="preserve">
+    <value>Kunde inte ange svartlista</value>
+  </data>
+  <data name="blacklist_modal_empty_list_text" xml:space="preserve">
+    <value>En svartlistfil kan inte vara tom</value>
+  </data>
+  <data name="blacklist_modal_new_address_rule_header" xml:space="preserve">
+    <value>Ny adressregel</value>
+  </data>
+  <data name="blacklist_modal_new_address_rule_text" xml:space="preserve">
+    <value>Exempel: 172.16.144.8, 172.16.*, [fdb2:cd9e:c9f8:861a:c1ab:94e3:ef95:1ec0]</value>
+  </data>
+  <data name="blacklist_modal_new_local_domain_rule_text" xml:space="preserve">
+    <value>Exempel: *.exempel.com, ads.*, *sex*</value>
+  </data>
+  <data name="blacklist_modal_new_local_domain_rule_header" xml:space="preserve">
+    <value>Ny lokal domänregel</value>
+  </data>
+  <data name="blacklist_modal_new_remote_domain_rule_text" xml:space="preserve">
+    <value>Exempel: https://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt</value>
+  </data>
+  <data name="blacklist_modal_new_remote_domain_rule_header" xml:space="preserve">
+    <value>Ny fjärrdomänregel</value>
+  </data>
+  <data name="cache_plugin_title" xml:space="preserve">
+    <value>DNS-respons-cache</value>
+  </data>
+  <data name="cache_plugin_text" xml:space="preserve">
+    <value>En enkel, noll-konfigurations DNS-respons-cache.</value>
+  </data>
+  <data name="cache_plugin_ttl" xml:space="preserve">
+    <value>TTL (cache-tid)</value>
+  </data>
+  <data name="cache_plugin_seconds" xml:space="preserve">
+    <value>sekunder</value>
+  </data>
+  <data name="tab_block" xml:space="preserve">
+    <value>Block och svartlista</value>
+  </data>
+  <data name="default_settings_analyse_button_tooltip" xml:space="preserve">
+    <value>Hämta extra info om namnuppslagningarna (endast IPv4)</value>
+  </data>
+  <data name="tab_log" xml:space="preserve">
+    <value>Live-logg</value>
+  </data>
+  <data name="log_entries" xml:space="preserve">
+    <value>Poster i Live-loggen:</value>
+  </data>
+  <data name="log_source" xml:space="preserve">
+    <value>Källa:</value>
+  </data>
+  <data name="log_button_add_to_blacklist" xml:space="preserve">
+    <value>Lägg till markerat i lokal domänsvartlista</value>
+  </data>
+  <data name="log_modal_no_log_file_text" xml:space="preserve">
+    <value>Det finns ingen loggfil att visa. Aktivera först insticksmodulen för loggning.</value>
+  </data>
+  <data name="log_modal_no_log_file_header" xml:space="preserve">
+    <value>Saknad loggfil</value>
+  </data>
+  <data name="log_modal_add_rule_header" xml:space="preserve">
+    <value>Ny svartlistpost</value>
+  </data>
+  <data name="log_modal_add_rule_text" xml:space="preserve">
+    <value>Du kan ändra posten innan du lägger till den i svartlistan: </value>
+  </data>
 </root>
