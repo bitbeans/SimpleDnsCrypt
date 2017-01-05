@@ -246,7 +246,7 @@
     <value>مجوز</value>
   </data>
   <data name="about_special_thanks" xml:space="preserve">
-    <value>تشکر ویژه از</value>
+    <value>با تشکر ویژه از</value>
   </data>
   <data name="about_thanks_frank_title" xml:space="preserve">
     <value>Frank Denis (@jedisct1) - https://dnscrypt.org</value>
@@ -411,7 +411,7 @@
     <value>مسدود سازی و لیست سیاه</value>
   </data>
   <data name="default_settings_analyse_button_tooltip" xml:space="preserve">
-    <value>‏(IPV4 ‏کسب اطلاعات تکمیلی درباره تحلیلگر (فقط</value>
+    <value>‏(IPv4 ‏کسب اطلاعات تکمیلی درباره تحلیلگر (فقط</value>
   </data>
   <data name="tab_log" xml:space="preserve">
     <value>لاگ های درجریان</value>
@@ -420,16 +420,16 @@
     <value>موارد ورودی لاگ های در جریان:</value>
   </data>
   <data name="log_source" xml:space="preserve">
-    <value>فایل منبع لاگ:</value>
+    <value>فایل مرجع لاگ:</value>
   </data>
   <data name="log_button_add_to_blacklist" xml:space="preserve">
     <value>افزودن مورد انتخاب شده به لیست سیاه محلی</value>
   </data>
   <data name="log_modal_no_log_file_text" xml:space="preserve">
-    <value>.در حال حاضر فایل منبع لاگ برای نمایش در دسترس نمی باشد. لطفا ابتدا پلاگین ثبت لاگ را فعال نمایید</value>
+    <value>.در حال حاضر فایل مرجع لاگ برای نمایش در دسترس نمی باشد. لطفا ابتدا پلاگین ثبت لاگ را فعال نمایید</value>
   </data>
   <data name="log_modal_no_log_file_header" xml:space="preserve">
-    <value>.فایل منبع لاگ مفقود شده</value>
+    <value>فقدان فایل مرجع لاگ</value>
   </data>
   <data name="log_modal_add_rule_header" xml:space="preserve">
     <value>ورودی جدید لیست سیاه</value>
