@@ -28,8 +28,8 @@ namespace SimpleDnsCrypt.Tools
                     {
                         using (var serverConfigFile = new StreamReader(remoteUpdateDataStream))
                         {
-                            var deserializer = new Deserializer(namingConvention: new CamelCaseNamingConvention());
-                            remoteUpdate = deserializer.Deserialize<RemoteUpdate>(serverConfigFile);
+							var deserializer = new DeserializerBuilder().WithNamingConvention(new PascalCaseNamingConvention()).Build();
+							remoteUpdate = deserializer.Deserialize<RemoteUpdate>(serverConfigFile);
                         }
                     }
                 }
