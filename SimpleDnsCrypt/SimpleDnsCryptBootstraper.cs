@@ -38,6 +38,8 @@ namespace SimpleDnsCrypt
 
         protected override void OnStartup(object sender, StartupEventArgs e)
         {
+			base.OnStartup(sender, e);
+			DisplayRootViewFor<MainViewModel>();
         }
 
         private void CurrentDomain_AssemblyLoad(object sender, AssemblyLoadEventArgs args)
