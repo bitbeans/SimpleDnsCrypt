@@ -502,7 +502,19 @@ namespace SimpleDnsCrypt.Tools
                         case "ClientKeyFile":
                             // not yet supported, will be ignored
                             break;
-                    }
+						case "IgnoreTimestamps":
+							// not yet supported, will be ignored
+							break;
+						case "LogFile":
+							// not yet supported, will be ignored
+							break;
+						case "LogLevel":
+							// not yet supported, will be ignored
+							break;
+						case "ConfigFile":
+							// not yet supported, will be ignored
+							break;
+					}
                 }
                 DnsCryptProxy.IsReady = true;
             }
