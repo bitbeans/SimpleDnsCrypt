@@ -5,6 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:cal="http://www.caliburnproject.org"
         xmlns:converter="clr-namespace:SimpleDnsCrypt.Converter"
+        xmlns:tools="clr-namespace:SimpleDnsCrypt.Tools"
         xmlns:lex="http://wpflocalizeextension.codeplex.com"
         lex:LocalizeDictionary.DesignCulture="en"
         lex:ResxLocalizationProvider.DefaultAssembly="SimpleDnsCrypt"
@@ -28,7 +29,7 @@
 
             <Label Content="{Binding Path=Title}" Style="{DynamicResource HeaderLabelStyle}" />
 
-            <TextBlock Grid.Row="1" Text="{Binding Path=Message}" TextWrapping="Wrap" Margin="6,6,0,0" Style="{DynamicResource ModalTextStyle}" />
+            <TextBlock Grid.Row="1" tools:NavigationService.Text="{Binding Path=Message}" TextWrapping="Wrap" Margin="6,6,0,0" Style="{DynamicResource ModalTextStyle}" />
 
             <StackPanel Grid.Row="2" HorizontalAlignment="Right" Margin="0,0,10,10" Orientation="Horizontal">
                 <Button Width="70" Margin="10,0,0,0" Style="{DynamicResource AccentedSquareButtonStyle}" Cursor="Hand" Background="{Binding MessageBoxType, Converter={StaticResource MessageBoxTypeToColor}}" Visibility="{Binding Path=IsYesButtonVisible, Converter={StaticResource VisibilityConverter}}" cal:Message.Attach="Yes" Content="{lex:Loc Key=yes}" />

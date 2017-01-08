@@ -28,19 +28,17 @@ namespace SimpleDnsCrypt.ViewModels
 	[Export]
 	public sealed class MainViewModel : Screen, IShell
 	{
-		public static MainViewModel Instance { get; set; }
-
 		private readonly BindableCollection<LocalNetworkInterface> _localNetworkInterfaces =
 			new BindableCollection<LocalNetworkInterface>();
 
 		private readonly UserData _userData;
 		private readonly IWindowManager _windowManager;
 		private bool _actAsGlobalGateway;
+		private bool _isAnalysing;
 		private bool _isPrimaryResolverRunning;
 		private bool _isRefreshingResolverList;
 		private bool _isSecondaryResolverRunning;
 		private bool _isUninstallingServices;
-		private bool _isAnalysing;
 		private bool _isWorkingOnPrimaryService;
 		private bool _isWorkingOnSecondaryService;
 		private ObservableCollection<Language> _languages;
@@ -55,9 +53,6 @@ namespace SimpleDnsCrypt.ViewModels
 		private bool _showHiddenCards;
 		private bool _updateResolverListOnStart;
 		private bool _useTcpOnly;
-
-		public BlockViewModel BlockViewModel { get; }
-		public LogViewModel LogViewModel { get; }
 
 		/// <summary>
 		///     MainViewModel construcor for XAML.
@@ -291,15 +286,25 @@ namespace SimpleDnsCrypt.ViewModels
 			{
 				if (ex.Message.Contains("libsodium"))
 				{
-					_windowManager.ShowMetroMessageBox("The application can`t find some required DLL. Please install the update for Universal C Runtime in Windows: https://support.microsoft.com/en-us/kb/2999226", "Missing Universal C Runtime (CRT)",
-						MessageBoxButton.OK, BoxType.Error);
+					//The Windows 10 Universal CRT is a Windows operating system component that enables CRT functionality on the Windows operating system.
+					//This update allows Windows desktop applications that depend on the Windows 10 Universal CRT release to run on earlier Windows operating systems.
+					//Microsoft Visual Studio 2015 creates a dependency on the Universal CRT when applications are built by using the Windows 10 Software Development Kit(SDK).
+					//You can install this update on earlier Windows operating systems to enable these applications to run correctly.
+					_windowManager.ShowMetroMessageBox(
+						"Please install the update for Universal C Runtime in Windows: https://support.microsoft.com/en-us/kb/2999226",
+						"Missing Universal C Runtime (CRT)", MessageBoxButton.OK, BoxType.Warning);
 					Environment.Exit(1);
 				}
 			}
 		}
 
+		public static MainViewModel Instance { get; set; }
+
+		public BlockViewModel BlockViewModel { get; }
+		public LogViewModel LogViewModel { get; }
+
 		/// <summary>
-		///		The currently selected language.
+		///     The currently selected language.
 		/// </summary>
 		public Language SelectedLanguage
 		{
@@ -318,7 +323,7 @@ namespace SimpleDnsCrypt.ViewModels
 				else
 				{
 					DisplayName = string.Format("{0} {1} ({2})", Global.ApplicationName, VersionUtilities.PublishVersion,
-					LocalizationEx.GetUiString("global_ipv6_disabled", Thread.CurrentThread.CurrentCulture));
+						LocalizationEx.GetUiString("global_ipv6_disabled", Thread.CurrentThread.CurrentCulture));
 				}
 				if (_actAsGlobalGateway)
 				{
@@ -329,18 +334,18 @@ namespace SimpleDnsCrypt.ViewModels
 				else
 				{
 					PrimaryResolverTitle = string.Format("{0}",
-					LocalizationEx.GetUiString("default_settings_primary_header", Thread.CurrentThread.CurrentCulture));
+						LocalizationEx.GetUiString("default_settings_primary_header", Thread.CurrentThread.CurrentCulture));
 				}
 				SecondaryResolverTitle = string.Format("{0} ({1}:{2})",
-				LocalizationEx.GetUiString("default_settings_secondary_header", Thread.CurrentThread.CurrentCulture),
-				Global.SecondaryResolverAddress,
-				Global.SecondaryResolverPort);
+					LocalizationEx.GetUiString("default_settings_secondary_header", Thread.CurrentThread.CurrentCulture),
+					Global.SecondaryResolverAddress,
+					Global.SecondaryResolverPort);
 				NotifyOfPropertyChange(() => SelectedLanguage);
 			}
 		}
 
 		/// <summary>
-		///		List of all available languages.
+		///     List of all available languages.
 		/// </summary>
 		public ObservableCollection<Language> Languages
 		{
@@ -381,7 +386,7 @@ namespace SimpleDnsCrypt.ViewModels
 		}
 
 		/// <summary>
-		///		Get the last write time of the resolver csv.
+		///     Get the last write time of the resolver csv.
 		/// </summary>
 		public DateTime ProxyListLastWriteTime
 		{
@@ -508,7 +513,6 @@ namespace SimpleDnsCrypt.ViewModels
 		}
 
 		/// <summary>
-		///		
 		/// </summary>
 		public bool IsAnalysing
 		{
@@ -849,7 +853,8 @@ namespace SimpleDnsCrypt.ViewModels
 					}
 				}
 				var status = LocalNetworkInterfaceManager.SetNameservers(localNetworkInterface, dns4, NetworkInterfaceComponent.IPv4);
-				if (_userData.UseIpv6) {
+				if (_userData.UseIpv6)
+				{
 					LocalNetworkInterfaceManager.SetNameservers(localNetworkInterface, dns6, NetworkInterfaceComponent.IPv6);
 				}
 				localNetworkInterface.UseDnsCrypt = status;
@@ -858,7 +863,7 @@ namespace SimpleDnsCrypt.ViewModels
 		}
 
 		/// <summary>
-		///		Get some extra information of the resolvers.
+		///     Get some extra information of the resolvers.
 		/// </summary>
 		/// <remarks>Note: no IPv6 support, for now.</remarks>
 		public async void AnalyseResolvers()
@@ -1021,7 +1026,6 @@ namespace SimpleDnsCrypt.ViewModels
 							dnsProxy.ProviderPublicKey.Equals(
 								PrimaryDnsCryptProxyManager.DnsCryptProxy.Parameter.ProviderKey))
 						{
-
 							_primaryResolver = dnsProxy;
 							// restore the local port
 							_primaryResolver.LocalPort = PrimaryDnsCryptProxyManager.DnsCryptProxy.Parameter.LocalPort;
