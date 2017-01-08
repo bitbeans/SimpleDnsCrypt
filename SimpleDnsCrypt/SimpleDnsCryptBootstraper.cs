@@ -19,10 +19,10 @@ namespace SimpleDnsCrypt
         public SimpleDnsCryptBootstraper()
         {
             AppDomain.CurrentDomain.AssemblyLoad += CurrentDomain_AssemblyLoad;
-            Initialize();
+			Initialize();
         }
 
-        /// <summary>
+	    /// <summary>
         ///     Catch all unhandled exceptions and show a Windows Form MessageBox.
         /// </summary>
         /// <param name="sender"></param>

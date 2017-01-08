@@ -74,216 +74,228 @@ namespace SimpleDnsCrypt.ViewModels
 		[ImportingConstructor]
 		private MainViewModel(IWindowManager windowManager, IEventAggregator eventAggregator)
 		{
-			Instance = this;
-			_windowManager = windowManager;
-			eventAggregator.Subscribe(this);
-			_userData = new UserData(Path.Combine(Directory.GetCurrentDirectory(), Global.UserConfigurationFile));
-			// fill the language combobox
-			_languages = LocalizationEx.GetSupportedLanguages();
-			// automatically use the correct translations if available (fallback: en)
-			LocalizeDictionary.Instance.SetCurrentThreadCulture = true;
-			// overwrite language detection 
-			LocalizeDictionary.Instance.Culture = _userData.Language.Equals("auto")
-				? Thread.CurrentThread.CurrentCulture
-				: new CultureInfo(_userData.Language);
-			// select the current language in the combobox
-			_selectedLanguage =
-				_languages.SingleOrDefault(l => l.ShortCode.Equals(LocalizeDictionary.Instance.Culture.TwoLetterISOLanguageName));
+			try
+			{
+				Instance = this;
+				_windowManager = windowManager;
+				eventAggregator.Subscribe(this);
+				_userData = new UserData(Path.Combine(Directory.GetCurrentDirectory(), Global.UserConfigurationFile));
+				// fill the language combobox
+				_languages = LocalizationEx.GetSupportedLanguages();
+				// automatically use the correct translations if available (fallback: en)
+				LocalizeDictionary.Instance.SetCurrentThreadCulture = true;
+				// overwrite language detection 
+				LocalizeDictionary.Instance.Culture = _userData.Language.Equals("auto")
+					? Thread.CurrentThread.CurrentCulture
+					: new CultureInfo(_userData.Language);
+				// select the current language in the combobox
+				_selectedLanguage =
+					_languages.SingleOrDefault(l => l.ShortCode.Equals(LocalizeDictionary.Instance.Culture.TwoLetterISOLanguageName));
 
-			// this is already defined in the app.manifest, but to be sure check it again
-			if (!IsAdministrator())
-			{
-				_windowManager.ShowMetroMessageBox(
-					LocalizationEx.GetUiString("dialog_message_bad_privileges", Thread.CurrentThread.CurrentCulture),
-					LocalizationEx.GetUiString("dialog_error_title", Thread.CurrentThread.CurrentCulture),
-					MessageBoxButton.OK, BoxType.Error);
-				Environment.Exit(1);
-			}
-
-			// do a simple check, if all needed files are available
-			if (!ValidateDnsCryptProxyFolder())
-			{
-				_windowManager.ShowMetroMessageBox(
-					LocalizationEx.GetUiString("dialog_message_missing_proxy_files",
-						Thread.CurrentThread.CurrentCulture),
-					LocalizationEx.GetUiString("dialog_error_title", Thread.CurrentThread.CurrentCulture),
-					MessageBoxButton.OK, BoxType.Error);
-				Environment.Exit(1);
-			}
-			if (_userData.UseIpv6)
-			{
-				DisplayName = string.Format("{0} {1}", Global.ApplicationName, VersionUtilities.PublishVersion);
-			}
-			else
-			{
-				DisplayName = string.Format("{0} {1} ({2})", Global.ApplicationName, VersionUtilities.PublishVersion,
-				LocalizationEx.GetUiString("global_ipv6_disabled", Thread.CurrentThread.CurrentCulture));
-			}
-			
-			_resolvers = new List<DnsCryptProxyEntry>();
-			_updateResolverListOnStart = _userData.UpdateResolverListOnStart;
-			_isWorkingOnPrimaryService = false;
-			_isWorkingOnSecondaryService = false;
-			_isAnalysing = false;
-
-			LocalNetworkInterfaces = new CollectionViewSource {Source = _localNetworkInterfaces};
-			PrimaryDnsCryptProxyManager = new DnsCryptProxyManager(DnsCryptProxyType.Primary);
-			SecondaryDnsCryptProxyManager = new DnsCryptProxyManager(DnsCryptProxyType.Secondary);
-			ShowHiddenCards = false;
-
-			if (PrimaryDnsCryptProxyManager.DnsCryptProxy.Parameter.TcpOnly ||
-			    SecondaryDnsCryptProxyManager.DnsCryptProxy.Parameter.TcpOnly)
-			{
-				_useTcpOnly = true;
-			}
-
-			// check the primary resolver for plugins
-			if (PrimaryDnsCryptProxyManager.DnsCryptProxy.Parameter.Plugins.Any())
-			{
-				_plugins = PrimaryDnsCryptProxyManager.DnsCryptProxy.Parameter.Plugins.ToList();
-			}
-			else
-			{
-				if (SecondaryDnsCryptProxyManager.DnsCryptProxy.Parameter.Plugins.Any())
+				// this is already defined in the app.manifest, but to be sure check it again
+				if (!IsAdministrator())
 				{
-					_plugins = SecondaryDnsCryptProxyManager.DnsCryptProxy.Parameter.Plugins.ToList();
+					_windowManager.ShowMetroMessageBox(
+						LocalizationEx.GetUiString("dialog_message_bad_privileges", Thread.CurrentThread.CurrentCulture),
+						LocalizationEx.GetUiString("dialog_error_title", Thread.CurrentThread.CurrentCulture),
+						MessageBoxButton.OK, BoxType.Error);
+					Environment.Exit(1);
 				}
-				else
-				{
-					// no stored plugins
-					_plugins = new List<string>();
-				}
-			}
-			var proxyList = Path.Combine(Directory.GetCurrentDirectory(),
-				Global.DnsCryptProxyFolder, Global.DnsCryptProxyResolverListName);
-			var proxyListSignature = Path.Combine(Directory.GetCurrentDirectory(),
-				Global.DnsCryptProxyFolder, Global.DnsCryptProxySignatureFileName);
-			if (!File.Exists(proxyList) || !File.Exists(proxyListSignature) || UpdateResolverListOnStart)
-			{
-				// download and verify the proxy list if there is no one.
-				AsyncHelpers.RunSync(DnsCryptProxyListManager.UpdateResolverListAsync);
-			}
 
-			var dnsProxyList =
-				DnsCryptProxyListManager.ReadProxyList(proxyList, proxyListSignature, !_userData.UseIpv6);
-			if (dnsProxyList != null && dnsProxyList.Any())
-			{
-				foreach (var dnsProxy in dnsProxyList)
+				// do a simple check, if all needed files are available
+				if (!ValidateDnsCryptProxyFolder())
 				{
-					if (
-						dnsProxy.Name.Equals(
-							PrimaryDnsCryptProxyManager.DnsCryptProxy.Parameter.ResolverName))
-					{
-						_primaryResolver = dnsProxy;
-						// restore the local port
-						_primaryResolver.LocalPort = PrimaryDnsCryptProxyManager.DnsCryptProxy.Parameter.LocalPort;
-					}
-					if (
-						dnsProxy.Name.Equals(
-							SecondaryDnsCryptProxyManager.DnsCryptProxy.Parameter.ResolverName))
-					{
-						_secondaryResolver = dnsProxy;
-					}
-					_resolvers.Add(dnsProxy);
-				}
-			}
-			else
-			{
-				_windowManager.ShowMetroMessageBox(
-					string.Format(
-						LocalizationEx.GetUiString("dialog_message_missing_file",
+					_windowManager.ShowMetroMessageBox(
+						LocalizationEx.GetUiString("dialog_message_missing_proxy_files",
 							Thread.CurrentThread.CurrentCulture),
-						proxyList, proxyListSignature),
-					LocalizationEx.GetUiString("dialog_error_title", Thread.CurrentThread.CurrentCulture),
-					MessageBoxButton.OK, BoxType.Error);
-				Environment.Exit(1);
-			}
-
-			// if there is no selected primary resolver, add a default resolver
-			if (PrimaryResolver == null)
-			{
-				DnsCryptProxyEntry defaultResolver;
-				// first check the config file
-				if (_userData.PrimaryResolver.Equals("auto"))
+						LocalizationEx.GetUiString("dialog_error_title", Thread.CurrentThread.CurrentCulture),
+						MessageBoxButton.OK, BoxType.Error);
+					Environment.Exit(1);
+				}
+				if (_userData.UseIpv6)
 				{
-					// automatic, so choose the DefaultPrimaryResolver
-					defaultResolver = dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultPrimaryResolverName)) ??
-					                  dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultPrimaryBackupResolverName));
+					DisplayName = string.Format("{0} {1}", Global.ApplicationName, VersionUtilities.PublishVersion);
 				}
 				else
 				{
-					defaultResolver = dnsProxyList.SingleOrDefault(d => d.Name.Equals(_userData.PrimaryResolver)) ??
-					                  (dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultPrimaryResolverName)) ??
-					                   dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultPrimaryBackupResolverName)));
+					DisplayName = string.Format("{0} {1} ({2})", Global.ApplicationName, VersionUtilities.PublishVersion,
+						LocalizationEx.GetUiString("global_ipv6_disabled", Thread.CurrentThread.CurrentCulture));
 				}
-				PrimaryResolver = defaultResolver;
-			}
 
-			// if there is no selected secondary resolver, add a default resolver
-			if (SecondaryResolver == null)
-			{
-				DnsCryptProxyEntry defaultResolver;
-				// first check the config file
-				if (_userData.SecondaryResolver.Equals("auto"))
+				_resolvers = new List<DnsCryptProxyEntry>();
+				_updateResolverListOnStart = _userData.UpdateResolverListOnStart;
+				_isWorkingOnPrimaryService = false;
+				_isWorkingOnSecondaryService = false;
+				_isAnalysing = false;
+
+				LocalNetworkInterfaces = new CollectionViewSource {Source = _localNetworkInterfaces};
+				PrimaryDnsCryptProxyManager = new DnsCryptProxyManager(DnsCryptProxyType.Primary);
+				SecondaryDnsCryptProxyManager = new DnsCryptProxyManager(DnsCryptProxyType.Secondary);
+				ShowHiddenCards = false;
+
+				if (PrimaryDnsCryptProxyManager.DnsCryptProxy.Parameter.TcpOnly ||
+				    SecondaryDnsCryptProxyManager.DnsCryptProxy.Parameter.TcpOnly)
 				{
-					// automatic, so choose the DefaultPrimaryResolver
-					defaultResolver = dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultSecondaryResolverName)) ??
-					                  dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultSecondaryBackupResolverName));
+					_useTcpOnly = true;
+				}
+
+				// check the primary resolver for plugins
+				if (PrimaryDnsCryptProxyManager.DnsCryptProxy.Parameter.Plugins.Any())
+				{
+					_plugins = PrimaryDnsCryptProxyManager.DnsCryptProxy.Parameter.Plugins.ToList();
 				}
 				else
 				{
-					defaultResolver = dnsProxyList.SingleOrDefault(d => d.Name.Equals(_userData.SecondaryResolver)) ??
-					                  (dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultSecondaryResolverName)) ??
-					                   dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultSecondaryBackupResolverName)));
+					if (SecondaryDnsCryptProxyManager.DnsCryptProxy.Parameter.Plugins.Any())
+					{
+						_plugins = SecondaryDnsCryptProxyManager.DnsCryptProxy.Parameter.Plugins.ToList();
+					}
+					else
+					{
+						// no stored plugins
+						_plugins = new List<string>();
+					}
 				}
-
-				SecondaryResolver = defaultResolver;
-			}
-
-
-			if (PrimaryDnsCryptProxyManager.IsDnsCryptProxyInstalled())
-			{
-				if (PrimaryDnsCryptProxyManager.IsDnsCryptProxyRunning())
+				var proxyList = Path.Combine(Directory.GetCurrentDirectory(),
+					Global.DnsCryptProxyFolder, Global.DnsCryptProxyResolverListName);
+				var proxyListSignature = Path.Combine(Directory.GetCurrentDirectory(),
+					Global.DnsCryptProxyFolder, Global.DnsCryptProxySignatureFileName);
+				if (!File.Exists(proxyList) || !File.Exists(proxyListSignature) || UpdateResolverListOnStart)
 				{
-					_isPrimaryResolverRunning = true;
+					// download and verify the proxy list if there is no one.
+					AsyncHelpers.RunSync(DnsCryptProxyListManager.UpdateResolverListAsync);
 				}
-			}
 
-			if (SecondaryDnsCryptProxyManager.IsDnsCryptProxyInstalled())
-			{
-				if (SecondaryDnsCryptProxyManager.IsDnsCryptProxyRunning())
+				var dnsProxyList =
+					DnsCryptProxyListManager.ReadProxyList(proxyList, proxyListSignature, !_userData.UseIpv6);
+				if (dnsProxyList != null && dnsProxyList.Any())
 				{
-					_isSecondaryResolverRunning = true;
+					foreach (var dnsProxy in dnsProxyList)
+					{
+						if (
+							dnsProxy.Name.Equals(
+								PrimaryDnsCryptProxyManager.DnsCryptProxy.Parameter.ResolverName))
+						{
+							_primaryResolver = dnsProxy;
+							// restore the local port
+							_primaryResolver.LocalPort = PrimaryDnsCryptProxyManager.DnsCryptProxy.Parameter.LocalPort;
+						}
+						if (
+							dnsProxy.Name.Equals(
+								SecondaryDnsCryptProxyManager.DnsCryptProxy.Parameter.ResolverName))
+						{
+							_secondaryResolver = dnsProxy;
+						}
+						_resolvers.Add(dnsProxy);
+					}
+				}
+				else
+				{
+					_windowManager.ShowMetroMessageBox(
+						string.Format(
+							LocalizationEx.GetUiString("dialog_message_missing_file",
+								Thread.CurrentThread.CurrentCulture),
+							proxyList, proxyListSignature),
+						LocalizationEx.GetUiString("dialog_error_title", Thread.CurrentThread.CurrentCulture),
+						MessageBoxButton.OK, BoxType.Error);
+					Environment.Exit(1);
+				}
+
+				// if there is no selected primary resolver, add a default resolver
+				if (PrimaryResolver == null)
+				{
+					DnsCryptProxyEntry defaultResolver;
+					// first check the config file
+					if (_userData.PrimaryResolver.Equals("auto"))
+					{
+						// automatic, so choose the DefaultPrimaryResolver
+						defaultResolver = dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultPrimaryResolverName)) ??
+						                  dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultPrimaryBackupResolverName));
+					}
+					else
+					{
+						defaultResolver = dnsProxyList.SingleOrDefault(d => d.Name.Equals(_userData.PrimaryResolver)) ??
+						                  (dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultPrimaryResolverName)) ??
+						                   dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultPrimaryBackupResolverName)));
+					}
+					PrimaryResolver = defaultResolver;
+				}
+
+				// if there is no selected secondary resolver, add a default resolver
+				if (SecondaryResolver == null)
+				{
+					DnsCryptProxyEntry defaultResolver;
+					// first check the config file
+					if (_userData.SecondaryResolver.Equals("auto"))
+					{
+						// automatic, so choose the DefaultPrimaryResolver
+						defaultResolver = dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultSecondaryResolverName)) ??
+						                  dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultSecondaryBackupResolverName));
+					}
+					else
+					{
+						defaultResolver = dnsProxyList.SingleOrDefault(d => d.Name.Equals(_userData.SecondaryResolver)) ??
+						                  (dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultSecondaryResolverName)) ??
+						                   dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultSecondaryBackupResolverName)));
+					}
+
+					SecondaryResolver = defaultResolver;
+				}
+
+
+				if (PrimaryDnsCryptProxyManager.IsDnsCryptProxyInstalled())
+				{
+					if (PrimaryDnsCryptProxyManager.IsDnsCryptProxyRunning())
+					{
+						_isPrimaryResolverRunning = true;
+					}
+				}
+
+				if (SecondaryDnsCryptProxyManager.IsDnsCryptProxyInstalled())
+				{
+					if (SecondaryDnsCryptProxyManager.IsDnsCryptProxyRunning())
+					{
+						_isSecondaryResolverRunning = true;
+					}
+				}
+
+				if (
+					PrimaryDnsCryptProxyManager.DnsCryptProxy.Parameter.LocalAddress.Equals(
+						Global.GlobalGatewayAddress))
+				{
+					_actAsGlobalGateway = true;
+					_primaryResolverTitle = string.Format("{0} ({1}:{2})",
+						LocalizationEx.GetUiString("default_settings_primary_header",
+							Thread.CurrentThread.CurrentCulture),
+						Global.GlobalGatewayAddress, Global.PrimaryResolverPort);
+				}
+				else
+				{
+					_actAsGlobalGateway = false;
+					_primaryResolverTitle = string.Format("{0}",
+						LocalizationEx.GetUiString("default_settings_primary_header",
+							Thread.CurrentThread.CurrentCulture));
+				}
+
+				_secondaryResolverTitle = string.Format("{0} ({1}:{2})",
+					LocalizationEx.GetUiString("default_settings_secondary_header", Thread.CurrentThread.CurrentCulture),
+					Global.SecondaryResolverAddress,
+					Global.SecondaryResolverPort);
+
+				// check for new version on every application start
+				UpdateAsync();
+				BlockViewModel = new BlockViewModel(_windowManager);
+				LogViewModel = new LogViewModel(_windowManager);
+			}
+			catch (DllNotFoundException ex)
+			{
+				if (ex.Message.Contains("libsodium"))
+				{
+					_windowManager.ShowMetroMessageBox("The application can`t find some required DLL. Please install the update for Universal C Runtime in Windows: https://support.microsoft.com/en-us/kb/2999226", "Missing Universal C Runtime (CRT)",
+						MessageBoxButton.OK, BoxType.Error);
+					Environment.Exit(1);
 				}
 			}
-
-			if (
-				PrimaryDnsCryptProxyManager.DnsCryptProxy.Parameter.LocalAddress.Equals(
-					Global.GlobalGatewayAddress))
-			{
-				_actAsGlobalGateway = true;
-				_primaryResolverTitle = string.Format("{0} ({1}:{2})",
-					LocalizationEx.GetUiString("default_settings_primary_header",
-						Thread.CurrentThread.CurrentCulture),
-					Global.GlobalGatewayAddress, Global.PrimaryResolverPort);
-			}
-			else
-			{
-				_actAsGlobalGateway = false;
-				_primaryResolverTitle = string.Format("{0}",
-					LocalizationEx.GetUiString("default_settings_primary_header",
-						Thread.CurrentThread.CurrentCulture));
-			}
-
-			_secondaryResolverTitle = string.Format("{0} ({1}:{2})",
-				LocalizationEx.GetUiString("default_settings_secondary_header", Thread.CurrentThread.CurrentCulture),
-				Global.SecondaryResolverAddress,
-				Global.SecondaryResolverPort);
-
-			// check for new version on every application start
-			UpdateAsync();
-			BlockViewModel = new BlockViewModel(_windowManager);
-			LogViewModel = new LogViewModel(_windowManager);
 		}
 
 		/// <summary>
