@@ -38,8 +38,8 @@ Simple DNSCrypt will automatically check for new versions on startup.
 
 ### ![Alt text](img/icons/16x16.png "Updates") chocolatey
 
-    choco install simplednscrpt
-https://chocolatey.org/packages/simplednscrpt
+    choco install simplednscrypt
+https://chocolatey.org/packages/simplednscrypt
 
 # ![Alt text](img/icons/32x32.png "Overview") Overview
 
