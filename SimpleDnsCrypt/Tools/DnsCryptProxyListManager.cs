@@ -36,10 +36,11 @@ namespace SimpleDnsCrypt.Tools
 
                     if (valid)
                     {
-                        File.WriteAllBytes(Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder,
-                            Global.DnsCryptProxyResolverListName), resolverList);
-                        File.WriteAllText(Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder,
-                            Global.DnsCryptProxySignatureFileName), signature);
+	                    Directory.CreateDirectory(Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder));
+		                File.WriteAllBytes(Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder,
+			                Global.DnsCryptProxyResolverListName), resolverList);
+		                File.WriteAllText(Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder,
+			                Global.DnsCryptProxySignatureFileName), signature);
                     }
                     return valid;
                 }
