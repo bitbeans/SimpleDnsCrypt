@@ -143,7 +143,7 @@
     <value>İsim (FQDN)</value>
   </data>
   <data name="default_settings_public_key" xml:space="preserve">
-    <value>Açık Anahyar</value>
+    <value>Açık Anahtar</value>
   </data>
   <data name="default_settings_secondary_header" xml:space="preserve">
     <value>İkincil DNS çözümleyici</value>
