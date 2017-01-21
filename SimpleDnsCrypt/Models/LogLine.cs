@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace SimpleDnsCrypt.Models
 {
@@ -15,7 +16,16 @@ namespace SimpleDnsCrypt.Models
 				//this only works with the DNSCrypt default log format
 				var stringSeparators = new[] {"\t"};
 				var parts = line.Split(stringSeparators, StringSplitOptions.RemoveEmptyEntries);
-				Date = DateTime.Parse(parts[0]);
+				try
+				{
+					Date = DateTime.ParseExact(parts[0], "MM/dd/yy HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None);
+				}
+				catch (FormatException)
+				{
+					//not the best solution
+					Date = DateTime.Now;
+				}
+
 				Address = parts[1];
 				Remote = parts[2];
 				LogLineType logLineType;
@@ -26,7 +36,6 @@ namespace SimpleDnsCrypt.Models
 			}
 			catch (Exception)
 			{
-				
 			}
 		}
 
