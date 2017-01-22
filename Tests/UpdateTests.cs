@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using SimpleDnsCrypt.Config;
@@ -40,12 +41,16 @@ namespace Tests
 		{
 			var updated = await DnsCryptProxyListManager.UpdateResolverListAsync();
 			Assert.AreEqual(updated, true);
+			Console.WriteLine(@"updated: " + updated);
 			var dnsCryptProxyResolverListFile = Path.Combine(TestContext.CurrentContext.TestDirectory, Global.DnsCryptProxyFolder, Global.DnsCryptProxyResolverListName);
 			var dnsCryptProxySignatureFile = Path.Combine(TestContext.CurrentContext.TestDirectory, Global.DnsCryptProxyFolder, Global.DnsCryptProxySignatureFileName);
 			Assert.AreEqual(File.Exists(dnsCryptProxyResolverListFile), true);
 			Assert.AreEqual(File.Exists(dnsCryptProxySignatureFile), true);
+			Console.WriteLine(@"dnsCryptProxyResolverListFile: " + dnsCryptProxyResolverListFile);
+			Console.WriteLine(@"dnsCryptProxySignatureFile: " + dnsCryptProxySignatureFile);
 			var resolverList = DnsCryptProxyListManager.ReadProxyList(dnsCryptProxyResolverListFile, dnsCryptProxySignatureFile, true);
 			Assert.Greater(resolverList.Count, 0);
+			Console.WriteLine(@"resolverList.Count: " + resolverList.Count);
 		}
 	}
 }
