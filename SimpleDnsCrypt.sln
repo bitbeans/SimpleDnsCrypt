@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDnsCrypt", "SimpleDnsCrypt\SimpleDnsCrypt.csproj", "{E7F52FEB-433A-4FA3-8053-13C211FA0A8A}"
 EndProject
@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uninstall", "Uninstall\Uninstall.csproj", "{70BFF12B-996D-43F0-8529-CF8711699ACB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{ED3D6FFE-55FC-4436-858B-36D97E66A481}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +31,10 @@ Global
 		{70BFF12B-996D-43F0-8529-CF8711699ACB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70BFF12B-996D-43F0-8529-CF8711699ACB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70BFF12B-996D-43F0-8529-CF8711699ACB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED3D6FFE-55FC-4436-858B-36D97E66A481}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED3D6FFE-55FC-4436-858B-36D97E66A481}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED3D6FFE-55FC-4436-858B-36D97E66A481}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED3D6FFE-55FC-4436-858B-36D97E66A481}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

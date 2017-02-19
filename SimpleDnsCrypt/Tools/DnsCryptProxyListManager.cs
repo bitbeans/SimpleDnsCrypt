@@ -36,10 +36,11 @@ namespace SimpleDnsCrypt.Tools
 
                     if (valid)
                     {
-                        File.WriteAllBytes(Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder,
-                            Global.DnsCryptProxyResolverListName), resolverList);
-                        File.WriteAllText(Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder,
-                            Global.DnsCryptProxySignatureFileName), signature);
+	                    Directory.CreateDirectory(Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder));
+		                File.WriteAllBytes(Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder,
+			                Global.DnsCryptProxyResolverListName), resolverList);
+		                File.WriteAllText(Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder,
+			                Global.DnsCryptProxySignatureFileName), signature);
                     }
                     return valid;
                 }
@@ -56,23 +57,47 @@ namespace SimpleDnsCrypt.Tools
 
         private static async Task<byte[]> DownloadResolverListAsync()
         {
-            using (var client = new HttpClient())
-            {
-                var getDataTask = client.GetByteArrayAsync(Global.ResolverUrl);
-                var resolverList = await getDataTask.ConfigureAwait(false);
-                return resolverList;
-            }
+	        try
+	        {
+		        using (var client = new HttpClient())
+		        {
+			        var getDataTask = client.GetByteArrayAsync(Global.ResolverUrl);
+			        var resolverList = await getDataTask.ConfigureAwait(false);
+			        return resolverList;
+		        }
+	        }
+	        catch (HttpRequestException)
+	        {
+				using (var client = new HttpClient())
+				{
+					var getDataTask = client.GetByteArrayAsync(Global.ResolverBackupUrl);
+					var resolverList = await getDataTask.ConfigureAwait(false);
+					return resolverList;
+				}
+			}
         }
 
         private static async Task<string> DownloadSignatureAsync()
         {
-            using (var client = new HttpClient())
-            {
-                var getDataTask = client.GetStringAsync(Global.SignatureUrl);
-                var resolverList = await getDataTask.ConfigureAwait(false);
-                return resolverList;
-            }
-        }
+	        try
+	        {
+		        using (var client = new HttpClient())
+		        {
+			        var getDataTask = client.GetStringAsync(Global.SignatureUrl);
+			        var resolverList = await getDataTask.ConfigureAwait(false);
+			        return resolverList;
+		        }
+	        }
+			catch (HttpRequestException)
+			{
+				using (var client = new HttpClient())
+				{
+					var getDataTask = client.GetStringAsync(Global.SignatureBackupUrl);
+					var resolverList = await getDataTask.ConfigureAwait(false);
+					return resolverList;
+				}
+			}
+		}
 
         public static List<DnsCryptProxyEntry> ReadProxyList(string proxyListFile, string proxyListSignature, bool filterIpv6 = true)
         {
@@ -81,54 +106,54 @@ namespace SimpleDnsCrypt.Tools
 
             var dnsCryptProxyList = new List<DnsCryptProxyEntry>();
 
-            var signature = Minisign.LoadSignatureFromFile(proxyListSignature);
-            var publicKey = Minisign.LoadPublicKeyFromString(Global.PublicKey);
-            // only load signed files!
-            if (Minisign.ValidateSignature(proxyListFile, signature, publicKey))
-            {
-                using (var parser = new TextFieldParser(proxyListFile) {HasFieldsEnclosedInQuotes = true})
-                { 
-                    parser.SetDelimiters(",");
+		    var signature = Minisign.LoadSignatureFromFile(proxyListSignature);
+		    var publicKey = Minisign.LoadPublicKeyFromString(Global.PublicKey);
 
-                    while (!parser.EndOfData)
-                    {
-                        var s = parser.ReadFields();
-                        var tmp = new DnsCryptProxyEntry
-                        {
-                            Name = ClearString(s[0]),
-                            FullName = ClearString(s[1]),
-                            Description = ClearString(s[2]),
-                            Location = ClearString(s[3]),
-                            Coordinates = ClearString(s[4]),
-                            Url = ClearString(s[5]),
-                            Version = s[6],
-                            DnssecValidation = (s[7].Equals("yes")),
-                            NoLogs = (s[8].Equals("yes")),
-                            Namecoin = (s[9].Equals("yes")),
-                            ResolverAddress = ClearString(s[10]),
-                            ProviderName = ClearString(s[11]),
-                            ProviderPublicKey = ClearString(s[12]),
-                            ProviderPublicKeyTextRecord = ClearString(s[13]),
-							LocalPort = Global.PrimaryResolverPort //set the default port 
-                        };
-                        if (!tmp.Description.Equals("Description"))
-                        {
-                            if (filterIpv6)
-                            {
-                                if (!tmp.ResolverAddress.StartsWith("["))
-                                {
-                                    dnsCryptProxyList.Add(tmp);
-                                }
-                            }
-                            else
-                            {
-                                dnsCryptProxyList.Add(tmp);
-                            }
-                        }
-                    }
-                }
-            }
-            return dnsCryptProxyList;
+		    // only load signed files!
+	        if (Minisign.ValidateSignature(proxyListFile, signature, publicKey))
+	        {
+		        using (var parser = new TextFieldParser(proxyListFile) {HasFieldsEnclosedInQuotes = true})
+		        {
+			        parser.SetDelimiters(",");
+			        while (!parser.EndOfData)
+			        {
+				        var s = parser.ReadFields();
+				        var tmp = new DnsCryptProxyEntry
+				        {
+					        Name = ClearString(s[0]),
+					        FullName = ClearString(s[1]),
+					        Description = ClearString(s[2]),
+					        Location = ClearString(s[3]),
+					        Coordinates = ClearString(s[4]),
+					        Url = ClearString(s[5]),
+					        Version = s[6],
+					        DnssecValidation = (s[7].Equals("yes")),
+					        NoLogs = (s[8].Equals("yes")),
+					        Namecoin = (s[9].Equals("yes")),
+					        ResolverAddress = ClearString(s[10]),
+					        ProviderName = ClearString(s[11]),
+					        ProviderPublicKey = ClearString(s[12]),
+					        ProviderPublicKeyTextRecord = ClearString(s[13]),
+					        LocalPort = Global.PrimaryResolverPort //set the default port 
+				        };
+				        if (!tmp.Description.Equals("Description"))
+				        {
+					        if (filterIpv6)
+					        {
+						        if (!tmp.ResolverAddress.StartsWith("["))
+						        {
+							        dnsCryptProxyList.Add(tmp);
+						        }
+					        }
+					        else
+					        {
+						        dnsCryptProxyList.Add(tmp);
+					        }
+				        }
+			        }
+		        }
+	        }
+	        return dnsCryptProxyList;
         }
     }
 }

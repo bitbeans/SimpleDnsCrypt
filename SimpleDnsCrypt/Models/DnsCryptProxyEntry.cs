@@ -1,12 +1,14 @@
-﻿using Caliburn.Micro;
+﻿using System;
+using Caliburn.Micro;
+using SimpleDnsCrypt.Tools;
 
 namespace SimpleDnsCrypt.Models
 {
     /// <summary>
     ///     Class to represent an entry in the resolver list.
     /// </summary>
-    public class DnsCryptProxyEntry : PropertyChangedBase
-    {
+    public class DnsCryptProxyEntry : PropertyChangedBase, IEquatable<DnsCryptProxyEntry>
+	{
         /// <summary>
         ///     The short name of the resolver.
         /// </summary>
@@ -81,5 +83,58 @@ namespace SimpleDnsCrypt.Models
 		///     The local port (not part of the CSV file).
 		/// </summary>
 		public int LocalPort { get; set; }
+
+		/// <summary>
+		///		Some optional data.
+		/// </summary>
+		public DnsCryptProxyEntryExtra Extra { get; set; }
+
+		/// <summary>
+		///		Formatted display name.
+		/// </summary>
+	    public string DisplayName
+	    {
+		    get
+		    {
+			    if (Extra != null)
+			    {
+				    if (DnssecValidation)
+				    {
+					    return $"{Extra.ResponseTime}ms - {FullName} [DNSSEC]";
+				    }
+				    return $"{Extra.ResponseTime}ms - {FullName}";
+			    }
+			    return FullName;
+		    }
+	    }
+
+		public bool Equals(DnsCryptProxyEntry other)
+		{
+			if (ReferenceEquals(other, null)) return false;
+			if (ReferenceEquals(other, this)) return true;
+			return Name == other.Name;
+		}
+
+		public sealed override bool Equals(object obj)
+		{
+			var otherMyItem = obj as DnsCryptProxyEntry;
+			if (ReferenceEquals(otherMyItem, null)) return false;
+			return otherMyItem.Equals(this);
+		}
+
+		public override int GetHashCode()
+		{
+			return Name.GetHashCode();
+		}
+
+		public static bool operator ==(DnsCryptProxyEntry entry1, DnsCryptProxyEntry entry2)
+		{
+			return Equals(entry1, entry2);
+		}
+
+		public static bool operator !=(DnsCryptProxyEntry entry1, DnsCryptProxyEntry entry2)
+		{
+			return !(entry1 == entry2);
+		}
 	}
 }

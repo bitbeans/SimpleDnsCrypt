@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+		Microsoft ResX Schema
+
+		Version 1.3
+
+		The primary goals of this format is to allow a simple XML format 
+		that is mostly human readable. The generation and parsing of the 
+		various data types are done through the TypeConverter classes 
+		associated with the data types.
+
+		Example:
+
+		... ado.net/XML headers & schema ...
+		<resheader name="resmimetype">text/microsoft-resx</resheader>
+		<resheader name="version">1.3</resheader>
+		<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+		<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+		<data name="Name1">this is my long string</data>
+		<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+		<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+			[base64 mime encoded serialized .NET Framework object]
+		</data>
+		<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+			[base64 mime encoded string representing a byte array form of the .NET Framework object]
+		</data>
+
+		There are any number of "resheader" rows that contain simple 
+		name/value pairs.
+
+		Each data row contains a name, and value. The row also contains a 
+		type or mimetype. Type corresponds to a .NET class that support 
+		text/value conversion through the TypeConverter architecture. 
+		Classes that don't support this are serialized and stored with the 
+		mimetype set.
+
+		The mimetype is used for serialized objects, and tells the 
+		ResXResourceReader how to depersist the object. This is currently not 
+		extensible. For a given mimetype the value must be set accordingly:
+
+		Note - application/x-microsoft.net.object.binary.base64 is the format 
+		that the ResXResourceWriter will generate, however the reader can 
+		read any of the formats listed below.
+
+		mimetype: application/x-microsoft.net.object.binary.base64
+		value   : The object must be serialized with 
+			: System.Serialization.Formatters.Binary.BinaryFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.soap.base64
+		value   : The object must be serialized with 
+			: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.bytearray.base64
+		value   : The object must be serialized into a byte array 
+			: using a System.ComponentModel.TypeConverter
+			: and then encoded with base64 encoding.
+	-->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="default_settings_network_cards" xml:space="preserve">
+    <value>Tarjetas de red</value>
+  </data>
+  <data name="default_settings_show_hidden_cards" xml:space="preserve">
+    <value>Mostrar tarjetas ocultas</value>
+  </data>
+  <data name="tab_standard_settings" xml:space="preserve">
+    <value>Configuración estándar</value>
+  </data>
+  <data name="tab_about" xml:space="preserve">
+    <value>Acerca de</value>
+  </data>
+  <data name="tab_advanced_settings" xml:space="preserve">
+    <value>Configuración avanzada</value>
+  </data>
+  <data name="default_settings_services" xml:space="preserve">
+    <value>Servicios</value>
+  </data>
+  <data name="default_settings_primary_text" xml:space="preserve">
+    <value>Servidor DNS principal</value>
+  </data>
+  <data name="default_settings_secondary_text" xml:space="preserve">
+    <value>Servidor DNS secundario (opcional)</value>
+  </data>
+  <data name="default_settings_primary_service" xml:space="preserve">
+    <value>Servicio DNSCrypt principal</value>
+  </data>
+  <data name="default_settings_secondary_service" xml:space="preserve">
+    <value>Servicio DNSCrypt secundario</value>
+  </data>
+  <data name="default_settings_resolver" xml:space="preserve">
+    <value>Servidor DNS</value>
+  </data>
+  <data name="default_settings_server_address" xml:space="preserve">
+    <value>Dirección del servidor</value>
+  </data>
+  <data name="default_settings_dnssec" xml:space="preserve">
+    <value>DNSSEC</value>
+  </data>
+  <data name="default_settings_no_logs" xml:space="preserve">
+    <value>Sin historial (logs)</value>
+  </data>
+  <data name="default_settings_name" xml:space="preserve">
+    <value>Nombre (FQDN)</value>
+  </data>
+  <data name="default_settings_public_key" xml:space="preserve">
+    <value>Clave pública</value>
+  </data>
+  <data name="default_settings_secondary_header" xml:space="preserve">
+    <value>Servidor DNS secundario</value>
+  </data>
+  <data name="default_settings_primary_header" xml:space="preserve">
+    <value>Servidor DNS principal</value>
+  </data>
+  <data name="global_ipv6_disabled" xml:space="preserve">
+    <value>IPv6 deshabilitado</value>
+  </data>
+  <data name="dialog_error_title" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="dialog_success_title" xml:space="preserve">
+    <value>Exitoso</value>
+  </data>
+  <data name="dialog_uninstall_title" xml:space="preserve">
+    <value>Desinstalar servicios</value>
+  </data>
+  <data name="dialog_warning_title" xml:space="preserve">
+    <value>Advertencia</value>
+  </data>
+  <data name="dialog_message_refresh_failed" xml:space="preserve">
+    <value>No fue posible actualizar la lista de servidores DNS.</value>
+  </data>
+  <data name="window_plugin_title" xml:space="preserve">
+    <value>Extensiones disponibles</value>
+  </data>
+  <data name="dialog_message_uninstall" xml:space="preserve">
+    <value>¿Desea desinstalar todos los servicios de Windows instalados?</value>
+  </data>
+  <data name="dialog_message_missing_file" xml:space="preserve">
+    <value>No es posible leer: {0} o {1}.</value>
+  </data>
+  <data name="dialog_message_missing_proxy_files" xml:space="preserve">
+    <value>No se han encontrado todos los archivos necesarios en el directorio de dnscrypt proxy. Es recomendable reinstalar la aplicación.</value>
+  </data>
+  <data name="dialog_message_bad_privileges" xml:space="preserve">
+    <value>Esta aplicación debe ser ejecutada con derechos de administrador.</value>
+  </data>
+  <data name="ipv6_speed_plugin_title" xml:space="preserve">
+    <value>Aceleración en ausencia de IPv6</value>
+  </data>
+  <data name="ipv6_speed_plugin_text" xml:space="preserve">
+    <value>Si las conexiones IPv6 no están disponible en la red, este plugin deshabilita la espera de respuestas para direcciones IPv6 desde los servidores DNS (upstream resolvers). Esto puede mejorar su experiencia de navegación.</value>
+  </data>
+  <data name="advanced_settings_refresh_resolver_title" xml:space="preserve">
+    <value>Actualizar lista de servidores DNS públicos</value>
+  </data>
+  <data name="advanced_settings_refresh_resolver_text" xml:space="preserve">
+    <value>Actualiza la lista de servidores DNS públicos (todas las descargas son validadas con una firma minisign)</value>
+  </data>
+  <data name="advanced_settings_debug_title" xml:space="preserve">
+    <value>Modo de depuración (debug)</value>
+  </data>
+  <data name="advanced_settings_refresh_resolver_button" xml:space="preserve">
+    <value>Lista de descargas</value>
+  </data>
+  <data name="advanced_settings_uninstall_title" xml:space="preserve">
+    <value>Desinstalar servicios</value>
+  </data>
+  <data name="advanced_settings_uninstall_text" xml:space="preserve">
+    <value>Desinstalar todos los servicios de Windows instalados</value>
+  </data>
+  <data name="advanced_settings_uninstall_button" xml:space="preserve">
+    <value>Desinstalar todos los servicios</value>
+  </data>
+  <data name="advanced_settings_plugins_title" xml:space="preserve">
+    <value>Complementos</value>
+  </data>
+  <data name="advanced_settings_plugins_text" xml:space="preserve">
+    <value>Habilite o deshabilite opciones adicionales con complementos</value>
+  </data>
+  <data name="advanced_settings_plugins_button" xml:space="preserve">
+    <value>Abrir administrador de complementos</value>
+  </data>
+  <data name="advanced_settings_transport_tcp_title" xml:space="preserve">
+    <value>Configuración de protocolo de transporte TCP</value>
+  </data>
+  <data name="advanced_settings_transport_tcp_text" xml:space="preserve">
+    <value>Usar TCP en puerto 443 en vez de UDP en puerto 443 (TCP es más lento que UDP)</value>
+  </data>
+  <data name="advanced_settings_global_resolver_title" xml:space="preserve">
+    <value>Servidor DNS global</value>
+  </data>
+  <data name="advanced_settings_global_resolver_text" xml:space="preserve">
+    <value>Si desea que este computador actúe como pasarela (gateway) para otros equipos (por ejemplo teléfonos celulares u otros computadores)</value>
+  </data>
+  <data name="about_used_software" xml:space="preserve">
+    <value>Software utilizado</value>
+  </data>
+  <data name="about_license" xml:space="preserve">
+    <value>Licencia</value>
+  </data>
+  <data name="about_special_thanks" xml:space="preserve">
+    <value>Agradecimientos especiales para</value>
+  </data>
+  <data name="about_thanks_frank_title" xml:space="preserve">
+    <value>Frank Denis (@jedisct1) - https://dnscrypt.org</value>
+  </data>
+  <data name="about_thanks_frank_text" xml:space="preserve">
+    <value>- ¡por el desarrollo de libsodium y DNSCrypt!</value>
+  </data>
+  <data name="about_thanks_bytejail_text" xml:space="preserve">
+    <value>- ¡por financiar este proyecto!</value>
+  </data>
+  <data name="about_thanks_bytejail_title" xml:space="preserve">
+    <value>A EAM GmbH y bytejail - https://bytejail.com</value>
+  </data>
+  <data name="log_plugin_text" xml:space="preserve">
+    <value>Este complemento guarda un historial de las solicitudes DNS recibidas por este proxy.
+El historial es guardado en un archivo local.</value>
+  </data>
+  <data name="log_plugin_title" xml:space="preserve">
+    <value>Historial</value>
+  </data>
+  <data name="log_plugin_select_folder" xml:space="preserve">
+    <value>Seleccione una carpeta para guardar el historial</value>
+  </data>
+  <data name="dialog_plugins_save_button_tooltip" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="dialog_message_update_standard_text" xml:space="preserve">
+    <value>Existe una nueva versión ({0}) de Simple DNSCrypt disponible. ¿Desea actualizarla ahora?</value>
+  </data>
+  <data name="dialog_message_update_standard_title" xml:space="preserve">
+    <value>Actualización de la aplicación</value>
+  </data>
+  <data name="window_update_title" xml:space="preserve">
+    <value>Manténgase actualizado</value>
+  </data>
+  <data name="yes" xml:space="preserve">
+    <value>si</value>
+  </data>
+  <data name="no" xml:space="preserve">
+    <value>no</value>
+  </data>
+  <data name="ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="dialog_update_title" xml:space="preserve">
+    <value>Descargas</value>
+  </data>
+  <data name="dialog_update_signature" xml:space="preserve">
+    <value>Firma</value>
+  </data>
+  <data name="dialog_update_installer" xml:space="preserve">
+    <value>Instalador</value>
+  </data>
+  <data name="dialog_message_update_critical_title" xml:space="preserve">
+    <value>Actualización importante de la aplicación</value>
+  </data>
+  <data name="dialog_message_update_critical_text" xml:space="preserve">
+    <value>Existe una nueva versión ({0}) de Simple DNSCrypt disponible. Esta actualización ha sido marcada como crítica, ¡por lo que debería actualizar ahora! ¿Desea actualizar ahora?</value>
+  </data>
+  <data name="default_settings_save_port" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="default_settings_info_port" xml:space="preserve">
+    <value>DNSCrypt escuchará en este puerto (por defecto: 53)</value>
+  </data>
+  <data name="block_plugin_title" xml:space="preserve">
+    <value>Bloquear direcciones y dominios</value>
+  </data>
+  <data name="block_plugin_text" xml:space="preserve">
+    <value>Este complemento devuelve una respuesta REFUSED (rechazada) si se realiza una solicitud cuyo nombre está en la lista de dominios bloqueados o si al menos una de las direcciones IP devueltas está presente en la lista de direcciones IP bloqueadas.</value>
+  </data>
+  <data name="block_plugin_sub_domains_header" xml:space="preserve">
+    <value>Bloquear dominios</value>
+  </data>
+  <data name="block_plugin_sub_addresses_header" xml:space="preserve">
+    <value>Bloquear direcciones</value>
+  </data>
+  <data name="blacklist_entries" xml:space="preserve">
+    <value>entradas</value>
+  </data>
+  <data name="blacklist_building_list" xml:space="preserve">
+    <value>creando lista . . .</value>
+  </data>
+  <data name="blacklist_button_build_address" xml:space="preserve">
+    <value>Crear dirección de lista de bloqueo</value>
+  </data>
+  <data name="blacklist_button_build_domain" xml:space="preserve">
+    <value>Crear dominio de lista de bloqueo</value>
+  </data>
+  <data name="blacklist_button_remove_address" xml:space="preserve">
+    <value>Quitar campo de dirección</value>
+  </data>
+  <data name="blacklist_button_remove_domain" xml:space="preserve">
+    <value>Quitar campo de dominio</value>
+  </data>
+  <data name="blacklist_button_add_remote_domain" xml:space="preserve">
+    <value>Añadir regla de nuevo dominio remoto (URL)</value>
+  </data>
+  <data name="blacklist_button_add_local_domain" xml:space="preserve">
+    <value>Añadir regla de nuevo dominio local</value>
+  </data>
+  <data name="blacklist_button_add_address" xml:space="preserve">
+    <value>Añadir regla de nueva dirección</value>
+  </data>
+  <data name="blacklist_button_select_domain_blacklist" xml:space="preserve">
+    <value>Seleccionar fichero de lista de bloqueo de dominios</value>
+  </data>
+  <data name="blacklist_button_select_address_blacklist" xml:space="preserve">
+    <value>Seleccionar fichero de lista de bloqueo de direcciones</value>
+  </data>
+  <data name="block_plugin_sub_addresses_text" xml:space="preserve">
+    <value>Bloquear direcciones con reglas personalizadas (p. ej.: 10.1.4.99, 172.16.*)</value>
+  </data>
+  <data name="block_plugin_sub_domains_text" xml:space="preserve">
+    <value>Bloquear dominios con reglas locales o ficheros remotos</value>
+  </data>
+  <data name="blacklist_modal_new_address_rule_text" xml:space="preserve">
+    <value>Ejemplo: 172.16.144.8, 172.16.*, [fdb2:cd9e:c9f8:861a:c1ab:94e3:ef95:1ec0]</value>
+  </data>
+  <data name="blacklist_modal_new_address_rule_header" xml:space="preserve">
+    <value>Nueva reglar de dirección</value>
+  </data>
+  <data name="blacklist_modal_empty_list_text" xml:space="preserve">
+    <value>Un fichero de lista de bloqueo no puede estar vacío</value>
+  </data>
+  <data name="blacklist_modal_empty_list_header" xml:space="preserve">
+    <value>Error al definir una lista de bloqueo</value>
+  </data>
+  <data name="blacklist_modal_new_local_domain_rule_header" xml:space="preserve">
+    <value>Nueva regla de dominio local</value>
+  </data>
+  <data name="blacklist_modal_new_remote_domain_rule_header" xml:space="preserve">
+    <value>Nueva regla de dominio remoto</value>
+  </data>
+  <data name="blacklist_modal_new_local_domain_rule_text" xml:space="preserve">
+    <value>Ejemplo: *.example.com, ads.*, *sex*</value>
+  </data>
+  <data name="blacklist_modal_new_remote_domain_rule_text" xml:space="preserve">
+    <value>Ejemplo: https://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt</value>
+  </data>
+  <data name="cache_plugin_text" xml:space="preserve">
+    <value>Caché de respuestas DNS simple y sin necesidad de configuración adicional.</value>
+  </data>
+  <data name="cache_plugin_ttl" xml:space="preserve">
+    <value>TTL (tiempo de caché)</value>
+  </data>
+  <data name="cache_plugin_seconds" xml:space="preserve">
+    <value>segundos</value>
+  </data>
+  <data name="cache_plugin_title" xml:space="preserve">
+    <value>Caché de respuestas DNS</value>
+  </data>
+  <data name="tab_block" xml:space="preserve">
+    <value>Bloqueo y Lista de bloqueo</value>
+  </data>
+  <data name="default_settings_analyse_button_tooltip" xml:space="preserve">
+    <value>Conseguir información adicional sobre los servidores DNS (únicamente IPv4)</value>
+  </data>
+  <data name="tab_log" xml:space="preserve">
+    <value>Archivo de registro</value>
+  </data>
+  <data name="log_entries" xml:space="preserve">
+    <value>Entradas en el archivo de registro:</value>
+  </data>
+  <data name="log_source" xml:space="preserve">
+    <value>Fuente:</value>
+  </data>
+  <data name="log_button_add_to_blacklist" xml:space="preserve">
+    <value>Añadir a la lista de bloqueos de dominio local</value>
+  </data>
+  <data name="log_modal_no_log_file_text" xml:space="preserve">
+    <value>No existe un archivo de registro. Habilite primero el complemento de registro.</value>
+  </data>
+  <data name="log_modal_no_log_file_header" xml:space="preserve">
+    <value>No existe un archivo de registro</value>
+  </data>
+  <data name="log_modal_add_rule_header" xml:space="preserve">
+    <value>Nuevo campo en lista de bloqueo</value>
+  </data>
+  <data name="log_modal_add_rule_text" xml:space="preserve">
+    <value>Puede modificar el campo antes de añadirlo a la lista de bloqueo: </value>
+  </data>
+</root>

@@ -58,6 +58,7 @@ namespace SimpleDnsCrypt.Tools
         /// <returns><c>true</c> if the service is running, otherwise <c>false</c></returns>
         public bool IsDnsCryptProxyRunning()
         {
+	        if (DnsCryptProxy.DisplayName == null) return false;
             try
             {
                 if (!DnsCryptProxy.IsReady) return false;
@@ -95,6 +96,7 @@ namespace SimpleDnsCrypt.Tools
             {
                 var dnscryptService = new ServiceController {ServiceName = DnsCryptProxy.DisplayName};
                 dnscryptService.Stop();
+				Thread.Sleep(1000);
                 dnscryptService.Start();
                 return (dnscryptService.Status == ServiceControllerStatus.Running);
             }
@@ -175,10 +177,10 @@ namespace SimpleDnsCrypt.Tools
                 const int timeout = 9000;
                 using (var process = new Process())
                 {
-                    process.StartInfo.FileName = Path.Combine(Directory.GetCurrentDirectory(),
-                        Global.DnsCryptProxyFolder, Global.DnsCryptProxyExecutableName);
-                    process.StartInfo.Arguments = "--uninstall";
-                    process.StartInfo.UseShellExecute = false;
+	                process.StartInfo.FileName = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, DnsCryptProxy.Type == DnsCryptProxyType.Primary ? Global.DnsCryptProxyExecutableName : Global.DnsCryptProxyExecutableSecondaryName);
+	                process.StartInfo.Arguments = "--uninstall";
+					process.StartInfo.Arguments += " --service-name=" + DnsCryptProxy.DisplayName;
+					process.StartInfo.UseShellExecute = false;
                     process.StartInfo.CreateNoWindow = true;
                     process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
                     process.Start();
@@ -237,19 +239,20 @@ namespace SimpleDnsCrypt.Tools
                     }
                     if (DnsCryptProxy.Type == DnsCryptProxyType.Primary)
                     {
-                        arguments += " -a " + Global.PrimaryResolverAddress + ":" + Global.PrimaryResolverPort;
+	                    arguments += " --service-name="+ Global.PrimaryResolverServiceName;
+						arguments += " -a " + Global.PrimaryResolverAddress + ":" + Global.PrimaryResolverPort;
                     }
                     else
                     {
-                        arguments += " -a " + Global.SecondaryResolverAddress + ":" + Global.SecondaryResolverPort;
+						arguments += " --service-name=" + Global.SecondaryResolverServiceName;
+						arguments += " -a " + Global.SecondaryResolverAddress + ":" + Global.SecondaryResolverPort;
                     }
                     // always use ephermeral keys
                     arguments += " -E";
                     using (var process = new Process())
                     {
-                        process.StartInfo.FileName = Path.Combine(Directory.GetCurrentDirectory(),
-                            Global.DnsCryptProxyFolder, Global.DnsCryptProxyExecutableName);
-                        process.StartInfo.Arguments = arguments;
+	                    process.StartInfo.FileName = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, DnsCryptProxy.Type == DnsCryptProxyType.Primary ? Global.DnsCryptProxyExecutableName : Global.DnsCryptProxyExecutableSecondaryName);
+	                    process.StartInfo.Arguments = arguments;
                         process.StartInfo.UseShellExecute = false;
                         process.StartInfo.CreateNoWindow = true;
                         process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
@@ -340,7 +343,7 @@ namespace SimpleDnsCrypt.Tools
                 }
 
                 var localMachine = Registry.LocalMachine;
-                var parameters = localMachine.OpenSubKey(
+				var parameters = localMachine.OpenSubKey(
                     @"SYSTEM\\CurrentControlSet\\Services\\" + proxyName + "\\Parameters", true);
 
                 if (parameters == null)
@@ -361,13 +364,61 @@ namespace SimpleDnsCrypt.Tools
                 parameters.SetValue("EphemeralKeys", Convert.ToInt32(DnsCryptProxy.Parameter.EphemeralKeys),
                     RegistryValueKind.DWord);
                 parameters.SetValue("TCPOnly", Convert.ToInt32(DnsCryptProxy.Parameter.TcpOnly), RegistryValueKind.DWord);
-                return true;
+				return true;
             }
             catch (Exception)
             {
                 return false;
             }
         }
+
+		/// <summary>
+		///	Add quotation marks for existing installations.
+		/// This fixes a vulnerability, where the dnscrypt-proxy 
+		/// path contains spaces.
+		/// </summary>
+		/// <remarks>Thanks to @rugk!</remarks>
+		/// <param name="dnsCryptProxyType"></param>
+		public void FixImagePath(DnsCryptProxyType dnsCryptProxyType)
+	    {
+			var proxyName = Global.PrimaryResolverServiceName;
+			if (dnsCryptProxyType != DnsCryptProxyType.Primary)
+			{
+				proxyName = Global.SecondaryResolverServiceName;
+			}
+
+			var localMachine = Registry.LocalMachine;
+			var main = localMachine.OpenSubKey(
+				@"SYSTEM\\CurrentControlSet\\Services\\" + proxyName, true);
+
+			if (main == null)
+			{
+				return;
+			}
+		    var imagePath = string.Empty;
+			foreach (var mainName in main.GetValueNames())
+			{
+				switch (mainName)
+				{
+					case "ImagePath":
+						imagePath = (string)main.GetValue(mainName);
+						break;
+				}
+			}
+
+		    if (string.IsNullOrEmpty(imagePath)) return;
+
+		    if (!imagePath.StartsWith("\""))
+		    {
+			    imagePath = "\"" + imagePath;
+		    }
+
+			if (!imagePath.EndsWith("\""))
+			{
+				imagePath = imagePath + "\"";
+			}
+			main.SetValue("ImagePath", imagePath, RegistryValueKind.ExpandString);
+	    }
 
         /// <summary>
         ///     Read the current registry values.
@@ -377,7 +428,8 @@ namespace SimpleDnsCrypt.Tools
         {
             try
             {
-                var proxyName = Global.PrimaryResolverServiceName;
+	            FixImagePath(dnsCryptProxyType);
+				var proxyName = Global.PrimaryResolverServiceName;
                 if (dnsCryptProxyType != DnsCryptProxyType.Primary)
                 {
                     proxyName = Global.SecondaryResolverServiceName;
@@ -450,7 +502,19 @@ namespace SimpleDnsCrypt.Tools
                         case "ClientKeyFile":
                             // not yet supported, will be ignored
                             break;
-                    }
+						case "IgnoreTimestamps":
+							// not yet supported, will be ignored
+							break;
+						case "LogFile":
+							// not yet supported, will be ignored
+							break;
+						case "LogLevel":
+							// not yet supported, will be ignored
+							break;
+						case "ConfigFile":
+							// not yet supported, will be ignored
+							break;
+					}
                 }
                 DnsCryptProxy.IsReady = true;
             }

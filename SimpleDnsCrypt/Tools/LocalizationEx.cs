@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Threading;
+using SimpleDnsCrypt.Models;
 using WPFLocalizeExtension.Engine;
 
 namespace SimpleDnsCrypt.Tools
@@ -20,6 +22,31 @@ namespace SimpleDnsCrypt.Tools
         {
             return (string) LocalizeDictionary.Instance.GetLocalizedObject("simplednscrypt", "Strings", key, culture);
         }
+
+		/// <summary>
+		///		Get the supported languages.
+		/// </summary>
+		/// <returns></returns>
+	    public static ObservableCollection<Language> GetSupportedLanguages()
+	    {
+		    var supportedLanguages = new ObservableCollection<Language>
+		    {
+			    new Language {Name = "German", ShortCode = "de", CultureCode = "de-DE"},
+				new Language {Name = "Danish", ShortCode = "da", CultureCode = "da-DK"},
+				new Language {Name = "English", ShortCode = "en", CultureCode = "en-US"},
+				new Language {Name = "Spanish", ShortCode = "es", CultureCode = "es-ES"},
+				new Language {Name = "Persian", ShortCode = "fa", CultureCode = "fa-FA"},
+				new Language {Name = "French", ShortCode = "fr", CultureCode = "fr-FR"},
+				new Language {Name = "Indonesian", ShortCode = "id", CultureCode = "id-ID"},
+				new Language {Name = "Italian", ShortCode = "it", CultureCode = "it-IT"},
+				new Language {Name = "Dutch", ShortCode = "nl", CultureCode = "nl-NL"},
+				new Language {Name = "Russian", ShortCode = "ru", CultureCode = "ru-RU"},
+				new Language {Name = "Swedish", ShortCode = "sv", CultureCode = "sv-SV"},
+				new Language {Name = "Turkish", ShortCode = "tr", CultureCode = "tr-TR"},
+				new Language {Name = "Chinese", ShortCode = "zh", CultureCode = "zh-CN"}
+			};
+		    return supportedLanguages;
+	    }
 
         /// <summary>
         ///     Sets the localization culture.

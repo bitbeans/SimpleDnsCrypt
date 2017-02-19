@@ -1,0 +1,323 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+		Microsoft ResX Schema
+
+		Version 1.3
+
+		The primary goals of this format is to allow a simple XML format 
+		that is mostly human readable. The generation and parsing of the 
+		various data types are done through the TypeConverter classes 
+		associated with the data types.
+
+		Example:
+
+		... ado.net/XML headers & schema ...
+		<resheader name="resmimetype">text/microsoft-resx</resheader>
+		<resheader name="version">1.3</resheader>
+		<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+		<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+		<data name="Name1">this is my long string</data>
+		<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+		<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+			[base64 mime encoded serialized .NET Framework object]
+		</data>
+		<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+			[base64 mime encoded string representing a byte array form of the .NET Framework object]
+		</data>
+
+		There are any number of "resheader" rows that contain simple 
+		name/value pairs.
+
+		Each data row contains a name, and value. The row also contains a 
+		type or mimetype. Type corresponds to a .NET class that support 
+		text/value conversion through the TypeConverter architecture. 
+		Classes that don't support this are serialized and stored with the 
+		mimetype set.
+
+		The mimetype is used for serialized objects, and tells the 
+		ResXResourceReader how to depersist the object. This is currently not 
+		extensible. For a given mimetype the value must be set accordingly:
+
+		Note - application/x-microsoft.net.object.binary.base64 is the format 
+		that the ResXResourceWriter will generate, however the reader can 
+		read any of the formats listed below.
+
+		mimetype: application/x-microsoft.net.object.binary.base64
+		value   : The object must be serialized with 
+			: System.Serialization.Formatters.Binary.BinaryFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.soap.base64
+		value   : The object must be serialized with 
+			: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.bytearray.base64
+		value   : The object must be serialized into a byte array 
+			: using a System.ComponentModel.TypeConverter
+			: and then encoded with base64 encoding.
+	-->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="default_settings_network_cards" xml:space="preserve">
+    <value>Ağ Kartları</value>
+  </data>
+  <data name="default_settings_show_hidden_cards" xml:space="preserve">
+    <value>Gizlenmiş arayüzleri göster</value>
+  </data>
+  <data name="tab_standard_settings" xml:space="preserve">
+    <value>Ayarlar</value>
+  </data>
+  <data name="tab_about" xml:space="preserve">
+    <value>Hakkında</value>
+  </data>
+  <data name="tab_advanced_settings" xml:space="preserve">
+    <value>Gelişmiş Ayarlar</value>
+  </data>
+  <data name="default_settings_services" xml:space="preserve">
+    <value>Servisler</value>
+  </data>
+  <data name="default_settings_primary_text" xml:space="preserve">
+    <value>Birincil Çözümleyici</value>
+  </data>
+  <data name="default_settings_secondary_text" xml:space="preserve">
+    <value>İkincil Çözümleyici (opsiyonel)</value>
+  </data>
+  <data name="default_settings_primary_service" xml:space="preserve">
+    <value>Birincil DNSCrypt Servisi</value>
+  </data>
+  <data name="default_settings_secondary_service" xml:space="preserve">
+    <value>İkincil DNSCrypt Servisi</value>
+  </data>
+  <data name="default_settings_resolver" xml:space="preserve">
+    <value>Çözümleyici</value>
+  </data>
+  <data name="default_settings_server_address" xml:space="preserve">
+    <value>Sunucu adresi</value>
+  </data>
+  <data name="default_settings_dnssec" xml:space="preserve">
+    <value>DNSSEC</value>
+  </data>
+  <data name="default_settings_no_logs" xml:space="preserve">
+    <value>Kayıt Tutmuyor</value>
+  </data>
+  <data name="default_settings_name" xml:space="preserve">
+    <value>İsim (FQDN)</value>
+  </data>
+  <data name="default_settings_public_key" xml:space="preserve">
+    <value>Açık Anahtar</value>
+  </data>
+  <data name="default_settings_secondary_header" xml:space="preserve">
+    <value>İkincil DNS çözümleyici</value>
+  </data>
+  <data name="default_settings_primary_header" xml:space="preserve">
+    <value>Birincil DNS çözümleyici</value>
+  </data>
+  <data name="global_ipv6_disabled" xml:space="preserve">
+    <value>IPv6 devre dışı bırakıldı</value>
+  </data>
+  <data name="dialog_error_title" xml:space="preserve">
+    <value>Hata</value>
+  </data>
+  <data name="dialog_success_title" xml:space="preserve">
+    <value>Başarıyla tamamlandı</value>
+  </data>
+  <data name="dialog_uninstall_title" xml:space="preserve">
+    <value>Servisleri Kaldır</value>
+  </data>
+  <data name="dialog_warning_title" xml:space="preserve">
+    <value>Uyarı</value>
+  </data>
+  <data name="dialog_message_refresh_failed" xml:space="preserve">
+    <value>Çözümleyici listesi yenilenemedi.</value>
+  </data>
+  <data name="window_plugin_title" xml:space="preserve">
+    <value>Kullanabilinen Eklentiler</value>
+  </data>
+  <data name="dialog_message_uninstall" xml:space="preserve">
+    <value>Bütün windows servislerini kaldırmak ister misinz?</value>
+  </data>
+  <data name="dialog_message_missing_file" xml:space="preserve">
+    <value>Yüklenemedi: {0} ya da {1}.</value>
+  </data>
+  <data name="dialog_message_missing_proxy_files" xml:space="preserve">
+    <value>Dnscrypt proxy klasöründeki bütün gerekli dosyalar bulunamadı, uygulamayı tekrar yüklemeniz önerilir.</value>
+  </data>
+  <data name="dialog_message_bad_privileges" xml:space="preserve">
+    <value>Bu uygulamayı yönetici olarak çalıştırmalısınız.</value>
+  </data>
+  <data name="ipv6_speed_plugin_title" xml:space="preserve">
+    <value>IPv6 Hızlandırma</value>
+  </data>
+  <data name="ipv6_speed_plugin_text" xml:space="preserve">
+    <value>Eğer IPv6 ağınızda desteklenmiyorsa , Bu eklenti IPv6 addresinden çözümleme beklemez.. Bu sizin internette gezinmenizi hızlandırır..</value>
+  </data>
+  <data name="advanced_settings_refresh_resolver_title" xml:space="preserve">
+    <value>Çözümleyici Listesini yenile</value>
+  </data>
+  <data name="advanced_settings_refresh_resolver_text" xml:space="preserve">
+    <value>Çözümleyici listesini yenile (indirilen liste küçük imza ile kontrol edilir.)</value>
+  </data>
+  <data name="advanced_settings_debug_title" xml:space="preserve">
+    <value>Geliştirici modu</value>
+  </data>
+  <data name="advanced_settings_refresh_resolver_button" xml:space="preserve">
+    <value>Listeyi indir</value>
+  </data>
+  <data name="advanced_settings_uninstall_title" xml:space="preserve">
+    <value>Servisleri Kaldır</value>
+  </data>
+  <data name="advanced_settings_uninstall_text" xml:space="preserve">
+    <value>Yüklenen bütün windows servislerini kaldır</value>
+  </data>
+  <data name="advanced_settings_uninstall_button" xml:space="preserve">
+    <value>Bütün Servisleri kaldır</value>
+  </data>
+  <data name="advanced_settings_plugins_title" xml:space="preserve">
+    <value>Eklentiler</value>
+  </data>
+  <data name="advanced_settings_plugins_text" xml:space="preserve">
+    <value>Ekstra eklenti aç ya da kapat</value>
+  </data>
+  <data name="advanced_settings_plugins_button" xml:space="preserve">
+    <value>Eklenti Yöneticisini aç</value>
+  </data>
+  <data name="advanced_settings_transport_tcp_title" xml:space="preserve">
+    <value>İletişim Seçenekleri</value>
+  </data>
+  <data name="advanced_settings_transport_tcp_text" xml:space="preserve">
+    <value>UDP port 443 yerine TCP port 443 kullan (TCP, UDP'ye göre daha yavaştır.)</value> 
+  </data>
+  <data name="advanced_settings_global_resolver_title" xml:space="preserve">
+    <value>Genel Çözücü</value>
+  </data>
+  <data name="advanced_settings_global_resolver_text" xml:space="preserve">
+    <value>Bu bilgisayarınızı diğer cihazlarınız için ağ geçidi olarak kullanmak ister misiniz?(eg: akıllı telefonlar ya da diğer bilgisayarlar)</value>
+  </data>
+  <data name="about_used_software" xml:space="preserve">
+    <value>Kullanılan yazılımlar</value>
+  </data>
+  <data name="about_license" xml:space="preserve">
+    <value>Lisans</value>
+  </data>
+  <data name="about_special_thanks" xml:space="preserve">
+    <value>Özel olarak teşekkürlerimizi sunarız</value>
+  </data>
+  <data name="about_thanks_frank_title" xml:space="preserve">
+    <value>Frank Denis (@jedisct1) - https://dnscrypt.org</value>
+  </data>
+  <data name="about_thanks_frank_text" xml:space="preserve">
+    <value>- libsodium ve DNSCrypt'ı geliştirdikleri için.!</value>
+  </data>
+  <data name="about_thanks_bytejail_text" xml:space="preserve">
+    <value>- finansal destek sağladıkları için!</value>
+  </data>
+  <data name="about_thanks_bytejail_title" xml:space="preserve">
+    <value>The EAM GmbH ve bytejail - https://bytejail.com</value>
+  </data>
+  <data name="log_plugin_text" xml:space="preserve">
+    <value>Bu eklenti proxy'den gelen DNS çözümlemelerini kayıt altına alıyor.
+Kayıtlar bilgisayarınızda bir dosyada tutuluyor..</value>
+  </data>
+  <data name="log_plugin_title" xml:space="preserve">
+    <value>Kayıt</value>
+  </data>
+  <data name="log_plugin_select_folder" xml:space="preserve">
+    <value>Klasör seçiniz</value>
+  </data>
+  <data name="dialog_plugins_save_button_tooltip" xml:space="preserve">
+    <value>Tamam</value>
+  </data>
+  <data name="dialog_message_update_standard_text" xml:space="preserve">
+    <value>Yeni bir Simple DNSCrypt versiyonu ({0}) mevcut. Güncellemek ister misiniz?</value>
+  </data>
+  <data name="dialog_message_update_standard_title" xml:space="preserve">
+    <value>Güncelleme</value>
+  </data>
+  <data name="window_update_title" xml:space="preserve">
+    <value>Bizi takip etmeye devam edin.</value>
+  </data>
+  <data name="yes" xml:space="preserve">
+    <value>Evet</value>
+  </data>
+  <data name="no" xml:space="preserve">
+    <value>Hayır</value>
+  </data>
+  <data name="ok" xml:space="preserve">
+    <value>Tamam</value>
+  </data>
+  <data name="cancel" xml:space="preserve">
+    <value>Vazgeç</value>
+  </data>
+  <data name="dialog_update_title" xml:space="preserve">
+    <value>İndir</value>
+  </data>
+  <data name="dialog_update_signature" xml:space="preserve">
+    <value>İmza</value>
+  </data>
+  <data name="dialog_update_installer" xml:space="preserve">
+    <value>Yükleyici</value>
+  </data>
+  <data name="dialog_message_update_critical_title" xml:space="preserve">
+    <value>Kritik Güncelleme</value>
+  </data>
+  <data name="dialog_message_update_critical_text" xml:space="preserve">
+    <value>Yeni bir Simple DNSCrypt versiyonu ({0}) mevcut. Bu güncelleme kritik olarak işaretlenmiş, bu güncellemeyi yapmanızı şiddetle öneririz! Güncellemek ister misiniz??</value>
+  </data>
+  <data name="default_settings_save_port" xml:space="preserve">
+    <value>Kaydet</value>
+  </data>
+  <data name="default_settings_info_port" xml:space="preserve">
+    <value>DNSCrypt bu portu kullansın (default: 53)</value>
+  </data>
+  <data name="block_plugin_title" xml:space="preserve">
+    <value>Adres ve Alan adı engelle</value>
+  </data>
+  <data name="block_plugin_text" xml:space="preserve">
+    <value>This plugin returns a REFUSED response if the query name is in a list of blacklisted names, or if at least one of the returned IP addresses happens to be in a list of blacklisted IPs.</value>
+  </data>
+  <data name="block_plugin_sub_domains_header" xml:space="preserve">
+    <value>Alan adı engelle</value>
+  </data>
+  <data name="block_plugin_sub_addresses_header" xml:space="preserve">
+    <value>Adres engelle</value>
+  </data>
+</root>

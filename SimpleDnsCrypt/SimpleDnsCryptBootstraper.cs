@@ -19,10 +19,10 @@ namespace SimpleDnsCrypt
         public SimpleDnsCryptBootstraper()
         {
             AppDomain.CurrentDomain.AssemblyLoad += CurrentDomain_AssemblyLoad;
-            Initialize();
+			Initialize();
         }
 
-        /// <summary>
+	    /// <summary>
         ///     Catch all unhandled exceptions and show a Windows Form MessageBox.
         /// </summary>
         /// <param name="sender"></param>
@@ -38,8 +38,8 @@ namespace SimpleDnsCrypt
 
         protected override void OnStartup(object sender, StartupEventArgs e)
         {
-            base.OnStartup(sender, e);
-            DisplayRootViewFor<MainViewModel>();
+			base.OnStartup(sender, e);
+			DisplayRootViewFor<MainViewModel>();
         }
 
         private void CurrentDomain_AssemblyLoad(object sender, AssemblyLoadEventArgs args)

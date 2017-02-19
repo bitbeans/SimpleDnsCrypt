@@ -7,3 +7,13 @@ Those listed below have contributed to `SimpleDnsCrypt`, and are the copyright h
  * @tuphamnguyen
  * @thedroidgeek
  * @didihu
+ * @jerryhou85
+ * @rugk - <rugk@posteo.de>
+ * Vlad - <elfriob@ya.ru>
+ * @emirgian
+ * @bcien
+ * @eson57
+ * @simonclausen
+ * @ShellAddicted
+ * @robin98
+ * @pablomh

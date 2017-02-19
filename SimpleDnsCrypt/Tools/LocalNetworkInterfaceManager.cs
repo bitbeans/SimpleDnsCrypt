@@ -197,7 +197,8 @@ namespace SimpleDnsCrypt.Tools
 					var processStartInfo = new ProcessStartInfo("netsh",
 						"interface ipv6 delete dns \"" + localNetworkInterface.Name + "\" all")
 					{
-						WindowStyle = ProcessWindowStyle.Minimized
+						WindowStyle = ProcessWindowStyle.Hidden,
+						CreateNoWindow = true
 					};
 					process.StartInfo = processStartInfo;
 					process.Start();
@@ -208,7 +209,8 @@ namespace SimpleDnsCrypt.Tools
 						processStartInfo = new ProcessStartInfo("netsh",
 							"interface ipv6 add dns \"" + localNetworkInterface.Name + "\" " + address + " validate=no")
 						{
-							WindowStyle = ProcessWindowStyle.Minimized
+							WindowStyle = ProcessWindowStyle.Hidden,
+							CreateNoWindow = true
 						};
 						process.StartInfo = processStartInfo;
 						process.Start();
