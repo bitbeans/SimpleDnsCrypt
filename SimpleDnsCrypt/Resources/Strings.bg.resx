@@ -402,7 +402,7 @@
     <value>Допълнителна информация за сървърите (само IPv4)</value>
   </data>
   <data name="tab_log" xml:space="preserve">
-    <value>Създаване на дневник</value>
+    <value>Дневник</value>
   </data>
   <data name="log_entries" xml:space="preserve">
     <value>Всички записи:</value>
