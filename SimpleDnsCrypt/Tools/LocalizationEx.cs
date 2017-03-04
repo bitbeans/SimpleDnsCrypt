@@ -31,19 +31,20 @@ namespace SimpleDnsCrypt.Tools
 	    {
 		    var supportedLanguages = new ObservableCollection<Language>
 		    {
-			    new Language {Name = "German", ShortCode = "de", CultureCode = "de-DE"},
+				new Language {Name = "Bulgarian", ShortCode = "bg", CultureCode = "bg-BG"},
+				new Language {Name = "Chinese", ShortCode = "zh", CultureCode = "zh-CN"},
 				new Language {Name = "Danish", ShortCode = "da", CultureCode = "da-DK"},
+				new Language {Name = "Dutch", ShortCode = "nl", CultureCode = "nl-NL"},
 				new Language {Name = "English", ShortCode = "en", CultureCode = "en-US"},
-				new Language {Name = "Spanish", ShortCode = "es", CultureCode = "es-ES"},
-				new Language {Name = "Persian", ShortCode = "fa", CultureCode = "fa-FA"},
 				new Language {Name = "French", ShortCode = "fr", CultureCode = "fr-FR"},
+				new Language {Name = "German", ShortCode = "de", CultureCode = "de-DE"},
 				new Language {Name = "Indonesian", ShortCode = "id", CultureCode = "id-ID"},
 				new Language {Name = "Italian", ShortCode = "it", CultureCode = "it-IT"},
-				new Language {Name = "Dutch", ShortCode = "nl", CultureCode = "nl-NL"},
+				new Language {Name = "Persian", ShortCode = "fa", CultureCode = "fa-FA"},
 				new Language {Name = "Russian", ShortCode = "ru", CultureCode = "ru-RU"},
+				new Language {Name = "Spanish", ShortCode = "es", CultureCode = "es-ES"},
 				new Language {Name = "Swedish", ShortCode = "sv", CultureCode = "sv-SV"},
-				new Language {Name = "Turkish", ShortCode = "tr", CultureCode = "tr-TR"},
-				new Language {Name = "Chinese", ShortCode = "zh", CultureCode = "zh-CN"}
+				new Language {Name = "Turkish", ShortCode = "tr", CultureCode = "tr-TR"}
 			};
 		    return supportedLanguages;
 	    }
