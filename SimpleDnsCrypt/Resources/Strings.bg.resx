@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
 		Microsoft ResX Schema
@@ -137,13 +137,13 @@
     <value>Сървър</value>
   </data>
   <data name="default_settings_server_address" xml:space="preserve">
-    <value>Адрес на сървъра</value>
+    <value>IP адрес</value>
   </data>
   <data name="default_settings_dnssec" xml:space="preserve">
     <value>DNSSEC</value>
   </data>
   <data name="default_settings_no_logs" xml:space="preserve">
-    <value>Без дневници</value>
+    <value>Без записи</value>
   </data>
   <data name="default_settings_name" xml:space="preserve">
     <value>Име (FQDN)</value>
@@ -152,7 +152,7 @@
     <value>Публичен ключ</value>
   </data>
   <data name="global_ipv6_disabled" xml:space="preserve">
-    <value>IPv6 - изключен</value>
+    <value>IPv6 - неактивен</value>
   </data>
   <data name="dialog_error_title" xml:space="preserve">
     <value>Грешка</value>
@@ -161,7 +161,7 @@
     <value>Успешно</value>
   </data>
   <data name="dialog_uninstall_title" xml:space="preserve">
-    <value>Деинсталиране на услуги</value>
+    <value>Премахване на услуги</value>
   </data>
   <data name="dialog_warning_title" xml:space="preserve">
     <value>Внимание</value>
@@ -170,10 +170,10 @@
     <value>Неуспешно обновяване на списъка със сървъри.</value>
   </data>
   <data name="window_plugin_title" xml:space="preserve">
-    <value>Налични разширения</value>
+    <value>Налични добавки</value>
   </data>
   <data name="dialog_message_uninstall" xml:space="preserve">
-    <value>Искате ли да премахнете всички инсталирани Windows услуги?</value>
+    <value>Искате ли да премахнете всички DNSCrypt услуги, инсталирани в Windows?</value>
   </data>
   <data name="dialog_message_missing_file" xml:space="preserve">
     <value>Не може да се зареди: {0} или {1}.</value>
@@ -191,10 +191,10 @@
     <value>Ако IPv6 свързаността не е налична във вашата мрежа, тази добавка избягва изчакването за отговор на IPv6 адреси от висшестоящи сървъри. Това може да подобри зареждането на уеб-страници.</value>
   </data>
   <data name="advanced_settings_refresh_resolver_title" xml:space="preserve">
-    <value>Обновяване на списъка с публични сървъри</value>
+    <value>Обновяване на списъка</value>
   </data>
   <data name="advanced_settings_refresh_resolver_text" xml:space="preserve">
-    <value>Обновяване на списъка с публични сървъри (всички сваляния са сверени с подпис)</value>
+    <value>Обновяване на списъка с публични сървъри (валидността на всички сваляния се проверява с подпис)</value>
   </data>
   <data name="advanced_settings_debug_title" xml:space="preserve">
     <value>Режим за отстраняване на грешки</value>
@@ -212,16 +212,16 @@
     <value>Използване на TCP порт 443 вместо UDP порт 443 (TCP е по-бавен от UDP)</value>
   </data>
   <data name="advanced_settings_uninstall_title" xml:space="preserve">
-    <value>Деинсталиране на услуги</value>
+    <value>Премахване на услуги</value>
   </data>
   <data name="advanced_settings_uninstall_text" xml:space="preserve">
-    <value>Премахване на всички инсталирани Windows услуги</value>
+    <value>Премахване на всички DNSCrypt услуги, инсталирани в Windows</value>
   </data>
   <data name="advanced_settings_uninstall_button" xml:space="preserve">
-    <value>Деинсталиране на всички услуги</value>
+    <value>Премахване</value>
   </data>
   <data name="advanced_settings_refresh_resolver_button" xml:space="preserve">
-    <value>Сваляне на списък</value>
+    <value>Обновяване</value>
   </data>
   <data name="advanced_settings_plugins_title" xml:space="preserve">
     <value>Добавки</value>
@@ -230,7 +230,7 @@
     <value>Включване или изключване на допълнителни настройки чрез добавки</value>
   </data>
   <data name="advanced_settings_plugins_button" xml:space="preserve">
-    <value>Отваряне на мениджър с добавки</value>
+    <value>Управление</value>
   </data>
   <data name="about_license" xml:space="preserve">
     <value>Лиценз</value>
@@ -245,7 +245,7 @@
     <value>Frank Denis (@jedisct1) - https://dnscrypt.org</value>
   </data>
   <data name="about_thanks_frank_text" xml:space="preserve">
-    <value>- разработване на libsodium и DNSCrypt!</value>
+    <value>- разработка на libsodium и DNSCrypt!</value>
   </data>
   <data name="about_thanks_bytejail_title" xml:space="preserve">
     <value>The EAM GmbH and bytejail - https://bytejail.com</value>
@@ -257,8 +257,8 @@
     <value>Създаване на дневник</value>
   </data>
   <data name="log_plugin_text" xml:space="preserve">
-    <value>Тази добавка създава дневник за DNS запитвания, получени от прокси-сървъра.
-Дневниците се съхраняват в локален файл.</value>
+    <value>Създава дневник на DNS запитванията, получени от прокси сървъра.
+Дневникът се съхранява в локален файл.</value>
   </data>
   <data name="log_plugin_select_folder" xml:space="preserve">
     <value>Избор на папка</value>
@@ -300,19 +300,19 @@
     <value>Критична актуализация на приложението</value>
   </data>
   <data name="dialog_message_update_critical_text" xml:space="preserve">
-    <value>Налична е нова версия на Simple DNSCrypt ({0}). Актуализацията е маркирана като критична, необходимо е да обновите в най-скоро време! Искате ли да обновите сега?</value>
+    <value>Налична е нова версия на Simple DNSCrypt ({0}). Актуализацията е отбелязана като критична, необходимо е да обновите в най-скоро време! Искате ли да обновите сега?</value>
   </data>
   <data name="default_settings_save_port" xml:space="preserve">
     <value>Запазване</value>
   </data>
   <data name="default_settings_info_port" xml:space="preserve">
-    <value>DNSCrypt ще слуша този порт (по подразбиране: 53)</value>
+    <value>DNSCrypt ще слуша на този порт (по подразбиране: 53)</value>
   </data>
   <data name="block_plugin_title" xml:space="preserve">
     <value>Блокиране на адреси и домейни</value>
   </data>
   <data name="block_plugin_text" xml:space="preserve">
-    <value>Тази добавка отказва достъп до домейни или IP-адреси намиращи се в черният списък.</value>
+    <value>Тази добавка отказва достъп до домейни или IP адреси намиращи се в черният списък.</value>
   </data>
   <data name="block_plugin_sub_domains_header" xml:space="preserve">
     <value>Блокиране на домейни</value>
@@ -321,19 +321,19 @@
     <value>Блокиране на адреси</value>
   </data>
   <data name="blacklist_entries" xml:space="preserve">
-    <value>записи</value>
+    <value>записа</value>
   </data>
   <data name="blacklist_building_list" xml:space="preserve">
     <value>създаване на списък . . .</value>
   </data>
   <data name="blacklist_button_add_address" xml:space="preserve">
-    <value>Добавяне на ново правило за адрес</value>
+    <value>Добавяне на правило за адрес</value>
   </data>
   <data name="blacklist_button_add_local_domain" xml:space="preserve">
-    <value>Добавяне на ново правило за локални домейни</value>
+    <value>Добавяне на правило за домейн</value>
   </data>
   <data name="blacklist_button_add_remote_domain" xml:space="preserve">
-    <value>Добавки на ново правило за външни домейни (URL)</value>
+    <value>Добавяне на правила от източник (URL)</value>
   </data>
   <data name="blacklist_button_remove_domain" xml:space="preserve">
     <value>Премахване на домейн</value>
@@ -348,16 +348,16 @@
     <value>Създаване на черен списък с адреси</value>
   </data>
   <data name="blacklist_button_select_domain_blacklist" xml:space="preserve">
-    <value>Избиране на файл с черен списък за домейни</value>
+    <value>Избор на файл с черен списък за домейни</value>
   </data>
   <data name="blacklist_button_select_address_blacklist" xml:space="preserve">
-    <value>Избиране на файл с черен списък за адреси</value>
+    <value>Избор на файл с черен списък за адреси</value>
   </data>
   <data name="block_plugin_sub_domains_text" xml:space="preserve">
-    <value>Локални правила или външни файлове за блокиране на домейни</value>
+    <value>Потребителски правила и външни източници за блокиране на домейни</value>
   </data>
   <data name="block_plugin_sub_addresses_text" xml:space="preserve">
-    <value>Потребителски правила за блокиране на адреси (напр.: 10.1.4.99, 172.16.*)</value>
+    <value>Потребителски правила за блокиране на IP адреси (напр.: 10.1.4.99, 172.16.*)</value>
   </data>
   <data name="blacklist_modal_empty_list_header" xml:space="preserve">
     <value>Неуспешно задаване на черен списък</value>
@@ -366,7 +366,7 @@
     <value>Файлът с черния списък не може да бъде празен.</value>
   </data>
   <data name="blacklist_modal_new_address_rule_header" xml:space="preserve">
-    <value>Ново правило за адрес</value>
+    <value>Ново правило за блокиране на IP адрес</value>
   </data>
   <data name="blacklist_modal_new_address_rule_text" xml:space="preserve">
     <value>Пример: 172.16.144.8, 172.16.*, [fdb2:cd9e:c9f8:861a:c1ab:94e3:ef95:1ec0]</value>
@@ -375,13 +375,13 @@
     <value>Пример: *.example.com, ads.*, *sex*</value>
   </data>
   <data name="blacklist_modal_new_local_domain_rule_header" xml:space="preserve">
-    <value>Ново локално правило за домейн</value>
+    <value>Ново правило за блокиране на домейн</value>
   </data>
   <data name="blacklist_modal_new_remote_domain_rule_text" xml:space="preserve">
     <value>Пример: https://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt</value>
   </data>
   <data name="blacklist_modal_new_remote_domain_rule_header" xml:space="preserve">
-    <value>Ново външно правило за домейн</value>
+    <value>Нов външен източник с правила за блокиране</value>
   </data>
   <data name="cache_plugin_title" xml:space="preserve">
     <value>DNS кеш за отговор</value>
@@ -411,7 +411,7 @@
     <value>Източник:</value>
   </data>
   <data name="log_button_add_to_blacklist" xml:space="preserve">
-    <value>Добавяне на избраните в локален черен списък с домейни</value>
+    <value>Добавяне на избраното в черен списък</value>
   </data>
   <data name="log_modal_no_log_file_text" xml:space="preserve">
     <value>Не е намерен файл с дневници. Моля, включете добавката за създаване.</value>
@@ -423,6 +423,6 @@
     <value>Нов запис в черният списък</value>
   </data>
   <data name="log_modal_add_rule_text" xml:space="preserve">
-    <value>Можете да промените записите преди да ги добавите в черният списък: </value>
+    <value>Можете да променяте записите преди да ги добавите в черният списък: </value>
   </data>
 </root>
