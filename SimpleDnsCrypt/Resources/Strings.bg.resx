@@ -143,7 +143,7 @@
     <value>DNSSEC</value>
   </data>
   <data name="default_settings_no_logs" xml:space="preserve">
-    <value>Без дневници</value>
+    <value>Без записи</value>
   </data>
   <data name="default_settings_name" xml:space="preserve">
     <value>Име (FQDN)</value>
