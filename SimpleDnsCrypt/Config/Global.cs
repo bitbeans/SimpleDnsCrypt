@@ -219,7 +219,7 @@
 		/// <summary>
 		///     Languages, the config file can handle.
 		/// </summary>
-		public static readonly string[] SupportedLanguages = {"de", "da", "en", "es", "fr", "fa", "id", "it", "nl", "ru", "sv", "tr", "zh"};
+		public static readonly string[] SupportedLanguages = {"bg", "de", "da", "en", "es", "fr", "fa", "id", "it", "nl", "ru", "sv", "tr", "zh"};
 
 		/// <summary>
 		/// 
