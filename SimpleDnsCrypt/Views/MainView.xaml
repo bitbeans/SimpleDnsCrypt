@@ -517,7 +517,7 @@
                                                     <SolidColorBrush Color="Black" Opacity="0.7" />
                                                 </TextBlock.OpacityMask>
                                             </TextBlock>
-                                            <TextBlock Grid.Column="1" Grid.Row="0" Text="Services"
+                                            <TextBlock Grid.Column="1" Grid.Row="0" Text="{lex:Loc Key=default_settings_services}"
                                                        TextWrapping="Wrap" VerticalAlignment="Center"
                                                        Foreground="#FF8ab329" FontSize="20"
                                                        Opacity="0.7" Margin="5,0,0,3" FontWeight="Bold">
