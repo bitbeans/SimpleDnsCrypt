@@ -85,7 +85,7 @@ This plugin returns a REFUSED response if the query name is in a list of blackli
 
 A file should list one entry per line.
 
-IPv4 and IPv6 addresses are supported. For names, leading and trailing wildcards (*) are also supported (e.g. *xxx*, *.example.com, ads.*)
+IPv4 and IPv6 addresses are supported. For names, leading and trailing wildcards (*) are also supported (e.g. &#42;xxx&#42;, &#42;.example.com, ads.&#42;)
 
 **Note:** If the file(s) is/are empty, the service may **not** start!
 
