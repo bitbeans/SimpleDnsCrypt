@@ -18,3 +18,4 @@ Those listed below have contributed to `SimpleDnsCrypt`, and are the copyright h
  * @robin98
  * @pablomh
  * @rddim
+ * @porsche613
