@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+		Microsoft ResX Schema
+		Version 1.3
+		The primary goals of this format is to allow a simple XML format 
+		that is mostly human readable. The generation and parsing of the 
+		various data types are done through the TypeConverter classes 
+		associated with the data types.
+		Example:
+		... ado.net/XML headers & schema ...
+		<resheader name="resmimetype">text/microsoft-resx</resheader>
+		<resheader name="version">1.3</resheader>
+		<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+		<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+		<data name="Name1">this is my long string</data>
+		<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+		<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+			[base64 mime encoded serialized .NET Framework object]
+		</data>
+		<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+			[base64 mime encoded string representing a byte array form of the .NET Framework object]
+		</data>
+		There are any number of "resheader" rows that contain simple 
+		name/value pairs.
+		Each data row contains a name, and value. The row also contains a 
+		type or mimetype. Type corresponds to a .NET class that support 
+		text/value conversion through the TypeConverter architecture. 
+		Classes that don't support this are serialized and stored with the 
+		mimetype set.
+		The mimetype is used for serialized objects, and tells the 
+		ResXResourceReader how to depersist the object. This is currently not 
+		extensible. For a given mimetype the value must be set accordingly:
+		Note - application/x-microsoft.net.object.binary.base64 is the format 
+		that the ResXResourceWriter will generate, however the reader can 
+		read any of the formats listed below.
+		mimetype: application/x-microsoft.net.object.binary.base64
+		value   : The object must be serialized with 
+			: System.Serialization.Formatters.Binary.BinaryFormatter
+			: and then encoded with base64 encoding.
+		mimetype: application/x-microsoft.net.object.soap.base64
+		value   : The object must be serialized with 
+			: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+			: and then encoded with base64 encoding.
+		mimetype: application/x-microsoft.net.object.bytearray.base64
+		value   : The object must be serialized into a byte array 
+			: using a System.ComponentModel.TypeConverter
+			: and then encoded with base64 encoding.
+	-->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="default_settings_network_cards" xml:space="preserve">
+    <value>網路卡清單</value>
+  </data>
+  <data name="default_settings_show_hidden_cards" xml:space="preserve">
+    <value>顯示隱藏的網路卡</value>
+  </data>
+  <data name="tab_standard_settings" xml:space="preserve">
+    <value>常用設定</value>
+  </data>
+  <data name="tab_about" xml:space="preserve">
+    <value>關於</value>
+  </data>
+  <data name="tab_advanced_settings" xml:space="preserve">
+    <value>進階設定</value>
+  </data>
+  <data name="default_settings_services" xml:space="preserve">
+    <value>背景服務</value>
+  </data>
+  <data name="default_settings_primary_text" xml:space="preserve">
+    <value>主要伺服器</value>
+  </data>
+  <data name="default_settings_secondary_text" xml:space="preserve">
+    <value>次要伺服器（可選）</value>
+  </data>
+  <data name="default_settings_primary_service" xml:space="preserve">
+    <value>主要DNS DNSCrypt服務</value>
+  </data>
+  <data name="default_settings_secondary_service" xml:space="preserve">
+    <value>次要DNS DNSCrypt服務</value>
+  </data>
+  <data name="default_settings_resolver" xml:space="preserve">
+    <value>伺服器</value>
+  </data>
+  <data name="default_settings_server_address" xml:space="preserve">
+    <value>伺服器IP位址</value>
+  </data>
+  <data name="default_settings_dnssec" xml:space="preserve">
+    <value>是否DNSSEC認證</value>
+  </data>
+  <data name="default_settings_no_logs" xml:space="preserve">
+    <value>是否無日誌記錄</value>
+  </data>
+  <data name="default_settings_name" xml:space="preserve">
+    <value>伺服器名稱（FQDN）</value>
+  </data>
+  <data name="default_settings_public_key" xml:space="preserve">
+    <value>公開金鑰</value>
+  </data>
+  <data name="default_settings_secondary_header" xml:space="preserve">
+    <value>主要伺服器</value>
+  </data>
+  <data name="default_settings_primary_header" xml:space="preserve">
+    <value>次要伺服器</value>
+  </data>
+  <data name="global_ipv6_disabled" xml:space="preserve">
+    <value>停用IPv6</value>
+  </data>
+  <data name="dialog_error_title" xml:space="preserve">
+    <value>錯誤</value>
+  </data>
+  <data name="dialog_success_title" xml:space="preserve">
+    <value>成功</value>
+  </data>
+  <data name="dialog_uninstall_title" xml:space="preserve">
+    <value>解除安裝服務</value>
+  </data>
+  <data name="dialog_warning_title" xml:space="preserve">
+    <value>警告</value>
+  </data>
+  <data name="dialog_message_refresh_failed" xml:space="preserve">
+    <value>更新伺服器清單失敗</value>
+  </data>
+  <data name="window_plugin_title" xml:space="preserve">
+    <value>可用的附加組件</value>
+  </data>
+  <data name="dialog_message_uninstall" xml:space="preserve">
+    <value>您確定要解除安裝所有已安裝的Windows服務？</value>
+  </data>
+  <data name="dialog_message_missing_file" xml:space="preserve">
+    <value>無法調用： {0} 或 {1}.</value>
+  </data>
+  <data name="dialog_message_missing_proxy_files" xml:space="preserve">
+    <value>無法在應用程式目錄內找到所需檔案，請重新安裝此應用程式</value>
+  </data>
+  <data name="dialog_message_bad_privileges" xml:space="preserve">
+    <value>你需要以系統管理員身份執行此程式</value>
+  </data>
+  <data name="ipv6_speed_plugin_title" xml:space="preserve">
+    <value>在無IPv6的網路下加快解析</value>
+  </data>
+  <data name="ipv6_speed_plugin_text" xml:space="preserve">
+    <value>若你的網路環境尚未部署IPv6，開啟這個功能會令本程式無視DNS伺服器的IPv6回應，以降低解析延時</value>
+  </data>
+  <data name="advanced_settings_refresh_resolver_title" xml:space="preserve">
+    <value>更新伺服器清單</value>
+  </data>
+  <data name="advanced_settings_refresh_resolver_text" xml:space="preserve">
+    <value>更新已部署DNSCrypt的公開伺服器之清單（所有的檔案均經Minisign簽章確保安全） </value>
+  </data>
+  <data name="advanced_settings_debug_title" xml:space="preserve">
+    <value>除錯模式</value>
+  </data>
+  <data name="advanced_settings_refresh_resolver_button" xml:space="preserve">
+    <value>下載清單</value>
+  </data>
+  <data name="advanced_settings_uninstall_title" xml:space="preserve">
+    <value>解除安裝服務</value>
+  </data>
+  <data name="advanced_settings_uninstall_text" xml:space="preserve">
+    <value>解除安裝所有已安裝的Windows服務</value>
+  </data>
+  <data name="advanced_settings_uninstall_button" xml:space="preserve">
+    <value>解除安裝服務所有服務</value>
+  </data>
+  <data name="advanced_settings_plugins_title" xml:space="preserve">
+    <value>附加組件</value>
+  </data>
+  <data name="advanced_settings_plugins_text" xml:space="preserve">
+    <value>通過附加組件開啟或關閉額外的功能</value>
+  </data>
+  <data name="advanced_settings_plugins_button" xml:space="preserve">
+    <value>開啟附加組件管理員</value>
+  </data>
+  <data name="advanced_settings_transport_tcp_title" xml:space="preserve">
+    <value>連線設定</value>
+  </data>
+  <data name="advanced_settings_transport_tcp_text" xml:space="preserve">
+    <value>使用TCP協定之443埠代替UDP協定之433埠（TCP比UDP的速率慢）</value>
+  </data>
+  <data name="advanced_settings_global_resolver_title" xml:space="preserve">
+    <value>全域伺服器</value>
+  </data>
+  <data name="advanced_settings_global_resolver_text" xml:space="preserve">
+    <value>若你欲是本機作為其它裝置（如：手機、平板電腦或其它電腦）的網路閘道，請開啟此選項 </value>
+  </data>
+  <data name="about_used_software" xml:space="preserve">
+    <value>本專案使用的軟體</value>
+  </data>
+  <data name="about_license" xml:space="preserve">
+    <value>許可證</value>
+  </data>
+  <data name="about_special_thanks" xml:space="preserve">
+    <value>鳴謝</value>
+  </data>
+  <data name="about_thanks_frank_title" xml:space="preserve">
+    <value>Frank Denis (@jedisct1) - https://dnscrypt.org </value>
+  </data>
+  <data name="about_thanks_frank_text" xml:space="preserve">
+    <value>- 開發了libsodium專案和DNSCrypt專案！</value>
+  </data>
+  <data name="about_thanks_bytejail_text" xml:space="preserve">
+    <value>- 捐助本專案！</value>
+  </data>
+  <data name="about_thanks_bytejail_title" xml:space="preserve">
+    <value>The EAM GmbH and bytejail - https://bytejail.com</value>
+  </data>
+  <data name="log_plugin_text" xml:space="preserve">
+    <value>本附加組件會記錄代理伺服器收到的DNS請求，並將之記錄與一個本機檔案中</value>
+  </data>
+  <data name="log_plugin_title" xml:space="preserve">
+    <value>日誌</value>
+  </data>
+  <data name="log_plugin_select_folder" xml:space="preserve">
+    <value>選擇一個日誌保存的資料夾</value>
+  </data>
+  <data name="dialog_plugins_save_button_tooltip" xml:space="preserve">
+    <value>確定</value>
+  </data>
+  <data name="dialog_message_update_standard_text" xml:space="preserve">
+    <value>Simple DNSCrypt現在已經有新版本了（{0}）。您是否希望現在更新？</value>
+  </data>
+  <data name="dialog_message_update_standard_title" xml:space="preserve">
+    <value>軟體更新</value>
+  </data>
+  <data name="window_update_title" xml:space="preserve">
+    <value>暫時沒有新版本呢，請靜待新版本通知吧</value>
+  </data>
+  <data name="yes" xml:space="preserve">
+    <value>同意</value>
+  </data>
+  <data name="no" xml:space="preserve">
+    <value>不同意</value>
+  </data>
+  <data name="ok" xml:space="preserve">
+    <value>確定</value>
+  </data>
+  <data name="cancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="dialog_update_title" xml:space="preserve">
+    <value>下載</value>
+  </data>
+  <data name="dialog_update_signature" xml:space="preserve">
+    <value>簽章</value>
+  </data>
+  <data name="dialog_update_installer" xml:space="preserve">
+    <value>安裝檔</value>
+  </data>
+  <data name="dialog_message_update_critical_title" xml:space="preserve">
+    <value>重要程式更新</value>
+  </data>
+  <data name="dialog_message_update_critical_text" xml:space="preserve">
+    <value>Simple DNSCrypt現在已經有新版本了（{0}）。該版本包含重要更新，您是否馬上更新？</value>
+  </data>
+  <data name="default_settings_save_port" xml:space="preserve">
+    <value>存儲</value>
+  </data>
+  <data name="default_settings_info_port" xml:space="preserve">
+    <value>DNSCrypt 會在此連接埠號工作（預設連接埠號：53埠）</value>
+  </data>
+  <data name="block_plugin_title" xml:space="preserve">
+    <value>遮蔽的IP位址和網址（黑名單）</value>
+  </data>
+  <data name="block_plugin_text" xml:space="preserve">
+    <value>若欲解析的網址在黑名單上，或者解析返回的任一IP位址結果在黑名單上，該組件將送出「拒絕連線」的命令</value>
+  </data>
+  <data name="block_plugin_sub_domains_header" xml:space="preserve">
+    <value>遮蔽的網址（網址黑名單）</value>
+  </data>
+  <data name="block_plugin_sub_addresses_header" xml:space="preserve">
+    <value>遮蔽的IP位址（IP位址黑名單）</value>
+  </data>
+  <data name="blacklist_entries" xml:space="preserve">
+    <value>條目</value>
+  </data>
+  <data name="blacklist_building_list" xml:space="preserve">
+    <value>匯出清單……</value>
+  </data>
+  <data name="blacklist_button_build_address" xml:space="preserve">
+    <value>匯出IP位址黑名單</value>
+  </data>
+  <data name="blacklist_button_build_domain" xml:space="preserve">
+    <value>匯出網址黑名單</value>
+  </data>
+  <data name="blacklist_button_remove_address" xml:space="preserve">
+    <value>移除IP位址條目</value>
+  </data>
+  <data name="blacklist_button_remove_domain" xml:space="preserve">
+    <value>移除網址條目</value>
+  </data>
+  <data name="blacklist_button_add_remote_domain" xml:space="preserve">
+    <value>從遠端網址規則清單（URL網址）匯入</value>
+  </data>
+  <data name="blacklist_button_add_local_domain" xml:space="preserve">
+    <value>新增網址規則</value>
+  </data>
+  <data name="blacklist_button_add_address" xml:space="preserve">
+    <value>新增IP位址規則</value>
+  </data>
+  <data name="blacklist_button_select_domain_blacklist" xml:space="preserve">
+    <value>選擇網址黑名單檔案</value>
+  </data>
+  <data name="blacklist_button_select_address_blacklist" xml:space="preserve">
+    <value>選擇IP位址黑名單檔案</value>
+  </data>
+  <data name="block_plugin_sub_addresses_text" xml:space="preserve">
+    <value>自訂遮蔽規則（如：10.1.4.99, 172.16.*）</value>
+  </data>
+  <data name="block_plugin_sub_domains_text" xml:space="preserve">
+    <value>根據本機規則或遠端清單檔案來遮蔽網址</value>
+  </data>
+  <data name="blacklist_modal_new_address_rule_text" xml:space="preserve">
+    <value>例如：172.16.144.8, 172.16.*, [fdb2:cd9e:c9f8:861a:c1ab:94e3:ef95:1ec0]</value>
+  </data>
+  <data name="blacklist_modal_new_address_rule_header" xml:space="preserve">
+    <value>新增IP位址規則</value>
+  </data>
+  <data name="blacklist_modal_empty_list_text" xml:space="preserve">
+    <value>遮蔽清單不能為空</value>
+  </data>
+  <data name="blacklist_modal_empty_list_header" xml:space="preserve">
+    <value>無法建立遮蔽清單</value>
+  </data>
+  <data name="blacklist_modal_new_local_domain_rule_header" xml:space="preserve">
+    <value>新增本機網址規則</value>
+  </data>
+  <data name="blacklist_modal_new_remote_domain_rule_header" xml:space="preserve">
+    <value>新增遠端的網址規則</value>
+  </data>
+  <data name="blacklist_modal_new_local_domain_rule_text" xml:space="preserve">
+    <value>例如：*.example.com, ads.*, *sex*</value>
+  </data>
+  <data name="blacklist_modal_new_remote_domain_rule_text" xml:space="preserve">
+    <value>例如：https://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt</value>
+  </data>
+  <data name="cache_plugin_text" xml:space="preserve">
+    <value>DNS回應快取維持時間，一般保持預設即可</value>
+  </data>
+  <data name="cache_plugin_ttl" xml:space="preserve">
+    <value>TTL（存活時間）</value>
+  </data>
+  <data name="cache_plugin_seconds" xml:space="preserve">
+    <value>秒</value>
+  </data>
+  <data name="cache_plugin_title" xml:space="preserve">
+    <value>DNS回應快取</value>
+  </data>
+  <data name="tab_block" xml:space="preserve">
+    <value>黑名單與過濾清單</value>
+  </data>
+  <data name="default_settings_analyse_button_tooltip" xml:space="preserve">
+    <value>獲取伺服器的一些額外資訊（僅適用於IPv4）</value>
+  </data>
+  <data name="tab_log" xml:space="preserve">
+    <value>實時日誌記錄 实时日志</value>
+  </data>
+  <data name="log_entries" xml:space="preserve">
+    <value>日誌條目數：</value>
+  </data>
+  <data name="log_source" xml:space="preserve">
+    <value>檔案路徑：</value>
+  </data>
+  <data name="log_button_add_to_blacklist" xml:space="preserve">
+    <value>把選定的條目新增至本機網址黑名單</value>
+  </data>
+  <data name="log_modal_no_log_file_text" xml:space="preserve">
+    <value>無日誌檔案。請先在「進階設定 → 附加組件」中開啟「日誌」功能</value>
+  </data>
+  <data name="log_modal_no_log_file_header" xml:space="preserve">
+    <value>找不到日誌檔案</value>
+  </data>
+  <data name="log_modal_add_rule_header" xml:space="preserve">
+    <value>新增黑名單條目</value>
+  </data>
+  <data name="log_modal_add_rule_text" xml:space="preserve">
+    <value>新增黑名單條目前你可以編輯它：</value>
+  </data>
+</root>

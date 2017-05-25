@@ -366,6 +366,10 @@
       <SubType>Designer</SubType>
       <DependentUpon>Strings.resx</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Strings.zh-hant.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Strings.de.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Strings.resx</DependentUpon>
