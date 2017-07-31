@@ -208,6 +208,7 @@
 			"hostip.exe",
 			"libdcplugin_ldns_aaaa_blocking.dll",
 			"libdcplugin_logging.dll",
+			"libdcplugin_ldns_forwarding.dll",
 			"libdcplugin_ldns_blocking.dll",
 			"libdcplugin_cache.dll",
 			"libcrypto-41.dll",
@@ -244,6 +245,7 @@
 		public const string LibdcpluginLdns = "libdcplugin_ldns_blocking.dll";
 		public const string LibdcpluginLdnsIpv6 = "libdcplugin_ldns_aaaa_blocking.dll";
 		public const string LibdcpluginLogging = "libdcplugin_logging.dll";
+		public const string LibdcpluginForwarding = "libdcplugin_ldns_forwarding.dll";
 		public const string LibdcpluginCache = "libdcplugin_cache.dll";
 	}
 }

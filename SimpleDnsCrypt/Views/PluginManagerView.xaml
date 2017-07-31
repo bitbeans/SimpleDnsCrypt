@@ -164,6 +164,73 @@
                     </Border>
                     <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,10,0,0">
                         <Border.BorderBrush>
+                            <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile"
+                                          Opacity="0.4">
+                                <DrawingBrush.Drawing>
+                                    <DrawingGroup>
+                                        <GeometryDrawing Brush="#FF8ab329">
+                                            <GeometryDrawing.Geometry>
+                                                <GeometryGroup>
+                                                    <RectangleGeometry Rect="0,0,50,50" />
+                                                    <RectangleGeometry Rect="50,50,50,50" />
+                                                </GeometryGroup>
+                                            </GeometryDrawing.Geometry>
+                                        </GeometryDrawing>
+                                    </DrawingGroup>
+                                </DrawingBrush.Drawing>
+                            </DrawingBrush>
+                        </Border.BorderBrush>
+                        <StackPanel Orientation="Vertical">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Grid.Row="0" Text="&#xf1d8;"
+                                           FontFamily="/Resources/fontawesome-webfont.ttf#FontAwesome"
+                                           FontSize="20"
+                                           HorizontalAlignment="Left" VerticalAlignment="Center"
+                                           Foreground="#FF8ab329">
+                                    <TextBlock.OpacityMask>
+                                        <SolidColorBrush Color="Black" Opacity="0.7" />
+                                    </TextBlock.OpacityMask>
+                                </TextBlock>
+                                <TextBlock Grid.Column="1" Grid.Row="0" Text="{lex:Loc Key=forwarding_plugin_title}"
+                                           TextWrapping="Wrap" VerticalAlignment="Center"
+                                           Foreground="#FF8ab329" FontSize="20"
+                                           Opacity="0.7" Margin="5,0,0,3" FontWeight="Bold">
+                                </TextBlock>
+                            </Grid>
+                            <TextBlock
+                                Text="{lex:Loc Key=forwarding_plugin_text}"
+                                TextWrapping="Wrap" Foreground="#FF575757" FontSize="14">
+                            </TextBlock>
+                            <StackPanel Margin="0,5,0,0" Orientation="Horizontal">
+                                <TextBlock Foreground="#FF575757" FontSize="14" TextAlignment="Center"
+                                           Text="{lex:Loc Key=forwarding_plugin_domains}" Width="100" />
+                                <TextBox Height="26" Width="315" Text="{Binding ForwardingPluginDomains}"
+                                         HorizontalAlignment="Left"
+                                         IsEnabled="{Binding ForwardingPlugin, Converter={StaticResource ReverseBoolToEnabledConverter}}"
+                                         />
+                            </StackPanel>
+                            <StackPanel Margin="0,5,0,0" Orientation="Horizontal">
+                                <TextBlock Foreground="#FF575757" FontSize="14" TextAlignment="Center"
+                                           Text="{lex:Loc Key=forwarding_plugin_resolvers}" Width="100"  />
+                                <TextBox Height="26" Width="315" Text="{Binding ForwardingPluginResolvers}"
+                                         HorizontalAlignment="Left"
+                                         IsEnabled="{Binding ForwardingPlugin, Converter={StaticResource ReverseBoolToEnabledConverter}}"
+                                         />
+                            </StackPanel>
+                            <controls:ToggleSwitchButton
+                                IsEnabled="True" Cursor="Hand"
+                                IsChecked="{Binding ForwardingPlugin}"
+                                HorizontalAlignment="Right" VerticalAlignment="Top">
+                            </controls:ToggleSwitchButton>
+                        </StackPanel>
+                    </Border>
+                    <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,10,0,0">
+                        <Border.BorderBrush>
                             <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile" Opacity="0.4">
                                 <DrawingBrush.Drawing>
                                     <DrawingGroup>
