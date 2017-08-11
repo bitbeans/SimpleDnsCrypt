@@ -6,5 +6,5 @@
         {
             InitializeComponent();
         }
-    }
+	}
 }
