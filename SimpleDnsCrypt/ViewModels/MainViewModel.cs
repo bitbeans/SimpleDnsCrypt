@@ -876,7 +876,7 @@ namespace SimpleDnsCrypt.ViewModels
 				{
 					for (var r = 0; r < _resolvers.Count; r++)
 					{
-						var dnsCryptProxyEntryExtra = AnalyseProxy.Analyse(_resolvers[r]);
+						var dnsCryptProxyEntryExtra = AnalyseProxy.Analyse(_resolvers[r]).Result;
 						if (dnsCryptProxyEntryExtra != null)
 						{
 							if (dnsCryptProxyEntryExtra.Succeeded && (dnsCryptProxyEntryExtra.ResponseTime > 0))

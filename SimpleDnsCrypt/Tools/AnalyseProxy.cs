@@ -8,6 +8,7 @@ using DNS.Protocol;
 using Helper;
 using SimpleDnsCrypt.Models;
 using Sodium;
+using System.Threading.Tasks;
 
 namespace SimpleDnsCrypt.Tools
 {
@@ -29,7 +30,7 @@ namespace SimpleDnsCrypt.Tools
 
 	public static class AnalyseProxy
 	{
-		public static DnsCryptProxyEntryExtra Analyse(DnsCryptProxyEntry dnsCryptProxyEntry)
+		public static async Task<DnsCryptProxyEntryExtra> Analyse(DnsCryptProxyEntry dnsCryptProxyEntry)
 		{
 			var dnsCryptProxyEntryExtra = new DnsCryptProxyEntryExtra();
 			
@@ -54,7 +55,7 @@ namespace SimpleDnsCrypt.Tools
 				request.Questions.Add(new Question(Domain.FromString(dnsCryptProxyEntry.ProviderName), RecordType.TXT));
 				request.RecursionDesired = true;
 				var sw = Stopwatch.StartNew();
-				var response = request.Resolve();
+				var response = await request.Resolve();
 				sw.Stop();
 
 				foreach (var answerRecord in response.AnswerRecords)

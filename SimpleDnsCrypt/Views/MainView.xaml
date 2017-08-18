@@ -58,9 +58,9 @@
                     </DrawingBrush>
                 </Border.BorderBrush>
 
-                <TabControl controls:TabControlHelper.Transition="Right"
+                <TabControl controls:TabControlHelper.Transition="Right" Background="Transparent"
                             cal:Message.Attach="[Event SelectionChanged] = [Action TabControl_SelectionChanged($this,$eventArgs)]">
-                    <TabItem Padding="10,2,10,2" Height="39" VerticalAlignment="Top"
+                    <TabItem Padding="10,2,10,2" Height="39" VerticalAlignment="Top" 
                              Header="{lex:Loc Key=tab_standard_settings}">
                         <TabItem.Content>
                             <StackPanel Orientation="Vertical" Margin="0,10,0,0">
@@ -649,7 +649,7 @@
                                                     Content="{lex:Loc Key=advanced_settings_refresh_resolver_button}"
                                                     Margin="0,10,0,0"
                                                     Style="{StaticResource AccentedSquareButtonStyle}"
-                                                    HorizontalAlignment="Right" />
+                                                    HorizontalAlignment="Right"/>
                                         </Grid>
                                     </StackPanel>
                                 </Border>
