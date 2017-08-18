@@ -413,6 +413,9 @@
     <Content Include="dnscrypt-proxy\libdcplugin_cache.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="dnscrypt-proxy\libdcplugin_ldns_forwarding.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="dnscrypt-proxy\libgcc_s_sjlj-1.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
