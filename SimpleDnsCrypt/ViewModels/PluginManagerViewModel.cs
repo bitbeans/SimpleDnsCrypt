@@ -17,6 +17,9 @@ namespace SimpleDnsCrypt.ViewModels
 		private bool _blockIpv6Plugin;
 		private bool _logPlugin;
 		private string _logPluginPath;
+		private bool _forwardingPlugin;
+		private string _forwardingPluginDomains;
+		private string _forwardingPluginResolvers;
 		private bool _cachePlugin;
 		private int _cachePluginTtl;
 		private List<string> _plugins;
@@ -162,6 +165,71 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 		}
 
+
+		/// <summary>
+		///     To manage the log plugin.
+		/// </summary>
+		public bool ForwardingPlugin
+		{
+			get { return _forwardingPlugin; }
+			set
+			{
+				_forwardingPlugin = value;
+				if (value)
+				{
+					if (!string.IsNullOrWhiteSpace(ForwardingPluginDomains) && !string.IsNullOrWhiteSpace(ForwardingPluginResolvers))
+					{
+						//,--domains=$0,--resolvers=$1
+						Plugins.Add(Global.LibdcpluginForwarding + ",--domains=" + ForwardingPluginDomains + ",--resolvers=" + ForwardingPluginResolvers);
+						_forwardingPlugin = true;
+					}
+					else
+					{
+						_forwardingPlugin = false;
+					}
+				}
+				else
+				{
+					for (int i = Plugins.Count - 1; i >= 0; i--)
+					{
+						if (Plugins[i].StartsWith(Global.LibdcpluginForwarding))
+						{
+							Plugins.RemoveAt(i);
+							NotifyOfPropertyChange(() => ForwardingPlugin);
+						}
+					}
+				}
+				NotifyOfPropertyChange(() => ForwardingPlugin);
+			}
+		}
+
+		/// <summary>
+		///     The full path to the log file.
+		/// </summary>
+		public string ForwardingPluginDomains
+		{
+			get { return _forwardingPluginDomains; }
+			set
+			{
+				_forwardingPluginDomains = value;
+				NotifyOfPropertyChange(() => ForwardingPluginDomains);
+			}
+		}
+
+
+		/// <summary>
+		///     The full path to the log file.
+		/// </summary>
+		public string ForwardingPluginResolvers
+		{
+			get { return _forwardingPluginResolvers; }
+			set
+			{
+				_forwardingPluginResolvers = value;
+				NotifyOfPropertyChange(() => ForwardingPluginResolvers);
+			}
+		}
+
 		/// <summary>
 		///     FolderBrowserDialog to select the log folder.
 		/// </summary>
@@ -215,6 +283,30 @@ namespace SimpleDnsCrypt.ViewModels
 						_cachePluginTtl = 60;
 					}
 					_cachePlugin = true;
+				}
+				if (plugin.StartsWith(Global.LibdcpluginForwarding))
+				{
+					var a = plugin.Split(',');
+					if (a[1].StartsWith("--domains"))
+					{
+						var b = a[1].Split('=');
+						_forwardingPluginDomains = (b[1]);
+					}
+					else
+					{
+						_forwardingPluginDomains = "local";
+					}
+
+					if (a[2].StartsWith("--resolvers"))
+					{
+						var b = a[2].Split('=');
+						_forwardingPluginResolvers = (b[1]);
+					}
+					else
+					{
+						_forwardingPluginResolvers = "192.168.0.1";
+					}
+					_forwardingPlugin = true;
 				}
 			}
 		}

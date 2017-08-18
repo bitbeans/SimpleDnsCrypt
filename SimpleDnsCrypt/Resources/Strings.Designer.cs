@@ -835,7 +835,43 @@ namespace SimpleDnsCrypt.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die IPv6 disabled ähnelt.
+        ///   Looks up a localized string similar to Domains.
+        /// </summary>
+        internal static string forwarding_plugin_domains {
+            get {
+                return ResourceManager.GetString("forwarding_plugin_domains", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Resolvers.
+        /// </summary>
+        internal static string forwarding_plugin_resolvers {
+            get {
+                return ResourceManager.GetString("forwarding_plugin_resolvers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This plugin forwards queries for a specific set of domain names to one or more non-DNSCrypt resolvers. This can be used to send queries for private domains to the router or to an internal DNS server..
+        /// </summary>
+        internal static string forwarding_plugin_text {
+            get {
+                return ResourceManager.GetString("forwarding_plugin_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Forwarding.
+        /// </summary>
+        internal static string forwarding_plugin_title {
+            get {
+                return ResourceManager.GetString("forwarding_plugin_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IPv6 disabled.
         /// </summary>
         internal static string global_ipv6_disabled {
             get {
