@@ -632,7 +632,7 @@ namespace SimpleDnsCrypt.ViewModels
 				}
 				IsWorking = false;
 			}
-			catch (Exception exception)
+			catch (Exception)
 			{
 				IsWorking = false;
 			}
