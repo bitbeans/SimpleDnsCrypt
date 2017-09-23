@@ -1,0 +1,428 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- 
+		Microsoft ResX Schema
+
+		Version 1.3
+
+		The primary goals of this format is to allow a simple XML format 
+		that is mostly human readable. The generation and parsing of the 
+		various data types are done through the TypeConverter classes 
+		associated with the data types.
+
+		Example:
+
+		... ado.net/XML headers & schema ...
+		<resheader name="resmimetype">text/microsoft-resx</resheader>
+		<resheader name="version">1.3</resheader>
+		<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+		<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+		<data name="Name1">this is my long string</data>
+		<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+		<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+			[base64 mime encoded serialized .NET Framework object]
+		</data>
+		<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+			[base64 mime encoded string representing a byte array form of the .NET Framework object]
+		</data>
+
+		There are any number of "resheader" rows that contain simple 
+		name/value pairs.
+
+		Each data row contains a name, and value. The row also contains a 
+		type or mimetype. Type corresponds to a .NET class that support 
+		text/value conversion through the TypeConverter architecture. 
+		Classes that don't support this are serialized and stored with the 
+		mimetype set.
+
+		The mimetype is used for serialized objects, and tells the 
+		ResXResourceReader how to depersist the object. This is currently not 
+		extensible. For a given mimetype the value must be set accordingly:
+
+		Note - application/x-microsoft.net.object.binary.base64 is the format 
+		that the ResXResourceWriter will generate, however the reader can 
+		read any of the formats listed below.
+
+		mimetype: application/x-microsoft.net.object.binary.base64
+		value   : The object must be serialized with 
+			: System.Serialization.Formatters.Binary.BinaryFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.soap.base64
+		value   : The object must be serialized with 
+			: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.bytearray.base64
+		value   : The object must be serialized into a byte array 
+			: using a System.ComponentModel.TypeConverter
+			: and then encoded with base64 encoding.
+	-->
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>1.3</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="default_settings_network_cards" xml:space="preserve">
+    <value>Nettverkskort</value>
+  </data>
+	<data name="default_settings_show_hidden_cards" xml:space="preserve">
+    <value>Vis skjulte elementer</value>
+  </data>
+	<data name="tab_standard_settings" xml:space="preserve">
+    <value>Standardinnstillinger</value>
+  </data>
+	<data name="tab_about" xml:space="preserve">
+    <value>Om</value>
+  </data>
+	<data name="tab_advanced_settings" xml:space="preserve">
+    <value>Avanserte innstillinger</value>
+  </data>
+	<data name="default_settings_services" xml:space="preserve">
+    <value>Tjenester</value>
+  </data>
+	<data name="default_settings_primary_text" xml:space="preserve">
+    <value>Første resolver</value>
+  </data>
+	<data name="default_settings_secondary_text" xml:space="preserve">
+    <value>Andre resolver (valgfri)</value>
+  </data>
+	<data name="default_settings_primary_service" xml:space="preserve">
+    <value>Primær DNSCrypt tjeneste</value>
+  </data>
+	<data name="default_settings_secondary_service" xml:space="preserve">
+    <value>Sekundær DNSCrypt tjeneste</value>
+  </data>
+	<data name="default_settings_resolver" xml:space="preserve">
+    <value>Resolver</value>
+  </data>
+	<data name="default_settings_server_address" xml:space="preserve">
+    <value>Server adresse</value>
+  </data>
+	<data name="default_settings_dnssec" xml:space="preserve">
+    <value>DNSSEC</value>
+  </data>
+	<data name="default_settings_no_logs" xml:space="preserve">
+    <value>Ingen logger</value>
+  </data>
+	<data name="default_settings_name" xml:space="preserve">
+    <value>Navn (FQDN)</value>
+  </data>
+	<data name="default_settings_public_key" xml:space="preserve">
+    <value>Offentlig nøkkel</value>
+  </data>
+	<data name="default_settings_secondary_header" xml:space="preserve">
+    <value>Sekundær resolver</value>
+  </data>
+	<data name="default_settings_primary_header" xml:space="preserve">
+    <value>Primær resolver</value>
+  </data>
+	<data name="global_ipv6_disabled" xml:space="preserve">
+    <value>IPv6 deaktivert</value>
+  </data>
+	<data name="dialog_error_title" xml:space="preserve">
+    <value>Feil</value>
+  </data>
+	<data name="dialog_success_title" xml:space="preserve">
+    <value>Suksess</value>
+  </data>
+	<data name="dialog_uninstall_title" xml:space="preserve">
+    <value>Avinstaller tjenester</value>
+  </data>
+	<data name="dialog_warning_title" xml:space="preserve">
+    <value>Advarsel</value>
+  </data>
+	<data name="dialog_message_refresh_failed" xml:space="preserve">
+    <value>Mislyktes i å oppdatere listen over resolvere.</value>
+  </data>
+	<data name="window_plugin_title" xml:space="preserve">
+    <value>Tilgjengelige tillegg.</value>
+  </data>
+	<data name="dialog_message_uninstall" xml:space="preserve">
+    <value>Ønsker du å fjerne alle Windows tjenestene?</value>
+  </data>
+	<data name="dialog_message_missing_file" xml:space="preserve">
+    <value>Kan ikke laste: {0} eller {1}.</value>
+  </data>
+	<data name="dialog_message_missing_proxy_files" xml:space="preserve">
+    <value>Ikke alle de nødvendige filene i dnscrypt mappen er funnet, det er anbefalt at du reinstallerer denne applikasjonen.</value>
+  </data>
+	<data name="dialog_message_bad_privileges" xml:space="preserve">
+    <value>Du må kjøre denne applikasjonen som Administrator.</value>
+  </data>
+	<data name="ipv6_speed_plugin_title" xml:space="preserve">
+    <value>Øk hastigheten hvis IPv6 ikke er i bruk.</value>
+  </data>
+	<data name="ipv6_speed_plugin_text" xml:space="preserve">
+    <value>If IPv6 connectivity is not available on your network, this plugin disable waiting for responses about IPv6 addresses from upstream resolvers. This can improve your web browsing experience.</value>
+  </data>
+	<data name="advanced_settings_refresh_resolver_title" xml:space="preserve">
+    <value>Oppdater listen over offentlige resolvere</value>
+  </data>
+	<data name="advanced_settings_refresh_resolver_text" xml:space="preserve">
+    <value>Refresh the list of public resolvers (all downloads are validated with a minisign signature)</value>
+  </data>
+	<data name="advanced_settings_debug_title" xml:space="preserve">
+    <value>Feilsøkingsmodus</value>
+  </data>
+	<data name="advanced_settings_refresh_resolver_button" xml:space="preserve">
+    <value>Last ned liste</value>
+  </data>
+	<data name="advanced_settings_uninstall_title" xml:space="preserve">
+    <value>Avinstaller tjenester</value>
+  </data>
+	<data name="advanced_settings_uninstall_text" xml:space="preserve">
+    <value>Slett alle installerte windows tjenester</value>
+  </data>
+	<data name="advanced_settings_uninstall_button" xml:space="preserve">
+    <value>Avinstaller alle tjenester</value>
+  </data>
+	<data name="advanced_settings_plugins_title" xml:space="preserve">
+    <value>Tillegg</value>
+  </data>
+	<data name="advanced_settings_plugins_text" xml:space="preserve">
+    <value>Enable or disable extra settings with plugins</value>
+  </data>
+	<data name="advanced_settings_plugins_button" xml:space="preserve">
+    <value>Open plugin manager</value>
+  </data>
+	<data name="advanced_settings_transport_tcp_title" xml:space="preserve">
+    <value>Transport Settings</value>
+  </data>
+	<data name="advanced_settings_transport_tcp_text" xml:space="preserve">
+    <value>Use TCP port 443 instead of UDP port 443 (TCP is slower than UDP)</value>
+  </data>
+	<data name="advanced_settings_global_resolver_title" xml:space="preserve">
+    <value>Global Resolver</value>
+  </data>
+	<data name="advanced_settings_global_resolver_text" xml:space="preserve">
+    <value>If you want this computer to act as gateway device for others (eg: smartphones or other computers)</value>
+  </data>
+	<data name="about_used_software" xml:space="preserve">
+    <value>Used software</value>
+  </data>
+	<data name="about_license" xml:space="preserve">
+    <value>License</value>
+  </data>
+	<data name="about_special_thanks" xml:space="preserve">
+    <value>Special Thanks to</value>
+  </data>
+	<data name="about_thanks_frank_title" xml:space="preserve">
+    <value>Frank Denis (@jedisct1) - https://dnscrypt.org</value>
+  </data>
+	<data name="about_thanks_frank_text" xml:space="preserve">
+    <value>- for developing libsodium and DNSCrypt!</value>
+  </data>
+	<data name="about_thanks_bytejail_text" xml:space="preserve">
+    <value>- for funding this project!</value>
+  </data>
+	<data name="about_thanks_bytejail_title" xml:space="preserve">
+    <value>The EAM GmbH and bytejail - https://bytejail.com</value>
+  </data>
+	<data name="log_plugin_text" xml:space="preserve">
+    <value>This plugin logs the DNS queries received by the proxy.
+The logs are stored in a local file.</value>
+  </data>
+	<data name="log_plugin_title" xml:space="preserve">
+    <value>Logging</value>
+  </data>
+	<data name="log_plugin_select_folder" xml:space="preserve">
+    <value>Select a log folder</value>
+  </data>
+	<data name="dialog_plugins_save_button_tooltip" xml:space="preserve">
+    <value>OK</value>
+  </data>
+	<data name="dialog_message_update_standard_text" xml:space="preserve">
+    <value>There is a new Simple DNSCrypt version ({0}) available. Do you want to update now?</value>
+  </data>
+	<data name="dialog_message_update_standard_title" xml:space="preserve">
+    <value>Application Update</value>
+  </data>
+	<data name="window_update_title" xml:space="preserve">
+    <value>Stay tuned</value>
+  </data>
+	<data name="yes" xml:space="preserve">
+    <value>yes</value>
+  </data>
+	<data name="no" xml:space="preserve">
+    <value>no</value>
+  </data>
+	<data name="ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+	<data name="cancel" xml:space="preserve">
+    <value>cancel</value>
+  </data>
+	<data name="dialog_update_title" xml:space="preserve">
+    <value>Downloads</value>
+  </data>
+	<data name="dialog_update_signature" xml:space="preserve">
+    <value>Signature</value>
+  </data>
+	<data name="dialog_update_installer" xml:space="preserve">
+    <value>Installer</value>
+  </data>
+	<data name="dialog_message_update_critical_title" xml:space="preserve">
+    <value>Critical Application Update</value>
+  </data>
+	<data name="dialog_message_update_critical_text" xml:space="preserve">
+    <value>There is a new Simple DNSCrypt version ({0}) available. The update is marked as critical, so you really should do the update now! Do you want to update now?</value>
+  </data>
+	<data name="default_settings_save_port" xml:space="preserve">
+    <value>Save</value>
+  </data>
+	<data name="default_settings_info_port" xml:space="preserve">
+    <value>DNSCrypt will listen on this port (default: 53)</value>
+  </data>
+	<data name="block_plugin_title" xml:space="preserve">
+    <value>Block addresses and domains</value>
+  </data>
+	<data name="block_plugin_text" xml:space="preserve">
+    <value>This plugin returns a REFUSED response if the query name is in a list of blacklisted names, or if at least one of the returned IP addresses happens to be in a list of blacklisted IPs.</value>
+  </data>
+	<data name="block_plugin_sub_domains_header" xml:space="preserve">
+    <value>Block domains</value>
+  </data>
+	<data name="block_plugin_sub_addresses_header" xml:space="preserve">
+    <value>Block addresses</value>
+  </data>
+	<data name="blacklist_entries" xml:space="preserve">
+    <value>entries</value>
+  </data>
+	<data name="blacklist_building_list" xml:space="preserve">
+    <value>building list . . .</value>
+  </data>
+	<data name="blacklist_button_build_address" xml:space="preserve">
+    <value>Build address blacklist</value>
+  </data>
+	<data name="blacklist_button_build_domain" xml:space="preserve">
+    <value>Build domain blacklist</value>
+  </data>
+	<data name="blacklist_button_remove_address" xml:space="preserve">
+    <value>Remove address entry</value>
+  </data>
+	<data name="blacklist_button_remove_domain" xml:space="preserve">
+    <value>Remove domain entry</value>
+  </data>
+	<data name="blacklist_button_add_remote_domain" xml:space="preserve">
+    <value>Add new remote domain rule (URL)</value>
+  </data>
+	<data name="blacklist_button_add_local_domain" xml:space="preserve">
+    <value>Add new local domain rule</value>
+  </data>
+	<data name="blacklist_button_add_address" xml:space="preserve">
+    <value>Add new address rule</value>
+  </data>
+	<data name="blacklist_button_select_domain_blacklist" xml:space="preserve">
+    <value>Select domain blacklist file</value>
+  </data>
+	<data name="blacklist_button_select_address_blacklist" xml:space="preserve">
+    <value>Select address blacklist file</value>
+  </data>
+	<data name="block_plugin_sub_addresses_text" xml:space="preserve">
+    <value>Block addresses with custom rules (eg: 10.1.4.99, 172.16.*)</value>
+  </data>
+	<data name="block_plugin_sub_domains_text" xml:space="preserve">
+    <value>Block domains with local rules or remote files</value>
+  </data>
+	<data name="blacklist_modal_new_address_rule_text" xml:space="preserve">
+    <value>Example: 172.16.144.8, 172.16.*, [fdb2:cd9e:c9f8:861a:c1ab:94e3:ef95:1ec0]</value>
+  </data>
+	<data name="blacklist_modal_new_address_rule_header" xml:space="preserve">
+    <value>New address rule</value>
+  </data>
+	<data name="blacklist_modal_empty_list_text" xml:space="preserve">
+    <value>A blacklist file can not be empty</value>
+  </data>
+	<data name="blacklist_modal_empty_list_header" xml:space="preserve">
+    <value>Failed to set blacklist</value>
+  </data>
+	<data name="blacklist_modal_new_local_domain_rule_header" xml:space="preserve">
+    <value>New local domain rule</value>
+  </data>
+	<data name="blacklist_modal_new_remote_domain_rule_header" xml:space="preserve">
+    <value>New remote domain rule</value>
+  </data>
+	<data name="blacklist_modal_new_local_domain_rule_text" xml:space="preserve">
+    <value>Example: *.example.com, ads.*, *sex*</value>
+  </data>
+	<data name="blacklist_modal_new_remote_domain_rule_text" xml:space="preserve">
+    <value>Example: https://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt</value>
+  </data>
+	<data name="cache_plugin_text" xml:space="preserve">
+    <value>A simple, zero-configuration DNS response cache.</value>
+  </data>
+	<data name="cache_plugin_ttl" xml:space="preserve">
+    <value>TTL (cache time)</value>
+  </data>
+	<data name="cache_plugin_seconds" xml:space="preserve">
+    <value>sekunder</value>
+  </data>
+	<data name="cache_plugin_title" xml:space="preserve">
+    <value>DNS response cache</value>
+  </data>
+	<data name="tab_block" xml:space="preserve">
+    <value>Block and Blacklist</value>
+  </data>
+	<data name="default_settings_analyse_button_tooltip" xml:space="preserve">
+    <value>Get some extra info about the resolvers (only IPv4)</value>
+  </data>
+	<data name="tab_log" xml:space="preserve">
+    <value>Sanntidslogg</value>
+  </data>
+	<data name="log_entries" xml:space="preserve">
+    <value>Elementer i sanntidsloggen:</value>
+  </data>
+	<data name="log_source" xml:space="preserve">
+    <value>Kilde:</value>
+  </data>
+	<data name="log_button_add_to_blacklist" xml:space="preserve">
+    <value>Add selected to local domain blacklist</value>
+  </data>
+	<data name="log_modal_no_log_file_text" xml:space="preserve">
+    <value>There is no logfile to show. Please enable the logging plugin first.</value>
+  </data>
+	<data name="log_modal_no_log_file_header" xml:space="preserve">
+    <value>Missing Logfile</value>
+  </data>
+	<data name="log_modal_add_rule_header" xml:space="preserve">
+    <value>New Blacklist Entry</value>
+  </data>
+	<data name="log_modal_add_rule_text" xml:space="preserve">
+    <value>You can modify the entry before you add them to the blacklist: </value>
+  </data>
+</root>
