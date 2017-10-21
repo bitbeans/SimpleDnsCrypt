@@ -1,4 +1,4 @@
-##Contributors
+# Contributors #
 
 Those listed below have contributed to `SimpleDnsCrypt`, and are the copyright holders. See the `LICENSE.md` file for details. Contributors are listed in chronological order:
 
@@ -20,3 +20,4 @@ Those listed below have contributed to `SimpleDnsCrypt`, and are the copyright h
  * @rddim
  * @porsche613
  * @socrat3z
+ * @niikoo
