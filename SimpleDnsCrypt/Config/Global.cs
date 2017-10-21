@@ -220,7 +220,7 @@
 		/// <summary>
 		///     Languages, the config file can handle.
 		/// </summary>
-		public static readonly string[] SupportedLanguages = {"bg", "de", "da", "en", "es", "fr", "fa", "id", "it", "nl", "ru", "sv", "tr", "zh", "zh-hant"};
+		public static readonly string[] SupportedLanguages = {"bg", "de", "da", "en", "es", "fr", "fa", "id", "it", "nl", "no", "ru", "sv", "tr", "zh", "zh-hant"};
 
 		/// <summary>
 		/// 

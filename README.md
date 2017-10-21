@@ -89,6 +89,9 @@ IPv4 and IPv6 addresses are supported. For names, leading and trailing wildcards
 
 **Note:** If the file(s) is/are empty, the service may **not** start!
 
+**libdcplugin_ldns_forwarding**
+
+WiP
 
 # ![Alt text](img/icons/32x32.png "Compatibility") Compatibility
 
@@ -109,7 +112,7 @@ Feel free to report your success or failure: [here](https://github.com/bitbeans/
 
 # ![Alt text](img/icons/32x32.png "Translations") Translations
 
-SimpleDNSCrypt currently speaks the following languages (15):
+SimpleDNSCrypt currently speaks the following languages (16):
 
 - Bulgarian (@rddim)
 - Danish (@simonclausen)
@@ -119,6 +122,7 @@ SimpleDNSCrypt currently speaks the following languages (15):
 - German
 - Italian (@ShellAddicted)
 - Indonesian (@christantoan)
+- Norwegian (@niikoo)
 - Persian/Farsi (@robin98)
 - Russian (Vlad)
 - Simplified Chinese (@jerryhou85)
