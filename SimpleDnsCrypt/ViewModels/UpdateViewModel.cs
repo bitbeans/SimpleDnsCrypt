@@ -26,11 +26,12 @@ namespace SimpleDnsCrypt.ViewModels
         private bool _isUpdatingSignature;
 
         private string _signature;
+		private string _windowTitle;
 
-        /// <summary>
-        ///     Xaml constructor.
-        /// </summary>
-        public UpdateViewModel()
+		/// <summary>
+		///     Xaml constructor.
+		/// </summary>
+		public UpdateViewModel()
         {
         }
 
@@ -45,11 +46,20 @@ namespace SimpleDnsCrypt.ViewModels
             StartUpdateAsync(update);
         }
 
+		public string WindowTitle
+		{
+			get { return _windowTitle; }
+			set
+			{
+				_windowTitle = value;
+				NotifyOfPropertyChange(() => WindowTitle);
+			}
+		}
 
-        /// <summary>
-        ///     The path of the downloaded and validated installer file.
-        /// </summary>
-        public string InstallerPath
+		/// <summary>
+		///     The path of the downloaded and validated installer file.
+		/// </summary>
+		public string InstallerPath
         {
             get { return _installerPath; }
             set

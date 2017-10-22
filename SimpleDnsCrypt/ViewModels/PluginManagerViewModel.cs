@@ -23,6 +23,7 @@ namespace SimpleDnsCrypt.ViewModels
 		private bool _cachePlugin;
 		private int _cachePluginTtl;
 		private List<string> _plugins;
+		private string _windowTitle;
 
 		/// <summary>
 		///     PluginManagerViewModel constructor.
@@ -32,6 +33,16 @@ namespace SimpleDnsCrypt.ViewModels
 		{
 			_plugins = new List<string>();
 			_cachePluginTtl = 60;
+		}
+
+		public string WindowTitle
+		{
+			get { return _windowTitle; }
+			set
+			{
+				_windowTitle = value;
+				NotifyOfPropertyChange(() => WindowTitle);
+			}
 		}
 
 		/// <summary>

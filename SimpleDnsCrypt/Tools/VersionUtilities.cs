@@ -41,7 +41,7 @@ namespace SimpleDnsCrypt.Tools
 				}
 				else
 				{
-					return ("(x32)");
+					return ("(x86)");
 				}
 			}
 		}

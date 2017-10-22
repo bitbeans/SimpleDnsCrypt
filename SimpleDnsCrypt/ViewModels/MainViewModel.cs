@@ -31,6 +31,17 @@ namespace SimpleDnsCrypt.ViewModels
 		private readonly BindableCollection<LocalNetworkInterface> _localNetworkInterfaces =
 			new BindableCollection<LocalNetworkInterface>();
 
+		public string WindowTitle
+		{
+			get { return _windowTitle; }
+			set
+			{
+				_windowTitle = value;
+				NotifyOfPropertyChange(() => WindowTitle);
+			}
+		}
+
+		private string _windowTitle;
 		private readonly UserData _userData;
 		private readonly IWindowManager _windowManager;
 		private bool _actAsGlobalGateway;
@@ -109,11 +120,11 @@ namespace SimpleDnsCrypt.ViewModels
 				}
 				if (_userData.UseIpv6)
 				{
-					DisplayName = string.Format("{0} {1} {2}", Global.ApplicationName, VersionUtilities.PublishVersion, VersionUtilities.PublishBuild);
+					WindowTitle = string.Format("{0} {1} {2}", Global.ApplicationName, VersionUtilities.PublishVersion, VersionUtilities.PublishBuild);
 				}
 				else
 				{
-					DisplayName = string.Format("{0} {1} {2} ({3})", Global.ApplicationName, VersionUtilities.PublishVersion, VersionUtilities.PublishBuild,
+					WindowTitle = string.Format("{0} {1} {2} ({3})", Global.ApplicationName, VersionUtilities.PublishVersion, VersionUtilities.PublishBuild,
 						LocalizationEx.GetUiString("global_ipv6_disabled", Thread.CurrentThread.CurrentCulture));
 				}
 
@@ -318,11 +329,11 @@ namespace SimpleDnsCrypt.ViewModels
 				_userData.SaveConfigurationFile();
 				if (_userData.UseIpv6)
 				{
-					DisplayName = string.Format("{0} {1} {2}", Global.ApplicationName, VersionUtilities.PublishVersion, VersionUtilities.PublishBuild);
+					WindowTitle = string.Format("{0} {1} {2}", Global.ApplicationName, VersionUtilities.PublishVersion, VersionUtilities.PublishBuild);
 				}
 				else
 				{
-					DisplayName = string.Format("{0} {1} {2} ({3})", Global.ApplicationName, VersionUtilities.PublishVersion, VersionUtilities.PublishBuild,
+					WindowTitle = string.Format("{0} {1} {2} ({3})", Global.ApplicationName, VersionUtilities.PublishVersion, VersionUtilities.PublishBuild,
 						LocalizationEx.GetUiString("global_ipv6_disabled", Thread.CurrentThread.CurrentCulture));
 				}
 				if (_actAsGlobalGateway)
@@ -597,7 +608,7 @@ namespace SimpleDnsCrypt.ViewModels
 					if (userResult != MessageBoxResult.Yes) return;
 					var updateViewModel = new UpdateViewModel(update.Update)
 					{
-						DisplayName =
+						WindowTitle =
 							LocalizationEx.GetUiString("window_update_title", Thread.CurrentThread.CurrentCulture)
 					};
 					dynamic settings = new ExpandoObject();
@@ -1126,7 +1137,7 @@ namespace SimpleDnsCrypt.ViewModels
 		{
 			var win = new PluginManagerViewModel
 			{
-				DisplayName = LocalizationEx.GetUiString("window_plugin_title", Thread.CurrentThread.CurrentCulture)
+				WindowTitle = LocalizationEx.GetUiString("window_plugin_title", Thread.CurrentThread.CurrentCulture)
 			};
 			win.SetPlugins(Plugins);
 			dynamic settings = new ExpandoObject();
