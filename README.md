@@ -13,7 +13,7 @@ Missing features:
 
 - IPv6 support - see [#1](https://github.com/bitbeans/SimpleDnsCrypt/issues/1)
 
-dnscrypt-proxy version: **1.9.4**
+dnscrypt-proxy version: **1.9.5**
 
 # ![Alt text](img/icons/32x32.png "Installation") Installation
 
@@ -91,7 +91,9 @@ IPv4 and IPv6 addresses are supported. For names, leading and trailing wildcards
 
 **libdcplugin_ldns_forwarding**
 
-WiP
+This plugin redirects queries for specific zones to a set of non-DNSCrypt resolvers. This can be useful for private zones that can only be resolved by a local DNS server.
+
+**Requests are synchronous, so this plugin should not be enabled with untrusted clients.**
 
 # ![Alt text](img/icons/32x32.png "Compatibility") Compatibility
 
@@ -107,8 +109,8 @@ Feel free to report your success or failure: [here](https://github.com/bitbeans/
 
 # ![Alt text](img/icons/32x32.png "Requirements") Requirements
 
-- This software targets .NET 4.6.
-- It also requires Visual C++ Redistributable for Visual Studio 2015 x86.
+- This software targets .NET 4.6.2.
+- It also requires Microsoft Visual C++ Redistributable für Visual Studio 2017: [x64](https://go.microsoft.com/fwlink/?LinkId=746572) and [x86](https://go.microsoft.com/fwlink/?LinkId=746571)
 
 # ![Alt text](img/icons/32x32.png "Translations") Translations
 
