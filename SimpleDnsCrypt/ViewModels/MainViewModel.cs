@@ -428,6 +428,17 @@ namespace SimpleDnsCrypt.ViewModels
 		}
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public void SavePrimaryResolver()
+		{
+			_userData.PrimaryResolver = _primaryResolver.Name;
+			_userData.SaveConfigurationFile();
+			ReloadResolver(DnsCryptProxyType.Primary);
+			NotifyOfPropertyChange(() => PrimaryResolver);
+		}
+
+		/// <summary>
 		///     The selected primary resolver.
 		/// </summary>
 		public DnsCryptProxyEntry PrimaryResolver
@@ -436,10 +447,14 @@ namespace SimpleDnsCrypt.ViewModels
 			set
 			{
 				if (value.Equals(_primaryResolver)) return;
+				if (value.LocalPort != _primaryResolver.LocalPort)
+				{
+					value.LocalPort = _primaryResolver.LocalPort;
+				}
 				_primaryResolver = value;
-				_userData.PrimaryResolver = _primaryResolver.Name;
-				_userData.SaveConfigurationFile();
-				ReloadResolver(DnsCryptProxyType.Primary);
+				//_userData.PrimaryResolver = _primaryResolver.Name;
+				//_userData.SaveConfigurationFile();
+				//ReloadResolver(DnsCryptProxyType.Primary);
 				NotifyOfPropertyChange(() => PrimaryResolver);
 			}
 		}

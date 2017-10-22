@@ -428,4 +428,7 @@ The logs are stored in a local file.</value>
   <data name="default_check_for_updates" xml:space="preserve">
     <value>Check for updates</value>
   </data>
+  <data name="default_set_primary_resolver" xml:space="preserve">
+    <value>Save</value>
+  </data>
 </root>

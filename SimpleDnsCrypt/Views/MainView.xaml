@@ -340,6 +340,14 @@
                                                             Stretch="Uniform" />
                                                     </Rectangle.OpacityMask>
                                                 </Rectangle>
+
+                                                <Button x:Name="SavePrimaryResolver" Grid.Column="1" Grid.Row="5"
+                                                    IsEnabled="{Binding IsAnalysing, Converter={StaticResource ReverseBoolToEnabledConverter}}"
+                                                    Cursor="Hand" Width="80"
+                                                    Content="{lex:Loc Key=default_set_primary_resolver}"
+                                                    Margin="0"
+                                                    Style="{StaticResource AccentedSquareButtonStyle}"
+                                                    HorizontalAlignment="Right"/>
                                             </Grid>
                                         </StackPanel>
                                     </Border>
