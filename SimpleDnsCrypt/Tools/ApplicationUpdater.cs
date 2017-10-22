@@ -20,7 +20,8 @@ namespace SimpleDnsCrypt.Tools
                 var currentVersion = Assembly.GetExecutingAssembly().GetName().Version;
 
                 remoteUpdate.CanUpdate = false;
-                var remoteUpdateData = await DownloadRemoteUpdateFileAsync().ConfigureAwait(false);
+				var remoteUpdateFile = (Environment.Is64BitProcess) ? Global.ApplicationUpdateUri64 : Global.ApplicationUpdateUri;
+				var remoteUpdateData = await DownloadRemoteUpdateFileAsync(remoteUpdateFile).ConfigureAwait(false);
 
                 if (remoteUpdateData != null)
                 {
@@ -62,11 +63,11 @@ namespace SimpleDnsCrypt.Tools
             return remoteUpdate;
         }
 
-        private static async Task<byte[]> DownloadRemoteUpdateFileAsync()
+        private static async Task<byte[]> DownloadRemoteUpdateFileAsync(string remoteUpdateFile)
         {
             using (var client = new HttpClient())
             {
-                var getDataTask = client.GetByteArrayAsync(Global.ApplicationUpdateUri);
+                var getDataTask = client.GetByteArrayAsync(remoteUpdateFile);
                 return await getDataTask.ConfigureAwait(false);
             }
         }

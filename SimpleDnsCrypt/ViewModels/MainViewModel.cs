@@ -109,11 +109,11 @@ namespace SimpleDnsCrypt.ViewModels
 				}
 				if (_userData.UseIpv6)
 				{
-					DisplayName = string.Format("{0} {1}", Global.ApplicationName, VersionUtilities.PublishVersion);
+					DisplayName = string.Format("{0} {1} {2}", Global.ApplicationName, VersionUtilities.PublishVersion, VersionUtilities.PublishBuild);
 				}
 				else
 				{
-					DisplayName = string.Format("{0} {1} ({2})", Global.ApplicationName, VersionUtilities.PublishVersion,
+					DisplayName = string.Format("{0} {1} {2} ({3})", Global.ApplicationName, VersionUtilities.PublishVersion, VersionUtilities.PublishBuild,
 						LocalizationEx.GetUiString("global_ipv6_disabled", Thread.CurrentThread.CurrentCulture));
 				}
 
@@ -318,11 +318,11 @@ namespace SimpleDnsCrypt.ViewModels
 				_userData.SaveConfigurationFile();
 				if (_userData.UseIpv6)
 				{
-					DisplayName = string.Format("{0} {1}", Global.ApplicationName, VersionUtilities.PublishVersion);
+					DisplayName = string.Format("{0} {1} {2}", Global.ApplicationName, VersionUtilities.PublishVersion, VersionUtilities.PublishBuild);
 				}
 				else
 				{
-					DisplayName = string.Format("{0} {1} ({2})", Global.ApplicationName, VersionUtilities.PublishVersion,
+					DisplayName = string.Format("{0} {1} {2} ({3})", Global.ApplicationName, VersionUtilities.PublishVersion, VersionUtilities.PublishBuild,
 						LocalizationEx.GetUiString("global_ipv6_disabled", Thread.CurrentThread.CurrentCulture));
 				}
 				if (_actAsGlobalGateway)

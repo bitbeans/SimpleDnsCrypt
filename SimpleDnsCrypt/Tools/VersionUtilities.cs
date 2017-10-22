@@ -30,5 +30,20 @@ namespace SimpleDnsCrypt.Tools
                 }
             }
         }
-    }
+
+		public static string PublishBuild
+		{
+			get
+			{
+				if (Environment.Is64BitProcess)
+				{
+					return ("(x64)");
+				}
+				else
+				{
+					return ("(x32)");
+				}
+			}
+		}
+	}
 }
