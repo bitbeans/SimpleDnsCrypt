@@ -9,9 +9,7 @@ The dnscrypt-proxy software is written and maintained by Frank Denis (@jedisct1)
 
 # ![Alt text](img/icons/32x32.png "Status") Status
 
-Missing features:
-
-- IPv6 support - see [#1](https://github.com/bitbeans/SimpleDnsCrypt/issues/1)
+IPv6 support can be enabled: https://github.com/bitbeans/SimpleDnsCrypt/issues/1#issuecomment-329471198
 
 # ![Alt text](img/icons/32x32.png "Installation") Installation
 
