@@ -13,7 +13,7 @@ IPv6 support can be enabled: https://github.com/bitbeans/SimpleDnsCrypt/issues/1
 
 # ![Alt text](img/icons/32x32.png "Installation") Installation
 
-To install Simple DNSCrypt use the [latest MSI package](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.4.2/SimpleDNSCrypt.msi).
+To install Simple DNSCrypt use the latest MSI packages: [x86](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.4.3/SimpleDNSCrypt.msi) or [x64](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.4.3/SimpleDNSCrypt64.msi).
 You don`t need to download the dnscrypt-resolvers.csv or the dnscrypt-proxy package at all.
 Both are included in the msi package, the dnscrypt-resolvers.csv can be updated from inside the software (and will be verified with minisign).
 
@@ -21,8 +21,8 @@ Both are included in the msi package, the dnscrypt-resolvers.csv can be updated 
 The MSI package and the SimpleDnsCrypt.exe are signed via a *COMODO RSA Code Signing CA*. 
 The files are signed under the name: *EAM Experience Area Münsingen GmbH*
 
-You also can verify the MSI package with [minisign](https://jedisct1.github.io/minisign/).
-The minisign [signature](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.4.2/SimpleDNSCrypt.msi.minisig) can be verified with the following command:
+You also can verify the MSI packages with [minisign](https://jedisct1.github.io/minisign/).
+The minisign signatures [x86](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.4.3/SimpleDNSCrypt.msi.minisig) and [x64](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.4.3/SimpleDNSCrypt64.msi.minisig) can be verified with the following command:
 
 	minisign -Vm SimpleDNSCrypt.msi -P RWTSM+4BNNvkZPNkHgE88ETlhWa+0HDzU5CN8TvbyvmhVUcr6aQXfssV
 
