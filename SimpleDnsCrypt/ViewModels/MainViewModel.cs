@@ -931,7 +931,7 @@ namespace SimpleDnsCrypt.ViewModels
 					return false;
 				}
 				// exclude this check on dev folders
-				if (proxyFilePath.Contains("bin\\Debug") || proxyFilePath.Contains("bin\\Release")) continue;
+				if (proxyFilePath.Contains("bin\\Debug") || proxyFilePath.Contains("bin\\Release") || proxyFilePath.Contains("bin\\x64")) continue;
 				// dnscrypt-resolvers.* files are signed with minisign
 				if (!proxyFile.StartsWith("dnscrypt-resolvers."))
 				{
