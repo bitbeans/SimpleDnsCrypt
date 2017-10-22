@@ -427,4 +427,19 @@
   <data name="default_check_for_updates" xml:space="preserve">
     <value>Auf Aktualisierungen prüfen</value>
   </data>
+  <data name="default_set_primary_resolver" xml:space="preserve">
+    <value>Speichern</value>
+  </data>
+  <data name="forwarding_plugin_resolvers" xml:space="preserve">
+    <value>Resolver</value>
+  </data>
+  <data name="forwarding_plugin_domains" xml:space="preserve">
+    <value>Domains</value>
+  </data>
+  <data name="forwarding_plugin_title" xml:space="preserve">
+    <value>Weiterleitung</value>
+  </data>
+  <data name="forwarding_plugin_text" xml:space="preserve">
+    <value>Dieses Plugin leitet Anfragen für einen bestimmten Satz von Domänennamen an einen oder mehrere Nicht-DNSCrypt-Resolver weiter. Damit können Abfragen für private Domains an den Router oder an einen internen DNS-Server gesendet werden.</value>
+  </data>
 </root>
