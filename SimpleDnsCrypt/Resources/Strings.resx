@@ -457,4 +457,7 @@ The logs are stored in a local file.</value>
   <data name="forwarding_plugin_resolvers" xml:space="preserve">
     <value>Resolvers</value>
   </data>
+  <data name="default_check_for_updates" xml:space="preserve">
+    <value>Check for updates</value>
+  </data>
 </root>

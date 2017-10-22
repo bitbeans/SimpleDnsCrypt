@@ -425,4 +425,7 @@ The logs are stored in a local file.</value>
   <data name="log_modal_add_rule_text" xml:space="preserve">
     <value>You can modify the entry before you add them to the blacklist: </value>
   </data>
+  <data name="default_check_for_updates" xml:space="preserve">
+    <value>Check for updates</value>
+  </data>
 </root>

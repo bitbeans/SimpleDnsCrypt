@@ -31,16 +31,6 @@ namespace SimpleDnsCrypt.ViewModels
 		private readonly BindableCollection<LocalNetworkInterface> _localNetworkInterfaces =
 			new BindableCollection<LocalNetworkInterface>();
 
-		public string WindowTitle
-		{
-			get { return _windowTitle; }
-			set
-			{
-				_windowTitle = value;
-				NotifyOfPropertyChange(() => WindowTitle);
-			}
-		}
-
 		private string _windowTitle;
 		private readonly UserData _userData;
 		private readonly IWindowManager _windowManager;
@@ -64,6 +54,7 @@ namespace SimpleDnsCrypt.ViewModels
 		private bool _showHiddenCards;
 		private bool _updateResolverListOnStart;
 		private bool _useTcpOnly;
+		private bool _isCheckingUpdates;
 
 		/// <summary>
 		///     MainViewModel construcor for XAML.
@@ -370,6 +361,32 @@ namespace SimpleDnsCrypt.ViewModels
 		}
 
 		/// <summary>
+		///		The title of the window.
+		/// </summary>
+		public string WindowTitle
+		{
+			get { return _windowTitle; }
+			set
+			{
+				_windowTitle = value;
+				NotifyOfPropertyChange(() => WindowTitle);
+			}
+		}
+
+		/// <summary>
+		///		
+		/// </summary>
+		public bool IsCheckingUpdates
+		{
+			get { return _isCheckingUpdates; }
+			set
+			{
+				_isCheckingUpdates = value;
+				NotifyOfPropertyChange(() => IsCheckingUpdates);
+			}
+		}
+
+		/// <summary>
 		///     Overlay management for MetroMessageBoxViewModel.
 		/// </summary>
 		public bool IsOverlayVisible
@@ -582,10 +599,11 @@ namespace SimpleDnsCrypt.ViewModels
 		/// <summary>
 		///     Method to check if there is a new application version available.
 		/// </summary>
-		private async void UpdateAsync()
+		public async void UpdateAsync()
 		{
 			try
 			{
+				IsCheckingUpdates = true;
 				var update = await ApplicationUpdater.CheckForRemoteUpdateAsync().ConfigureAwait(true);
 				if (update.CanUpdate)
 				{
@@ -622,6 +640,7 @@ namespace SimpleDnsCrypt.ViewModels
 					// kill running application
 					Process.GetCurrentProcess().Kill();
 				}
+				IsCheckingUpdates = false;
 			}
 			catch (Exception)
 			{

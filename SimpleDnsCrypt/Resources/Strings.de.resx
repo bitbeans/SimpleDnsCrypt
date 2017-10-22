@@ -424,4 +424,7 @@
   <data name="log_modal_add_rule_text" xml:space="preserve">
     <value>Sie können den Eintrag editieren, bevor Sie ihn der Blackliste hinzufügen.</value>
   </data>
+  <data name="default_check_for_updates" xml:space="preserve">
+    <value>Auf Aktualisierungen prüfen</value>
+  </data>
 </root>
