@@ -19,6 +19,7 @@ using SimpleDnsCrypt.Config;
 using SimpleDnsCrypt.Models;
 using SimpleDnsCrypt.Tools;
 using WPFLocalizeExtension.Engine;
+using RedistributableChecker;
 
 namespace SimpleDnsCrypt.ViewModels
 {
@@ -98,6 +99,8 @@ namespace SimpleDnsCrypt.ViewModels
 						MessageBoxButton.OK, BoxType.Error);
 					Environment.Exit(1);
 				}
+
+				CheckRedistributablePackageVersion();
 
 				// do a simple check, if all needed files are available
 				if (!ValidateDnsCryptProxyFolder())
@@ -609,6 +612,33 @@ namespace SimpleDnsCrypt.ViewModels
 		{
 			_overlayDependencies--;
 			NotifyOfPropertyChange(() => IsOverlayVisible);
+		}
+
+		/// <summary>
+		/// Check if Microsoft Visual C++ Redistributable package is installed.
+		/// </summary>
+		public void CheckRedistributablePackageVersion()
+		{
+			if (Environment.Is64BitProcess)
+			{
+				if (!RedistributablePackage.IsInstalled(RedistributablePackageVersion.VC2017x64))
+				{
+					_windowManager.ShowMetroMessageBox(
+						"Please install the Microsoft Visual C++ Redistributable Visual Studio 2017 (x64) package first: https://go.microsoft.com/fwlink/?LinkId=746572",
+						"Missing Microsoft Visual C++ Redistributable for Visual Studio 2017", MessageBoxButton.OK, BoxType.Warning);
+					Environment.Exit(1);
+				}
+			}
+			else
+			{
+				if (!RedistributablePackage.IsInstalled(RedistributablePackageVersion.VC2017x86))
+				{
+					_windowManager.ShowMetroMessageBox(
+						"Please install the Microsoft Visual C++ Redistributable Visual Studio 2017 (x86) package first: https://go.microsoft.com/fwlink/?LinkId=746571",
+						"Missing Microsoft Visual C++ Redistributable for Visual Studio 2017", MessageBoxButton.OK, BoxType.Warning);
+					Environment.Exit(1);
+				}
+			}
 		}
 
 		/// <summary>
