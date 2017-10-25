@@ -1370,6 +1370,11 @@
                                                   ItemsSource="{Binding LogLines, Mode=OneWay}" Margin="10"
                                                   VerticalAlignment="Top" Height="450" Background="#198AB328"
                                                   VirtualizingStackPanel.VirtualizationMode="Recycling">
+                                            <ListView.ItemContainerStyle>
+                                                <Style TargetType="{x:Type ListViewItem}">
+                                                    <Setter Property="Background" Value="#198AB328" />
+                                                </Style>
+                                            </ListView.ItemContainerStyle>
                                             <ListView.ItemTemplate>
                                                 <DataTemplate>
                                                     <Grid Margin="0,2">
@@ -1378,7 +1383,7 @@
                                                             <ColumnDefinition Width="40" />
                                                             <ColumnDefinition Width="*" />
                                                         </Grid.ColumnDefinitions>
-                                                        <TextBlock Grid.Column="0"
+                                                        <TextBlock Grid.Column="0" 
                                                                    Text="{Binding Date, Converter={StaticResource LocalDateConverter}}"
                                                                    Foreground="#FF575757" />
                                                         <TextBlock Grid.Column="1" Text="{Binding Type}"
