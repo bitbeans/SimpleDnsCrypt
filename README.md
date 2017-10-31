@@ -154,6 +154,8 @@ If you don`t like this software, there are two similar projects:
 - YamlDotNet [:octocat:](https://github.com/aaubry/YamlDotNet) 
 - helper-net [:octocat:](https://github.com/bitbeans/helper-net) 
 - DNS [:octocat:](https://github.com/kapetan/dns) 
+- RedistributableChecker [:octocat:](https://github.com/bitbeans/RedistributableChecker) 
+- MaterialDesignInXamlToolkit [:octocat:](https://github.com/ButchersBoy/MaterialDesignInXamlToolkit) 
 
 # ![Alt text](img/icons/32x32.png "Special Thanks") Special Thanks
 

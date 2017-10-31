@@ -11,15 +11,18 @@ namespace SimpleDnsCrypt.Converter
     /// </summary>
     public class InterfaceTypeToIconConverter : IValueConverter
     {
-        public object EthernetIcon { get; set; }
+	    public object EthernetIconOffline { get; set; }
+		public object EthernetIcon { get; set; }
         public object WifiIcon { get; set; }
+	    public object WifiIconOffline { get; set; }
+		
 
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+		public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             try
             {
                 var localNetworkInterface = (LocalNetworkInterface) value;
-
+	            bool isCable;
                 switch (localNetworkInterface.Type)
                 {
                     case NetworkInterfaceType.Ethernet:
@@ -27,12 +30,21 @@ namespace SimpleDnsCrypt.Converter
                     case NetworkInterfaceType.FastEthernetFx:
                     case NetworkInterfaceType.FastEthernetT:
                     case NetworkInterfaceType.GigabitEthernet:
-                        return EthernetIcon;
+	                    isCable = true;
+	                    break;
                     case NetworkInterfaceType.Wireless80211:
-                        return WifiIcon;
-                    default:
-                        return EthernetIcon;
-                }
+	                    isCable = false;
+	                    break;
+					default:
+						isCable = true;
+						break;
+				}
+
+	            if (isCable)
+	            {
+		            return localNetworkInterface.OperationalStatus != OperationalStatus.Up ? EthernetIconOffline : EthernetIcon;
+	            }
+	            return localNetworkInterface.OperationalStatus != OperationalStatus.Up ? WifiIconOffline : WifiIcon;
             }
             catch (Exception)
             {

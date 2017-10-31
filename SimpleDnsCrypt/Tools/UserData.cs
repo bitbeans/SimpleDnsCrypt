@@ -19,6 +19,9 @@ namespace SimpleDnsCrypt.Tools
 		private int _primaryResolverPort;
 		private int _secondaryResolverPort;
 		private bool _useIpv6;
+		private bool _useIpv4;
+		private bool _onlyUseNoLogs;
+		private bool _onlyUseDnssec;
 		private bool _updateResolverListOnStart;
 
 		public UserData(string configFile)
@@ -29,9 +32,12 @@ namespace SimpleDnsCrypt.Tools
 			_primaryResolver = "auto";
 			_secondaryResolver = "auto";
 			_useIpv6 = false;
+			_useIpv4 = true;
 			_updateResolverListOnStart = Global.UpdateResolverListOnStart;
 			_primaryResolverPort = Global.PrimaryResolverPort;
 			_secondaryResolverPort = Global.SecondaryResolverPort;
+			_onlyUseNoLogs = false;
+			_onlyUseDnssec = false;
 			// load configuration file (if exists) and overwrite the default values
 			LoadConfigurationFile();
 			// update the configuration file
@@ -44,7 +50,7 @@ namespace SimpleDnsCrypt.Tools
 
 		public string Language
 		{
-			get { return _language; }
+			get => _language;
 			set
 			{
 				if (value.Equals(_language)) return;
@@ -54,7 +60,7 @@ namespace SimpleDnsCrypt.Tools
 
 		public string PrimaryResolver
 		{
-			get { return _primaryResolver; }
+			get => _primaryResolver;
 			set
 			{
 				if (value.Equals(_primaryResolver)) return;
@@ -64,7 +70,7 @@ namespace SimpleDnsCrypt.Tools
 
 		public bool UpdateResolverListOnStart
 		{
-			get { return _updateResolverListOnStart; }
+			get => _updateResolverListOnStart;
 			set
 			{
 				if (value.Equals(_updateResolverListOnStart)) return;
@@ -72,9 +78,39 @@ namespace SimpleDnsCrypt.Tools
 			}
 		}
 
+		public bool OnlyUseNoLogs
+		{
+			get => _onlyUseNoLogs;
+			set
+			{
+				if (value.Equals(_onlyUseNoLogs)) return;
+				_onlyUseNoLogs = value;
+			}
+		}
+
+		public bool OnlyUseDnssec
+		{
+			get => _onlyUseDnssec;
+			set
+			{
+				if (value.Equals(_onlyUseDnssec)) return;
+				_onlyUseDnssec = value;
+			}
+		}
+
+		public bool UseIpv4
+		{
+			get => _useIpv4;
+			set
+			{
+				if (value.Equals(_useIpv4)) return;
+				_useIpv4 = value;
+			}
+		}
+
 		public bool UseIpv6
 		{
-			get { return _useIpv6; }
+			get => _useIpv6;
 			set
 			{
 				if (value.Equals(_useIpv6)) return;
@@ -84,7 +120,7 @@ namespace SimpleDnsCrypt.Tools
 
 		public string SecondaryResolver
 		{
-			get { return _secondaryResolver; }
+			get => _secondaryResolver;
 			set
 			{
 				if (value.Equals(_secondaryResolver)) return;
@@ -95,7 +131,7 @@ namespace SimpleDnsCrypt.Tools
 		[YamlIgnore]
 		public int PrimaryResolverPort
 		{
-			get { return _primaryResolverPort; }
+			get => _primaryResolverPort;
 			set
 			{
 				if (value.Equals(_primaryResolverPort)) return;
@@ -106,7 +142,7 @@ namespace SimpleDnsCrypt.Tools
 		[YamlIgnore]
 		public int SecondaryResolverPort
 		{
-			get { return _secondaryResolverPort; }
+			get => _secondaryResolverPort;
 			set
 			{
 				if (value.Equals(_secondaryResolverPort)) return;
@@ -139,6 +175,16 @@ namespace SimpleDnsCrypt.Tools
 					}
 
 					_useIpv6 = storedConfiguration.UseIpv6;
+					_useIpv4 = storedConfiguration.UseIpv4;
+					_onlyUseDnssec = storedConfiguration.OnlyUseDnssec;
+					_onlyUseNoLogs = storedConfiguration.OnlyUseNoLogs;
+
+					if (!_useIpv4 && !_useIpv6)
+					{
+						//fallback to IPv4
+						_useIpv4 = true;
+					}
+
 					_updateResolverListOnStart = storedConfiguration.UpdateResolverListOnStart;
 
 					if (!string.IsNullOrEmpty(storedConfiguration.PrimaryResolver))
@@ -150,8 +196,6 @@ namespace SimpleDnsCrypt.Tools
 					{
 						_secondaryResolver = storedConfiguration.SecondaryResolver.Trim().ToLower();
 					}
-
-					
 				}
 			}
 			catch (Exception)
@@ -172,6 +216,7 @@ namespace SimpleDnsCrypt.Tools
 			}
 			catch (Exception)
 			{
+
 			}
 		}
 	}

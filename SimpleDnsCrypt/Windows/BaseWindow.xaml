@@ -4,16 +4,16 @@
                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                       xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
-                      xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
                       xmlns:converter="clr-namespace:SimpleDnsCrypt.Converter"
                       xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro.Platform"
                       xmlns:lex="http://wpflocalizeextension.codeplex.com"
-                      Title="{Binding WindowTitle}" MinWidth="800" Width="800" MinHeight="360" SizeToContent="WidthAndHeight"
+                      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+                      Title="{Binding WindowTitle}" MinWidth="810" Width="825" MinHeight="360" SizeToContent="WidthAndHeight"
                       GlowBrush="{DynamicResource AccentColorBrush}"
                       Icon="../Images/simplednscrypt.ico" ShowIconOnTitleBar="False"
-                      WindowStartupLocation="CenterScreen" TitleCaps="False" Topmost="False"
+                      WindowStartupLocation="CenterScreen" TitleCharacterCasing="Normal" Topmost="False"
                       ShowMaxRestoreButton="False" ResizeMode="CanResizeWithGrip" ShowInTaskbar="True"
-                      ShowMinButton="True"
+                      ShowMinButton="True" TitleForeground="White"
                       mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="490">
     <controls:MetroWindow.Resources>
         <ResourceDictionary>
@@ -23,17 +23,19 @@
     <controls:MetroWindow.RightWindowCommands>
         <controls:WindowCommands>
             <Button Cursor="Hand" x:Name="UpdateAsync" cal:Message.Attach="UpdateAsync" ToolTip="{lex:Loc Key=default_check_for_updates}" IsEnabled="{Binding IsCheckingUpdates, Converter={StaticResource ReverseBoolToEnabledConverter}}">
-                <iconPacks:PackIconFontAwesome Kind="Refresh"/>
+                <materialDesign:PackIcon Kind="Refresh" />
             </Button>
-            <ComboBox Width="100"
-                      ItemsSource="{Binding Languages}"
-                      SelectedItem="{Binding SelectedLanguage}"
-                      IsEnabled="True"
-                      DisplayMemberPath="Name"
-                      Margin="5,0"
-                      Cursor="Hand"
-                      SelectedIndex="-1" HorizontalAlignment="Left"
-                      VerticalAlignment="Center" Background="#198AB328" Opacity="0.4">
+
+            <ComboBox Style="{StaticResource MetroComboBox}"
+                ItemsSource="{Binding Languages}"
+                SelectedItem="{Binding SelectedLanguage}"
+                IsEnabled="True"
+                DisplayMemberPath="Name"
+                Margin="5,0"
+                Cursor="Hand"
+                SelectedIndex="-1" HorizontalAlignment="Left" 
+                VerticalAlignment="Center"
+                Background="#198AB328" Opacity="0.4">
             </ComboBox>
         </controls:WindowCommands>
     </controls:MetroWindow.RightWindowCommands>

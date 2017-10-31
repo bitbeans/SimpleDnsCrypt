@@ -31,6 +31,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -108,6 +109,15 @@
     </Reference>
     <Reference Include="MahApps.Metro.IconPacks, Version=1.9.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MahApps.Metro.IconPacks.1.9.1\lib\net46\MahApps.Metro.IconPacks.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=1.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.1.3\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.MahApps, Version=0.0.11.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.MahApps.0.0.11\lib\net45\MaterialDesignThemes.MahApps.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=2.3.1.953, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.2.3.1.953\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -249,6 +259,7 @@
     </ApplicationDefinition>
     <Compile Include="AppWindowManager.cs" />
     <Compile Include="Config\Global.cs" />
+    <Compile Include="Converter\AnalysingToIconConverter.cs" />
     <Compile Include="Converter\BoolToStateColorConverter.cs" />
     <Compile Include="Converter\BoolToStateIconConverter.cs" />
     <Compile Include="Converter\BoolToVisibilityConverter.cs" />
@@ -263,6 +274,8 @@
     <Compile Include="Converter\ReverseBoolToEnabledConverter.cs" />
     <Compile Include="Converter\ReverseBoolToVisibilityConverter.cs" />
     <Compile Include="Converter\TextLengthToFontSizeConverter.cs" />
+    <Compile Include="Converter\UnsavedStateToIconConverter.cs" />
+    <Compile Include="Converter\UnsavedStateToTextConverter.cs" />
     <Compile Include="Converter\VisibilityConverter.cs" />
     <Compile Include="Models\BoxType.cs" />
     <Compile Include="Models\DnsCryptProxy.cs" />
@@ -347,6 +360,10 @@
     </Compile>
     <Compile Include="SimpleDnsCryptBootstraper.cs" />
     <Page Include="ResourceDictionaries\ResourceLibrary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\NumericDown.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -583,8 +600,7 @@ foreach (var item in filesToCleanup)
     <CosturaCleanup Config="FodyWeavers.xml" Files="@(ReferenceCopyLocalPaths->'$(OutDir)%(DestinationSubDirectory)%(Filename)%(Extension)')" />
   </Target>
   <PropertyGroup>
-    <PostBuildEvent>if not exist "$(ProjectDir)$(OutDir)\test\" mkdir "$(ProjectDir)$(OutDir)\dnscrypt-proxy\"
-copy "$(ProjectDir)dnscrypt-proxy-$(PlatformName)\*" "$(ProjectDir)$(OutDir)\dnscrypt-proxy\"</PostBuildEvent>
+    <PostBuildEvent>copy "$(ProjectDir)dnscrypt-proxy-$(PlatformName)\*" "$(ProjectDir)$(OutDir)\dnscrypt-proxy\"</PostBuildEvent>
   </PropertyGroup>
   <Import Project="..\packages\Baseclass.Contrib.Nuget.Output.2.3.0\build\net40\Baseclass.Contrib.Nuget.Output.targets" Condition="Exists('..\packages\Baseclass.Contrib.Nuget.Output.2.3.0\build\net40\Baseclass.Contrib.Nuget.Output.targets')" />
   <Import Project="..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets" Condition="Exists('..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets')" />

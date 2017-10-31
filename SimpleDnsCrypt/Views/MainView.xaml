@@ -10,6 +10,8 @@
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              xmlns:tools="clr-namespace:SimpleDnsCrypt.Tools"
              xmlns:lex="http://wpflocalizeextension.codeplex.com"
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              d:DataContext="{d:DesignInstance Type=viewModels:MainViewModel, IsDesignTimeCreatable=True}"
              cal:Bind.AtDesignTime="True"
              lex:LocalizeDictionary.DesignCulture="en"
@@ -19,8 +21,17 @@
     <UserControl.Resources>
         <ResourceDictionary>
             <converter:InterfaceTypeToIconConverter x:Key="InterfaceTypeToIconConverter"
-                                                    EthernetIcon="{StaticResource appbar_network}"
-                                                    WifiIcon="{StaticResource appbar_connection_wifi}" />
+                                                    EthernetIcon="EthernetCable"
+                                                    EthernetIconOffline="EthernetCableOff"
+                                                    WifiIcon="Wifi"
+                                                    WifiIconOffline="WifiOff"/>
+            <converter:AnalysingToIconConverter x:Key="AnalysingToIconConverter"
+                                                    AnalysingIcon="ClockFast"
+                                                    CancelingIcon="Close"/>
+            <converter:UnsavedStateToIconConverter x:Key="UnsavedStateToIconConverter"
+                                                SavedIcon="Check"
+                                                UnsavedIcon="CheckboxBlankCircleOutline"/>
+            <converter:UnsavedStateToTextConverter x:Key="UnsavedStateToTextConverter" />
             <converter:BoolToStateIconConverter x:Key="BoolToStateIconConverter"
                                                 TrueIcon="{StaticResource appbar_check}"
                                                 FalseIcon="{StaticResource appbar_close}" />
@@ -121,7 +132,7 @@
                                                 <DataTemplate>
                                                     <controls:Tile Cursor="Hand" Title="{Binding Name}"
                                                                    TitleFontSize="{Binding Name, Converter={StaticResource TextLengthToFontSizeConverter}}"
-                                                                   ToolTip="{Binding Description}"
+                                                                   ToolTip="{Binding Description}" Foreground="#FFFFFF"
                                                                    Background="{Binding Converter={StaticResource InUseToBackgroundConverter}}"
                                                                    TiltFactor="1" Width="Auto" Height="100"
                                                                    HorizontalAlignment="Left">
@@ -133,26 +144,16 @@
                                                             <Grid.RowDefinitions>
                                                                 <RowDefinition Height="*" />
                                                             </Grid.RowDefinitions>
-                                                            <Rectangle Grid.Column="0" Grid.Row="0" Fill="#FFFFFF"
-                                                                       Width="32" Height="32">
-                                                                <Rectangle.OpacityMask>
-                                                                    <VisualBrush
-                                                                        Visual="{Binding Converter={StaticResource InterfaceTypeToIconConverter}}"
-                                                                        Stretch="Uniform" />
-                                                                </Rectangle.OpacityMask>
-                                                            </Rectangle>
-                                                            <Rectangle Grid.Column="1" Grid.Row="0"
-                                                                       Visibility="{Binding UseDnsCrypt, Converter={StaticResource BoolToVisibilityConverter}}"
-                                                                       Fill="#FFFFFF" Width="12" Height="12"
-                                                                       VerticalAlignment="Top"
-                                                                       HorizontalAlignment="Right"
-                                                                       Margin="0,-20,7,0">
-                                                                <Rectangle.OpacityMask>
-                                                                    <VisualBrush
-                                                                        Visual="{DynamicResource appbar_check}"
-                                                                        Stretch="Uniform" />
-                                                                </Rectangle.OpacityMask>
-                                                            </Rectangle>
+                                                            <materialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                                                                     Grid.Column="0" Grid.Row="0" Kind="{Binding Converter={StaticResource InterfaceTypeToIconConverter}}" 
+                                                                                     Foreground="#FFFFFF" Width="48" Height="48" Margin="15,0,0,0"/>
+                                                            <materialDesign:PackIcon Grid.Column="1" Grid.Row="0" Kind="Check" 
+                                                                                     Width="16" Height="16"
+                                                                                     VerticalAlignment="Top"
+                                                                                     HorizontalAlignment="Right"
+                                                                                     Margin="0,-20,7,0"
+                                                                                     Foreground="#FFFFFF"
+                                                                                     Visibility="{Binding UseDnsCrypt, Converter={StaticResource BoolToVisibilityConverter}}"/>
                                                         </Grid>
                                                         <i:Interaction.Triggers>
                                                             <i:EventTrigger EventName="Click">
@@ -196,47 +197,41 @@
                                                     <ColumnDefinition Width="Auto" />
                                                     <ColumnDefinition Width="*" />
                                                 </Grid.ColumnDefinitions>
-                                                <TextBlock Grid.Column="0" Grid.Row="0" Text="&#xf132;"
-                                                           FontFamily="/Resources/fontawesome-webfont.ttf#FontAwesome"
-                                                           FontSize="18"
-                                                           HorizontalAlignment="Left" VerticalAlignment="Center"
-                                                           Foreground="#FF8ab329">
-                                                    <TextBlock.OpacityMask>
-                                                        <SolidColorBrush Color="Black" Opacity="0.7" />
-                                                    </TextBlock.OpacityMask>
-                                                </TextBlock>
+                                                <materialDesign:PackIcon Grid.Column="0" Grid.Row="0" Foreground="#FF8ab329" 
+                                                                         Kind="ServerSecurity" HorizontalAlignment="Left" Opacity="0.7"
+                                                                         VerticalAlignment="Center" Width="22" Height="22"/>
                                                 <TextBlock Grid.Column="1" Grid.Row="0"
                                                            Text="{Binding PrimaryResolverTitle}"
-                                                           TextWrapping="Wrap" VerticalAlignment="Center"
+                                                           TextWrapping="Wrap" VerticalAlignment="Bottom"
                                                            Foreground="#FF8ab329" FontSize="18"
-                                                           Opacity="0.7" Margin="5,0,0,3" FontWeight="Bold">
+                                                           Opacity="0.7" Margin="5,0,0,7" FontWeight="Bold">
                                                 </TextBlock>
-                                                <controls:NumericUpDown
-                                                    Visibility="{Binding ActAsGlobalGateway, Converter={StaticResource ReverseBoolToVisibilityConverter}}"
-                                                    ToolTip="{lex:Loc Key=default_settings_info_port}" Grid.Column="2"
-                                                    Grid.Row="0" Height="27" Minimum="53" Maximum="65535" Interval="1"
-                                                    Value="{Binding PrimaryResolver.LocalPort}"
-                                                    StringFormat="127.0.0.1:{0}" Margin="5,0,0,0" />
-                                                <Button
-                                                    Visibility="{Binding ActAsGlobalGateway, Converter={StaticResource ReverseBoolToVisibilityConverter}}"
-                                                    Background="#FFFFFFFF" Grid.Column="3" Grid.Row="0" Height="35"
-                                                    Width="35" VerticalAlignment="Top" Cursor="Hand"
-                                                    x:Name="SavePrimaryPort"
-                                                    ToolTip="{lex:Loc Key=default_settings_save_port}"
-                                                    Style="{DynamicResource MetroCircleButtonStyle}">
-                                                    <Rectangle Fill="#FF8ab329" Width="12" Height="12">
-                                                        <Rectangle.OpacityMask>
-                                                            <VisualBrush Visual="{DynamicResource appbar_save}"
-                                                                         Stretch="Fill" />
-                                                        </Rectangle.OpacityMask>
-                                                    </Rectangle>
-                                                </Button>
+
+                                                <StackPanel Grid.Row="0" Grid.Column="2" Width="175" Orientation="Horizontal" Margin="5,0,0,7" Height="30" 
+                                                            VerticalAlignment="Bottom" HorizontalAlignment="Center" Visibility="{Binding ActAsGlobalGateway, Converter={StaticResource ReverseBoolToVisibilityConverter}}">
+                                                    <TextBlock Text="(127.0.0." Foreground="#FF8ab329" FontSize="18" Opacity="0.7" FontWeight="Bold" VerticalAlignment="Bottom"/>
+                                                    <controls:NumericUpDown Style="{StaticResource CustomNumericUpDown}" Value="{Binding PrimaryResolverLastOctet}" Margin="0,4,0,0"
+                                                                            Minimum="1" Maximum="255" Interval="1" StringFormat="{}{0}" HideUpDownButtons="True" VerticalAlignment="Bottom" HorizontalAlignment="Center" />
+                                                    <TextBlock Text=":" Foreground="#FF8ab329" FontSize="18" Opacity="0.7" FontWeight="Bold" Margin="1,0,1,0" VerticalAlignment="Bottom"/>
+                                                    <controls:NumericUpDown Style="{StaticResource CustomNumericUpDown}" Margin="0,4,0,0" Value="{Binding PrimaryResolverLocalPort}"
+                                                                            Minimum="53" Maximum="65535" Interval="1" StringFormat="{}{0})" HideUpDownButtons="True" VerticalAlignment="Bottom"/>
+                                                </StackPanel>
                                             </Grid>
-                                            <TextBlock
+                                            <!--<TextBlock
                                                 Text="{lex:Loc Key=default_settings_primary_text}"
                                                 TextWrapping="Wrap" Foreground="#FF575757" FontSize="14">
-                                            </TextBlock>
-                                            <Grid>
+                                            </TextBlock>-->
+                                            <StackPanel Orientation="Horizontal">
+                                                <CheckBox IsChecked="{Binding FilterDnssec}" Margin="5,0" Content="{lex:Loc Key=default_settings_dnssec}" 
+                                                          IsEnabled="{Binding IsAnalysing, Converter={StaticResource ReverseBoolToEnabledConverter}}" Cursor="Hand"/>
+                                                <CheckBox IsChecked="{Binding FilterNoLogs}" Margin="5,0" Content="{lex:Loc Key=default_settings_no_logs}" 
+                                                          IsEnabled="{Binding IsAnalysing, Converter={StaticResource ReverseBoolToEnabledConverter}}" Cursor="Hand"/>
+                                                <CheckBox IsChecked="{Binding FilterIpv4}" Margin="5,0" Content="IPv4" Cursor="Hand" 
+                                                          IsEnabled="{Binding IsAnalysing, Converter={StaticResource ReverseBoolToEnabledConverter}}"/>
+                                                <CheckBox IsChecked="{Binding FilterIpv6}" Margin="5,0" Content="IPv6" Cursor="Hand"
+                                                          IsEnabled="{Binding IsAnalysing, Converter={StaticResource ReverseBoolToEnabledConverter}}"/>
+                                            </StackPanel>
+                                            <Grid Margin="0,7,0,0">
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="100" />
                                                     <ColumnDefinition Width="*" />
@@ -247,35 +242,30 @@
                                                     <RowDefinition Height="35" />
                                                     <RowDefinition Height="35" />
                                                     <RowDefinition Height="35" />
-                                                    <RowDefinition Height="35" />
+                                                    <RowDefinition Height="Auto" />
                                                 </Grid.RowDefinitions>
                                                 <Label Foreground="#FF575757" Grid.Row="0" Grid.Column="0"
                                                        Content="{lex:Loc Key=default_settings_resolver}"
                                                        VerticalAlignment="Center"
                                                        HorizontalAlignment="Left">
                                                 </Label>
-                                                <ComboBox Grid.Row="0" Grid.Column="1" Width="190"
+                                                <ComboBox Grid.Row="0" Grid.Column="1" Style="{StaticResource MetroComboBox}"
                                                           ToolTip="{Binding PrimaryResolver.FullName}"
                                                           ItemsSource="{Binding Resolvers}"
                                                           SelectedItem="{Binding PrimaryResolver}"
                                                           IsEnabled="{Binding IsAnalysing, Converter={StaticResource ReverseBoolToEnabledConverter}}"
                                                           DisplayMemberPath="DisplayName"
-                                                          Margin="0"
-                                                          SelectedIndex="-1"
-                                                          VerticalAlignment="Center" HorizontalAlignment="Left" />
-                                                <Button Background="#FFFFFFFF" Grid.Column="1" Grid.Row="0" Height="35"
-                                                        Width="35" VerticalAlignment="Top" Cursor="Hand"
-                                                        IsEnabled="{Binding IsAnalysing, Converter={StaticResource ReverseBoolToEnabledConverter}}"
-                                                        x:Name="AnalyseResolvers" HorizontalAlignment="Right"
-                                                        ToolTip="{lex:Loc Key=default_settings_analyse_button_tooltip}"
-                                                        Style="{DynamicResource MetroCircleButtonStyle}"
-                                                        Margin="3,0,0,0">
-                                                    <Rectangle Fill="#FF8ab329" Width="12" Height="12">
-                                                        <Rectangle.OpacityMask>
-                                                            <VisualBrush Visual="{DynamicResource appbar_clock}"
-                                                                         Stretch="Fill" />
-                                                        </Rectangle.OpacityMask>
-                                                    </Rectangle>
+                                                           Background="#FFFFFF" Opacity="0.8" 
+                                                          SelectedIndex="-1" 
+                                                          VerticalAlignment="Center" HorizontalAlignment="Left" Width="200" />
+
+                                                <Button Height="24" Width="24" x:Name="AnalyseResolvers" Grid.Column="1" Grid.Row="0" Margin="0,5,5,0" HorizontalAlignment="Right" VerticalAlignment="Top"
+                                                            materialDesign:ButtonProgressAssist.IsIndeterminate="{Binding IsAnalysing}" Cursor="Hand"
+                                                            materialDesign:ButtonProgressAssist.IsIndicatorVisible="{Binding IsAnalysing}" 
+                                                            materialDesign:ButtonProgressAssist.Value="-1" 
+                                                            ToolTip="{lex:Loc Key=default_settings_analyse_button_tooltip}"
+                                                            Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}">
+                                                    <materialDesign:PackIcon Kind="{Binding IsAnalysing, Converter={StaticResource AnalysingToIconConverter}}" />
                                                 </Button>
                                                 <Label Foreground="#FF575757" Grid.Row="1" Grid.Column="0"
                                                        Content="{lex:Loc Key=default_settings_server_address}"
@@ -284,7 +274,7 @@
                                                 </Label>
                                                 <TextBox Grid.Row="1" Grid.Column="1" IsReadOnly="True"
                                                          Text="{Binding PrimaryResolver.ResolverAddress}"
-                                                         IsEnabled="False"
+                                                         IsEnabled="True"
                                                          VerticalAlignment="Center" Width="230"
                                                          HorizontalAlignment="Left" />
                                                 <Label Foreground="#FF575757" Grid.Row="2" Grid.Column="0"
@@ -296,7 +286,7 @@
                                                          ToolTip="{Binding PrimaryResolver.ProviderName}"
                                                          ToolTipService.ShowOnDisabled="True"
                                                          Text="{Binding PrimaryResolver.ProviderName}"
-                                                         IsEnabled="False"
+                                                         IsEnabled="True"
                                                          VerticalAlignment="Center" Width="230"
                                                          HorizontalAlignment="Left" />
                                                 <Label Foreground="#FF575757" Grid.Row="3" Grid.Column="0"
@@ -341,13 +331,15 @@
                                                     </Rectangle.OpacityMask>
                                                 </Rectangle>
 
-                                                <Button x:Name="SavePrimaryResolver" Grid.Column="1" Grid.Row="5"
-                                                    IsEnabled="{Binding IsAnalysing, Converter={StaticResource ReverseBoolToEnabledConverter}}"
-                                                    Cursor="Hand" Width="80"
-                                                    Content="{lex:Loc Key=default_set_primary_resolver}"
-                                                    Margin="0"
-                                                    Style="{StaticResource AccentedSquareButtonStyle}"
-                                                    HorizontalAlignment="Right"/>
+                                                <materialDesign:Chip Margin="0,0,4,4" Grid.Column="1" Grid.Row="5"
+                                                                     Content="{Binding UnsavedChanges, Converter={StaticResource UnsavedStateToTextConverter}}" 
+                                                                     HorizontalAlignment="Right" IsEnabled="{Binding UnsavedChanges}"
+                                                                     IconBackground="{DynamicResource PrimaryHueDarkBrush}" cal:Message.Attach="SavePrimaryResolver('true')"
+                                                                     IconForeground="{DynamicResource PrimaryHueDarkForegroundBrush}" Cursor="Hand">
+                                                    <materialDesign:Chip.Icon>
+                                                        <materialDesign:PackIcon Kind="{Binding UnsavedChanges, Converter={StaticResource UnsavedStateToIconConverter}}" />
+                                                    </materialDesign:Chip.Icon>
+                                                </materialDesign:Chip>
                                             </Grid>
                                         </StackPanel>
                                     </Border>
@@ -377,15 +369,9 @@
                                                     <ColumnDefinition Width="Auto" />
                                                     <ColumnDefinition Width="*" />
                                                 </Grid.ColumnDefinitions>
-                                                <TextBlock Grid.Column="0" Grid.Row="0" Text="&#xf132;"
-                                                           FontFamily="/Resources/fontawesome-webfont.ttf#FontAwesome"
-                                                           FontSize="18"
-                                                           HorizontalAlignment="Left" VerticalAlignment="Center"
-                                                           Foreground="#FFE27021">
-                                                    <TextBlock.OpacityMask>
-                                                        <SolidColorBrush Color="Black" Opacity="0.7" />
-                                                    </TextBlock.OpacityMask>
-                                                </TextBlock>
+                                                <materialDesign:PackIcon Grid.Column="0" Grid.Row="0" Foreground="#FFE27021" 
+                                                                         Kind="ServerSecurity" HorizontalAlignment="Left" Opacity="0.7"
+                                                                         VerticalAlignment="Center" Width="22" Height="22"/>
                                                 <TextBlock Grid.Column="1" Grid.Row="0"
                                                            Text="{Binding SecondaryResolverTitle}"
                                                            TextWrapping="Wrap" VerticalAlignment="Center"
@@ -397,7 +383,7 @@
                                                 Text="{lex:Loc Key=default_settings_secondary_text}"
                                                 TextWrapping="Wrap" Foreground="#FF575757" FontSize="14">
                                             </TextBlock>
-                                            <Grid>
+                                            <Grid Margin="0,7,0,0">
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="100" />
                                                     <ColumnDefinition Width="*" />
@@ -408,20 +394,20 @@
                                                     <RowDefinition Height="35" />
                                                     <RowDefinition Height="35" />
                                                     <RowDefinition Height="35" />
-                                                    <RowDefinition Height="35" />
+                                                    <RowDefinition Height="Auto" />
                                                 </Grid.RowDefinitions>
                                                 <Label Foreground="#FF575757" Grid.Row="0" Grid.Column="0"
                                                        Content="{lex:Loc Key=default_settings_resolver}"
                                                        VerticalAlignment="Center"
                                                        HorizontalAlignment="Left">
                                                 </Label>
-                                                <ComboBox Grid.Row="0" Grid.Column="1" Width="230"
+                                                <ComboBox Grid.Row="0" Grid.Column="1" Width="230" Style="{StaticResource MetroComboBox}"
                                                           ToolTip="{Binding SecondaryResolver.FullName}"
                                                           ItemsSource="{Binding Resolvers}"
                                                           SelectedItem="{Binding SecondaryResolver}"
                                                           IsEnabled="{Binding IsAnalysing, Converter={StaticResource ReverseBoolToEnabledConverter}}"
                                                           DisplayMemberPath="DisplayName"
-                                                          Margin="0"
+                                                          Margin="0" Background="#FFFFFF" Opacity="0.8"
                                                           SelectedIndex="-1"
                                                           VerticalAlignment="Center" HorizontalAlignment="Left" />
                                                 <Label Foreground="#FF575757" Grid.Row="1" Grid.Column="0"
@@ -431,7 +417,7 @@
                                                 </Label>
                                                 <TextBox Grid.Row="1" Grid.Column="1" IsReadOnly="True"
                                                          Text="{Binding SecondaryResolver.ResolverAddress}"
-                                                         IsEnabled="False" VerticalAlignment="Center" Width="230"
+                                                         IsEnabled="True" VerticalAlignment="Center" Width="230"
                                                          HorizontalAlignment="Left" />
                                                 <Label Foreground="#FF575757" Grid.Row="2" Grid.Column="0"
                                                        Content="{lex:Loc Key=default_settings_name}"
@@ -442,7 +428,7 @@
                                                          ToolTip="{Binding SecondaryResolver.ProviderName}"
                                                          ToolTipService.ShowOnDisabled="True"
                                                          Text="{Binding SecondaryResolver.ProviderName}"
-                                                         IsEnabled="False"
+                                                         IsEnabled="True"
                                                          VerticalAlignment="Center" Width="230"
                                                          HorizontalAlignment="Left" />
                                                 <Label Foreground="#FF575757" Grid.Row="3" Grid.Column="0"
@@ -486,6 +472,14 @@
                                                             Stretch="Uniform" />
                                                     </Rectangle.OpacityMask>
                                                 </Rectangle>
+
+                                                <materialDesign:Chip Margin="0,0,4,4" Content="AutoSave" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Right" IsEnabled="False"
+                                                    IconBackground="{DynamicResource PrimaryHueDarkBrush}"
+                                                    IconForeground="{DynamicResource PrimaryHueDarkForegroundBrush}">
+                                                    <materialDesign:Chip.Icon>
+                                                        <materialDesign:PackIcon Kind="Check" />
+                                                    </materialDesign:Chip.Icon>
+                                                </materialDesign:Chip>
                                             </Grid>
                                         </StackPanel>
                                     </Border>
@@ -651,13 +645,12 @@
                                                                        Foreground="{DynamicResource AccentColorBrush}"
                                                                        Margin="15,16" HorizontalAlignment="Center"
                                                                        VerticalAlignment="Center" Grid.ColumnSpan="2" />
-                                            <Button x:Name="RefreshResolverListAsync" Grid.Column="2"
-                                                    IsEnabled="{Binding IsRefreshingResolverList, Converter={StaticResource ReverseBoolToEnabledConverter}}"
-                                                    Cursor="Hand" Width="180"
+                                            <Button x:Name="RefreshResolverListAsync" Grid.Column="2" 
+                                                    Width="180" Style="{StaticResource MaterialDesignRaisedButton}" 
+                                                    Margin="0,10,0,0" HorizontalAlignment="Right" 
                                                     Content="{lex:Loc Key=advanced_settings_refresh_resolver_button}"
-                                                    Margin="0,10,0,0"
-                                                    Style="{StaticResource AccentedSquareButtonStyle}"
-                                                    HorizontalAlignment="Right"/>
+                                                    Cursor="Hand" IsEnabled="{Binding IsRefreshingResolverList, Converter={StaticResource ReverseBoolToEnabledConverter}}">
+                                            </Button>
                                         </Grid>
                                     </StackPanel>
                                 </Border>
@@ -850,11 +843,12 @@
                                             Text="{lex:Loc Key=advanced_settings_plugins_text}"
                                             TextWrapping="Wrap" Foreground="#FF575757" FontSize="14">
                                         </TextBlock>
-                                        <Button x:Name="OpenPluginManager" Cursor="Hand" Width="180"
+                                        <Button x:Name="OpenPluginManager"  
+                                                Width="180" Style="{StaticResource MaterialDesignRaisedButton}" 
+                                                Margin="0,10,0,0" HorizontalAlignment="Right" 
                                                 Content="{lex:Loc Key=advanced_settings_plugins_button}"
-                                                Margin="0,10,0,0"
-                                                Style="{StaticResource AccentedSquareButtonStyle}"
-                                                HorizontalAlignment="Right" />
+                                                Cursor="Hand">
+                                        </Button>
                                     </StackPanel>
                                 </Border>
                                 <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,14,0,0">
@@ -913,13 +907,12 @@
                                                                        Foreground="{DynamicResource AccentColorBrush}"
                                                                        Margin="0" HorizontalAlignment="Center"
                                                                        VerticalAlignment="Center" />
-                                            <Button Grid.Column="1" x:Name="UninstallServices"
-                                                    IsEnabled="{Binding IsUninstallingServices, Converter={StaticResource ReverseBoolToEnabledConverter}}"
-                                                    Cursor="Hand" Width="180"
+                                            <Button x:Name="UninstallServices" Grid.Column="1" 
+                                                    Width="180" Style="{StaticResource MaterialDesignRaisedButton}" 
+                                                    Margin="0,10,0,0" HorizontalAlignment="Right" 
                                                     Content="{lex:Loc Key=advanced_settings_uninstall_button}"
-                                                    Margin="0,10,0,0"
-                                                    Style="{StaticResource AccentedSquareButtonStyle}"
-                                                    HorizontalAlignment="Right" />
+                                                    Cursor="Hand" IsEnabled="{Binding IsUninstallingServices, Converter={StaticResource ReverseBoolToEnabledConverter}}">
+                                            </Button>
                                         </Grid>
                                     </StackPanel>
                                 </Border>
@@ -1304,13 +1297,9 @@
                                                                            Foreground="{DynamicResource AccentColorBrush}"
                                                                            Margin="0" />
                                             </StackPanel>
-
-
                                         </Grid>
                                     </StackPanel>
                                 </Border>
-
-
                             </StackPanel>
                         </TabItem.Content>
                     </TabItem>
@@ -1545,7 +1534,7 @@
                                         <TextBlock FontSize="20" Foreground="#FF8ab329"
                                                    Text="{lex:Loc Key=about_used_software}" />
                                         <TextBlock FontSize="10" Foreground="#FF575757"
-                                                   tools:NavigationService.Text="Project Site: https://simplednscrypt.org&#x0a;&#x0a;Caliburn.Micro&#x0a;https://github.com/Caliburn-Micro/Caliburn.Micro&#x0a;MahApps.Metro&#x0a;https://github.com/MahApps/MahApps.Metro&#x0a;libsodium-net&#x0a;https://github.com/adamcaudill/libsodium-net&#x0a;minisign-net&#x0a;https://github.com/bitbeans/minisign-net&#x0a;WPF LocalizationExtension&#x0a;https://github.com/SeriousM/WPFLocalizationExtension&#x0a;YamlDotNet&#x0a;https://github.com/aaubry/YamlDotNet&#x0a;helper-net&#x0a;https://github.com/bitbeans/helper-net&#x0a;DNS&#x0a;https://github.com/kapetan/dns"
+                                                   tools:NavigationService.Text="Project Site: https://simplednscrypt.org&#x0a;&#x0a;Caliburn.Micro&#x0a;https://github.com/Caliburn-Micro/Caliburn.Micro&#x0a;MahApps.Metro&#x0a;https://github.com/MahApps/MahApps.Metro&#x0a;libsodium-net&#x0a;https://github.com/adamcaudill/libsodium-net&#x0a;minisign-net&#x0a;https://github.com/bitbeans/minisign-net&#x0a;WPF LocalizationExtension&#x0a;https://github.com/SeriousM/WPFLocalizationExtension&#x0a;YamlDotNet&#x0a;https://github.com/aaubry/YamlDotNet&#x0a;helper-net&#x0a;https://github.com/bitbeans/helper-net&#x0a;DNS&#x0a;https://github.com/kapetan/dns&#x0a;RedistributableChecker&#x0a;https://github.com/bitbeans/RedistributableChecker&#x0a;MaterialDesignInXamlToolkit&#x0a;https://github.com/ButchersBoy/MaterialDesignInXamlToolkit"
                                                    TextWrapping="Wrap" />
                                     </StackPanel>
                                 </Border>
@@ -1554,6 +1543,9 @@
                     </TabItem>
                 </TabControl>
             </Border>
+            <!--<materialDesign:Snackbar
+                x:Name="SimpleDnsCryptMessageQueue"
+                MessageQueue="{Binding MessageQueue}" />-->
         </Grid>
     </ScrollViewer>
-</UserControl>    
+</UserControl>        

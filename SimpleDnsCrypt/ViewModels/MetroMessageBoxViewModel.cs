@@ -38,8 +38,8 @@ namespace SimpleDnsCrypt.ViewModels
         /// </summary>
         public string Title
         {
-            get { return _title; }
-            set
+            get => _title;
+	        set
             {
                 if (value.Equals(_title)) return;
                 _title = value;
@@ -52,8 +52,8 @@ namespace SimpleDnsCrypt.ViewModels
         /// </summary>
         public BoxType MessageBoxType
         {
-            get { return _messageBoxType; }
-            set
+            get => _messageBoxType;
+	        set
             {
                 if (value.Equals(_messageBoxType)) return;
                 _messageBoxType = value;
@@ -64,42 +64,30 @@ namespace SimpleDnsCrypt.ViewModels
         /// <summary>
         ///     Show the No button.
         /// </summary>
-        public bool IsNoButtonVisible
-        {
-            get { return _buttons == MessageBoxButton.YesNo || _buttons == MessageBoxButton.YesNoCancel; }
-        }
+        public bool IsNoButtonVisible => _buttons == MessageBoxButton.YesNo || _buttons == MessageBoxButton.YesNoCancel;
 
-        /// <summary>
+	    /// <summary>
         ///     Show the Yes button.
         /// </summary>
-        public bool IsYesButtonVisible
-        {
-            get { return _buttons == MessageBoxButton.YesNo || _buttons == MessageBoxButton.YesNoCancel; }
-        }
+        public bool IsYesButtonVisible => _buttons == MessageBoxButton.YesNo || _buttons == MessageBoxButton.YesNoCancel;
 
-        /// <summary>
+	    /// <summary>
         ///     Show the Cancel button.
         /// </summary>
-        public bool IsCancelButtonVisible
-        {
-            get { return _buttons == MessageBoxButton.OKCancel || _buttons == MessageBoxButton.YesNoCancel; }
-        }
+        public bool IsCancelButtonVisible => _buttons == MessageBoxButton.OKCancel || _buttons == MessageBoxButton.YesNoCancel;
 
-        /// <summary>
+	    /// <summary>
         ///     Show the Ok button.
         /// </summary>
-        public bool IsOkButtonVisible
-        {
-            get { return _buttons == MessageBoxButton.OK || _buttons == MessageBoxButton.OKCancel; }
-        }
+        public bool IsOkButtonVisible => _buttons == MessageBoxButton.OK || _buttons == MessageBoxButton.OKCancel;
 
-        /// <summary>
+	    /// <summary>
         ///     The MessageBox message.
         /// </summary>
         public string Message
         {
-            get { return _message; }
-            set
+            get => _message;
+		    set
             {
                 if (value.Equals(_message)) return;
                 _message = value;
@@ -112,8 +100,8 @@ namespace SimpleDnsCrypt.ViewModels
         /// </summary>
         public MessageBoxButton Buttons
         {
-            get { return _buttons; }
-            set
+            get => _buttons;
+	        set
             {
                 _buttons = value;
                 NotifyOfPropertyChange(() => IsNoButtonVisible);

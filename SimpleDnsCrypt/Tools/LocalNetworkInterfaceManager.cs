@@ -24,7 +24,7 @@ namespace SimpleDnsCrypt.Tools
 		/// <exception cref="NetworkInformationException">A Windows system function call failed. </exception>
 		/// <exception cref="ArgumentNullException"></exception>
 		internal static List<LocalNetworkInterface> GetLocalNetworkInterfaces(bool showHiddenCards = false,
-			bool showOnlyOperationalUp = true)
+			bool showOnlyOperationalUp = true, string optionalAddress = "")
 		{
 			var interfaces = new List<LocalNetworkInterface>();
 			foreach (var nic in NetworkInterface.GetAllNetworkInterfaces())
@@ -61,7 +61,7 @@ namespace SimpleDnsCrypt.Tools
 					OperationalStatus = nic.OperationalStatus
 				};
 
-				localNetworkInterface.UseDnsCrypt = IsUsingDnsCrypt(localNetworkInterface);
+				localNetworkInterface.UseDnsCrypt = IsUsingDnsCrypt(localNetworkInterface, optionalAddress);
 
 				interfaces.Add(localNetworkInterface);
 			}
@@ -72,14 +72,22 @@ namespace SimpleDnsCrypt.Tools
 		///     Simple check if the network interface contains any of resolver addresses.
 		/// </summary>
 		/// <param name="localNetworkInterface">The interface to check.</param>
+		/// <param name="optionalAddress"></param>
 		/// <returns><c>true</c> if a address was found, otherwise <c>false</c></returns>
-		internal static bool IsUsingDnsCrypt(LocalNetworkInterface localNetworkInterface)
+		internal static bool IsUsingDnsCrypt(LocalNetworkInterface localNetworkInterface, string optionalAddress = "")
 		{
 			var dns = new List<string> {Global.PrimaryResolverAddress, Global.SecondaryResolverAddress};
 			var dns6 = new List<string> {Global.PrimaryResolverAddress6, Global.SecondaryResolverAddress6};
 			if (localNetworkInterface.Ipv4Dns.Contains(dns[0]) || localNetworkInterface.Ipv4Dns.Contains(dns[1]))
 			{
 				return true;
+			}
+			if (!string.IsNullOrEmpty(optionalAddress))
+			{
+				if (localNetworkInterface.Ipv4Dns.Contains(optionalAddress))
+				{
+					return true;
+				}
 			}
 			if (localNetworkInterface.Ipv6Dns.Contains(dns6[0]) || localNetworkInterface.Ipv6Dns.Contains(dns6[1]))
 			{

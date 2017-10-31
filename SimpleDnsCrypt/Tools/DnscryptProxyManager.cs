@@ -239,7 +239,7 @@ namespace SimpleDnsCrypt.Tools
                     }
                     if (DnsCryptProxy.Type == DnsCryptProxyType.Primary)
                     {
-	                    arguments += " --service-name="+ Global.PrimaryResolverServiceName;
+						arguments += " --service-name="+ Global.PrimaryResolverServiceName;
 						arguments += " -a " + Global.PrimaryResolverAddress + ":" + Global.PrimaryResolverPort;
                     }
                     else
@@ -251,7 +251,8 @@ namespace SimpleDnsCrypt.Tools
                     arguments += " -E";
                     using (var process = new Process())
                     {
-	                    process.StartInfo.FileName = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, DnsCryptProxy.Type == DnsCryptProxyType.Primary ? Global.DnsCryptProxyExecutableName : Global.DnsCryptProxyExecutableSecondaryName);
+	                    process.StartInfo.FileName = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, 
+							DnsCryptProxy.Type == DnsCryptProxyType.Primary ? Global.DnsCryptProxyExecutableName : Global.DnsCryptProxyExecutableSecondaryName);
 	                    process.StartInfo.Arguments = arguments;
                         process.StartInfo.UseShellExecute = false;
                         process.StartInfo.CreateNoWindow = true;

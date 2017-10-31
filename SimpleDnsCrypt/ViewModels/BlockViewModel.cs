@@ -30,7 +30,7 @@ namespace SimpleDnsCrypt.ViewModels
 
 		public List<string> Plugins
 		{
-			get { return _plugins; }
+			get => _plugins;
 			set
 			{
 				_plugins = value;
@@ -66,16 +66,14 @@ namespace SimpleDnsCrypt.ViewModels
 
 		private void UpdateDomainBlacklistPathInfoString()
 		{
-			DomainBlacklistPathInfoString = string.Format("({0} {1}; {2})", File.ReadLines(_domainBlacklistPath).Count(),
-				LocalizationEx.GetUiString("blacklist_entries",
-					Thread.CurrentThread.CurrentCulture), new FileInfo(_domainBlacklistPath).LastWriteTime);
+			DomainBlacklistPathInfoString =
+				$"({File.ReadLines(_domainBlacklistPath).Count()} {LocalizationEx.GetUiString("blacklist_entries", Thread.CurrentThread.CurrentCulture)}; {new FileInfo(_domainBlacklistPath).LastWriteTime})";
 		}
 
 		private void UpdateAddressBlacklistPathInfoString()
 		{
-			AddressBlacklistPathInfoString = string.Format("({0} {1}; {2})", File.ReadLines(_addressBlacklistPath).Count(),
-				LocalizationEx.GetUiString("blacklist_entries", Thread.CurrentThread.CurrentCulture),
-				new FileInfo(_addressBlacklistPath).LastWriteTime);
+			AddressBlacklistPathInfoString =
+				$"({File.ReadLines(_addressBlacklistPath).Count()} {LocalizationEx.GetUiString("blacklist_entries", Thread.CurrentThread.CurrentCulture)}; {new FileInfo(_addressBlacklistPath).LastWriteTime})";
 		}
 
 		public void SetPlugins(List<string> plugins)
@@ -116,7 +114,7 @@ namespace SimpleDnsCrypt.ViewModels
 
 		public bool IsWorking
 		{
-			get { return _isWorking; }
+			get => _isWorking;
 			set
 			{
 				_isWorking = value;
@@ -144,7 +142,7 @@ namespace SimpleDnsCrypt.ViewModels
 
 		public DomainBlacklist DomainBlacklist
 		{
-			get { return _domainBlacklist; }
+			get => _domainBlacklist;
 			set
 			{
 				_domainBlacklist = value;
@@ -154,7 +152,7 @@ namespace SimpleDnsCrypt.ViewModels
 
 		public AddressBlacklist AddressBlacklist
 		{
-			get { return _addressBlacklist; }
+			get => _addressBlacklist;
 			set
 			{
 				_addressBlacklist = value;
@@ -273,7 +271,7 @@ namespace SimpleDnsCrypt.ViewModels
 
 		public bool AddressBlacklistPlugin
 		{
-			get { return _addressBlacklistPlugin; }
+			get => _addressBlacklistPlugin;
 			set
 			{
 				_addressBlacklistPlugin = value;
@@ -363,7 +361,7 @@ namespace SimpleDnsCrypt.ViewModels
 
 		public bool DomainBlacklistPlugin
 		{
-			get { return _domainBlacklistPlugin; }
+			get => _domainBlacklistPlugin;
 			set
 			{
 				_domainBlacklistPlugin = value;
@@ -465,7 +463,7 @@ namespace SimpleDnsCrypt.ViewModels
 		/// </summary>
 		public string DomainBlacklistPath
 		{
-			get { return _domainBlacklistPath; }
+			get => _domainBlacklistPath;
 			set
 			{
 				_domainBlacklistPath = value;
@@ -475,7 +473,7 @@ namespace SimpleDnsCrypt.ViewModels
 
 		public string DomainBlacklistPathInfoString
 		{
-			get { return _domainBlacklistPathInfoString; }
+			get => _domainBlacklistPathInfoString;
 			set
 			{
 				_domainBlacklistPathInfoString = value;
@@ -485,7 +483,7 @@ namespace SimpleDnsCrypt.ViewModels
 
 		public string AddressBlacklistPathInfoString
 		{
-			get { return _addressBlacklistPathInfoString; }
+			get => _addressBlacklistPathInfoString;
 			set
 			{
 				_addressBlacklistPathInfoString = value;
@@ -499,7 +497,7 @@ namespace SimpleDnsCrypt.ViewModels
 		/// </summary>
 		public string AddressBlacklistPath
 		{
-			get { return _addressBlacklistPath; }
+			get => _addressBlacklistPath;
 			set
 			{
 				_addressBlacklistPath = value;
@@ -515,7 +513,13 @@ namespace SimpleDnsCrypt.ViewModels
 				var metroDialogSettings = new MetroDialogSettings
 				{
 					AffirmativeButtonText = LocalizationEx.GetUiString("ok", Thread.CurrentThread.CurrentCulture),
-					NegativeButtonText = LocalizationEx.GetUiString("cancel", Thread.CurrentThread.CurrentCulture)
+					NegativeButtonText = LocalizationEx.GetUiString("cancel", Thread.CurrentThread.CurrentCulture),
+					SuppressDefaultResources = true,
+					CustomResourceDictionary = new ResourceDictionary
+					{
+						Source = new Uri(
+							"pack://application:,,,/MaterialDesignThemes.MahApps;component/Themes/MaterialDesignTheme.MahApps.Dialogs.xaml")
+					}
 				};
 				var result =
 					metroWindow.ShowModalInputExternal(
@@ -541,7 +545,13 @@ namespace SimpleDnsCrypt.ViewModels
 				var metroDialogSettings = new MetroDialogSettings
 				{
 					AffirmativeButtonText = LocalizationEx.GetUiString("ok", Thread.CurrentThread.CurrentCulture),
-					NegativeButtonText = LocalizationEx.GetUiString("cancel", Thread.CurrentThread.CurrentCulture)
+					NegativeButtonText = LocalizationEx.GetUiString("cancel", Thread.CurrentThread.CurrentCulture),
+					SuppressDefaultResources = true,
+					CustomResourceDictionary = new ResourceDictionary
+					{
+						Source = new Uri(
+							"pack://application:,,,/MaterialDesignThemes.MahApps;component/Themes/MaterialDesignTheme.MahApps.Dialogs.xaml")
+					}
 				};
 				var result =
 					metroWindow.ShowModalInputExternal(
@@ -568,7 +578,13 @@ namespace SimpleDnsCrypt.ViewModels
 				var metroDialogSettings = new MetroDialogSettings
 				{
 					AffirmativeButtonText = LocalizationEx.GetUiString("ok", Thread.CurrentThread.CurrentCulture),
-					NegativeButtonText = LocalizationEx.GetUiString("cancel", Thread.CurrentThread.CurrentCulture)
+					NegativeButtonText = LocalizationEx.GetUiString("cancel", Thread.CurrentThread.CurrentCulture),
+					SuppressDefaultResources = true,
+					CustomResourceDictionary = new ResourceDictionary
+					{
+						Source = new Uri(
+							"pack://application:,,,/MaterialDesignThemes.MahApps;component/Themes/MaterialDesignTheme.MahApps.Dialogs.xaml")
+					}
 				};
 				var result =
 					metroWindow.ShowModalInputExternal(

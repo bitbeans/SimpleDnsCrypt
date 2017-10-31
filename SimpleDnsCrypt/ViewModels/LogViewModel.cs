@@ -62,7 +62,7 @@ namespace SimpleDnsCrypt.ViewModels
 
 		public string LogFile
 		{
-			get { return _logFile; }
+			get => _logFile;
 			set
 			{
 				_logFile = value;
@@ -72,7 +72,7 @@ namespace SimpleDnsCrypt.ViewModels
 
 		public bool IsLogging
 		{
-			get { return _isLogging; }
+			get => _isLogging;
 			set
 			{
 				_isLogging = value;
@@ -94,7 +94,7 @@ namespace SimpleDnsCrypt.ViewModels
 
 		public LogLine SelectedLogLine
 		{
-			get { return _selectedLogLine; }
+			get => _selectedLogLine;
 			set
 			{
 				_selectedLogLine = value;
@@ -142,7 +142,7 @@ namespace SimpleDnsCrypt.ViewModels
 										lastMaxOffset = reader.BaseStream.Position;
 									}
 								}
-							});
+							}).ConfigureAwait(false);
 						}
 						else
 						{
@@ -189,7 +189,13 @@ namespace SimpleDnsCrypt.ViewModels
 				{
 					AffirmativeButtonText = LocalizationEx.GetUiString("ok", Thread.CurrentThread.CurrentCulture),
 					NegativeButtonText = LocalizationEx.GetUiString("cancel", Thread.CurrentThread.CurrentCulture),
-					DefaultText = newRule
+					DefaultText = newRule,
+					SuppressDefaultResources = true,
+					CustomResourceDictionary = new ResourceDictionary
+					{
+						Source = new Uri(
+							"pack://application:,,,/MaterialDesignThemes.MahApps;component/Themes/MaterialDesignTheme.MahApps.Dialogs.xaml")
+					}
 				};
 				var result =
 					metroWindow.ShowModalInputExternal(
