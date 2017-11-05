@@ -5,6 +5,8 @@ using System.Reflection;
 using System.Threading.Tasks;
 using SimpleDnsCrypt.Config;
 using SimpleDnsCrypt.Models;
+using SocksSharp;
+using SocksSharp.Proxy;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
 
@@ -12,7 +14,7 @@ namespace SimpleDnsCrypt.Tools
 {
     public static class ApplicationUpdater
     {
-        public static async Task<RemoteUpdate> CheckForRemoteUpdateAsync()
+        public static async Task<RemoteUpdate> CheckForRemoteUpdateAsync(ProxySettings proxySettings = null)
         {
             var remoteUpdate = new RemoteUpdate();
             try
@@ -21,7 +23,7 @@ namespace SimpleDnsCrypt.Tools
 
                 remoteUpdate.CanUpdate = false;
 				var remoteUpdateFile = Environment.Is64BitProcess ? Global.ApplicationUpdateUri64 : Global.ApplicationUpdateUri;
-				var remoteUpdateData = await DownloadRemoteUpdateFileAsync(remoteUpdateFile).ConfigureAwait(false);
+				var remoteUpdateData = await DownloadRemoteUpdateFileAsync(remoteUpdateFile, proxySettings).ConfigureAwait(false);
 
                 if (remoteUpdateData != null)
                 {
@@ -63,27 +65,61 @@ namespace SimpleDnsCrypt.Tools
             return remoteUpdate;
         }
 
-        private static async Task<byte[]> DownloadRemoteUpdateFileAsync(string remoteUpdateFile)
+        private static async Task<byte[]> DownloadRemoteUpdateFileAsync(string remoteUpdateFile, ProxySettings proxySettings = null)
         {
-            using (var client = new HttpClient())
+	        if (proxySettings != null)
+	        {
+		        using (var proxyClientHandler = new ProxyClientHandler<Socks5>(proxySettings))
+		        {
+			        using (var client = new HttpClient(proxyClientHandler))
+			        {
+						var getDataTask = client.GetByteArrayAsync(remoteUpdateFile);
+				        return await getDataTask.ConfigureAwait(false);
+					}
+		        }
+	        }
+			using (var client = new HttpClient())
             {
                 var getDataTask = client.GetByteArrayAsync(remoteUpdateFile);
                 return await getDataTask.ConfigureAwait(false);
             }
         }
 
-        public static async Task<byte[]> DownloadRemoteInstallerAsync(Uri uri)
+        public static async Task<byte[]> DownloadRemoteInstallerAsync(Uri uri, ProxySettings proxySettings  = null)
         {
-            using (var client = new HttpClient())
-            {
-                var getDataTask = client.GetByteArrayAsync(uri);
-                return await getDataTask.ConfigureAwait(false);
-            }
+	        if (proxySettings != null)
+	        {
+		        using (var proxyClientHandler = new ProxyClientHandler<Socks5>(proxySettings))
+		        {
+			        using (var client = new HttpClient(proxyClientHandler))
+			        {
+						var getDataTask = client.GetByteArrayAsync(uri);
+				        return await getDataTask.ConfigureAwait(false);
+					}
+		        }
+			}
+	        using (var client = new HttpClient())
+	        {
+		        var getDataTask = client.GetByteArrayAsync(uri);
+		        return await getDataTask.ConfigureAwait(false);
+	        }
         }
 
-        public static async Task<string> DownloadRemoteSignatureAsync(Uri uri)
+        public static async Task<string> DownloadRemoteSignatureAsync(Uri uri, ProxySettings proxySettings = null)
         {
-            using (var client = new HttpClient())
+	        if (proxySettings != null)
+	        {
+		        using (var proxyClientHandler = new ProxyClientHandler<Socks5>(proxySettings))
+		        {
+			        using (var client = new HttpClient(proxyClientHandler))
+			        {
+						var getDataTask = client.GetStringAsync(uri);
+				        var resolverList = await getDataTask.ConfigureAwait(false);
+				        return resolverList;
+					}
+		        }
+	        }
+			using (var client = new HttpClient())
             {
                 var getDataTask = client.GetStringAsync(uri);
                 var resolverList = await getDataTask.ConfigureAwait(false);

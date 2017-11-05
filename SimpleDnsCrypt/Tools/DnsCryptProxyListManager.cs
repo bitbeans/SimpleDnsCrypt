@@ -8,6 +8,8 @@ using minisign;
 using Microsoft.VisualBasic.FileIO;
 using SimpleDnsCrypt.Config;
 using SimpleDnsCrypt.Models;
+using SocksSharp;
+using SocksSharp.Proxy;
 
 namespace SimpleDnsCrypt.Tools
 {
@@ -18,33 +20,30 @@ namespace SimpleDnsCrypt.Tools
             return s.Replace("\"", "").Trim();
         }
 
-        public static async Task<bool> UpdateResolverListAsync()
+        public static async Task<bool> UpdateResolverListAsync(ProxySettings proxySettings = null)
         {
             try
             {
-                var resolverList = await DownloadResolverListAsync().ConfigureAwait(false);
-                var signature = await DownloadSignatureAsync().ConfigureAwait(false);
-                if ((resolverList != null) && (signature != null))
-                {
-                    //TODO: add an overload to minisign-net
-                    var s = signature.Split('\n');
-                    var trimmedComment = s[2].Replace("trusted comment: ", "").Trim();
-                    var trustedCommentBinary = Encoding.UTF8.GetBytes(trimmedComment);
-                    var loadedSignature = Minisign.LoadSignature(Convert.FromBase64String(s[1]), trustedCommentBinary, Convert.FromBase64String(s[3]));
-                    var publicKey = Minisign.LoadPublicKeyFromString(Global.PublicKey);
-                    var valid = Minisign.ValidateSignature(resolverList, loadedSignature, publicKey);
+                var resolverList = await DownloadResolverListAsync(proxySettings).ConfigureAwait(false);
+                var signature = await DownloadSignatureAsync(proxySettings).ConfigureAwait(false);
+	            if (resolverList == null || signature == null) return false;
+	            //TODO: add an overload to minisign-net
+	            var s = signature.Split('\n');
+	            var trimmedComment = s[2].Replace("trusted comment: ", "").Trim();
+	            var trustedCommentBinary = Encoding.UTF8.GetBytes(trimmedComment);
+	            var loadedSignature = Minisign.LoadSignature(Convert.FromBase64String(s[1]), trustedCommentBinary, Convert.FromBase64String(s[3]));
+	            var publicKey = Minisign.LoadPublicKeyFromString(Global.PublicKey);
+	            var valid = Minisign.ValidateSignature(resolverList, loadedSignature, publicKey);
 
-                    if (valid)
-                    {
-	                    Directory.CreateDirectory(Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder));
-		                File.WriteAllBytes(Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder,
-			                Global.DnsCryptProxyResolverListName), resolverList);
-		                File.WriteAllText(Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder,
-			                Global.DnsCryptProxySignatureFileName), signature);
-                    }
-                    return valid;
-                }
-                return false;
+	            if (valid)
+	            {
+		            Directory.CreateDirectory(Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder));
+		            File.WriteAllBytes(Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder,
+			            Global.DnsCryptProxyResolverListName), resolverList);
+		            File.WriteAllText(Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder,
+			            Global.DnsCryptProxySignatureFileName), signature);
+	            }
+	            return valid;
             }
             catch (Exception)
             {
@@ -55,11 +54,23 @@ namespace SimpleDnsCrypt.Tools
             }
         }
 
-        private static async Task<byte[]> DownloadResolverListAsync()
+        private static async Task<byte[]> DownloadResolverListAsync(ProxySettings proxySettings = null)
         {
 	        try
 	        {
-		        using (var client = new HttpClient())
+		        if (proxySettings != null)
+		        {
+			        using (var proxyClientHandler = new ProxyClientHandler<Socks5>(proxySettings))
+			        {
+				        using (var client = new HttpClient(proxyClientHandler))
+				        {
+							var getDataTask = client.GetByteArrayAsync(Global.ResolverUrl);
+					        var resolverList = await getDataTask.ConfigureAwait(false);
+					        return resolverList;
+						}
+			        }
+		        }
+				using (var client = new HttpClient())
 		        {
 			        var getDataTask = client.GetByteArrayAsync(Global.ResolverUrl);
 			        var resolverList = await getDataTask.ConfigureAwait(false);
@@ -68,6 +79,18 @@ namespace SimpleDnsCrypt.Tools
 	        }
 	        catch (HttpRequestException)
 	        {
+		        if (proxySettings != null)
+		        {
+			        using (var proxyClientHandler = new ProxyClientHandler<Socks5>(proxySettings))
+			        {
+				        using (var client = new HttpClient(proxyClientHandler))
+				        {
+					        var getDataTask = client.GetByteArrayAsync(Global.ResolverBackupUrl);
+					        var resolverList = await getDataTask.ConfigureAwait(false);
+					        return resolverList;
+				        }
+			        }
+		        }
 				using (var client = new HttpClient())
 				{
 					var getDataTask = client.GetByteArrayAsync(Global.ResolverBackupUrl);
@@ -77,11 +100,23 @@ namespace SimpleDnsCrypt.Tools
 			}
         }
 
-        private static async Task<string> DownloadSignatureAsync()
+        private static async Task<string> DownloadSignatureAsync(ProxySettings proxySettings = null)
         {
 	        try
 	        {
-		        using (var client = new HttpClient())
+		        if (proxySettings != null)
+		        {
+			        using (var proxyClientHandler = new ProxyClientHandler<Socks5>(proxySettings))
+			        {
+				        using (var client = new HttpClient(proxyClientHandler))
+				        {
+							var getDataTask = client.GetStringAsync(Global.SignatureUrl);
+					        var resolverList = await getDataTask.ConfigureAwait(false);
+					        return resolverList;
+						}
+			        }
+		        }
+				using (var client = new HttpClient())
 		        {
 			        var getDataTask = client.GetStringAsync(Global.SignatureUrl);
 			        var resolverList = await getDataTask.ConfigureAwait(false);
@@ -90,6 +125,19 @@ namespace SimpleDnsCrypt.Tools
 	        }
 			catch (HttpRequestException)
 			{
+				if (proxySettings != null)
+				{
+					using (var proxyClientHandler = new ProxyClientHandler<Socks5>(proxySettings))
+					{
+						using (var client = new HttpClient(proxyClientHandler))
+						{
+							
+							var getDataTask = client.GetStringAsync(Global.SignatureBackupUrl);
+							var resolverList = await getDataTask.ConfigureAwait(false);
+							return resolverList;
+						}
+					}
+				}
 				using (var client = new HttpClient())
 				{
 					var getDataTask = client.GetStringAsync(Global.SignatureBackupUrl);

@@ -182,6 +182,11 @@
 		public const string UserConfigurationFile = "config.yaml";
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public const string InsecureResolversFile = "insecure_resolvers.yaml";
+		
+		/// <summary>
 		///     List of interfaces, marked as hidden.
 		/// </summary>
 		public static readonly string[] NetworkInterfaceBlacklist =

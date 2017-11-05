@@ -1,7 +1,10 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Net;
 using SimpleDnsCrypt.Config;
+using SimpleDnsCrypt.Models;
+using SocksSharp.Proxy;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
 
@@ -23,6 +26,8 @@ namespace SimpleDnsCrypt.Tools
 		private bool _onlyUseNoLogs;
 		private bool _onlyUseDnssec;
 		private bool _updateResolverListOnStart;
+		private InsecureResolverPair _insecureResolverPair;
+		private ProxySettings _proxySettings;
 
 		public UserData(string configFile)
 		{
@@ -38,6 +43,8 @@ namespace SimpleDnsCrypt.Tools
 			_secondaryResolverPort = Global.SecondaryResolverPort;
 			_onlyUseNoLogs = false;
 			_onlyUseDnssec = false;
+			_insecureResolverPair = new InsecureResolverPair();
+			_proxySettings = new ProxySettings ();
 			// load configuration file (if exists) and overwrite the default values
 			LoadConfigurationFile();
 			// update the configuration file
@@ -46,6 +53,26 @@ namespace SimpleDnsCrypt.Tools
 
 		public UserData()
 		{
+		}
+
+		public ProxySettings ProxySettings
+		{
+			get => _proxySettings;
+			set
+			{
+				if (value.Equals(_proxySettings)) return;
+				_proxySettings = value;
+			}
+		}
+
+		public InsecureResolverPair InsecureResolverPair
+		{
+			get => _insecureResolverPair;
+			set
+			{
+				if (value.Equals(_insecureResolverPair)) return;
+				_insecureResolverPair = value;
+			}
 		}
 
 		public string Language
@@ -196,6 +223,17 @@ namespace SimpleDnsCrypt.Tools
 					{
 						_secondaryResolver = storedConfiguration.SecondaryResolver.Trim().ToLower();
 					}
+
+					if (storedConfiguration.InsecureResolverPair != null)
+					{
+						_insecureResolverPair = storedConfiguration.InsecureResolverPair;
+					}
+
+					if (storedConfiguration.ProxySettings != null)
+					{
+						_proxySettings = storedConfiguration.ProxySettings;
+					}
+					
 				}
 			}
 			catch (Exception)

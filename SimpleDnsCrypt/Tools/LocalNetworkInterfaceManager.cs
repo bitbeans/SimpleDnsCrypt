@@ -18,12 +18,14 @@ namespace SimpleDnsCrypt.Tools
 		/// <summary>
 		///     Get a list of the local network interfaces.
 		/// </summary>
+		/// <param name="userData"></param>
 		/// <param name="showHiddenCards">Show hidden cards.</param>
 		/// <param name="showOnlyOperationalUp">Include only connected network cards.</param>
+		/// <param name="optionalAddress"></param>
 		/// <returns>A (filtered) list of the local network interfaces.</returns>
 		/// <exception cref="NetworkInformationException">A Windows system function call failed. </exception>
 		/// <exception cref="ArgumentNullException"></exception>
-		internal static List<LocalNetworkInterface> GetLocalNetworkInterfaces(bool showHiddenCards = false,
+		internal static List<LocalNetworkInterface> GetLocalNetworkInterfaces(UserData userData, bool showHiddenCards = false,
 			bool showOnlyOperationalUp = true, string optionalAddress = "")
 		{
 			var interfaces = new List<LocalNetworkInterface>();
@@ -62,10 +64,21 @@ namespace SimpleDnsCrypt.Tools
 				};
 
 				localNetworkInterface.UseDnsCrypt = IsUsingDnsCrypt(localNetworkInterface, optionalAddress);
+				if (!localNetworkInterface.UseDnsCrypt)
+				{
+					localNetworkInterface.UseInsecureFallbackDns = IsUsingInsecureFallbackDns(localNetworkInterface, userData);
+				}
 
 				interfaces.Add(localNetworkInterface);
 			}
 			return interfaces;
+		}
+
+		internal static bool IsUsingInsecureFallbackDns(LocalNetworkInterface localNetworkInterface, UserData userData)
+		{
+			if (!(userData?.InsecureResolverPair?.Addresses?.Count > 0)) return false;
+			var fallbackAddresses = userData.InsecureResolverPair.Addresses;
+			return fallbackAddresses.Any(fallbackAddress => localNetworkInterface.Ipv4Dns.Contains(fallbackAddress));
 		}
 
 		/// <summary>

@@ -156,6 +156,7 @@ If you don`t like this software, there are two similar projects:
 - DNS [:octocat:](https://github.com/kapetan/dns) 
 - RedistributableChecker [:octocat:](https://github.com/bitbeans/RedistributableChecker) 
 - MaterialDesignInXamlToolkit [:octocat:](https://github.com/ButchersBoy/MaterialDesignInXamlToolkit) 
+- SocksSharp [:octocat:](https://github.com/extremecodetv/SocksSharp) 
 
 # ![Alt text](img/icons/32x32.png "Special Thanks") Special Thanks
 

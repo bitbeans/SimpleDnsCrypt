@@ -17,7 +17,7 @@ namespace Tests
 		[Test, Order(1)]
 		public async Task CheckForRemoteUpdateTest()
 	    {
-			_remoteUpdate = await ApplicationUpdater.CheckForRemoteUpdateAsync();
+			_remoteUpdate = await ApplicationUpdater.CheckForRemoteUpdateAsync().ConfigureAwait(false);
 			Assert.AreNotEqual(_remoteUpdate, null);
 			Assert.AreNotEqual(_remoteUpdate.Update, null);
 			Assert.AreNotEqual(_remoteUpdate.Update.Installer, null);
@@ -39,7 +39,7 @@ namespace Tests
 		[Test, Order(3)]
 		public async Task DownloadResolverListTest()
 		{
-			var updated = await DnsCryptProxyListManager.UpdateResolverListAsync();
+			var updated = await DnsCryptProxyListManager.UpdateResolverListAsync().ConfigureAwait(false);
 			Assert.AreEqual(updated, true);
 			Console.WriteLine(@"updated: " + updated);
 			var dnsCryptProxyResolverListFile = Path.Combine(TestContext.CurrentContext.TestDirectory, Global.DnsCryptProxyFolder, Global.DnsCryptProxyResolverListName);
@@ -48,7 +48,7 @@ namespace Tests
 			Assert.AreEqual(File.Exists(dnsCryptProxySignatureFile), true);
 			Console.WriteLine(@"dnsCryptProxyResolverListFile: " + dnsCryptProxyResolverListFile);
 			Console.WriteLine(@"dnsCryptProxySignatureFile: " + dnsCryptProxySignatureFile);
-			var resolverList = DnsCryptProxyListManager.ReadProxyList(dnsCryptProxyResolverListFile, dnsCryptProxySignatureFile, true);
+			var resolverList = DnsCryptProxyListManager.ReadProxyList(dnsCryptProxyResolverListFile, dnsCryptProxySignatureFile, true, true, true, false);
 			Assert.Greater(resolverList.Count, 0);
 			Console.WriteLine(@"resolverList.Count: " + resolverList.Count);
 		}

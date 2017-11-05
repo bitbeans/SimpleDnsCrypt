@@ -22,10 +22,12 @@
     </controls:MetroWindow.Resources>
     <controls:MetroWindow.RightWindowCommands>
         <controls:WindowCommands>
+            <Button Cursor="Hand" x:Name="OpenAdvancedNetworkSettings" cal:Message.Attach="OpenAdvancedNetworkSettings" ToolTip="Advanced Network Settings">
+                <materialDesign:PackIcon Kind="SecurityNetwork" />
+            </Button>
             <Button Cursor="Hand" x:Name="UpdateAsync" cal:Message.Attach="UpdateAsync" ToolTip="{lex:Loc Key=default_check_for_updates}" IsEnabled="{Binding IsCheckingUpdates, Converter={StaticResource ReverseBoolToEnabledConverter}}">
                 <materialDesign:PackIcon Kind="Refresh" />
             </Button>
-
             <ComboBox Style="{StaticResource MetroComboBox}"
                 ItemsSource="{Binding Languages}"
                 SelectedItem="{Binding SelectedLanguage}"

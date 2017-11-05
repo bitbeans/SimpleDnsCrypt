@@ -8,6 +8,7 @@ using minisign;
 using SimpleDnsCrypt.Config;
 using SimpleDnsCrypt.Models;
 using SimpleDnsCrypt.Tools;
+using SocksSharp.Proxy;
 
 namespace SimpleDnsCrypt.ViewModels
 {
@@ -39,16 +40,16 @@ namespace SimpleDnsCrypt.ViewModels
         ///     UpdateViewModel constructor.
         /// </summary>
         [ImportingConstructor]
-        public UpdateViewModel(Update update)
+        public UpdateViewModel(Update update, ProxySettings proxySettings = null)
         {
             _isSignatureDownloaded = false;
             _isInstallerDownloaded = false;
-            StartUpdateAsync(update);
+            StartUpdateAsync(update, proxySettings);
         }
 
 		public string WindowTitle
 		{
-			get { return _windowTitle; }
+			get => _windowTitle;
 			set
 			{
 				_windowTitle = value;
@@ -61,8 +62,8 @@ namespace SimpleDnsCrypt.ViewModels
 		/// </summary>
 		public string InstallerPath
         {
-            get { return _installerPath; }
-            set
+            get => _installerPath;
+			set
             {
                 _installerPath = value;
                 NotifyOfPropertyChange(() => InstallerPath);
@@ -74,8 +75,8 @@ namespace SimpleDnsCrypt.ViewModels
         /// </summary>
         public bool IsSignatureDownloaded
         {
-            get { return _isSignatureDownloaded; }
-            set
+            get => _isSignatureDownloaded;
+	        set
             {
                 _isSignatureDownloaded = value;
                 NotifyOfPropertyChange(() => IsSignatureDownloaded);
@@ -87,8 +88,8 @@ namespace SimpleDnsCrypt.ViewModels
         /// </summary>
         public bool IsInstallerDownloaded
         {
-            get { return _isInstallerDownloaded; }
-            set
+            get => _isInstallerDownloaded;
+	        set
             {
                 _isInstallerDownloaded = value;
                 NotifyOfPropertyChange(() => IsInstallerDownloaded);
@@ -100,8 +101,8 @@ namespace SimpleDnsCrypt.ViewModels
         /// </summary>
         public bool IsUpdatingSignature
         {
-            get { return _isUpdatingSignature; }
-            set
+            get => _isUpdatingSignature;
+	        set
             {
                 _isUpdatingSignature = value;
                 NotifyOfPropertyChange(() => IsUpdatingSignature);
@@ -113,26 +114,27 @@ namespace SimpleDnsCrypt.ViewModels
         /// </summary>
         public bool IsUpdatingInstaller
         {
-            get { return _isUpdatingInstaller; }
-            set
+            get => _isUpdatingInstaller;
+	        set
             {
                 _isUpdatingInstaller = value;
                 NotifyOfPropertyChange(() => IsUpdatingInstaller);
             }
         }
 
-        /// <summary>
-        ///     Do an update.
-        /// </summary>
-        /// <param name="update">The update to perform.</param>
-        public async void StartUpdateAsync(Update update)
+	    /// <summary>
+	    ///     Do an update.
+	    /// </summary>
+	    /// <param name="update">The update to perform.</param>
+	    /// <param name="proxySettings"></param>
+	    public async void StartUpdateAsync(Update update, ProxySettings proxySettings = null)
         {
             try
             {
                 IsUpdatingSignature = true;
                 IsUpdatingInstaller = true;
-                await DownloadSignatureAsync(update.Signature).ConfigureAwait(false);
-                await DownloadInstallerAsync(update.Installer).ConfigureAwait(false);
+                await DownloadSignatureAsync(update.Signature, proxySettings).ConfigureAwait(false);
+                await DownloadInstallerAsync(update.Installer, proxySettings).ConfigureAwait(false);
 
                 if ((IsInstallerDownloaded) && (IsSignatureDownloaded))
                 {
@@ -172,15 +174,16 @@ namespace SimpleDnsCrypt.ViewModels
             TryClose(false);
         }
 
-        /// <summary>
-        ///     Download the given signature file.
-        /// </summary>
-        /// <param name="remoteSignature">The signature to download.</param>
-        /// <returns></returns>
-        public async Task DownloadSignatureAsync(Signature remoteSignature)
+	    /// <summary>
+	    ///     Download the given signature file.
+	    /// </summary>
+	    /// <param name="remoteSignature">The signature to download.</param>
+	    /// <param name="proxySettings"></param>
+	    /// <returns></returns>
+	    public async Task DownloadSignatureAsync(Signature remoteSignature, ProxySettings proxySettings = null)
         {
             _signature =
-                await ApplicationUpdater.DownloadRemoteSignatureAsync(remoteSignature.Uri).ConfigureAwait(false);
+                await ApplicationUpdater.DownloadRemoteSignatureAsync(remoteSignature.Uri, proxySettings).ConfigureAwait(false);
             if (!string.IsNullOrEmpty(_signature))
             {
                 IsSignatureDownloaded = true;
@@ -188,15 +191,16 @@ namespace SimpleDnsCrypt.ViewModels
             IsUpdatingSignature = false;
         }
 
-        /// <summary>
-        ///     Download the given installer file.
-        /// </summary>
-        /// <param name="remoteInstaller">The installer to download.</param>
-        /// <returns></returns>
-        public async Task DownloadInstallerAsync(Installer remoteInstaller)
+	    /// <summary>
+	    ///     Download the given installer file.
+	    /// </summary>
+	    /// <param name="remoteInstaller">The installer to download.</param>
+	    /// <param name="proxySettings"></param>
+	    /// <returns></returns>
+	    public async Task DownloadInstallerAsync(Installer remoteInstaller, ProxySettings proxySettings = null)
         {
             _installer =
-                await ApplicationUpdater.DownloadRemoteInstallerAsync(remoteInstaller.Uri).ConfigureAwait(false);
+                await ApplicationUpdater.DownloadRemoteInstallerAsync(remoteInstaller.Uri, proxySettings).ConfigureAwait(false);
             if (_installer != null)
             {
                 IsInstallerDownloaded = true;

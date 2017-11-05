@@ -10,7 +10,6 @@
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              xmlns:tools="clr-namespace:SimpleDnsCrypt.Tools"
              xmlns:lex="http://wpflocalizeextension.codeplex.com"
-             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              d:DataContext="{d:DesignInstance Type=viewModels:MainViewModel, IsDesignTimeCreatable=True}"
              cal:Bind.AtDesignTime="True"
@@ -1534,7 +1533,7 @@
                                         <TextBlock FontSize="20" Foreground="#FF8ab329"
                                                    Text="{lex:Loc Key=about_used_software}" />
                                         <TextBlock FontSize="10" Foreground="#FF575757"
-                                                   tools:NavigationService.Text="Project Site: https://simplednscrypt.org&#x0a;&#x0a;Caliburn.Micro&#x0a;https://github.com/Caliburn-Micro/Caliburn.Micro&#x0a;MahApps.Metro&#x0a;https://github.com/MahApps/MahApps.Metro&#x0a;libsodium-net&#x0a;https://github.com/adamcaudill/libsodium-net&#x0a;minisign-net&#x0a;https://github.com/bitbeans/minisign-net&#x0a;WPF LocalizationExtension&#x0a;https://github.com/SeriousM/WPFLocalizationExtension&#x0a;YamlDotNet&#x0a;https://github.com/aaubry/YamlDotNet&#x0a;helper-net&#x0a;https://github.com/bitbeans/helper-net&#x0a;DNS&#x0a;https://github.com/kapetan/dns&#x0a;RedistributableChecker&#x0a;https://github.com/bitbeans/RedistributableChecker&#x0a;MaterialDesignInXamlToolkit&#x0a;https://github.com/ButchersBoy/MaterialDesignInXamlToolkit"
+                                                   tools:NavigationService.Text="Project Site: https://simplednscrypt.org&#x0a;&#x0a;Caliburn.Micro&#x0a;https://github.com/Caliburn-Micro/Caliburn.Micro&#x0a;MahApps.Metro&#x0a;https://github.com/MahApps/MahApps.Metro&#x0a;libsodium-net&#x0a;https://github.com/adamcaudill/libsodium-net&#x0a;minisign-net&#x0a;https://github.com/bitbeans/minisign-net&#x0a;WPF LocalizationExtension&#x0a;https://github.com/SeriousM/WPFLocalizationExtension&#x0a;YamlDotNet&#x0a;https://github.com/aaubry/YamlDotNet&#x0a;helper-net&#x0a;https://github.com/bitbeans/helper-net&#x0a;DNS&#x0a;https://github.com/kapetan/dns&#x0a;RedistributableChecker&#x0a;https://github.com/bitbeans/RedistributableChecker&#x0a;MaterialDesignInXamlToolkit&#x0a;https://github.com/ButchersBoy/MaterialDesignInXamlToolkit&#x0a;SocksSharp&#x0a;https://github.com/extremecodetv/SocksSharp"
                                                    TextWrapping="Wrap" />
                                     </StackPanel>
                                 </Border>

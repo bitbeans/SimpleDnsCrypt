@@ -37,6 +37,7 @@ namespace SimpleDnsCrypt.ViewModels
 		private CancellationTokenSource _analyseCancellationTokenSource = new CancellationTokenSource();
 		private string _windowTitle;
 		private readonly UserData _userData;
+		private readonly InsecureResolvers _insecureResolvers;
 		private readonly IWindowManager _windowManager;
 		private bool _actAsGlobalGateway;
 		private bool _isAnalysing;
@@ -89,6 +90,7 @@ namespace SimpleDnsCrypt.ViewModels
 				_windowManager = windowManager;
 				eventAggregator.Subscribe(this);
 				_userData = new UserData(Path.Combine(Directory.GetCurrentDirectory(), Global.UserConfigurationFile));
+				_insecureResolvers = new InsecureResolvers(Path.Combine(Directory.GetCurrentDirectory(), "data", Global.InsecureResolversFile));
 				// fill the language combobox
 				_languages = LocalizationEx.GetSupportedLanguages();
 				// automatically use the correct translations if available (fallback: en)
@@ -171,7 +173,10 @@ namespace SimpleDnsCrypt.ViewModels
 				if (!File.Exists(_proxyList) || !File.Exists(_proxyListSignature) || UpdateResolverListOnStart)
 				{
 					// download and verify the proxy list if there is no one.
-					AsyncHelpers.RunSync(DnsCryptProxyListManager.UpdateResolverListAsync);
+					var task = Task.Run(async () => await DnsCryptProxyListManager
+						.UpdateResolverListAsync(!string.IsNullOrEmpty(_userData?.ProxySettings?.Host) ? _userData.ProxySettings : null)
+						.ConfigureAwait(false));
+					task.Wait();
 				}
 
 				var dnsProxyList = DnsCryptProxyListManager.ReadProxyList(_proxyList, _proxyListSignature, _userData.OnlyUseNoLogs, _userData.OnlyUseDnssec, _userData.UseIpv4, _userData.UseIpv6);
@@ -812,7 +817,7 @@ namespace SimpleDnsCrypt.ViewModels
 			try
 			{
 				IsCheckingUpdates = true;
-				var update = await ApplicationUpdater.CheckForRemoteUpdateAsync().ConfigureAwait(true);
+				var update = await ApplicationUpdater.CheckForRemoteUpdateAsync(!string.IsNullOrEmpty(_userData?.ProxySettings?.Host) ? _userData.ProxySettings : null).ConfigureAwait(true);
 				if (update.CanUpdate)
 				{
 					var boxType = update.Update.Type == UpdateType.Standard ? BoxType.Default : BoxType.Warning;
@@ -1052,7 +1057,7 @@ namespace SimpleDnsCrypt.ViewModels
 		/// </summary>
 		private void LoadNetworkCards()
 		{
-			var localNetworkInterfaces = LocalNetworkInterfaceManager.GetLocalNetworkInterfaces(ShowHiddenCards, false, _primaryResolver.LocalAddress);
+			var localNetworkInterfaces = LocalNetworkInterfaceManager.GetLocalNetworkInterfaces(_userData, ShowHiddenCards, false, _primaryResolver.LocalAddress);
 			_localNetworkInterfaces.Clear();
 			if (localNetworkInterfaces.Count == 0) return;
 			foreach (var localNetworkInterface in localNetworkInterfaces)
@@ -1065,7 +1070,14 @@ namespace SimpleDnsCrypt.ViewModels
 		{
 			foreach (var localNetworkInterface in _localNetworkInterfaces)
 			{
-				if (!localNetworkInterface.UseDnsCrypt) continue;
+				if (!localNetworkInterface.UseDnsCrypt)
+				{
+					if (!localNetworkInterface.UseInsecureFallbackDns)
+					{
+						continue;
+					}
+				}
+
 				var dns4 = new List<string>();
 				var dns6 = new List<string>();
 				if (PrimaryResolver != null)
@@ -1099,13 +1111,33 @@ namespace SimpleDnsCrypt.ViewModels
 						}
 					}
 				}
-				var status =
-					LocalNetworkInterfaceManager.SetNameservers(localNetworkInterface, dns4, NetworkInterfaceComponent.IPv4);
+
+				if (dns4.Count == 0)
+				{
+					localNetworkInterface.UseDnsCrypt = false;
+					if (_userData.InsecureResolverPair?.Addresses?.Count > 0)
+					{
+						var fallBackStatus = LocalNetworkInterfaceManager.SetNameservers(localNetworkInterface,
+							_userData.InsecureResolverPair.Addresses, NetworkInterfaceComponent.IPv4);
+						localNetworkInterface.UseInsecureFallbackDns = fallBackStatus;
+					}
+					else
+					{
+						localNetworkInterface.UseInsecureFallbackDns = false;
+						var status = LocalNetworkInterfaceManager.SetNameservers(localNetworkInterface, dns4, NetworkInterfaceComponent.IPv4);
+						localNetworkInterface.UseDnsCrypt = status;
+					}
+				}
+				else
+				{
+					var status = LocalNetworkInterfaceManager.SetNameservers(localNetworkInterface, dns4, NetworkInterfaceComponent.IPv4);
+					localNetworkInterface.UseDnsCrypt = status;
+				}
+
 				if (_userData.UseIpv6)
 				{
 					LocalNetworkInterfaceManager.SetNameservers(localNetworkInterface, dns6, NetworkInterfaceComponent.IPv6);
 				}
-				localNetworkInterface.UseDnsCrypt = status;
 				//TODO: translate
 				MessageQueue.Enqueue($"{localNetworkInterface.Name} reconfigured");
 			}
@@ -1162,12 +1194,33 @@ namespace SimpleDnsCrypt.ViewModels
 						}
 					}
 				}
-				var status = LocalNetworkInterfaceManager.SetNameservers(localNetworkInterface, dns4, NetworkInterfaceComponent.IPv4);
+
+				if (dns4.Count == 0)
+				{
+					localNetworkInterface.UseDnsCrypt = false;
+					if (_userData.InsecureResolverPair?.Addresses?.Count > 0)
+					{
+						var fallBackStatus = LocalNetworkInterfaceManager.SetNameservers(localNetworkInterface,
+							_userData.InsecureResolverPair.Addresses, NetworkInterfaceComponent.IPv4);
+						localNetworkInterface.UseInsecureFallbackDns = fallBackStatus;
+					}
+					else
+					{
+						localNetworkInterface.UseInsecureFallbackDns = false;
+						var status = LocalNetworkInterfaceManager.SetNameservers(localNetworkInterface, dns4, NetworkInterfaceComponent.IPv4);
+						localNetworkInterface.UseDnsCrypt = status;
+					}
+				}
+				else
+				{
+					var status = LocalNetworkInterfaceManager.SetNameservers(localNetworkInterface, dns4, NetworkInterfaceComponent.IPv4);
+					localNetworkInterface.UseDnsCrypt = status;
+				}
+
 				if (_userData.UseIpv6)
 				{
 					LocalNetworkInterfaceManager.SetNameservers(localNetworkInterface, dns6, NetworkInterfaceComponent.IPv6);
-				}
-				localNetworkInterface.UseDnsCrypt = status;
+				}				
 			}
 			LoadNetworkCards();
 		}
@@ -1312,7 +1365,7 @@ namespace SimpleDnsCrypt.ViewModels
 			NotifyOfPropertyChange(() => IsSecondaryResolverRunning);
 
 			// recover the network interfaces (also the hidden and down cards)
-			foreach (var nic in LocalNetworkInterfaceManager.GetLocalNetworkInterfaces(true, false, ""))
+			foreach (var nic in LocalNetworkInterfaceManager.GetLocalNetworkInterfaces(_userData, true, false, ""))
 			{
 				if (!nic.UseDnsCrypt) continue;
 				var status = LocalNetworkInterfaceManager.SetNameservers(nic, new List<string>(), NetworkInterfaceComponent.IPv4);
@@ -1335,7 +1388,7 @@ namespace SimpleDnsCrypt.ViewModels
 		public async void RefreshResolverListAsync()
 		{
 			IsRefreshingResolverList = true;
-			var state = await DnsCryptProxyListManager.UpdateResolverListAsync().ConfigureAwait(false);
+			var state = await DnsCryptProxyListManager.UpdateResolverListAsync(!string.IsNullOrEmpty(_userData?.ProxySettings?.Host) ? _userData.ProxySettings : null).ConfigureAwait(false);
 			await Task.Run(() =>
 			{
 				// we do this, to prevent excessive usage
@@ -1511,6 +1564,25 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 		}
 
+		#endregion
+
+		#region Advanced Network Settings
+
+		public void OpenAdvancedNetworkSettings()
+		{
+			var win = new AdvancedNetworkSettingsViewModel(_windowManager, _insecureResolvers, _userData)
+			{
+				WindowTitle = LocalizationEx.GetUiString("window_advanced_network_settings_title", Thread.CurrentThread.CurrentCulture)
+			};
+			dynamic settings = new ExpandoObject();
+			settings.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+			settings.Owner = GetView();
+			var inputOk = _windowManager.ShowDialog(win, null, settings);
+			if (inputOk != null)
+			{
+				ResetNetworkCards();
+			}
+		}
 		#endregion
 	}
 }
