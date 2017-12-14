@@ -32,8 +32,8 @@ namespace SimpleDnsCrypt.Tools
 		    var supportedLanguages = new ObservableCollection<Language>
 		    {
 				new Language {Name = "Bulgarian", ShortCode = "bg", CultureCode = "bg-BG"},
-				new Language {Name = "Chinese Simp.", ShortCode = "zh", CultureCode = "zh-CN"},
-				new Language {Name = "Chinese Trad.", ShortCode = "zh-hant", CultureCode = "zh-TW"},
+				new Language {Name = "Chinese Simp.", ShortCode = "zh-hans", CultureCode = "zh-Hans"},
+				new Language {Name = "Chinese Trad.", ShortCode = "zh-hant", CultureCode = "zh-Hant"},
 				new Language {Name = "Danish", ShortCode = "da", CultureCode = "da-DK"},
 				new Language {Name = "Dutch", ShortCode = "nl", CultureCode = "nl-NL"},
 				new Language {Name = "English", ShortCode = "en", CultureCode = "en-US"},
