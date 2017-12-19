@@ -163,7 +163,7 @@
     <value>DNSSEC</value>
   </data>
   <data name="default_settings_no_logs" xml:space="preserve">
-    <value>ログはありません</value>
+    <value>ログ記録なし</value>
   </data>
   <data name="default_settings_name" xml:space="preserve">
     <value>名前(FQDN)</value>
@@ -172,7 +172,7 @@
     <value>公開鍵</value>
   </data>
   <data name="global_ipv6_disabled" xml:space="preserve">
-    <value>IPv6を無効</value>
+    <value>IPv6無効</value>
   </data>
   <data name="dialog_error_title" xml:space="preserve">
     <value>エラー</value>
@@ -204,7 +204,7 @@
   <data name="dialog_message_bad_privileges" xml:space="preserve">
     <value>このアプリケーションは管理者権限で実行する必要があります.</value>
   </data>
-  <data name="" xml:space="preserve">
+  <data name="ipv6_speed_plugin_title" xml:space="preserve">
     <value>IPv6がないときに高速化</value>
   </data>
   <data name="ipv6_speed_plugin_text" xml:space="preserve">
@@ -214,7 +214,7 @@
     <value>公開リゾルバ一覧を更新</value>
   </data>
   <data name="advanced_settings_refresh_resolver_text" xml:space="preserve">
-    <value>公開リゾルバの一覧を更新します (全てのダウンロードはMinisign署名で検証されます)</value>
+    <value>公開リゾルバの一覧を更新します (内容はすべてMinisign署名で検証されます)</value>
   </data>
   <data name="advanced_settings_debug_title" xml:space="preserve">
     <value>デバッグモード</value>
@@ -277,7 +277,7 @@
     <value>ロギング</value>
   </data>
   <data name="log_plugin_text" xml:space="preserve">
-    <value>このプラグインはプロキシによって受信されたDNSクエリを記録します. ログはローカルファイルに保存されます.</value>
+    <value>このプラグインはプロキシで受信したDNSクエリを記録します. ログはローカルファイルに保存されます.</value>
   </data>
   <data name="log_plugin_select_folder" xml:space="preserve">
     <value>ログフォルダを選択</value>
@@ -415,7 +415,7 @@
     <value>秒</value>
   </data>
   <data name="tab_block" xml:space="preserve">
-    <value>ブロックとブラックリスト</value>
+    <value>ブロックルール</value>
   </data>
   <data name="default_settings_analyse_button_tooltip" xml:space="preserve">
     <value>リゾルバに関する追加情報を取得(IPv4のみ)</value>
