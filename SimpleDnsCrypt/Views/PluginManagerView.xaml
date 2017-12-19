@@ -8,6 +8,7 @@
              xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
              xmlns:lex="http://wpflocalizeextension.codeplex.com"
              xmlns:converter="clr-namespace:SimpleDnsCrypt.Converter"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              lex:LocalizeDictionary.DesignCulture="en"
              lex:ResxLocalizationProvider.DefaultAssembly="SimpleDnsCrypt"
              lex:ResxLocalizationProvider.DefaultDictionary="Strings"
@@ -290,16 +291,13 @@
                             </controls:ToggleSwitchButton>
                         </StackPanel>
                     </Border>
-                    <Button
-                        ToolTip="{lex:Loc Key=dialog_plugins_save_button_tooltip}" x:Name="SendOk"
-                        HorizontalAlignment="Center" Margin="5,5,0,0" Height="46" VerticalAlignment="Top"
-                        Width="46" Cursor="Hand" Style="{DynamicResource MetroCircleButtonStyle}"
-                        Background="#FFFFFFFF">
-                        <Rectangle Fill="#FF8ab329" Width="20" Height="20">
-                            <Rectangle.OpacityMask>
-                                <VisualBrush Visual="{DynamicResource appbar_check}" Stretch="Uniform" />
-                            </Rectangle.OpacityMask>
-                        </Rectangle>
+                    <Button x:Name="SendOk" Style="{StaticResource MaterialDesignFloatingActionDarkButton}" 
+                            Width="26" Height="26" Margin="0,10,0,0" ToolTip="{lex:Loc Key=dialog_plugins_save_button_tooltip}"
+                            HorizontalAlignment="Center"  VerticalAlignment="Top" Cursor="Hand">
+                        <materialDesign:PackIcon
+                            Width="20"
+                            Height="20"
+                            Kind="Check" />
                     </Button>
                 </StackPanel>
             </Border>

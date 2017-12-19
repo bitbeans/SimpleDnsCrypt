@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -112,355 +112,354 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="default_settings_network_cards" xml:space="preserve">
-    <value>Мрежови карти</value>
+    <value>ネットワークカード</value>
   </data>
   <data name="default_settings_show_hidden_cards" xml:space="preserve">
-    <value>Показване на скритите</value>
+    <value>隠しカードを表示</value>
   </data>
   <data name="tab_standard_settings" xml:space="preserve">
-    <value>Основни</value>
+    <value>標準設定</value>
   </data>
   <data name="tab_advanced_settings" xml:space="preserve">
-    <value>Разширени</value>
+    <value>詳細設定</value>
   </data>
   <data name="tab_about" xml:space="preserve">
-    <value>Относно</value>
+    <value>about</value>
   </data>
   <data name="default_settings_services" xml:space="preserve">
-    <value>Услуги</value>
+    <value>サービス</value>
   </data>
   <data name="default_settings_primary_text" xml:space="preserve">
-    <value>Първи сървър</value>
+    <value>1番目のリゾルバ</value>
   </data>
   <data name="default_settings_secondary_text" xml:space="preserve">
-    <value>Втори сървър (незадължителен)</value>
+    <value>2番目のリゾルバ(オプション)</value>
   </data>
   <data name="default_settings_primary_header" xml:space="preserve">
-    <value>Основен DNS</value>
+    <value>プライマリ リゾルバ</value>
   </data>
   <data name="default_settings_secondary_header" xml:space="preserve">
-    <value>Допълнителен DNS</value>
+    <value>セカンダリ リゾルバ</value>
   </data>
   <data name="default_settings_primary_service" xml:space="preserve">
-    <value>Основна DNSCrypt услуга</value>
+    <value>プライマリ DNSCrypt サービス</value>
   </data>
   <data name="default_settings_secondary_service" xml:space="preserve">
-    <value>Допълнителна DNSCrypt услуга</value>
+    <value>セカンダリ DNSCrypt サービス</value>
   </data>
   <data name="default_settings_resolver" xml:space="preserve">
-    <value>Сървър</value>
+    <value>リゾルバ</value>
   </data>
   <data name="default_settings_server_address" xml:space="preserve">
-    <value>IP адрес</value>
+    <value>サーバーアドレス</value>
   </data>
   <data name="default_settings_dnssec" xml:space="preserve">
     <value>DNSSEC</value>
   </data>
   <data name="default_settings_no_logs" xml:space="preserve">
-    <value>Без записи</value>
+    <value>ログはありません</value>
   </data>
   <data name="default_settings_name" xml:space="preserve">
-    <value>Име (FQDN)</value>
+    <value>名前(FQDN)</value>
   </data>
   <data name="default_settings_public_key" xml:space="preserve">
-    <value>Публичен ключ</value>
+    <value>公開鍵</value>
   </data>
   <data name="global_ipv6_disabled" xml:space="preserve">
-    <value>IPv6 - неактивен</value>
+    <value>IPv6を無効</value>
   </data>
   <data name="dialog_error_title" xml:space="preserve">
-    <value>Грешка</value>
+    <value>エラー</value>
   </data>
   <data name="dialog_success_title" xml:space="preserve">
-    <value>Успешно</value>
+    <value>成功</value>
   </data>
   <data name="dialog_uninstall_title" xml:space="preserve">
-    <value>Премахване на услуги</value>
+    <value>サービスのアンインストール</value>
   </data>
   <data name="dialog_warning_title" xml:space="preserve">
-    <value>Внимание</value>
+    <value>警告</value>
   </data>
   <data name="dialog_message_refresh_failed" xml:space="preserve">
-    <value>Неуспешно обновяване на списъка със сървъри.</value>
+    <value>リゾルバ一覧の更新に失敗しました.</value>
   </data>
   <data name="window_plugin_title" xml:space="preserve">
-    <value>Налични добавки</value>
+    <value>利用可能な拡張機能</value>
   </data>
   <data name="dialog_message_uninstall" xml:space="preserve">
-    <value>Искате ли да премахнете всички DNSCrypt услуги, инсталирани в Windows?</value>
+    <value>インストール済みのwindowsサービスを全て削除しますか?</value>
   </data>
   <data name="dialog_message_missing_file" xml:space="preserve">
-    <value>Не може да се зареди: {0} или {1}.</value>
+    <value>読み込み失敗: {0} または {1}.</value>
   </data>
   <data name="dialog_message_missing_proxy_files" xml:space="preserve">
-    <value>Липсват файлове в папка dnscrypt-proxy, препоръчва се преинсталиране на приложението.</value>
+    <value>dnscrypt proxyフォルダ内の必要なファイルが揃っていません. アプリケーションの再インストールをお勧めします.</value>
   </data>
   <data name="dialog_message_bad_privileges" xml:space="preserve">
-    <value>Стартирането на това приложение трябва да се изпълни с администраторски права.</value>
+    <value>このアプリケーションは管理者権限で実行する必要があります.</value>
   </data>
-  <data name="ipv6_speed_plugin_title" xml:space="preserve">
-    <value>Ускорение при отсъствие на IPv6</value>
+  <data name="" xml:space="preserve">
+    <value>IPv6がないときに高速化</value>
   </data>
   <data name="ipv6_speed_plugin_text" xml:space="preserve">
-    <value>Ако IPv6 свързаността не е налична във вашата мрежа, тази добавка избягва изчакването за отговор на IPv6 адреси от висшестоящи сървъри. Това може да подобри зареждането на уеб-страници.</value>
+    <value>IPv6で接続できないネットワークの場合、アップストリームリゾルバからのIPv6アドレス応答を待ちません. これによりWebブラウジング速度が向上します.</value>
   </data>
   <data name="advanced_settings_refresh_resolver_title" xml:space="preserve">
-    <value>Обновяване на списъка</value>
+    <value>公開リゾルバ一覧を更新</value>
   </data>
   <data name="advanced_settings_refresh_resolver_text" xml:space="preserve">
-    <value>Обновяване на списъка с публични сървъри (валидността на всички сваляния се проверява с подпис)</value>
+    <value>公開リゾルバの一覧を更新します (全てのダウンロードはMinisign署名で検証されます)</value>
   </data>
   <data name="advanced_settings_debug_title" xml:space="preserve">
-    <value>Режим за отстраняване на грешки</value>
+    <value>デバッグモード</value>
   </data>
   <data name="advanced_settings_global_resolver_title" xml:space="preserve">
-    <value>Глобален сървър</value>
+    <value>グローバルリゾルバ</value>
   </data>
   <data name="advanced_settings_global_resolver_text" xml:space="preserve">
-    <value>Използване на този компютър като шлюз за други устройства (напр.: смартфони или други компютри)</value>
+    <value>このコンピュータを他の端末（スマートフォンや他のコンピュータなど）のゲートウェイデバイスとして動作させます</value>
   </data>
   <data name="advanced_settings_transport_tcp_title" xml:space="preserve">
-    <value>Настройки на протокол</value>
+    <value>転送設定</value>
   </data>
   <data name="advanced_settings_transport_tcp_text" xml:space="preserve">
-    <value>Използване на TCP порт 443 вместо UDP порт 443 (TCP е по-бавен от UDP)</value>
+    <value>UDP port 443の代わりにTCP port 443を利用します(TCPはUDPより遅い)</value>
   </data>
   <data name="advanced_settings_uninstall_title" xml:space="preserve">
-    <value>Премахване на услуги</value>
+    <value>サービスをアンインストール</value>
   </data>
   <data name="advanced_settings_uninstall_text" xml:space="preserve">
-    <value>Премахване на всички DNSCrypt услуги, инсталирани в Windows</value>
+    <value>インストール済みの全サービスをアンインストール</value>
   </data>
   <data name="advanced_settings_uninstall_button" xml:space="preserve">
-    <value>Премахване</value>
+    <value>全てのサービスをアンインストール</value>
   </data>
   <data name="advanced_settings_refresh_resolver_button" xml:space="preserve">
-    <value>Обновяване</value>
+    <value>リストをダウンロード</value>
   </data>
   <data name="advanced_settings_plugins_title" xml:space="preserve">
-    <value>Добавки</value>
+    <value>プラグイン</value>
   </data>
   <data name="advanced_settings_plugins_text" xml:space="preserve">
-    <value>Включване или изключване на допълнителни настройки чрез добавки</value>
+    <value>プラグインの拡張設定を有効または無効にします</value>
   </data>
   <data name="advanced_settings_plugins_button" xml:space="preserve">
-    <value>Управление</value>
+    <value>プラグインマネージャーを開く</value>
   </data>
   <data name="about_license" xml:space="preserve">
-    <value>Лиценз</value>
+    <value>ライセンス</value>
   </data>
   <data name="about_special_thanks" xml:space="preserve">
-    <value>Специални благодарности на</value>
+    <value>スペシャルサンクス</value>
   </data>
   <data name="about_used_software" xml:space="preserve">
-    <value>Използван софтуер</value>
+    <value>利用ソフトウェア</value>
   </data>
   <data name="about_thanks_frank_title" xml:space="preserve">
     <value>Frank Denis (@jedisct1) - https://dnscrypt.org</value>
   </data>
   <data name="about_thanks_frank_text" xml:space="preserve">
-    <value>- разработка на libsodium и DNSCrypt!</value>
+    <value>- libsodium と DNSCryptの開発!</value>
   </data>
   <data name="about_thanks_bytejail_title" xml:space="preserve">
     <value>The EAM GmbH and bytejail - https://bytejail.com</value>
   </data>
   <data name="about_thanks_bytejail_text" xml:space="preserve">
-    <value>- финансиране на този проект!</value>
+    <value>- このプロジェクトへ資金提供!</value>
   </data>
   <data name="log_plugin_title" xml:space="preserve">
-    <value>Създаване на дневник</value>
+    <value>ロギング</value>
   </data>
   <data name="log_plugin_text" xml:space="preserve">
-    <value>Създава дневник на DNS запитванията, получени от прокси сървъра.
-Дневникът се съхранява в локален файл.</value>
+    <value>このプラグインはプロキシによって受信されたDNSクエリを記録します. ログはローカルファイルに保存されます.</value>
   </data>
   <data name="log_plugin_select_folder" xml:space="preserve">
-    <value>Избор на папка</value>
+    <value>ログフォルダを選択</value>
   </data>
   <data name="dialog_plugins_save_button_tooltip" xml:space="preserve">
-    <value>Добре</value>
+    <value>OK</value>
   </data>
   <data name="window_update_title" xml:space="preserve">
-    <value>Моля, изчакайте</value>
+    <value>最新の状態に保つ</value>
   </data>
   <data name="dialog_message_update_standard_title" xml:space="preserve">
-    <value>Обновяване на приложението</value>
+    <value>アプリケーション更新</value>
   </data>
   <data name="dialog_message_update_standard_text" xml:space="preserve">
-    <value>Налична е нова версия Simple DNSCrypt ({0}). Искате ли да обновите сега?</value>
+    <value>新しいSimple DNSCryptのバージョン({0})が利用可能です. 今すぐアップデートしますか?</value>
   </data>
   <data name="yes" xml:space="preserve">
-    <value>Да</value>
+    <value>はい</value>
   </data>
   <data name="no" xml:space="preserve">
-    <value>Не</value>
+    <value>いいえ</value>
   </data>
   <data name="cancel" xml:space="preserve">
-    <value>Отказ</value>
+    <value>キャンセル</value>
   </data>
   <data name="ok" xml:space="preserve">
-    <value>Добре</value>
+    <value>OK</value>
   </data>
   <data name="dialog_update_title" xml:space="preserve">
-    <value>Сваляне</value>
+    <value>ダウンロード</value>
   </data>
   <data name="dialog_update_signature" xml:space="preserve">
-    <value>Подпис</value>
+    <value>署名</value>
   </data>
   <data name="dialog_update_installer" xml:space="preserve">
-    <value>Инсталатор</value>
+    <value>インストーラ</value>
   </data>
   <data name="dialog_message_update_critical_title" xml:space="preserve">
-    <value>Критична актуализация на приложението</value>
+    <value>重要なアプリケーションの更新</value>
   </data>
   <data name="dialog_message_update_critical_text" xml:space="preserve">
-    <value>Налична е нова версия на Simple DNSCrypt ({0}). Актуализацията е отбелязана като критична, необходимо е да обновите в най-скоро време! Искате ли да обновите сега?</value>
+    <value>新しいSimple DNSCryptのバージョン({0})が利用可能です. これは重要な変更を含んでいるため、すぐに更新してください! 今アップデートしますか?</value>
   </data>
   <data name="default_settings_save_port" xml:space="preserve">
-    <value>Запазване</value>
+    <value>保存</value>
   </data>
   <data name="default_settings_info_port" xml:space="preserve">
-    <value>DNSCrypt ще слуша на този порт (по подразбиране: 53)</value>
+    <value>DNSCrypt がリッスンするポート番号 (デフォルト: 53)</value>
   </data>
   <data name="block_plugin_title" xml:space="preserve">
-    <value>Блокиране на адреси и домейни</value>
+    <value>ブロックしたアドレスとドメイン</value>
   </data>
   <data name="block_plugin_text" xml:space="preserve">
-    <value>Тази добавка отказва достъп до домейни или IP адреси намиращи се в черният списък.</value>
+    <value>このプラグインは、クエリ名がブラックリストに含まれている場合、または返されたIPアドレスの少なくとも1つがブラックリストに存在する場合、REFUSED応答を返します.</value>
   </data>
   <data name="block_plugin_sub_domains_header" xml:space="preserve">
-    <value>Блокиране на домейни</value>
+    <value>ブロックしたドメイン</value>
   </data>
   <data name="block_plugin_sub_addresses_header" xml:space="preserve">
-    <value>Блокиране на адреси</value>
+    <value>ブロックしたアドレス</value>
   </data>
   <data name="blacklist_entries" xml:space="preserve">
-    <value>записа</value>
+    <value>項目</value>
   </data>
   <data name="blacklist_building_list" xml:space="preserve">
-    <value>създаване на списък . . .</value>
+    <value>リストを生成しています . . .</value>
   </data>
   <data name="blacklist_button_add_address" xml:space="preserve">
-    <value>Добавяне на правило за адрес</value>
+    <value>新しくアドレスルールを追加</value>
   </data>
   <data name="blacklist_button_add_local_domain" xml:space="preserve">
-    <value>Добавяне на правило за домейн</value>
+    <value>新しくローカルドメインルールを追加</value>
   </data>
   <data name="blacklist_button_add_remote_domain" xml:space="preserve">
-    <value>Добавяне на правила от източник (URL)</value>
+    <value>新しくリモートドメインルールを追加(URL)</value>
   </data>
   <data name="blacklist_button_remove_domain" xml:space="preserve">
-    <value>Премахване на домейн</value>
+    <value>ドメインの項目を削除</value>
   </data>
   <data name="blacklist_button_remove_address" xml:space="preserve">
-    <value>Премахване на адрес</value>
+    <value>アドレスの項目を削除</value>
   </data>
   <data name="blacklist_button_build_domain" xml:space="preserve">
-    <value>Създаване на черен списък с домейни</value>
+    <value>ドメインのブラックリストを作成</value>
   </data>
   <data name="blacklist_button_build_address" xml:space="preserve">
-    <value>Създаване на черен списък с адреси</value>
+    <value>アドレスブラックリストを作成</value>
   </data>
   <data name="blacklist_button_select_domain_blacklist" xml:space="preserve">
-    <value>Избор на файл с черен списък за домейни</value>
+    <value>ドメインのブラックリストファイルを選択</value>
   </data>
   <data name="blacklist_button_select_address_blacklist" xml:space="preserve">
-    <value>Избор на файл с черен списък за адреси</value>
+    <value>アドレスのブラックリストファイルを選択</value>
   </data>
   <data name="block_plugin_sub_domains_text" xml:space="preserve">
-    <value>Потребителски правила и външни източници за блокиране на домейни</value>
+    <value>ローカルルールまあは外部ファイルでドメインをブロック</value>
   </data>
   <data name="block_plugin_sub_addresses_text" xml:space="preserve">
-    <value>Потребителски правила за блокиране на IP адреси (напр.: 10.1.4.99, 172.16.*)</value>
+    <value>カスタムルールでアドレスをブロック (eg: 10.1.4.99, 172.16.*)</value>
   </data>
   <data name="blacklist_modal_empty_list_header" xml:space="preserve">
-    <value>Неуспешно задаване на черен списък</value>
+    <value>ブラックリストの設定に失敗しました</value>
   </data>
   <data name="blacklist_modal_empty_list_text" xml:space="preserve">
-    <value>Файлът с черния списък не може да бъде празен.</value>
+    <value>ブラックリストファイルは空に出来ません</value>
   </data>
   <data name="blacklist_modal_new_address_rule_header" xml:space="preserve">
-    <value>Ново правило за блокиране на IP адрес</value>
+    <value>新しいアドレスルール</value>
   </data>
   <data name="blacklist_modal_new_address_rule_text" xml:space="preserve">
-    <value>Пример: 172.16.144.8, 172.16.*, [fdb2:cd9e:c9f8:861a:c1ab:94e3:ef95:1ec0]</value>
+    <value>例: 172.16.144.8, 172.16.*, [fdb2:cd9e:c9f8:861a:c1ab:94e3:ef95:1ec0]</value>
   </data>
   <data name="blacklist_modal_new_local_domain_rule_text" xml:space="preserve">
-    <value>Пример: *.example.com, ads.*, *sex*</value>
+    <value>例: *.example.com, ads.*, *sex*</value>
   </data>
   <data name="blacklist_modal_new_local_domain_rule_header" xml:space="preserve">
-    <value>Ново правило за блокиране на домейн</value>
+    <value>新しいローカルドメインルール</value>
   </data>
   <data name="blacklist_modal_new_remote_domain_rule_text" xml:space="preserve">
-    <value>Пример: https://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt</value>
+    <value>例: https://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt</value>
   </data>
   <data name="blacklist_modal_new_remote_domain_rule_header" xml:space="preserve">
-    <value>Нов външен източник с правила за блокиране</value>
+    <value>新しいリモートドメインルール</value>
   </data>
   <data name="cache_plugin_title" xml:space="preserve">
-    <value>DNS кеш за отговор</value>
+    <value>DNS応答のキャッシュ</value>
   </data>
   <data name="cache_plugin_text" xml:space="preserve">
-    <value>Обикновен DNS кеш за отговор (без настройки).</value>
+    <value>シンプルで設定不要なDNSキャッシュ.</value>
   </data>
   <data name="cache_plugin_ttl" xml:space="preserve">
-    <value>TTL (време за кеширане)</value>
+    <value>TTL(キャッシュ時間)</value>
   </data>
   <data name="cache_plugin_seconds" xml:space="preserve">
-    <value>секунди</value>
+    <value>秒</value>
   </data>
   <data name="tab_block" xml:space="preserve">
-    <value>Черен списък</value>
+    <value>ブロックとブラックリスト</value>
   </data>
   <data name="default_settings_analyse_button_tooltip" xml:space="preserve">
-    <value>Допълнителна информация за сървърите (само IPv4)</value>
+    <value>リゾルバに関する追加情報を取得(IPv4のみ)</value>
   </data>
   <data name="tab_log" xml:space="preserve">
-    <value>Дневник</value>
+    <value>Live Log</value>
   </data>
   <data name="log_entries" xml:space="preserve">
-    <value>Всички записи:</value>
+    <value>LiveLog 行数:</value>
   </data>
   <data name="log_source" xml:space="preserve">
-    <value>Източник:</value>
+    <value>ログ元:</value>
   </data>
   <data name="log_button_add_to_blacklist" xml:space="preserve">
-    <value>Добавяне на избраното в черен списък</value>
+    <value>ローカルドメインブラックリストに選択項目を追加</value>
   </data>
   <data name="log_modal_no_log_file_text" xml:space="preserve">
-    <value>Не е намерен файл с дневници. Моля, включете добавката за създаване.</value>
+    <value>表示できるログファイルがありません. まずロギングプラグインを有効にしてください.</value>
   </data>
   <data name="log_modal_no_log_file_header" xml:space="preserve">
-    <value>Липсващ файл с дневници</value>
+    <value>ログファイルが見つかりません</value>
   </data>
   <data name="log_modal_add_rule_header" xml:space="preserve">
-    <value>Нов запис в черният списък</value>
+    <value>新しいブラックリスト項目</value>
   </data>
   <data name="log_modal_add_rule_text" xml:space="preserve">
-    <value>Можете да променяте записите преди да ги добавите в черният списък: </value>
+    <value>ブラックリストに追加する前に項目を修正できます: </value>
   </data>
   <data name="forwarding_plugin_text" xml:space="preserve">
-    <value>Тази добавка пренасочва заявки за конкретни домейни до един или повече различни от DNSCrypt сървъри. Това позволява да се изпращат заявки за частни (лични) домейни към маршрутизатор или вътрешен DNS сървър.</value>
+    <value>このプラグインは指定したドメイン名のクエリをDNSCrypt以外のリゾルバに転送します. これはプライベートドメインのクエリをルーターや内部DNSサーバーに送信するのに便利です.</value>
   </data>
   <data name="forwarding_plugin_title" xml:space="preserve">
-    <value>Пренасочване</value>
+    <value>転送</value>
   </data>
   <data name="forwarding_plugin_domains" xml:space="preserve">
-    <value>Домейни</value>
+    <value>ドメイン(リスト)</value>
   </data>
   <data name="forwarding_plugin_resolvers" xml:space="preserve">
-    <value>Сървъри</value>
+    <value>リゾルバ(リスト)</value>
   </data>
   <data name="default_check_for_updates" xml:space="preserve">
-    <value>Проверка за обновявания</value>
+    <value>更新を確認</value>
   </data>
   <data name="default_set_primary_resolver" xml:space="preserve">
-    <value>Запазване</value>
+    <value>保存</value>
   </data>
 </root>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using DNS.Client;
 using DNS.Protocol;
 using Helper;
@@ -40,10 +41,20 @@ namespace SimpleDnsCrypt.Tools
 				var port = 443;
 				if (dnsCryptProxyEntry.ResolverAddress.Contains(":"))
 				{
-					if (dnsCryptProxyEntry.ResolverAddress.StartsWith("[")) return null;
-					var t = dnsCryptProxyEntry.ResolverAddress.Split(':');
-					address = t[0];
-					port = Convert.ToInt32(t[1]);
+					if (dnsCryptProxyEntry.ResolverAddress.StartsWith("["))
+					{
+						//IPv6
+						var id = dnsCryptProxyEntry.ResolverAddress.LastIndexOf(':');
+						address = dnsCryptProxyEntry.ResolverAddress.Substring(0, id).Replace("[","").Replace("]", "");
+						port = Convert.ToInt32(dnsCryptProxyEntry.ResolverAddress.Substring(id + 1));
+					}
+					else
+					{
+						//IPv4
+						var t = dnsCryptProxyEntry.ResolverAddress.Split(':');
+						address = t[0];
+						port = Convert.ToInt32(t[1]);
+					}
 				}
 				else
 				{
@@ -55,7 +66,7 @@ namespace SimpleDnsCrypt.Tools
 				request.Questions.Add(new Question(Domain.FromString(dnsCryptProxyEntry.ProviderName), RecordType.TXT));
 				request.RecursionDesired = true;
 				var sw = Stopwatch.StartNew();
-				var response = await request.Resolve();
+				var response = await request.Resolve().ConfigureAwait(false);
 				sw.Stop();
 
 				foreach (var answerRecord in response.AnswerRecords)

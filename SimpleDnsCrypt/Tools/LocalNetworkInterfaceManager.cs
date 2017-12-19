@@ -18,13 +18,15 @@ namespace SimpleDnsCrypt.Tools
 		/// <summary>
 		///     Get a list of the local network interfaces.
 		/// </summary>
+		/// <param name="userData"></param>
 		/// <param name="showHiddenCards">Show hidden cards.</param>
 		/// <param name="showOnlyOperationalUp">Include only connected network cards.</param>
+		/// <param name="optionalAddress"></param>
 		/// <returns>A (filtered) list of the local network interfaces.</returns>
 		/// <exception cref="NetworkInformationException">A Windows system function call failed. </exception>
 		/// <exception cref="ArgumentNullException"></exception>
-		internal static List<LocalNetworkInterface> GetLocalNetworkInterfaces(bool showHiddenCards = false,
-			bool showOnlyOperationalUp = true)
+		internal static List<LocalNetworkInterface> GetLocalNetworkInterfaces(UserData userData, bool showHiddenCards = false,
+			bool showOnlyOperationalUp = true, string optionalAddress = "")
 		{
 			var interfaces = new List<LocalNetworkInterface>();
 			foreach (var nic in NetworkInterface.GetAllNetworkInterfaces())
@@ -61,25 +63,44 @@ namespace SimpleDnsCrypt.Tools
 					OperationalStatus = nic.OperationalStatus
 				};
 
-				localNetworkInterface.UseDnsCrypt = IsUsingDnsCrypt(localNetworkInterface);
+				localNetworkInterface.UseDnsCrypt = IsUsingDnsCrypt(localNetworkInterface, optionalAddress);
+				if (!localNetworkInterface.UseDnsCrypt)
+				{
+					localNetworkInterface.UseInsecureFallbackDns = IsUsingInsecureFallbackDns(localNetworkInterface, userData);
+				}
 
 				interfaces.Add(localNetworkInterface);
 			}
 			return interfaces;
 		}
 
+		internal static bool IsUsingInsecureFallbackDns(LocalNetworkInterface localNetworkInterface, UserData userData)
+		{
+			if (!(userData?.InsecureResolverPair?.Addresses?.Count > 0)) return false;
+			var fallbackAddresses = userData.InsecureResolverPair.Addresses;
+			return fallbackAddresses.Any(fallbackAddress => localNetworkInterface.Ipv4Dns.Contains(fallbackAddress));
+		}
+
 		/// <summary>
 		///     Simple check if the network interface contains any of resolver addresses.
 		/// </summary>
 		/// <param name="localNetworkInterface">The interface to check.</param>
+		/// <param name="optionalAddress"></param>
 		/// <returns><c>true</c> if a address was found, otherwise <c>false</c></returns>
-		internal static bool IsUsingDnsCrypt(LocalNetworkInterface localNetworkInterface)
+		internal static bool IsUsingDnsCrypt(LocalNetworkInterface localNetworkInterface, string optionalAddress = "")
 		{
 			var dns = new List<string> {Global.PrimaryResolverAddress, Global.SecondaryResolverAddress};
 			var dns6 = new List<string> {Global.PrimaryResolverAddress6, Global.SecondaryResolverAddress6};
 			if (localNetworkInterface.Ipv4Dns.Contains(dns[0]) || localNetworkInterface.Ipv4Dns.Contains(dns[1]))
 			{
 				return true;
+			}
+			if (!string.IsNullOrEmpty(optionalAddress))
+			{
+				if (localNetworkInterface.Ipv4Dns.Contains(optionalAddress))
+				{
+					return true;
+				}
 			}
 			if (localNetworkInterface.Ipv6Dns.Contains(dns6[0]) || localNetworkInterface.Ipv6Dns.Contains(dns6[1]))
 			{

@@ -32,8 +32,7 @@ namespace SimpleDnsCrypt
             Execute.OnUIThread(
                 () =>
                     MessageBox.Show(
-                        string.Format("Message: {0}\nStackTrace: {1}", e.Exception.Message, e.Exception.StackTrace),
-                        "Error", MessageBoxButton.OK, MessageBoxImage.Error));
+		                    $"Message: {e.Exception.Message}\nStackTrace: {e.Exception.StackTrace}", "Error", MessageBoxButton.OK, MessageBoxImage.Error));
         }
 
         protected override void OnStartup(object sender, StartupEventArgs e)

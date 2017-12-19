@@ -83,6 +83,10 @@ namespace SimpleDnsCrypt.Models
 		///     The local port (not part of the CSV file).
 		/// </summary>
 		public int LocalPort { get; set; }
+		/// <summary>
+		///     The local address (not part of the CSV file).
+		/// </summary>
+		public string LocalAddress { get; set; }
 
 		/// <summary>
 		///		Some optional data.
@@ -100,9 +104,9 @@ namespace SimpleDnsCrypt.Models
 			    {
 				    if (DnssecValidation)
 				    {
-					    return $"{Extra.ResponseTime}ms - {FullName} [DNSSEC]";
+					    return Extra.ResponseTime == -1 ? $"??ms - {FullName} [DNSSEC]" : $"{Extra.ResponseTime}ms - {FullName} [DNSSEC]";
 				    }
-				    return $"{Extra.ResponseTime}ms - {FullName}";
+				    return Extra.ResponseTime == -1 ? $"??ms - {FullName}" : $"{Extra.ResponseTime}ms - {FullName}";
 			    }
 			    return FullName;
 		    }

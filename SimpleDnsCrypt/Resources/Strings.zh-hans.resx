@@ -118,283 +118,283 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="default_settings_network_cards" xml:space="preserve">
-    <value>網路適配器清單</value>
+    <value>网卡列表</value>
   </data>
   <data name="default_settings_show_hidden_cards" xml:space="preserve">
-    <value>顯示隱藏的網路適配器</value>
+    <value>显示隐藏的网卡</value>
   </data>
   <data name="tab_standard_settings" xml:space="preserve">
-    <value>常用設定</value>
+    <value>常用设置</value>
   </data>
   <data name="tab_about" xml:space="preserve">
-    <value>關於</value>
+    <value>关于</value>
   </data>
   <data name="tab_advanced_settings" xml:space="preserve">
-    <value>進階設定</value>
+    <value>高级设置</value>
   </data>
   <data name="default_settings_services" xml:space="preserve">
-    <value>背景服務</value>
+    <value>后台服务</value>
   </data>
   <data name="default_settings_primary_text" xml:space="preserve">
-    <value>慣用伺服器</value>
+    <value>首选服务器</value>
   </data>
   <data name="default_settings_secondary_text" xml:space="preserve">
-    <value>備用伺服器（可選）</value>
+    <value>备用服务器（可选）</value>
   </data>
   <data name="default_settings_primary_service" xml:space="preserve">
-    <value>慣用伺服器DNSCrypt服務</value>
+    <value>首选服务器DNSCrypt服务</value>
   </data>
   <data name="default_settings_secondary_service" xml:space="preserve">
-    <value>備用伺服器DNSCrypt服務</value>
+    <value>备用服务器DNSCrypt服务</value>
   </data>
   <data name="default_settings_resolver" xml:space="preserve">
-    <value>伺服器</value>
+    <value>服务器</value>
   </data>
   <data name="default_settings_server_address" xml:space="preserve">
-    <value>伺服器位址</value>
+    <value>服务器地址</value>
   </data>
   <data name="default_settings_dnssec" xml:space="preserve">
     <value>DNSSEC</value>
   </data>
   <data name="default_settings_no_logs" xml:space="preserve">
-    <value>無日誌記錄</value>
+    <value>无日志记录</value>
   </data>
   <data name="default_settings_name" xml:space="preserve">
-    <value>伺服器FQDN</value>
+    <value>服务器FQDN</value>
   </data>
   <data name="default_settings_public_key" xml:space="preserve">
-    <value>公鑰</value>
+    <value>公钥</value>
   </data>
   <data name="default_settings_secondary_header" xml:space="preserve">
-    <value>備用DNS伺服器</value>
+    <value>备用DNS服务器</value>
   </data>
   <data name="default_settings_primary_header" xml:space="preserve">
-    <value>慣用DNS伺服器</value>
+    <value>首选DNS服务器</value>
   </data>
   <data name="global_ipv6_disabled" xml:space="preserve">
-    <value>IPv6已停用</value>
+    <value>IPv6已禁用</value>
   </data>
   <data name="dialog_error_title" xml:space="preserve">
-    <value>錯誤</value>
+    <value>错误</value>
   </data>
   <data name="dialog_success_title" xml:space="preserve">
     <value>成功</value>
   </data>
   <data name="dialog_uninstall_title" xml:space="preserve">
-    <value>解除安裝服務</value>
+    <value>卸载服务</value>
   </data>
   <data name="dialog_warning_title" xml:space="preserve">
     <value>警告</value>
   </data>
   <data name="dialog_message_refresh_failed" xml:space="preserve">
-    <value>更新伺服器清單失敗</value>
+    <value>更新服务器列表失败</value>
   </data>
   <data name="window_plugin_title" xml:space="preserve">
-    <value>可用的附加組件</value>
+    <value>可用的插件</value>
   </data>
   <data name="dialog_message_uninstall" xml:space="preserve">
-    <value>您確定要解除安裝所有已安裝的Windows服務？</value>
+    <value>您确定要移除所有已安装的Windows服务么？</value>
   </data>
   <data name="dialog_message_missing_file" xml:space="preserve">
-    <value>無法調用： {0} 或 {1}.</value>
+    <value>无法调用： {0} 或 {1}.</value>
   </data>
   <data name="dialog_message_missing_proxy_files" xml:space="preserve">
-    <value>無法在應用程式目錄內找到所需檔案，請重新安裝此應用程式</value>
+    <value>无法在安装文件夹内找到所需文件，建议重新安装本程序</value>
   </data>
   <data name="dialog_message_bad_privileges" xml:space="preserve">
-    <value>你需要以系統管理員身份執行此程式</value>
+    <value>您必须以管理员权限运行此程序</value>
   </data>
   <data name="ipv6_speed_plugin_title" xml:space="preserve">
-    <value>在無IPv6的網路下加快解析</value>
+    <value>在无IPv6的情况下加快解析速度</value>
   </data>
   <data name="ipv6_speed_plugin_text" xml:space="preserve">
-    <value>若你的網路環境尚未部署IPv6，開啟這個功能會令本程式無視DNS伺服器的IPv6回應，以降低解析延時</value>
+    <value>如果您的网络不具备IPv6能力，启用该插件可以使本软件不再等待上游服务器的IPv6响应。这样可以改善您的网络浏览体验</value>
   </data>
   <data name="advanced_settings_refresh_resolver_title" xml:space="preserve">
-    <value>更新伺服器清單</value>
+    <value>刷新服务器列表</value>
   </data>
   <data name="advanced_settings_refresh_resolver_text" xml:space="preserve">
-    <value>更新已部署DNSCrypt的公開伺服器之清單（所有的檔案均經過Minisign簽章確保安全） </value>
+    <value>刷新已部署DNSCrypt的公开服务器列表（所有的文件都经过Minisign签名认证以保证安全）</value>
   </data>
   <data name="advanced_settings_debug_title" xml:space="preserve">
-    <value>除錯模式</value>
+    <value>排错模式</value>
   </data>
   <data name="advanced_settings_refresh_resolver_button" xml:space="preserve">
-    <value>下載清單</value>
+    <value>下载列表</value>
   </data>
   <data name="advanced_settings_uninstall_title" xml:space="preserve">
-    <value>解除安裝服務</value>
+    <value>卸载服务</value>
   </data>
   <data name="advanced_settings_uninstall_text" xml:space="preserve">
-    <value>解除安裝所有已安裝的Windows服務</value>
+    <value>卸载所有已安装的Windows服务</value>
   </data>
   <data name="advanced_settings_uninstall_button" xml:space="preserve">
-    <value>解除安裝所有服務</value>
+    <value>卸载所有服务</value>
   </data>
   <data name="advanced_settings_plugins_title" xml:space="preserve">
     <value>附加功能</value>
   </data>
   <data name="advanced_settings_plugins_text" xml:space="preserve">
-    <value>開啟或關閉附加功能</value>
+    <value>启用或禁用附加功能</value>
   </data>
   <data name="advanced_settings_plugins_button" xml:space="preserve">
-    <value>開啟附加功能管理員</value>
-  </data>
-  <data name="advanced_settings_global_resolver_title" xml:space="preserve">
-    <value>將本機作為DNS轉發器</value>
+    <value>打开附加功能管理器</value>
   </data>
   <data name="advanced_settings_transport_tcp_title" xml:space="preserve">
-    <value>連線設定</value>
+    <value>传输设置</value>
   </data>
   <data name="advanced_settings_transport_tcp_text" xml:space="preserve">
-    <value>使用TCP 443埠代替UDP 433埠（TCP比UDP會慢一些）</value>
+    <value>使用TCP 443端口取代UDP 443端口（TCP比UDP会慢一些）</value>
+  </data>
+  <data name="advanced_settings_global_resolver_title" xml:space="preserve">
+    <value>本地DNS转发</value>
   </data>
   <data name="advanced_settings_global_resolver_text" xml:space="preserve">
-    <value>開啟此選項，讓本機可以轉發其它裝置（如：手機、平板電腦或其它電腦）的DNS請求。別忘了將其它裝置的DNS伺服器IP位址手工修改為本機的IP位址</value>
+    <value>开启此选项，令这台电脑用来转发其他设备（例如：手机、平板电脑或者其他电脑）的DNS请求。其它设备将DNS服务器的IP设定为本机IP即可使用</value>
   </data>
   <data name="about_used_software" xml:space="preserve">
-    <value>本程式所使用的軟體</value>
+    <value>本程序使用的软件</value>
   </data>
   <data name="about_license" xml:space="preserve">
-    <value>許可證</value>
+    <value>许可证</value>
   </data>
   <data name="about_special_thanks" xml:space="preserve">
-    <value>鳴謝</value>
+    <value>特别感谢</value>
   </data>
   <data name="about_thanks_frank_title" xml:space="preserve">
     <value>Frank Denis (@jedisct1) - https://dnscrypt.org </value>
   </data>
   <data name="about_thanks_frank_text" xml:space="preserve">
-    <value>- 開發了libsodium專案和DNSCrypt專案！</value>
+    <value>- 开发了libsodium和DNSCrypt！</value>
   </data>
   <data name="about_thanks_bytejail_text" xml:space="preserve">
-    <value>- 贊助本專案！</value>
+    <value>- 资助本项目！</value>
   </data>
   <data name="about_thanks_bytejail_title" xml:space="preserve">
     <value>The EAM GmbH and bytejail - https://bytejail.com</value>
   </data>
   <data name="log_plugin_text" xml:space="preserve">
-    <value>本附加功能會記錄代理伺服器收到的DNS請求，並將它們記錄於一個本機日誌檔中</value>
+    <value>本插件会记录代理服务器收到的DNS请求，并把它们记录在一个本地文件内</value>
   </data>
   <data name="log_plugin_title" xml:space="preserve">
-    <value>日誌</value>
+    <value>日志</value>
   </data>
   <data name="log_plugin_select_folder" xml:space="preserve">
-    <value>選擇一個日誌保存的資料夾</value>
+    <value>选择一个日志文件夹</value>
   </data>
   <data name="dialog_plugins_save_button_tooltip" xml:space="preserve">
-    <value>確定</value>
+    <value>确定</value>
   </data>
   <data name="dialog_message_update_standard_text" xml:space="preserve">
-    <value>Simple DNSCrypt現在已經有新版本了（{0}）。您是否希望現在更新？</value>
+    <value>Simple DNSCrypt现已推出新版 ({0}) 。您是否希望现在更新？</value>
   </data>
   <data name="dialog_message_update_standard_title" xml:space="preserve">
-    <value>軟體更新</value>
+    <value>程序更新</value>
   </data>
   <data name="window_update_title" xml:space="preserve">
-    <value>暫時沒有新版本呢，請靜待新版本通知吧</value>
+    <value>暂无更新，稍后再来</value>
   </data>
   <data name="yes" xml:space="preserve">
-    <value>確定</value>
+    <value>确定</value>
   </data>
   <data name="no" xml:space="preserve">
     <value>取消</value>
   </data>
   <data name="ok" xml:space="preserve">
-    <value>確定</value>
+    <value>确定</value>
   </data>
   <data name="cancel" xml:space="preserve">
     <value>取消</value>
   </data>
   <data name="dialog_update_title" xml:space="preserve">
-    <value>下載</value>
+    <value>下载</value>
   </data>
   <data name="dialog_update_signature" xml:space="preserve">
-    <value>簽章</value>
+    <value>签名</value>
   </data>
   <data name="dialog_update_installer" xml:space="preserve">
-    <value>安裝檔</value>
+    <value>安装文件</value>
   </data>
   <data name="dialog_message_update_critical_title" xml:space="preserve">
-    <value>重要程式更新</value>
+    <value>关键程序更新</value>
   </data>
   <data name="dialog_message_update_critical_text" xml:space="preserve">
-    <value>Simple DNSCrypt現在已經有新版本了（{0}）。該版本包含重要更新，您是否馬上更新？</value>
+    <value>Simple DNSCrypt现已推出新版 ({0}) 。该版本是一个关键更新，所以您应该立即更新！您是否希望现在更新？</value>
   </data>
   <data name="default_settings_save_port" xml:space="preserve">
-    <value>存儲</value>
+    <value>保存</value>
   </data>
   <data name="default_settings_info_port" xml:space="preserve">
-    <value>DNSCrypt 會在此連接埠號工作（預設為53）</value>
+    <value>DNSCrypt 会在此端口监听（默认端口：53）</value>
   </data>
   <data name="block_plugin_title" xml:space="preserve">
-    <value>遮蔽的IP位址和網址（黑名單）</value>
+    <value>屏蔽的IP地址和域名（黑名单）</value>
   </data>
   <data name="block_plugin_text" xml:space="preserve">
-    <value>若欲解析的網址在黑名單上，或者解析返回的任一IP位址結果在黑名單上，該組件將送出「拒絕連線」的命令</value>
+    <value>如果查询的域名在黑名单内，或者返回的任一IP结果在黑名单内，该插件将发送一个 拒绝访问 命令。</value>
   </data>
   <data name="block_plugin_sub_domains_header" xml:space="preserve">
-    <value>遮蔽的網址（網址黑名單）</value>
+    <value>屏蔽的域名</value>
   </data>
   <data name="block_plugin_sub_addresses_header" xml:space="preserve">
-    <value>遮蔽的IP位址（IP位址黑名單）</value>
+    <value>屏蔽的IP地址</value>
   </data>
   <data name="blacklist_entries" xml:space="preserve">
-    <value>條目</value>
+    <value>条目</value>
   </data>
   <data name="blacklist_building_list" xml:space="preserve">
-    <value>匯出清單……</value>
+    <value>生成列表……</value>
   </data>
   <data name="blacklist_button_build_address" xml:space="preserve">
-    <value>匯出IP位址黑名單</value>
+    <value>生成屏蔽地址列表</value>
   </data>
   <data name="blacklist_button_build_domain" xml:space="preserve">
-    <value>匯出網址黑名單</value>
+    <value>生成屏蔽域名列表</value>
   </data>
   <data name="blacklist_button_remove_address" xml:space="preserve">
-    <value>移除IP位址條目</value>
+    <value>移除地址条目</value>
   </data>
   <data name="blacklist_button_remove_domain" xml:space="preserve">
-    <value>移除網址條目</value>
+    <value>移除域名条目</value>
   </data>
   <data name="blacklist_button_add_remote_domain" xml:space="preserve">
-    <value>從遠端網址規則清單（URL網址）匯入</value>
+    <value>加入新的远程域名规则（URL）</value>
   </data>
   <data name="blacklist_button_add_local_domain" xml:space="preserve">
-    <value>新增網址規則</value>
+    <value>加入新的本地域名规则</value>
   </data>
   <data name="blacklist_button_add_address" xml:space="preserve">
-    <value>新增IP位址規則</value>
+    <value>加入新的地址规则</value>
   </data>
   <data name="blacklist_button_select_domain_blacklist" xml:space="preserve">
-    <value>選擇網址黑名單檔案</value>
+    <value>选择域名屏蔽列表文件</value>
   </data>
   <data name="blacklist_button_select_address_blacklist" xml:space="preserve">
-    <value>選擇IP位址黑名單檔案</value>
+    <value>选择地址屏蔽列表文件</value>
   </data>
   <data name="block_plugin_sub_addresses_text" xml:space="preserve">
-    <value>自訂遮蔽規則（如：10.1.4.99, 172.16.*）</value>
+    <value>自定义屏蔽地址规则（例如：10.1.4.99, 172.16.*）</value>
   </data>
   <data name="block_plugin_sub_domains_text" xml:space="preserve">
-    <value>根據本機規則或遠端清單檔案來遮蔽網址</value>
+    <value>根据本地规则或者远程文件来屏蔽域名</value>
   </data>
   <data name="blacklist_modal_new_address_rule_text" xml:space="preserve">
     <value>例如：172.16.144.8, 172.16.*, [fdb2:cd9e:c9f8:861a:c1ab:94e3:ef95:1ec0]</value>
   </data>
   <data name="blacklist_modal_new_address_rule_header" xml:space="preserve">
-    <value>新增IP位址規則</value>
+    <value>新建地址规则</value>
   </data>
   <data name="blacklist_modal_empty_list_text" xml:space="preserve">
-    <value>遮蔽清單不能為空</value>
+    <value>屏蔽列表不能为空</value>
   </data>
   <data name="blacklist_modal_empty_list_header" xml:space="preserve">
-    <value>無法建立遮蔽清單</value>
+    <value>设置屏蔽列表失败</value>
   </data>
   <data name="blacklist_modal_new_local_domain_rule_header" xml:space="preserve">
-    <value>新增本機網址規則</value>
+    <value>新建本地域名规则</value>
   </data>
   <data name="blacklist_modal_new_remote_domain_rule_header" xml:space="preserve">
-    <value>新增遠端的網址規則</value>
+    <value>新建远程域名规则</value>
   </data>
   <data name="blacklist_modal_new_local_domain_rule_text" xml:space="preserve">
     <value>例如：*.example.com, ads.*, *sex*</value>
@@ -403,61 +403,61 @@
     <value>例如：https://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt</value>
   </data>
   <data name="cache_plugin_text" xml:space="preserve">
-    <value>DNS回應快取維持時間，一般保持預設即可</value>
+    <value>无需配置的简单DNS响应缓存</value>
   </data>
   <data name="cache_plugin_ttl" xml:space="preserve">
-    <value>TTL（存活時間）</value>
+    <value>TTL （缓存时间）</value>
   </data>
   <data name="cache_plugin_seconds" xml:space="preserve">
     <value>秒</value>
   </data>
   <data name="cache_plugin_title" xml:space="preserve">
-    <value>DNS回應快取</value>
+    <value>DNS响应缓存</value>
   </data>
   <data name="tab_block" xml:space="preserve">
-    <value>黑名單與過濾清單</value>
+    <value>黑名单与屏蔽列表</value>
   </data>
   <data name="default_settings_analyse_button_tooltip" xml:space="preserve">
-    <value>獲取伺服器的一些額外資訊（僅適用於IPv4）</value>
+    <value>获取服务器的一些额外信息（只适用于IPv4）</value>
   </data>
   <data name="tab_log" xml:space="preserve">
-    <value>實時日誌</value>
+    <value>实时日志</value>
   </data>
   <data name="log_entries" xml:space="preserve">
-    <value>日誌條目數：</value>
+    <value>日志条目数:</value>
   </data>
   <data name="log_source" xml:space="preserve">
-    <value>日誌檔路徑：</value>
+    <value>文件来源：</value>
   </data>
   <data name="log_button_add_to_blacklist" xml:space="preserve">
-    <value>把選定的條目新增至本機網址黑名單</value>
+    <value>把选定的条目加入本地域名屏蔽列表</value>
   </data>
   <data name="log_modal_no_log_file_text" xml:space="preserve">
-    <value>無日誌檔案。請先在「進階設定 → 附加功能」中開啟「日誌」功能</value>
+    <value>没有找到日志文件，请先在”高级设置 → 附加功能“中启用“日志”功能</value>
   </data>
   <data name="log_modal_no_log_file_header" xml:space="preserve">
-    <value>找不到日誌檔案</value>
+    <value>找不到日志文件</value>
   </data>
   <data name="log_modal_add_rule_header" xml:space="preserve">
-    <value>新增黑名單條目</value>
+    <value>新加屏蔽列表条目</value>
   </data>
   <data name="log_modal_add_rule_text" xml:space="preserve">
-    <value>新增黑名單條目前你可以編輯它：</value>
+    <value>在加入屏蔽列表前你可以编辑条目：</value>
   </data>
   <data name="default_check_for_updates" xml:space="preserve">
-    <value>檢查更新</value>
+    <value>检查更新</value>
   </data>
   <data name="forwarding_plugin_title" xml:space="preserve">
-    <value>轉發</value>
+    <value>转发</value>
   </data>
   <data name="forwarding_plugin_text" xml:space="preserve">
-    <value>開啟本功能，將特定網域名稱（此處可用萬用字元）的DNS請求轉發至一個或多個指定的非DNSCrypt伺服器。適用於私有網路中的私有網域（例如路由器的管理頁面），或是使用私有網絡內的DNS處理DNS請求</value>
+    <value>开启本项，将指定域名（此处可用通配符）的DNS请求转发到一个或多个指定的非DNSCrypt服务器。适用于私人网络中的私人域名（如路由器的管理页面），或是使用私人网络內的DNS处理DNS请求</value>
   </data>
   <data name="forwarding_plugin_domains" xml:space="preserve">
-    <value>網域名稱</value>
+    <value>域名</value>
   </data>
   <data name="forwarding_plugin_resolvers" xml:space="preserve">
-    <value>伺服器位址</value>
+    <value>服务器地址</value>
   </data>
   <data name="default_set_primary_resolver" xml:space="preserve">
     <value>保存</value>

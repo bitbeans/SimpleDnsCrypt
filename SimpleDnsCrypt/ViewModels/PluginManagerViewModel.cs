@@ -37,7 +37,7 @@ namespace SimpleDnsCrypt.ViewModels
 
 		public string WindowTitle
 		{
-			get { return _windowTitle; }
+			get => _windowTitle;
 			set
 			{
 				_windowTitle = value;
@@ -50,7 +50,7 @@ namespace SimpleDnsCrypt.ViewModels
 		/// </summary>
 		public List<string> Plugins
 		{
-			get { return _plugins; }
+			get => _plugins;
 			set
 			{
 				_plugins = value;
@@ -63,7 +63,7 @@ namespace SimpleDnsCrypt.ViewModels
 		/// </summary>
 		public bool BlockIpv6Plugin
 		{
-			get { return _blockIpv6Plugin; }
+			get => _blockIpv6Plugin;
 			set
 			{
 				_blockIpv6Plugin = value;
@@ -84,7 +84,7 @@ namespace SimpleDnsCrypt.ViewModels
 		/// </summary>
 		public bool CachePlugin
 		{
-			get { return _cachePlugin; }
+			get => _cachePlugin;
 			set
 			{
 				_cachePlugin = value;
@@ -119,7 +119,7 @@ namespace SimpleDnsCrypt.ViewModels
 		/// </summary>
 		public int CachePluginTtl
 		{
-			get { return _cachePluginTtl; }
+			get => _cachePluginTtl;
 			set
 			{
 				_cachePluginTtl = value;
@@ -132,7 +132,7 @@ namespace SimpleDnsCrypt.ViewModels
 		/// </summary>
 		public bool LogPlugin
 		{
-			get { return _logPlugin; }
+			get => _logPlugin;
 			set
 			{
 				_logPlugin = value;
@@ -168,7 +168,7 @@ namespace SimpleDnsCrypt.ViewModels
 		/// </summary>
 		public string LogPluginPath
 		{
-			get { return _logPluginPath; }
+			get => _logPluginPath;
 			set
 			{
 				_logPluginPath = value;
@@ -176,13 +176,12 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 		}
 
-
 		/// <summary>
 		///     To manage the log plugin.
 		/// </summary>
 		public bool ForwardingPlugin
 		{
-			get { return _forwardingPlugin; }
+			get => _forwardingPlugin;
 			set
 			{
 				_forwardingPlugin = value;
@@ -219,7 +218,7 @@ namespace SimpleDnsCrypt.ViewModels
 		/// </summary>
 		public string ForwardingPluginDomains
 		{
-			get { return _forwardingPluginDomains; }
+			get => _forwardingPluginDomains;
 			set
 			{
 				_forwardingPluginDomains = value;
@@ -227,13 +226,12 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 		}
 
-
 		/// <summary>
 		///     The full path to the log file.
 		/// </summary>
 		public string ForwardingPluginResolvers
 		{
-			get { return _forwardingPluginResolvers; }
+			get => _forwardingPluginResolvers;
 			set
 			{
 				_forwardingPluginResolvers = value;

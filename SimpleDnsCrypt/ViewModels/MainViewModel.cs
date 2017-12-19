@@ -15,10 +15,12 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using Caliburn.Micro;
+using MaterialDesignThemes.Wpf;
 using SimpleDnsCrypt.Config;
 using SimpleDnsCrypt.Models;
 using SimpleDnsCrypt.Tools;
 using WPFLocalizeExtension.Engine;
+using RedistributableChecker;
 
 namespace SimpleDnsCrypt.ViewModels
 {
@@ -31,8 +33,11 @@ namespace SimpleDnsCrypt.ViewModels
 		private readonly BindableCollection<LocalNetworkInterface> _localNetworkInterfaces =
 			new BindableCollection<LocalNetworkInterface>();
 
+		private ISnackbarMessageQueue _messageQueue;
+		private CancellationTokenSource _analyseCancellationTokenSource = new CancellationTokenSource();
 		private string _windowTitle;
 		private readonly UserData _userData;
+		private readonly InsecureResolvers _insecureResolvers;
 		private readonly IWindowManager _windowManager;
 		private bool _actAsGlobalGateway;
 		private bool _isAnalysing;
@@ -55,6 +60,14 @@ namespace SimpleDnsCrypt.ViewModels
 		private bool _updateResolverListOnStart;
 		private bool _useTcpOnly;
 		private bool _isCheckingUpdates;
+		private bool _filterDnssec;
+		private bool _filterNoLogs;
+		private bool _filterIpv4;
+		private bool _filterIpv6;
+		private readonly string _proxyList;
+		private readonly string _proxyListSignature;
+		private bool _unsavedChanges;
+
 
 		/// <summary>
 		///     MainViewModel construcor for XAML.
@@ -77,6 +90,7 @@ namespace SimpleDnsCrypt.ViewModels
 				_windowManager = windowManager;
 				eventAggregator.Subscribe(this);
 				_userData = new UserData(Path.Combine(Directory.GetCurrentDirectory(), Global.UserConfigurationFile));
+				_insecureResolvers = new InsecureResolvers(Path.Combine(Directory.GetCurrentDirectory(), "data", Global.InsecureResolversFile));
 				// fill the language combobox
 				_languages = LocalizationEx.GetSupportedLanguages();
 				// automatically use the correct translations if available (fallback: en)
@@ -88,7 +102,8 @@ namespace SimpleDnsCrypt.ViewModels
 				// select the current language in the combobox
 				_selectedLanguage =
 					_languages.SingleOrDefault(l => l.ShortCode.Equals(LocalizeDictionary.Instance.Culture.TwoLetterISOLanguageName));
-
+				_messageQueue = new SnackbarMessageQueue(new TimeSpan(0, 0, 0, 5));
+				
 				// this is already defined in the app.manifest, but to be sure check it again
 				if (!IsAdministrator())
 				{
@@ -98,6 +113,8 @@ namespace SimpleDnsCrypt.ViewModels
 						MessageBoxButton.OK, BoxType.Error);
 					Environment.Exit(1);
 				}
+
+				CheckRedistributablePackageVersion();
 
 				// do a simple check, if all needed files are available
 				if (!ValidateDnsCryptProxyFolder())
@@ -109,26 +126,22 @@ namespace SimpleDnsCrypt.ViewModels
 						MessageBoxButton.OK, BoxType.Error);
 					Environment.Exit(1);
 				}
-				if (_userData.UseIpv6)
-				{
-					WindowTitle = string.Format("{0} {1} {2}", Global.ApplicationName, VersionUtilities.PublishVersion, VersionUtilities.PublishBuild);
-				}
-				else
-				{
-					WindowTitle = string.Format("{0} {1} {2} ({3})", Global.ApplicationName, VersionUtilities.PublishVersion, VersionUtilities.PublishBuild,
-						LocalizationEx.GetUiString("global_ipv6_disabled", Thread.CurrentThread.CurrentCulture));
-				}
 
+				SetWindowTitle(_userData.UseIpv6);
+				_filterIpv6 = _userData.UseIpv6;
+				_filterIpv4 = _userData.UseIpv4;
+				_filterDnssec = _userData.OnlyUseDnssec;
+				_filterNoLogs = _userData.OnlyUseNoLogs;
 				_resolvers = new List<DnsCryptProxyEntry>();
 				_updateResolverListOnStart = _userData.UpdateResolverListOnStart;
 				_isWorkingOnPrimaryService = false;
 				_isWorkingOnSecondaryService = false;
 				_isAnalysing = false;
-
+				_unsavedChanges = false;
 				LocalNetworkInterfaces = new CollectionViewSource {Source = _localNetworkInterfaces};
 				PrimaryDnsCryptProxyManager = new DnsCryptProxyManager(DnsCryptProxyType.Primary);
 				SecondaryDnsCryptProxyManager = new DnsCryptProxyManager(DnsCryptProxyType.Secondary);
-				ShowHiddenCards = false;
+				
 
 				if (PrimaryDnsCryptProxyManager.DnsCryptProxy.Parameter.TcpOnly ||
 				    SecondaryDnsCryptProxyManager.DnsCryptProxy.Parameter.TcpOnly)
@@ -153,33 +166,32 @@ namespace SimpleDnsCrypt.ViewModels
 						_plugins = new List<string>();
 					}
 				}
-				var proxyList = Path.Combine(Directory.GetCurrentDirectory(),
+				_proxyList = Path.Combine(Directory.GetCurrentDirectory(),
 					Global.DnsCryptProxyFolder, Global.DnsCryptProxyResolverListName);
-				var proxyListSignature = Path.Combine(Directory.GetCurrentDirectory(),
+				_proxyListSignature = Path.Combine(Directory.GetCurrentDirectory(),
 					Global.DnsCryptProxyFolder, Global.DnsCryptProxySignatureFileName);
-				if (!File.Exists(proxyList) || !File.Exists(proxyListSignature) || UpdateResolverListOnStart)
+				if (!File.Exists(_proxyList) || !File.Exists(_proxyListSignature) || UpdateResolverListOnStart)
 				{
 					// download and verify the proxy list if there is no one.
-					AsyncHelpers.RunSync(DnsCryptProxyListManager.UpdateResolverListAsync);
+					var task = Task.Run(async () => await DnsCryptProxyListManager
+						.UpdateResolverListAsync(!string.IsNullOrEmpty(_userData?.ProxySettings?.Host) ? _userData.ProxySettings : null)
+						.ConfigureAwait(false));
+					task.Wait();
 				}
 
-				var dnsProxyList =
-					DnsCryptProxyListManager.ReadProxyList(proxyList, proxyListSignature, !_userData.UseIpv6);
+				var dnsProxyList = DnsCryptProxyListManager.ReadProxyList(_proxyList, _proxyListSignature, _userData.OnlyUseNoLogs, _userData.OnlyUseDnssec, _userData.UseIpv4, _userData.UseIpv6);
 				if (dnsProxyList != null && dnsProxyList.Any())
 				{
 					foreach (var dnsProxy in dnsProxyList)
 					{
-						if (
-							dnsProxy.Name.Equals(
-								PrimaryDnsCryptProxyManager.DnsCryptProxy.Parameter.ResolverName))
+						if (dnsProxy.Name.Equals(PrimaryDnsCryptProxyManager.DnsCryptProxy.Parameter.ResolverName))
 						{
 							_primaryResolver = dnsProxy;
-							// restore the local port
+							// restore the local port and address
 							_primaryResolver.LocalPort = PrimaryDnsCryptProxyManager.DnsCryptProxy.Parameter.LocalPort;
+							_primaryResolver.LocalAddress = PrimaryDnsCryptProxyManager.DnsCryptProxy.Parameter.LocalAddress;
 						}
-						if (
-							dnsProxy.Name.Equals(
-								SecondaryDnsCryptProxyManager.DnsCryptProxy.Parameter.ResolverName))
+						if (dnsProxy.Name.Equals(SecondaryDnsCryptProxyManager.DnsCryptProxy.Parameter.ResolverName))
 						{
 							_secondaryResolver = dnsProxy;
 						}
@@ -192,7 +204,7 @@ namespace SimpleDnsCrypt.ViewModels
 						string.Format(
 							LocalizationEx.GetUiString("dialog_message_missing_file",
 								Thread.CurrentThread.CurrentCulture),
-							proxyList, proxyListSignature),
+							_proxyList, _proxyListSignature),
 						LocalizationEx.GetUiString("dialog_error_title", Thread.CurrentThread.CurrentCulture),
 						MessageBoxButton.OK, BoxType.Error);
 					Environment.Exit(1);
@@ -215,7 +227,16 @@ namespace SimpleDnsCrypt.ViewModels
 						                  (dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultPrimaryResolverName)) ??
 						                   dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultPrimaryBackupResolverName)));
 					}
-					PrimaryResolver = defaultResolver;
+
+					PrimaryResolver = defaultResolver ?? dnsProxyList.ElementAt(0);
+					if (_primaryResolver.LocalPort == 0)
+					{
+						_primaryResolver.LocalPort = Global.PrimaryResolverPort;
+					}
+					if (_primaryResolver.LocalAddress == null)
+					{
+						_primaryResolver.LocalAddress = Global.PrimaryResolverAddress;
+					}
 				}
 
 				// if there is no selected secondary resolver, add a default resolver
@@ -236,7 +257,15 @@ namespace SimpleDnsCrypt.ViewModels
 						                   dnsProxyList.SingleOrDefault(d => d.Name.Equals(Global.DefaultSecondaryBackupResolverName)));
 					}
 
-					SecondaryResolver = defaultResolver;
+					SecondaryResolver = defaultResolver ?? dnsProxyList.ElementAt(1);
+					if (_secondaryResolver.LocalPort == 0)
+					{
+						_secondaryResolver.LocalPort = Global.SecondaryResolverPort;
+					}
+					if (_secondaryResolver.LocalAddress == null)
+					{
+						_secondaryResolver.LocalAddress = Global.SecondaryResolverAddress;
+					}
 				}
 
 
@@ -256,30 +285,38 @@ namespace SimpleDnsCrypt.ViewModels
 					}
 				}
 
-				if (
-					PrimaryDnsCryptProxyManager.DnsCryptProxy.Parameter.LocalAddress.Equals(
-						Global.GlobalGatewayAddress))
+				if (PrimaryDnsCryptProxyManager.DnsCryptProxy.Parameter.LocalAddress != null)
 				{
-					_actAsGlobalGateway = true;
-					_primaryResolverTitle = string.Format("{0} ({1}:{2})",
-						LocalizationEx.GetUiString("default_settings_primary_header",
-							Thread.CurrentThread.CurrentCulture),
-						Global.GlobalGatewayAddress, Global.PrimaryResolverPort);
+					if (PrimaryDnsCryptProxyManager.DnsCryptProxy.Parameter.LocalAddress.Equals(Global.GlobalGatewayAddress))
+					{
+						_actAsGlobalGateway = true;
+						_primaryResolverTitle =
+							$"{LocalizationEx.GetUiString("default_settings_primary_header", Thread.CurrentThread.CurrentCulture)} ({Global.GlobalGatewayAddress}:{Global.PrimaryResolverPort})";
+					}
+					else
+					{
+						_actAsGlobalGateway = false;
+						_primaryResolverTitle =
+							$"{LocalizationEx.GetUiString("default_settings_primary_header", Thread.CurrentThread.CurrentCulture)}";
+					}
 				}
 				else
 				{
 					_actAsGlobalGateway = false;
-					_primaryResolverTitle = string.Format("{0}",
-						LocalizationEx.GetUiString("default_settings_primary_header",
-							Thread.CurrentThread.CurrentCulture));
+					_primaryResolverTitle =
+						$"{LocalizationEx.GetUiString("default_settings_primary_header", Thread.CurrentThread.CurrentCulture)}";
 				}
 
-				_secondaryResolverTitle = string.Format("{0} ({1}:{2})",
-					LocalizationEx.GetUiString("default_settings_secondary_header", Thread.CurrentThread.CurrentCulture),
-					Global.SecondaryResolverAddress,
-					Global.SecondaryResolverPort);
+				_secondaryResolverTitle =
+					$"{LocalizationEx.GetUiString("default_settings_secondary_header", Thread.CurrentThread.CurrentCulture)} ({Global.SecondaryResolverAddress}:{Global.SecondaryResolverPort})";
+
+				if (_unsavedChanges)
+				{
+					SavePrimaryResolver(false);
+				}
 
 				// check for new version on every application start
+				ShowHiddenCards = false;
 				UpdateAsync();
 				BlockViewModel = new BlockViewModel(_windowManager);
 				LogViewModel = new LogViewModel(_windowManager);
@@ -292,12 +329,38 @@ namespace SimpleDnsCrypt.ViewModels
 					//This update allows Windows desktop applications that depend on the Windows 10 Universal CRT release to run on earlier Windows operating systems.
 					//Microsoft Visual Studio 2015 creates a dependency on the Universal CRT when applications are built by using the Windows 10 Software Development Kit(SDK).
 					//You can install this update on earlier Windows operating systems to enable these applications to run correctly.
+					//TODO: translate
 					_windowManager.ShowMetroMessageBox(
 						"Please install the update for Universal C Runtime in Windows: https://support.microsoft.com/en-us/kb/2999226",
 						"Missing Universal C Runtime (CRT)", MessageBoxButton.OK, BoxType.Warning);
 					Environment.Exit(1);
 				}
 			}
+		}
+
+		public void ReloadLocalResolverList()
+		{
+			var dnsProxyList = DnsCryptProxyListManager.ReadProxyList(_proxyList, _proxyListSignature, 
+				_filterNoLogs, _filterDnssec, _filterIpv4, _filterIpv6);
+			if (dnsProxyList != null && dnsProxyList.Any())
+			{
+				Resolvers = dnsProxyList;
+				if (!dnsProxyList.Contains(_primaryResolver))
+				{
+					PrimaryResolver = dnsProxyList.ElementAt(0);
+				}
+				if (!dnsProxyList.Contains(_secondaryResolver))
+				{
+					SecondaryResolver = dnsProxyList.ElementAt(1);
+				}
+			}
+		}
+
+		public void SetWindowTitle(bool useIpv6 = false)
+		{
+			WindowTitle = useIpv6
+				? $"{Global.ApplicationName} {VersionUtilities.PublishVersion} {VersionUtilities.PublishBuild}"
+				: $"{Global.ApplicationName} {VersionUtilities.PublishVersion} {VersionUtilities.PublishBuild} ({LocalizationEx.GetUiString("global_ipv6_disabled", Thread.CurrentThread.CurrentCulture)})";
 		}
 
 		public static MainViewModel Instance { get; set; }
@@ -310,7 +373,7 @@ namespace SimpleDnsCrypt.ViewModels
 		/// </summary>
 		public Language SelectedLanguage
 		{
-			get { return _selectedLanguage; }
+			get => _selectedLanguage;
 			set
 			{
 				if (value.Equals(_selectedLanguage)) return;
@@ -320,29 +383,37 @@ namespace SimpleDnsCrypt.ViewModels
 				_userData.SaveConfigurationFile();
 				if (_userData.UseIpv6)
 				{
-					WindowTitle = string.Format("{0} {1} {2}", Global.ApplicationName, VersionUtilities.PublishVersion, VersionUtilities.PublishBuild);
+					WindowTitle = $"{Global.ApplicationName} {VersionUtilities.PublishVersion} {VersionUtilities.PublishBuild}";
 				}
 				else
 				{
-					WindowTitle = string.Format("{0} {1} {2} ({3})", Global.ApplicationName, VersionUtilities.PublishVersion, VersionUtilities.PublishBuild,
-						LocalizationEx.GetUiString("global_ipv6_disabled", Thread.CurrentThread.CurrentCulture));
+					WindowTitle =
+						$"{Global.ApplicationName} {VersionUtilities.PublishVersion} {VersionUtilities.PublishBuild} ({LocalizationEx.GetUiString("global_ipv6_disabled", Thread.CurrentThread.CurrentCulture)})";
 				}
 				if (_actAsGlobalGateway)
 				{
-					PrimaryResolverTitle = string.Format("{0} ({1}:{2})",
-						LocalizationEx.GetUiString("default_settings_primary_header", Thread.CurrentThread.CurrentCulture),
-						Global.GlobalGatewayAddress, Global.PrimaryResolverPort);
+					PrimaryResolverTitle =
+						$"{LocalizationEx.GetUiString("default_settings_primary_header", Thread.CurrentThread.CurrentCulture)} ({Global.GlobalGatewayAddress}:{Global.PrimaryResolverPort})";
 				}
 				else
 				{
-					PrimaryResolverTitle = string.Format("{0}",
-						LocalizationEx.GetUiString("default_settings_primary_header", Thread.CurrentThread.CurrentCulture));
+					PrimaryResolverTitle =
+						$"{LocalizationEx.GetUiString("default_settings_primary_header", Thread.CurrentThread.CurrentCulture)}";
 				}
-				SecondaryResolverTitle = string.Format("{0} ({1}:{2})",
-					LocalizationEx.GetUiString("default_settings_secondary_header", Thread.CurrentThread.CurrentCulture),
-					Global.SecondaryResolverAddress,
-					Global.SecondaryResolverPort);
+				SecondaryResolverTitle =
+					$"{LocalizationEx.GetUiString("default_settings_secondary_header", Thread.CurrentThread.CurrentCulture)} ({Global.SecondaryResolverAddress}:{Global.SecondaryResolverPort})";
 				NotifyOfPropertyChange(() => SelectedLanguage);
+			}
+		}
+
+		public ISnackbarMessageQueue MessageQueue
+		{
+			get => _messageQueue;
+			set
+			{
+				if (value.Equals(_messageQueue)) return;
+				_messageQueue = value;
+				NotifyOfPropertyChange(() => MessageQueue);
 			}
 		}
 
@@ -351,7 +422,7 @@ namespace SimpleDnsCrypt.ViewModels
 		/// </summary>
 		public ObservableCollection<Language> Languages
 		{
-			get { return _languages; }
+			get => _languages;
 			set
 			{
 				if (value.Equals(_languages)) return;
@@ -365,7 +436,7 @@ namespace SimpleDnsCrypt.ViewModels
 		/// </summary>
 		public string WindowTitle
 		{
-			get { return _windowTitle; }
+			get => _windowTitle;
 			set
 			{
 				_windowTitle = value;
@@ -378,7 +449,7 @@ namespace SimpleDnsCrypt.ViewModels
 		/// </summary>
 		public bool IsCheckingUpdates
 		{
-			get { return _isCheckingUpdates; }
+			get => _isCheckingUpdates;
 			set
 			{
 				_isCheckingUpdates = value;
@@ -389,22 +460,76 @@ namespace SimpleDnsCrypt.ViewModels
 		/// <summary>
 		///     Overlay management for MetroMessageBoxViewModel.
 		/// </summary>
-		public bool IsOverlayVisible
-		{
-			get { return _overlayDependencies > 0; }
-		}
+		public bool IsOverlayVisible => _overlayDependencies > 0;
 
 		public DnsCryptProxyManager PrimaryDnsCryptProxyManager { get; set; }
 		public DnsCryptProxyManager SecondaryDnsCryptProxyManager { get; set; }
 
 		public CollectionViewSource LocalNetworkInterfaces { get; set; }
 
+
+		public bool FilterDnssec
+		{
+			get => _filterDnssec;
+			set
+			{
+				_filterDnssec = value;
+				_userData.OnlyUseDnssec = _filterDnssec;
+				_userData.SaveConfigurationFile();
+				ReloadLocalResolverList();
+				NotifyOfPropertyChange(() => FilterDnssec);
+			}
+		}
+
+		public bool FilterNoLogs
+		{
+			get => _filterNoLogs;
+			set
+			{
+				_filterNoLogs = value;
+				_userData.OnlyUseNoLogs = _filterNoLogs;
+				_userData.SaveConfigurationFile();
+				ReloadLocalResolverList();
+				NotifyOfPropertyChange(() => FilterNoLogs);
+			}
+		}
+
+		public bool FilterIpv4
+		{
+			get => _filterIpv4;
+			set
+			{
+				if (!value && !_filterIpv6) return;
+				_filterIpv4 = value;
+				_userData.UseIpv4 = _filterIpv4;
+				_userData.SaveConfigurationFile();
+				ReloadLocalResolverList();
+				NotifyOfPropertyChange(() => FilterIpv4);
+			}
+		}
+
+
+		public bool FilterIpv6
+		{
+			get => _filterIpv6;
+			set
+			{
+				if (!value && !_filterIpv4) return;
+				_filterIpv6 = value;
+				SetWindowTitle(_filterIpv6);
+				_userData.UseIpv6 = _filterIpv6;
+				_userData.SaveConfigurationFile();
+				ReloadLocalResolverList();
+				NotifyOfPropertyChange(() => FilterIpv6);
+			}
+		}
+
 		/// <summary>
 		///     The list of loaded resolvers.
 		/// </summary>
 		public List<DnsCryptProxyEntry> Resolvers
 		{
-			get { return _resolvers; }
+			get => _resolvers;
 			set
 			{
 				if (value.Equals(_resolvers)) return;
@@ -427,15 +552,67 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 		}
 
+		public bool UnsavedChanges
+		{
+			get => _unsavedChanges;
+			set
+			{
+				if (value.Equals(_unsavedChanges)) return;
+				_unsavedChanges = value;
+				NotifyOfPropertyChange(() => UnsavedChanges);
+			}
+		}
+
+		public int PrimaryResolverLocalPort
+		{
+			get => PrimaryResolver.LocalPort;
+			set
+			{
+				if (value.Equals(_primaryResolver.LocalPort)) return;
+				PrimaryResolver.LocalPort = value;
+				UnsavedChanges = true;
+				NotifyOfPropertyChange(() => PrimaryResolverLocalPort);
+			}
+		}
+
+		public int PrimaryResolverLastOctet
+		{
+			get
+			{
+				var lastOctet = _primaryResolver.LocalAddress.Split('.')[3];
+				return Convert.ToInt32(lastOctet);
+			} 
+			set
+			{
+				if (value.Equals(2))
+				{
+					//TODO: translate
+					MessageQueue.Enqueue("127.0.0.2 is reserved for secondary resolver!");
+					return;
+				}
+				if (("127.0.0." + value).Equals(_primaryResolver.LocalAddress)) return;
+				PrimaryResolver.LocalAddress = "127.0.0." + value;
+				UnsavedChanges = true;
+				NotifyOfPropertyChange(() => PrimaryResolverLastOctet);
+			}
+		}
+
+
 		/// <summary>
 		/// 
 		/// </summary>
-		public void SavePrimaryResolver()
+		public void SavePrimaryResolver(bool messageQueue = true)
 		{
 			_userData.PrimaryResolver = _primaryResolver.Name;
 			_userData.SaveConfigurationFile();
 			ReloadResolver(DnsCryptProxyType.Primary);
 			NotifyOfPropertyChange(() => PrimaryResolver);
+			if (messageQueue) { 
+				//TODO: translate
+				MessageQueue.Enqueue("Saved!");
+			}
+
+			UnsavedChanges = false;
 		}
 
 		/// <summary>
@@ -443,18 +620,14 @@ namespace SimpleDnsCrypt.ViewModels
 		/// </summary>
 		public DnsCryptProxyEntry PrimaryResolver
 		{
-			get { return _primaryResolver; }
+			get => _primaryResolver;
 			set
 			{
-				if (value.Equals(_primaryResolver)) return;
-				if (value.LocalPort != _primaryResolver.LocalPort)
-				{
-					value.LocalPort = _primaryResolver.LocalPort;
-				}
+				if (value == null || value.Equals(_primaryResolver)) return;
+				UnsavedChanges = true;
+				value.LocalAddress = _primaryResolver.LocalAddress; //keep value
+				value.LocalPort = _primaryResolver.LocalPort; //keep value
 				_primaryResolver = value;
-				//_userData.PrimaryResolver = _primaryResolver.Name;
-				//_userData.SaveConfigurationFile();
-				//ReloadResolver(DnsCryptProxyType.Primary);
 				NotifyOfPropertyChange(() => PrimaryResolver);
 			}
 		}
@@ -464,10 +637,10 @@ namespace SimpleDnsCrypt.ViewModels
 		/// </summary>
 		public DnsCryptProxyEntry SecondaryResolver
 		{
-			get { return _secondaryResolver; }
+			get => _secondaryResolver;
 			set
 			{
-				if (value.Equals(_secondaryResolver)) return;
+				if (value == null || value.Equals(_secondaryResolver)) return;
 				_secondaryResolver = value;
 				_userData.SecondaryResolver = _secondaryResolver.Name;
 				_userData.SaveConfigurationFile();
@@ -481,7 +654,7 @@ namespace SimpleDnsCrypt.ViewModels
 		/// </summary>
 		public bool ShowHiddenCards
 		{
-			get { return _showHiddenCards; }
+			get => _showHiddenCards;
 			set
 			{
 				_showHiddenCards = value;
@@ -495,7 +668,7 @@ namespace SimpleDnsCrypt.ViewModels
 		/// </summary>
 		public bool UpdateResolverListOnStart
 		{
-			get { return _updateResolverListOnStart; }
+			get => _updateResolverListOnStart;
 			set
 			{
 				_updateResolverListOnStart = value;
@@ -508,7 +681,7 @@ namespace SimpleDnsCrypt.ViewModels
 		/// </summary>
 		public string PrimaryResolverTitle
 		{
-			get { return _primaryResolverTitle; }
+			get => _primaryResolverTitle;
 			set
 			{
 				_primaryResolverTitle = value;
@@ -521,7 +694,7 @@ namespace SimpleDnsCrypt.ViewModels
 		/// </summary>
 		public string SecondaryResolverTitle
 		{
-			get { return _secondaryResolverTitle; }
+			get => _secondaryResolverTitle;
 			set
 			{
 				_secondaryResolverTitle = value;
@@ -534,7 +707,7 @@ namespace SimpleDnsCrypt.ViewModels
 		/// </summary>
 		public bool IsPrimaryResolverRunning
 		{
-			get { return _isPrimaryResolverRunning; }
+			get => _isPrimaryResolverRunning;
 			set
 			{
 				HandleService(DnsCryptProxyType.Primary);
@@ -547,7 +720,7 @@ namespace SimpleDnsCrypt.ViewModels
 		/// </summary>
 		public bool IsSecondaryResolverRunning
 		{
-			get { return _isSecondaryResolverRunning; }
+			get => _isSecondaryResolverRunning;
 			set
 			{
 				HandleService(DnsCryptProxyType.Secondary);
@@ -559,7 +732,7 @@ namespace SimpleDnsCrypt.ViewModels
 		/// </summary>
 		public bool IsAnalysing
 		{
-			get { return _isAnalysing; }
+			get => _isAnalysing;
 			set
 			{
 				_isAnalysing = value;
@@ -572,7 +745,7 @@ namespace SimpleDnsCrypt.ViewModels
 		/// </summary>
 		public bool IsWorkingOnPrimaryService
 		{
-			get { return _isWorkingOnPrimaryService; }
+			get => _isWorkingOnPrimaryService;
 			set
 			{
 				_isWorkingOnPrimaryService = value;
@@ -585,7 +758,7 @@ namespace SimpleDnsCrypt.ViewModels
 		/// </summary>
 		public bool IsWorkingOnSecondaryService
 		{
-			get { return _isWorkingOnSecondaryService; }
+			get => _isWorkingOnSecondaryService;
 			set
 			{
 				_isWorkingOnSecondaryService = value;
@@ -612,6 +785,31 @@ namespace SimpleDnsCrypt.ViewModels
 		}
 
 		/// <summary>
+		/// Check if Microsoft Visual C++ Redistributable package is installed.
+		/// </summary>
+		public void CheckRedistributablePackageVersion()
+		{
+			if (Environment.Is64BitProcess)
+			{
+				//TODO: tanslate
+				if (RedistributablePackage.IsInstalled(RedistributablePackageVersion.VC2017x64)) return;
+				_windowManager.ShowMetroMessageBox(
+					"Please install the Microsoft Visual C++ Redistributable Visual Studio 2017 (x64) package first: https://go.microsoft.com/fwlink/?LinkId=746572",
+					"Missing Microsoft Visual C++ Redistributable for Visual Studio 2017", MessageBoxButton.OK, BoxType.Warning);
+				Environment.Exit(1);
+			}
+			else
+			{
+				//TODO: translate
+				if (RedistributablePackage.IsInstalled(RedistributablePackageVersion.VC2017x86)) return;
+				_windowManager.ShowMetroMessageBox(
+					"Please install the Microsoft Visual C++ Redistributable Visual Studio 2017 (x86) package first: https://go.microsoft.com/fwlink/?LinkId=746571",
+					"Missing Microsoft Visual C++ Redistributable for Visual Studio 2017", MessageBoxButton.OK, BoxType.Warning);
+				Environment.Exit(1);
+			}
+		}
+
+		/// <summary>
 		///     Method to check if there is a new application version available.
 		/// </summary>
 		public async void UpdateAsync()
@@ -619,7 +817,7 @@ namespace SimpleDnsCrypt.ViewModels
 			try
 			{
 				IsCheckingUpdates = true;
-				var update = await ApplicationUpdater.CheckForRemoteUpdateAsync().ConfigureAwait(true);
+				var update = await ApplicationUpdater.CheckForRemoteUpdateAsync(!string.IsNullOrEmpty(_userData?.ProxySettings?.Host) ? _userData.ProxySettings : null).ConfigureAwait(true);
 				if (update.CanUpdate)
 				{
 					var boxType = update.Update.Type == UpdateType.Standard ? BoxType.Default : BoxType.Warning;
@@ -655,16 +853,16 @@ namespace SimpleDnsCrypt.ViewModels
 					// kill running application
 					Process.GetCurrentProcess().Kill();
 				}
+				else
+				{
+					//TODO: translate
+					MessageQueue.Enqueue("There are no updates available");
+				}
 				IsCheckingUpdates = false;
 			}
 			catch (Exception)
 			{
 			}
-		}
-
-		public void SavePrimaryPort()
-		{
-			ReloadResolver(DnsCryptProxyType.Primary);
 		}
 
 		public void ReloadResolver(DnsCryptProxyType dnsCryptProxyType)
@@ -673,6 +871,14 @@ namespace SimpleDnsCrypt.ViewModels
 			{
 				if (_primaryResolver != null)
 				{
+					if (_primaryResolver.LocalPort == 0)
+					{
+						_primaryResolver.LocalPort = Global.PrimaryResolverPort;
+					}
+					if (_primaryResolver.LocalAddress == null)
+					{
+						_primaryResolver.LocalAddress = Global.PrimaryResolverAddress;
+					}
 					PrimaryDnsCryptProxyManager.DnsCryptProxy.Parameter = ConvertProxyEntryToParameter(
 						_primaryResolver, DnsCryptProxyType.Primary);
 					if (PrimaryDnsCryptProxyManager.WriteRegistry(DnsCryptProxyType.Primary))
@@ -688,6 +894,14 @@ namespace SimpleDnsCrypt.ViewModels
 			{
 				if (_secondaryResolver != null)
 				{
+					if (_secondaryResolver.LocalPort == 0)
+					{
+						_secondaryResolver.LocalPort = Global.SecondaryResolverPort;
+					}
+					if (_secondaryResolver.LocalAddress == null)
+					{
+						_secondaryResolver.LocalAddress = Global.SecondaryResolverAddress;
+					}
 					SecondaryDnsCryptProxyManager.DnsCryptProxy.Parameter =
 						ConvertProxyEntryToParameter(_secondaryResolver, DnsCryptProxyType.Secondary);
 					if (SecondaryDnsCryptProxyManager.WriteRegistry(DnsCryptProxyType.Secondary))
@@ -720,13 +934,14 @@ namespace SimpleDnsCrypt.ViewModels
 			};
 			if (dnsCryptProxyType == DnsCryptProxyType.Primary)
 			{
-				if (ActAsGlobalGateway)
+				if (_actAsGlobalGateway)
 				{
 					dnsCryptProxyParameter.LocalAddress = Global.GlobalGatewayAddress;
 				}
 				else
 				{
-					dnsCryptProxyParameter.LocalAddress = Global.PrimaryResolverAddress;
+					//dnsCryptProxyParameter.LocalAddress = Global.PrimaryResolverAddress;
+					dnsCryptProxyParameter.LocalAddress = dnsCryptProxyEntry.LocalAddress;
 				}
 			}
 			else
@@ -746,6 +961,7 @@ namespace SimpleDnsCrypt.ViewModels
 				Thread.Sleep(Global.ServiceRestartTime);
 				_isPrimaryResolverRunning = PrimaryDnsCryptProxyManager.IsDnsCryptProxyRunning();
 				NotifyOfPropertyChange(() => IsPrimaryResolverRunning);
+				ResetNetworkCards();
 				IsWorkingOnPrimaryService = false;
 			}
 			else
@@ -755,6 +971,7 @@ namespace SimpleDnsCrypt.ViewModels
 				Thread.Sleep(Global.ServiceRestartTime);
 				_isSecondaryResolverRunning = SecondaryDnsCryptProxyManager.IsDnsCryptProxyRunning();
 				NotifyOfPropertyChange(() => IsSecondaryResolverRunning);
+				ResetNetworkCards();
 				IsWorkingOnSecondaryService = false;
 			}
 		}
@@ -771,6 +988,7 @@ namespace SimpleDnsCrypt.ViewModels
 					Thread.Sleep(Global.ServiceStopTime);
 					_isPrimaryResolverRunning = PrimaryDnsCryptProxyManager.IsDnsCryptProxyRunning();
 					NotifyOfPropertyChange(() => IsPrimaryResolverRunning);
+					ResetNetworkCards();
 				}
 				else
 				{
@@ -781,16 +999,16 @@ namespace SimpleDnsCrypt.ViewModels
 						Thread.Sleep(Global.ServiceStartTime);
 						_isPrimaryResolverRunning = PrimaryDnsCryptProxyManager.IsDnsCryptProxyRunning();
 						NotifyOfPropertyChange(() => IsPrimaryResolverRunning);
+						ResetNetworkCards();
 					}
 					else
 					{
 						//install and start the service
-						var installResult =
-							await
-								Task.Run(() => { return PrimaryDnsCryptProxyManager.Install(); }).ConfigureAwait(false);
+						await Task.Run(() => { return PrimaryDnsCryptProxyManager.Install(); }).ConfigureAwait(false);
 						Thread.Sleep(Global.ServiceStartTime);
 						_isPrimaryResolverRunning = PrimaryDnsCryptProxyManager.IsDnsCryptProxyRunning();
 						NotifyOfPropertyChange(() => IsPrimaryResolverRunning);
+						ResetNetworkCards();
 					}
 				}
 				IsWorkingOnPrimaryService = false;
@@ -805,6 +1023,7 @@ namespace SimpleDnsCrypt.ViewModels
 					Thread.Sleep(Global.ServiceStopTime);
 					_isSecondaryResolverRunning = SecondaryDnsCryptProxyManager.IsDnsCryptProxyRunning();
 					NotifyOfPropertyChange(() => IsSecondaryResolverRunning);
+					ResetNetworkCards();
 				}
 				else
 				{
@@ -815,17 +1034,18 @@ namespace SimpleDnsCrypt.ViewModels
 						Thread.Sleep(Global.ServiceStartTime);
 						_isSecondaryResolverRunning = SecondaryDnsCryptProxyManager.IsDnsCryptProxyRunning();
 						NotifyOfPropertyChange(() => IsSecondaryResolverRunning);
+						ResetNetworkCards();
 					}
 					else
 					{
 						//install and start the service
-						var installResult =
-							await
-								Task.Run(() => { return SecondaryDnsCryptProxyManager.Install(); })
-									.ConfigureAwait(false);
+						await
+							Task.Run(() => { return SecondaryDnsCryptProxyManager.Install(); })
+								.ConfigureAwait(false);
 						Thread.Sleep(Global.ServiceStartTime);
 						_isSecondaryResolverRunning = SecondaryDnsCryptProxyManager.IsDnsCryptProxyRunning();
 						NotifyOfPropertyChange(() => IsSecondaryResolverRunning);
+						ResetNetworkCards();
 					}
 				}
 				IsWorkingOnSecondaryService = false;
@@ -837,15 +1057,91 @@ namespace SimpleDnsCrypt.ViewModels
 		/// </summary>
 		private void LoadNetworkCards()
 		{
-			var localNetworkInterfaces = LocalNetworkInterfaceManager.GetLocalNetworkInterfaces(ShowHiddenCards, false);
+			var localNetworkInterfaces = LocalNetworkInterfaceManager.GetLocalNetworkInterfaces(_userData, ShowHiddenCards, false, _primaryResolver.LocalAddress);
 			_localNetworkInterfaces.Clear();
-			if (localNetworkInterfaces.Count != 0)
+			if (localNetworkInterfaces.Count == 0) return;
+			foreach (var localNetworkInterface in localNetworkInterfaces)
 			{
-				foreach (var localNetworkInterface in localNetworkInterfaces)
-				{
-					_localNetworkInterfaces.Add(localNetworkInterface);
-				}
+				_localNetworkInterfaces.Add(localNetworkInterface);
 			}
+		}
+
+		private void ResetNetworkCards()
+		{
+			foreach (var localNetworkInterface in _localNetworkInterfaces)
+			{
+				if (!localNetworkInterface.UseDnsCrypt)
+				{
+					if (!localNetworkInterface.UseInsecureFallbackDns)
+					{
+						continue;
+					}
+				}
+
+				var dns4 = new List<string>();
+				var dns6 = new List<string>();
+				if (PrimaryResolver != null)
+				{
+					if (!string.IsNullOrEmpty(PrimaryResolver.ProviderPublicKey))
+					{
+						// only add the local address if the proxy is running 
+						if (PrimaryDnsCryptProxyManager.DnsCryptProxy.IsReady && PrimaryDnsCryptProxyManager.IsDnsCryptProxyRunning())
+						{
+							dns4.Add(PrimaryResolver.LocalAddress);
+							if (_userData.UseIpv6)
+							{
+								dns6.Add(Global.PrimaryResolverAddress6);
+							}
+						}
+					}
+				}
+				if (SecondaryResolver != null)
+				{
+					if (!string.IsNullOrEmpty(SecondaryResolver.ProviderPublicKey))
+					{
+						// only add the local address if the proxy is running 
+						if (SecondaryDnsCryptProxyManager.DnsCryptProxy.IsReady &&
+						    SecondaryDnsCryptProxyManager.IsDnsCryptProxyRunning())
+						{
+							dns4.Add(Global.SecondaryResolverAddress);
+							if (_userData.UseIpv6)
+							{
+								dns6.Add(Global.SecondaryResolverAddress6);
+							}
+						}
+					}
+				}
+
+				if (dns4.Count == 0)
+				{
+					localNetworkInterface.UseDnsCrypt = false;
+					if (_userData.InsecureResolverPair?.Addresses?.Count > 0)
+					{
+						var fallBackStatus = LocalNetworkInterfaceManager.SetNameservers(localNetworkInterface,
+							_userData.InsecureResolverPair.Addresses, NetworkInterfaceComponent.IPv4);
+						localNetworkInterface.UseInsecureFallbackDns = fallBackStatus;
+					}
+					else
+					{
+						localNetworkInterface.UseInsecureFallbackDns = false;
+						var status = LocalNetworkInterfaceManager.SetNameservers(localNetworkInterface, dns4, NetworkInterfaceComponent.IPv4);
+						localNetworkInterface.UseDnsCrypt = status;
+					}
+				}
+				else
+				{
+					var status = LocalNetworkInterfaceManager.SetNameservers(localNetworkInterface, dns4, NetworkInterfaceComponent.IPv4);
+					localNetworkInterface.UseDnsCrypt = status;
+				}
+
+				if (_userData.UseIpv6)
+				{
+					LocalNetworkInterfaceManager.SetNameservers(localNetworkInterface, dns6, NetworkInterfaceComponent.IPv6);
+				}
+				//TODO: translate
+				MessageQueue.Enqueue($"{localNetworkInterface.Name} reconfigured");
+			}
+			LoadNetworkCards();
 		}
 
 		/// <summary>
@@ -874,7 +1170,8 @@ namespace SimpleDnsCrypt.ViewModels
 						// only add the local address if the proxy is running 
 						if (PrimaryDnsCryptProxyManager.DnsCryptProxy.IsReady && PrimaryDnsCryptProxyManager.IsDnsCryptProxyRunning())
 						{
-							dns4.Add(Global.PrimaryResolverAddress);
+							//dns4.Add(Global.PrimaryResolverAddress);
+							dns4.Add(PrimaryResolver.LocalAddress);
 							if (_userData.UseIpv6)
 							{
 								dns6.Add(Global.PrimaryResolverAddress6);
@@ -897,12 +1194,33 @@ namespace SimpleDnsCrypt.ViewModels
 						}
 					}
 				}
-				var status = LocalNetworkInterfaceManager.SetNameservers(localNetworkInterface, dns4, NetworkInterfaceComponent.IPv4);
+
+				if (dns4.Count == 0)
+				{
+					localNetworkInterface.UseDnsCrypt = false;
+					if (_userData.InsecureResolverPair?.Addresses?.Count > 0)
+					{
+						var fallBackStatus = LocalNetworkInterfaceManager.SetNameservers(localNetworkInterface,
+							_userData.InsecureResolverPair.Addresses, NetworkInterfaceComponent.IPv4);
+						localNetworkInterface.UseInsecureFallbackDns = fallBackStatus;
+					}
+					else
+					{
+						localNetworkInterface.UseInsecureFallbackDns = false;
+						var status = LocalNetworkInterfaceManager.SetNameservers(localNetworkInterface, dns4, NetworkInterfaceComponent.IPv4);
+						localNetworkInterface.UseDnsCrypt = status;
+					}
+				}
+				else
+				{
+					var status = LocalNetworkInterfaceManager.SetNameservers(localNetworkInterface, dns4, NetworkInterfaceComponent.IPv4);
+					localNetworkInterface.UseDnsCrypt = status;
+				}
+
 				if (_userData.UseIpv6)
 				{
 					LocalNetworkInterfaceManager.SetNameservers(localNetworkInterface, dns6, NetworkInterfaceComponent.IPv6);
-				}
-				localNetworkInterface.UseDnsCrypt = status;
+				}				
 			}
 			LoadNetworkCards();
 		}
@@ -915,26 +1233,48 @@ namespace SimpleDnsCrypt.ViewModels
 		{
 			try
 			{
+				if (_isAnalysing)
+				{
+					_analyseCancellationTokenSource.Cancel();
+				}
+				else
+				{
+					_analyseCancellationTokenSource = new CancellationTokenSource();
+				}
 				IsAnalysing = true;
 				var tmpResolvers = new List<DnsCryptProxyEntry>();
-				await Task.Run(() =>
+				await Task.Run(async () =>
 				{
 					for (var r = 0; r < _resolvers.Count; r++)
 					{
-						var dnsCryptProxyEntryExtra = AnalyseProxy.Analyse(_resolvers[r]).Result;
-						if (dnsCryptProxyEntryExtra != null)
-						{
-							if (dnsCryptProxyEntryExtra.Succeeded && (dnsCryptProxyEntryExtra.ResponseTime > 0))
-							{
-								var dnsCryptProxyEntry = _resolvers[r];
-								dnsCryptProxyEntry.Extra = dnsCryptProxyEntryExtra;
-								tmpResolvers.Add(dnsCryptProxyEntry);
-							}
-						}
+						_analyseCancellationTokenSource.Token.ThrowIfCancellationRequested();
+						var dnsCryptProxyEntryExtra = await AnalyseProxy.Analyse(_resolvers[r]).ConfigureAwait(false);
+						if (dnsCryptProxyEntryExtra == null) continue;
+						if (!dnsCryptProxyEntryExtra.Succeeded || dnsCryptProxyEntryExtra.ResponseTime <= 0) continue;
+						var dnsCryptProxyEntry = _resolvers[r];
+						dnsCryptProxyEntry.Extra = dnsCryptProxyEntryExtra;
+						tmpResolvers.Add(dnsCryptProxyEntry);
 					}
 					tmpResolvers.Sort((a, b) => a.Extra.ResponseTime.CompareTo(b.Extra.ResponseTime));
-				}).ConfigureAwait(false);
+				}, _analyseCancellationTokenSource.Token).ConfigureAwait(false);
+				
+				//TODO: translate
+				MessageQueue.Enqueue($"Successfully checked {tmpResolvers.Count}/{_resolvers.Count} resolvers");
 				Resolvers = tmpResolvers;
+				IsAnalysing = false;
+			}
+			catch (OperationCanceledException)
+			{
+				foreach (var resolver in _resolvers)
+				{
+					if (resolver.Extra == null)
+					{
+						resolver.Extra = new DnsCryptProxyEntryExtra {Succeeded = false, ResponseTime = -1};
+					}
+				}
+				_resolvers.Sort((a, b) => a.Extra.ResponseTime.CompareTo(b.Extra.ResponseTime));
+				//TODO: translate
+				MessageQueue.Enqueue($"Resolver check aborted");
 				IsAnalysing = false;
 			}
 			catch (Exception)
@@ -1025,7 +1365,7 @@ namespace SimpleDnsCrypt.ViewModels
 			NotifyOfPropertyChange(() => IsSecondaryResolverRunning);
 
 			// recover the network interfaces (also the hidden and down cards)
-			foreach (var nic in LocalNetworkInterfaceManager.GetLocalNetworkInterfaces(true, false))
+			foreach (var nic in LocalNetworkInterfaceManager.GetLocalNetworkInterfaces(_userData, true, false, ""))
 			{
 				if (!nic.UseDnsCrypt) continue;
 				var status = LocalNetworkInterfaceManager.SetNameservers(nic, new List<string>(), NetworkInterfaceComponent.IPv4);
@@ -1048,7 +1388,7 @@ namespace SimpleDnsCrypt.ViewModels
 		public async void RefreshResolverListAsync()
 		{
 			IsRefreshingResolverList = true;
-			var state = await DnsCryptProxyListManager.UpdateResolverListAsync().ConfigureAwait(false);
+			var state = await DnsCryptProxyListManager.UpdateResolverListAsync(!string.IsNullOrEmpty(_userData?.ProxySettings?.Host) ? _userData.ProxySettings : null).ConfigureAwait(false);
 			await Task.Run(() =>
 			{
 				// we do this, to prevent excessive usage
@@ -1061,7 +1401,7 @@ namespace SimpleDnsCrypt.ViewModels
 				var proxyListSignature = Path.Combine(Directory.GetCurrentDirectory(),
 					Global.DnsCryptProxyFolder, Global.DnsCryptProxySignatureFileName);
 				var dnsProxyList =
-					DnsCryptProxyListManager.ReadProxyList(proxyList, proxyListSignature, _userData.UseIpv6);
+					DnsCryptProxyListManager.ReadProxyList(proxyList, proxyListSignature, _userData.OnlyUseNoLogs, _userData.OnlyUseDnssec, _userData.UseIpv4, _userData.UseIpv6);
 				if (dnsProxyList != null && dnsProxyList.Any())
 				{
 					var tmpResolvers = new List<DnsCryptProxyEntry>();
@@ -1084,6 +1424,14 @@ namespace SimpleDnsCrypt.ViewModels
 						tmpResolvers.Add(dnsProxy);
 					}
 					Resolvers = tmpResolvers;
+					if (_primaryResolver == null)
+					{
+						PrimaryResolver = dnsProxyList.ElementAt(0);
+					}
+					if (_secondaryResolver == null)
+					{
+						SecondaryResolver = dnsProxyList.ElementAt(1);
+					}
 				}
 			}
 			else
@@ -1099,7 +1447,7 @@ namespace SimpleDnsCrypt.ViewModels
 
 		public bool ActAsGlobalGateway
 		{
-			get { return _actAsGlobalGateway; }
+			get => _actAsGlobalGateway;
 			set
 			{
 				_actAsGlobalGateway = value;
@@ -1120,9 +1468,8 @@ namespace SimpleDnsCrypt.ViewModels
 				Thread.Sleep(Global.ServiceRestartTime);
 				_isPrimaryResolverRunning = PrimaryDnsCryptProxyManager.IsDnsCryptProxyRunning();
 				NotifyOfPropertyChange(() => IsPrimaryResolverRunning);
-				PrimaryResolverTitle = string.Format("{0} ({1}:{2})",
-					LocalizationEx.GetUiString("default_settings_primary_header", Thread.CurrentThread.CurrentCulture),
-					Global.GlobalGatewayAddress, Global.PrimaryResolverPort);
+				PrimaryResolverTitle =
+					$"{LocalizationEx.GetUiString("default_settings_primary_header", Thread.CurrentThread.CurrentCulture)} ({Global.GlobalGatewayAddress}:{Global.PrimaryResolverPort})";
 			}
 			else
 			{
@@ -1134,15 +1481,15 @@ namespace SimpleDnsCrypt.ViewModels
 				_isPrimaryResolverRunning = PrimaryDnsCryptProxyManager.IsDnsCryptProxyRunning();
 				NotifyOfPropertyChange(() => IsPrimaryResolverRunning);
 				PrimaryResolver.LocalPort = Global.PrimaryResolverPort; // reset the resolver port
-				PrimaryResolverTitle = string.Format("{0}",
-					LocalizationEx.GetUiString("default_settings_primary_header", Thread.CurrentThread.CurrentCulture));
+				PrimaryResolverTitle =
+					$"{LocalizationEx.GetUiString("default_settings_primary_header", Thread.CurrentThread.CurrentCulture)}";
 			}
 			IsWorkingOnPrimaryService = false;
 		}
 
 		public List<string> Plugins
 		{
-			get { return _plugins; }
+			get => _plugins;
 			set
 			{
 				_plugins = value;
@@ -1152,18 +1499,16 @@ namespace SimpleDnsCrypt.ViewModels
 
 		public void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
-			var source = e.Source as TabControl;
-			if (source != null)
+			if (!(e.Source is TabControl source)) return;
+			var t = source;
+			switch (t.SelectedIndex)
 			{
-				var t = source;
-				if (t.SelectedIndex == 2)
-				{
+				case 2:
 					BlockViewModel.SetPlugins(Plugins);
-				}
-				if (t.SelectedIndex == 3)
-				{
+					break;
+				case 3:
 					LogViewModel.RefreshPluginData();
-				}
+					break;
 			}
 		}
 
@@ -1188,7 +1533,7 @@ namespace SimpleDnsCrypt.ViewModels
 
 		public bool UseTcpOnly
 		{
-			get { return _useTcpOnly; }
+			get => _useTcpOnly;
 			set
 			{
 				if (value.Equals(_useTcpOnly)) return;
@@ -1201,7 +1546,7 @@ namespace SimpleDnsCrypt.ViewModels
 
 		public bool IsRefreshingResolverList
 		{
-			get { return _isRefreshingResolverList; }
+			get => _isRefreshingResolverList;
 			set
 			{
 				_isRefreshingResolverList = value;
@@ -1211,7 +1556,7 @@ namespace SimpleDnsCrypt.ViewModels
 
 		public bool IsUninstallingServices
 		{
-			get { return _isUninstallingServices; }
+			get => _isUninstallingServices;
 			set
 			{
 				_isUninstallingServices = value;
@@ -1219,6 +1564,25 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 		}
 
+		#endregion
+
+		#region Advanced Network Settings
+
+		public void OpenAdvancedNetworkSettings()
+		{
+			var win = new AdvancedNetworkSettingsViewModel(_windowManager, _insecureResolvers, _userData)
+			{
+				WindowTitle = LocalizationEx.GetUiString("window_advanced_network_settings_title", Thread.CurrentThread.CurrentCulture)
+			};
+			dynamic settings = new ExpandoObject();
+			settings.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+			settings.Owner = GetView();
+			var inputOk = _windowManager.ShowDialog(win, null, settings);
+			if (inputOk != null)
+			{
+				ResetNetworkCards();
+			}
+		}
 		#endregion
 	}
 }

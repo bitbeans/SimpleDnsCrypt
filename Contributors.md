@@ -21,3 +21,4 @@ Those listed below have contributed to `SimpleDnsCrypt`, and are the copyright h
  * @porsche613
  * @socrat3z
  * @niikoo
+ * @bungoume

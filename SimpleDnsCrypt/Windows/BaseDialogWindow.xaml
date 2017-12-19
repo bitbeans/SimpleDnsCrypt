@@ -2,5 +2,6 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
-        Title="{Binding WindowTitle}" GlowBrush="{DynamicResource AccentColorBrush}" ShowInTaskbar="False" ShowIconOnTitleBar="False" WindowStartupLocation="CenterScreen" ShowMinButton="False" ShowMaxRestoreButton="False" ResizeMode="NoResize" TitleCaps="False">
+        Title="{Binding WindowTitle}" GlowBrush="{DynamicResource AccentColorBrush}" ShowInTaskbar="False" ShowIconOnTitleBar="False" TitleForeground="White"
+                      WindowStartupLocation="CenterScreen" ShowMinButton="False" ShowMaxRestoreButton="False" ResizeMode="NoResize" TitleCharacterCasing="Normal" >
 </controls:MetroWindow>

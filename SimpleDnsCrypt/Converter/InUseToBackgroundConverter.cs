@@ -15,19 +15,26 @@ namespace SimpleDnsCrypt.Converter
         {
             var localNetworkInterface = (LocalNetworkInterface) value;
 
-            if (localNetworkInterface.OperationalStatus != OperationalStatus.Up)
+            if (localNetworkInterface != null && localNetworkInterface.OperationalStatus != OperationalStatus.Up)
             {
                 // red
                 return "#CCC1170F";
             }
 
-            if (localNetworkInterface.UseDnsCrypt)
+            if (localNetworkInterface != null && localNetworkInterface.UseDnsCrypt)
             {
                 // green
                 return "#FF8ab329";
             }
-            // gray
-            return "#FFA0A0A0";
+
+	        if (localNetworkInterface != null && localNetworkInterface.UseInsecureFallbackDns)
+	        {
+		        // yellow
+		        return "#FFe0ca26";
+	        }
+			
+			// gray
+			return "#FFA0A0A0";
         }
 
         public object ConvertBack(object value, Type targetTypes, object parameter, CultureInfo culture)

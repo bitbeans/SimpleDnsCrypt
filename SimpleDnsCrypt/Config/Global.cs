@@ -31,19 +31,20 @@
 		///     URL to the dnscrypt-resolvers.csv (hosted on github).
 		/// </summary>
 		public const string ResolverUrl =
-			"https://raw.githubusercontent.com/jedisct1/dnscrypt-proxy/master/dnscrypt-resolvers.csv";
+			"https://raw.githubusercontent.com/jedisct1/dnscrypt-resolvers/master/v1/dnscrypt-resolvers.csv";
+
 
 		/// <summary>
 		///     Backup URL to the dnscrypt-resolvers.csv.
 		/// </summary>
 		public const string ResolverBackupUrl =
 			"https://download.dnscrypt.org/dnscrypt-proxy/dnscrypt-resolvers.csv";
-		
+
 		/// <summary>
 		///     URL to the minisign signature, to verify the downloaded dnscrypt-resolvers.csv (hosted on github).
 		/// </summary>
 		public const string SignatureUrl =
-			"https://raw.githubusercontent.com/jedisct1/dnscrypt-proxy/master/dnscrypt-resolvers.csv.minisig";
+			"https://raw.githubusercontent.com/jedisct1/dnscrypt-resolvers/master/v1/dnscrypt-resolvers.csv.minisig";
 
 		/// <summary>
 		///     URL to the minisign signature, to verify the downloaded dnscrypt-resolvers.csv.
@@ -182,6 +183,11 @@
 		public const string UserConfigurationFile = "config.yaml";
 
 		/// <summary>
+		///
+		/// </summary>
+		public const string InsecureResolversFile = "insecure_resolvers.yaml";
+
+		/// <summary>
 		///     List of interfaces, marked as hidden.
 		/// </summary>
 		public static readonly string[] NetworkInterfaceBlacklist =
@@ -226,25 +232,25 @@
 		/// <summary>
 		///     Languages, the config file can handle.
 		/// </summary>
-		public static readonly string[] SupportedLanguages = {"bg", "de", "da", "en", "es", "fr", "fa", "id", "it", "nl", "no", "ru", "sv", "tr", "zh", "zh-hant"};
+		public static readonly string[] SupportedLanguages = {"bg", "de", "da", "en", "es", "fr", "fa", "id", "it", "ja", "nl", "no", "ru", "sv", "tr", "zh", "zh-hant"};
 
 		/// <summary>
-		/// 
+		///
 		/// </summary>
 		public const string DomainBlacklistConfigFile = "domains-blacklist.yaml";
 
 		/// <summary>
-		/// 
+		///
 		/// </summary>
 		public const string DomainBlacklistFile = "domains-blacklist.txt";
 
 		/// <summary>
-		/// 
+		///
 		/// </summary>
 		public const string AddressBlacklistConfigFile = "addresses-blacklist.yaml";
 
 		/// <summary>
-		/// 
+		///
 		/// </summary>
 		public const string AddressBlacklistFile = "addresses-blacklist.txt";
 

@@ -15,8 +15,9 @@ namespace SimpleDnsCrypt.Models
         private bool _ipv4Support;
         private bool _useDnsCrypt;
         private OperationalStatus _operationalStatus;
+	    private bool _useInsecureFallbackDns;
 
-        public LocalNetworkInterface()
+	    public LocalNetworkInterface()
         {
             Ipv4Dns = new List<string>();
             Ipv6Dns = new List<string>();
@@ -24,8 +25,8 @@ namespace SimpleDnsCrypt.Models
 
         public string Name
         {
-            get { return _name; }
-            set {
+            get => _name;
+	        set {
                 _name = value;
                 NotifyOfPropertyChange(() => Name);
             }
@@ -36,8 +37,8 @@ namespace SimpleDnsCrypt.Models
         /// </summary>
         public OperationalStatus OperationalStatus
         {
-            get { return _operationalStatus; }
-            set
+            get => _operationalStatus;
+	        set
             {
                 _operationalStatus = value;
                 NotifyOfPropertyChange(() => OperationalStatus);
@@ -46,8 +47,8 @@ namespace SimpleDnsCrypt.Models
 
         public string Description
         {
-            get { return _description; }
-            set
+            get => _description;
+	        set
             {
                 _description = value;
                 NotifyOfPropertyChange(() => Description);
@@ -56,8 +57,8 @@ namespace SimpleDnsCrypt.Models
 
         public NetworkInterfaceType Type
         {
-            get { return _type; }
-            set
+            get => _type;
+	        set
             {
                 _type = value;
                 NotifyOfPropertyChange(() => Type);
@@ -66,8 +67,8 @@ namespace SimpleDnsCrypt.Models
 
         public List<string> Ipv4Dns
         {
-            get { return _ipv4Dns; }
-            set
+            get => _ipv4Dns;
+	        set
             {
                 _ipv4Dns = value;
                 NotifyOfPropertyChange(() => Ipv4Dns);
@@ -76,8 +77,8 @@ namespace SimpleDnsCrypt.Models
 
         public List<string> Ipv6Dns
         {
-            get { return _ipv6Dns; }
-            set
+            get => _ipv6Dns;
+	        set
             {
                 _ipv6Dns = value;
                 NotifyOfPropertyChange(() => Ipv6Dns);
@@ -86,8 +87,8 @@ namespace SimpleDnsCrypt.Models
 
         public bool Ipv6Support
         {
-            get { return _ipv6Support; }
-            set
+            get => _ipv6Support;
+	        set
             {
                 _ipv6Support = value;
                 NotifyOfPropertyChange(() => Ipv6Support);
@@ -96,8 +97,8 @@ namespace SimpleDnsCrypt.Models
 
         public bool Ipv4Support
         {
-            get { return _ipv4Support; }
-            set
+            get => _ipv4Support;
+	        set
             {
                 _ipv4Support = value;
                 NotifyOfPropertyChange(() => Ipv4Support);
@@ -106,12 +107,22 @@ namespace SimpleDnsCrypt.Models
 
         public bool UseDnsCrypt
         {
-            get { return _useDnsCrypt; }
-            set
+            get => _useDnsCrypt;
+	        set
             {
                 _useDnsCrypt = value;
                 NotifyOfPropertyChange(() => UseDnsCrypt);
             }
         }
-    }
+
+	    public bool UseInsecureFallbackDns
+	    {
+		    get => _useInsecureFallbackDns;
+		    set
+		    {
+			    _useInsecureFallbackDns = value;
+			    NotifyOfPropertyChange(() => UseInsecureFallbackDns);
+		    }
+	    }
+	}
 }

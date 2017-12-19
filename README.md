@@ -110,7 +110,7 @@ Feel free to report your success or failure: [here](https://github.com/bitbeans/
 
 # ![Alt text](img/icons/32x32.png "Translations") Translations
 
-SimpleDNSCrypt currently speaks the following languages (16):
+SimpleDNSCrypt currently speaks the following languages (17):
 
 - Bulgarian (@rddim)
 - Danish (@simonclausen)
@@ -120,6 +120,7 @@ SimpleDNSCrypt currently speaks the following languages (16):
 - German
 - Italian (@ShellAddicted)
 - Indonesian (@christantoan)
+- Japanese (@bungoume)
 - Norwegian (@niikoo)
 - Persian/Farsi (@robin98)
 - Russian (Vlad)
@@ -153,6 +154,9 @@ If you don`t like this software, there are two similar projects:
 - YamlDotNet [:octocat:](https://github.com/aaubry/YamlDotNet) 
 - helper-net [:octocat:](https://github.com/bitbeans/helper-net) 
 - DNS [:octocat:](https://github.com/kapetan/dns) 
+- RedistributableChecker [:octocat:](https://github.com/bitbeans/RedistributableChecker) 
+- MaterialDesignInXamlToolkit [:octocat:](https://github.com/ButchersBoy/MaterialDesignInXamlToolkit) 
+- SocksSharp [:octocat:](https://github.com/extremecodetv/SocksSharp) 
 
 # ![Alt text](img/icons/32x32.png "Special Thanks") Special Thanks
 
