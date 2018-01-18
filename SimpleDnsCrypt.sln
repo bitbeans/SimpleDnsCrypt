@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2005
+VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDnsCrypt", "SimpleDnsCrypt\SimpleDnsCrypt.csproj", "{E7F52FEB-433A-4FA3-8053-13C211FA0A8A}"
 EndProject
@@ -17,6 +17,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uninstall", "Uninstall\Uninstall.csproj", "{70BFF12B-996D-43F0-8529-CF8711699ACB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{ED3D6FFE-55FC-4436-858B-36D97E66A481}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleDnsCrypt.Lib", "SimpleDnsCrypt.Lib\SimpleDnsCrypt.Lib.csproj", "{B7F1ECA9-A54B-4B2E-B9CB-F53505DF6CDC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,6 +52,14 @@ Global
 		{ED3D6FFE-55FC-4436-858B-36D97E66A481}.Release|Any CPU.Build.0 = Release|Any CPU
 		{ED3D6FFE-55FC-4436-858B-36D97E66A481}.Release|x64.ActiveCfg = Release|x64
 		{ED3D6FFE-55FC-4436-858B-36D97E66A481}.Release|x64.Build.0 = Release|x64
+		{B7F1ECA9-A54B-4B2E-B9CB-F53505DF6CDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7F1ECA9-A54B-4B2E-B9CB-F53505DF6CDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7F1ECA9-A54B-4B2E-B9CB-F53505DF6CDC}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B7F1ECA9-A54B-4B2E-B9CB-F53505DF6CDC}.Debug|x64.Build.0 = Debug|Any CPU
+		{B7F1ECA9-A54B-4B2E-B9CB-F53505DF6CDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7F1ECA9-A54B-4B2E-B9CB-F53505DF6CDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7F1ECA9-A54B-4B2E-B9CB-F53505DF6CDC}.Release|x64.ActiveCfg = Release|Any CPU
+		{B7F1ECA9-A54B-4B2E-B9CB-F53505DF6CDC}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

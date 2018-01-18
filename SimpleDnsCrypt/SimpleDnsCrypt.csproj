@@ -495,6 +495,12 @@
     <None Include="FodyWeavers.xml" />
     <Resource Include="Images\simplednscrypt.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SimpleDnsCrypt.Lib\SimpleDnsCrypt.Lib.csproj">
+      <Project>{b7f1eca9-a54b-4b2e-b9cb-f53505df6cdc}</Project>
+      <Name>SimpleDnsCrypt.Lib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
