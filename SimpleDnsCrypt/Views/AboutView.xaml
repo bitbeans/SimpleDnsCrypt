@@ -1,0 +1,117 @@
+﻿<UserControl x:Class="SimpleDnsCrypt.Views.AboutView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:lex="http://wpflocalizeextension.codeplex.com"
+             xmlns:converters="clr-namespace:SimpleDnsCrypt.Converters"
+             xmlns:cal="http://www.caliburnproject.org"
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             mc:Ignorable="d"
+             Height="Auto" Width="840"
+             lex:LocalizeDictionary.DesignCulture="en"
+             lex:ResxLocalizationProvider.DefaultAssembly="SimpleDnsCrypt"
+             lex:ResxLocalizationProvider.DefaultDictionary="Translation">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <converters:LicenseLinkToVisibilityConverter x:Key="LicenseLinkToVisibilityConverter" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid Background="#198AB328">
+        <Border BorderThickness="1" Grid.Row="0" Grid.Column="0" Background="#198AB328" Margin="10"
+                Padding="10">
+            <Border.BorderBrush>
+                <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile" Opacity="0.4">
+                    <DrawingBrush.Drawing>
+                        <DrawingGroup>
+                            <GeometryDrawing Brush="#FF8ab329">
+                                <GeometryDrawing.Geometry>
+                                    <GeometryGroup>
+                                        <RectangleGeometry Rect="0,0,50,50" />
+                                        <RectangleGeometry Rect="50,50,50,50" />
+                                    </GeometryGroup>
+                                </GeometryDrawing.Geometry>
+                            </GeometryDrawing>
+                        </DrawingGroup>
+                    </DrawingBrush.Drawing>
+                </DrawingBrush>
+            </Border.BorderBrush>
+            <DockPanel LastChildFill="True">
+                <Border BorderThickness="0,0,1,0" DockPanel.Dock="Left" Margin="0,5,0,5">
+                    <Border.BorderBrush>
+                        <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile">
+                            <DrawingBrush.Drawing>
+                                <DrawingGroup>
+                                    <GeometryDrawing Brush="#FF939393">
+                                        <GeometryDrawing.Geometry>
+                                            <GeometryGroup>
+                                                <RectangleGeometry Rect="0,0,50,50" />
+                                                <RectangleGeometry Rect="50,50,50,50" />
+                                            </GeometryGroup>
+                                        </GeometryDrawing.Geometry>
+                                    </GeometryDrawing>
+                                </DrawingGroup>
+                            </DrawingBrush.Drawing>
+                        </DrawingBrush>
+                    </Border.BorderBrush>
+                    <StackPanel Margin="5,5,10,5" Orientation="Vertical" >
+                        <TextBlock Text="{lex:Loc Key=about_software}"
+                                   TextWrapping="Wrap" VerticalAlignment="Center"
+                                   Foreground="#FF8ab329" FontSize="18"
+                                   Opacity="0.7" FontWeight="Bold">
+                        </TextBlock>
+                        <ListBox Margin="0,5,0,0" Width="180" Height="480" ItemsSource="{Binding Licenses}"
+                                 SelectedItem="{Binding SelectedLicense}" SelectedIndex="-1" Background="#198AB328"
+                                 DisplayMemberPath="LicenseHeaderText" ItemContainerStyle="{StaticResource CustomMetroListBoxItem}">
+                        </ListBox>
+                    </StackPanel>
+                </Border>
+                <StackPanel Margin="10" Orientation="Vertical" DockPanel.Dock="Right" >
+                    <TextBlock Text="{lex:Loc Key=about_license}"
+                               TextWrapping="Wrap" VerticalAlignment="Center"
+                               Foreground="#FF8ab329" FontSize="18"
+                               Opacity="0.7" FontWeight="Bold">
+                    </TextBlock>
+                    <StackPanel Margin="0,5,0,0" Height="480" Orientation="Vertical" Background="#198AB328">
+                    <TextBlock Margin="10,7,0,0" Style="{StaticResource LinkHeaderStyle}"
+                               Text="{Binding SelectedLicense.LicenseHeaderText}" />
+                    <StackPanel Margin="10,7,0,0" Orientation="Horizontal" Height="40">
+                        <StackPanel Margin="2,5,10,0" Orientation="Horizontal"
+                                    Visibility="{Binding SelectedLicense.LicenseCodeLink, Converter={StaticResource LicenseLinkToVisibilityConverter}}"
+                                    HorizontalAlignment="Left">
+                            <iconPacks:PackIconMaterial Margin="0,2,0,0" Height="16" Width="16" Kind="GithubCircle" Opacity="0.7"
+                                                        Foreground="#FF8ab329" Cursor="Hand" />
+                            <Button Style="{StaticResource HyperlinkButton}" Focusable="False"
+                                    cal:Message.Attach="[Action HyperlinkRequestNavigate('code')]">
+                                <TextBlock Margin="3,0,0,4">
+                                    <Hyperlink Focusable="False" Style="{StaticResource LinkHyperLinkStyle}">
+                                        <Run Text="{Binding SelectedLicense.LicenseCodeLink.LinkText}" />
+                                    </Hyperlink>
+                                </TextBlock>
+                            </Button>
+                        </StackPanel>
+                        <StackPanel Margin="2,5,0,0" Orientation="Horizontal"
+                                    Visibility="{Binding SelectedLicense.LicenseRegularLink, Converter={StaticResource LicenseLinkToVisibilityConverter}}"
+                                    HorizontalAlignment="Left">
+                            <iconPacks:PackIconMaterial Margin="0,2,0,0" Height="16" Width="16" Kind="Link" Opacity="0.7"
+                                                        Foreground="#FF8ab329" Cursor="Hand" />
+                            <Button Style="{StaticResource HyperlinkButton}" Focusable="False"
+                                    cal:Message.Attach="[Action HyperlinkRequestNavigate('regular')]">
+                                <TextBlock Margin="3,0,0,4">
+                                    <Hyperlink Focusable="False" Style="{StaticResource LinkHyperLinkStyle}">
+                                        <Run Text="{Binding SelectedLicense.LicenseRegularLink.LinkText}" />
+                                    </Hyperlink>
+                                </TextBlock>
+                            </Button>
+                        </StackPanel>
+                    </StackPanel>
+                    <ScrollViewer Height="390" CanContentScroll="True" VerticalScrollBarVisibility="Auto">
+                        <TextBlock Height="Auto" Margin="10,5,25,0" Text="{Binding SelectedLicense.LicenseText}" Foreground="#FF575757" FontFamily="Courier New"
+                                   TextWrapping="Wrap" />
+                    </ScrollViewer>
+                </StackPanel>
+                    </StackPanel>
+            </DockPanel>
+        </Border>
+    </Grid>
+</UserControl>

@@ -5,15 +5,14 @@ using System.Windows;
 [assembly: AssemblyDescription("Simple management tool for dnscrypt-proxy")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Simple DNSCrypt")]
-[assembly: AssemblyCopyright("Copyright © 2015 - 2017 Christian Hermann")]
+[assembly: AssemblyProduct("Simple DnsCrypt")]
+[assembly: AssemblyCopyright("Copyright © 2015 - 2018 Christian Hermann")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
 [assembly: ThemeInfo(
-    ResourceDictionaryLocation.None,
-    ResourceDictionaryLocation.SourceAssembly
+	ResourceDictionaryLocation.None,
+	ResourceDictionaryLocation.SourceAssembly
 )]
-[assembly: AssemblyVersion("0.4.4")]
-[assembly: AssemblyFileVersion("0.4.4")]
-
+[assembly: AssemblyVersion("0.4.5")]
+[assembly: AssemblyFileVersion("0.4.5")]

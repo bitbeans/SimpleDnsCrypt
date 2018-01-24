@@ -1,43 +1,32 @@
 ﻿<controls:MetroWindow x:Class="SimpleDnsCrypt.Windows.BaseWindow"
                       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                       xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
-                      xmlns:converter="clr-namespace:SimpleDnsCrypt.Converter"
-                      xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro.Platform"
                       xmlns:lex="http://wpflocalizeextension.codeplex.com"
-                      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-                      Title="{Binding WindowTitle}" MinWidth="810" Width="825" MinHeight="360" SizeToContent="WidthAndHeight"
+                      xmlns:cal="http://www.caliburnproject.org"
+                      xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+                      Title="{Binding WindowTitle}" MinWidth="810" Width="825" MinHeight="360"
+                      SizeToContent="WidthAndHeight"
                       GlowBrush="{DynamicResource AccentColorBrush}"
                       Icon="../Images/simplednscrypt.ico" ShowIconOnTitleBar="False"
                       WindowStartupLocation="CenterScreen" TitleCharacterCasing="Normal" Topmost="False"
                       ShowMaxRestoreButton="False" ResizeMode="CanResizeWithGrip" ShowInTaskbar="True"
-                      ShowMinButton="True" TitleForeground="White"
-                      mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="490">
-    <controls:MetroWindow.Resources>
-        <ResourceDictionary>
-            <converter:ReverseBoolToEnabledConverter x:Key="ReverseBoolToEnabledConverter" />
-        </ResourceDictionary>
-    </controls:MetroWindow.Resources>
+                      ShowMinButton="True" TitleForeground="White">
     <controls:MetroWindow.RightWindowCommands>
         <controls:WindowCommands>
-            <Button Cursor="Hand" x:Name="OpenAdvancedNetworkSettings" cal:Message.Attach="OpenAdvancedNetworkSettings" ToolTip="Advanced Network Settings">
-                <materialDesign:PackIcon Kind="SecurityNetwork" />
-            </Button>
-            <Button Cursor="Hand" x:Name="UpdateAsync" cal:Message.Attach="UpdateAsync" ToolTip="{lex:Loc Key=default_check_for_updates}" IsEnabled="{Binding IsCheckingUpdates, Converter={StaticResource ReverseBoolToEnabledConverter}}">
-                <materialDesign:PackIcon Kind="Refresh" />
+            <Button Cursor="Hand" x:Name="About" cal:Message.Attach="About" ToolTip="{lex:Loc Key=about}">
+                <iconPacks:PackIconMaterial Kind="Emoticon"/>
             </Button>
             <ComboBox Style="{StaticResource MetroComboBox}"
-                ItemsSource="{Binding Languages}"
-                SelectedItem="{Binding SelectedLanguage}"
-                IsEnabled="True"
-                DisplayMemberPath="Name"
-                Margin="5,0"
-                Cursor="Hand"
-                SelectedIndex="-1" HorizontalAlignment="Left" 
-                VerticalAlignment="Center"
-                Background="#198AB328" Opacity="0.4">
+                      ItemsSource="{Binding Languages}"
+                      SelectedItem="{Binding SelectedLanguage}"
+                      IsEnabled="True"
+                      DisplayMemberPath="Name"
+                      Margin="5,0"
+                      Cursor="Hand"
+                      SelectedIndex="-1" HorizontalAlignment="Left" 
+                      VerticalAlignment="Center"
+                      Background="#198AB328" Opacity="0.4">
             </ComboBox>
         </controls:WindowCommands>
     </controls:MetroWindow.RightWindowCommands>

@@ -1,1 +1,0 @@
-﻿Folder holds the domain and ip address blacklists.

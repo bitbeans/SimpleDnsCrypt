@@ -8,6 +8,7 @@
             </Trigger>
         </Style.Triggers>
         <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="FontSize" Value="14" />
         <Setter Property="Foreground" Value="#FF8ab329" />
         <Setter Property="TextBlock.TextDecorations" Value="{x:Null}" />
     </Style>
