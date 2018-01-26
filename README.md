@@ -13,8 +13,9 @@ Preview with dnscrypt-proxy-2.0.0beta10
 
 [![Build status](https://ci.appveyor.com/api/projects/status/1st7yuscwwx2duib/branch/dnscrypt-proxy2?svg=true)](https://ci.appveyor.com/project/bitbeans/simplednscrypt/branch/dnscrypt-proxy2)
 
-[Download x64 (preview, unsigned portable version)](https://simplednscrypt.blob.core.windows.net/deploy/SimpleDnsCrypt/bin/x86/SimpleDNSCrypt_x86.zip)
-[Download x84 (preview, unsigned portable version)](https://simplednscrypt.blob.core.windows.net/deploy/SimpleDnsCrypt/bin/x64/SimpleDNSCrypt_x64.zip)
+[Download x86 (preview, unsigned portable version)](https://simplednscrypt.blob.core.windows.net/deploy/SimpleDnsCrypt/bin/x86/SimpleDNSCrypt_x86.zip)
+
+[Download x64 (preview, unsigned portable version)](https://simplednscrypt.blob.core.windows.net/deploy/SimpleDnsCrypt/bin/x64/SimpleDNSCrypt_x64.zip)
 
 [Translations](https://poeditor.com/join/project/3frSzJtSqc) feel free to contribute :smiley:
 
