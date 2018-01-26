@@ -215,16 +215,18 @@ namespace SimpleDnsCrypt.ViewModels
 					report[proxyFile] = LocalizationEx.GetUiString("loader_missing", Thread.CurrentThread.CurrentCulture);
 				}
 				// exclude this check on dev folders
+				
 				if (proxyFilePath.Contains("bin\\Debug") || proxyFilePath.Contains("bin\\Release") || proxyFilePath.Contains("bin\\x64")) continue;
 				// dnscrypt-resolvers.* files are signed with minisign
-				if (!proxyFile.Equals("dnscrypt-proxy.toml") && !proxyFile.Equals("LICENSE"))
+				//TODO: re-enable
+				/*if (!proxyFile.Equals("dnscrypt-proxy.toml") && !proxyFile.Equals("LICENSE"))
 				{
 					// check if the file is signed
 					if (!AuthenticodeTools.IsTrusted(proxyFilePath))
 					{
 						report[proxyFile] = LocalizationEx.GetUiString("loader_unsigned", Thread.CurrentThread.CurrentCulture);
 					}
-				}
+				}*/
 			}
 			return report;
 		}
