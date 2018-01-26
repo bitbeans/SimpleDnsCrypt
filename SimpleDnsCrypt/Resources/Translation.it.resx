@@ -124,13 +124,13 @@
     <value>Show hidden cards</value>
   </data>
   <data name="default_settings_service_header" xml:space="preserve">
-    <value>Service</value>
+    <value>Servizio</value>
   </data>
   <data name="default_settings_service" xml:space="preserve">
-    <value>DNSCrypt Service</value>
+    <value>Servizio DNSCrypt</value>
   </data>
   <data name="default_settings_configuration" xml:space="preserve">
-    <value>Configuration</value>
+    <value>Configurazione</value>
   </data>
   <data name="default_settings_configuration_ipv4" xml:space="preserve">
     <value>Using IPv4 Server</value>
@@ -160,22 +160,22 @@
     <value>Only servers without filter</value>
   </data>
   <data name="default_settings_configuration_nofilter_tooltip" xml:space="preserve">
-    <value>Server must not enforce its own blacklist (for parental control, ads blocking...)</value>
+    <value>Il Server non deve imporre la propria blacklist (per il parental control, ads, blocco</value>
   </data>
   <data name="tabitem_mainmenu" xml:space="preserve">
-    <value>Main Menu</value>
+    <value>Menù Principale</value>
   </data>
   <data name="loader_administrative_rights_available" xml:space="preserve">
-    <value>Administrative rights are available</value>
+    <value>I permessi Amministrativi sono disponibili</value>
   </data>
   <data name="loader_administrative_rights_missing" xml:space="preserve">
-    <value>Missing administrative rights!</value>
+    <value>Mancano i permessi amministrativi!</value>
   </data>
   <data name="loader_checking_version" xml:space="preserve">
-    <value>Checking for new version . . .</value>
+    <value>Controllo nuova versione . . .</value>
   </data>
   <data name="loader_new_version_found" xml:space="preserve">
-    <value>A newer version was found: {0}</value>
+    <value>Nuova versione disponibile: {0}</value>
   </data>
   <data name="loader_starting_update" xml:space="preserve">
     <value>Starting update . . .</value>
@@ -253,7 +253,7 @@
     <value>Clear List</value>
   </data>
   <data name="querylog_button_block" xml:space="preserve">
-    <value>Block Selected</value>
+    <value>Blocca Selezionato</value>
   </data>
   <data name="domainblocklog" xml:space="preserve">
     <value>Domain Block Log</value>
@@ -265,10 +265,10 @@
     <value>Einträge:</value>
   </data>
   <data name="domainblocklog_source_file" xml:space="preserve">
-    <value>Source:</value>
+    <value>Origine:</value>
   </data>
   <data name="domainblocklog_button_clear" xml:space="preserve">
-    <value>Clear List</value>
+    <value>Svuota Lista</value>
   </data>
   <data name="tabitem_domainblocklog" xml:space="preserve">
     <value>Domain Block Log</value>
@@ -283,7 +283,7 @@
     <value>Address Blacklist</value>
   </data>
   <data name="settings" xml:space="preserve">
-    <value>Settings</value>
+    <value>Impostazioni</value>
   </data>
   <data name="settings_domain_blacklist" xml:space="preserve">
     <value>Show &quot;Domain Blacklist&quot; Tab</value>
@@ -304,9 +304,9 @@
     <value>Resolvers</value>
   </data>
   <data name="tabitem_advanced_settings" xml:space="preserve">
-    <value>Advanced Settings</value>
+    <value>Opzioni Avanzate</value>
   </data>
   <data name="settings_advanced_settings" xml:space="preserve">
-    <value>Show &quot;Advanced Settings&quot; Tab</value>
+    <value>Mostra scheda &quot;Opzioni Avanzate&quot;</value>
   </data>
 </root>
