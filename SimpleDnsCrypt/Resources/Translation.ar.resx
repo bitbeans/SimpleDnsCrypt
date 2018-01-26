@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="default_settings_network_cards" xml:space="preserve">
+    <value>بطاقات الشبكة</value>
+  </data>
+  <data name="default_settings_show_hidden_cards" xml:space="preserve">
+    <value>إظهار بطاقات الشبكة المخفية</value>
+  </data>
+  <data name="default_settings_service_header" xml:space="preserve">
+    <value>الخدمة</value>
+  </data>
+  <data name="default_settings_service" xml:space="preserve">
+    <value>خدمة DNSCrypt</value>
+  </data>
+  <data name="default_settings_configuration" xml:space="preserve">
+    <value>ترتيب\تثبيت</value>
+  </data>
+  <data name="default_settings_configuration_ipv4" xml:space="preserve">
+    <value>اتسخدام خدام IPv4</value>
+  </data>
+  <data name="default_settings_configuration_ipv4_tooltip" xml:space="preserve">
+    <value>إستخدام خوادم التى يمكن الوصول إليها عبر IPv4</value>
+  </data>
+  <data name="default_settings_configuration_ipv6" xml:space="preserve">
+    <value>إستخادم خادم IPv6</value>
+  </data>
+  <data name="default_settings_configuration_ipv6_tooltip" xml:space="preserve">
+    <value>إستخدام خوادم التى يمكن الوصول إليها عبر IPv6 (لا تفعلها إلا إذا كان ليدك إتصال IPv6)</value>
+  </data>
+  <data name="default_settings_configuration_dnssec" xml:space="preserve">
+    <value>فقط خوادم DNSSEC تكون مدعومة</value>
+  </data>
+  <data name="default_settings_configuration_dnssec_tooltip" xml:space="preserve">
+    <value>الخادم يجب ان يكون يدعم إضافة DNS security</value>
+  </data>
+  <data name="default_settings_configuration_nolog" xml:space="preserve">
+    <value>فقط الخوادم بدون تسجيل</value>
+  </data>
+  <data name="default_settings_configuration_nolog_tooltip" xml:space="preserve">
+    <value>الخادم يجب ان لايكون يسجل نشاطات المستخدم</value>
+  </data>
+  <data name="default_settings_configuration_nofilter" xml:space="preserve">
+    <value>فقط الخوادم بدون فلتر</value>
+  </data>
+  <data name="default_settings_configuration_nofilter_tooltip" xml:space="preserve">
+    <value>يجب على الخادم ان لايكون له قائمة سوداء (للرقابة الأبوية, منع الإعلانات...)</value>
+  </data>
+  <data name="tabitem_mainmenu" xml:space="preserve">
+    <value>القائمة الرئيسية</value>
+  </data>
+  <data name="loader_administrative_rights_available" xml:space="preserve">
+    <value>لدية حقوق إدارية</value>
+  </data>
+  <data name="loader_administrative_rights_missing" xml:space="preserve">
+    <value>Missing administrative rights!</value>
+  </data>
+  <data name="loader_checking_version" xml:space="preserve">
+    <value>Checking for new version . . .</value>
+  </data>
+  <data name="loader_new_version_found" xml:space="preserve">
+    <value>A newer version was found: {0}</value>
+  </data>
+  <data name="loader_starting_update" xml:space="preserve">
+    <value>Starting update . . .</value>
+  </data>
+  <data name="loader_update_failed" xml:space="preserve">
+    <value>Update failed, continue . . .</value>
+  </data>
+  <data name="loader_latest_version" xml:space="preserve">
+    <value>You are using the latest version</value>
+  </data>
+  <data name="loader_unsigned" xml:space="preserve">
+    <value>unsigned</value>
+  </data>
+  <data name="loader_missing" xml:space="preserve">
+    <value>missing</value>
+  </data>
+  <data name="loader_downloading_signature" xml:space="preserve">
+    <value>Downloading signature . . .</value>
+  </data>
+  <data name="loader_downloading_installer" xml:space="preserve">
+    <value>Downloading installer . . .</value>
+  </data>
+  <data name="loader_starting" xml:space="preserve">
+    <value>Starting . . .</value>
+  </data>
+  <data name="loader_validate_folder" xml:space="preserve">
+    <value>Validating {0} folder</value>
+  </data>
+  <data name="loader_loading_network_cards" xml:space="preserve">
+    <value>Loading network cards . . .</value>
+  </data>
+  <data name="loader_failed_loading" xml:space="preserve">
+    <value>Could not load {0}</value>
+  </data>
+  <data name="loader_successfully_loaded" xml:space="preserve">
+    <value>{0} successfully loaded</value>
+  </data>
+  <data name="loader_loading" xml:space="preserve">
+    <value>Loading {0} . . .</value>
+  </data>
+  <data name="loader_missing_files" xml:space="preserve">
+    <value>Missing files in the {0} folder:\n{1}\n\nThink about a new installation of {2}</value>
+  </data>
+  <data name="loader_all_files_available" xml:space="preserve">
+    <value>All required files have been found</value>
+  </data>
+  <data name="about" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="about_software" xml:space="preserve">
+    <value>Software</value>
+  </data>
+  <data name="about_license" xml:space="preserve">
+    <value>License</value>
+  </data>
+  <data name="about_view_on_github" xml:space="preserve">
+    <value>View on GitHub</value>
+  </data>
+  <data name="tabitem_querylog" xml:space="preserve">
+    <value>Query Log</value>
+  </data>
+  <data name="querylog" xml:space="preserve">
+    <value>Query Log</value>
+  </data>
+  <data name="querylog_waiting_for_data" xml:space="preserve">
+    <value>waiting for DNS queries</value>
+  </data>
+  <data name="querylog_entry_count" xml:space="preserve">
+    <value>Entries:</value>
+  </data>
+  <data name="querylog_source_file" xml:space="preserve">
+    <value>Source:</value>
+  </data>
+  <data name="querylog_button_clear" xml:space="preserve">
+    <value>Clear List</value>
+  </data>
+  <data name="querylog_button_block" xml:space="preserve">
+    <value>Block Selected</value>
+  </data>
+  <data name="domainblocklog" xml:space="preserve">
+    <value>Domain Block Log</value>
+  </data>
+  <data name="domainblocklog_waiting_for_data" xml:space="preserve">
+    <value>waiting for blocked DNS queries</value>
+  </data>
+  <data name="domainblocklog_entry_count" xml:space="preserve">
+    <value>Einträge:</value>
+  </data>
+  <data name="domainblocklog_source_file" xml:space="preserve">
+    <value>Source:</value>
+  </data>
+  <data name="domainblocklog_button_clear" xml:space="preserve">
+    <value>Clear List</value>
+  </data>
+  <data name="tabitem_domainblocklog" xml:space="preserve">
+    <value>Domain Block Log</value>
+  </data>
+  <data name="tabitem_addressblocklog" xml:space="preserve">
+    <value>Address Block Log</value>
+  </data>
+  <data name="tabitem_domainblacklist" xml:space="preserve">
+    <value>Domain Blacklist</value>
+  </data>
+  <data name="tabitem_addressblacklist" xml:space="preserve">
+    <value>Address Blacklist</value>
+  </data>
+  <data name="settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="settings_domain_blacklist" xml:space="preserve">
+    <value>Show &quot;Domain Blacklist&quot; Tab</value>
+  </data>
+  <data name="settings_address_blacklist" xml:space="preserve">
+    <value>Show &quot;Address Blacklist&quot; Tab</value>
+  </data>
+  <data name="settings_domain_block" xml:space="preserve">
+    <value>Show &quot;Domain Block Log&quot; Tab</value>
+  </data>
+  <data name="settings_address_block" xml:space="preserve">
+    <value>Show &quot;Address Block Log&quot; Tab</value>
+  </data>
+  <data name="settings_query_log" xml:space="preserve">
+    <value>Show &quot;Query Log&quot; Tab</value>
+  </data>
+  <data name="tabitem_resolvers" xml:space="preserve">
+    <value>Resolvers</value>
+  </data>
+  <data name="tabitem_advanced_settings" xml:space="preserve">
+    <value>Advanced Settings</value>
+  </data>
+  <data name="settings_advanced_settings" xml:space="preserve">
+    <value>Show &quot;Advanced Settings&quot; Tab</value>
+  </data>
+</root>

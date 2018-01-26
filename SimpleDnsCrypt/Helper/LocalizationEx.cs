@@ -31,6 +31,7 @@ namespace SimpleDnsCrypt.Helper
 		{
 			var supportedLanguages = new ObservableCollection<Language>
 			{
+				new Language {Name = "Arabic", ShortCode = "ar", CultureCode = "ar-AR"},
 				new Language {Name = "Bulgarian", ShortCode = "bg", CultureCode = "bg-BG"},
 				new Language {Name = "Chinese Simp.", ShortCode = "zh-hans", CultureCode = "zh-Hans"},
 				new Language {Name = "Chinese Trad.", ShortCode = "zh-hant", CultureCode = "zh-Hant"},
