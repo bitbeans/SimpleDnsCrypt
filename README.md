@@ -1,15 +1,15 @@
 # ![Alt text](img/icons/64x64.png "Simple DNSCrypt") Simple DNSCrypt
 
-[![license](https://img.shields.io/github/license/bitbeans/SimpleDnsCrypt.svg?style=flat-square)](https://github.com/bitbeans/SimpleDnsCrypt/blob/master/LICENSE.md) [![Github All Releases](https://img.shields.io/github/release/bitbeans/SimpleDnsCrypt.svg?style=flat-square)](https://github.com/bitbeans/SimpleDnsCrypt/releases/latest) [![dnscrypt--proxy](https://img.shields.io/badge/dnscrypt--proxy-1.9.5-orange.svg?style=flat-square)](https://dnscrypt.org/) [![Github All Releases](https://img.shields.io/github/downloads/bitbeans/SimpleDnsCrypt/total.svg?style=flat-square)](https://github.com/bitbeans/SimpleDnsCrypt/releases/latest) [![donate PayPal](https://img.shields.io/badge/donate-PayPal-green.svg?style=flat-square)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=c.hermann@bitbeans.de&item_name=Donation+to+the+Simple+DNSCrypt+project) [![donate pledgie](https://img.shields.io/badge/donate-pledgie-green.svg?style=flat-square)](https://pledgie.com/campaigns/32588)
+[![license](https://img.shields.io/github/license/bitbeans/SimpleDnsCrypt.svg?style=flat-square)](https://github.com/bitbeans/SimpleDnsCrypt/blob/master/LICENSE.md) [![Github All Releases](https://img.shields.io/github/release/bitbeans/SimpleDnsCrypt.svg?style=flat-square)](https://github.com/bitbeans/SimpleDnsCrypt/releases/latest) [![dnscrypt--proxy](https://img.shields.io/badge/dnscrypt--proxy-2.0.0beta10-orange.svg?style=flat-square)](https://github.com/jedisct1/dnscrypt-proxy) [![Github All Releases](https://img.shields.io/github/downloads/bitbeans/SimpleDnsCrypt/total.svg?style=flat-square)](https://github.com/bitbeans/SimpleDnsCrypt/releases/latest) [![donate PayPal](https://img.shields.io/badge/donate-PayPal-green.svg?style=flat-square)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=c.hermann@bitbeans.de&item_name=Donation+to+the+Simple+DNSCrypt+project) [![donate pledgie](https://img.shields.io/badge/donate-pledgie-green.svg?style=flat-square)](https://pledgie.com/campaigns/32588)
 
 Simple DNSCrypt is a simple management tool to configure dnscrypt-proxy on windows based systems.
 
-If you are looking for an only command line tool, you can use the [dnscrypt-proxy](https://dnscrypt.org/) software. There are pre-compiled versions for any os.
+If you are looking for an only command line tool, you can use the [dnscrypt-proxy](https://github.com/jedisct1/dnscrypt-proxy) software. There are pre-compiled versions for any os.
 The dnscrypt-proxy software is written and maintained by Frank Denis (@jedisct1).
 
 # ![Alt text](img/icons/32x32.png "Status") Status
 
-IPv6 support can be enabled: https://github.com/bitbeans/SimpleDnsCrypt/issues/1#issuecomment-329471198
+Preview with dnscrypt-proxy-2.0.0beta10
 
 # ![Alt text](img/icons/32x32.png "Installation") Installation
 
@@ -32,85 +32,13 @@ To uninstall Simple DNSCrypt and dnscrypt-proxy, just go to the Windows Control 
 ### ![Alt text](img/icons/16x16.png "Updates") Updates
 Simple DNSCrypt will automatically check for new versions on startup.
 
-### ![Alt text](img/icons/16x16.png "Updates") chocolatey
-
-    choco install simplednscrypt
-https://chocolatey.org/packages/simplednscrypt
-
-# ![Alt text](img/icons/32x32.png "Overview") Overview
-
-#### Standard Settings
-![standard view](https://raw.githubusercontent.com/bitbeans/SimpleDnsCrypt/master/img/standard.png)
-
-#### Advanced Settings
-![advanced view](https://raw.githubusercontent.com/bitbeans/SimpleDnsCrypt/master/img/advanced.png)
-
-##### Plugins
-
-![plugin view](https://raw.githubusercontent.com/bitbeans/SimpleDnsCrypt/master/img/plugins.png)
-
-##### Block and Blacklist
-
-![plugin view](https://raw.githubusercontent.com/bitbeans/SimpleDnsCrypt/master/img/blacklist.png)
-
-##### Live Log
-
-![plugin view](https://raw.githubusercontent.com/bitbeans/SimpleDnsCrypt/master/img/livelog.png)
-
-Simple DNSCrypt currently supports four plugins:
-
-**libdcplugin_ldns_aaaa_blocking**
-
-If your network doesn't support IPv6, chances are that your applications are still constantly trying to resolve IPv6 addresses, causing unnecessary slowdowns.
-
-This plugin causes the proxy to reply immediately to IPv6 requests, without having to send a useless request to upstream resolvers, and having to wait for a response.
-
-**libdcplugin_logging**
-
-This plugin logs the DNS queries received by the proxy. The logs are stored in a local file.
-You can choose the folder, where dnscrypt-proxy will store the logfile (dns.log).
-
-**libdcplugin_cache**
-
-This plugin implements a simple, zero-configuration DNS response cache.
-The mimimum time to keep a record in cache can be specified in the cache plugin: 60 - 86400 seconds.
-
-**libdcplugin_ldns_blocking**
-
-This plugin returns a REFUSED response if the query name is in a list of blacklisted names, or if at least one of the returned IP addresses happens to be in a list of blacklisted IPs.
-
-A file should list one entry per line.
-
-IPv4 and IPv6 addresses are supported. For names, leading and trailing wildcards (*) are also supported (e.g. &#42;xxx&#42;, &#42;.example.com, ads.&#42;)
-
-**Note:** If the file(s) is/are empty, the service may **not** start!
-
-**libdcplugin_ldns_forwarding**
-
-This plugin redirects queries for specific zones to a set of non-DNSCrypt resolvers. This can be useful for private zones that can only be resolved by a local DNS server.
-
-**Requests are synchronous, so this plugin should not be enabled with untrusted clients.**
-
-# ![Alt text](img/icons/32x32.png "Compatibility") Compatibility
-
-This software was tested on:
-
-|             | 32 bit      | 64 bit     |
-| :----------- | :-----------: | :-----------: | 
-| Windows 7    | tested        | tested        | 
-| Windows 8.1     | tested        | tested       | 
-| Windows 10     | tested        | tested        | 
-
-Feel free to report your success or failure: [here](https://github.com/bitbeans/SimpleDnsCrypt/issues/5)
-
-# ![Alt text](img/icons/32x32.png "Requirements") Requirements
-
-- This software targets .NET 4.6.2.
-- It also requires Microsoft Visual C++ Redistributable für Visual Studio 2017: [x64](https://go.microsoft.com/fwlink/?LinkId=746572) and [x86](https://go.microsoft.com/fwlink/?LinkId=746571)
-
 # ![Alt text](img/icons/32x32.png "Translations") Translations
 
-SimpleDNSCrypt currently speaks the following languages (17):
+Start the translation for the new version: https://poeditor.com/join/project/3frSzJtSqc
+
+Thanks to [POEditor](https://poeditor.com) for the open source license!
+
+The **old** SimpleDNSCrypt speaks the following languages (17):
 
 - Bulgarian (@rddim)
 - Danish (@simonclausen)
@@ -130,33 +58,15 @@ SimpleDNSCrypt currently speaks the following languages (17):
 - Traditional Chinese (@porsche613)
 - Turkish (@emirgian)
 
-If you are able to translate the resx files into more languages, please feel free to send a pull request. 
-
 # ![Alt text](img/icons/32x32.png "Want to say thanks?") Want to say thanks?
 
 * Hit the :star: Star :star: button
 * <a href='https://pledgie.com/campaigns/32588'><img alt='Click here to lend your support to: Simple DNSCrypt and make a donation at pledgie.com !' src='https://pledgie.com/campaigns/32588.png?skin_name=chrome' border='0' ></a>
 
-# ![Alt text](img/icons/32x32.png "Alternative Software") Alternative Software
-
-If you don`t like this software, there are two similar projects:
-
-- [DNSCrypt WinClient](https://github.com/Noxwizard/dnscrypt-winclient): the original DNSCrypt user interface for Windows.
-- [DNSCrypt Windows Service Manager](http://simonclausen.dk/projects/dnscrypt-winservicemgr/): a full-featured DNSCrypt user interface for Windows.
 
 # ![Alt text](img/icons/32x32.png "Used Software") Used Software
 
-- libsodium-net [doc](https://www.gitbook.com/book/bitbeans/libsodium-net/details) [:octocat:](https://github.com/adamcaudill/libsodium-net)
-- WPF Localize Extension [doc](https://wpflocalizeextension.codeplex.com/) [:octocat:](https://github.com/SeriousM/WPFLocalizationExtension) 
-- Caliburn Micro [doc](http://caliburnmicro.com/) [:octocat:](https://github.com/Caliburn-Micro/Caliburn.Micro/) 
-- MahApps Metro [doc](http://mahapps.com/) [:octocat:](https://github.com/MahApps/MahApps.Metro) 
-- minisign-net [:octocat:](https://github.com/bitbeans/minisign-net) 
-- YamlDotNet [:octocat:](https://github.com/aaubry/YamlDotNet) 
-- helper-net [:octocat:](https://github.com/bitbeans/helper-net) 
-- DNS [:octocat:](https://github.com/kapetan/dns) 
-- RedistributableChecker [:octocat:](https://github.com/bitbeans/RedistributableChecker) 
-- MaterialDesignInXamlToolkit [:octocat:](https://github.com/ButchersBoy/MaterialDesignInXamlToolkit) 
-- SocksSharp [:octocat:](https://github.com/extremecodetv/SocksSharp) 
+-TODO
 
 # ![Alt text](img/icons/32x32.png "Special Thanks") Special Thanks
 

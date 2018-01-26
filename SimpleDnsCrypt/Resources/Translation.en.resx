@@ -259,22 +259,64 @@
     <value>Block Selected</value>
     <comment>Fuzzy</comment>
   </data>
-  <data name="blocklog" xml:space="preserve">
-    <value>Block Log</value>
+  <data name="domainblocklog" xml:space="preserve">
+    <value>Domain Block Log</value>
+    <comment>Fuzzy</comment>
   </data>
-  <data name="blocklog_waiting_for_data" xml:space="preserve">
+  <data name="domainblocklog_waiting_for_data" xml:space="preserve">
     <value>waiting for blocked DNS queries</value>
+    <comment>Fuzzy</comment>
   </data>
-  <data name="blocklog_entry_count" xml:space="preserve">
+  <data name="domainblocklog_entry_count" xml:space="preserve">
     <value>Einträge:</value>
+    <comment>Fuzzy</comment>
   </data>
-  <data name="blocklog_source_file" xml:space="preserve">
+  <data name="domainblocklog_source_file" xml:space="preserve">
     <value>Source:</value>
+    <comment>Fuzzy</comment>
   </data>
-  <data name="blocklog_button_clear" xml:space="preserve">
+  <data name="domainblocklog_button_clear" xml:space="preserve">
     <value>Clear List</value>
+    <comment>Fuzzy</comment>
   </data>
-  <data name="tabitem_blocklog" xml:space="preserve">
-    <value>Block Log</value>
+  <data name="tabitem_domainblocklog" xml:space="preserve">
+    <value>Domain Block Log</value>
+    <comment>Fuzzy</comment>
+  </data>
+  <data name="tabitem_addressblocklog" xml:space="preserve">
+    <value>Address Block Log</value>
+  </data>
+  <data name="tabitem_domainblacklist" xml:space="preserve">
+    <value>Domain Blacklist</value>
+  </data>
+  <data name="tabitem_addressblacklist" xml:space="preserve">
+    <value>Address Blacklist</value>
+  </data>
+  <data name="settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="settings_domain_blacklist" xml:space="preserve">
+    <value>Show &quot;Domain Blacklist&quot; Tab</value>
+  </data>
+  <data name="settings_address_blacklist" xml:space="preserve">
+    <value>Show &quot;Address Blacklist&quot; Tab</value>
+  </data>
+  <data name="settings_domain_block" xml:space="preserve">
+    <value>Show &quot;Domain Block Log&quot; Tab</value>
+  </data>
+  <data name="settings_address_block" xml:space="preserve">
+    <value>Show &quot;Address Block Log&quot; Tab</value>
+  </data>
+  <data name="settings_query_log" xml:space="preserve">
+    <value>Show &quot;Query Log&quot; Tab</value>
+  </data>
+  <data name="tabitem_resolvers" xml:space="preserve">
+    <value>Resolvers</value>
+  </data>
+  <data name="tabitem_advanced_settings" xml:space="preserve">
+    <value>Advanced Settings</value>
+  </data>
+  <data name="settings_advanced_settings" xml:space="preserve">
+    <value>Show &quot;Advanced Settings&quot; Tab</value>
   </data>
 </root>

@@ -18,8 +18,14 @@
 
 
 ## List of local addresses and ports to listen to. Can be IPv4 and/or IPv6.
+## To only use systemd activation sockets, use an empty set: []
 
 listen_addresses = ['127.0.0.1:53', '[::1]:53']
+
+
+## Maximum number of simultaneous client connections to accept
+
+max_clients = 100
 
 
 ## Require servers (from static definitions and from remote sources) to satisfy specific properties
@@ -54,7 +60,7 @@ daemonize = false
 force_tcp = false
 
 
-## Timeout, in milliseconds
+## How long a DNS query will wait for a response, in milliseconds
 
 timeout = 2500
 
@@ -89,7 +95,7 @@ cert_refresh_delay = 30
 ## also cause reliability issues with some stub resolvers. In
 ## particular, enabling this on macOS is not recommended.
 
-block_ipv6 = false
+block_ipv6 = true
 
 
 
@@ -109,7 +115,7 @@ block_ipv6 = false
 #        DNS cache        #
 ###########################
 
-## Enable a basic DNS cache to reduce outgoing traffic
+## Enable a DNS cache to reduce latency and outgoing traffic
 
 cache = true
 
@@ -144,12 +150,12 @@ cache_neg_ttl = 60
 
 ## Path to the query log file (absolute, or relative to the same directory as the executable file)
 
-file = 'query.log'
+# file = 'query.log'
 
 
 ## Query log format (currently supported: tsv and ltsv)
 
-format = 'tsv'
+format = 'ltsv'
 
 
 ## Do not log these query types, to reduce verbosity. Keep empty to log everything.
@@ -172,7 +178,7 @@ format = 'tsv'
 
 ## Query log format (currently supported: tsv and ltsv)
 
-format = 'tsv'
+format = 'ltsv'
 
 
 ######################################################
@@ -191,17 +197,17 @@ format = 'tsv'
 
 ## Path to the file of blocking rules (absolute, or relative to the same directory as the executable file)
 
-blacklist_file = 'blacklist.txt'
+# blacklist_file = 'blacklist.txt'
 
 
 ## Optional path to a file logging blocked queries
 
-log_file = 'blocked.log'
+# log_file = 'blocked.log'
 
 
 ## Optional log format: tsv or ltsv (default: tsv)
 
-log_format = 'ltsv'
+# log_format = 'ltsv'
 
 
 
@@ -229,7 +235,7 @@ log_format = 'ltsv'
 
 ## Optional log format: tsv or ltsv (default: tsv)
 
-# log_format = 'tsv'
+# log_format = 'ltsv'
 
 
 
@@ -238,20 +244,19 @@ log_format = 'ltsv'
 #########################
 
 ## Remote lists of available servers
-## Recommended: change the cache_file location to an absolute path
 
 [sources]
-  [sources.'proxy v1 list from github']
-  url = 'https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v1/dnscrypt-resolvers.csv'
+  [sources.'public-resolvers']
+  url = 'http://download.dnscrypt.info/resolvers-list/v2/public-resolvers.md'
   minisign_key = 'RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3'
-  cache_file = 'dnscrypt-resolvers.csv'
-  format = 'v1'
+  cache_file = 'public-resolvers.md'
+  format = 'v2'
   refresh_delay = 168
   prefix = ''
 
 
-## Local, static list of available servers
+## Optional, local, static list of additional servers
 
-[servers]
-  [servers.'scaleway-fr']
-  stamp = 'dnsc://AQMAAAAAAAAAEjIxMi40Ny4yMjguMTM2OjQ0M09FODAxOkI4NEU6QTYwNjpCRkIwOkJBQzA6Q0U0Mzo0NDVCOkIxNUU6QkE2NDpCMDJGOkEzQzQ6QUEzMTpBRTEwOjYzNkE6MDc5MDozMjREHzIuZG5zY3J5cHQtY2VydC5mci5kbnNjcnlwdC5vcmc'
+# [servers]
+#   [servers.'scaleway-fr']
+#   stamp = 'sdns://AQMAAAAAAAAAEjIxMi40Ny4yMjguMTM2OjQ0MyDoAbhOpga_sLrAzkNEW7FeumSwL6PEqjGuEGNqB5AyTR8yLmRuc2NyeXB0LWNlcnQuZnIuZG5zY3J5cHQub3Jn'

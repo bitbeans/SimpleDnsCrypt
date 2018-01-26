@@ -255,22 +255,64 @@
   <data name="querylog_button_block" xml:space="preserve">
     <value>Ausgewählte blockieren</value>
   </data>
-  <data name="blocklog" xml:space="preserve">
-    <value>Block Log</value>
+  <data name="domainblocklog" xml:space="preserve">
+    <value>Domain Block Log</value>
+    <comment>Fuzzy</comment>
   </data>
-  <data name="blocklog_waiting_for_data" xml:space="preserve">
+  <data name="domainblocklog_waiting_for_data" xml:space="preserve">
     <value>warte auf blockierte DNS Anfragen</value>
+    <comment>Fuzzy</comment>
   </data>
-  <data name="blocklog_entry_count" xml:space="preserve">
+  <data name="domainblocklog_entry_count" xml:space="preserve">
     <value>Einträge:</value>
+    <comment>Fuzzy</comment>
   </data>
-  <data name="blocklog_source_file" xml:space="preserve">
+  <data name="domainblocklog_source_file" xml:space="preserve">
     <value>Quelle:</value>
+    <comment>Fuzzy</comment>
   </data>
-  <data name="blocklog_button_clear" xml:space="preserve">
+  <data name="domainblocklog_button_clear" xml:space="preserve">
     <value>Liste leeren</value>
+    <comment>Fuzzy</comment>
   </data>
-  <data name="tabitem_blocklog" xml:space="preserve">
-    <value>Block Log</value>
+  <data name="tabitem_domainblocklog" xml:space="preserve">
+    <value>Domain Block Log</value>
+    <comment>Fuzzy</comment>
+  </data>
+  <data name="tabitem_addressblocklog" xml:space="preserve">
+    <value>Adressen Block Log</value>
+  </data>
+  <data name="tabitem_domainblacklist" xml:space="preserve">
+    <value>Domain Blackliste</value>
+  </data>
+  <data name="tabitem_addressblacklist" xml:space="preserve">
+    <value>Adressen Blackliste</value>
+  </data>
+  <data name="settings" xml:space="preserve">
+    <value>Einstellungen</value>
+  </data>
+  <data name="settings_domain_blacklist" xml:space="preserve">
+    <value>&quot;Domain Blackliste&quot; in Tabs anzeigen</value>
+  </data>
+  <data name="settings_address_blacklist" xml:space="preserve">
+    <value>&quot;Adressen Blackliste&quot; in Tabs anzeigen</value>
+  </data>
+  <data name="settings_domain_block" xml:space="preserve">
+    <value>&quot;Domain Block Log&quot; in Tabs anzeigen</value>
+  </data>
+  <data name="settings_address_block" xml:space="preserve">
+    <value>&quot;Adressen Block Log&quot; in Tabs anzeigen</value>
+  </data>
+  <data name="settings_query_log" xml:space="preserve">
+    <value>&quot;Query Log&quot; in Tabs anzeigen</value>
+  </data>
+  <data name="tabitem_resolvers" xml:space="preserve">
+    <value>Resolver</value>
+  </data>
+  <data name="tabitem_advanced_settings" xml:space="preserve">
+    <value>Erweiterte Einstellungen</value>
+  </data>
+  <data name="settings_advanced_settings" xml:space="preserve">
+    <value>&quot;Erweiterte Einstellungen&quot; in Tabs anzeigen</value>
   </data>
 </root>

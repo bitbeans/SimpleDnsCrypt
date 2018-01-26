@@ -17,6 +17,9 @@
             <Button Cursor="Hand" x:Name="About" cal:Message.Attach="About" ToolTip="{lex:Loc Key=about}">
                 <iconPacks:PackIconMaterial Kind="Emoticon"/>
             </Button>
+            <Button Cursor="Hand" x:Name="Settings" cal:Message.Attach="Settings" ToolTip="{lex:Loc Key=settings}">
+                <iconPacks:PackIconMaterial Kind="Settings"/>
+            </Button>
             <ComboBox Style="{StaticResource MetroComboBox}"
                       ItemsSource="{Binding Languages}"
                       SelectedItem="{Binding SelectedLanguage}"

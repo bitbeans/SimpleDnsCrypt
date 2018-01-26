@@ -22,5 +22,77 @@ namespace SimpleDnsCrypt.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IsQueryLogTabVisible {
+            get {
+                return ((bool)(this["IsQueryLogTabVisible"]));
+            }
+            set {
+                this["IsQueryLogTabVisible"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsDomainBlacklistTabVisible {
+            get {
+                return ((bool)(this["IsDomainBlacklistTabVisible"]));
+            }
+            set {
+                this["IsDomainBlacklistTabVisible"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsDomainBlockLogTabVisible {
+            get {
+                return ((bool)(this["IsDomainBlockLogTabVisible"]));
+            }
+            set {
+                this["IsDomainBlockLogTabVisible"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsAddressBlockLogTabVisible {
+            get {
+                return ((bool)(this["IsAddressBlockLogTabVisible"]));
+            }
+            set {
+                this["IsAddressBlockLogTabVisible"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsAddressBlacklistTabVisible {
+            get {
+                return ((bool)(this["IsAddressBlacklistTabVisible"]));
+            }
+            set {
+                this["IsAddressBlacklistTabVisible"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IsAdvancedSettingsTabVisible {
+            get {
+                return ((bool)(this["IsAdvancedSettingsTabVisible"]));
+            }
+            set {
+                this["IsAdvancedSettingsTabVisible"] = value;
+            }
+        }
     }
 }

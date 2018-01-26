@@ -76,8 +76,12 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 			else
 			{
-				var fileErrors = validatedFolder.Aggregate("", (current, fileError) => current + $"{fileError.Key}: {fileError.Value}\n");
-				ProgressText = string.Format(LocalizationEx.GetUiString("loader_missing_files", Thread.CurrentThread.CurrentCulture), Global.DnsCryptProxyFolder, fileErrors, Global.ApplicationName);
+				var fileErrors = "";
+				foreach (var pair in validatedFolder)
+				{
+					fileErrors += $"{pair.Key}: {pair.Value}\n";
+				}
+				ProgressText = string.Format(LocalizationEx.GetUiString("loader_missing_files", Thread.CurrentThread.CurrentCulture).Replace("\\n", "\n"), Global.DnsCryptProxyFolder, fileErrors, Global.ApplicationName);
 				await Task.Delay(5000).ConfigureAwait(false);
 				Process.GetCurrentProcess().Kill();
 			}

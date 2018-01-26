@@ -4,6 +4,7 @@ using SimpleDnsCrypt.Helper;
 using SimpleDnsCrypt.Models;
 using System;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.ComponentModel.Composition;
 using System.Dynamic;
 using System.Linq;
@@ -14,6 +15,18 @@ using System.Windows.Controls;
 
 namespace SimpleDnsCrypt.ViewModels
 {
+	public enum Tabs
+	{
+		MainTab,
+		ResolverTab,
+		AdvancedSettingsTab,
+		QueryLogTab,
+		DomainBlockLogTab,
+		DomainBlacklistTab,
+		AddressBlockLogTab,
+		AddressBlacklistTab
+	}
+
 	[Export(typeof(MainViewModel))]
 	public class MainViewModel : PropertyChangedBase, IShell
 	{
@@ -23,6 +36,7 @@ namespace SimpleDnsCrypt.ViewModels
 		private bool _showHiddenCards;
 		private BindableCollection<LocalNetworkInterface> _localNetworkInterfaces =
 			new BindableCollection<LocalNetworkInterface>();
+		public Tabs SelectedTab { get; set; }
 
 		private bool _isWorkingOnService;
 		private bool _isResolverRunning;
@@ -31,6 +45,16 @@ namespace SimpleDnsCrypt.ViewModels
 		private ObservableCollection<Language> _languages;
 		private Language _selectedLanguage;
 		private bool _isSavingConfiguration;
+		private int _selectedTabIndex;
+
+		private SettingsViewModel _settingsViewModel;
+		private QueryLogViewModel _queryLogViewModel;
+		private DomainBlockLogViewModel _domainBlockLogViewModel;
+		private AddressBlockLogViewModel _addressBlockLogViewModel;
+		private DomainBlacklistViewModel _domainBlacklistViewModel;
+		private AddressBlacklistViewModel _addressBlacklistViewModel;
+		private AdvancedSettingsViewModel _advancedSettingsViewModel;
+
 		/// <summary>
 		/// Initializes a new instance of the <see cref="MainViewModel"/> class
 		/// </summary>
@@ -43,7 +67,7 @@ namespace SimpleDnsCrypt.ViewModels
 			_events = events;
 			_events.Subscribe(this);
 			_windowTitle = $"{Global.ApplicationName} {VersionHelper.PublishVersion} {VersionHelper.PublishBuild}";
-
+			SelectedTab = Tabs.MainTab;
 			_isSavingConfiguration = false;
 			_isWorkingOnService = false;
 
@@ -54,38 +78,230 @@ namespace SimpleDnsCrypt.ViewModels
 					_isResolverRunning = true;
 				}
 			}
-			QueryLogViewModel = new QueryLogViewModel(_windowManager, _events);
-			BlockLogViewModel = new BlockLogViewModel(_windowManager, _events);
-			BlacklistViewModel = new BlacklistViewModel(_windowManager, _events);
+
+			_settingsViewModel = new SettingsViewModel(_windowManager, _events)
+			{
+				WindowTitle = LocalizationEx.GetUiString("settings", Thread.CurrentThread.CurrentCulture)
+			};
+			_settingsViewModel.PropertyChanged += SettingsViewModelOnPropertyChanged;
+			_advancedSettingsViewModel = new AdvancedSettingsViewModel(_windowManager, _events);
+			_queryLogViewModel = new QueryLogViewModel(_windowManager, _events);
+			_domainBlockLogViewModel = new DomainBlockLogViewModel(_windowManager, _events);
+			_domainBlacklistViewModel = new DomainBlacklistViewModel(_windowManager, _events);
+			_addressBlockLogViewModel = new AddressBlockLogViewModel(_windowManager, _events);
+			_addressBlacklistViewModel = new AddressBlacklistViewModel(_windowManager, _events);
+
 		}
 
-		public QueryLogViewModel QueryLogViewModel { get; }
-		public BlockLogViewModel BlockLogViewModel { get; }
-		public BlacklistViewModel BlacklistViewModel { get; }
-
-		public void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		private void SettingsViewModelOnPropertyChanged(object sender, PropertyChangedEventArgs propertyChangedEventArgs)
 		{
-			if (!(e.Source is TabControl source)) return;
-			var t = source;
-			switch (t.SelectedIndex)
+			if (propertyChangedEventArgs != null)
 			{
-				//main_page
-				case 0:
-					QueryLogViewModel.IsQueryLogLogging = false;
-					BlockLogViewModel.IsBlockLogLogging = false;
-					break;
-				//query_log
-				case 1:
-					BlockLogViewModel.IsBlockLogLogging = false;
-					break;
-				//block_log
-				case 2:
-					QueryLogViewModel.IsQueryLogLogging = false;
-					break;
-				default:
+				if (propertyChangedEventArgs.PropertyName.Equals("IsInitialized") ||
+				    propertyChangedEventArgs.PropertyName.Equals("IsActive")) return;
 
-					break;
+				switch (propertyChangedEventArgs.PropertyName)
+				{
+					case "IsAdvancedSettingsTabVisible":
+						if (!SettingsViewModel.IsAdvancedSettingsTabVisible)
+						{
+							if (SelectedTab == Tabs.AdvancedSettingsTab)
+							{
+								SelectedTabIndex = 0;
+							}
+						}
+						break;
+					case "IsQueryLogTabVisible":
+						if (QueryLogViewModel.IsQueryLogLogging)
+						{
+							QueryLogViewModel.IsQueryLogLogging = false;
+						}
+
+						if (!SettingsViewModel.IsQueryLogTabVisible)
+						{
+							if (SelectedTab == Tabs.QueryLogTab)
+							{
+								SelectedTabIndex = 0;
+							}
+						}
+						break;
+					case "IsDomainBlockLogLogging":
+						if (DomainBlockLogViewModel.IsDomainBlockLogLogging)
+						{
+							DomainBlockLogViewModel.IsDomainBlockLogLogging = false;
+						}
+
+						if (!SettingsViewModel.IsDomainBlockLogTabVisible)
+						{
+							if (SelectedTab == Tabs.DomainBlockLogTab)
+							{
+								SelectedTabIndex = 0;
+							}
+						}
+						break;
+					case "IsAddressBlockLogLogging":
+						if (AddressBlockLogViewModel.IsAddressBlockLogLogging)
+						{
+							AddressBlockLogViewModel.IsAddressBlockLogLogging = false;
+						}
+
+						if (!SettingsViewModel.IsAddressBlockLogTabVisible)
+						{
+							if (SelectedTab == Tabs.AddressBlockLogTab)
+							{
+								SelectedTabIndex = 0;
+							}
+						}
+						break;
+					case "IsDomainBlacklistTabVisible":
+						if (!SettingsViewModel.IsDomainBlacklistTabVisible)
+						{
+							if (SelectedTab == Tabs.DomainBlacklistTab)
+							{
+								SelectedTabIndex = 0;
+							}
+						}
+						break;
+					case "IsAddressBlacklistTabVisible":
+						if (!SettingsViewModel.IsAddressBlacklistTabVisible)
+						{
+							if (SelectedTab == Tabs.AddressBlacklistTab)
+							{
+								SelectedTabIndex = 0;
+							}
+						}
+						break;
+				}
 			}
+		}
+
+		public AdvancedSettingsViewModel AdvancedSettingsViewModel
+		{
+			get => _advancedSettingsViewModel;
+			set
+			{
+				if (value.Equals(_advancedSettingsViewModel)) return;
+				_advancedSettingsViewModel = value;
+				NotifyOfPropertyChange(() => AdvancedSettingsViewModel);
+			}
+		}
+
+		public DomainBlacklistViewModel DomainBlacklistViewModel
+		{
+			get => _domainBlacklistViewModel;
+			set
+			{
+				if (value.Equals(_domainBlacklistViewModel)) return;
+				_domainBlacklistViewModel = value;
+				NotifyOfPropertyChange(() => DomainBlacklistViewModel);
+			}
+		}
+
+		public AddressBlacklistViewModel AddressBlacklistViewModel
+		{
+			get => _addressBlacklistViewModel;
+			set
+			{
+				if (value.Equals(_addressBlacklistViewModel)) return;
+				_addressBlacklistViewModel = value;
+				NotifyOfPropertyChange(() => AddressBlacklistViewModel);
+			}
+		}
+
+		public DomainBlockLogViewModel DomainBlockLogViewModel
+		{
+			get => _domainBlockLogViewModel;
+			set
+			{
+				if (value.Equals(_domainBlockLogViewModel)) return;
+				_domainBlockLogViewModel = value;
+				NotifyOfPropertyChange(() => DomainBlockLogViewModel);
+			}
+		}
+
+		public AddressBlockLogViewModel AddressBlockLogViewModel
+		{
+			get => _addressBlockLogViewModel;
+			set
+			{
+				if (value.Equals(_addressBlockLogViewModel)) return;
+				_addressBlockLogViewModel = value;
+				NotifyOfPropertyChange(() => AddressBlockLogViewModel);
+			}
+		}
+
+		public QueryLogViewModel QueryLogViewModel
+		{
+			get => _queryLogViewModel;
+			set
+			{
+				if (value.Equals(_queryLogViewModel)) return;
+				_queryLogViewModel = value;
+				NotifyOfPropertyChange(() => QueryLogViewModel);
+			}
+		}
+
+		public SettingsViewModel SettingsViewModel
+		{
+			get => _settingsViewModel;
+			set
+			{
+				if (value.Equals(_settingsViewModel)) return;
+				_settingsViewModel = value;
+				NotifyOfPropertyChange(() => SettingsViewModel);
+			}
+		}
+
+		public int SelectedTabIndex
+		{
+			get => _selectedTabIndex;
+			set
+			{
+				_selectedTabIndex = value;
+				NotifyOfPropertyChange(() => SelectedTabIndex);
+			}
+		}
+
+		public void TabControl_SelectionChanged(SelectionChangedEventArgs selectionChangedEventArgs)
+		{
+			try
+			{
+				if (selectionChangedEventArgs?.AddedItems.Count != 1) return;
+				var tabItem = (TabItem) selectionChangedEventArgs.AddedItems[0];
+				if (string.IsNullOrEmpty((string) tabItem.Tag)) return;
+
+				switch ((string)tabItem.Tag)
+				{
+					case "mainTab":
+						SelectedTab = Tabs.MainTab;
+						break;
+					case "resolverTab":
+						SelectedTab = Tabs.ResolverTab;
+						break;
+					case "advancedSettingsTab":
+						SelectedTab = Tabs.AdvancedSettingsTab;
+						break;
+					case "queryLogTab":
+						SelectedTab = Tabs.QueryLogTab;
+						break;
+					case "domainBlockLogTab":
+						SelectedTab = Tabs.DomainBlockLogTab;
+						break;
+					case "domainBlacklistTab":
+						SelectedTab = Tabs.DomainBlacklistTab;
+						break;
+					case "addressBlockLogTab":
+						SelectedTab = Tabs.AddressBlockLogTab;
+						break;
+					case "addressBlacklistTab":
+						SelectedTab = Tabs.AddressBlacklistTab;
+						break;
+					default:
+						SelectedTab = Tabs.MainTab;
+						break;
+				}
+			}
+			catch(Exception) { }
 		}
 
 		public void About()
@@ -93,10 +309,21 @@ namespace SimpleDnsCrypt.ViewModels
 			var win = new AboutViewModel(_windowManager, _events)
 			{
 				WindowTitle = LocalizationEx.GetUiString("about", Thread.CurrentThread.CurrentCulture)
-		};
+			};
 			dynamic settings = new ExpandoObject();
 			settings.WindowStartupLocation = WindowStartupLocation.CenterOwner;
 			_windowManager.ShowDialog(win, null, settings);
+		}
+
+		public void Settings()
+		{
+			dynamic settings = new ExpandoObject();
+			settings.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+			var result =_windowManager.ShowDialog(SettingsViewModel, null, settings);
+			if (!result)
+			{
+				Properties.Settings.Default.Save();
+			}
 		}
 
 		public DnscryptProxyConfiguration DnscryptProxyConfiguration
