@@ -22,3 +22,4 @@ Those listed below have contributed to `SimpleDnsCrypt`, and are the copyright h
  * @socrat3z
  * @niikoo
  * @bungoume
+ * Esmail EL BoB - <esmailelbob01124320019@gmail.com>
