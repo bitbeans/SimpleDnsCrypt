@@ -145,6 +145,57 @@ namespace SimpleDnsCrypt.Helper
 			}
 		}
 
+
+		/// <summary>
+		///     Uninstall the dnscrypt-proxy service.
+		/// </summary>
+		/// <returns>A ProcessResult.</returns>
+		public static ProcessResult Uninstall()
+		{
+			var processResult = new ProcessResult();
+			try
+			{
+				// we do not check if the proxy is installed,
+				// just let them clear the registry.
+				const int timeout = 9000;
+				const string arguments = "-service uninstall";
+				using (var process = new Process())
+				{
+					process.StartInfo.FileName = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, Global.DnsCryptProxyExecutableName);
+					process.StartInfo.Arguments = arguments;
+					process.StartInfo.UseShellExecute = false;
+					process.StartInfo.CreateNoWindow = true;
+					process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+					process.StartInfo.RedirectStandardOutput = true;
+					process.StartInfo.RedirectStandardError = true;
+					process.Start();
+					if (process.WaitForExit(timeout))
+					{
+						if (process.ExitCode == 0)
+						{
+							processResult.Success = true;
+						}
+						else
+						{
+							processResult.Success = false;
+						}
+					}
+					else
+					{
+						// Timed out.
+						throw new Exception("Timed out");
+					}
+				}
+			}
+			catch (Exception exception)
+			{
+				processResult.StandardError = exception.Message;
+				processResult.Success = false;
+			}
+
+			return processResult;
+		}
+
 		/// <summary>
 		///     Install the dnscrypt-proxy service.
 		/// </summary>

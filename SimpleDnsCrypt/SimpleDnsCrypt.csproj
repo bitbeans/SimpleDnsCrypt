@@ -167,10 +167,12 @@
     <Compile Include="Converters\InUseToBackgroundConverter.cs" />
     <Compile Include="Converters\LicenseLinkToVisibilityConverter.cs" />
     <Compile Include="Converters\LocalDateConverter.cs" />
+    <Compile Include="Converters\MessageBoxTypeToColor.cs" />
     <Compile Include="Converters\QueryLogTypeToColorConverter.cs" />
     <Compile Include="Converters\ReverseBoolToEnabledConverter.cs" />
     <Compile Include="Converters\TextLengthToFontSizeConverter.cs" />
     <Compile Include="Extensions\Base64UrlExtensions.cs" />
+    <Compile Include="Extensions\WindowManagerExtensions.cs" />
     <Compile Include="Helper\ApplicationUpdater.cs" />
     <Compile Include="Helper\AuthenticodeTools.cs" />
     <Compile Include="Helper\DnscryptProxyConfigurationManager.cs" />
@@ -182,6 +184,7 @@
     <Compile Include="IShell.cs" />
     <Compile Include="Models\AddressBlockLogLine.cs" />
     <Compile Include="Models\BlacklistRule.cs" />
+    <Compile Include="Models\BoxType.cs" />
     <Compile Include="Models\DomainBlockLogLine.cs" />
     <Compile Include="Models\DnscryptProxyConfiguration.cs" />
     <Compile Include="Models\DnsServer.cs" />
@@ -201,9 +204,13 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Styles\ModalStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Compile Include="ViewModels\AddressBlacklistViewModel.cs" />
     <Compile Include="ViewModels\AddressBlockLogViewModel.cs" />
-    <Compile Include="ViewModels\AdvancedSettingsViewModel.cs" />
+    <Compile Include="ViewModels\MetroMessageBoxViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\AboutViewModel.cs" />
     <Compile Include="ViewModels\DomainBlacklistViewModel.cs" />
@@ -214,6 +221,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Windows\BaseMessageDialogWindow.xaml.cs">
+      <DependentUpon>BaseMessageDialogWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\SplashDialogWindow.xaml.cs">
       <DependentUpon>SplashDialogWindow.xaml</DependentUpon>
@@ -240,6 +250,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\MetroMessageBoxView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\SettingsView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -255,6 +269,10 @@
     <Page Include="Views\MainView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\BaseMessageDialogWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\SplashDialogWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

@@ -21,7 +21,8 @@ namespace SimpleDnsCrypt.Converters
 
 		public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
 		{
-			throw new NotImplementedException();
+			var visibility = (Visibility)value;
+			return visibility == Visibility.Visible;
 		}
 	}
 }

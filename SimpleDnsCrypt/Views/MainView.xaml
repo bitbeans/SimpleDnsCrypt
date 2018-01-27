@@ -328,7 +328,7 @@
                                         - manage resolver lists<LineBreak/>
                                         - manage local stamps<LineBreak/>
                                     </TextBlock>
-                                    </Border>
+                                </Border>
                                 </StackPanel>
                             </TabItem.Content>
                     </TabItem>
@@ -336,7 +336,7 @@
                              Header="{lex:Loc Key=tabitem_advanced_settings}" Visibility="{Binding SettingsViewModel.IsAdvancedSettingsTabVisible, Converter={StaticResource BoolToVisibilityCollapsedConverter}}">
                         <TabItem.Content>
                             <StackPanel Orientation="Vertical" Margin="0,10,0,0">
-                                <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,10,0,0" DataContext="{Binding AdvancedSettingsViewModel}">
+                                <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,14,0,0">
                                     <Border.BorderBrush>
                                         <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile"
                                                       Opacity="0.4">
@@ -354,14 +354,56 @@
                                             </DrawingBrush.Drawing>
                                         </DrawingBrush>
                                     </Border.BorderBrush>
-                                    <TextBlock Foreground="DarkOrange" FontWeight="Bold">This is a preview version of Simple DNSCrypt.<LineBreak/>
+                                    <StackPanel Orientation="Vertical">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <iconPacks:PackIconMaterial Grid.Column="0" Grid.Row="0" Height="20"
+                                                                            Width="20" Kind="Eraser" Opacity="0.7"
+                                                                            Foreground="#FF8ab329"
+                                                                            HorizontalAlignment="Left"
+                                                                            VerticalAlignment="Center" />
+                                            <TextBlock Grid.Column="1" Grid.Row="0"
+                                                       Text="{lex:Loc Key=advanced_settings_uninstall_title}"
+                                                       TextWrapping="Wrap" VerticalAlignment="Center"
+                                                       Foreground="#FF8ab329" FontSize="20"
+                                                       Opacity="0.7" Margin="5,0,0,3" FontWeight="Bold">
+                                            </TextBlock>
+                                        </Grid>
+                                        <TextBlock
+                                            Text="{lex:Loc Key=advanced_settings_uninstall_text}"
+                                            TextWrapping="Wrap" Foreground="#FF575757" FontSize="14">
+                                        </TextBlock>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="250" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <controls:MetroProgressBar IsIndeterminate="True" Grid.Column="0"
+                                                                       Visibility="{Binding IsUninstallingService, Converter={StaticResource BoolToVisibilityConverter}}"
+                                                                       Width="220"
+                                                                       Margin="0" HorizontalAlignment="Center"
+                                                                       VerticalAlignment="Center" />
+                                            <Button x:Name="UninstallService" Grid.Column="1" 
+                                                    Width="180" Style="{StaticResource AccentedSquareButtonStyle}"
+                                                    Margin="0,10,0,0" HorizontalAlignment="Right" 
+                                                    Content="{lex:Loc Key=advanced_settings_uninstall_button}"
+                                                    Cursor="Hand" IsEnabled="{Binding IsUninstallingService, Converter={StaticResource ReverseBoolToEnabledConverter}}">
+                                            </Button>
+                                        </Grid>
+                                    </StackPanel>
+                                </Border>
+                                <TextBlock Foreground="DarkOrange" FontWeight="Bold">This is a preview version of Simple DNSCrypt.<LineBreak/>
                                         This functionality is not yet available. Sorry :).<LineBreak/>
                                         - cache settings<LineBreak/>
                                         - forwarding rules<LineBreak/>
                                         - uninstall<LineBreak/>
                                         - syslog settings
                                     </TextBlock>
-                                </Border>
+
                             </StackPanel>
                         </TabItem.Content>
                     </TabItem>

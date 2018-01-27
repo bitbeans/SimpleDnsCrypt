@@ -34,6 +34,14 @@ namespace SimpleDnsCrypt
 							SizeToContent = SizeToContent.WidthAndHeight
 						};
 					}
+					else if (model.GetType() == typeof(MetroMessageBoxViewModel))
+					{
+						window = new BaseMessageDialogWindow
+						{
+							Content = view,
+							SizeToContent = SizeToContent.WidthAndHeight
+						};
+					}
 					else
 					{
 						window = new BaseDialogWindow

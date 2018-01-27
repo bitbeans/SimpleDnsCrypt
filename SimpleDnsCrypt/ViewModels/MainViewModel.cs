@@ -3,15 +3,18 @@ using SimpleDnsCrypt.Config;
 using SimpleDnsCrypt.Helper;
 using SimpleDnsCrypt.Models;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.ComponentModel.Composition;
 using System.Dynamic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using SimpleDnsCrypt.Extensions;
 
 namespace SimpleDnsCrypt.ViewModels
 {
@@ -53,7 +56,7 @@ namespace SimpleDnsCrypt.ViewModels
 		private AddressBlockLogViewModel _addressBlockLogViewModel;
 		private DomainBlacklistViewModel _domainBlacklistViewModel;
 		private AddressBlacklistViewModel _addressBlacklistViewModel;
-		private AdvancedSettingsViewModel _advancedSettingsViewModel;
+		private bool _isUninstallingService;
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="MainViewModel"/> class
@@ -84,13 +87,11 @@ namespace SimpleDnsCrypt.ViewModels
 				WindowTitle = LocalizationEx.GetUiString("settings", Thread.CurrentThread.CurrentCulture)
 			};
 			_settingsViewModel.PropertyChanged += SettingsViewModelOnPropertyChanged;
-			_advancedSettingsViewModel = new AdvancedSettingsViewModel(_windowManager, _events);
 			_queryLogViewModel = new QueryLogViewModel(_windowManager, _events);
 			_domainBlockLogViewModel = new DomainBlockLogViewModel(_windowManager, _events);
 			_domainBlacklistViewModel = new DomainBlacklistViewModel(_windowManager, _events);
 			_addressBlockLogViewModel = new AddressBlockLogViewModel(_windowManager, _events);
 			_addressBlacklistViewModel = new AddressBlacklistViewModel(_windowManager, _events);
-
 		}
 
 		private void SettingsViewModelOnPropertyChanged(object sender, PropertyChangedEventArgs propertyChangedEventArgs)
@@ -172,17 +173,6 @@ namespace SimpleDnsCrypt.ViewModels
 						}
 						break;
 				}
-			}
-		}
-
-		public AdvancedSettingsViewModel AdvancedSettingsViewModel
-		{
-			get => _advancedSettingsViewModel;
-			set
-			{
-				if (value.Equals(_advancedSettingsViewModel)) return;
-				_advancedSettingsViewModel = value;
-				NotifyOfPropertyChange(() => AdvancedSettingsViewModel);
 			}
 		}
 
@@ -422,7 +412,7 @@ namespace SimpleDnsCrypt.ViewModels
 			{
 				// service is running, stop it
 				await Task.Run(() => { DnsCryptProxyManager.Stop(); }).ConfigureAwait(false);
-				Thread.Sleep(Global.ServiceStopTime);
+				await Task.Delay(Global.ServiceStopTime).ConfigureAwait(false);
 				_isResolverRunning = DnsCryptProxyManager.IsDnsCryptProxyRunning();
 				NotifyOfPropertyChange(() => IsResolverRunning);
 				ResetNetworkCards();
@@ -433,7 +423,7 @@ namespace SimpleDnsCrypt.ViewModels
 				{
 					// service is installed, just start them
 					await Task.Run(() => { DnsCryptProxyManager.Start(); }).ConfigureAwait(false);
-					Thread.Sleep(Global.ServiceStartTime);
+					await Task.Delay(Global.ServiceStartTime).ConfigureAwait(false);
 					_isResolverRunning = DnsCryptProxyManager.IsDnsCryptProxyRunning();
 					NotifyOfPropertyChange(() => IsResolverRunning);
 					ResetNetworkCards();
@@ -441,9 +431,10 @@ namespace SimpleDnsCrypt.ViewModels
 				else
 				{
 					//install and start the service
-					await Task.Run(() => { return DnsCryptProxyManager.Install(); }).ConfigureAwait(false);
-					Thread.Sleep(Global.ServiceStartTime);
-					DnsCryptProxyManager.Start();
+					await Task.Run(() => DnsCryptProxyManager.Install()).ConfigureAwait(false);
+					await Task.Delay(Global.ServiceStartTime).ConfigureAwait(false);
+					await Task.Run(() => { DnsCryptProxyManager.Start(); }).ConfigureAwait(false);
+					await Task.Delay(Global.ServiceStartTime).ConfigureAwait(false);
 					_isResolverRunning = DnsCryptProxyManager.IsDnsCryptProxyRunning();
 					NotifyOfPropertyChange(() => IsResolverRunning);
 					ResetNetworkCards();
@@ -452,7 +443,7 @@ namespace SimpleDnsCrypt.ViewModels
 			IsWorkingOnService = false;
 		}
 
-		private void ResetNetworkCards()
+		private static void ResetNetworkCards()
 		{
 			
 		}
@@ -548,5 +539,68 @@ namespace SimpleDnsCrypt.ViewModels
 			localNetworkInterface.IsChangeable = true;
 			ReloadLoadNetworkInterfaces();
 		}
+
+		#region Advanced Settings
+		/// <summary>
+		///     Uninstall the installed dnscrypt-proxy service.
+		/// </summary>
+		public async void UninstallService()
+		{
+			var result = _windowManager.ShowMetroMessageBox(
+				LocalizationEx.GetUiString("dialog_message_uninstall", Thread.CurrentThread.CurrentCulture),
+				LocalizationEx.GetUiString("dialog_uninstall_title", Thread.CurrentThread.CurrentCulture),
+				MessageBoxButton.YesNo, BoxType.Default);
+
+			if (result == MessageBoxResult.Yes)
+			{
+				IsUninstallingService = true;
+				await Task.Run(() =>
+				{
+					DnsCryptProxyManager.Uninstall();
+				}).ConfigureAwait(false);
+				await Task.Delay(Global.ServiceUninstallTime).ConfigureAwait(false);
+				
+
+				if (DnsCryptProxyManager.IsDnsCryptProxyRunning())
+				{
+					await Task.Run(() =>
+					{
+						DnsCryptProxyManager.Stop();
+					}).ConfigureAwait(false);
+					await Task.Delay(Global.ServiceStopTime).ConfigureAwait(false);
+				}
+				_isResolverRunning = DnsCryptProxyManager.IsDnsCryptProxyRunning();
+				NotifyOfPropertyChange(() => IsResolverRunning);
+
+				// recover the network interfaces (also the hidden and down cards)
+				var localNetworkInterfaces = LocalNetworkInterfaceManager.GetLocalNetworkInterfaces(
+					DnscryptProxyConfigurationManager.DnscryptProxyConfiguration.listen_addresses.ToList());
+				foreach (var localNetworkInterface in localNetworkInterfaces)
+				{
+					if (!localNetworkInterface.UseDnsCrypt) continue;
+					var status = LocalNetworkInterfaceManager.SetNameservers(localNetworkInterface, new List<DnsServer>());
+					var card = _localNetworkInterfaces.SingleOrDefault(n => n.Description.Equals(localNetworkInterface.Description));
+					if (card != null)
+					{
+						card.UseDnsCrypt = !status;
+					}
+				}
+				await Task.Delay(1000).ConfigureAwait(false);
+				ReloadLoadNetworkInterfaces();
+				IsUninstallingService = false;
+			}
+		}
+
+		public bool IsUninstallingService
+		{
+			get => _isUninstallingService;
+			set
+			{
+				_isUninstallingService = value;
+				NotifyOfPropertyChange(() => IsUninstallingService);
+			}
+		}
+
+		#endregion
 	}
 }
