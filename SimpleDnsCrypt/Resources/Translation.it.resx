@@ -121,7 +121,7 @@
     <value>Schede di Rete</value>
   </data>
   <data name="default_settings_show_hidden_cards" xml:space="preserve">
-    <value>Show hidden cards</value>
+    <value>Mostra schede nascoste</value>
   </data>
   <data name="default_settings_service_header" xml:space="preserve">
     <value>Servizio</value>
@@ -133,40 +133,40 @@
     <value>Configurazione</value>
   </data>
   <data name="default_settings_configuration_ipv4" xml:space="preserve">
-    <value>Using IPv4 Server</value>
+    <value>Utilizza server IPv4</value>
   </data>
   <data name="default_settings_configuration_ipv4_tooltip" xml:space="preserve">
-    <value>Use servers reachable over IPv4</value>
+    <value>Utilizza server raggiungibili con IPv4</value>
   </data>
   <data name="default_settings_configuration_ipv6" xml:space="preserve">
-    <value>Using IPv6 Server</value>
+    <value>Utilizza server IPv6</value>
   </data>
   <data name="default_settings_configuration_ipv6_tooltip" xml:space="preserve">
-    <value>Use servers reachable over IPv6 (do not enable if you don&apos;t have IPv6 connectivity)</value>
+    <value>Utilizza server raggiungibili con IPv6 (non abilitare se la connettività IPv6 è assente)</value>
   </data>
   <data name="default_settings_configuration_dnssec" xml:space="preserve">
-    <value>Only servers with DNSSEC support</value>
+    <value>Server con supporto DNSSEC</value>
   </data>
   <data name="default_settings_configuration_dnssec_tooltip" xml:space="preserve">
-    <value>Server must support DNS security extensions</value>
+    <value>Server che supportano DNS security extensions</value>
   </data>
   <data name="default_settings_configuration_nolog" xml:space="preserve">
-    <value>Only servers without logging</value>
+    <value>Server senza logging</value>
   </data>
   <data name="default_settings_configuration_nolog_tooltip" xml:space="preserve">
-    <value>Server must not log user queries</value>
+    <value>I server non registrano le query degli utenti</value>
   </data>
   <data name="default_settings_configuration_nofilter" xml:space="preserve">
-    <value>Only servers without filter</value>
+    <value>Server senza filtri</value>
   </data>
   <data name="default_settings_configuration_nofilter_tooltip" xml:space="preserve">
-    <value>Il Server non deve imporre la propria blacklist (per il parental control, ads, blocco</value>
+    <value>I Server non usano blacklist (ad esempio: controllo genitori, ads, blocco...)</value>
   </data>
   <data name="tabitem_mainmenu" xml:space="preserve">
     <value>Menù Principale</value>
   </data>
   <data name="loader_administrative_rights_available" xml:space="preserve">
-    <value>I permessi Amministrativi sono disponibili</value>
+    <value>I permessi amministrativi sono disponibili</value>
   </data>
   <data name="loader_administrative_rights_missing" xml:space="preserve">
     <value>Mancano i permessi amministrativi!</value>
@@ -178,61 +178,61 @@
     <value>Nuova versione disponibile: {0}</value>
   </data>
   <data name="loader_starting_update" xml:space="preserve">
-    <value>Starting update . . .</value>
+    <value>Avvio aggiornamento . . .</value>
   </data>
   <data name="loader_update_failed" xml:space="preserve">
-    <value>Update failed, continue . . .</value>
+    <value>Aggiornamento fallito, continua . . .</value>
   </data>
   <data name="loader_latest_version" xml:space="preserve">
-    <value>You are using the latest version</value>
+    <value>Stai usando la versione più recente</value>
   </data>
   <data name="loader_unsigned" xml:space="preserve">
-    <value>unsigned</value>
+    <value>non firmato</value>
   </data>
   <data name="loader_missing" xml:space="preserve">
-    <value>missing</value>
+    <value>mancante</value>
   </data>
   <data name="loader_downloading_signature" xml:space="preserve">
-    <value>Downloading signature . . .</value>
+    <value>Scaricando le firme . . .</value>
   </data>
   <data name="loader_downloading_installer" xml:space="preserve">
-    <value>Downloading installer . . .</value>
+    <value>Scaricando l&apos;installer . . .</value>
   </data>
   <data name="loader_starting" xml:space="preserve">
-    <value>Starting . . .</value>
+    <value>Avvio . . .</value>
   </data>
   <data name="loader_validate_folder" xml:space="preserve">
-    <value>Validating {0} folder</value>
+    <value>Validando {0} la cartella</value>
   </data>
   <data name="loader_loading_network_cards" xml:space="preserve">
-    <value>Loading network cards . . .</value>
+    <value>Caricando le schede di rete . . .</value>
   </data>
   <data name="loader_failed_loading" xml:space="preserve">
-    <value>Could not load {0}</value>
+    <value>Impossibile caricare {0}</value>
   </data>
   <data name="loader_successfully_loaded" xml:space="preserve">
-    <value>{0} successfully loaded</value>
+    <value>{0} caricato correttamente</value>
   </data>
   <data name="loader_loading" xml:space="preserve">
-    <value>Loading {0} . . .</value>
+    <value>Caricamento {0}  . . .</value>
   </data>
   <data name="loader_missing_files" xml:space="preserve">
-    <value>Missing files in the {0} folder:\n{1}\n\nThink about a new installation of {2}</value>
+    <value>File mancanti nella {0} cartella:\n{1}\n\nProva a reinstallare il programma {2}</value>
   </data>
   <data name="loader_all_files_available" xml:space="preserve">
-    <value>All required files have been found</value>
+    <value>Tutti i file necessari sono stati trovati</value>
   </data>
   <data name="about" xml:space="preserve">
-    <value>About</value>
+    <value>Al riguardo</value>
   </data>
   <data name="about_software" xml:space="preserve">
     <value>Software</value>
   </data>
   <data name="about_license" xml:space="preserve">
-    <value>License</value>
+    <value>Licenza</value>
   </data>
   <data name="about_view_on_github" xml:space="preserve">
-    <value>View on GitHub</value>
+    <value>Vedi su GitHub</value>
   </data>
   <data name="tabitem_querylog" xml:space="preserve">
     <value>Query Log</value>
@@ -241,64 +241,64 @@
     <value>Query Log</value>
   </data>
   <data name="querylog_waiting_for_data" xml:space="preserve">
-    <value>waiting for DNS queries</value>
+    <value>in attesa di query DNS</value>
   </data>
   <data name="querylog_entry_count" xml:space="preserve">
-    <value>Entries:</value>
+    <value>Valori:</value>
   </data>
   <data name="querylog_source_file" xml:space="preserve">
-    <value>Source:</value>
+    <value>Sorgente:</value>
   </data>
   <data name="querylog_button_clear" xml:space="preserve">
-    <value>Clear List</value>
+    <value>Svuota Lista</value>
   </data>
   <data name="querylog_button_block" xml:space="preserve">
     <value>Blocca Selezionato</value>
   </data>
   <data name="domainblocklog" xml:space="preserve">
-    <value>Domain Block Log</value>
+    <value>Log Domini Bloccati</value>
   </data>
   <data name="domainblocklog_waiting_for_data" xml:space="preserve">
-    <value>waiting for blocked DNS queries</value>
+    <value>in attesa di query DNS bloccate</value>
   </data>
   <data name="domainblocklog_entry_count" xml:space="preserve">
-    <value>Einträge:</value>
+    <value>Contatore domini bloccati</value>
   </data>
   <data name="domainblocklog_source_file" xml:space="preserve">
-    <value>Origine:</value>
+    <value>Sorgente:</value>
   </data>
   <data name="domainblocklog_button_clear" xml:space="preserve">
     <value>Svuota Lista</value>
   </data>
   <data name="tabitem_domainblocklog" xml:space="preserve">
-    <value>Domain Block Log</value>
+    <value>Log Domini Bloccati</value>
   </data>
   <data name="tabitem_addressblocklog" xml:space="preserve">
-    <value>Address Block Log</value>
+    <value>Log Indirizzi Bloccati</value>
   </data>
   <data name="tabitem_domainblacklist" xml:space="preserve">
-    <value>Domain Blacklist</value>
+    <value>Blacklist Domini</value>
   </data>
   <data name="tabitem_addressblacklist" xml:space="preserve">
-    <value>Address Blacklist</value>
+    <value>Blacklist Indirizzi</value>
   </data>
   <data name="settings" xml:space="preserve">
     <value>Impostazioni</value>
   </data>
   <data name="settings_domain_blacklist" xml:space="preserve">
-    <value>Show &quot;Domain Blacklist&quot; Tab</value>
+    <value>Mostra Scheda &quot;Domini Bloccati&quot;</value>
   </data>
   <data name="settings_address_blacklist" xml:space="preserve">
-    <value>Show &quot;Address Blacklist&quot; Tab</value>
+    <value>Mostra Scheda &quot;Indirizzi Bloccati&quot;</value>
   </data>
   <data name="settings_domain_block" xml:space="preserve">
-    <value>Show &quot;Domain Block Log&quot; Tab</value>
+    <value>Mostra Scheda &quot;Log Domini Bloccati&quot;</value>
   </data>
   <data name="settings_address_block" xml:space="preserve">
-    <value>Show &quot;Address Block Log&quot; Tab</value>
+    <value>Mostra Scheda &quot;Log Indirizzi Bloccati&quot;</value>
   </data>
   <data name="settings_query_log" xml:space="preserve">
-    <value>Show &quot;Query Log&quot; Tab</value>
+    <value>Mostra Scheda &quot;Query Log&quot;</value>
   </data>
   <data name="tabitem_resolvers" xml:space="preserve">
     <value>Resolvers</value>
@@ -307,6 +307,6 @@
     <value>Opzioni Avanzate</value>
   </data>
   <data name="settings_advanced_settings" xml:space="preserve">
-    <value>Mostra scheda &quot;Opzioni Avanzate&quot;</value>
+    <value>Mostra Scheda &quot;Opzioni Avanzate&quot;</value>
   </data>
 </root>
