@@ -136,13 +136,13 @@
     <value>Използване на IPv4 сървър</value>
   </data>
   <data name="default_settings_configuration_ipv4_tooltip" xml:space="preserve">
-    <value>Използване на достъпни сървъри през IPv4</value>
+    <value>Използване на сървъри, достъпни през IPv4</value>
   </data>
   <data name="default_settings_configuration_ipv6" xml:space="preserve">
     <value>Използване на IPv6 сървър</value>
   </data>
   <data name="default_settings_configuration_ipv6_tooltip" xml:space="preserve">
-    <value>Използване на достъпни сървъри през IPv6 (не активирайте, ако не използвате IPv6 свързаност)</value>
+    <value>Използване на сървъри, достъпни през IPv6 (не активирайте, ако не използвате IPv6 свързаност)</value>
   </data>
   <data name="default_settings_configuration_dnssec" xml:space="preserve">
     <value>Само сървъри с DNSSEC поддръжка</value>
@@ -160,10 +160,10 @@
     <value>Само сървъри без филтри</value>
   </data>
   <data name="default_settings_configuration_nofilter_tooltip" xml:space="preserve">
-    <value>Сървърът не трябва да налага собствен черен списък (за родителски контрол, блокиране на реклами...)</value>
+    <value>Сървърът не трябва да налага собствен черен списък (родителски контрол, блокиране на реклами...)</value>
   </data>
   <data name="tabitem_mainmenu" xml:space="preserve">
-    <value>Основно меню</value>
+    <value>Основни</value>
   </data>
   <data name="loader_administrative_rights_available" xml:space="preserve">
     <value>Налични са административни права</value>
@@ -199,7 +199,7 @@
     <value>Сваляне на инсталатор . . .</value>
   </data>
   <data name="loader_starting" xml:space="preserve">
-    <value>Стартиране . . . </value>
+    <value>Стартиране . . .</value>
   </data>
   <data name="loader_validate_folder" xml:space="preserve">
     <value>Валидиране на папка {0}</value>
@@ -217,7 +217,7 @@
     <value>Зареждане {0} . . .</value>
   </data>
   <data name="loader_missing_files" xml:space="preserve">
-    <value>Липсващи файлове в </value>
+    <value>Липсват файлове в папка {0}:\n{1}\n\nПомислете за нова инсталация на {2}</value>
   </data>
   <data name="loader_all_files_available" xml:space="preserve">
     <value>Намерени са всички необходими файлове</value>
@@ -235,7 +235,7 @@
     <value>Преглед в GitHub</value>
   </data>
   <data name="tabitem_querylog" xml:space="preserve">
-    <value>Дневник със запитвания</value>
+    <value>Запитвания</value>
   </data>
   <data name="querylog" xml:space="preserve">
     <value>Дневник със запитвания</value>
@@ -244,7 +244,7 @@
     <value>изчакване за DNS запитвания</value>
   </data>
   <data name="querylog_entry_count" xml:space="preserve">
-    <value>Низове:</value>
+    <value>Всички записи:</value>
   </data>
   <data name="querylog_source_file" xml:space="preserve">
     <value>Източник:</value>
@@ -262,19 +262,19 @@
     <value>изчакване за блокирани DNS запитвания</value>
   </data>
   <data name="domainblocklog_entry_count" xml:space="preserve">
-    <value>Вписвания:</value>
+    <value>Всички записи:</value>
   </data>
   <data name="domainblocklog_source_file" xml:space="preserve">
-    <value>Източник</value>
+    <value>Източник:</value>
   </data>
   <data name="domainblocklog_button_clear" xml:space="preserve">
     <value>Изчистване на списъка</value>
   </data>
   <data name="tabitem_domainblocklog" xml:space="preserve">
-    <value>Дневник с блокирани домейни</value>
+    <value>Блокирани домейни</value>
   </data>
   <data name="tabitem_addressblocklog" xml:space="preserve">
-    <value>Дневник с блокирани адреси</value>
+    <value>Блокирани адреси</value>
   </data>
   <data name="tabitem_domainblacklist" xml:space="preserve">
     <value>Блокиране на домейни</value>
@@ -286,19 +286,19 @@
     <value>Настройки</value>
   </data>
   <data name="settings_domain_blacklist" xml:space="preserve">
-    <value>Показване на раздел &quot;Блокиране на домейни&quot;</value>
+    <value>Раздел &quot;Блокиране на домейни&quot;</value>
   </data>
   <data name="settings_address_blacklist" xml:space="preserve">
-    <value>Показване на раздел &quot;Блокиране на адреси&quot;</value>
+    <value>Раздел &quot;Блокиране на адреси&quot;</value>
   </data>
   <data name="settings_domain_block" xml:space="preserve">
-    <value>Показване на раздел &quot;Дневник с блокирани домейни&quot;</value>
+    <value>Раздел &quot;Дневник с блокирани домейни&quot;</value>
   </data>
   <data name="settings_address_block" xml:space="preserve">
-    <value>Показване на раздел &quot;Дневник с блокирани адреси&quot;</value>
+    <value>Раздел &quot;Дневник с блокирани адреси&quot;</value>
   </data>
   <data name="settings_query_log" xml:space="preserve">
-    <value>Показване на раздел &quot;Дневник&quot;</value>
+    <value>Раздел &quot;Дневник със запитвания&quot;</value>
   </data>
   <data name="tabitem_resolvers" xml:space="preserve">
     <value>Сървъри</value>
@@ -307,6 +307,39 @@
     <value>Разширени</value>
   </data>
   <data name="settings_advanced_settings" xml:space="preserve">
-    <value>Показване на раздел &quot;Разширени&quot;</value>
+    <value>Раздел &quot;Разширени&quot;</value>
+  </data>
+  <data name="yes" xml:space="preserve">
+    <value>yes</value>
+  </data>
+  <data name="no" xml:space="preserve">
+    <value>no</value>
+  </data>
+  <data name="cancel" xml:space="preserve">
+    <value>cancel</value>
+  </data>
+  <data name="ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="dialog_message_uninstall" xml:space="preserve">
+    <value>Do you want to remove the installed Windows service?</value>
+  </data>
+  <data name="dialog_uninstall_title" xml:space="preserve">
+    <value>Uninstalling the service</value>
+  </data>
+  <data name="advanced_settings_uninstall_title" xml:space="preserve">
+    <value>Uninstalling the service</value>
+  </data>
+  <data name="advanced_settings_uninstall_text" xml:space="preserve">
+    <value>Remove the installed Windows service</value>
+  </data>
+  <data name="advanced_settings_uninstall_button" xml:space="preserve">
+    <value>Remove service</value>
+  </data>
+  <data name="default_settings_apply_settings" xml:space="preserve">
+    <value>Apply settings</value>
+  </data>
+  <data name="advanced_settings_dnscache" xml:space="preserve">
+    <value>DNS Cache</value>
   </data>
 </root>
