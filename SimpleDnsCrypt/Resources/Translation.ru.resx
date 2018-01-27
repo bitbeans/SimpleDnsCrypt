@@ -172,7 +172,7 @@
     <value>Административные права отсутствуют!</value>
   </data>
   <data name="loader_checking_version" xml:space="preserve">
-    <value>Проверить обновления</value>
+    <value>Проверка обновлений . . .</value>
   </data>
   <data name="loader_new_version_found" xml:space="preserve">
     <value>Обнаружена новая версия: {0}</value>
@@ -308,5 +308,38 @@
   </data>
   <data name="settings_advanced_settings" xml:space="preserve">
     <value>Вкладка&quot;Расширенные настройки&quot;</value>
+  </data>
+  <data name="yes" xml:space="preserve">
+    <value>Да</value>
+  </data>
+  <data name="no" xml:space="preserve">
+    <value>Нет</value>
+  </data>
+  <data name="cancel" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="dialog_message_uninstall" xml:space="preserve">
+    <value>Вы хотите удалить установленную службу Windows?</value>
+  </data>
+  <data name="dialog_uninstall_title" xml:space="preserve">
+    <value>Удаление службы</value>
+  </data>
+  <data name="advanced_settings_uninstall_title" xml:space="preserve">
+    <value>Удаление службы</value>
+  </data>
+  <data name="advanced_settings_uninstall_text" xml:space="preserve">
+    <value>Удалить установленную службу Windows</value>
+  </data>
+  <data name="advanced_settings_uninstall_button" xml:space="preserve">
+    <value>Удалить службу</value>
+  </data>
+  <data name="default_settings_apply_settings" xml:space="preserve">
+    <value>Apply settings</value>
+  </data>
+  <data name="advanced_settings_dnscache" xml:space="preserve">
+    <value>DNS Cache</value>
   </data>
 </root>
