@@ -121,192 +121,192 @@
     <value>Мрежови карти</value>
   </data>
   <data name="default_settings_show_hidden_cards" xml:space="preserve">
-    <value>Show hidden cards</value>
+    <value>Показване на скритите</value>
   </data>
   <data name="default_settings_service_header" xml:space="preserve">
-    <value>Service</value>
+    <value>Услуги</value>
   </data>
   <data name="default_settings_service" xml:space="preserve">
-    <value>DNSCrypt Service</value>
+    <value>DNSCrypt услуга</value>
   </data>
   <data name="default_settings_configuration" xml:space="preserve">
-    <value>Configuration</value>
+    <value>Конфигурация</value>
   </data>
   <data name="default_settings_configuration_ipv4" xml:space="preserve">
-    <value>Using IPv4 Server</value>
+    <value>Използване на IPv4 сървър</value>
   </data>
   <data name="default_settings_configuration_ipv4_tooltip" xml:space="preserve">
-    <value>Use servers reachable over IPv4</value>
+    <value>Използване на достъпни сървъри през IPv4</value>
   </data>
   <data name="default_settings_configuration_ipv6" xml:space="preserve">
-    <value>Using IPv6 Server</value>
+    <value>Използване на IPv6 сървър</value>
   </data>
   <data name="default_settings_configuration_ipv6_tooltip" xml:space="preserve">
-    <value>Use servers reachable over IPv6 (do not enable if you don&apos;t have IPv6 connectivity)</value>
+    <value>Използване на достъпни сървъри през IPv6 (не активирайте, ако не използвате IPv6 свързаност)</value>
   </data>
   <data name="default_settings_configuration_dnssec" xml:space="preserve">
-    <value>Only servers with DNSSEC support</value>
+    <value>Само сървъри с DNSSEC поддръжка</value>
   </data>
   <data name="default_settings_configuration_dnssec_tooltip" xml:space="preserve">
-    <value>Server must support DNS security extensions</value>
+    <value>Сървърът трябва да поддържа разширения за DNS сигурност</value>
   </data>
   <data name="default_settings_configuration_nolog" xml:space="preserve">
-    <value>Only servers without logging</value>
+    <value>Само сървъри без следене</value>
   </data>
   <data name="default_settings_configuration_nolog_tooltip" xml:space="preserve">
-    <value>Server must not log user queries</value>
+    <value>Сървърът не трябва да следи потребителските запитвания</value>
   </data>
   <data name="default_settings_configuration_nofilter" xml:space="preserve">
-    <value>Only servers without filter</value>
+    <value>Само сървъри без филтри</value>
   </data>
   <data name="default_settings_configuration_nofilter_tooltip" xml:space="preserve">
-    <value>Server must not enforce its own blacklist (for parental control, ads blocking...)</value>
+    <value>Сървърът не трябва да налага собствен черен списък (за родителски контрол, блокиране на реклами...)</value>
   </data>
   <data name="tabitem_mainmenu" xml:space="preserve">
-    <value>Main Menu</value>
+    <value>Основно меню</value>
   </data>
   <data name="loader_administrative_rights_available" xml:space="preserve">
-    <value>Administrative rights are available</value>
+    <value>Налични са административни права</value>
   </data>
   <data name="loader_administrative_rights_missing" xml:space="preserve">
-    <value>Missing administrative rights!</value>
+    <value>Липсват административни права!</value>
   </data>
   <data name="loader_checking_version" xml:space="preserve">
-    <value>Checking for new version . . .</value>
+    <value>Проверка за обновявания . . .</value>
   </data>
   <data name="loader_new_version_found" xml:space="preserve">
-    <value>A newer version was found: {0}</value>
+    <value>Налична е нова версия: {0}</value>
   </data>
   <data name="loader_starting_update" xml:space="preserve">
-    <value>Starting update . . .</value>
+    <value>Обновяването започва . . .</value>
   </data>
   <data name="loader_update_failed" xml:space="preserve">
-    <value>Update failed, continue . . .</value>
+    <value>Обновяване се провали, продължаване . . .</value>
   </data>
   <data name="loader_latest_version" xml:space="preserve">
-    <value>You are using the latest version</value>
+    <value>Използвате последната версия</value>
   </data>
   <data name="loader_unsigned" xml:space="preserve">
-    <value>unsigned</value>
+    <value>неподписан</value>
   </data>
   <data name="loader_missing" xml:space="preserve">
-    <value>missing</value>
+    <value>липсва</value>
   </data>
   <data name="loader_downloading_signature" xml:space="preserve">
-    <value>Downloading signature . . .</value>
+    <value>Сваляне на подпис . . .</value>
   </data>
   <data name="loader_downloading_installer" xml:space="preserve">
-    <value>Downloading installer . . .</value>
+    <value>Сваляне на инсталатор . . .</value>
   </data>
   <data name="loader_starting" xml:space="preserve">
-    <value>Starting . . .</value>
+    <value>Стартиране . . . </value>
   </data>
   <data name="loader_validate_folder" xml:space="preserve">
-    <value>Validating {0} folder</value>
+    <value>Валидиране на папка {0}</value>
   </data>
   <data name="loader_loading_network_cards" xml:space="preserve">
-    <value>Loading network cards . . .</value>
+    <value>Зареждане на мрежови карти . . .</value>
   </data>
   <data name="loader_failed_loading" xml:space="preserve">
-    <value>Could not load {0}</value>
+    <value>Не може да зареди {0}</value>
   </data>
   <data name="loader_successfully_loaded" xml:space="preserve">
-    <value>{0} successfully loaded</value>
+    <value>{0} успешно заредени</value>
   </data>
   <data name="loader_loading" xml:space="preserve">
-    <value>Loading {0} . . .</value>
+    <value>Зареждане {0} . . .</value>
   </data>
   <data name="loader_missing_files" xml:space="preserve">
-    <value>Missing files in the {0} folder:\n{1}\n\nThink about a new installation of {2}</value>
+    <value>Липсващи файлове в </value>
   </data>
   <data name="loader_all_files_available" xml:space="preserve">
-    <value>All required files have been found</value>
+    <value>Намерени са всички необходими файлове</value>
   </data>
   <data name="about" xml:space="preserve">
-    <value>About</value>
+    <value>Относно</value>
   </data>
   <data name="about_software" xml:space="preserve">
-    <value>Software</value>
+    <value>Софтуер</value>
   </data>
   <data name="about_license" xml:space="preserve">
-    <value>License</value>
+    <value>Лиценз</value>
   </data>
   <data name="about_view_on_github" xml:space="preserve">
-    <value>View on GitHub</value>
+    <value>Преглед в GitHub</value>
   </data>
   <data name="tabitem_querylog" xml:space="preserve">
-    <value>Query Log</value>
+    <value>Дневник със запитвания</value>
   </data>
   <data name="querylog" xml:space="preserve">
-    <value>Query Log</value>
+    <value>Дневник със запитвания</value>
   </data>
   <data name="querylog_waiting_for_data" xml:space="preserve">
-    <value>waiting for DNS queries</value>
+    <value>изчакване за DNS запитвания</value>
   </data>
   <data name="querylog_entry_count" xml:space="preserve">
-    <value>Entries:</value>
+    <value>Низове:</value>
   </data>
   <data name="querylog_source_file" xml:space="preserve">
-    <value>Source:</value>
+    <value>Източник:</value>
   </data>
   <data name="querylog_button_clear" xml:space="preserve">
-    <value>Clear List</value>
+    <value>Изчистване на списъка</value>
   </data>
   <data name="querylog_button_block" xml:space="preserve">
-    <value>Block Selected</value>
+    <value>Блокиране на избраните</value>
   </data>
   <data name="domainblocklog" xml:space="preserve">
-    <value>Domain Block Log</value>
+    <value>Дневник с блокирани домейни</value>
   </data>
   <data name="domainblocklog_waiting_for_data" xml:space="preserve">
-    <value>waiting for blocked DNS queries</value>
+    <value>изчакване за блокирани DNS запитвания</value>
   </data>
   <data name="domainblocklog_entry_count" xml:space="preserve">
-    <value>Einträge:</value>
+    <value>Вписвания:</value>
   </data>
   <data name="domainblocklog_source_file" xml:space="preserve">
-    <value>Source:</value>
+    <value>Източник</value>
   </data>
   <data name="domainblocklog_button_clear" xml:space="preserve">
-    <value>Clear List</value>
+    <value>Изчистване на списъка</value>
   </data>
   <data name="tabitem_domainblocklog" xml:space="preserve">
-    <value>Domain Block Log</value>
+    <value>Дневник с блокирани домейни</value>
   </data>
   <data name="tabitem_addressblocklog" xml:space="preserve">
-    <value>Address Block Log</value>
+    <value>Дневник с блокирани адреси</value>
   </data>
   <data name="tabitem_domainblacklist" xml:space="preserve">
-    <value>Domain Blacklist</value>
+    <value>Блокиране на домейни</value>
   </data>
   <data name="tabitem_addressblacklist" xml:space="preserve">
-    <value>Address Blacklist</value>
+    <value>Блокиране на адреси</value>
   </data>
   <data name="settings" xml:space="preserve">
-    <value>Settings</value>
+    <value>Настройки</value>
   </data>
   <data name="settings_domain_blacklist" xml:space="preserve">
-    <value>Show &quot;Domain Blacklist&quot; Tab</value>
+    <value>Показване на раздел &quot;Блокиране на домейни&quot;</value>
   </data>
   <data name="settings_address_blacklist" xml:space="preserve">
-    <value>Show &quot;Address Blacklist&quot; Tab</value>
+    <value>Показване на раздел &quot;Блокиране на адреси&quot;</value>
   </data>
   <data name="settings_domain_block" xml:space="preserve">
-    <value>Show &quot;Domain Block Log&quot; Tab</value>
+    <value>Показване на раздел &quot;Дневник с блокирани домейни&quot;</value>
   </data>
   <data name="settings_address_block" xml:space="preserve">
-    <value>Show &quot;Address Block Log&quot; Tab</value>
+    <value>Показване на раздел &quot;Дневник с блокирани адреси&quot;</value>
   </data>
   <data name="settings_query_log" xml:space="preserve">
-    <value>Show &quot;Query Log&quot; Tab</value>
+    <value>Показване на раздел &quot;Дневник&quot;</value>
   </data>
   <data name="tabitem_resolvers" xml:space="preserve">
-    <value>Resolvers</value>
+    <value>Сървъри</value>
   </data>
   <data name="tabitem_advanced_settings" xml:space="preserve">
-    <value>Advanced Settings</value>
+    <value>Разширени</value>
   </data>
   <data name="settings_advanced_settings" xml:space="preserve">
-    <value>Show &quot;Advanced Settings&quot; Tab</value>
+    <value>Показване на раздел &quot;Разширени&quot;</value>
   </data>
 </root>
