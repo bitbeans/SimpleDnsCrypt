@@ -9,7 +9,7 @@ The dnscrypt-proxy software is written and maintained by Frank Denis (@jedisct1)
 
 # ![Alt text](img/icons/32x32.png "Status") Status
 
-Preview with dnscrypt-proxy-2.0.0beta10
+Preview with dnscrypt-proxy-2.0.0beta11
 
 [![Build status](https://ci.appveyor.com/api/projects/status/1st7yuscwwx2duib/branch/dnscrypt-proxy2?svg=true)](https://ci.appveyor.com/project/bitbeans/simplednscrypt/branch/dnscrypt-proxy2)
 
