@@ -309,4 +309,37 @@
   <data name="settings_advanced_settings" xml:space="preserve">
     <value>Mostra Scheda &quot;Opzioni Avanzate&quot;</value>
   </data>
+  <data name="yes" xml:space="preserve">
+    <value>yes</value>
+  </data>
+  <data name="no" xml:space="preserve">
+    <value>no</value>
+  </data>
+  <data name="cancel" xml:space="preserve">
+    <value>cancel</value>
+  </data>
+  <data name="ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="dialog_message_uninstall" xml:space="preserve">
+    <value>Do you want to remove the installed Windows service?</value>
+  </data>
+  <data name="dialog_uninstall_title" xml:space="preserve">
+    <value>Uninstalling the service</value>
+  </data>
+  <data name="advanced_settings_uninstall_title" xml:space="preserve">
+    <value>Uninstalling the service</value>
+  </data>
+  <data name="advanced_settings_uninstall_text" xml:space="preserve">
+    <value>Remove the installed Windows service</value>
+  </data>
+  <data name="advanced_settings_uninstall_button" xml:space="preserve">
+    <value>Remove service</value>
+  </data>
+  <data name="default_settings_apply_settings" xml:space="preserve">
+    <value>Apply settings</value>
+  </data>
+  <data name="advanced_settings_dnscache" xml:space="preserve">
+    <value>DNS Cache</value>
+  </data>
 </root>
