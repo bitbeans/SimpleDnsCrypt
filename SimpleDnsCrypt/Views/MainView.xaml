@@ -220,9 +220,9 @@
                                                 </Grid.RowDefinitions>
                                                 <TextBlock Grid.Row="0" Foreground="DarkOrange" FontWeight="Bold" FontSize="18">This version is under development!</TextBlock>
                                                 <Button x:Name="SaveDnsCryptConfiguration" Grid.Row="1" Height="32"
-                                                        Width="100"
+                                                        Width="Auto"
                                                         VerticalAlignment="Bottom" HorizontalAlignment="Right"
-                                                        Content="Anwenden"
+                                                        Content="{lex:Loc Key=default_settings_apply_settings}"
                                                         Cursor="Hand"
                                                         IsEnabled="{Binding IsSavingConfiguration, Converter={StaticResource ReverseBoolToEnabledConverter}}"
                                                         Style="{StaticResource AccentedSquareButtonStyle}" />
@@ -362,6 +362,45 @@
                                                 <ColumnDefinition Width="*" />
                                             </Grid.ColumnDefinitions>
                                             <iconPacks:PackIconMaterial Grid.Column="0" Grid.Row="0" Height="20"
+                                                                            Width="20" Kind="BookOpenPageVariant" Opacity="0.7"
+                                                                            Foreground="#FF8ab329"
+                                                                            HorizontalAlignment="Left"
+                                                                            VerticalAlignment="Center" />
+                                            <TextBlock Grid.Column="1" Grid.Row="0"
+                                                       Text="{lex:Loc Key=advanced_settings_dnscache}"
+                                                       TextWrapping="Wrap" VerticalAlignment="Center"
+                                                       Foreground="#FF8ab329" FontSize="20"
+                                                       Opacity="0.7" Margin="5,0,0,3" FontWeight="Bold">
+                                            </TextBlock>
+                                        </Grid>
+                                    </StackPanel>
+                                </Border>
+                                <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,14,0,0">
+                                    <Border.BorderBrush>
+                                        <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile"
+                                                      Opacity="0.4">
+                                            <DrawingBrush.Drawing>
+                                                <DrawingGroup>
+                                                    <GeometryDrawing Brush="#FF8ab329">
+                                                        <GeometryDrawing.Geometry>
+                                                            <GeometryGroup>
+                                                                <RectangleGeometry Rect="0,0,50,50" />
+                                                                <RectangleGeometry Rect="50,50,50,50" />
+                                                            </GeometryGroup>
+                                                        </GeometryDrawing.Geometry>
+                                                    </GeometryDrawing>
+                                                </DrawingGroup>
+                                            </DrawingBrush.Drawing>
+                                        </DrawingBrush>
+                                    </Border.BorderBrush>
+                                    <StackPanel Orientation="Vertical">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <iconPacks:PackIconMaterial Grid.Column="0" Grid.Row="0" Height="20"
                                                                             Width="20" Kind="Eraser" Opacity="0.7"
                                                                             Foreground="#FF8ab329"
                                                                             HorizontalAlignment="Left"
@@ -396,11 +435,15 @@
                                         </Grid>
                                     </StackPanel>
                                 </Border>
-                                <TextBlock Foreground="DarkOrange" FontWeight="Bold">This is a preview version of Simple DNSCrypt.<LineBreak/>
+                                <TextBlock Foreground="DarkOrange" FontWeight="Bold" Margin="0,10,0,0">This is a preview version of Simple DNSCrypt.<LineBreak/>
                                         This functionality is not yet available. Sorry :).<LineBreak/>
-                                        - cache settings<LineBreak/>
-                                        - forwarding rules<LineBreak/>
-                                        - uninstall<LineBreak/>
+                                        - cache settings
+                                        - forwarding rules
+                                        - block_ipv6
+                                        - cert_refresh_delay<LineBreak/>
+                                        - timeout
+                                        - force_tcp
+                                        - max_clients
                                         - syslog settings
                                     </TextBlock>
 

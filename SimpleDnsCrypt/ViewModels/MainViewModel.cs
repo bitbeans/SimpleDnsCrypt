@@ -1,5 +1,6 @@
 using Caliburn.Micro;
 using SimpleDnsCrypt.Config;
+using SimpleDnsCrypt.Extensions;
 using SimpleDnsCrypt.Helper;
 using SimpleDnsCrypt.Models;
 using System;
@@ -9,12 +10,10 @@ using System.ComponentModel;
 using System.ComponentModel.Composition;
 using System.Dynamic;
 using System.Linq;
-using System.Net.NetworkInformation;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using SimpleDnsCrypt.Extensions;
 
 namespace SimpleDnsCrypt.ViewModels
 {
