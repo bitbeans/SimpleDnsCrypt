@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Security.Principal;
@@ -117,11 +118,24 @@ namespace SimpleDnsCrypt.ViewModels
 			_events.Subscribe(this);
 			_titleText = $"{Global.ApplicationName} {VersionHelper.PublishVersion} {VersionHelper.PublishBuild}";
 			LocalizeDictionary.Instance.SetCurrentThreadCulture = true;
-			LocalizeDictionary.Instance.Culture = Thread.CurrentThread.CurrentCulture;
-			_mainViewModel = new MainViewModel(_windowManager, _events);
 			var languages = LocalizationEx.GetSupportedLanguages();
-			_mainViewModel.Languages = languages;
-			_mainViewModel.SelectedLanguage = languages.SingleOrDefault(l => l.ShortCode.Equals(LocalizeDictionary.Instance.Culture.TwoLetterISOLanguageName));
+			if (!string.IsNullOrEmpty(Properties.Settings.Default.PreferredLanguage))
+			{
+				var preferredLanguage = languages.FirstOrDefault(l => l.ShortCode.Equals(Properties.Settings.Default.PreferredLanguage));
+				LocalizeDictionary.Instance.Culture = preferredLanguage != null ? new CultureInfo(preferredLanguage.CultureCode) : Thread.CurrentThread.CurrentCulture;
+			}
+			else
+			{
+				LocalizeDictionary.Instance.Culture = Thread.CurrentThread.CurrentCulture;
+			}
+
+			_mainViewModel = new MainViewModel(_windowManager, _events)
+			{
+				Languages = languages,
+				SelectedLanguage =
+					languages.SingleOrDefault(l => l.ShortCode.Equals(LocalizeDictionary.Instance.Culture.TwoLetterISOLanguageName))
+			};
+
 			InitializeApplication();
 		}
 		

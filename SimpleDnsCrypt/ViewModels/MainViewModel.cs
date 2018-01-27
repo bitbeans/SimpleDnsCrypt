@@ -364,6 +364,8 @@ namespace SimpleDnsCrypt.ViewModels
 			{
 				if (value.Equals(_selectedLanguage)) return;
 				_selectedLanguage = value;
+				Properties.Settings.Default.PreferredLanguage = _selectedLanguage.ShortCode;
+				Properties.Settings.Default.Save();
 				LocalizationEx.SetCulture(_selectedLanguage.ShortCode);
 				NotifyOfPropertyChange(() => SelectedLanguage);
 			}

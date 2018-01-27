@@ -94,5 +94,17 @@ namespace SimpleDnsCrypt.Properties {
                 this["IsAdvancedSettingsTabVisible"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PreferredLanguage {
+            get {
+                return ((string)(this["PreferredLanguage"]));
+            }
+            set {
+                this["PreferredLanguage"] = value;
+            }
+        }
     }
 }
