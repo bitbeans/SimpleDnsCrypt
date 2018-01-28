@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="default_settings_network_cards" xml:space="preserve">
-    <value>Placas de rede</value>
+    <value>Placas de Rede</value>
   </data>
   <data name="default_settings_show_hidden_cards" xml:space="preserve">
     <value>Mostrar placas ocultas</value>
@@ -154,7 +154,7 @@
     <value>Apenas servidores sem registos</value>
   </data>
   <data name="default_settings_configuration_nolog_tooltip" xml:space="preserve">
-    <value>Servidor não deve registar as entradas do utilizador</value>
+    <value>Servidor não deve registar as interrogações do utilizador</value>
   </data>
   <data name="default_settings_configuration_nofilter" xml:space="preserve">
     <value>Apenas servidores sem filtro</value>
@@ -262,102 +262,102 @@
     <value>à espera de interrogações de DNS bloqueadas</value>
   </data>
   <data name="domainblocklog_entry_count" xml:space="preserve">
-    <value>Entries:</value>
+    <value>Entradas:</value>
   </data>
   <data name="domainblocklog_source_file" xml:space="preserve">
-    <value>Source:</value>
+    <value>Fonte:</value>
   </data>
   <data name="domainblocklog_button_clear" xml:space="preserve">
-    <value>Clear List</value>
+    <value>Limpar Lista</value>
   </data>
   <data name="tabitem_domainblocklog" xml:space="preserve">
-    <value>Domain Block Log</value>
+    <value>Registo de Bloqueio de Domínios</value>
   </data>
   <data name="tabitem_addressblocklog" xml:space="preserve">
-    <value>Address Block Log</value>
+    <value>Registo de Bloqueio de Endereços</value>
   </data>
   <data name="tabitem_domainblacklist" xml:space="preserve">
-    <value>Domain Blacklist</value>
+    <value>Lista Negra de Domínios</value>
   </data>
   <data name="tabitem_addressblacklist" xml:space="preserve">
-    <value>Address Blacklist</value>
+    <value>Lista Negra de Endereços</value>
   </data>
   <data name="settings" xml:space="preserve">
-    <value>Settings</value>
+    <value>Definições</value>
   </data>
   <data name="settings_domain_blacklist" xml:space="preserve">
-    <value>Show &quot;Domain Blacklist&quot; Tab</value>
+    <value>Mostrar o Separador &quot;Lista Negra de Domínios&quot;</value>
   </data>
   <data name="settings_address_blacklist" xml:space="preserve">
-    <value>Show &quot;Address Blacklist&quot; Tab</value>
+    <value>Mostrar o Separador &quot;Lista Negra de Endereços&quot;</value>
   </data>
   <data name="settings_domain_block" xml:space="preserve">
-    <value>Show &quot;Domain Block Log&quot; Tab</value>
+    <value>Mostrar o Separador &quot;Registo de Bloqueio de Domínios&quot;</value>
   </data>
   <data name="settings_address_block" xml:space="preserve">
-    <value>Show &quot;Address Block Log&quot; Tab</value>
+    <value>Mostrar o Separador &quot;Registo de Bloqueio de Endereços&quot;</value>
   </data>
   <data name="settings_query_log" xml:space="preserve">
-    <value>Mostrar o separador &quot;Registo de Inquisições&quot;</value>
+    <value>Mostrar o Separador &quot;Registo de Interrogações&quot;</value>
   </data>
   <data name="tabitem_resolvers" xml:space="preserve">
-    <value>Resolvers</value>
+    <value>Resolutor</value>
   </data>
   <data name="tabitem_advanced_settings" xml:space="preserve">
-    <value>Advanced Settings</value>
+    <value>Definições Avançadas</value>
   </data>
   <data name="settings_advanced_settings" xml:space="preserve">
-    <value>Show &quot;Advanced Settings&quot; Tab</value>
+    <value>Mostrar o Separador &quot;Definições Avançadas&quot;</value>
   </data>
   <data name="yes" xml:space="preserve">
-    <value>yes</value>
+    <value>sim</value>
   </data>
   <data name="no" xml:space="preserve">
-    <value>no</value>
+    <value>não</value>
   </data>
   <data name="cancel" xml:space="preserve">
-    <value>cancel</value>
+    <value>cancelar</value>
   </data>
   <data name="ok" xml:space="preserve">
     <value>OK</value>
   </data>
   <data name="dialog_message_uninstall" xml:space="preserve">
-    <value>Do you want to remove the installed Windows service?</value>
+    <value>Deseja remover o serviço do Windows instalado?</value>
   </data>
   <data name="dialog_uninstall_title" xml:space="preserve">
-    <value>Uninstalling the service</value>
+    <value>A desinstalar o serviço</value>
   </data>
   <data name="advanced_settings_uninstall_title" xml:space="preserve">
-    <value>Uninstalling the service</value>
+    <value>A desinstalar o serviço</value>
   </data>
   <data name="advanced_settings_uninstall_text" xml:space="preserve">
-    <value>Remove the installed Windows service</value>
+    <value>Remover o serviço do Windows instalado</value>
   </data>
   <data name="advanced_settings_uninstall_button" xml:space="preserve">
-    <value>Remove service</value>
+    <value>Remover serviço</value>
   </data>
   <data name="default_settings_apply_settings" xml:space="preserve">
-    <value>Apply settings</value>
+    <value>Aplicar definições</value>
   </data>
   <data name="advanced_settings_dnscache" xml:space="preserve">
-    <value>DNS Cache</value>
+    <value>Cacho de DNS</value>
   </data>
   <data name="resolvers_dnscrypt_mode_header" xml:space="preserve">
-    <value>DNSCrypt Mode</value>
+    <value>Modo DNSCrypt</value>
   </data>
   <data name="resolvers_dnscrypt_mode_description" xml:space="preserve">
-    <value>In automatic mode, all available servers are used. dnscrypt-proxy automatically selects the fastest resolvers.</value>
+    <value>No modo automático, todos os servidores disponíveis são utilizados. O dnscrypt-proxy automaticamente seleciona os resolutores mais rápidos.</value>
   </data>
   <data name="resolvers_dnscrypt_automatic_mode" xml:space="preserve">
-    <value>Automatic Mode</value>
+    <value>Modo automático</value>
   </data>
   <data name="disabled" xml:space="preserve">
-    <value>Disabled</value>
+    <value>Desligado</value>
   </data>
   <data name="enabled" xml:space="preserve">
-    <value>Enabled</value>
+    <value>Ligado</value>
   </data>
   <data name="resolvers_available_resolvers_header" xml:space="preserve">
-    <value>Available Resolvers</value>
+    <value>Resolutores Disponíveis</value>
   </data>
 </root>
