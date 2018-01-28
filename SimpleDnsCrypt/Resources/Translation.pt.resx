@@ -244,22 +244,22 @@
     <value>À espera das interrogações de DNS</value>
   </data>
   <data name="querylog_entry_count" xml:space="preserve">
-    <value>Entries:</value>
+    <value>Entradas:</value>
   </data>
   <data name="querylog_source_file" xml:space="preserve">
-    <value>Source:</value>
+    <value>Fonte:</value>
   </data>
   <data name="querylog_button_clear" xml:space="preserve">
-    <value>Clear List</value>
+    <value>Limpar Lista</value>
   </data>
   <data name="querylog_button_block" xml:space="preserve">
-    <value>Block Selected</value>
+    <value>Bloquear Selecionados</value>
   </data>
   <data name="domainblocklog" xml:space="preserve">
-    <value>Domain Block Log</value>
+    <value>Registo de Domínios Bloqueados</value>
   </data>
   <data name="domainblocklog_waiting_for_data" xml:space="preserve">
-    <value>waiting for blocked DNS queries</value>
+    <value>à espera de interrogações de DNS bloqueadas</value>
   </data>
   <data name="domainblocklog_entry_count" xml:space="preserve">
     <value>Entries:</value>
@@ -298,7 +298,7 @@
     <value>Show &quot;Address Block Log&quot; Tab</value>
   </data>
   <data name="settings_query_log" xml:space="preserve">
-    <value>Show &quot;Query Log&quot; Tab</value>
+    <value>Mostrar o separador &quot;Registo de Inquisições&quot;</value>
   </data>
   <data name="tabitem_resolvers" xml:space="preserve">
     <value>Resolvers</value>
@@ -341,5 +341,23 @@
   </data>
   <data name="advanced_settings_dnscache" xml:space="preserve">
     <value>DNS Cache</value>
+  </data>
+  <data name="resolvers_dnscrypt_mode_header" xml:space="preserve">
+    <value>DNSCrypt Mode</value>
+  </data>
+  <data name="resolvers_dnscrypt_mode_description" xml:space="preserve">
+    <value>In automatic mode, all available servers are used. dnscrypt-proxy automatically selects the fastest resolvers.</value>
+  </data>
+  <data name="resolvers_dnscrypt_automatic_mode" xml:space="preserve">
+    <value>Automatic Mode</value>
+  </data>
+  <data name="disabled" xml:space="preserve">
+    <value>Disabled</value>
+  </data>
+  <data name="enabled" xml:space="preserve">
+    <value>Enabled</value>
+  </data>
+  <data name="resolvers_available_resolvers_header" xml:space="preserve">
+    <value>Available Resolvers</value>
   </data>
 </root>
