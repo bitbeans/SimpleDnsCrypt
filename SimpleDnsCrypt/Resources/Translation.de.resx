@@ -348,4 +348,22 @@
   <data name="advanced_settings_dnscache" xml:space="preserve">
     <value>DNS-Cache</value>
   </data>
+  <data name="resolvers_dnscrypt_mode_header" xml:space="preserve">
+    <value>DNSCrypt Modus</value>
+  </data>
+  <data name="resolvers_dnscrypt_mode_description" xml:space="preserve">
+    <value>Im automatischen Modus werden alle verfügbaren Server verwendet. dnscrypt-proxy wählt automatisch die schnellsten Resolver.</value>
+  </data>
+  <data name="resolvers_dnscrypt_automatic_mode" xml:space="preserve">
+    <value>Automatischer Modus</value>
+  </data>
+  <data name="disabled" xml:space="preserve">
+    <value>Deaktiviert</value>
+  </data>
+  <data name="enabled" xml:space="preserve">
+    <value>Aktiviert</value>
+  </data>
+  <data name="resolvers_available_resolvers_header" xml:space="preserve">
+    <value>Verfügbare Resolver</value>
+  </data>
 </root>
