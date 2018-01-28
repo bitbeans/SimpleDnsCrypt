@@ -15,6 +15,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 
 namespace SimpleDnsCrypt.ViewModels
 {
@@ -58,6 +59,10 @@ namespace SimpleDnsCrypt.ViewModels
 		private AddressBlacklistViewModel _addressBlacklistViewModel;
 		private bool _isUninstallingService;
 
+		private readonly BindableCollection<Resolver> _resolvers;
+		public CollectionViewSource Resolvers { get; set; }
+		private bool _isDnsCryptAutomaticModeEnabled;
+
 		/// <summary>
 		/// Initializes a new instance of the <see cref="MainViewModel"/> class
 		/// </summary>
@@ -92,41 +97,21 @@ namespace SimpleDnsCrypt.ViewModels
 			_domainBlacklistViewModel = new DomainBlacklistViewModel(_windowManager, _events);
 			_addressBlockLogViewModel = new AddressBlockLogViewModel(_windowManager, _events);
 			_addressBlacklistViewModel = new AddressBlacklistViewModel(_windowManager, _events);
+
+			_resolvers = new BindableCollection<Resolver>();
+			Resolvers = new CollectionViewSource { Source = _resolvers };
 		}
 
-		private void ReadStamp()
+		
+
+
+		public bool IsDnsCryptAutomaticModeEnabled
 		{
-			if (DnscryptProxyConfiguration?.sources == null) return;
-			var sources = DnscryptProxyConfiguration.sources;
-			var servers = new List<Resolver>();
-			foreach (var source in sources)
+			get => _isDnsCryptAutomaticModeEnabled;
+			set
 			{
-				if (string.IsNullOrEmpty(source.Value.cache_file)) continue;
-
-				var cacheFile = source.Value.cache_file;
-				var cacheFileFullPath = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, cacheFile);
-				if (!File.Exists(cacheFileFullPath)) continue;
-				var content = File.ReadAllText(cacheFileFullPath);
-				if (string.IsNullOrEmpty(content)) continue;
-				var rawStampList = content.Split(new []{ '#', '#'}, StringSplitOptions.RemoveEmptyEntries);
-
-				foreach (var rawStampListEntry in rawStampList)
-				{
-					var def = rawStampListEntry.Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
-					if (def.Length != 3) continue;
-					var server = new Resolver
-					{
-						Name = def[0].Trim(),
-						Comment = def[1].Trim(),
-						Stamp = new Stamp(def[2].Trim())
-					};
-					servers.Add(server);
-				}
-			}
-
-			if (servers.Count > 0)
-			{
-
+				_isDnsCryptAutomaticModeEnabled = value;
+				NotifyOfPropertyChange(() => IsDnsCryptAutomaticModeEnabled);
 			}
 		}
 
@@ -578,6 +563,75 @@ namespace SimpleDnsCrypt.ViewModels
 			localNetworkInterface.IsChangeable = true;
 			ReloadLoadNetworkInterfaces();
 		}
+
+		#region Resolvers
+
+		
+
+		private void ReadStamp()
+		{
+			if (DnscryptProxyConfiguration.servers == null || DnscryptProxyConfiguration.servers.Count == 0)
+			{
+				IsDnsCryptAutomaticModeEnabled = true;
+			}
+
+			if (DnscryptProxyConfiguration?.sources == null) return;
+			var sources = DnscryptProxyConfiguration.sources;
+			foreach (var source in sources)
+			{
+				if (string.IsNullOrEmpty(source.Value.cache_file)) continue;
+
+				var cacheFile = source.Value.cache_file;
+				var cacheFileFullPath = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, cacheFile);
+				if (!File.Exists(cacheFileFullPath)) continue;
+				var content = File.ReadAllText(cacheFileFullPath);
+				if (string.IsNullOrEmpty(content)) continue;
+				var rawStampList = content.Split(new[] { '#', '#' }, StringSplitOptions.RemoveEmptyEntries);
+				_resolvers.Clear();
+				foreach (var rawStampListEntry in rawStampList)
+				{
+					var def = rawStampListEntry.Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
+					if (def.Length != 3) continue;
+					var server = new Resolver
+					{
+						Group = source.Key,
+						Name = def[0].Trim(),
+						Comment = def[1].Trim(),
+						Stamp = new Stamp(def[2].Trim())
+					};
+
+					if (DnscryptProxyConfiguration.require_nolog)
+					{
+						if (!server.Stamp.NoLog)
+						{
+							continue;
+						}
+					}
+
+					if (DnscryptProxyConfiguration.require_dnssec)
+					{
+						if (!server.Stamp.DnsSec)
+						{
+							continue;
+						}
+					}
+
+					if (!DnscryptProxyConfiguration.ipv6_servers)
+					{
+						if (server.Stamp.Ipv6)
+						{
+							continue;
+						}
+					}
+
+					_resolvers.Add(server);
+					
+				}
+			}
+
+		}
+
+		#endregion
 
 		#region Advanced Settings
 		/// <summary>

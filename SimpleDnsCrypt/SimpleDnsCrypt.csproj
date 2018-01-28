@@ -109,9 +109,6 @@
     <Reference Include="minisign, Version=0.1.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\minisign-net.0.1.2\lib\net\minisign.dll</HintPath>
     </Reference>
-    <Reference Include="MiscUtil, Version=0.2.0.0, Culture=neutral, PublicKeyToken=d3c42c4bfacf7596, processorArchitecture=MSIL">
-      <HintPath>..\packages\JonSkeet.MiscUtil.0.2.0\lib\net35\MiscUtil.dll</HintPath>
-    </Reference>
     <Reference Include="Nett, Version=0.8.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Nett.0.8.0\lib\Net40\Nett.dll</HintPath>
     </Reference>
@@ -335,6 +332,10 @@
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Translation.da.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Translation.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Translation.pt.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>

@@ -42,6 +42,14 @@ namespace SimpleDnsCrypt.Models
 					ArrayHelper.SubArray(stampBinary, typeDescriptionLength + propertiesLength, addressDescriptionLength)[0];
 				Address = Encoding.UTF8.GetString(ArrayHelper.SubArray(stampBinary,
 					typeDescriptionLength + propertiesLength + addressDescriptionLength, addressLength));
+
+				//TODO: maybe use properties?
+				//Workaground: IPv6
+				if (Address.StartsWith("["))
+				{
+					Ipv6 = true;
+				}
+
 				var publicKeyLength = ArrayHelper.SubArray(stampBinary,
 					typeDescriptionLength +
 					propertiesLength +
@@ -68,6 +76,24 @@ namespace SimpleDnsCrypt.Models
 					publicKeyLength +
 					providerNameDescriptionLength,
 					providerNameLength));
+
+				var props = BitConverter.ToUInt64(Properties, 0);
+				switch (props)
+				{
+					case 0:
+						NoLog = false;
+						DnsSec = false;
+						break;
+					case 2:
+						NoLog = true;
+						DnsSec = false;
+						break;
+					case 3:
+						NoLog = true;
+						DnsSec = true;
+						break;
+				}
+
 			}
 			catch (Exception)
 			{
@@ -76,6 +102,7 @@ namespace SimpleDnsCrypt.Models
 
 		public bool NoLog { get; set; }
 		public bool DnsSec { get; set; }
+		public bool Ipv6 { get; set; }
 
 		public string Prefix { get; set; }
 		public StampProtocolType Type { get; set; }
