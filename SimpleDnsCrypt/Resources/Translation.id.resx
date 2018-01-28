@@ -121,70 +121,70 @@
     <value>Kartu Jaringan</value>
   </data>
   <data name="default_settings_show_hidden_cards" xml:space="preserve">
-    <value>Show hidden cards</value>
+    <value>Tunjukkan semua kartu jaringan</value>
   </data>
   <data name="default_settings_service_header" xml:space="preserve">
-    <value>Service</value>
+    <value>Layanan</value>
   </data>
   <data name="default_settings_service" xml:space="preserve">
-    <value>DNSCrypt Service</value>
+    <value>Layanan DNSCrypt</value>
   </data>
   <data name="default_settings_configuration" xml:space="preserve">
-    <value>Configuration</value>
+    <value>Konfigurasi</value>
   </data>
   <data name="default_settings_configuration_ipv4" xml:space="preserve">
-    <value>Using IPv4 Server</value>
+    <value>Gunakan server IPv4</value>
   </data>
   <data name="default_settings_configuration_ipv4_tooltip" xml:space="preserve">
-    <value>Use servers reachable over IPv4</value>
+    <value>Gunakan server yang dapat dijangkau melalui IPv4</value>
   </data>
   <data name="default_settings_configuration_ipv6" xml:space="preserve">
-    <value>Using IPv6 Server</value>
+    <value>Gunakan server IPv6</value>
   </data>
   <data name="default_settings_configuration_ipv6_tooltip" xml:space="preserve">
-    <value>Use servers reachable over IPv6 (do not enable if you don&apos;t have IPv6 connectivity)</value>
+    <value>Gunakan server yang dapat dijangkau melalui IPv6 (jangan diaktifkan apabila anda tidak memiliki koneksi IPv6)</value>
   </data>
   <data name="default_settings_configuration_dnssec" xml:space="preserve">
-    <value>Only servers with DNSSEC support</value>
+    <value>Hanya server dengan dukungan DNSSEC</value>
   </data>
   <data name="default_settings_configuration_dnssec_tooltip" xml:space="preserve">
-    <value>Server must support DNS security extensions</value>
+    <value>Ekstensi keamanan DNS harus didukung oleh server</value>
   </data>
   <data name="default_settings_configuration_nolog" xml:space="preserve">
-    <value>Only servers without logging</value>
+    <value>Hanya server tanpa jejak pencatatan</value>
   </data>
   <data name="default_settings_configuration_nolog_tooltip" xml:space="preserve">
-    <value>Server must not log user queries</value>
+    <value>Server tidak boleh mencatat queries pengguna</value>
   </data>
   <data name="default_settings_configuration_nofilter" xml:space="preserve">
-    <value>Only servers without filter</value>
+    <value>Hanya server tanpa filter</value>
   </data>
   <data name="default_settings_configuration_nofilter_tooltip" xml:space="preserve">
-    <value>Server must not enforce its own blacklist (for parental control, ads blocking...)</value>
+    <value>Server tidak memaksakan daftar hitam miliknya (seperti parental control dan iklan...)</value>
   </data>
   <data name="tabitem_mainmenu" xml:space="preserve">
-    <value>Main Menu</value>
+    <value>Menu utama</value>
   </data>
   <data name="loader_administrative_rights_available" xml:space="preserve">
-    <value>Administrative rights are available</value>
+    <value>Hak sebagai administrator tersedia</value>
   </data>
   <data name="loader_administrative_rights_missing" xml:space="preserve">
-    <value>Missing administrative rights!</value>
+    <value>Hak sebagai administrator tidak ditemukan</value>
   </data>
   <data name="loader_checking_version" xml:space="preserve">
-    <value>Checking for new version . . .</value>
+    <value>Memerika pembaruan . . .</value>
   </data>
   <data name="loader_new_version_found" xml:space="preserve">
-    <value>A newer version was found: {0}</value>
+    <value>Versi terbaru ditemukan: {0}</value>
   </data>
   <data name="loader_starting_update" xml:space="preserve">
-    <value>Starting update . . .</value>
+    <value>Memulai pembaruan . . .</value>
   </data>
   <data name="loader_update_failed" xml:space="preserve">
-    <value>Update failed, continue . . .</value>
+    <value>Pembaruan telah gagal, melanjutkan . . .</value>
   </data>
   <data name="loader_latest_version" xml:space="preserve">
-    <value>You are using the latest version</value>
+    <value>Anda menggunakan versi terakhir</value>
   </data>
   <data name="loader_unsigned" xml:space="preserve">
     <value>unsigned</value>
@@ -193,151 +193,151 @@
     <value>missing</value>
   </data>
   <data name="loader_downloading_signature" xml:space="preserve">
-    <value>Downloading signature . . .</value>
+    <value>Mengunduh signature . . .</value>
   </data>
   <data name="loader_downloading_installer" xml:space="preserve">
-    <value>Downloading installer . . .</value>
+    <value>Mengunduh installer . . .</value>
   </data>
   <data name="loader_starting" xml:space="preserve">
-    <value>Starting . . .</value>
+    <value>Memulai . . .</value>
   </data>
   <data name="loader_validate_folder" xml:space="preserve">
-    <value>Validating {0} folder</value>
+    <value>Memvalidasi {0} folder</value>
   </data>
   <data name="loader_loading_network_cards" xml:space="preserve">
-    <value>Loading network cards . . .</value>
+    <value>Memuat kartu jaringan . . .</value>
   </data>
   <data name="loader_failed_loading" xml:space="preserve">
-    <value>Could not load {0}</value>
+    <value>Tidak dapat memuat {0}</value>
   </data>
   <data name="loader_successfully_loaded" xml:space="preserve">
-    <value>{0} successfully loaded</value>
+    <value>{0} berhasil dimuat</value>
   </data>
   <data name="loader_loading" xml:space="preserve">
-    <value>Loading {0} . . .</value>
+    <value>Memuat {0} . . .</value>
   </data>
   <data name="loader_missing_files" xml:space="preserve">
-    <value>Missing files in the {0} folder:\n{1}\n\nThink about a new installation of {2}</value>
+    <value>Tidak ditemukan file didalam folder {0} :\n{1}\n\nPertimbangkan memulai instalasi baru dari {2}</value>
   </data>
   <data name="loader_all_files_available" xml:space="preserve">
-    <value>All required files have been found</value>
+    <value>Semua file yang dibutuhkan telah ditemukan</value>
   </data>
   <data name="about" xml:space="preserve">
-    <value>About</value>
+    <value>Tentang</value>
   </data>
   <data name="about_software" xml:space="preserve">
     <value>Software</value>
   </data>
   <data name="about_license" xml:space="preserve">
-    <value>License</value>
+    <value>Lisensi</value>
   </data>
   <data name="about_view_on_github" xml:space="preserve">
-    <value>View on GitHub</value>
+    <value>Lihat di GitHub</value>
   </data>
   <data name="tabitem_querylog" xml:space="preserve">
-    <value>Query Log</value>
+    <value>Catatan query</value>
   </data>
   <data name="querylog" xml:space="preserve">
-    <value>Query Log</value>
+    <value>Catatan query</value>
   </data>
   <data name="querylog_waiting_for_data" xml:space="preserve">
-    <value>waiting for DNS queries</value>
+    <value>menunggu query DNS</value>
   </data>
   <data name="querylog_entry_count" xml:space="preserve">
     <value>Entries:</value>
   </data>
   <data name="querylog_source_file" xml:space="preserve">
-    <value>Source:</value>
+    <value>Sumber:</value>
   </data>
   <data name="querylog_button_clear" xml:space="preserve">
-    <value>Clear List</value>
+    <value>Hapus Daftar</value>
   </data>
   <data name="querylog_button_block" xml:space="preserve">
-    <value>Block Selected</value>
+    <value>Blokir yang dipilih</value>
   </data>
   <data name="domainblocklog" xml:space="preserve">
-    <value>Domain Block Log</value>
+    <value>Catatan Domain Terblokir</value>
   </data>
   <data name="domainblocklog_waiting_for_data" xml:space="preserve">
-    <value>waiting for blocked DNS queries</value>
+    <value>menunggu query DNS yang terblokir</value>
   </data>
   <data name="domainblocklog_entry_count" xml:space="preserve">
-    <value>Einträge:</value>
+    <value>Entries:</value>
   </data>
   <data name="domainblocklog_source_file" xml:space="preserve">
-    <value>Source:</value>
+    <value>Sumber:</value>
   </data>
   <data name="domainblocklog_button_clear" xml:space="preserve">
-    <value>Clear List</value>
+    <value>Hapus Daftar</value>
   </data>
   <data name="tabitem_domainblocklog" xml:space="preserve">
-    <value>Domain Block Log</value>
+    <value>Catatan Domain Terblokir</value>
   </data>
   <data name="tabitem_addressblocklog" xml:space="preserve">
-    <value>Address Block Log</value>
+    <value>Catatan Alamat Terblokir</value>
   </data>
   <data name="tabitem_domainblacklist" xml:space="preserve">
-    <value>Domain Blacklist</value>
+    <value>Blacklist Domain</value>
   </data>
   <data name="tabitem_addressblacklist" xml:space="preserve">
-    <value>Address Blacklist</value>
+    <value>Blacklist Alamat</value>
   </data>
   <data name="settings" xml:space="preserve">
-    <value>Settings</value>
+    <value>Pengaturan</value>
   </data>
   <data name="settings_domain_blacklist" xml:space="preserve">
-    <value>Show &quot;Domain Blacklist&quot; Tab</value>
+    <value>Tampilkan Tab &quot;Domain Blacklist&quot;</value>
   </data>
   <data name="settings_address_blacklist" xml:space="preserve">
-    <value>Show &quot;Address Blacklist&quot; Tab</value>
+    <value>Tampilkan Tab &quot;Alamat Blacklist&quot;</value>
   </data>
   <data name="settings_domain_block" xml:space="preserve">
-    <value>Show &quot;Domain Block Log&quot; Tab</value>
+    <value>Tampilkan Tab &quot;Domain Blacklist&quot;</value>
   </data>
   <data name="settings_address_block" xml:space="preserve">
-    <value>Show &quot;Address Block Log&quot; Tab</value>
+    <value>Tampilkan Tab &quot;Alamat Blacklist&quot;</value>
   </data>
   <data name="settings_query_log" xml:space="preserve">
-    <value>Show &quot;Query Log&quot; Tab</value>
+    <value>Tampilkan Tab &quot;Catatan query&quot;</value>
   </data>
   <data name="tabitem_resolvers" xml:space="preserve">
     <value>Resolvers</value>
   </data>
   <data name="tabitem_advanced_settings" xml:space="preserve">
-    <value>Advanced Settings</value>
+    <value>Pengaturan lanjutan</value>
   </data>
   <data name="settings_advanced_settings" xml:space="preserve">
-    <value>Show &quot;Advanced Settings&quot; Tab</value>
+    <value>Tampilkan tab &quot;Pengaturan lanjutan&quot;</value>
   </data>
   <data name="yes" xml:space="preserve">
-    <value>yes</value>
+    <value>Ya</value>
   </data>
   <data name="no" xml:space="preserve">
-    <value>no</value>
+    <value>tidak</value>
   </data>
   <data name="cancel" xml:space="preserve">
-    <value>cancel</value>
+    <value>batal</value>
   </data>
   <data name="ok" xml:space="preserve">
     <value>OK</value>
   </data>
   <data name="dialog_message_uninstall" xml:space="preserve">
-    <value>Do you want to remove the installed Windows service?</value>
+    <value>Apakah anda ingin menghapus layanan DNSCrypt yang terpasang pada Windows?</value>
   </data>
   <data name="dialog_uninstall_title" xml:space="preserve">
-    <value>Uninstalling the service</value>
+    <value>Menghapus layanan</value>
   </data>
   <data name="advanced_settings_uninstall_title" xml:space="preserve">
-    <value>Uninstalling the service</value>
+    <value>Menghapus layanan</value>
   </data>
   <data name="advanced_settings_uninstall_text" xml:space="preserve">
-    <value>Remove the installed Windows service</value>
+    <value>Menghapus layanan yang terpasang</value>
   </data>
   <data name="advanced_settings_uninstall_button" xml:space="preserve">
-    <value>Remove service</value>
+    <value>Menghapus layanan</value>
   </data>
   <data name="default_settings_apply_settings" xml:space="preserve">
-    <value>Apply settings</value>
+    <value>Terapkan pengaturan</value>
   </data>
   <data name="advanced_settings_dnscache" xml:space="preserve">
     <value>DNS Cache</value>
