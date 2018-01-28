@@ -521,14 +521,33 @@ namespace SimpleDnsCrypt.Models
 		}
 	}
 
-	public class Source
+	public class Source : PropertyChangedBase
 	{
+		[TomlIgnore]
+		public new bool IsNotifying
+		{
+			get => base.IsNotifying;
+			set => base.IsNotifying = value;
+		}
+
+		private ObservableCollection<Stamp> _stamps;
 		public string url { get; set; }
 		public string minisign_key { get; set; }
 		public string cache_file { get; set; }
 		public string format { get; set; }
 		public int refresh_delay { get; set; }
 		public string prefix { get; set; }
+
+		[TomlIgnore]
+		public ObservableCollection<Stamp> Stamps
+		{
+			get => _stamps;
+			set
+			{
+				_stamps = value;
+				NotifyOfPropertyChange(() => Stamps);
+			}
+		}
 	}
 
 	public class Server

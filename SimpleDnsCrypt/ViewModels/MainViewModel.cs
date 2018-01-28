@@ -9,6 +9,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.ComponentModel.Composition;
 using System.Dynamic;
+using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -91,6 +92,42 @@ namespace SimpleDnsCrypt.ViewModels
 			_domainBlacklistViewModel = new DomainBlacklistViewModel(_windowManager, _events);
 			_addressBlockLogViewModel = new AddressBlockLogViewModel(_windowManager, _events);
 			_addressBlacklistViewModel = new AddressBlacklistViewModel(_windowManager, _events);
+		}
+
+		private void ReadStamp()
+		{
+			if (DnscryptProxyConfiguration?.sources == null) return;
+			var sources = DnscryptProxyConfiguration.sources;
+			var servers = new List<Resolver>();
+			foreach (var source in sources)
+			{
+				if (string.IsNullOrEmpty(source.Value.cache_file)) continue;
+
+				var cacheFile = source.Value.cache_file;
+				var cacheFileFullPath = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, cacheFile);
+				if (!File.Exists(cacheFileFullPath)) continue;
+				var content = File.ReadAllText(cacheFileFullPath);
+				if (string.IsNullOrEmpty(content)) continue;
+				var rawStampList = content.Split(new []{ '#', '#'}, StringSplitOptions.RemoveEmptyEntries);
+
+				foreach (var rawStampListEntry in rawStampList)
+				{
+					var def = rawStampListEntry.Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
+					if (def.Length != 3) continue;
+					var server = new Resolver
+					{
+						Name = def[0].Trim(),
+						Comment = def[1].Trim(),
+						Stamp = new Stamp(def[2].Trim())
+					};
+					servers.Add(server);
+				}
+			}
+
+			if (servers.Count > 0)
+			{
+
+			}
 		}
 
 		private void SettingsViewModelOnPropertyChanged(object sender, PropertyChangedEventArgs propertyChangedEventArgs)
@@ -266,6 +303,7 @@ namespace SimpleDnsCrypt.ViewModels
 						break;
 					case "resolverTab":
 						SelectedTab = Tabs.ResolverTab;
+						ReadStamp();
 						break;
 					case "advancedSettingsTab":
 						SelectedTab = Tabs.AdvancedSettingsTab;

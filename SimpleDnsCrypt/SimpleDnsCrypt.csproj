@@ -195,6 +195,8 @@
     <Compile Include="Models\QueryLogLine.cs" />
     <Compile Include="Models\QueryLogLineType.cs" />
     <Compile Include="Models\RemoteUpdate.cs" />
+    <Compile Include="Models\Resolver.cs" />
+    <Compile Include="Models\Stamp.cs" />
     <Compile Include="Resources\Translation.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
