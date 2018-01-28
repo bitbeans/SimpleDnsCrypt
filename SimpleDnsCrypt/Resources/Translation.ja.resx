@@ -262,7 +262,7 @@
     <value>waiting for blocked DNS queries</value>
   </data>
   <data name="domainblocklog_entry_count" xml:space="preserve">
-    <value>Einträge:</value>
+    <value>Entries:</value>
   </data>
   <data name="domainblocklog_source_file" xml:space="preserve">
     <value>Source:</value>
@@ -341,5 +341,23 @@
   </data>
   <data name="advanced_settings_dnscache" xml:space="preserve">
     <value>DNS Cache</value>
+  </data>
+  <data name="resolvers_dnscrypt_mode_header" xml:space="preserve">
+    <value>DNSCrypt Mode</value>
+  </data>
+  <data name="resolvers_dnscrypt_mode_description" xml:space="preserve">
+    <value>In automatic mode, all available servers are used. dnscrypt-proxy automatically selects the fastest resolvers.</value>
+  </data>
+  <data name="resolvers_dnscrypt_automatic_mode" xml:space="preserve">
+    <value>Automatic Mode</value>
+  </data>
+  <data name="disabled" xml:space="preserve">
+    <value>Disabled</value>
+  </data>
+  <data name="enabled" xml:space="preserve">
+    <value>Enabled</value>
+  </data>
+  <data name="resolvers_available_resolvers_header" xml:space="preserve">
+    <value>Available Resolvers</value>
   </data>
 </root>
