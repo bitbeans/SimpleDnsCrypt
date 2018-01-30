@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="default_settings_network_cards" xml:space="preserve">
+    <value>Thẻ mạng</value>
+  </data>
+  <data name="default_settings_show_hidden_cards" xml:space="preserve">
+    <value>Hiện thẻ ẩn</value>
+  </data>
+  <data name="default_settings_service_header" xml:space="preserve">
+    <value>Dịch vụ</value>
+  </data>
+  <data name="default_settings_service" xml:space="preserve">
+    <value>Dịch vụ DNSCrypt</value>
+  </data>
+  <data name="default_settings_configuration" xml:space="preserve">
+    <value>Cấu hình</value>
+  </data>
+  <data name="default_settings_configuration_ipv4" xml:space="preserve">
+    <value>Sử dụng máy chủ IPv4</value>
+  </data>
+  <data name="default_settings_configuration_ipv4_tooltip" xml:space="preserve">
+    <value>Sử dụng máy chủ có thể truy cập qua IPv4</value>
+  </data>
+  <data name="default_settings_configuration_ipv6" xml:space="preserve">
+    <value>Sử dụng máy chủ IPv6</value>
+  </data>
+  <data name="default_settings_configuration_ipv6_tooltip" xml:space="preserve">
+    <value>Sử dụng máy chủ có thể truy cập qua IPv4 (không kích hoạt nết bạn không dùng kết nối IPv6</value>
+  </data>
+  <data name="default_settings_configuration_dnssec" xml:space="preserve">
+    <value>Chỉ máy chủ hỗ trợ DNSSEC</value>
+  </data>
+  <data name="default_settings_configuration_dnssec_tooltip" xml:space="preserve">
+    <value>Máy chủ phải hỗ trợ phần mở rộng bảo mật DNS</value>
+  </data>
+  <data name="default_settings_configuration_nolog" xml:space="preserve">
+    <value>Chỉ máy chủ không ghi nhật ký</value>
+  </data>
+  <data name="default_settings_configuration_nolog_tooltip" xml:space="preserve">
+    <value>Máy chủ không được ghi nhật ký truy vấn của người dùng</value>
+  </data>
+  <data name="default_settings_configuration_nofilter" xml:space="preserve">
+    <value>Chỉ máy chỉ không có bộ lọc</value>
+  </data>
+  <data name="default_settings_configuration_nofilter_tooltip" xml:space="preserve">
+    <value>Máy chủ không thực thi danh sách đen của chính mình (dành cho Kiểm soát cha mẹ, chặn quảng cáo...)</value>
+  </data>
+  <data name="tabitem_mainmenu" xml:space="preserve">
+    <value>Danh mục chính</value>
+  </data>
+  <data name="loader_administrative_rights_available" xml:space="preserve">
+    <value>Quyền quản trị có sẵn</value>
+  </data>
+  <data name="loader_administrative_rights_missing" xml:space="preserve">
+    <value>Mất quyền quản trị!</value>
+  </data>
+  <data name="loader_checking_version" xml:space="preserve">
+    <value>Đang kiểm tra phiên bản mới...</value>
+  </data>
+  <data name="loader_new_version_found" xml:space="preserve">
+    <value>Một phiên bản mới hơn đã được tìm thấy: {0}</value>
+  </data>
+  <data name="loader_starting_update" xml:space="preserve">
+    <value>Đang bắt đầu cập nhật...</value>
+  </data>
+  <data name="loader_update_failed" xml:space="preserve">
+    <value>Cập nhật bị lỗi, tiếp tục...</value>
+  </data>
+  <data name="loader_latest_version" xml:space="preserve">
+    <value>Bạn đang sử dụng phiên bản mới nhất</value>
+  </data>
+  <data name="loader_unsigned" xml:space="preserve">
+    <value>chưa ký số</value>
+  </data>
+  <data name="loader_missing" xml:space="preserve">
+    <value>còn thiếu</value>
+  </data>
+  <data name="loader_downloading_signature" xml:space="preserve">
+    <value>Đang tải về chữ kỹ số...</value>
+  </data>
+  <data name="loader_downloading_installer" xml:space="preserve">
+    <value>Đang tải về cài đặt...</value>
+  </data>
+  <data name="loader_starting" xml:space="preserve">
+    <value>Đang bắt đầu...</value>
+  </data>
+  <data name="loader_validate_folder" xml:space="preserve">
+    <value>Xác nhận {0} thư mục</value>
+  </data>
+  <data name="loader_loading_network_cards" xml:space="preserve">
+    <value>Đang đọc thẻ mạng...</value>
+  </data>
+  <data name="loader_failed_loading" xml:space="preserve">
+    <value>Không thể đọc {0}</value>
+  </data>
+  <data name="loader_successfully_loaded" xml:space="preserve">
+    <value>{0} đã đọc thành công</value>
+  </data>
+  <data name="loader_loading" xml:space="preserve">
+    <value>Đang đọc {0}...</value>
+  </data>
+  <data name="loader_missing_files" xml:space="preserve">
+    <value>Thiếu tệp trong thư mục {0}: \n{1}\n\n. Hãy nghĩ đến bản cài đặt mới của {2}</value>
+  </data>
+  <data name="loader_all_files_available" xml:space="preserve">
+    <value>Tất cả yêu cầu tệp đã được tìm thấy</value>
+  </data>
+  <data name="about" xml:space="preserve">
+    <value>Thông tin</value>
+  </data>
+  <data name="about_software" xml:space="preserve">
+    <value>Phần mềm</value>
+  </data>
+  <data name="about_license" xml:space="preserve">
+    <value>Bản quyền</value>
+  </data>
+  <data name="about_view_on_github" xml:space="preserve">
+    <value>Xem trên GitHub</value>
+  </data>
+  <data name="tabitem_querylog" xml:space="preserve">
+    <value>Nhật ký truy vấn</value>
+  </data>
+  <data name="querylog" xml:space="preserve">
+    <value>Nhật ký truy vấn</value>
+  </data>
+  <data name="querylog_waiting_for_data" xml:space="preserve">
+    <value>đang chờ truy vấn DNS</value>
+  </data>
+  <data name="querylog_entry_count" xml:space="preserve">
+    <value>Mục:</value>
+  </data>
+  <data name="querylog_source_file" xml:space="preserve">
+    <value>Nguồn:</value>
+  </data>
+  <data name="querylog_button_clear" xml:space="preserve">
+    <value>Làm sạch danh sách</value>
+  </data>
+  <data name="querylog_button_block" xml:space="preserve">
+    <value>Chặn mục đã chọn</value>
+  </data>
+  <data name="domainblocklog" xml:space="preserve">
+    <value>Nhật ký tên miền</value>
+  </data>
+  <data name="domainblocklog_waiting_for_data" xml:space="preserve">
+    <value>đang chờ truy vấn DNS đã bị chặn</value>
+  </data>
+  <data name="domainblocklog_entry_count" xml:space="preserve">
+    <value>Mục:</value>
+  </data>
+  <data name="domainblocklog_source_file" xml:space="preserve">
+    <value>Nguồn:</value>
+  </data>
+  <data name="domainblocklog_button_clear" xml:space="preserve">
+    <value>Làm sạch danh sách</value>
+  </data>
+  <data name="tabitem_domainblocklog" xml:space="preserve">
+    <value>Nhật ký tên miền</value>
+  </data>
+  <data name="tabitem_addressblocklog" xml:space="preserve">
+    <value>Nhật ký địa chỉ</value>
+  </data>
+  <data name="tabitem_domainblacklist" xml:space="preserve">
+    <value>Danh sách đen của tên miền</value>
+  </data>
+  <data name="tabitem_addressblacklist" xml:space="preserve">
+    <value>Danh sách đen của địa chỉ</value>
+  </data>
+  <data name="settings" xml:space="preserve">
+    <value>Cấu hình</value>
+  </data>
+  <data name="settings_domain_blacklist" xml:space="preserve">
+    <value>Hiện thẻ &quot;Danh sách đen của tên miền&quot;</value>
+  </data>
+  <data name="settings_address_blacklist" xml:space="preserve">
+    <value>Hiện thẻ &quot;Danh sách đen của địa chỉ&quot;</value>
+  </data>
+  <data name="settings_domain_block" xml:space="preserve">
+    <value>Hiện thẻ &quot;Nhật ký tên miền&quot;</value>
+  </data>
+  <data name="settings_address_block" xml:space="preserve">
+    <value>Hiện thẻ &quot;Nhật ký địa chỉ&quot;</value>
+  </data>
+  <data name="settings_query_log" xml:space="preserve">
+    <value>Hiện thẻ &quot;Nhật ký truy vấn&quot;</value>
+  </data>
+  <data name="tabitem_resolvers" xml:space="preserve">
+    <value>Máy chủ phân giải</value>
+  </data>
+  <data name="tabitem_advanced_settings" xml:space="preserve">
+    <value>Cấu hình nâng cao</value>
+  </data>
+  <data name="settings_advanced_settings" xml:space="preserve">
+    <value>Hiện thẻ &quot;Cấu hình nâng cao&quot;</value>
+  </data>
+  <data name="yes" xml:space="preserve">
+    <value>Có</value>
+  </data>
+  <data name="no" xml:space="preserve">
+    <value>Không</value>
+  </data>
+  <data name="cancel" xml:space="preserve">
+    <value>Hủy</value>
+  </data>
+  <data name="ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="dialog_message_uninstall" xml:space="preserve">
+    <value>Bạn có muốn loại bỏ dịch vụ Windows đã cài đặt?</value>
+  </data>
+  <data name="dialog_uninstall_title" xml:space="preserve">
+    <value>Đang gỡ bỏ dịch vụ</value>
+  </data>
+  <data name="advanced_settings_uninstall_title" xml:space="preserve">
+    <value>Đang gỡ bỏ dịch vụ</value>
+  </data>
+  <data name="advanced_settings_uninstall_text" xml:space="preserve">
+    <value>Loại bỏ dịch vụ Windows đã cài đặt</value>
+  </data>
+  <data name="advanced_settings_uninstall_button" xml:space="preserve">
+    <value>Loại bỏ dịch vụ</value>
+  </data>
+  <data name="default_settings_apply_settings" xml:space="preserve">
+    <value>Áp dụng cài đặt</value>
+  </data>
+  <data name="advanced_settings_dnscache" xml:space="preserve">
+    <value>DNS lưu tạm</value>
+  </data>
+  <data name="resolvers_dnscrypt_mode_header" xml:space="preserve">
+    <value>Chế độ DNSCrypt</value>
+  </data>
+  <data name="resolvers_dnscrypt_mode_description" xml:space="preserve">
+    <value>Trong chế độ tự động, tất cả các máy chủ hiện có đều được sử dụng. dnscrypt-proxy tự động chọn máy chủ phân giải nhanh nhất.</value>
+  </data>
+  <data name="resolvers_dnscrypt_automatic_mode" xml:space="preserve">
+    <value>Chế độ tự động</value>
+  </data>
+  <data name="disabled" xml:space="preserve">
+    <value>Đã vô hiệu hóa</value>
+  </data>
+  <data name="enabled" xml:space="preserve">
+    <value>Đã kích hoạt</value>
+  </data>
+  <data name="resolvers_available_resolvers_header" xml:space="preserve">
+    <value>Máy chủ phân giải sẵn có</value>
+  </data>
+</root>
