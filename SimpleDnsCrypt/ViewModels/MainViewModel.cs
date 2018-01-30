@@ -40,6 +40,8 @@ namespace SimpleDnsCrypt.ViewModels
 		private bool _showHiddenCards;
 		private BindableCollection<LocalNetworkInterface> _localNetworkInterfaces =
 			new BindableCollection<LocalNetworkInterface>();
+
+		private BindableCollection<Resolver> _resolvers;
 		public Tabs SelectedTab { get; set; }
 
 		private bool _isWorkingOnService;
@@ -58,9 +60,6 @@ namespace SimpleDnsCrypt.ViewModels
 		private DomainBlacklistViewModel _domainBlacklistViewModel;
 		private AddressBlacklistViewModel _addressBlacklistViewModel;
 		private bool _isUninstallingService;
-
-		private readonly BindableCollection<Resolver> _resolvers;
-		public CollectionViewSource Resolvers { get; set; }
 		private bool _isDnsCryptAutomaticModeEnabled;
 
 		/// <summary>
@@ -99,7 +98,6 @@ namespace SimpleDnsCrypt.ViewModels
 			_addressBlacklistViewModel = new AddressBlacklistViewModel(_windowManager, _events);
 
 			_resolvers = new BindableCollection<Resolver>();
-			Resolvers = new CollectionViewSource { Source = _resolvers };
 		}
 
 		
@@ -492,6 +490,15 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 		}
 
+		public BindableCollection<Resolver> Resolvers
+		{
+			get => _resolvers;
+			set
+			{
+				_resolvers = value;
+				NotifyOfPropertyChange(() => Resolvers);
+			}
+		}
 
 		/// <summary>
 		///		The title of the window.
@@ -566,7 +573,21 @@ namespace SimpleDnsCrypt.ViewModels
 
 		#region Resolvers
 
-		
+
+		public void ResolverClicked(Resolver resolver)
+		{
+			if (resolver != null)
+			{
+				if (resolver.IsInServerList)
+				{
+					resolver.IsInServerList = false;
+				}
+				else
+				{
+					resolver.IsInServerList = true;
+				}
+			}
+		}
 
 		private void ReadStamp()
 		{
@@ -624,6 +645,10 @@ namespace SimpleDnsCrypt.ViewModels
 						}
 					}
 
+					if (server.Name.Contains("d0wn"))
+					{
+						server.IsInServerList = true;
+					}
 					_resolvers.Add(server);
 					
 				}

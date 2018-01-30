@@ -167,6 +167,7 @@
     <Compile Include="Converters\MessageBoxTypeToColor.cs" />
     <Compile Include="Converters\QueryLogTypeToColorConverter.cs" />
     <Compile Include="Converters\ReverseBoolToEnabledConverter.cs" />
+    <Compile Include="Converters\ServerListBackgroundConverter.cs" />
     <Compile Include="Converters\TextLengthToFontSizeConverter.cs" />
     <Compile Include="Extensions\Base64UrlExtensions.cs" />
     <Compile Include="Extensions\WindowManagerExtensions.cs" />

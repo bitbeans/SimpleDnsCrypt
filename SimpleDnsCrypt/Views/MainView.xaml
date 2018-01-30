@@ -26,6 +26,7 @@
             <converters:QueryLogTypeToColorConverter x:Key="QueryLogTypeToColorConverter" />
             <converters:LocalDateConverter x:Key="LocalDateConverter" />
             <converters:IntegerBoolToVisibilityConverter x:Key="IntegerBoolToVisibilityConverter" />
+            <converters:ServerListBackgroundConverter x:Key="ServerListBackgroundConverter" />
         </ResourceDictionary>
     </UserControl.Resources>
     <ScrollViewer VerticalScrollBarVisibility="Auto">
@@ -49,7 +50,8 @@
                     </DrawingBrush>
                 </Border.BorderBrush>
 
-                <TabControl controls:TabControlHelper.Transition="Right" Background="Transparent" SelectedIndex="{Binding SelectedTabIndex}"
+                <TabControl controls:TabControlHelper.Transition="Right" Background="Transparent"
+                            SelectedIndex="{Binding SelectedTabIndex}"
                             cal:Message.Attach="[Event SelectionChanged] = [Action TabControl_SelectionChanged($eventArgs)]">
                     <TabItem Padding="10,2,10,2" Height="39" VerticalAlignment="Top" Tag="mainTab"
                              Header="{lex:Loc Key=tabitem_mainmenu}">
@@ -218,7 +220,10 @@
                                                     <RowDefinition Height="Auto" />
                                                     <RowDefinition Height="*" />
                                                 </Grid.RowDefinitions>
-                                                <TextBlock Grid.Row="0" Foreground="DarkOrange" FontWeight="Bold" FontSize="18">Warning: Pre-Release! :)</TextBlock>
+                                                <TextBlock Grid.Row="0" Foreground="DarkOrange" FontWeight="Bold"
+                                                           FontSize="18">
+                                                    Warning: Pre-Release! :)
+                                                </TextBlock>
                                                 <Button x:Name="SaveDnsCryptConfiguration" Grid.Row="1" Height="32"
                                                         Width="Auto"
                                                         VerticalAlignment="Bottom" HorizontalAlignment="Right"
@@ -331,10 +336,10 @@
                                                 <ColumnDefinition Width="*" />
                                             </Grid.ColumnDefinitions>
                                             <iconPacks:PackIconMaterial Grid.Column="0" Grid.Row="0" Height="20"
-                                                                            Width="20" Kind="AutoFix" Opacity="0.7"
-                                                                            Foreground="#FF8ab329"
-                                                                            HorizontalAlignment="Left"
-                                                                            VerticalAlignment="Center" />
+                                                                        Width="20" Kind="AutoFix" Opacity="0.7"
+                                                                        Foreground="#FF8ab329"
+                                                                        HorizontalAlignment="Left"
+                                                                        VerticalAlignment="Center" />
                                             <TextBlock Grid.Column="1" Grid.Row="0"
                                                        Text="{lex:Loc Key=resolvers_dnscrypt_mode_header}"
                                                        TextWrapping="Wrap" VerticalAlignment="Center"
@@ -342,8 +347,14 @@
                                                        Opacity="0.7" Margin="5,0,0,3" FontWeight="Bold">
                                             </TextBlock>
                                         </Grid>
-                                        <TextBlock Foreground="#FF575757" Margin="0,5,0,0" Text="{lex:Loc Key=resolvers_dnscrypt_mode_description}"/>
-                                        <controls:ToggleSwitch IsEnabled="False" Foreground="#FF575757" IsChecked="{Binding IsDnsCryptAutomaticModeEnabled}" OnLabel="{lex:Loc Key=enabled}" OffLabel="{lex:Loc Key=disabled}" Header="{lex:Loc Key=resolvers_dnscrypt_automatic_mode}" Margin="0,5,0,0" />
+                                        <TextBlock Foreground="#FF575757" Margin="0,5,0,0"
+                                                   Text="{lex:Loc Key=resolvers_dnscrypt_mode_description}" />
+                                        <controls:ToggleSwitch IsEnabled="False" Foreground="#FF575757"
+                                                               IsChecked="{Binding IsDnsCryptAutomaticModeEnabled}"
+                                                               OnLabel="{lex:Loc Key=enabled}"
+                                                               OffLabel="{lex:Loc Key=disabled}"
+                                                               Header="{lex:Loc Key=resolvers_dnscrypt_automatic_mode}"
+                                                               Margin="0,5,0,0" />
                                     </StackPanel>
                                 </Border>
                                 <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,14,0,0">
@@ -372,10 +383,10 @@
                                                 <ColumnDefinition Width="*" />
                                             </Grid.ColumnDefinitions>
                                             <iconPacks:PackIconMaterial Grid.Column="0" Grid.Row="0" Height="20"
-                                                                            Width="20" Kind="Dns" Opacity="0.7"
-                                                                            Foreground="#FF8ab329"
-                                                                            HorizontalAlignment="Left"
-                                                                            VerticalAlignment="Center" />
+                                                                        Width="20" Kind="Dns" Opacity="0.7"
+                                                                        Foreground="#FF8ab329"
+                                                                        HorizontalAlignment="Left"
+                                                                        VerticalAlignment="Center" />
                                             <TextBlock Grid.Column="1" Grid.Row="0"
                                                        Text="{lex:Loc Key=resolvers_available_resolvers_header}"
                                                        TextWrapping="Wrap" VerticalAlignment="Center"
@@ -386,28 +397,42 @@
                                         <TextBlock Foreground="#FF575757" Margin="0,5,0,0">-</TextBlock>
                                         <Grid>
                                             <Grid.RowDefinitions>
-                                                <RowDefinition Height="350"/>
+                                                <RowDefinition Height="350" />
                                             </Grid.RowDefinitions>
-                                            <ItemsControl ItemsSource="{Binding Resolvers.View}" IsEnabled="False">
-                                                <ItemsControl.ItemsPanel>
-                                                    <ItemsPanelTemplate>
-                                                        <UniformGrid Columns="4" />
-                                                    </ItemsPanelTemplate>
-                                                </ItemsControl.ItemsPanel>
-                                                <ItemsControl.ItemTemplate>
-                                                    <DataTemplate>
-                                                        <CheckBox Content="{Binding Name}" IsChecked="{Binding IsInServerList}" />
-                                                    </DataTemplate>
-                                                </ItemsControl.ItemTemplate>
-                                            </ItemsControl>
+                                            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                                                <ItemsControl ItemsSource="{Binding Resolvers}" IsEnabled="True">
+                                                    <ItemsControl.ItemsPanel>
+                                                        <ItemsPanelTemplate>
+                                                            <UniformGrid Columns="3" />
+                                                        </ItemsPanelTemplate>
+                                                    </ItemsControl.ItemsPanel>
+                                                    <ItemsControl.ItemTemplate>
+                                                        <DataTemplate>
+                                                            <Border BorderThickness="0.2" Background="White"
+                                                                    Padding="1">
+                                                                <Grid Cursor="Hand" cal:Message.Attach="[Event MouseLeftButtonDown] = [Action ResolverClicked($dataContext)]"
+                                                                      Background="{Binding IsInServerList, Converter={StaticResource ServerListBackgroundConverter}}" ToolTip="{Binding Stamp.ToolTip}">
+                                                                    <Grid.RowDefinitions>
+                                                                        <RowDefinition />
+                                                                        <RowDefinition />
+                                                                    </Grid.RowDefinitions>
+                                                                    <TextBlock FontWeight="Bold" Foreground="White" Margin="5,2" Grid.Row="0" Text="{Binding Name}"/>
+                                                                    <TextBlock Foreground="White" Margin="5,2" Grid.Row="1" FontSize="10" Text="{Binding Comment}" TextTrimming="WordEllipsis" />
+                                                                </Grid>
+                                                            </Border>
+                                                        </DataTemplate>
+                                                    </ItemsControl.ItemTemplate>
+                                                </ItemsControl>
+                                            </ScrollViewer>
                                         </Grid>
                                     </StackPanel>
                                 </Border>
                             </StackPanel>
-                            </TabItem.Content>
+                        </TabItem.Content>
                     </TabItem>
                     <TabItem Padding="10,2,10,2" Height="39" VerticalAlignment="Top" Tag="advancedSettingsTab"
-                             Header="{lex:Loc Key=tabitem_advanced_settings}" Visibility="{Binding SettingsViewModel.IsAdvancedSettingsTabVisible, Converter={StaticResource BoolToVisibilityCollapsedConverter}}">
+                             Header="{lex:Loc Key=tabitem_advanced_settings}"
+                             Visibility="{Binding SettingsViewModel.IsAdvancedSettingsTabVisible, Converter={StaticResource BoolToVisibilityCollapsedConverter}}">
                         <TabItem.Content>
                             <StackPanel Orientation="Vertical" Margin="0,10,0,0">
                                 <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,14,0,0">
@@ -436,10 +461,11 @@
                                                 <ColumnDefinition Width="*" />
                                             </Grid.ColumnDefinitions>
                                             <iconPacks:PackIconMaterial Grid.Column="0" Grid.Row="0" Height="20"
-                                                                            Width="20" Kind="BookOpenPageVariant" Opacity="0.7"
-                                                                            Foreground="#FF8ab329"
-                                                                            HorizontalAlignment="Left"
-                                                                            VerticalAlignment="Center" />
+                                                                        Width="20" Kind="BookOpenPageVariant"
+                                                                        Opacity="0.7"
+                                                                        Foreground="#FF8ab329"
+                                                                        HorizontalAlignment="Left"
+                                                                        VerticalAlignment="Center" />
                                             <TextBlock Grid.Column="1" Grid.Row="0"
                                                        Text="{lex:Loc Key=advanced_settings_dnscache}"
                                                        TextWrapping="Wrap" VerticalAlignment="Center"
@@ -475,10 +501,10 @@
                                                 <ColumnDefinition Width="*" />
                                             </Grid.ColumnDefinitions>
                                             <iconPacks:PackIconMaterial Grid.Column="0" Grid.Row="0" Height="20"
-                                                                            Width="20" Kind="Eraser" Opacity="0.7"
-                                                                            Foreground="#FF8ab329"
-                                                                            HorizontalAlignment="Left"
-                                                                            VerticalAlignment="Center" />
+                                                                        Width="20" Kind="Eraser" Opacity="0.7"
+                                                                        Foreground="#FF8ab329"
+                                                                        HorizontalAlignment="Left"
+                                                                        VerticalAlignment="Center" />
                                             <TextBlock Grid.Column="1" Grid.Row="0"
                                                        Text="{lex:Loc Key=advanced_settings_uninstall_title}"
                                                        TextWrapping="Wrap" VerticalAlignment="Center"
@@ -500,35 +526,39 @@
                                                                        Width="220"
                                                                        Margin="0" HorizontalAlignment="Center"
                                                                        VerticalAlignment="Center" />
-                                            <Button x:Name="UninstallService" Grid.Column="1" 
+                                            <Button x:Name="UninstallService" Grid.Column="1"
                                                     Width="180" Style="{DynamicResource AccentedSquareButtonStyle}"
-                                                    Margin="0,10,0,0" HorizontalAlignment="Right" 
+                                                    Margin="0,10,0,0" HorizontalAlignment="Right"
                                                     Content="{lex:Loc Key=advanced_settings_uninstall_button}"
-                                                    Cursor="Hand" IsEnabled="{Binding IsUninstallingService, Converter={StaticResource ReverseBoolToEnabledConverter}}">
+                                                    Cursor="Hand"
+                                                    IsEnabled="{Binding IsUninstallingService, Converter={StaticResource ReverseBoolToEnabledConverter}}">
                                             </Button>
                                         </Grid>
                                     </StackPanel>
                                 </Border>
-                                <TextBlock Foreground="DarkOrange" FontWeight="Bold" Margin="0,10,0,0">This is a preview version of Simple DNSCrypt.<LineBreak/>
-                                        This functionality is not yet available. Sorry :).<LineBreak/>
-                                        - cache settings
-                                        - forwarding rules
-                                        - block_ipv6
-                                        - cert_refresh_delay<LineBreak/>
-                                        - timeout
-                                        - force_tcp
-                                        - max_clients
-                                        - syslog settings
-                                    </TextBlock>
+                                <TextBlock Foreground="DarkOrange" FontWeight="Bold" Margin="0,10,0,0">
+                                    This is a preview version of Simple DNSCrypt.<LineBreak />
+                                    This functionality is not yet available. Sorry :).<LineBreak />
+                                    - cache settings
+                                    - forwarding rules
+                                    - block_ipv6
+                                    - cert_refresh_delay<LineBreak />
+                                    - timeout
+                                    - force_tcp
+                                    - max_clients
+                                    - syslog settings
+                                </TextBlock>
 
                             </StackPanel>
                         </TabItem.Content>
                     </TabItem>
                     <TabItem Padding="10,2,10,2" Height="39" VerticalAlignment="Top" Tag="queryLogTab"
-                             Header="{lex:Loc Key=tabitem_querylog}" Visibility="{Binding SettingsViewModel.IsQueryLogTabVisible, Converter={StaticResource BoolToVisibilityCollapsedConverter}}">
+                             Header="{lex:Loc Key=tabitem_querylog}"
+                             Visibility="{Binding SettingsViewModel.IsQueryLogTabVisible, Converter={StaticResource BoolToVisibilityCollapsedConverter}}">
                         <TabItem.Content>
                             <StackPanel Orientation="Vertical" Margin="0,10,0,0">
-                                <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,10,0,0" DataContext="{Binding QueryLogViewModel}">
+                                <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,10,0,0"
+                                        DataContext="{Binding QueryLogViewModel}">
                                     <Border.BorderBrush>
                                         <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile"
                                                       Opacity="0.4">
@@ -662,12 +692,12 @@
                                                         HorizontalAlignment="Right" Margin="0,0,10,0">
                                                 </Button>
                                                 <Button IsEnabled="False"
-                                                    cal:Message.Attach="[Event Click] = [Action BlockQueryLogEntry()]"
-                                                    Width="Auto"
-                                                    Cursor="Hand"
-                                                    Content="{lex:Loc Key=querylog_button_block}"
-                                                    Style="{DynamicResource AccentedSquareButtonStyle}"
-                                                    HorizontalAlignment="Right" Margin="0,0,10,0">
+                                                        cal:Message.Attach="[Event Click] = [Action BlockQueryLogEntry()]"
+                                                        Width="Auto"
+                                                        Cursor="Hand"
+                                                        Content="{lex:Loc Key=querylog_button_block}"
+                                                        Style="{DynamicResource AccentedSquareButtonStyle}"
+                                                        HorizontalAlignment="Right" Margin="0,0,10,0">
                                                 </Button>
                                             </StackPanel>
                                         </Grid>
@@ -676,11 +706,13 @@
                             </StackPanel>
                         </TabItem.Content>
                     </TabItem>
-                    <TabItem Padding="10,2,10,2" Height="39" VerticalAlignment="Top" Tag="domainBlockLogTab" Visibility="{Binding SettingsViewModel.IsDomainBlockLogTabVisible, Converter={StaticResource BoolToVisibilityCollapsedConverter}}"
+                    <TabItem Padding="10,2,10,2" Height="39" VerticalAlignment="Top" Tag="domainBlockLogTab"
+                             Visibility="{Binding SettingsViewModel.IsDomainBlockLogTabVisible, Converter={StaticResource BoolToVisibilityCollapsedConverter}}"
                              Header="{lex:Loc Key=tabitem_domainblocklog}">
                         <TabItem.Content>
                             <StackPanel Orientation="Vertical" Margin="0,10,0,0">
-                                <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,10,0,0" DataContext="{Binding DomainBlockLogViewModel}">
+                                <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,10,0,0"
+                                        DataContext="{Binding DomainBlockLogViewModel}">
                                     <Border.BorderBrush>
                                         <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile"
                                                       Opacity="0.4">
@@ -726,7 +758,8 @@
                                             <ListView SelectedItem="{Binding SelectedDomainBlockLogLine}"
                                                       BorderBrush="#198AB328"
                                                       Foreground="#FF575757" FontSize="12" SelectionMode="Single"
-                                                      ItemsSource="{Binding DomainBlockLogLines, Mode=OneWay}" Margin="10"
+                                                      ItemsSource="{Binding DomainBlockLogLines, Mode=OneWay}"
+                                                      Margin="10"
                                                       VerticalAlignment="Top" Height="450" Background="#198AB328"
                                                       VirtualizingStackPanel.VirtualizationMode="Recycling">
                                                 <ListView.ItemContainerStyle>
@@ -806,12 +839,13 @@
                                             </StackPanel>
                                             <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="0"
                                                         HorizontalAlignment="Right">
-                                                <Button cal:Message.Attach="[Event Click] = [Action ClearDomainBlockLog()]"
-                                                        Width="Auto"
-                                                        Cursor="Hand"
-                                                        Content="{lex:Loc Key=domainblocklog_button_clear}"
-                                                        Style="{DynamicResource AccentedSquareButtonStyle}"
-                                                        HorizontalAlignment="Right" Margin="0,0,10,0">
+                                                <Button
+                                                    cal:Message.Attach="[Event Click] = [Action ClearDomainBlockLog()]"
+                                                    Width="Auto"
+                                                    Cursor="Hand"
+                                                    Content="{lex:Loc Key=domainblocklog_button_clear}"
+                                                    Style="{DynamicResource AccentedSquareButtonStyle}"
+                                                    HorizontalAlignment="Right" Margin="0,0,10,0">
                                                 </Button>
                                             </StackPanel>
                                         </Grid>
@@ -820,11 +854,13 @@
                             </StackPanel>
                         </TabItem.Content>
                     </TabItem>
-                    <TabItem Padding="10,2,10,2" Height="39" VerticalAlignment="Top" Tag="addressBlockLogTab" Visibility="{Binding SettingsViewModel.IsAddressBlockLogTabVisible, Converter={StaticResource BoolToVisibilityCollapsedConverter}}"
+                    <TabItem Padding="10,2,10,2" Height="39" VerticalAlignment="Top" Tag="addressBlockLogTab"
+                             Visibility="{Binding SettingsViewModel.IsAddressBlockLogTabVisible, Converter={StaticResource BoolToVisibilityCollapsedConverter}}"
                              Header="{lex:Loc Key=tabitem_addressblocklog}">
                         <TabItem.Content>
                             <StackPanel Orientation="Vertical" Margin="0,10,0,0">
-                                <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,10,0,0" DataContext="{Binding AddressBlockLogViewModel}">
+                                <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,10,0,0"
+                                        DataContext="{Binding AddressBlockLogViewModel}">
                                     <Border.BorderBrush>
                                         <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile"
                                                       Opacity="0.4">
@@ -843,17 +879,19 @@
                                         </DrawingBrush>
                                     </Border.BorderBrush>
                                     <StackPanel>
- 
+
                                     </StackPanel>
                                 </Border>
                             </StackPanel>
                         </TabItem.Content>
                     </TabItem>
-                    <TabItem Padding="10,2,10,2" Height="39" VerticalAlignment="Top" Tag="domainBlacklistTab" Visibility="{Binding SettingsViewModel.IsDomainBlacklistTabVisible, Converter={StaticResource BoolToVisibilityCollapsedConverter}}"
+                    <TabItem Padding="10,2,10,2" Height="39" VerticalAlignment="Top" Tag="domainBlacklistTab"
+                             Visibility="{Binding SettingsViewModel.IsDomainBlacklistTabVisible, Converter={StaticResource BoolToVisibilityCollapsedConverter}}"
                              Header="{lex:Loc Key=tabitem_domainblacklist}">
                         <TabItem.Content>
                             <StackPanel Orientation="Vertical" Margin="0,10,0,0">
-                                <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,10,0,0" DataContext="{Binding DomainBlacklistViewModel}">
+                                <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,10,0,0"
+                                        DataContext="{Binding DomainBlacklistViewModel}">
                                     <Border.BorderBrush>
                                         <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile"
                                                       Opacity="0.4">
@@ -872,7 +910,9 @@
                                         </DrawingBrush>
                                     </Border.BorderBrush>
                                     <StackPanel>
-                                        <DataGrid BorderBrush="#198AB328" ItemsSource="{Binding DomainBlacklist}" AutoGenerateColumns="False"  SelectedItem="{Binding Path=SelectedDomainBlacklistEntry}">
+                                        <DataGrid BorderBrush="#198AB328" ItemsSource="{Binding DomainBlacklist}"
+                                                  AutoGenerateColumns="False"
+                                                  SelectedItem="{Binding Path=SelectedDomainBlacklistEntry}">
                                             <DataGrid.Columns>
                                                 <DataGridTemplateColumn Header="Rule" Width="200">
                                                     <DataGridTemplateColumn.CellTemplate>
@@ -888,11 +928,13 @@
                             </StackPanel>
                         </TabItem.Content>
                     </TabItem>
-                    <TabItem Padding="10,2,10,2" Height="39" VerticalAlignment="Top" Tag="addressBlacklistTab" Visibility="{Binding SettingsViewModel.IsAddressBlacklistTabVisible, Converter={StaticResource BoolToVisibilityCollapsedConverter}}"
+                    <TabItem Padding="10,2,10,2" Height="39" VerticalAlignment="Top" Tag="addressBlacklistTab"
+                             Visibility="{Binding SettingsViewModel.IsAddressBlacklistTabVisible, Converter={StaticResource BoolToVisibilityCollapsedConverter}}"
                              Header="{lex:Loc Key=tabitem_addressblacklist}">
                         <TabItem.Content>
                             <StackPanel Orientation="Vertical" Margin="0,10,0,0">
-                                <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,10,0,0" DataContext="{Binding AddressBlacklistViewModel}">
+                                <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,10,0,0"
+                                        DataContext="{Binding AddressBlacklistViewModel}">
                                     <Border.BorderBrush>
                                         <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile"
                                                       Opacity="0.4">
@@ -911,7 +953,7 @@
                                         </DrawingBrush>
                                     </Border.BorderBrush>
                                     <StackPanel>
-                                       
+
                                     </StackPanel>
                                 </Border>
                             </StackPanel>

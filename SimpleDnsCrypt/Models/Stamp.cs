@@ -93,7 +93,6 @@ namespace SimpleDnsCrypt.Models
 						DnsSec = true;
 						break;
 				}
-
 			}
 			catch (Exception)
 			{
@@ -110,5 +109,7 @@ namespace SimpleDnsCrypt.Models
 		public string Address { get; set; }
 		public string PublicKey { get; set; }
 		public string ProviderName { get; set; }
+
+		public string ToolTip => $"{ProviderName}\n{Address}";
 	}
 }
