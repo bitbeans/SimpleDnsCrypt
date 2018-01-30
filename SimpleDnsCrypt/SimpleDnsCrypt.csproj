@@ -455,8 +455,7 @@
     <TargetFrameworkSDKToolsDirectory Condition=" '$(PlatformTarget)' == 'x64'">$(TargetFrameworkSDKToolsDirectory)$(PlatformTarget)\</TargetFrameworkSDKToolsDirectory>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>copy "$(ProjectDir)DNS$(PlatformName)\*" "$(ProjectDir)$(OutDir)\dnscrypt-proxy\"</PostBuildEvent>
   </PropertyGroup>
   <Import Project="..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets" Condition="Exists('..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets')" />
   <Import Project="..\packages\Fody.2.3.23\build\Fody.targets" Condition="Exists('..\packages\Fody.2.3.23\build\Fody.targets')" />
