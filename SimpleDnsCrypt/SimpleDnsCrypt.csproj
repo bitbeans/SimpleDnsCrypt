@@ -157,6 +157,8 @@
     <Compile Include="AppBootstrapper.cs" />
     <Compile Include="AppWindowManager.cs" />
     <Compile Include="Config\Global.cs" />
+    <Compile Include="Converters\BoolToForegroundConverter.cs" />
+    <Compile Include="Converters\BoolToTextConverter.cs" />
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
     <Compile Include="Converters\BoolToVisibilityCollapsedConverter.cs" />
     <Compile Include="Converters\IntegerBoolToVisibilityConverter.cs" />
@@ -394,7 +396,7 @@
     </EmbeddedResource>
     <None Include="Properties\app.manifest" />
     <None Include="dnscrypt-proxy\dnscrypt-proxy.toml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="dnscrypt-proxy\LICENSE">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -453,7 +455,8 @@
     <TargetFrameworkSDKToolsDirectory Condition=" '$(PlatformTarget)' == 'x64'">$(TargetFrameworkSDKToolsDirectory)$(PlatformTarget)\</TargetFrameworkSDKToolsDirectory>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>copy "$(ProjectDir)DNS$(PlatformName)\*" "$(ProjectDir)$(OutDir)\dnscrypt-proxy\"</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <Import Project="..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets" Condition="Exists('..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets')" />
   <Import Project="..\packages\Fody.2.3.23\build\Fody.targets" Condition="Exists('..\packages\Fody.2.3.23\build\Fody.targets')" />

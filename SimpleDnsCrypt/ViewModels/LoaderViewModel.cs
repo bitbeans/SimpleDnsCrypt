@@ -104,7 +104,7 @@ namespace SimpleDnsCrypt.ViewModels
 				DnscryptProxyConfigurationManager.DnscryptProxyConfiguration.listen_addresses.ToList());
 			_mainViewModel.LocalNetworkInterfaces = new BindableCollection<LocalNetworkInterface>();
 			_mainViewModel.LocalNetworkInterfaces.AddRange(localNetworkInterfaces);
-
+			_mainViewModel.Initialize();
 			ProgressText = LocalizationEx.GetUiString("loader_starting", Thread.CurrentThread.CurrentCulture);
 			Execute.OnUIThread(() => _windowManager.ShowWindow(_mainViewModel));
 			TryClose(true);

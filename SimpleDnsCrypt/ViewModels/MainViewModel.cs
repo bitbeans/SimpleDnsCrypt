@@ -78,14 +78,6 @@ namespace SimpleDnsCrypt.ViewModels
 			_isSavingConfiguration = false;
 			_isWorkingOnService = false;
 
-			if (DnsCryptProxyManager.IsDnsCryptProxyInstalled())
-			{
-				if (DnsCryptProxyManager.IsDnsCryptProxyRunning())
-				{
-					_isResolverRunning = true;
-				}
-			}
-
 			_settingsViewModel = new SettingsViewModel(_windowManager, _events)
 			{
 				WindowTitle = LocalizationEx.GetUiString("settings", Thread.CurrentThread.CurrentCulture)
@@ -98,9 +90,28 @@ namespace SimpleDnsCrypt.ViewModels
 			_addressBlacklistViewModel = new AddressBlacklistViewModel(_windowManager, _events);
 
 			_resolvers = new BindableCollection<Resolver>();
+			
 		}
 
-		
+		public void Initialize()
+		{
+			if (DnsCryptProxyManager.IsDnsCryptProxyInstalled())
+			{
+				if (DnsCryptProxyManager.IsDnsCryptProxyRunning())
+				{
+					_isResolverRunning = true;
+				}
+			}
+
+			if (DnscryptProxyConfiguration != null && (DnscryptProxyConfiguration.server_names == null || DnscryptProxyConfiguration.server_names.Count == 0))
+			{
+				_isDnsCryptAutomaticModeEnabled = true;
+			}
+			else
+			{
+				_isDnsCryptAutomaticModeEnabled = false;
+			}
+		}
 
 
 		public bool IsDnsCryptAutomaticModeEnabled
@@ -108,7 +119,15 @@ namespace SimpleDnsCrypt.ViewModels
 			get => _isDnsCryptAutomaticModeEnabled;
 			set
 			{
+				if (value.Equals(_isDnsCryptAutomaticModeEnabled)) return;
 				_isDnsCryptAutomaticModeEnabled = value;
+
+				if (_isDnsCryptAutomaticModeEnabled)
+				{
+					DnscryptProxyConfiguration.server_names = null;
+					SaveDnsCryptConfiguration();
+					ReadStamp();
+				}
 				NotifyOfPropertyChange(() => IsDnsCryptAutomaticModeEnabled);
 			}
 		}
@@ -573,45 +592,46 @@ namespace SimpleDnsCrypt.ViewModels
 
 		#region Resolvers
 
+		public void SaveLocalServers()
+		{
+			if (DnscryptProxyConfiguration?.server_names?.Count > 0)
+			{
+				IsDnsCryptAutomaticModeEnabled = false;
+				SaveDnsCryptConfiguration();
+			}
+		}
 
 		public void ResolverClicked(Resolver resolver)
 		{
-			if (resolver != null)
+			if (resolver == null) return;
+			if (resolver.IsInServerList)
 			{
-				if (resolver.IsInServerList)
+				if (DnscryptProxyConfiguration.server_names.Contains(resolver.Name))
 				{
-					if (DnscryptProxyConfiguration.server_names.Contains(resolver.Name))
-					{
-						DnscryptProxyConfiguration.server_names.Remove(resolver.Name);
-					}
-					resolver.IsInServerList = false;
+					DnscryptProxyConfiguration.server_names.Remove(resolver.Name);
 				}
-				else
+				resolver.IsInServerList = false;
+			}
+			else
+			{
+				if (DnscryptProxyConfiguration.server_names == null)
 				{
-					if (DnscryptProxyConfiguration.server_names == null)
-					{
-						DnscryptProxyConfiguration.server_names = new ObservableCollection<string>();
-					}
-					if (!DnscryptProxyConfiguration.server_names.Contains(resolver.Name))
-					{
-						DnscryptProxyConfiguration.server_names.Add(resolver.Name);
-					}
-					resolver.IsInServerList = true;
+					DnscryptProxyConfiguration.server_names = new ObservableCollection<string>();
 				}
+				if (!DnscryptProxyConfiguration.server_names.Contains(resolver.Name))
+				{
+					DnscryptProxyConfiguration.server_names.Add(resolver.Name);
+				}
+				resolver.IsInServerList = true;
 			}
 		}
 
 		private void ReadStamp()
 		{
 			var serverNames = new List<string>();
-			if (DnscryptProxyConfiguration.server_names == null || DnscryptProxyConfiguration.server_names.Count == 0)
-			{
-				IsDnsCryptAutomaticModeEnabled = true;
-			}
-			else
+			if (DnscryptProxyConfiguration.server_names != null && DnscryptProxyConfiguration.server_names.Count > 0)
 			{
 				serverNames = DnscryptProxyConfiguration.server_names.ToList();
-				IsDnsCryptAutomaticModeEnabled = false;
 			}
 
 			if (DnscryptProxyConfiguration?.sources == null) return;

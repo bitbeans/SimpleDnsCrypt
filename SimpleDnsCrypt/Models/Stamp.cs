@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Text;
 using Helper;
 using SimpleDnsCrypt.Extensions;
@@ -77,22 +78,11 @@ namespace SimpleDnsCrypt.Models
 					providerNameDescriptionLength,
 					providerNameLength));
 
-				var props = BitConverter.ToUInt64(Properties, 0);
-				switch (props)
-				{
-					case 0:
-						NoLog = false;
-						DnsSec = false;
-						break;
-					case 2:
-						NoLog = true;
-						DnsSec = false;
-						break;
-					case 3:
-						NoLog = true;
-						DnsSec = true;
-						break;
-				}
+				//Bit 0 means that DNSSEC is supported, bit 1 means nolog, bit 2 is reserved for nofilter.
+				var propertyBity = new BitArray(Properties);
+				DnsSec = propertyBity[0];
+				NoLog = propertyBity[1];
+				NoFilter = propertyBity[2];
 			}
 			catch (Exception)
 			{
@@ -101,6 +91,7 @@ namespace SimpleDnsCrypt.Models
 
 		public bool NoLog { get; set; }
 		public bool DnsSec { get; set; }
+		public bool NoFilter { get; set; }
 		public bool Ipv6 { get; set; }
 
 		public string Prefix { get; set; }
