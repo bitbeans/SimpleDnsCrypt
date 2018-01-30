@@ -35,7 +35,7 @@ namespace SimpleDnsCrypt.Models
 				const int publicKeyDescriptionLength = 1;
 				const int providerNameDescriptionLength = 1;
 				const int propertiesLength = 8;
-
+				Encoded = stamp;
 				Type = (StampProtocolType) Enum.ToObject(typeof(StampProtocolType), stampBinary[0]);
 				Properties = ArrayHelper.SubArray(stampBinary, typeDescriptionLength, propertiesLength);
 				var addressLength =
@@ -111,5 +111,7 @@ namespace SimpleDnsCrypt.Models
 		public string ProviderName { get; set; }
 
 		public string ToolTip => $"{ProviderName}\n{Address}";
+
+		public string Encoded { get; set; }
 	}
 }

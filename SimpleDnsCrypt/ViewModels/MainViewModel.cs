@@ -580,10 +580,22 @@ namespace SimpleDnsCrypt.ViewModels
 			{
 				if (resolver.IsInServerList)
 				{
+					if (DnscryptProxyConfiguration.server_names.Contains(resolver.Name))
+					{
+						DnscryptProxyConfiguration.server_names.Remove(resolver.Name);
+					}
 					resolver.IsInServerList = false;
 				}
 				else
 				{
+					if (DnscryptProxyConfiguration.server_names == null)
+					{
+						DnscryptProxyConfiguration.server_names = new ObservableCollection<string>();
+					}
+					if (!DnscryptProxyConfiguration.server_names.Contains(resolver.Name))
+					{
+						DnscryptProxyConfiguration.server_names.Add(resolver.Name);
+					}
 					resolver.IsInServerList = true;
 				}
 			}
@@ -591,9 +603,15 @@ namespace SimpleDnsCrypt.ViewModels
 
 		private void ReadStamp()
 		{
-			if (DnscryptProxyConfiguration.servers == null || DnscryptProxyConfiguration.servers.Count == 0)
+			var serverNames = new List<string>();
+			if (DnscryptProxyConfiguration.server_names == null || DnscryptProxyConfiguration.server_names.Count == 0)
 			{
 				IsDnsCryptAutomaticModeEnabled = true;
+			}
+			else
+			{
+				serverNames = DnscryptProxyConfiguration.server_names.ToList();
+				IsDnsCryptAutomaticModeEnabled = false;
 			}
 
 			if (DnscryptProxyConfiguration?.sources == null) return;
@@ -645,15 +663,15 @@ namespace SimpleDnsCrypt.ViewModels
 						}
 					}
 
-					if (server.Name.Contains("d0wn"))
+					if (serverNames.Contains(server.Name))
 					{
 						server.IsInServerList = true;
 					}
+
 					_resolvers.Add(server);
 					
 				}
 			}
-
 		}
 
 		#endregion
