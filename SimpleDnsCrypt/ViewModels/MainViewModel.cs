@@ -124,10 +124,20 @@ namespace SimpleDnsCrypt.ViewModels
 
 				if (_isDnsCryptAutomaticModeEnabled)
 				{
+
 					DnscryptProxyConfiguration.server_names = null;
 					SaveDnsCryptConfiguration();
 					ReadStamp();
 				}
+				else
+				{
+					if (DnscryptProxyConfiguration.server_names == null || DnscryptProxyConfiguration.server_names.Count == 0)
+					{
+						_isDnsCryptAutomaticModeEnabled = true;
+					}
+				}
+
+
 				NotifyOfPropertyChange(() => IsDnsCryptAutomaticModeEnabled);
 			}
 		}

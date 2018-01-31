@@ -162,6 +162,8 @@
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
     <Compile Include="Converters\BoolToVisibilityCollapsedConverter.cs" />
     <Compile Include="Converters\IntegerBoolToVisibilityConverter.cs" />
+    <Compile Include="Converters\IntegerToBoolConverter.cs" />
+    <Compile Include="Converters\IntegerToVisibilityConverter.cs" />
     <Compile Include="Converters\InterfaceTypeToIconConverter.cs" />
     <Compile Include="Converters\InUseToBackgroundConverter.cs" />
     <Compile Include="Converters\LicenseLinkToVisibilityConverter.cs" />

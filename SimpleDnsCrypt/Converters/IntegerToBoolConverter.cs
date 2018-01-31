@@ -4,19 +4,21 @@ using System.Windows.Data;
 
 namespace SimpleDnsCrypt.Converters
 {
-	public class ServerListBackgroundConverter : IValueConverter
+	public class IntegerToBoolConverter : IValueConverter
 	{
 		public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
 		{
-			if ((bool)value)
+			try
 			{
-				return "#FF8AB329";
+				return (int)value > 0;
 			}
-
-			return "#FFD39797";
+			catch
+			{
+				return false;
+			}
 		}
 
-		public object ConvertBack(object value, Type targetTypes, object parameter, CultureInfo culture)
+		public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
 		{
 			throw new NotImplementedException();
 		}

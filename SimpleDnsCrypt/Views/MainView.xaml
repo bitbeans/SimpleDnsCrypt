@@ -29,6 +29,8 @@
             <converters:ServerListBackgroundConverter x:Key="ServerListBackgroundConverter" />
             <converters:BoolToTextConverter x:Key="BoolToTextConverter" />
             <converters:BoolToForegroundConverter x:Key="BoolToForegroundConverter" />
+            <converters:IntegerToBoolConverter x:Key="IntegerToBoolConverter" />
+            <converters:IntegerToVisibilityConverter x:Key="IntegerToVisibilityConverter" />
         </ResourceDictionary>
     </UserControl.Resources>
     <ScrollViewer VerticalScrollBarVisibility="Auto">
@@ -351,7 +353,7 @@
                                         </Grid>
                                         <TextBlock Foreground="#FF575757" Margin="0,5,0,0"
                                                    Text="{lex:Loc Key=resolvers_dnscrypt_mode_description}" />
-                                        <controls:ToggleSwitch Foreground="#FF575757"
+                                        <controls:ToggleSwitch Foreground="#FF575757" Cursor="Hand"
                                                                IsChecked="{Binding IsDnsCryptAutomaticModeEnabled}"
                                                                OnLabel="{lex:Loc Key=enabled}"
                                                                OffLabel="{lex:Loc Key=disabled}"
@@ -396,7 +398,7 @@
                                                        Opacity="0.7" Margin="5,0,0,3" FontWeight="Bold">
                                             </TextBlock>
                                             <Button x:Name="SaveLocalServers" Grid.Column="2" Grid.Row="0"
-                                                    Cursor="Hand" 
+                                                    Cursor="Hand" IsEnabled="{Binding Resolvers.Count, Converter={StaticResource IntegerToBoolConverter}}"
                                                     Content="{lex:Loc Key=default_settings_apply_settings}"
                                                     Width="Auto" HorizontalAlignment="Right"
                                                     Style="{DynamicResource AccentedSquareButtonStyle}" />
@@ -469,6 +471,8 @@
                                                     </ItemsControl.ItemTemplate>
                                                 </ItemsControl>
                                             </ScrollViewer>
+                                            <TextBlock Foreground="#FF575757" Text="No resolvers have been loaded yet" Visibility="{Binding Resolvers.Count, Converter={StaticResource IntegerToVisibilityConverter}}" 
+                                                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                         </Grid>
                                     </StackPanel>
                                 </Border>
