@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.ServiceProcess;
 using System.Text;
 using System.Threading;
+using Newtonsoft.Json;
 using SimpleDnsCrypt.Config;
 using SimpleDnsCrypt.Models;
 
@@ -146,133 +148,139 @@ namespace SimpleDnsCrypt.Helper
 		}
 
 
+
+		public static string GetVersion()
+		{
+			var result = ExecuteWithArguments("-version");
+			return result.Success ? result.StandardOutput.Replace(Environment.NewLine, "") : string.Empty;
+		}
+
 		/// <summary>
-		///     Uninstall the dnscrypt-proxy service.
+		/// Get the list of available resolvers for the enabled filters.
 		/// </summary>
-		/// <returns>A ProcessResult.</returns>
-		public static ProcessResult Uninstall()
+		/// <returns></returns>
+		public static List<AvailableResolver> GetAvailableResolvers()
+		{
+			var resolvers = new List<AvailableResolver>();
+			var result = ExecuteWithArguments("-list -json");
+			if (!result.Success) return resolvers;
+			if (string.IsNullOrEmpty(result.StandardOutput)) return resolvers;
+			try
+			{
+				var res = JsonConvert.DeserializeObject<List<AvailableResolver>>(result.StandardOutput);
+				if (res.Count > 0)
+				{
+					resolvers = res;
+				}
+			}
+			catch (Exception)
+			{
+
+			}
+			return resolvers;
+		}
+
+		/// <summary>
+		/// Install the dnscrypt-proxy service.
+		/// </summary>
+		/// <returns></returns>
+		public static bool Install()
+		{
+			var result = ExecuteWithArguments("-service install");
+			return result.Success;
+		}
+
+		/// <summary>
+		/// Uninstall the dnscrypt-proxy service.
+		/// </summary>
+		/// <returns></returns>
+		public static bool Uninstall()
+		{
+			var result = ExecuteWithArguments("-service uninstall");
+			return result.Success;
+		}
+
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="arguments"></param>
+		/// <returns></returns>
+		private static ProcessResult ExecuteWithArguments(string arguments)
 		{
 			var processResult = new ProcessResult();
 			try
 			{
-				// we do not check if the proxy is installed,
-				// just let them clear the registry.
+				var dnsCryptProxyExecutablePath = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder,
+					Global.DnsCryptProxyExecutableName);
+				if (!File.Exists(dnsCryptProxyExecutablePath))
+				{
+					throw new Exception($"Missing {dnsCryptProxyExecutablePath}");
+				}
+
 				const int timeout = 9000;
-				const string arguments = "-service uninstall";
 				using (var process = new Process())
 				{
-					process.StartInfo.FileName = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, Global.DnsCryptProxyExecutableName);
+					process.StartInfo.FileName = dnsCryptProxyExecutablePath;
 					process.StartInfo.Arguments = arguments;
 					process.StartInfo.UseShellExecute = false;
 					process.StartInfo.CreateNoWindow = true;
 					process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
 					process.StartInfo.RedirectStandardOutput = true;
 					process.StartInfo.RedirectStandardError = true;
-					process.Start();
-					if (process.WaitForExit(timeout))
+
+					var output = new StringBuilder();
+					var error = new StringBuilder();
+
+					using (var outputWaitHandle = new AutoResetEvent(false))
+					using (var errorWaitHandle = new AutoResetEvent(false))
 					{
-						if (process.ExitCode == 0)
+						process.OutputDataReceived += (sender, e) =>
 						{
-							processResult.Success = true;
-						}
-						else
-						{
-							processResult.Success = false;
-						}
-					}
-					else
-					{
-						// Timed out.
-						throw new Exception("Timed out");
-					}
-				}
-			}
-			catch (Exception exception)
-			{
-				processResult.StandardError = exception.Message;
-				processResult.Success = false;
-			}
-
-			return processResult;
-		}
-
-		/// <summary>
-		///     Install the dnscrypt-proxy service.
-		/// </summary>
-		/// <returns>A ProcessResult.</returns>
-		public static ProcessResult Install()
-		{
-			var processResult = new ProcessResult();
-			try
-			{
-				if (!IsDnsCryptProxyInstalled())
-				{
-					const int timeout = 9000;
-					const string arguments = "-service install";
-
-					using (var process = new Process())
-					{
-						process.StartInfo.FileName = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, Global.DnsCryptProxyExecutableName);
-						process.StartInfo.Arguments = arguments;
-						process.StartInfo.UseShellExecute = false;
-						process.StartInfo.CreateNoWindow = true;
-						process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-						process.StartInfo.RedirectStandardOutput = true;
-						process.StartInfo.RedirectStandardError = true;
-
-						var output = new StringBuilder();
-						var error = new StringBuilder();
-
-						using (var outputWaitHandle = new AutoResetEvent(false))
-						using (var errorWaitHandle = new AutoResetEvent(false))
-						{
-							process.OutputDataReceived += (sender, e) =>
+							if (e.Data == null)
 							{
-								if (e.Data == null)
-								{
-									outputWaitHandle.Set();
-								}
-								else
-								{
-									output.AppendLine(e.Data);
-								}
-							};
-							process.ErrorDataReceived += (sender, e) =>
-							{
-								if (e.Data == null)
-								{
-									errorWaitHandle.Set();
-								}
-								else
-								{
-									error.AppendLine(e.Data);
-								}
-							};
-							process.Start();
-							process.BeginOutputReadLine();
-							process.BeginErrorReadLine();
-							if (process.WaitForExit(timeout) &&
-								outputWaitHandle.WaitOne(timeout) &&
-								errorWaitHandle.WaitOne(timeout))
-							{
-								if (process.ExitCode == 0)
-								{
-									processResult.StandardOutput = output.ToString();
-									processResult.StandardError = error.ToString();
-									processResult.Success = true;
-								}
-								else
-								{
-									processResult.StandardOutput = output.ToString();
-									processResult.StandardError = error.ToString();
-									processResult.Success = false;
-								}
+								outputWaitHandle.Set();
 							}
 							else
 							{
-								// Timed out.
-								throw new Exception("Timed out");
+								output.AppendLine(e.Data);
 							}
+						};
+						process.ErrorDataReceived += (sender, e) =>
+						{
+							if (e.Data == null)
+							{
+								errorWaitHandle.Set();
+							}
+							else
+							{
+								error.AppendLine(e.Data);
+							}
+						};
+						process.Start();
+						process.BeginOutputReadLine();
+						process.BeginErrorReadLine();
+						if (process.WaitForExit(timeout) &&
+							outputWaitHandle.WaitOne(timeout) &&
+							errorWaitHandle.WaitOne(timeout))
+						{
+							if (process.ExitCode == 0)
+							{
+								processResult.StandardOutput = output.ToString();
+								processResult.StandardError = error.ToString();
+								processResult.Success = true;
+							}
+							else
+							{
+								processResult.StandardOutput = output.ToString();
+								processResult.StandardError = error.ToString();
+								processResult.Success = false;
+							}
+						}
+						else
+						{
+							// Timed out.
+							throw new Exception("Timed out");
 						}
 					}
 				}

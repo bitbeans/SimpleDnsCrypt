@@ -41,7 +41,7 @@ namespace SimpleDnsCrypt.ViewModels
 		private BindableCollection<LocalNetworkInterface> _localNetworkInterfaces =
 			new BindableCollection<LocalNetworkInterface>();
 
-		private BindableCollection<Resolver> _resolvers;
+		private BindableCollection<AvailableResolver> _resolvers;
 		public Tabs SelectedTab { get; set; }
 
 		private bool _isWorkingOnService;
@@ -73,7 +73,7 @@ namespace SimpleDnsCrypt.ViewModels
 			_windowManager = windowManager;
 			_events = events;
 			_events.Subscribe(this);
-			_windowTitle = $"{Global.ApplicationName} {VersionHelper.PublishVersion} {VersionHelper.PublishBuild}";
+			_windowTitle = $"{Global.ApplicationName} {VersionHelper.PublishVersion} {VersionHelper.PublishBuild} [dnscrypt-proxy {DnsCryptProxyManager.GetVersion()}]";
 			SelectedTab = Tabs.MainTab;
 			_isSavingConfiguration = false;
 			_isWorkingOnService = false;
@@ -89,7 +89,7 @@ namespace SimpleDnsCrypt.ViewModels
 			_addressBlockLogViewModel = new AddressBlockLogViewModel(_windowManager, _events);
 			_addressBlacklistViewModel = new AddressBlacklistViewModel(_windowManager, _events);
 
-			_resolvers = new BindableCollection<Resolver>();
+			_resolvers = new BindableCollection<AvailableResolver>();
 			
 		}
 
@@ -127,7 +127,7 @@ namespace SimpleDnsCrypt.ViewModels
 
 					DnscryptProxyConfiguration.server_names = null;
 					SaveDnsCryptConfiguration();
-					ReadStamp();
+					GetAvailableResolvers();
 				}
 				else
 				{
@@ -315,7 +315,7 @@ namespace SimpleDnsCrypt.ViewModels
 						break;
 					case "resolverTab":
 						SelectedTab = Tabs.ResolverTab;
-						ReadStamp();
+						GetAvailableResolvers();
 						break;
 					case "advancedSettingsTab":
 						SelectedTab = Tabs.AdvancedSettingsTab;
@@ -482,6 +482,9 @@ namespace SimpleDnsCrypt.ViewModels
 				else
 				{
 					//install and start the service
+
+
+					var x = DnsCryptProxyManager.GetAvailableResolvers();
 					await Task.Run(() => DnsCryptProxyManager.Install()).ConfigureAwait(false);
 					await Task.Delay(Global.ServiceStartTime).ConfigureAwait(false);
 					await Task.Run(() => { DnsCryptProxyManager.Start(); }).ConfigureAwait(false);
@@ -519,7 +522,7 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 		}
 
-		public BindableCollection<Resolver> Resolvers
+		public BindableCollection<AvailableResolver> Resolvers
 		{
 			get => _resolvers;
 			set
@@ -611,7 +614,7 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 		}
 
-		public void ResolverClicked(Resolver resolver)
+		public void ResolverClicked(AvailableResolver resolver)
 		{
 			if (resolver == null) return;
 			if (resolver.IsInServerList)
@@ -636,6 +639,14 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 		}
 
+		private void GetAvailableResolvers()
+		{
+			_resolvers.Clear();
+			var resolvers = DnsCryptProxyManager.GetAvailableResolvers();
+			_resolvers.AddRange(resolvers);
+		}
+
+		/*
 		private void ReadStamp()
 		{
 			var serverNames = new List<string>();
@@ -702,7 +713,7 @@ namespace SimpleDnsCrypt.ViewModels
 					
 				}
 			}
-		}
+		}*/
 
 		#endregion
 

@@ -453,7 +453,7 @@
                                                                 <Grid Cursor="Hand"
                                                                       cal:Message.Attach="[Event MouseLeftButtonDown] = [Action ResolverClicked($dataContext)]"
                                                                       Background="{Binding IsInServerList, Converter={StaticResource ServerListBackgroundConverter}}"
-                                                                      ToolTip="{Binding Stamp.ToolTip}">
+                                                                      ToolTip="{Binding ToolTip}">
                                                                     <Grid.RowDefinitions>
                                                                         <RowDefinition />
                                                                         <RowDefinition />
@@ -463,7 +463,7 @@
                                                                                Text="{Binding Name}" />
                                                                     <TextBlock Foreground="White" Margin="5,2"
                                                                                Grid.Row="1" FontSize="10"
-                                                                               Text="{Binding Comment}"
+                                                                               Text="{Binding Description}"
                                                                                TextTrimming="WordEllipsis" />
                                                                 </Grid>
                                                             </Border>

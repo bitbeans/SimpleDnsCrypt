@@ -112,6 +112,9 @@
     <Reference Include="Nett, Version=0.8.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Nett.0.8.0\lib\Net40\Nett.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Sodium, Version=0.10.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\libsodium-net.0.10.0\lib\Net40\Sodium.dll</HintPath>
     </Reference>
@@ -174,6 +177,7 @@
     <Compile Include="Converters\ServerListBackgroundConverter.cs" />
     <Compile Include="Converters\TextLengthToFontSizeConverter.cs" />
     <Compile Include="Extensions\Base64UrlExtensions.cs" />
+    <Compile Include="Extensions\ColorConverterExtensions.cs" />
     <Compile Include="Extensions\WindowManagerExtensions.cs" />
     <Compile Include="Helper\ApplicationUpdater.cs" />
     <Compile Include="Helper\AuthenticodeTools.cs" />
@@ -185,6 +189,7 @@
     <Compile Include="Helper\VersionHelper.cs" />
     <Compile Include="IShell.cs" />
     <Compile Include="Models\AddressBlockLogLine.cs" />
+    <Compile Include="Models\AvailableResolver.cs" />
     <Compile Include="Models\BlacklistRule.cs" />
     <Compile Include="Models\BoxType.cs" />
     <Compile Include="Models\DomainBlockLogLine.cs" />
@@ -197,7 +202,6 @@
     <Compile Include="Models\QueryLogLine.cs" />
     <Compile Include="Models\QueryLogLineType.cs" />
     <Compile Include="Models\RemoteUpdate.cs" />
-    <Compile Include="Models\Resolver.cs" />
     <Compile Include="Models\Stamp.cs" />
     <Compile Include="Resources\Translation.Designer.cs">
       <AutoGen>True</AutoGen>

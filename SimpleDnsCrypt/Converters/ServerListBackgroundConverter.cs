@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Drawing;
 using System.Globalization;
 using System.Windows.Data;
+using SimpleDnsCrypt.Extensions;
 
 namespace SimpleDnsCrypt.Converters
 {
@@ -12,8 +14,7 @@ namespace SimpleDnsCrypt.Converters
 			{
 				return "#FF8AB329";
 			}
-
-			return "#FFD39797";
+			return Color.DarkGray.ToHexString();
 		}
 
 		public object ConvertBack(object value, Type targetTypes, object parameter, CultureInfo culture)
