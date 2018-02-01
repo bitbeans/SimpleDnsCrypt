@@ -5,6 +5,7 @@
                       xmlns:lex="http://wpflocalizeextension.codeplex.com"
                       xmlns:cal="http://www.caliburnproject.org"
                       xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+                      xmlns:converters="clr-namespace:SimpleDnsCrypt.Converters"
                       Title="{Binding WindowTitle}" MinWidth="810" Width="825" MinHeight="360"
                       SizeToContent="WidthAndHeight"
                       GlowBrush="{DynamicResource AccentColorBrush}"
@@ -12,8 +13,16 @@
                       WindowStartupLocation="CenterScreen" TitleCharacterCasing="Normal" Topmost="False"
                       ShowMaxRestoreButton="False" ResizeMode="CanResizeWithGrip" ShowInTaskbar="True"
                       ShowMinButton="True" TitleForeground="White">
+    <controls:MetroWindow.Resources>
+        <ResourceDictionary>
+            <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+        </ResourceDictionary>
+    </controls:MetroWindow.Resources>
     <controls:MetroWindow.RightWindowCommands>
         <controls:WindowCommands>
+            <controls:MetroProgressBar Width="100" Height="20" IsIndeterminate="True" Orientation="Horizontal" 
+                                       VerticalAlignment="Center" Margin="0,0,20,0" Foreground="White"
+                                       Visibility="{Binding IsWorkingOnService, Converter={StaticResource BoolToVisibilityConverter}}"/>
             <Button Cursor="Hand" x:Name="About" cal:Message.Attach="About" ToolTip="{lex:Loc Key=about}">
                 <iconPacks:PackIconMaterial Kind="Emoticon"/>
             </Button>
