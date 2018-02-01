@@ -121,10 +121,8 @@ namespace SimpleDnsCrypt.ViewModels
 			{
 				if (value.Equals(_isDnsCryptAutomaticModeEnabled)) return;
 				_isDnsCryptAutomaticModeEnabled = value;
-
 				if (_isDnsCryptAutomaticModeEnabled)
 				{
-
 					DnscryptProxyConfiguration.server_names = null;
 					SaveDnsCryptConfiguration();
 					LoadResolvers();
@@ -135,6 +133,7 @@ namespace SimpleDnsCrypt.ViewModels
 					if (DnscryptProxyConfiguration.server_names == null || DnscryptProxyConfiguration.server_names.Count == 0)
 					{
 						_isDnsCryptAutomaticModeEnabled = true;
+						//TODO: translate
 						_windowManager.ShowMetroMessageBox("At least one server must be selected. Otherwise, dnscrypt-proxy uses all servers corresponding to the selected filters.", "No server selected",
 							MessageBoxButton.OK, BoxType.Warning);
 					}
@@ -601,6 +600,7 @@ namespace SimpleDnsCrypt.ViewModels
 				}
 				else
 				{
+					//TODO: translate
 					_windowManager.ShowMetroMessageBox("You should start the DnsCrypt service first!", "Service not running",
 						MessageBoxButton.OK, BoxType.Warning);
 				}
@@ -618,10 +618,10 @@ namespace SimpleDnsCrypt.ViewModels
 			{
 				IsDnsCryptAutomaticModeEnabled = false;
 				SaveDnsCryptConfiguration();
-				HandleService();
 			}
 			else
 			{
+				//TODO: translate
 				_windowManager.ShowMetroMessageBox("At least one server must be selected. Otherwise, dnscrypt-proxy uses all servers corresponding to the selected filters.", "No server selected",
 					MessageBoxButton.OK, BoxType.Warning);
 			}
@@ -632,6 +632,7 @@ namespace SimpleDnsCrypt.ViewModels
 			if (resolver == null) return;
 			if (resolver.IsInServerList)
 			{
+				if (DnscryptProxyConfiguration.server_names == null) return;
 				if (DnscryptProxyConfiguration.server_names.Contains(resolver.Name))
 				{
 					DnscryptProxyConfiguration.server_names.Remove(resolver.Name);
@@ -673,6 +674,14 @@ namespace SimpleDnsCrypt.ViewModels
 				if (first != null) first.IsInServerList = true;
 			}
 			_resolvers.Clear();
+
+			if (_isDnsCryptAutomaticModeEnabled)
+			{
+				foreach (var resolver in allResolvers)
+				{
+					resolver.IsInServerList = false;
+				}
+			}
 			_resolvers.AddRange(allResolvers);
 		}
 
