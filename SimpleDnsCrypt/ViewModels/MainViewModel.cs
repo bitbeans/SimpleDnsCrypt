@@ -127,7 +127,7 @@ namespace SimpleDnsCrypt.ViewModels
 
 					DnscryptProxyConfiguration.server_names = null;
 					SaveDnsCryptConfiguration();
-					GetAvailableResolvers();
+					LoadResolvers();
 					HandleService();
 				}
 				else
@@ -316,7 +316,7 @@ namespace SimpleDnsCrypt.ViewModels
 						break;
 					case "resolverTab":
 						SelectedTab = Tabs.ResolverTab;
-						GetAvailableResolvers();
+						LoadResolvers();
 						break;
 					case "advancedSettingsTab":
 						SelectedTab = Tabs.AdvancedSettingsTab;
@@ -642,87 +642,28 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 		}
 
-		private void GetAvailableResolvers()
+		/// <summary>
+		/// Get the list of available resolvers for the enabled filters.
+		/// </summary>
+		/// <remarks>Current solution is not very effective.</remarks>
+		private void LoadResolvers()
 		{
-			_resolvers.Clear();
-			var resolvers = DnsCryptProxyManager.GetAvailableResolvers();
-			_resolvers.AddRange(resolvers);
-			
-		}
-
-		private void GetAllResolvers()
-		{
-
-			var resolvers = DnsCryptProxyManager.GetAllResolvers();
-
-			if (resolvers != null)
+			var allResolvers = DnsCryptProxyManager.GetAllResolvers();
+			var availableResolvers = DnsCryptProxyManager.GetAvailableResolvers();
+			foreach (var resolver in availableResolvers)
 			{
-
-			}
-			/*var serverNames = new List<string>();
-			if (DnscryptProxyConfiguration.server_names != null && DnscryptProxyConfiguration.server_names.Count > 0)
-			{
-				serverNames = DnscryptProxyConfiguration.server_names.ToList();
-			}
-
-			if (DnscryptProxyConfiguration?.sources == null) return;
-			var sources = DnscryptProxyConfiguration.sources;
-			foreach (var source in sources)
-			{
-				if (string.IsNullOrEmpty(source.Value.cache_file)) continue;
-
-				var cacheFile = source.Value.cache_file;
-				var cacheFileFullPath = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, cacheFile);
-				if (!File.Exists(cacheFileFullPath)) continue;
-				var content = File.ReadAllText(cacheFileFullPath);
-				if (string.IsNullOrEmpty(content)) continue;
-				var rawStampList = content.Split(new[] { '#', '#' }, StringSplitOptions.RemoveEmptyEntries);
-				_resolvers.Clear();
-				foreach (var rawStampListEntry in rawStampList)
+				AvailableResolver first = null;
+				foreach (var r in allResolvers)
 				{
-					var def = rawStampListEntry.Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
-					if (def.Length != 3) continue;
-					var server = new Resolver
-					{
-						Group = source.Key,
-						Name = def[0].Trim(),
-						Comment = def[1].Trim(),
-						Stamp = new Stamp(def[2].Trim())
-					};
-
-					if (DnscryptProxyConfiguration.require_nolog)
-					{
-						if (!server.Stamp.NoLog)
-						{
-							continue;
-						}
-					}
-
-					if (DnscryptProxyConfiguration.require_dnssec)
-					{
-						if (!server.Stamp.DnsSec)
-						{
-							continue;
-						}
-					}
-
-					if (!DnscryptProxyConfiguration.ipv6_servers)
-					{
-						if (server.Stamp.Ipv6)
-						{
-							continue;
-						}
-					}
-
-					if (serverNames.Contains(server.Name))
-					{
-						server.IsInServerList = true;
-					}
-
-					_resolvers.Add(server);
-
+					if (!r.Name.Equals(resolver.Name)) continue;
+					first = r;
+					break;
 				}
-			}*/
+
+				if (first != null) first.IsInServerList = true;
+			}
+			_resolvers.Clear();
+			_resolvers.AddRange(allResolvers);
 		}
 
 		#endregion
