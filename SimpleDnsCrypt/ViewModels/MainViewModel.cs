@@ -128,16 +128,17 @@ namespace SimpleDnsCrypt.ViewModels
 					DnscryptProxyConfiguration.server_names = null;
 					SaveDnsCryptConfiguration();
 					GetAvailableResolvers();
+					HandleService();
 				}
 				else
 				{
 					if (DnscryptProxyConfiguration.server_names == null || DnscryptProxyConfiguration.server_names.Count == 0)
 					{
 						_isDnsCryptAutomaticModeEnabled = true;
+						_windowManager.ShowMetroMessageBox("At least one server must be selected. Otherwise, dnscrypt-proxy uses all servers corresponding to the selected filters.", "No server selected",
+							MessageBoxButton.OK, BoxType.Warning);
 					}
 				}
-
-
 				NotifyOfPropertyChange(() => IsDnsCryptAutomaticModeEnabled);
 			}
 		}
@@ -399,6 +400,8 @@ namespace SimpleDnsCrypt.ViewModels
 						}
 					}
 				}
+				_isResolverRunning = DnsCryptProxyManager.IsDnsCryptProxyRunning();
+				NotifyOfPropertyChange(() => IsResolverRunning);
 			}
 			catch(Exception) { }
 			IsSavingConfiguration = false;
@@ -466,7 +469,6 @@ namespace SimpleDnsCrypt.ViewModels
 				await Task.Delay(Global.ServiceStopTime).ConfigureAwait(false);
 				_isResolverRunning = DnsCryptProxyManager.IsDnsCryptProxyRunning();
 				NotifyOfPropertyChange(() => IsResolverRunning);
-				ResetNetworkCards();
 			}
 			else
 			{
@@ -477,29 +479,19 @@ namespace SimpleDnsCrypt.ViewModels
 					await Task.Delay(Global.ServiceStartTime).ConfigureAwait(false);
 					_isResolverRunning = DnsCryptProxyManager.IsDnsCryptProxyRunning();
 					NotifyOfPropertyChange(() => IsResolverRunning);
-					ResetNetworkCards();
 				}
 				else
 				{
 					//install and start the service
-
-
-					var x = DnsCryptProxyManager.GetAvailableResolvers();
 					await Task.Run(() => DnsCryptProxyManager.Install()).ConfigureAwait(false);
 					await Task.Delay(Global.ServiceStartTime).ConfigureAwait(false);
 					await Task.Run(() => { DnsCryptProxyManager.Start(); }).ConfigureAwait(false);
 					await Task.Delay(Global.ServiceStartTime).ConfigureAwait(false);
 					_isResolverRunning = DnsCryptProxyManager.IsDnsCryptProxyRunning();
 					NotifyOfPropertyChange(() => IsResolverRunning);
-					ResetNetworkCards();
 				}
 			}
 			IsWorkingOnService = false;
-		}
-
-		private static void ResetNetworkCards()
-		{
-			
 		}
 
 		public bool IsWorkingOnService
@@ -597,6 +589,11 @@ namespace SimpleDnsCrypt.ViewModels
 							DnscryptProxyConfigurationManager.DnscryptProxyConfiguration.listen_addresses.ToList()));
 					localNetworkInterface.UseDnsCrypt = status;
 				}
+				else
+				{
+					_windowManager.ShowMetroMessageBox("You should start the DnsCrypt service first!", "Service not running",
+						MessageBoxButton.OK, BoxType.Warning);
+				}
 			}
 			await Task.Delay(1000).ConfigureAwait(false);
 			localNetworkInterface.IsChangeable = true;
@@ -611,6 +608,12 @@ namespace SimpleDnsCrypt.ViewModels
 			{
 				IsDnsCryptAutomaticModeEnabled = false;
 				SaveDnsCryptConfiguration();
+				HandleService();
+			}
+			else
+			{
+				_windowManager.ShowMetroMessageBox("At least one server must be selected. Otherwise, dnscrypt-proxy uses all servers corresponding to the selected filters.", "No server selected",
+					MessageBoxButton.OK, BoxType.Warning);
 			}
 		}
 
@@ -644,12 +647,19 @@ namespace SimpleDnsCrypt.ViewModels
 			_resolvers.Clear();
 			var resolvers = DnsCryptProxyManager.GetAvailableResolvers();
 			_resolvers.AddRange(resolvers);
+			
 		}
 
-		/*
-		private void ReadStamp()
+		private void GetAllResolvers()
 		{
-			var serverNames = new List<string>();
+
+			var resolvers = DnsCryptProxyManager.GetAllResolvers();
+
+			if (resolvers != null)
+			{
+
+			}
+			/*var serverNames = new List<string>();
 			if (DnscryptProxyConfiguration.server_names != null && DnscryptProxyConfiguration.server_names.Count > 0)
 			{
 				serverNames = DnscryptProxyConfiguration.server_names.ToList();
@@ -710,10 +720,10 @@ namespace SimpleDnsCrypt.ViewModels
 					}
 
 					_resolvers.Add(server);
-					
+
 				}
-			}
-		}*/
+			}*/
+		}
 
 		#endregion
 
@@ -731,12 +741,6 @@ namespace SimpleDnsCrypt.ViewModels
 			if (result == MessageBoxResult.Yes)
 			{
 				IsUninstallingService = true;
-				await Task.Run(() =>
-				{
-					DnsCryptProxyManager.Uninstall();
-				}).ConfigureAwait(false);
-				await Task.Delay(Global.ServiceUninstallTime).ConfigureAwait(false);
-				
 
 				if (DnsCryptProxyManager.IsDnsCryptProxyRunning())
 				{
@@ -746,6 +750,11 @@ namespace SimpleDnsCrypt.ViewModels
 					}).ConfigureAwait(false);
 					await Task.Delay(Global.ServiceStopTime).ConfigureAwait(false);
 				}
+				await Task.Run(() =>
+				{
+					DnsCryptProxyManager.Uninstall();
+				}).ConfigureAwait(false);
+				await Task.Delay(Global.ServiceUninstallTime).ConfigureAwait(false);
 				_isResolverRunning = DnsCryptProxyManager.IsDnsCryptProxyRunning();
 				NotifyOfPropertyChange(() => IsResolverRunning);
 

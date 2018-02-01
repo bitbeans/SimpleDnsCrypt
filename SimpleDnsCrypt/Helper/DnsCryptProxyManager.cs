@@ -6,6 +6,7 @@ using System.IO;
 using System.ServiceProcess;
 using System.Text;
 using System.Threading;
+using Nett;
 using Newtonsoft.Json;
 using SimpleDnsCrypt.Config;
 using SimpleDnsCrypt.Models;
@@ -156,7 +157,7 @@ namespace SimpleDnsCrypt.Helper
 		}
 
 		/// <summary>
-		/// Get the list of available resolvers for the enabled filters.
+		/// Get the list of available (active) resolvers for the enabled filters.
 		/// </summary>
 		/// <returns></returns>
 		public static List<AvailableResolver> GetAvailableResolvers()
@@ -179,6 +180,51 @@ namespace SimpleDnsCrypt.Helper
 			}
 			return resolvers;
 		}
+
+		/// <summary>
+		/// Get the list of available (inactive) resolvers for the enabled filters.
+		/// </summary>
+		/// <returns></returns>
+		public static List<AvailableResolver> GetAllResolvers()
+		{
+			var resolvers = new List<AvailableResolver>();
+			var dnscryptFolder = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder);
+			// we use a second config file
+			var tmpToml = Path.Combine(dnscryptFolder, "_tmp_.toml");
+			if (File.Exists(tmpToml))
+			{
+				File.Delete(tmpToml);
+			}
+			File.Copy(Path.Combine(dnscryptFolder, Global.DnsCryptConfigurationFile), Path.Combine(dnscryptFolder, tmpToml));
+			var config = Toml.ReadFile<DnscryptProxyConfiguration>(tmpToml);
+			//clear the array
+			config.server_names = null;
+			Toml.WriteFile(config, tmpToml);
+			var result = ExecuteWithArguments("-config _tmp_.toml -list -json");
+			if (!result.Success) return resolvers;
+			if (string.IsNullOrEmpty(result.StandardOutput)) return resolvers;
+			try
+			{
+				var res = JsonConvert.DeserializeObject<List<AvailableResolver>>(result.StandardOutput);
+				if (res.Count > 0)
+				{
+					resolvers = res;
+				}
+			}
+			catch (Exception)
+			{
+
+			}
+			finally
+			{
+				if (File.Exists(tmpToml))
+				{
+					File.Delete(tmpToml);
+				}
+			}
+			return resolvers;
+		}
+
 
 		/// <summary>
 		/// Install the dnscrypt-proxy service.

@@ -390,12 +390,18 @@
                                                                         Foreground="#FF8ab329"
                                                                         HorizontalAlignment="Left"
                                                                         VerticalAlignment="Center" />
-                                            <TextBlock Grid.Column="1" Grid.Row="0"
-                                                       Text="{lex:Loc Key=resolvers_available_resolvers_header}"
-                                                       TextWrapping="Wrap" VerticalAlignment="Center"
-                                                       Foreground="#FF8ab329" FontSize="20"
-                                                       Opacity="0.7" Margin="5,0,0,3" FontWeight="Bold">
-                                            </TextBlock>
+                                            <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="0"  Margin="5,0,0,3">
+                                                <TextBlock Text="{lex:Loc Key=resolvers_available_resolvers_header}"
+                                                           TextWrapping="Wrap" VerticalAlignment="Center"
+                                                           Foreground="#FF8ab329" FontSize="20"
+                                                           Opacity="0.7" FontWeight="Bold">
+                                                </TextBlock>
+                                                <TextBlock Text="{Binding Resolvers.Count, StringFormat={}({0})}"
+                                                           TextWrapping="Wrap" VerticalAlignment="Center"
+                                                           Foreground="#FF8ab329" FontSize="20"
+                                                           Opacity="0.7" FontWeight="Bold" Margin="5,0,0,0">
+                                                </TextBlock>
+                                            </StackPanel>
                                             <Button x:Name="SaveLocalServers" Grid.Column="2" Grid.Row="0"
                                                     Cursor="Hand" IsEnabled="{Binding Resolvers.Count, Converter={StaticResource IntegerToBoolConverter}}"
                                                     Content="{lex:Loc Key=default_settings_apply_settings}"
@@ -438,8 +444,8 @@
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="350" />
                                             </Grid.RowDefinitions>
-                                            <ScrollViewer VerticalScrollBarVisibility="Auto">
-                                                <ItemsControl ItemsSource="{Binding Resolvers}" IsEnabled="True">
+                                            <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,5,0,0">
+                                                <ItemsControl ItemsSource="{Binding Resolvers}" IsEnabled="True" Margin="0">
                                                     <ItemsControl.ItemsPanel>
                                                         <ItemsPanelTemplate>
                                                             <UniformGrid Columns="3" />

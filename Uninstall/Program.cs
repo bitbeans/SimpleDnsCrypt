@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Net.NetworkInformation;
+using System.Threading;
 
 namespace Uninstall
 {
@@ -13,6 +14,8 @@ namespace Uninstall
 			try
 			{
 				ClearLocalNetworkInterfaces();
+				StopService();
+				Thread.Sleep(500);
 				UninstallService();
 			}
 			finally
@@ -22,17 +25,33 @@ namespace Uninstall
 		}
 
 		/// <summary>
+		///		Stop the dnscrypt-proxy service.
+		/// </summary>
+		internal static void StopService()
+		{
+			Console.WriteLine("stopping dnscrypt service");
+			ExecuteWithArguments("-service stop");
+		}
+
+		/// <summary>
 		///		Uninstall the dnscrypt-proxy service.
 		/// </summary>
 		internal static void UninstallService()
+		{
+			Console.WriteLine("removing dnscrypt service");
+			ExecuteWithArguments("-service uninstall");
+		}
+
+		/// <summary>
+		///		Uninstall the dnscrypt-proxy service.
+		/// </summary>
+		internal static void ExecuteWithArguments(string arguments)
 		{
 			try
 			{
 				const int timeout = 9000;
 				const string dnsCryptProxyFolder = "dnscrypt-proxy";
 				const string dnsCryptProxyExecutableName = "dnscrypt-proxy.exe";
-				const string arguments = "-service uninstall";
-				Console.WriteLine("removing dnscrypt service");
 				using (var process = new Process())
 				{
 					process.StartInfo.FileName = Path.Combine(Directory.GetCurrentDirectory(), dnsCryptProxyFolder, dnsCryptProxyExecutableName);
