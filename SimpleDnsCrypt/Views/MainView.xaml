@@ -62,7 +62,8 @@
                         <TabItem.Content>
                             <StackPanel Orientation="Vertical" Margin="0,10,0,0">
                                 <Border BorderThickness="1" Background="#198AB328" Padding="10,10" Margin="0,0,0,0"
-                                        MinHeight="75">
+                                        MinHeight="75"
+                                        IsEnabled="{Binding IsSavingConfiguration, Converter={StaticResource ReverseBoolToEnabledConverter}}">
                                     <Border.BorderBrush>
                                         <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile"
                                                       Opacity="0.4">
@@ -144,7 +145,6 @@
                                                         VerticalAlignment="Bottom" HorizontalAlignment="Right"
                                                         Content="{lex:Loc Key=default_settings_apply_settings}"
                                                         Cursor="Hand"
-                                                        IsEnabled="{Binding IsSavingConfiguration, Converter={StaticResource ReverseBoolToEnabledConverter}}"
                                                         Style="{DynamicResource AccentedSquareButtonStyle}" />
                                             </Grid>
                                         </UniformGrid>
@@ -390,7 +390,8 @@
                                                                         Foreground="#FF8ab329"
                                                                         HorizontalAlignment="Left"
                                                                         VerticalAlignment="Center" />
-                                            <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="0"  Margin="5,0,0,3">
+                                            <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="0"
+                                                        Margin="5,0,0,3">
                                                 <TextBlock Text="{lex:Loc Key=resolvers_available_resolvers_header}"
                                                            TextWrapping="Wrap" VerticalAlignment="Center"
                                                            Foreground="#FF8ab329" FontSize="20"
@@ -403,7 +404,8 @@
                                                 </TextBlock>
                                             </StackPanel>
                                             <Button x:Name="SaveLocalServers" Grid.Column="2" Grid.Row="0"
-                                                    Cursor="Hand" IsEnabled="{Binding Resolvers.Count, Converter={StaticResource IntegerToBoolConverter}}"
+                                                    Cursor="Hand"
+                                                    IsEnabled="{Binding Resolvers.Count, Converter={StaticResource IntegerToBoolConverter}}"
                                                     Content="{lex:Loc Key=default_settings_apply_settings}"
                                                     Width="Auto" HorizontalAlignment="Right"
                                                     Style="{DynamicResource AccentedSquareButtonStyle}" />
@@ -445,7 +447,8 @@
                                                 <RowDefinition Height="350" />
                                             </Grid.RowDefinitions>
                                             <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,5,0,0">
-                                                <ItemsControl ItemsSource="{Binding Resolvers}" IsEnabled="True" Margin="0">
+                                                <ItemsControl ItemsSource="{Binding Resolvers}" IsEnabled="True"
+                                                              Margin="0">
                                                     <ItemsControl.ItemsPanel>
                                                         <ItemsPanelTemplate>
                                                             <UniformGrid Columns="3" />
@@ -476,8 +479,9 @@
                                                     </ItemsControl.ItemTemplate>
                                                 </ItemsControl>
                                             </ScrollViewer>
-                                            <TextBlock Foreground="#FF575757" Text="No resolvers have been loaded yet" Visibility="{Binding Resolvers.Count, Converter={StaticResource IntegerToVisibilityConverter}}" 
-                                                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            <TextBlock Foreground="#FF575757" Text="No resolvers have been loaded yet"
+                                                       Visibility="{Binding Resolvers.Count, Converter={StaticResource IntegerToVisibilityConverter}}"
+                                                       HorizontalAlignment="Center" VerticalAlignment="Center" />
                                         </Grid>
                                     </StackPanel>
                                 </Border>

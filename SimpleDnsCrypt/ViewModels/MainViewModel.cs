@@ -377,7 +377,7 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 		}
 
-		public void SaveDnsCryptConfiguration()
+		public async void SaveDnsCryptConfiguration()
 		{
 			IsSavingConfiguration = true;
 			try
@@ -386,25 +386,35 @@ namespace SimpleDnsCrypt.ViewModels
 				DnscryptProxyConfigurationManager.DnscryptProxyConfiguration = _dnscryptProxyConfiguration;
 				if (DnscryptProxyConfigurationManager.SaveConfiguration())
 				{
-					DnscryptProxyConfigurationManager.LoadConfiguration();
+					//DnscryptProxyConfigurationManager.LoadConfiguration();
 					_dnscryptProxyConfiguration = DnscryptProxyConfigurationManager.DnscryptProxyConfiguration;
+					IsWorkingOnService = true;
 					if (DnsCryptProxyManager.IsDnsCryptProxyInstalled())
 					{
 						if (DnsCryptProxyManager.IsDnsCryptProxyRunning())
 						{
-							DnsCryptProxyManager.Restart();
+							await Task.Run(() => { DnsCryptProxyManager.Restart(); }).ConfigureAwait(false);
+							await Task.Delay(Global.ServiceRestartTime).ConfigureAwait(false);
 						}
 						else
 						{
-							DnsCryptProxyManager.Start();
+							await Task.Run(() => { DnsCryptProxyManager.Start(); }).ConfigureAwait(false);
+							await Task.Delay(Global.ServiceStartTime).ConfigureAwait(false);
 						}
 					}
 				}
 				_isResolverRunning = DnsCryptProxyManager.IsDnsCryptProxyRunning();
 				NotifyOfPropertyChange(() => IsResolverRunning);
 			}
-			catch(Exception) { }
-			IsSavingConfiguration = false;
+			catch (Exception)
+			{
+
+			}
+			finally
+			{
+				IsSavingConfiguration = false;
+				IsWorkingOnService = false;
+			}
 		}
 
 		/// <summary>
