@@ -734,6 +734,21 @@ namespace SimpleDnsCrypt.ViewModels
 				await Task.Delay(1000).ConfigureAwait(false);
 				ReloadLoadNetworkInterfaces();
 				IsUninstallingService = false;
+				if (!DnsCryptProxyManager.IsDnsCryptProxyInstalled())
+				{
+					//TODO: translate
+					_windowManager.ShowMetroMessageBox("Uninstallation was successful! DNS requests are no longer encrypted.",
+						"Uninstallation successful",
+						MessageBoxButton.OK, BoxType.Default);
+				}
+				else
+				{
+					//TODO: translate
+					_windowManager.ShowMetroMessageBox(
+						"Uninstallation could not be performed. Try to stop the service manually and uninstall it again.",
+						"Uninstallation error",
+						MessageBoxButton.OK, BoxType.Warning);
+				}
 			}
 		}
 
