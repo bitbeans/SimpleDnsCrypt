@@ -89,6 +89,11 @@ namespace SimpleDnsCrypt.ViewModels
 					{
 						LicenseHeaderText = "dnscrypt-proxy",
 						LicenseText = await LoadLicense("dnscrypt-proxy.txt").ConfigureAwait(false),
+						LicenseRegularLink = new LicenseLink
+						{
+							LinkText = "dnscrypt.info",
+							LinkUri = new Uri("https://dnscrypt.info/")
+						},
 						LicenseCodeLink = new LicenseLink
 						{
 							LinkText = LocalizationEx.GetUiString("about_view_on_github", Thread.CurrentThread.CurrentCulture),
@@ -123,6 +128,131 @@ namespace SimpleDnsCrypt.ViewModels
 						{
 							LinkText = LocalizationEx.GetUiString("about_view_on_github", Thread.CurrentThread.CurrentCulture),
 							LinkUri = new Uri("https://github.com/MahApps/MahApps.Metro")
+						}
+					},
+					new License
+					{
+						LicenseHeaderText = "YamlDotNet",
+						LicenseText = await LoadLicense("YamlDotNet.txt").ConfigureAwait(false),
+						LicenseCodeLink = new LicenseLink
+						{
+							LinkText = LocalizationEx.GetUiString("about_view_on_github", Thread.CurrentThread.CurrentCulture),
+							LinkUri = new Uri("https://github.com/aaubry/YamlDotNet")
+						}
+					},
+					new License
+					{
+						LicenseHeaderText = "Nett",
+						LicenseText = await LoadLicense("Nett.txt").ConfigureAwait(false),
+						LicenseCodeLink = new LicenseLink
+						{
+							LinkText = LocalizationEx.GetUiString("about_view_on_github", Thread.CurrentThread.CurrentCulture),
+							LinkUri = new Uri("https://github.com/paiden/Nett")
+						}
+					},
+					new License
+					{
+						LicenseHeaderText = "Newtonsoft.Json",
+						LicenseText = await LoadLicense("Newtonsoft.Json.txt").ConfigureAwait(false),
+						LicenseRegularLink = new LicenseLink
+						{
+							LinkText = "www.newtonsoft.com",
+							LinkUri = new Uri("https://www.newtonsoft.com/json")
+						},
+						LicenseCodeLink = new LicenseLink
+						{
+							LinkText = LocalizationEx.GetUiString("about_view_on_github", Thread.CurrentThread.CurrentCulture),
+							LinkUri = new Uri("https://github.com/JamesNK/Newtonsoft.Json")
+						}
+					},
+					new License
+					{
+						LicenseHeaderText = "WPFLocalizationExtension",
+						LicenseText = await LoadLicense("WPFLocalizationExtension.txt").ConfigureAwait(false),
+						LicenseCodeLink = new LicenseLink
+						{
+							LinkText = LocalizationEx.GetUiString("about_view_on_github", Thread.CurrentThread.CurrentCulture),
+							LinkUri = new Uri("https://github.com/SeriousM/WPFLocalizationExtension")
+						}
+					},
+					new License
+					{
+						LicenseHeaderText = "XAMLMarkupExtensions",
+						LicenseText = await LoadLicense("XAMLMarkupExtensions.txt").ConfigureAwait(false),
+						LicenseCodeLink = new LicenseLink
+						{
+							LinkText = LocalizationEx.GetUiString("about_view_on_github", Thread.CurrentThread.CurrentCulture),
+							LinkUri = new Uri("https://github.com/MrCircuit/XAMLMarkupExtensions")
+						}
+					},
+					new License
+					{
+						LicenseHeaderText = "minisign-net",
+						LicenseText = await LoadLicense("minisign-net.txt").ConfigureAwait(false),
+						LicenseCodeLink = new LicenseLink
+						{
+							LinkText = LocalizationEx.GetUiString("about_view_on_github", Thread.CurrentThread.CurrentCulture),
+							LinkUri = new Uri("https://github.com/bitbeans/minisign-net")
+						}
+					},
+					new License
+					{
+						LicenseHeaderText = "libsodium-net",
+						LicenseText = await LoadLicense("libsodium-net.txt").ConfigureAwait(false),
+						LicenseCodeLink = new LicenseLink
+						{
+							LinkText = LocalizationEx.GetUiString("about_view_on_github", Thread.CurrentThread.CurrentCulture),
+							LinkUri = new Uri("https://github.com/adamcaudill/libsodium-net")
+						}
+					},
+					new License
+					{
+						LicenseHeaderText = "Costura.Fody",
+						LicenseText = await LoadLicense("Costura.Fody.txt").ConfigureAwait(false),
+						LicenseCodeLink = new LicenseLink
+						{
+							LinkText = LocalizationEx.GetUiString("about_view_on_github", Thread.CurrentThread.CurrentCulture),
+							LinkUri = new Uri("https://github.com/Fody/Costura")
+						}
+					},
+					new License
+					{
+						LicenseHeaderText = "Fody",
+						LicenseText = await LoadLicense("Fody.txt").ConfigureAwait(false),
+						LicenseCodeLink = new LicenseLink
+						{
+							LinkText = LocalizationEx.GetUiString("about_view_on_github", Thread.CurrentThread.CurrentCulture),
+							LinkUri = new Uri("https://github.com/Fody/Fody")
+						}
+					},
+					new License
+					{
+						LicenseHeaderText = "helper-net",
+						LicenseText = await LoadLicense("helper-net.txt").ConfigureAwait(false),
+						LicenseCodeLink = new LicenseLink
+						{
+							LinkText = LocalizationEx.GetUiString("about_view_on_github", Thread.CurrentThread.CurrentCulture),
+							LinkUri = new Uri("https://github.com/bitbeans/helper-net")
+						}
+					},
+					new License
+					{
+						LicenseHeaderText = "ControlzEx",
+						LicenseText = await LoadLicense("ControlzEx.txt").ConfigureAwait(false),
+						LicenseCodeLink = new LicenseLink
+						{
+							LinkText = LocalizationEx.GetUiString("about_view_on_github", Thread.CurrentThread.CurrentCulture),
+							LinkUri = new Uri("https://github.com/ControlzEx/ControlzEx")
+						}
+					},
+					new License
+					{
+						LicenseHeaderText = "Baseclass.Contrib.Nuget.Output",
+						LicenseText = await LoadLicense("Baseclass.Contrib.Nuget.Output.txt").ConfigureAwait(false),
+						LicenseCodeLink = new LicenseLink
+						{
+							LinkText = LocalizationEx.GetUiString("about_view_on_github", Thread.CurrentThread.CurrentCulture),
+							LinkUri = new Uri("https://github.com/baseclass/Contrib.Nuget")
 						}
 					}
 				};

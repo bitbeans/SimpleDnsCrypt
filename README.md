@@ -84,7 +84,21 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Used Software and Libraries
 
-- *WiP*
+- [Baseclass.Contrib.Nuget.Output](https://github.com/baseclass/Contrib.Nuget)
+- [Caliburn.Micro](https://github.com/Caliburn-Micro/Caliburn.Micro)
+- [ControlzEx](https://github.com/ControlzEx/ControlzEx)
+- [Costura.Fody](https://github.com/Fody/Costura)
+- [Fody](https://github.com/Fody/Fody)
+- [helper-net](https://github.com/bitbeans/helper-net)
+- [MahApps.Metro](https://github.com/MahApps/MahApps.Metro)
+- [minisign-net](https://github.com/bitbeans/minisign-net)
+- [Nett](https://github.com/paiden/Nett)
+- [Newtonsoft.Json](https://github.com/JamesNK/Newtonsoft.Json)
+- [libsodium-net](https://github.com/adamcaudill/libsodium-net)
+- [WPFLocalizationExtension](https://github.com/SeriousM/WPFLocalizationExtension)
+- [XAMLMarkupExtensions](https://github.com/MrCircuit/XAMLMarkupExtensions)
+- [YamlDotNet](https://github.com/aaubry/YamlDotNet)
+
 
 ## Thanks to
 

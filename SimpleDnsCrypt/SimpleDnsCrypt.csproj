@@ -449,6 +449,18 @@
   <ItemGroup>
     <Content Include="DNSx64\dnscrypt-proxy.exe" />
     <Content Include="DNSx86\dnscrypt-proxy.exe" />
+    <EmbeddedResource Include="Resources\Licenses\Baseclass.Contrib.Nuget.Output.txt" />
+    <EmbeddedResource Include="Resources\Licenses\ControlzEx.txt" />
+    <EmbeddedResource Include="Resources\Licenses\Costura.Fody.txt" />
+    <EmbeddedResource Include="Resources\Licenses\Fody.txt" />
+    <EmbeddedResource Include="Resources\Licenses\helper-net.txt" />
+    <EmbeddedResource Include="Resources\Licenses\libsodium-net.txt" />
+    <EmbeddedResource Include="Resources\Licenses\minisign-net.txt" />
+    <EmbeddedResource Include="Resources\Licenses\YamlDotNet.txt" />
+    <EmbeddedResource Include="Resources\Licenses\Newtonsoft.Json.txt" />
+    <EmbeddedResource Include="Resources\Licenses\WPFLocalizationExtension.txt" />
+    <EmbeddedResource Include="Resources\Licenses\XAMLMarkupExtensions.txt" />
+    <EmbeddedResource Include="Resources\Licenses\Nett.txt" />
     <None Include="FodyWeavers.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
