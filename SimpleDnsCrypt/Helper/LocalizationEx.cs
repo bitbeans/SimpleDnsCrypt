@@ -40,6 +40,7 @@ namespace SimpleDnsCrypt.Helper
 				new Language {Name = "English", ShortCode = "en", CultureCode = "en-US"},
 				new Language {Name = "French", ShortCode = "fr", CultureCode = "fr-FR"},
 				new Language {Name = "German", ShortCode = "de", CultureCode = "de-DE"},
+				new Language {Name = "Hungarian", ShortCode = "hu", CultureCode = "hu-HU"},
 				new Language {Name = "Indonesian", ShortCode = "id", CultureCode = "id-ID"},
 				new Language {Name = "Italian", ShortCode = "it", CultureCode = "it-IT"},
 				new Language {Name = "Japanese", ShortCode = "ja", CultureCode = "ja-JP"},

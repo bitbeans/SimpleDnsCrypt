@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="default_settings_network_cards" xml:space="preserve">
+    <value>Hálózati kártyák</value>
+  </data>
+  <data name="default_settings_show_hidden_cards" xml:space="preserve">
+    <value>Rejtett kártyák megjelenítése</value>
+  </data>
+  <data name="default_settings_service_header" xml:space="preserve">
+    <value>Szolgáltatás</value>
+  </data>
+  <data name="default_settings_service" xml:space="preserve">
+    <value>DNSCrypt szolgáltatás</value>
+  </data>
+  <data name="default_settings_configuration" xml:space="preserve">
+    <value>Configuration</value>
+  </data>
+  <data name="default_settings_configuration_ipv4" xml:space="preserve">
+    <value>IPv4 kiszolgáló használata</value>
+  </data>
+  <data name="default_settings_configuration_ipv4_tooltip" xml:space="preserve">
+    <value>IPv4-n keresztül elérhető szerverek használata</value>
+  </data>
+  <data name="default_settings_configuration_ipv6" xml:space="preserve">
+    <value>IPv6 kiszolgáló használata</value>
+  </data>
+  <data name="default_settings_configuration_ipv6_tooltip" xml:space="preserve">
+    <value>IPv6-on keresztül elérhető szerverek használata (ne engedélyezze, ha nincs IPv6-kapcsolat)</value>
+  </data>
+  <data name="default_settings_configuration_dnssec" xml:space="preserve">
+    <value>Csak a DNSSEC támogatással rendelkező szerverek támogatják</value>
+  </data>
+  <data name="default_settings_configuration_dnssec_tooltip" xml:space="preserve">
+    <value>A kiszolgálónak támogatnia kell a DNS biztonsági bővítményeket</value>
+  </data>
+  <data name="default_settings_configuration_nolog" xml:space="preserve">
+    <value>Csak a naplózás nélküli kiszolgálók</value>
+  </data>
+  <data name="default_settings_configuration_nolog_tooltip" xml:space="preserve">
+    <value>A kiszolgálónak nem kell bejelentkeznie a felhasználói lekérdezésekhez</value>
+  </data>
+  <data name="default_settings_configuration_nofilter" xml:space="preserve">
+    <value>Csak szűrő nélküli kiszolgálók</value>
+  </data>
+  <data name="default_settings_configuration_nofilter_tooltip" xml:space="preserve">
+    <value>A szerver nem érvényesítheti saját feketelistáját (szülői felügyelet, hirdetések blokkolása ...)</value>
+  </data>
+  <data name="tabitem_mainmenu" xml:space="preserve">
+    <value>Főmenü</value>
+  </data>
+  <data name="loader_administrative_rights_available" xml:space="preserve">
+    <value>Adminisztrációs jogok állnak rendelkezésre</value>
+  </data>
+  <data name="loader_administrative_rights_missing" xml:space="preserve">
+    <value>Hiányzó adminisztratív jogok!</value>
+  </data>
+  <data name="loader_checking_version" xml:space="preserve">
+    <value>Új verzió ellenőrzése. . .</value>
+  </data>
+  <data name="loader_new_version_found" xml:space="preserve">
+    <value>Újabb verzió található: {0}</value>
+  </data>
+  <data name="loader_starting_update" xml:space="preserve">
+    <value>A frissítés indítása. . .</value>
+  </data>
+  <data name="loader_update_failed" xml:space="preserve">
+    <value>Frissítés sikertelen, folytassa. . .</value>
+  </data>
+  <data name="loader_latest_version" xml:space="preserve">
+    <value>A legújabb verziót használja</value>
+  </data>
+  <data name="loader_unsigned" xml:space="preserve">
+    <value>aláírás nélküli</value>
+  </data>
+  <data name="loader_missing" xml:space="preserve">
+    <value>hiányzó</value>
+  </data>
+  <data name="loader_downloading_signature" xml:space="preserve">
+    <value>Az aláírás letöltése. . .</value>
+  </data>
+  <data name="loader_downloading_installer" xml:space="preserve">
+    <value>Telepítő letöltése. . .</value>
+  </data>
+  <data name="loader_starting" xml:space="preserve">
+    <value>Indítás. . .</value>
+  </data>
+  <data name="loader_validate_folder" xml:space="preserve">
+    <value>A {0} mappa érvényesítése</value>
+  </data>
+  <data name="loader_loading_network_cards" xml:space="preserve">
+    <value>A hálózati kártyák betöltése. . .</value>
+  </data>
+  <data name="loader_failed_loading" xml:space="preserve">
+    <value>Nem lehet betölteni {0}</value>
+  </data>
+  <data name="loader_successfully_loaded" xml:space="preserve">
+    <value>{0} sikeresen betöltött</value>
+  </data>
+  <data name="loader_loading" xml:space="preserve">
+    <value>Betöltés {0}. . .</value>
+  </data>
+  <data name="loader_missing_files" xml:space="preserve">
+    <value>A (z) {0} mappában hiányzó fájlok: \ n {1} \ n \ nA {2}</value>
+  </data>
+  <data name="loader_all_files_available" xml:space="preserve">
+    <value>Minden szükséges fájlt találtunk</value>
+  </data>
+  <data name="about" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="about_software" xml:space="preserve">
+    <value>Szoftver</value>
+  </data>
+  <data name="about_license" xml:space="preserve">
+    <value>License</value>
+  </data>
+  <data name="about_view_on_github" xml:space="preserve">
+    <value>Megtekintés a GitHub-on</value>
+  </data>
+  <data name="tabitem_querylog" xml:space="preserve">
+    <value>Lekérdezési napló</value>
+  </data>
+  <data name="querylog" xml:space="preserve">
+    <value>Lekérdezési napló</value>
+  </data>
+  <data name="querylog_waiting_for_data" xml:space="preserve">
+    <value>várakozás a DNS lekérdezésekre</value>
+  </data>
+  <data name="querylog_entry_count" xml:space="preserve">
+    <value>Bejegyzés:</value>
+  </data>
+  <data name="querylog_source_file" xml:space="preserve">
+    <value>Forrás:</value>
+  </data>
+  <data name="querylog_button_clear" xml:space="preserve">
+    <value>Lista törlése</value>
+  </data>
+  <data name="querylog_button_block" xml:space="preserve">
+    <value>Blokk kiválasztva</value>
+  </data>
+  <data name="domainblocklog" xml:space="preserve">
+    <value>Domain blokknapló</value>
+  </data>
+  <data name="domainblocklog_waiting_for_data" xml:space="preserve">
+    <value>blokkolt DNS lekérdezések várása</value>
+  </data>
+  <data name="domainblocklog_entry_count" xml:space="preserve">
+    <value>Bejegyzés:</value>
+  </data>
+  <data name="domainblocklog_source_file" xml:space="preserve">
+    <value>Forrás:</value>
+  </data>
+  <data name="domainblocklog_button_clear" xml:space="preserve">
+    <value>Lista törlése</value>
+  </data>
+  <data name="tabitem_domainblocklog" xml:space="preserve">
+    <value>Domain blokknapló</value>
+  </data>
+  <data name="tabitem_addressblocklog" xml:space="preserve">
+    <value>Cím blokknapló</value>
+  </data>
+  <data name="tabitem_domainblacklist" xml:space="preserve">
+    <value>Domain Feketelista</value>
+  </data>
+  <data name="tabitem_addressblacklist" xml:space="preserve">
+    <value>Cím fekete lista</value>
+  </data>
+  <data name="settings" xml:space="preserve">
+    <value>Beállítások</value>
+  </data>
+  <data name="settings_domain_blacklist" xml:space="preserve">
+    <value>A &quot;Feketefedelista&quot; lap megjelenítése</value>
+  </data>
+  <data name="settings_address_blacklist" xml:space="preserve">
+    <value>A &quot;Cím feketelista&quot; fül megjelenítése</value>
+  </data>
+  <data name="settings_domain_block" xml:space="preserve">
+    <value>A &quot;Domainblokk naplója&quot; lap megjelenítése</value>
+  </data>
+  <data name="settings_address_block" xml:space="preserve">
+    <value>A &quot;Cím blokk naplója&quot; lap megjelenítése</value>
+  </data>
+  <data name="settings_query_log" xml:space="preserve">
+    <value>A &quot;Lekérdezési napló&quot; lap megjelenítése</value>
+  </data>
+  <data name="tabitem_resolvers" xml:space="preserve">
+    <value>feloldók</value>
+  </data>
+  <data name="tabitem_advanced_settings" xml:space="preserve">
+    <value>További beállítások</value>
+  </data>
+  <data name="settings_advanced_settings" xml:space="preserve">
+    <value>A &quot;Speciális beállítások&quot; lap megjelenítése</value>
+  </data>
+  <data name="yes" xml:space="preserve">
+    <value>Igen</value>
+  </data>
+  <data name="no" xml:space="preserve">
+    <value>nem</value>
+  </data>
+  <data name="cancel" xml:space="preserve">
+    <value>megszünteti</value>
+  </data>
+  <data name="ok" xml:space="preserve">
+    <value>rendben</value>
+  </data>
+  <data name="dialog_message_uninstall" xml:space="preserve">
+    <value>Szeretné eltávolítani a telepített Windows-szolgáltatást?</value>
+  </data>
+  <data name="dialog_uninstall_title" xml:space="preserve">
+    <value>A szolgáltatás eltávolítása</value>
+  </data>
+  <data name="advanced_settings_uninstall_title" xml:space="preserve">
+    <value>A szolgáltatás eltávolítása</value>
+  </data>
+  <data name="advanced_settings_uninstall_text" xml:space="preserve">
+    <value>A telepített Windows szerviz törlése</value>
+  </data>
+  <data name="advanced_settings_uninstall_button" xml:space="preserve">
+    <value>Távolítsa el a szolgáltatást</value>
+  </data>
+  <data name="default_settings_apply_settings" xml:space="preserve">
+    <value>Alkalmazza a beállításokat</value>
+  </data>
+  <data name="advanced_settings_dnscache" xml:space="preserve">
+    <value>DNS Cache</value>
+  </data>
+  <data name="resolvers_dnscrypt_mode_header" xml:space="preserve">
+    <value>DNSCrypt mód</value>
+  </data>
+  <data name="resolvers_dnscrypt_mode_description" xml:space="preserve">
+    <value>Automatikus módban minden rendelkezésre álló kiszolgálót használnak. A dnscrypt-proxy automatikusan kiválasztja a leggyorsabb felbontókat.</value>
+  </data>
+  <data name="resolvers_dnscrypt_automatic_mode" xml:space="preserve">
+    <value>Automatikus mód</value>
+  </data>
+  <data name="disabled" xml:space="preserve">
+    <value>Tiltva</value>
+  </data>
+  <data name="enabled" xml:space="preserve">
+    <value>Engedélyezve</value>
+  </data>
+  <data name="resolvers_available_resolvers_header" xml:space="preserve">
+    <value>Elérhető Resolverek</value>
+  </data>
+</root>
