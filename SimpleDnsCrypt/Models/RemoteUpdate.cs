@@ -1,4 +1,9 @@
 ﻿using System;
+using YamlDotNet.Core;
+using YamlDotNet.RepresentationModel;
+using YamlDotNet.Serialization;
+using YamlDotNet.Serialization.NodeTypeResolvers;
+using Version = System.Version;
 
 namespace SimpleDnsCrypt.Models
 {

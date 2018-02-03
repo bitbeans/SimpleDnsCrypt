@@ -6,6 +6,8 @@ using System.IO;
 using System.Net.Http;
 using System.Reflection;
 using System.Threading.Tasks;
+using YamlDotNet.Core;
+using YamlDotNet.Core.Events;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
 
@@ -32,7 +34,7 @@ namespace SimpleDnsCrypt.Helper
 					{
 						using (var remoteUpdateDataStreamReader = new StreamReader(remoteUpdateDataStream))
 						{
-							var deserializer = new DeserializerBuilder().WithNamingConvention(new CamelCaseNamingConvention()).Build();
+							var deserializer = new DeserializerBuilder().WithTypeConverter(new UriYamlTypeConverter()).WithNamingConvention(new CamelCaseNamingConvention()).Build();
 							remoteUpdate = deserializer.Deserialize<RemoteUpdate>(remoteUpdateDataStreamReader);
 						}
 					}
@@ -60,8 +62,8 @@ namespace SimpleDnsCrypt.Helper
 			}
 			catch (Exception exception)
 			{
-				remoteUpdate.CanUpdate = false;
 				Log.Error(exception);
+				remoteUpdate.CanUpdate = false;
 			}
 
 			return remoteUpdate;
@@ -93,6 +95,27 @@ namespace SimpleDnsCrypt.Helper
 				var resolverList = await getDataTask.ConfigureAwait(false);
 				return resolverList;
 			}
+		}
+	}
+
+	internal sealed class UriYamlTypeConverter : IYamlTypeConverter
+	{
+		public bool Accepts(Type type)
+		{
+			return type == typeof(Uri);
+		}
+
+		public object ReadYaml(IParser parser, Type type)
+		{
+			var value = ((Scalar)parser.Current).Value;
+			parser.MoveNext();
+			return new Uri(value);
+		}
+
+		public void WriteYaml(IEmitter emitter, object value, Type type)
+		{
+			var uri = (Uri)value;
+			emitter.Emit(new Scalar(null, null, uri.ToString(), ScalarStyle.Any, true, false));
 		}
 	}
 }
