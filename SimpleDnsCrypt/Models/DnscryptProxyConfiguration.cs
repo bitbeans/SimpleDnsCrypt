@@ -2,6 +2,8 @@
 using System.Collections.ObjectModel;
 using Caliburn.Micro;
 using Nett;
+using SimpleDnsCrypt.Models;
+
 // ReSharper disable InconsistentNaming
 
 namespace SimpleDnsCrypt.Models
@@ -22,7 +24,6 @@ namespace SimpleDnsCrypt.Models
 		private int _log_level;
 		private string _log_file;
 		private Dictionary<string, Source> _sources;
-		private Dictionary<string, Server> _servers;
 		private bool _use_syslog;
 		private bool _block_ipv6;
 		private string _forwarding_rules;
@@ -31,6 +32,9 @@ namespace SimpleDnsCrypt.Models
 		private int _cache_min_ttl;
 		private int _cache_size;
 		private bool _cache;
+		private string _fallback_resolver;
+		private bool _ignore_system_dns;
+		private Dictionary<string, Static> _static;
 
 		[TomlIgnore]
 		public new bool IsNotifying
@@ -40,7 +44,7 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		/// <summary>
-		/// List of servers to use. 
+		///     List of servers to use.
 		/// </summary>
 		public ObservableCollection<string> server_names
 		{
@@ -53,7 +57,7 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		/// <summary>
-		/// List of local addresses and ports to listen to. Can be IPv4 and/or IPv6.
+		///     List of local addresses and ports to listen to. Can be IPv4 and/or IPv6.
 		/// </summary>
 		public ObservableCollection<string> listen_addresses
 		{
@@ -66,7 +70,7 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		/// <summary>
-		/// Maximum number of simultaneous client connections to accept.
+		///     Maximum number of simultaneous client connections to accept.
 		/// </summary>
 		public int max_clients
 		{
@@ -79,7 +83,7 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		/// <summary>
-		/// Use servers reachable over IPv4
+		///     Use servers reachable over IPv4
 		/// </summary>
 		public bool ipv4_servers
 		{
@@ -92,7 +96,7 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		/// <summary>
-		/// Use servers reachable over IPv6 -- Do not enable if you don't have IPv6 connectivity
+		///     Use servers reachable over IPv6 -- Do not enable if you don't have IPv6 connectivity
 		/// </summary>
 		public bool ipv6_servers
 		{
@@ -105,7 +109,7 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		/// <summary>
-		/// Server must support DNS security extensions
+		///     Server must support DNS security extensions
 		/// </summary>
 		public bool require_dnssec
 		{
@@ -118,7 +122,7 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		/// <summary>
-		/// Server must not log user queries
+		///     Server must not log user queries
 		/// </summary>
 		public bool require_nolog
 		{
@@ -131,7 +135,7 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		/// <summary>
-		/// Server must not enforce its own blacklist (for parental control, ads blocking...)
+		///     Server must not enforce its own blacklist (for parental control, ads blocking...)
 		/// </summary>
 		public bool require_nofilter
 		{
@@ -144,12 +148,12 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		/// <summary>
-		/// linux only.
+		///     linux only.
 		/// </summary>
 		public bool daemonize { get; set; } = false;
 
 		/// <summary>
-		/// Always use TCP to connect to upstream servers.
+		///     Always use TCP to connect to upstream servers.
 		/// </summary>
 		public bool force_tcp
 		{
@@ -162,7 +166,7 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		/// <summary>
-		/// How long a DNS query will wait for a response, in milliseconds.
+		///     How long a DNS query will wait for a response, in milliseconds.
 		/// </summary>
 		public int timeout
 		{
@@ -175,7 +179,7 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		/// <summary>
-		/// Log level (0-6, default: 2 - 0 is very verbose, 6 only contains fatal errors).
+		///     Log level (0-6, default: 2 - 0 is very verbose, 6 only contains fatal errors).
 		/// </summary>
 		public int log_level
 		{
@@ -188,7 +192,7 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		/// <summary>
-		/// log file for the application.
+		///     log file for the application.
 		/// </summary>
 		public string log_file
 		{
@@ -201,7 +205,7 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		/// <summary>
-		/// Use the system logger (Windows Event Log)
+		///     Use the system logger (Windows Event Log)
 		/// </summary>
 		public bool use_syslog
 		{
@@ -214,7 +218,7 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		/// <summary>
-		/// Delay, in minutes, after which certificates are reloaded.
+		///     Delay, in minutes, after which certificates are reloaded.
 		/// </summary>
 		public int cert_refresh_delay
 		{
@@ -227,9 +231,45 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		/// <summary>
-		/// Immediately respond to IPv6-related queries with an empty response
-		/// This makes things faster when there is no IPv6 connectivity, but can
-		/// also cause reliability issues with some stub resolvers.
+		///     Fallback resolver
+		///     This is a normal, non-encrypted DNS resolver, that will be only used
+		///     for one-shot queries when retrieving the initial resolvers list, and
+		///     only if the system DNS configuration doesn't work.
+		///     No user application queries will ever be leaked through this resolver,
+		///     and it will not be used after IP addresses of resolvers URLs have been found.
+		///     It will never be used if lists have already been cached, and if stamps
+		///     don't include host names without IP addresses.
+		///     It will not be used if the configured system DNS works.
+		///     A resolver supporting DNSSEC is recommended. This may become mandatory.
+		/// </summary>
+		public string fallback_resolver
+		{
+			get => _fallback_resolver;
+			set
+			{
+				_fallback_resolver = value;
+				NotifyOfPropertyChange(() => fallback_resolver);
+			}
+		}
+
+		/// <summary>
+		///     Never try to use the system DNS settings;
+		///     unconditionally use the fallback resolver.
+		/// </summary>
+		public bool ignore_system_dns
+		{
+			get => _ignore_system_dns;
+			set
+			{
+				_ignore_system_dns = value;
+				NotifyOfPropertyChange(() => ignore_system_dns);
+			}
+		}
+
+		/// <summary>
+		///     Immediately respond to IPv6-related queries with an empty response
+		///     This makes things faster when there is no IPv6 connectivity, but can
+		///     also cause reliability issues with some stub resolvers.
 		/// </summary>
 		public bool block_ipv6
 		{
@@ -242,7 +282,7 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		/// <summary>
-		/// Forwarding rule file.
+		///     Forwarding rule file.
 		/// </summary>
 		public string forwarding_rules
 		{
@@ -255,7 +295,7 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		/// <summary>
-		/// Enable a DNS cache to reduce latency and outgoing traffic.
+		///     Enable a DNS cache to reduce latency and outgoing traffic.
 		/// </summary>
 		public bool cache
 		{
@@ -268,7 +308,7 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		/// <summary>
-		/// Cache size.
+		///     Cache size.
 		/// </summary>
 		public int cache_size
 		{
@@ -281,7 +321,7 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		/// <summary>
-		/// Minimum TTL for cached entries.
+		///     Minimum TTL for cached entries.
 		/// </summary>
 		public int cache_min_ttl
 		{
@@ -294,7 +334,7 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		/// <summary>
-		/// Maxmimum TTL for cached entries.
+		///     Maxmimum TTL for cached entries.
 		/// </summary>
 		public int cache_max_ttl
 		{
@@ -307,7 +347,7 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		/// <summary>
-		/// TTL for negatively cached entries.
+		///     TTL for negatively cached entries.
 		/// </summary>
 		public int cache_neg_ttl
 		{
@@ -320,28 +360,27 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		/// <summary>
-		/// Log client queries to a file.
+		///     Log client queries to a file.
 		/// </summary>
 		public QueryLog query_log { get; set; }
 
 		/// <summary>
-		/// Log queries for nonexistent zones.
+		///     Log queries for nonexistent zones.
 		/// </summary>
 		public NxLog nx_log { get; set; }
 
 		/// <summary>
-		/// Pattern-based blocking (blacklists).
+		///     Pattern-based blocking (blacklists).
 		/// </summary>
 		public Blacklist blacklist { get; set; }
 
 		/// <summary>
-		/// Pattern-based IP blocking (IP blacklists).
+		///     Pattern-based IP blocking (IP blacklists).
 		/// </summary>
 		public Blacklist ip_blacklist { get; set; }
-		
+
 
 		/// <summary>
-		/// 
 		/// </summary>
 		public Dictionary<string, Source> sources
 		{
@@ -354,21 +393,20 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		/// <summary>
-		/// Remote lists of available servers.
+		///     Remote lists of available servers.
 		/// </summary>
-		public Dictionary<string, Server> servers
+		public Dictionary<string, Static> Static
 		{
-			get => _servers;
+			get => _static;
 			set
 			{
-				_servers = value;
-				NotifyOfPropertyChange(() => servers);
+				_static = value;
+				NotifyOfPropertyChange(() => Static);
 			}
 		}
 	}
-	
+
 	/// <summary>
-	/// 
 	/// </summary>
 	public class QueryLog : PropertyChangedBase
 	{
@@ -384,7 +422,7 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		/// <summary>
-		/// Query log format (SimpleDnsCrypt: ltsv).
+		///     Query log format (SimpleDnsCrypt: ltsv).
 		/// </summary>
 		public string format
 		{
@@ -397,7 +435,7 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		/// <summary>
-		/// Path to the query log file (absolute, or relative to the same directory as the executable file).
+		///     Path to the query log file (absolute, or relative to the same directory as the executable file).
 		/// </summary>
 		public string file
 		{
@@ -410,7 +448,7 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		/// <summary>
-		/// Do not log these query types, to reduce verbosity. Keep empty to log everything.
+		///     Do not log these query types, to reduce verbosity. Keep empty to log everything.
 		/// </summary>
 		public ObservableCollection<string> ignored_qtypes
 		{
@@ -424,7 +462,7 @@ namespace SimpleDnsCrypt.Models
 	}
 
 	/// <summary>
-	/// Log queries for nonexistent zones.
+	///     Log queries for nonexistent zones.
 	/// </summary>
 	public class NxLog : PropertyChangedBase
 	{
@@ -439,7 +477,7 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		/// <summary>
-		/// Query log format (SimpleDnsCrypt: ltsv).
+		///     Query log format (SimpleDnsCrypt: ltsv).
 		/// </summary>
 		public string format
 		{
@@ -452,7 +490,7 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		/// <summary>
-		/// Path to the query log file (absolute, or relative to the same directory as the executable file).
+		///     Path to the query log file (absolute, or relative to the same directory as the executable file).
 		/// </summary>
 		public string file
 		{
@@ -466,7 +504,7 @@ namespace SimpleDnsCrypt.Models
 	}
 
 	/// <summary>
-	/// Blacklists.
+	///     Blacklists.
 	/// </summary>
 	public class Blacklist : PropertyChangedBase
 	{
@@ -482,7 +520,7 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		/// <summary>
-		/// Path to the file of blocking rules.
+		///     Path to the file of blocking rules.
 		/// </summary>
 		public string blacklist_file
 		{
@@ -495,7 +533,7 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		/// <summary>
-		/// Path to a file logging blocked queries.
+		///     Path to a file logging blocked queries.
 		/// </summary>
 		public string log_file
 		{
@@ -508,7 +546,7 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		/// <summary>
-		/// Log format (SimpleDnsCrypt: ltsv).
+		///     Log format (SimpleDnsCrypt: ltsv).
 		/// </summary>
 		public string log_format
 		{
@@ -550,7 +588,7 @@ namespace SimpleDnsCrypt.Models
 		}
 	}
 
-	public class Server
+	public class Static
 	{
 		public string stamp { get; set; }
 	}
