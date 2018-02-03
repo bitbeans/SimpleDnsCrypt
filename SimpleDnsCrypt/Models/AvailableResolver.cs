@@ -1,4 +1,5 @@
-﻿using Caliburn.Micro;
+﻿using System.Collections.Generic;
+using Caliburn.Micro;
 using Newtonsoft.Json;
 
 namespace SimpleDnsCrypt.Models
@@ -12,6 +13,8 @@ namespace SimpleDnsCrypt.Models
 		private bool _noLog;
 		private bool _noFilter;
 		private string _description;
+		private bool _ipv6;
+		private List<int> _ports;
 
 		[JsonIgnore]
 		public string ToolTip => $"empty";
@@ -46,6 +49,28 @@ namespace SimpleDnsCrypt.Models
 			{
 				_protocol = value;
 				NotifyOfPropertyChange(() => Protocol);
+			}
+		}
+
+		[JsonProperty("ports")]
+		public List<int> Ports
+		{
+			get => _ports;
+			set
+			{
+				_ports = value;
+				NotifyOfPropertyChange(() => Ports);
+			}
+		}
+
+		[JsonProperty("ipv6")]
+		public bool Ipv6
+		{
+			get => _ipv6;
+			set
+			{
+				_ipv6 = value;
+				NotifyOfPropertyChange(() => Ipv6);
 			}
 		}
 

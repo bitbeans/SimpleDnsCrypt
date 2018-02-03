@@ -32,6 +32,7 @@ namespace SimpleDnsCrypt.ViewModels
 	[Export(typeof(MainViewModel))]
 	public class MainViewModel : PropertyChangedBase
 	{
+		private static readonly ILog Log = LogManagerHelper.Factory();
 		private readonly IWindowManager _windowManager;
 		private readonly IEventAggregator _events;
 		private string _windowTitle;
@@ -306,7 +307,7 @@ namespace SimpleDnsCrypt.ViewModels
 				var tabItem = (TabItem) selectionChangedEventArgs.AddedItems[0];
 				if (string.IsNullOrEmpty((string) tabItem.Tag)) return;
 
-				switch ((string)tabItem.Tag)
+				switch ((string) tabItem.Tag)
 				{
 					case "mainTab":
 						SelectedTab = Tabs.MainTab;
@@ -338,7 +339,10 @@ namespace SimpleDnsCrypt.ViewModels
 						break;
 				}
 			}
-			catch(Exception) { }
+			catch (Exception exception)
+			{
+				Log.Error(exception);
+			}
 		}
 
 		public void About()
@@ -403,9 +407,9 @@ namespace SimpleDnsCrypt.ViewModels
 				_isResolverRunning = DnsCryptProxyManager.IsDnsCryptProxyRunning();
 				NotifyOfPropertyChange(() => IsResolverRunning);
 			}
-			catch (Exception)
+			catch (Exception exception)
 			{
-
+				Log.Error(exception);
 			}
 			finally
 			{
@@ -657,12 +661,38 @@ namespace SimpleDnsCrypt.ViewModels
 		/// <remarks>Current solution is not very effective.</remarks>
 		private void LoadResolvers()
 		{
-			var allResolvers = DnsCryptProxyManager.GetAllResolvers();
 			var availableResolvers = DnsCryptProxyManager.GetAvailableResolvers();
+			var allResolversWithoutFilters = DnsCryptProxyManager.GetAllResolversWithoutFilters();
+			var allResolversWithFilters = new List<AvailableResolver>();
+
+			foreach (var resolver in allResolversWithoutFilters)
+			{
+				if (_dnscryptProxyConfiguration.require_dnssec)
+				{
+					if (!resolver.DnsSec) continue;
+				}
+
+				if (_dnscryptProxyConfiguration.require_nofilter)
+				{
+					if (!resolver.NoFilter) continue;
+				}
+
+				if (_dnscryptProxyConfiguration.require_nolog)
+				{
+					if (!resolver.NoLog) continue;
+				}
+
+				if (resolver.Ipv6)
+				{
+					if (!_dnscryptProxyConfiguration.ipv6_servers) continue;
+				}
+				allResolversWithFilters.Add(resolver);
+			}
+
 			foreach (var resolver in availableResolvers)
 			{
 				AvailableResolver first = null;
-				foreach (var r in allResolvers)
+				foreach (var r in allResolversWithFilters)
 				{
 					if (!r.Name.Equals(resolver.Name)) continue;
 					first = r;
@@ -675,12 +705,12 @@ namespace SimpleDnsCrypt.ViewModels
 
 			if (_isDnsCryptAutomaticModeEnabled)
 			{
-				foreach (var resolver in allResolvers)
+				foreach (var resolver in allResolversWithFilters)
 				{
 					resolver.IsInServerList = false;
 				}
 			}
-			_resolvers.AddRange(allResolvers);
+			_resolvers.AddRange(allResolversWithFilters);
 		}
 
 		#endregion

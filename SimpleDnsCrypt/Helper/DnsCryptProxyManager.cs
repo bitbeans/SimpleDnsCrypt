@@ -148,8 +148,6 @@ namespace SimpleDnsCrypt.Helper
 			}
 		}
 
-
-
 		public static string GetVersion()
 		{
 			var result = ExecuteWithArguments("-version");
@@ -182,10 +180,36 @@ namespace SimpleDnsCrypt.Helper
 		}
 
 		/// <summary>
+		/// Get the list of all resolvers.
+		/// </summary>
+		/// <returns></returns>
+		public static List<AvailableResolver> GetAllResolversWithoutFilters()
+		{
+			var resolvers = new List<AvailableResolver>();
+			var result = ExecuteWithArguments("-list-all -json");
+			if (!result.Success) return resolvers;
+			if (string.IsNullOrEmpty(result.StandardOutput)) return resolvers;
+			try
+			{
+				var res = JsonConvert.DeserializeObject<List<AvailableResolver>>(result.StandardOutput);
+				if (res.Count > 0)
+				{
+					resolvers = res;
+				}
+			}
+			catch (Exception)
+			{
+
+			}
+			return resolvers;
+		}
+
+		/// <summary>
 		/// Get the list of available (inactive) resolvers for the enabled filters.
 		/// </summary>
 		/// <returns></returns>
-		public static List<AvailableResolver> GetAllResolvers()
+		[Obsolete("Use GetAllResolversWithoutFilters instead.")]
+		public static List<AvailableResolver> GetAllResolversWithFilters()
 		{
 			var resolvers = new List<AvailableResolver>();
 			var dnscryptFolder = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder);
