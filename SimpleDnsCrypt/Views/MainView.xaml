@@ -136,10 +136,7 @@
                                                     <RowDefinition Height="Auto" />
                                                     <RowDefinition Height="*" />
                                                 </Grid.RowDefinitions>
-                                                <TextBlock Grid.Row="0" Foreground="DarkOrange" FontWeight="Bold"
-                                                           FontSize="18">
-                                                    Warning: Pre-Release! :)
-                                                </TextBlock>
+
                                                 <Button x:Name="SaveDnsCryptConfiguration" Grid.Row="1" Height="32"
                                                         Width="Auto"
                                                         VerticalAlignment="Bottom" HorizontalAlignment="Right"

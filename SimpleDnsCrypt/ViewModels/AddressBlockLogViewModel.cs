@@ -83,7 +83,7 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 		}
 
-		private async void AddressBlockLog(DnscryptProxyConfiguration dnscryptProxyConfiguration)
+		private void AddressBlockLog(DnscryptProxyConfiguration dnscryptProxyConfiguration)
 		{
 			
 		}

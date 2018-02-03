@@ -14,16 +14,14 @@ namespace SimpleDnsCrypt.ViewModels
 	[Export(typeof(QueryLogViewModel))]
 	public class QueryLogViewModel : Screen
 	{
+		private static readonly ILog Log = LogManagerHelper.Factory();
 		private readonly IWindowManager _windowManager;
 		private readonly IEventAggregator _events;
-
 
 		private ObservableCollection<QueryLogLine> _queryLogLines;
 		private string _queryLogFile;
 		private bool _isQueryLogLogging;
 		private QueryLogLine _selectedQueryLogLine;
-
-	
 
 		[ImportingConstructor]
 		public QueryLogViewModel(IWindowManager windowManager, IEventAggregator events)
@@ -196,17 +194,27 @@ namespace SimpleDnsCrypt.ViewModels
 								}
 							}).ConfigureAwait(false);
 						else
-							IsQueryLogLogging = false;
+							_isQueryLogLogging = false;
 					else
-						IsQueryLogLogging = false;
+						_isQueryLogLogging = false;
 				}
 				else
 				{
+					//disable query log again
+					_isQueryLogLogging = false;
+					if (DnsCryptProxyManager.IsDnsCryptProxyRunning())
+					{
+						dnscryptProxyConfiguration.query_log.file = null;
+						DnsCryptProxyManager.Restart();
+						await Task.Delay(Global.ServiceRestartTime).ConfigureAwait(false);
+					}
 					Execute.OnUIThread(() => { QueryLogLines.Clear(); });
+					Execute.OnUIThread(() => { QueryLogFile = string.Empty; });
 				}
 			}
-			catch (Exception)
+			catch (Exception exception)
 			{
+				Log.Error(exception);
 			}
 		}
 	}

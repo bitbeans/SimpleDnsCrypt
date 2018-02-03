@@ -110,8 +110,12 @@ namespace SimpleDnsCrypt.ViewModels
 			{
 				_isDnsCryptAutomaticModeEnabled = false;
 			}
-		}
 
+			if (!string.IsNullOrEmpty(DnscryptProxyConfiguration?.query_log?.file))
+			{
+				QueryLogViewModel.IsQueryLogLogging = true;
+			}
+		}
 
 		public bool IsDnsCryptAutomaticModeEnabled
 		{
