@@ -24,7 +24,6 @@ I am working on a new version based on dnscrypt-proxy 2.0.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
 
@@ -32,7 +31,7 @@ At least one system with Windows 7 SP1 and the installation of. NET Framework 4.
 
 ### Installing
 
-To install Simple DNSCrypt use the latest MSI packages: [x86](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.4.3/SimpleDNSCrypt.msi) or [x64](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.4.3/SimpleDNSCrypt64.msi).
+To install Simple DNSCrypt use the latest (stable) MSI packages: [x86](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.4.3/SimpleDNSCrypt.msi) or [x64](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.4.3/SimpleDNSCrypt64.msi).
 
 ### File Signing
 
