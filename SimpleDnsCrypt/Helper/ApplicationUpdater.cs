@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net.Http;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Caliburn.Micro;
 using SimpleDnsCrypt.Config;
 using SimpleDnsCrypt.Models;
+using System;
+using System.IO;
+using System.Net.Http;
+using System.Reflection;
+using System.Threading.Tasks;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
 
@@ -15,6 +13,8 @@ namespace SimpleDnsCrypt.Helper
 {
 	public static class ApplicationUpdater
 	{
+		private static readonly ILog Log = LogManagerHelper.Factory();
+
 		public static async Task<RemoteUpdate> CheckForRemoteUpdateAsync()
 		{
 			var remoteUpdate = new RemoteUpdate();
@@ -58,9 +58,10 @@ namespace SimpleDnsCrypt.Helper
 					}
 				}
 			}
-			catch (Exception)
+			catch (Exception exception)
 			{
 				remoteUpdate.CanUpdate = false;
+				Log.Error(exception);
 			}
 
 			return remoteUpdate;

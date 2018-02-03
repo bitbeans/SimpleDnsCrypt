@@ -254,6 +254,21 @@ namespace SimpleDnsCrypt.ViewModels
 							LinkText = LocalizationEx.GetUiString("about_view_on_github", Thread.CurrentThread.CurrentCulture),
 							LinkUri = new Uri("https://github.com/baseclass/Contrib.Nuget")
 						}
+					},
+					new License
+					{
+						LicenseHeaderText = "NLog",
+						LicenseText = await LoadLicense("NLog.txt").ConfigureAwait(false),
+						LicenseRegularLink = new LicenseLink
+						{
+							LinkText = "nlog-project.org [http]",
+							LinkUri = new Uri("http://nlog-project.org/")
+						},
+						LicenseCodeLink = new LicenseLink
+						{
+							LinkText = LocalizationEx.GetUiString("about_view_on_github", Thread.CurrentThread.CurrentCulture),
+							LinkUri = new Uri("https://github.com/nlog/NLog")
+						}
 					}
 				};
 				var orderedList = tmpList.OrderBy(l => l.LicenseHeaderText);

@@ -9,13 +9,11 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.ComponentModel.Composition;
 using System.Dynamic;
-using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
 
 namespace SimpleDnsCrypt.ViewModels
 {
@@ -32,7 +30,7 @@ namespace SimpleDnsCrypt.ViewModels
 	}
 
 	[Export(typeof(MainViewModel))]
-	public class MainViewModel : PropertyChangedBase, IShell
+	public class MainViewModel : PropertyChangedBase
 	{
 		private readonly IWindowManager _windowManager;
 		private readonly IEventAggregator _events;

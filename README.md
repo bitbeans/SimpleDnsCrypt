@@ -94,6 +94,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 - [minisign-net](https://github.com/bitbeans/minisign-net)
 - [Nett](https://github.com/paiden/Nett)
 - [Newtonsoft.Json](https://github.com/JamesNK/Newtonsoft.Json)
+- [NLog](https://github.com/nlog/NLog)
 - [libsodium-net](https://github.com/adamcaudill/libsodium-net)
 - [WPFLocalizationExtension](https://github.com/SeriousM/WPFLocalizationExtension)
 - [XAMLMarkupExtensions](https://github.com/MrCircuit/XAMLMarkupExtensions)

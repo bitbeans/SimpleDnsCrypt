@@ -2,10 +2,10 @@
 {
 	public static class Global
     {
-	    /// <summary>
-	    ///     The name of this application.
-	    /// </summary>
-	    public const string ApplicationName = "Simple DNSCrypt";
+		/// <summary>
+		///     The name of this application.
+		/// </summary>
+		public const string ApplicationName = "Simple DNSCrypt";
 
 	    /// <summary>
 	    ///     Remote URI where the application will find the update informations.
@@ -83,5 +83,5 @@
 		    "Virtueller Microsoft-Adapter",
 		    "TAP"
 	    };
-	}
+    }
 }

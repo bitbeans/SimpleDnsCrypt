@@ -115,6 +115,9 @@
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.4.12\lib\net45\NLog.dll</HintPath>
+    </Reference>
     <Reference Include="Sodium, Version=0.10.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\libsodium-net.0.10.0\lib\Net40\Sodium.dll</HintPath>
     </Reference>
@@ -185,9 +188,11 @@
     <Compile Include="Helper\DnsCryptProxyManager.cs" />
     <Compile Include="Helper\LocalizationEx.cs" />
     <Compile Include="Helper\LocalNetworkInterfaceManager.cs" />
+    <Compile Include="Helper\LogManagerHelper.cs" />
     <Compile Include="Helper\NavigationService.cs" />
     <Compile Include="Helper\VersionHelper.cs" />
-    <Compile Include="IShell.cs" />
+    <Compile Include="Logger\NLogLogger.cs" />
+    <Compile Include="LogMode.cs" />
     <Compile Include="Models\AddressBlockLogLine.cs" />
     <Compile Include="Models\AvailableResolver.cs" />
     <Compile Include="Models\BlacklistRule.cs" />
@@ -418,7 +423,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="dnscrypt-proxy\blacklist.txt">
@@ -449,6 +456,7 @@
   <ItemGroup>
     <Content Include="DNSx64\dnscrypt-proxy.exe" />
     <Content Include="DNSx86\dnscrypt-proxy.exe" />
+    <EmbeddedResource Include="Resources\Licenses\NLog.txt" />
     <EmbeddedResource Include="Resources\Licenses\Baseclass.Contrib.Nuget.Output.txt" />
     <EmbeddedResource Include="Resources\Licenses\ControlzEx.txt" />
     <EmbeddedResource Include="Resources\Licenses\Costura.Fody.txt" />
@@ -471,7 +479,7 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Baseclass.Contrib.Nuget.Output.2.4.1\build\net40\Baseclass.Contrib.Nuget.Output.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Baseclass.Contrib.Nuget.Output.2.4.1\build\net40\Baseclass.Contrib.Nuget.Output.targets'))" />
     <Error Condition="!Exists('..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets'))" />
-    <Error Condition="!Exists('..\packages\Fody.2.3.23\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.2.3.23\build\Fody.targets'))" />
+    <Error Condition="!Exists('..\packages\Fody.2.3.24\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.2.3.24\build\Fody.targets'))" />
   </Target>
   <PropertyGroup>
     <TargetFrameworkSDKToolsDirectory Condition=" '$(PlatformTarget)' == 'x64'">$(TargetFrameworkSDKToolsDirectory)$(PlatformTarget)\</TargetFrameworkSDKToolsDirectory>
@@ -480,5 +488,5 @@
     <PostBuildEvent>copy "$(ProjectDir)DNS$(PlatformName)\*" "$(ProjectDir)$(OutDir)\dnscrypt-proxy\"</PostBuildEvent>
   </PropertyGroup>
   <Import Project="..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets" Condition="Exists('..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets')" />
-  <Import Project="..\packages\Fody.2.3.23\build\Fody.targets" Condition="Exists('..\packages\Fody.2.3.23\build\Fody.targets')" />
+  <Import Project="..\packages\Fody.2.3.24\build\Fody.targets" Condition="Exists('..\packages\Fody.2.3.24\build\Fody.targets')" />
 </Project>

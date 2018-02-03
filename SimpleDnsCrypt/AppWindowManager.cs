@@ -1,8 +1,7 @@
 ﻿using Caliburn.Micro;
-using System.Windows;
-using SimpleDnsCrypt.Models;
 using SimpleDnsCrypt.ViewModels;
 using SimpleDnsCrypt.Windows;
+using System.Windows;
 
 namespace SimpleDnsCrypt
 {
