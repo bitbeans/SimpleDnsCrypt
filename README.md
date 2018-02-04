@@ -61,9 +61,9 @@ If you can add or correct a language, feel free to do so:
 
 ## Screenshots
 
-![maintab](https://raw.githubusercontent.com/bitbeans/SimpleDnsCrypt/dnscrypt-proxy2/img/preview/mainmenu.png)
+![maintab](https://raw.githubusercontent.com/bitbeans/SimpleDnsCrypt/master/img/preview/mainmenu.png)
 
-![resolvers](https://raw.githubusercontent.com/bitbeans/SimpleDnsCrypt/dnscrypt-proxy2/img/preview/resolvers.png)
+![resolvers](https://raw.githubusercontent.com/bitbeans/SimpleDnsCrypt/master/img/preview/resolvers.png)
 
 ## Built With
 
