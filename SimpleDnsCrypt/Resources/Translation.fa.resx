@@ -121,139 +121,139 @@
     <value>رابط های شبکه</value>
   </data>
   <data name="default_settings_show_hidden_cards" xml:space="preserve">
-    <value>Show hidden cards</value>
+    <value>نمایش رابط های مخفی شده</value>
   </data>
   <data name="default_settings_service_header" xml:space="preserve">
-    <value>Service</value>
+    <value>سرویس ها</value>
   </data>
   <data name="default_settings_service" xml:space="preserve">
-    <value>DNSCrypt Service</value>
+    <value>سرویس های DNSCrypt</value>
   </data>
   <data name="default_settings_configuration" xml:space="preserve">
-    <value>Configuration</value>
+    <value>تنظیمات</value>
   </data>
   <data name="default_settings_configuration_ipv4" xml:space="preserve">
-    <value>Using IPv4 Server</value>
+    <value>استفاده از سرور IPv4</value>
   </data>
   <data name="default_settings_configuration_ipv4_tooltip" xml:space="preserve">
-    <value>Use servers reachable over IPv4</value>
+    <value>استفاده از سرورهایی که تحت IPv4 قابل دسترسی می باشند</value>
   </data>
   <data name="default_settings_configuration_ipv6" xml:space="preserve">
-    <value>Using IPv6 Server</value>
+    <value>استفاده از سرور IPv6</value>
   </data>
   <data name="default_settings_configuration_ipv6_tooltip" xml:space="preserve">
-    <value>Use servers reachable over IPv6 (do not enable if you don&apos;t have IPv6 connectivity)</value>
+    <value>استفاده از سرورهایی که تحت IPv6 قابل دسترسی می باشند(در صورت عدم برقراری ارتباط IPv6 فعال نکنید)</value>
   </data>
   <data name="default_settings_configuration_dnssec" xml:space="preserve">
-    <value>Only servers with DNSSEC support</value>
+    <value>فقط سرورهای با پشتیبانی DNSSEC</value>
   </data>
   <data name="default_settings_configuration_dnssec_tooltip" xml:space="preserve">
-    <value>Server must support DNS security extensions</value>
+    <value>سرور باید از ضمیمه های امنیتی DNS پشتیبانی کنند</value>
   </data>
   <data name="default_settings_configuration_nolog" xml:space="preserve">
-    <value>Only servers without logging</value>
+    <value>فقط سرورهای  بدون ثبت لاگ</value>
   </data>
   <data name="default_settings_configuration_nolog_tooltip" xml:space="preserve">
-    <value>Server must not log user queries</value>
+    <value>سرور نباید درخواست های کاربر را ثبت کند</value>
   </data>
   <data name="default_settings_configuration_nofilter" xml:space="preserve">
-    <value>Only servers without filter</value>
+    <value>فقط سرورهای بدون فیلترینگ</value>
   </data>
   <data name="default_settings_configuration_nofilter_tooltip" xml:space="preserve">
-    <value>Server must not enforce its own blacklist (for parental control, ads blocking...)</value>
+    <value>سرور نباید لیست سیاه خود را اعمال کند(برای مقاصد کنترل والدین، مسدود کردن دامین های تبلیغی و ...)</value>
   </data>
   <data name="tabitem_mainmenu" xml:space="preserve">
-    <value>Main Menu</value>
+    <value>صفحه اصلی</value>
   </data>
   <data name="loader_administrative_rights_available" xml:space="preserve">
-    <value>Administrative rights are available</value>
+    <value>دسترسی مدیریتی فراهم است</value>
   </data>
   <data name="loader_administrative_rights_missing" xml:space="preserve">
-    <value>Missing administrative rights!</value>
+    <value>دسترسی مدیریتی از دست رفته!</value>
   </data>
   <data name="loader_checking_version" xml:space="preserve">
-    <value>Checking for new version . . .</value>
+    <value>بررسی برای نسخه جدید...</value>
   </data>
   <data name="loader_new_version_found" xml:space="preserve">
-    <value>A newer version was found: {0}</value>
+    <value>نسخه جدیدتر یافت شد: {0}</value>
   </data>
   <data name="loader_starting_update" xml:space="preserve">
-    <value>Starting update . . .</value>
+    <value>شروع به روزرسانی...</value>
   </data>
   <data name="loader_update_failed" xml:space="preserve">
-    <value>Update failed, continue . . .</value>
+    <value>آپدیت با شکست مواجه شد، ادامه...</value>
   </data>
   <data name="loader_latest_version" xml:space="preserve">
-    <value>You are using the latest version</value>
+    <value>شما از آخرین نسخه استفاده می کنید</value>
   </data>
   <data name="loader_unsigned" xml:space="preserve">
-    <value>unsigned</value>
+    <value>امضاء نشده</value>
   </data>
   <data name="loader_missing" xml:space="preserve">
-    <value>missing</value>
+    <value>از دست رفته</value>
   </data>
   <data name="loader_downloading_signature" xml:space="preserve">
-    <value>Downloading signature . . .</value>
+    <value>دریافت کردن امضاء ها...</value>
   </data>
   <data name="loader_downloading_installer" xml:space="preserve">
-    <value>Downloading installer . . .</value>
+    <value>دریافت کردن نصب کننده...</value>
   </data>
   <data name="loader_starting" xml:space="preserve">
-    <value>Starting . . .</value>
+    <value>شروع...</value>
   </data>
   <data name="loader_validate_folder" xml:space="preserve">
-    <value>Validating {0} folder</value>
+    <value>اعتبارسنجی {0} فولدر</value>
   </data>
   <data name="loader_loading_network_cards" xml:space="preserve">
-    <value>Loading network cards . . .</value>
+    <value>بارگزاری رابط های شبکه</value>
   </data>
   <data name="loader_failed_loading" xml:space="preserve">
-    <value>Could not load {0}</value>
+    <value>ناموفق در بارگزاری</value>
   </data>
   <data name="loader_successfully_loaded" xml:space="preserve">
-    <value>{0} successfully loaded</value>
+    <value>{0} مورد با موفقیت بارگزاری شدند</value>
   </data>
   <data name="loader_loading" xml:space="preserve">
-    <value>Loading {0} . . .</value>
+    <value>در حال بارگزاری {0}...</value>
   </data>
   <data name="loader_missing_files" xml:space="preserve">
-    <value>Missing files in the {0} folder:\n{1}\n\nThink about a new installation of {2}</value>
+    <value>از دست رفتن فایل ها در {0} فولدر:\n{}1\n\n بهتر است به دنبال یک نصب کننده جدید از {2} باشید</value>
   </data>
   <data name="loader_all_files_available" xml:space="preserve">
-    <value>All required files have been found</value>
+    <value>تمام فایل های مورد نیاز یافت شد</value>
   </data>
   <data name="about" xml:space="preserve">
-    <value>About</value>
+    <value>درباره</value>
   </data>
   <data name="about_software" xml:space="preserve">
-    <value>Software</value>
+    <value>نرم افزار</value>
   </data>
   <data name="about_license" xml:space="preserve">
-    <value>License</value>
+    <value>جواز</value>
   </data>
   <data name="about_view_on_github" xml:space="preserve">
-    <value>View on GitHub</value>
+    <value>مشاهده در گیت‌هاب</value>
   </data>
   <data name="tabitem_querylog" xml:space="preserve">
-    <value>Query Log</value>
+    <value>لاگ پرس و جوها</value>
   </data>
   <data name="querylog" xml:space="preserve">
-    <value>Query Log</value>
+    <value>لاگ پرس و جوها</value>
   </data>
   <data name="querylog_waiting_for_data" xml:space="preserve">
-    <value>waiting for DNS queries</value>
+    <value>انتظار برای پاسخ های DNS</value>
   </data>
   <data name="querylog_entry_count" xml:space="preserve">
-    <value>Entries:</value>
+    <value>ورودی ها:</value>
   </data>
   <data name="querylog_source_file" xml:space="preserve">
-    <value>Source:</value>
+    <value>مبدا:</value>
   </data>
   <data name="querylog_button_clear" xml:space="preserve">
-    <value>Clear List</value>
+    <value>پاکسازی لیست</value>
   </data>
   <data name="querylog_button_block" xml:space="preserve">
-    <value>Block Selected</value>
+    <value>مسدود کردن انتخاب شده ها</value>
   </data>
   <data name="domainblocklog" xml:space="preserve">
     <value>Domain Block Log</value>
