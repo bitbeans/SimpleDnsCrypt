@@ -16,10 +16,13 @@ namespace SimpleDnsCrypt.Models
 		private bool _require_nofilter;
 		private bool _ipv4_servers;
 		private bool _ipv6_servers;
+		private bool _dnscrypt_servers;
+		private bool _doh_servers;
 		private bool _require_dnssec;
 		private bool _require_nolog;
 		private bool _force_tcp;
 		private int _timeout;
+		private string _lb_strategy;
 		private int _cert_refresh_delay;
 		private int _log_level;
 		private string _log_file;
@@ -35,7 +38,7 @@ namespace SimpleDnsCrypt.Models
 		private string _fallback_resolver;
 		private bool _ignore_system_dns;
 		private Dictionary<string, Static> _static;
-
+		
 		[TomlIgnore]
 		public new bool IsNotifying
 		{
@@ -109,6 +112,32 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		/// <summary>
+		///		Use servers implementing the DNSCrypt protocol
+		/// </summary>
+		public bool dnscrypt_servers
+		{
+			get => _dnscrypt_servers;
+			set
+			{
+				_dnscrypt_servers = value;
+				NotifyOfPropertyChange(() => dnscrypt_servers);
+			}
+		}
+
+		/// <summary>
+		///		Use servers implementing the DNS-over-HTTPS protocol
+		/// </summary>
+		public bool doh_servers
+		{
+			get => _doh_servers;
+			set
+			{
+				_doh_servers = value;
+				NotifyOfPropertyChange(() => doh_servers);
+			}
+		}
+
+		/// <summary>
 		///     Server must support DNS security extensions
 		/// </summary>
 		public bool require_dnssec
@@ -175,6 +204,19 @@ namespace SimpleDnsCrypt.Models
 			{
 				_timeout = value;
 				NotifyOfPropertyChange(() => timeout);
+			}
+		}
+
+		/// <summary>
+		/// Load-balancing strategy: 'p2' (default), 'ph', 'fastest' or 'random'
+		/// </summary>
+		public string lb_strategy
+		{
+			get => _lb_strategy;
+			set
+			{
+				_lb_strategy = value;
+				NotifyOfPropertyChange(() => lb_strategy);
 			}
 		}
 
