@@ -6,6 +6,7 @@ using System.IO;
 using System.ServiceProcess;
 using System.Text;
 using System.Threading;
+using Caliburn.Micro;
 using Nett;
 using Newtonsoft.Json;
 using SimpleDnsCrypt.Config;
@@ -18,6 +19,7 @@ namespace SimpleDnsCrypt.Helper
 	/// </summary>
 	public static class DnsCryptProxyManager
 	{
+		private static readonly ILog Log = LogManagerHelper.Factory();
 		private const string DnsCryptProxyServiceName = "dnscrypt-proxy";
 
 		/// <summary>
@@ -65,8 +67,9 @@ namespace SimpleDnsCrypt.Helper
 						return false;
 				}
 			}
-			catch (Exception)
+			catch (Exception exception)
 			{
+				Log.Error(exception);
 				return false;
 			}
 		}
@@ -85,8 +88,9 @@ namespace SimpleDnsCrypt.Helper
 				dnscryptService.Start();
 				return dnscryptService.Status == ServiceControllerStatus.Running;
 			}
-			catch (Exception)
+			catch (Exception exception)
 			{
+				Log.Error(exception);
 				return false;
 			}
 		}
@@ -113,8 +117,9 @@ namespace SimpleDnsCrypt.Helper
 				}
 				return dnscryptService.Status == ServiceControllerStatus.Stopped;
 			}
-			catch (Exception)
+			catch (Exception exception)
 			{
+				Log.Error(exception);
 				return false;
 			}
 		}
@@ -142,8 +147,9 @@ namespace SimpleDnsCrypt.Helper
 				}
 				return dnscryptService.Status == ServiceControllerStatus.Running;
 			}
-			catch (Exception)
+			catch (Exception exception)
 			{
+				Log.Error(exception);
 				return false;
 			}
 		}
@@ -172,9 +178,9 @@ namespace SimpleDnsCrypt.Helper
 					resolvers = res;
 				}
 			}
-			catch (Exception)
+			catch (Exception exception)
 			{
-
+				Log.Error(exception);
 			}
 			return resolvers;
 		}
@@ -197,9 +203,9 @@ namespace SimpleDnsCrypt.Helper
 					resolvers = res;
 				}
 			}
-			catch (Exception)
+			catch (Exception exception)
 			{
-
+				Log.Error(exception);
 			}
 			return resolvers;
 		}
@@ -235,9 +241,9 @@ namespace SimpleDnsCrypt.Helper
 					resolvers = res;
 				}
 			}
-			catch (Exception)
+			catch (Exception exception)
 			{
-
+				Log.Error(exception);
 			}
 			finally
 			{
@@ -344,6 +350,7 @@ namespace SimpleDnsCrypt.Helper
 							{
 								processResult.StandardOutput = output.ToString();
 								processResult.StandardError = error.ToString();
+								Log.Warn(processResult.StandardError);
 								processResult.Success = false;
 							}
 						}
@@ -357,6 +364,7 @@ namespace SimpleDnsCrypt.Helper
 			}
 			catch (Exception exception)
 			{
+				Log.Error(exception);
 				processResult.StandardError = exception.Message;
 				processResult.Success = false;
 			}
