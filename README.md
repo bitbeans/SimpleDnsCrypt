@@ -65,6 +65,10 @@ If you can add or correct a language, feel free to do so:
 
 ![resolvers](https://raw.githubusercontent.com/bitbeans/SimpleDnsCrypt/master/img/preview/resolvers.png)
 
+![advanced](https://raw.githubusercontent.com/bitbeans/SimpleDnsCrypt/master/img/preview/advancedsettings.png)
+
+![settings](https://raw.githubusercontent.com/bitbeans/SimpleDnsCrypt/master/img/preview/settings.png)
+
 ## Built With
 
 * [Visual Studio 2017 (15.5.x)](https://www.visualstudio.com/downloads/)
