@@ -8,7 +8,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.ComponentModel.Composition;
+using System.Diagnostics;
 using System.Dynamic;
+using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -611,6 +613,22 @@ namespace SimpleDnsCrypt.ViewModels
 			await Task.Delay(1000).ConfigureAwait(false);
 			localNetworkInterface.IsChangeable = true;
 			ReloadLoadNetworkInterfaces();
+		}
+
+		/// <summary>
+		/// Open the applications log directory (Windows Explorer).
+		/// </summary>
+		public void OpenLogDirectory()
+		{
+			try
+			{
+				var logDirectory = Path.Combine(Directory.GetCurrentDirectory(), "logs");
+				Process.Start(logDirectory);
+			}
+			catch (Exception exception)
+			{
+				Log.Error(exception);
+			}
 		}
 
 		#region Advanced Settings
