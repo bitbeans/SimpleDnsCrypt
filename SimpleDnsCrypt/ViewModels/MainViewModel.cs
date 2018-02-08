@@ -87,9 +87,7 @@ namespace SimpleDnsCrypt.ViewModels
 			_domainBlacklistViewModel = new DomainBlacklistViewModel(_windowManager, _events);
 			_addressBlockLogViewModel = new AddressBlockLogViewModel(_windowManager, _events);
 			_addressBlacklistViewModel = new AddressBlacklistViewModel(_windowManager, _events);
-
 			_resolvers = new BindableCollection<AvailableResolver>();
-			
 		}
 
 		public void Initialize()
@@ -472,7 +470,6 @@ namespace SimpleDnsCrypt.ViewModels
 				NotifyOfPropertyChange(() => IsSavingConfiguration);
 			}
 		}
-		
 
 		private async void HandleService()
 		{
@@ -615,6 +612,13 @@ namespace SimpleDnsCrypt.ViewModels
 			localNetworkInterface.IsChangeable = true;
 			ReloadLoadNetworkInterfaces();
 		}
+
+		#region Advanced Settings
+		public void SaveAdvancedSettings()
+		{
+			SaveDnsCryptConfiguration();
+		}
+		#endregion
 
 		#region Resolvers
 

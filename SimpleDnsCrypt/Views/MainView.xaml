@@ -532,6 +532,110 @@
                                                        Opacity="0.7" Margin="5,0,0,3" FontWeight="Bold">
                                             </TextBlock>
                                         </Grid>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="400" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="35" />
+                                            </Grid.RowDefinitions>
+                                            <Label Foreground="#FF575757" Grid.Row="0" Grid.Column="0"
+                                                   Content="DNS cache to reduce latency and outgoing traffic"
+                                                   VerticalAlignment="Bottom"
+                                                   HorizontalAlignment="Left" Margin="0,0,0,5">
+                                            </Label>
+                                            <controls:ToggleSwitchButton
+                                                IsEnabled="{Binding IsWorkingOnService, Converter={StaticResource ReverseBoolToEnabledConverter}}"
+                                                Grid.Row="0" Grid.Column="1" Cursor="Hand"
+                                                IsChecked="{Binding DnscryptProxyConfiguration.cache}"
+                                                HorizontalAlignment="Right" VerticalAlignment="Top">
+                                            </controls:ToggleSwitchButton>
+                                        </Grid>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <iconPacks:PackIconMaterial Grid.Column="0" Grid.Row="0" Height="20"
+                                                                        Width="20" Kind="Numeric6BoxMultipleOutline"
+                                                                        Opacity="0.7"
+                                                                        Foreground="#FF8ab329"
+                                                                        HorizontalAlignment="Left"
+                                                                        VerticalAlignment="Center" />
+                                            <TextBlock Grid.Column="1" Grid.Row="0"
+                                                       Text="Block IPv6"
+                                                       TextWrapping="Wrap" VerticalAlignment="Center"
+                                                       Foreground="#FF8ab329" FontSize="20"
+                                                       Opacity="0.7" Margin="5,0,0,3" FontWeight="Bold">
+                                            </TextBlock>
+                                        </Grid>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="400" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="35" />
+                                            </Grid.RowDefinitions>
+                                            <Label Foreground="#FF575757" Grid.Row="0" Grid.Column="0"
+                                                   Content="Immediately respond to IPv6-related queries with an empty response"
+                                                   VerticalAlignment="Bottom"
+                                                   HorizontalAlignment="Left" Margin="0,0,0,5">
+                                            </Label>
+                                            <controls:ToggleSwitchButton
+                                                IsEnabled="{Binding IsWorkingOnService, Converter={StaticResource ReverseBoolToEnabledConverter}}"
+                                                Grid.Row="0" Grid.Column="1" Cursor="Hand"
+                                                IsChecked="{Binding DnscryptProxyConfiguration.block_ipv6}"
+                                                HorizontalAlignment="Right" VerticalAlignment="Top">
+                                            </controls:ToggleSwitchButton>
+                                        </Grid>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <iconPacks:PackIconMaterial Grid.Column="0" Grid.Row="0" Height="20"
+                                                                        Width="20" Kind="Network"
+                                                                        Opacity="0.7"
+                                                                        Foreground="#FF8ab329"
+                                                                        HorizontalAlignment="Left"
+                                                                        VerticalAlignment="Center" />
+                                            <TextBlock Grid.Column="1" Grid.Row="0"
+                                                       Text="Force TCP"
+                                                       TextWrapping="Wrap" VerticalAlignment="Center"
+                                                       Foreground="#FF8ab329" FontSize="20"
+                                                       Opacity="0.7" Margin="5,0,0,3" FontWeight="Bold">
+                                            </TextBlock>
+                                        </Grid>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="400" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="35" />
+                                            </Grid.RowDefinitions>
+                                            <Label Foreground="#FF575757" Grid.Row="0" Grid.Column="0"
+                                                   Content="Always use TCP to connect to upstream servers"
+                                                   VerticalAlignment="Bottom"
+                                                   HorizontalAlignment="Left" Margin="0,0,0,5">
+                                            </Label>
+                                            <controls:ToggleSwitchButton
+                                                IsEnabled="{Binding IsWorkingOnService, Converter={StaticResource ReverseBoolToEnabledConverter}}"
+                                                Grid.Row="0" Grid.Column="1" Cursor="Hand"
+                                                IsChecked="{Binding DnscryptProxyConfiguration.force_tcp}"
+                                                HorizontalAlignment="Right" VerticalAlignment="Top">
+                                            </controls:ToggleSwitchButton>
+                                        </Grid>
+
+                                        <Button x:Name="SaveAdvancedSettings" 
+                                                Cursor="Hand"
+                                                Content="{lex:Loc Key=default_settings_apply_settings}"
+                                                Width="Auto" HorizontalAlignment="Right"
+                                                Style="{DynamicResource AccentedSquareButtonStyle}" Margin="0,15,5,5" />
                                     </StackPanel>
                                 </Border>
                                 <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,14,0,0"
@@ -596,19 +700,6 @@
                                         </Grid>
                                     </StackPanel>
                                 </Border>
-                                <TextBlock Foreground="DarkOrange" FontWeight="Bold" Margin="0,10,0,0">
-                                    This is a preview version of Simple DNSCrypt.<LineBreak />
-                                    This functionality is not yet available. Sorry :).<LineBreak />
-                                    - cache settings
-                                    - forwarding rules
-                                    - block_ipv6
-                                    - cert_refresh_delay<LineBreak />
-                                    - timeout
-                                    - force_tcp
-                                    - max_clients
-                                    - syslog settings
-                                </TextBlock>
-
                             </StackPanel>
                         </TabItem.Content>
                     </TabItem>
