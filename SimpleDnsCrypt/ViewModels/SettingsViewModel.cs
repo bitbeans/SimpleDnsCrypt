@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using SimpleDnsCrypt.Models;
 using System.ComponentModel.Composition;
 
 namespace SimpleDnsCrypt.ViewModels
@@ -15,6 +16,9 @@ namespace SimpleDnsCrypt.ViewModels
 		private bool _isDomainBlockLogTabVisible;
 		private bool _isAddressBlacklistTabVisible;
 		private bool _isAddressBlockLogTabVisible;
+		private bool _isAutoUpdateEnabled;
+
+		private UpdateType _selectedUpdateType;
 
 		public SettingsViewModel()
 		{
@@ -26,13 +30,14 @@ namespace SimpleDnsCrypt.ViewModels
 			_windowManager = windowManager;
 			_events = events;
 			_events.Subscribe(this);
-
 			_isAdvancedSettingsTabVisible = Properties.Settings.Default.IsAdvancedSettingsTabVisible;
 			_isQueryLogTabVisible = Properties.Settings.Default.IsQueryLogTabVisible;
 			_isDomainBlacklistTabVisible = Properties.Settings.Default.IsDomainBlacklistTabVisible;
 			_isDomainBlockLogTabVisible = Properties.Settings.Default.IsDomainBlockLogTabVisible;
 			_isAddressBlacklistTabVisible = Properties.Settings.Default.IsAddressBlacklistTabVisible;
 			_isAddressBlockLogTabVisible = Properties.Settings.Default.IsAddressBlockLogTabVisible;
+			_isAutoUpdateEnabled = Properties.Settings.Default.AutoUpdate;
+			_selectedUpdateType = (UpdateType)Properties.Settings.Default.MinUpdateType;
 		}
 
 		/// <summary>
@@ -45,6 +50,17 @@ namespace SimpleDnsCrypt.ViewModels
 			{
 				_windowTitle = value;
 				NotifyOfPropertyChange(() => WindowTitle);
+			}
+		}
+
+		public UpdateType SelectedUpdateType
+		{
+			get => _selectedUpdateType;
+			set
+			{
+				_selectedUpdateType = value;
+				Properties.Settings.Default.MinUpdateType = (int)_selectedUpdateType;
+				NotifyOfPropertyChange(() => SelectedUpdateType);
 			}
 		}
 
@@ -111,6 +127,17 @@ namespace SimpleDnsCrypt.ViewModels
 				_isAddressBlacklistTabVisible = value;
 				Properties.Settings.Default.IsAddressBlacklistTabVisible = _isAddressBlacklistTabVisible;
 				NotifyOfPropertyChange(() => IsAddressBlacklistTabVisible);
+			}
+		}
+
+		public bool IsAutoUpdateEnabled
+		{
+			get => _isAutoUpdateEnabled;
+			set
+			{
+				_isAutoUpdateEnabled = value;
+				Properties.Settings.Default.AutoUpdate = _isAutoUpdateEnabled;
+				NotifyOfPropertyChange(() => IsAutoUpdateEnabled);
 			}
 		}
 	}

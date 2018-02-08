@@ -5,7 +5,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:lex="http://wpflocalizeextension.codeplex.com"
              xmlns:converters="clr-namespace:SimpleDnsCrypt.Converters"
-             xmlns:cal="http://www.caliburnproject.org"
              xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
              mc:Ignorable="d"
              Height="Auto" Width="300"
@@ -14,6 +13,7 @@
              lex:ResxLocalizationProvider.DefaultDictionary="Translation">
     <UserControl.Resources>
         <ResourceDictionary>
+            <converters:EnumToCollectionConverter x:Key="EnumToCollectionConverter" />
         </ResourceDictionary>
     </UserControl.Resources>
     <Grid Background="#198AB328">
@@ -49,36 +49,52 @@
                     </TextBlock>
                 </StackPanel>
                 <StackPanel Orientation="Vertical">
-                    <CheckBox 
+                    <CheckBox
                         IsChecked="{Binding IsAdvancedSettingsTabVisible}"
                         Margin="5"
                         Content="{lex:Loc Key=settings_advanced_settings}"
                         Cursor="Hand" Foreground="#FF575757" />
-                    <CheckBox 
+                    <CheckBox
                         IsChecked="{Binding IsQueryLogTabVisible}"
                         Margin="5"
                         Content="{lex:Loc Key=settings_query_log}"
                         Cursor="Hand" Foreground="#FF575757" />
                     <CheckBox IsEnabled="False"
-                        IsChecked="{Binding IsDomainBlockLogTabVisible}"
-                        Margin="5"
-                        Content="{lex:Loc Key=settings_domain_block}"
-                        Cursor="Hand" Foreground="#FF575757" />
+                              IsChecked="{Binding IsDomainBlockLogTabVisible}"
+                              Margin="5"
+                              Content="{lex:Loc Key=settings_domain_block}"
+                              Cursor="Hand" Foreground="#FF575757" />
                     <CheckBox IsEnabled="False"
-                        IsChecked="{Binding IsAddressBlockLogTabVisible}"
-                        Margin="5"
-                        Content="{lex:Loc Key=settings_address_block}"
-                        Cursor="Hand" Foreground="#FF575757" />
+                              IsChecked="{Binding IsAddressBlockLogTabVisible}"
+                              Margin="5"
+                              Content="{lex:Loc Key=settings_address_block}"
+                              Cursor="Hand" Foreground="#FF575757" />
                     <CheckBox IsEnabled="False"
-                        IsChecked="{Binding IsDomainBlacklistTabVisible}"
-                        Margin="5"
-                        Content="{lex:Loc Key=settings_domain_blacklist}"
-                        Cursor="Hand" Foreground="#FF575757" />
+                              IsChecked="{Binding IsDomainBlacklistTabVisible}"
+                              Margin="5"
+                              Content="{lex:Loc Key=settings_domain_blacklist}"
+                              Cursor="Hand" Foreground="#FF575757" />
                     <CheckBox IsEnabled="False"
-                        IsChecked="{Binding IsAddressBlacklistTabVisible}"
-                        Margin="5"
-                        Content="{lex:Loc Key=settings_address_blacklist}"
-                        Cursor="Hand" Foreground="#FF575757" />
+                              IsChecked="{Binding IsAddressBlacklistTabVisible}"
+                              Margin="5"
+                              Content="{lex:Loc Key=settings_address_blacklist}"
+                              Cursor="Hand" Foreground="#FF575757" />
+                    <StackPanel Orientation="Vertical">
+                        <CheckBox IsChecked="{Binding IsAutoUpdateEnabled}"
+                                  Margin="5"
+                                  Content="Check for updates on startup"
+                                  Cursor="Hand" Foreground="#FF575757" />
+                        <StackPanel Margin="5,0,0,0" Orientation="Horizontal">
+                            <TextBlock Foreground="#FF575757" Text="Update Channel:" VerticalAlignment="Center" />
+                            <ComboBox VerticalContentAlignment="Center"
+                                      Width="90"
+                                      ItemsSource="{Binding Path=SelectedUpdateType, Converter={converters:EnumToCollectionConverter}, Mode=OneTime}"
+                                      SelectedValuePath="Value"
+                                      DisplayMemberPath="Description"
+                                      SelectedValue="{Binding Path=SelectedUpdateType}" Margin="5,0,0,0">
+                            </ComboBox>
+                        </StackPanel>
+                    </StackPanel>
                 </StackPanel>
             </StackPanel>
         </Border>

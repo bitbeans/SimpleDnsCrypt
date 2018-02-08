@@ -137,6 +137,7 @@
     <Compile Include="Converters\BoolToTextConverter.cs" />
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
     <Compile Include="Converters\BoolToVisibilityCollapsedConverter.cs" />
+    <Compile Include="Converters\EnumToCollectionConverter.cs" />
     <Compile Include="Converters\IntegerBoolToVisibilityConverter.cs" />
     <Compile Include="Converters\IntegerToBoolConverter.cs" />
     <Compile Include="Converters\IntegerToVisibilityConverter.cs" />
@@ -156,6 +157,7 @@
     <Compile Include="Helper\AuthenticodeTools.cs" />
     <Compile Include="Helper\DnscryptProxyConfigurationManager.cs" />
     <Compile Include="Helper\DnsCryptProxyManager.cs" />
+    <Compile Include="Helper\EnumHelper.cs" />
     <Compile Include="Helper\LocalizationEx.cs" />
     <Compile Include="Helper\LocalNetworkInterfaceManager.cs" />
     <Compile Include="Helper\LogManagerHelper.cs" />
@@ -178,6 +180,7 @@
     <Compile Include="Models\QueryLogLineType.cs" />
     <Compile Include="Models\RemoteUpdate.cs" />
     <Compile Include="Models\Stamp.cs" />
+    <Compile Include="Models\ValueDescription.cs" />
     <Compile Include="Resources\Translation.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

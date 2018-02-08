@@ -53,31 +53,35 @@ namespace SimpleDnsCrypt.ViewModels
 					Process.GetCurrentProcess().Kill();
 				}
 
-				ProgressText = LocalizationEx.GetUiString("loader_checking_version", Thread.CurrentThread.CurrentCulture);
-				var update = await ApplicationUpdater.CheckForRemoteUpdateAsync().ConfigureAwait(false);
-				if (update.CanUpdate)
+				if (Properties.Settings.Default.AutoUpdate)
 				{
-					ProgressText =
-						string.Format(LocalizationEx.GetUiString("loader_new_version_found", Thread.CurrentThread.CurrentCulture),
-							update.Update.Version);
-					await Task.Delay(200).ConfigureAwait(false);
-					var installer = await StartRemoteUpdateDownload(update).ConfigureAwait(false);
-					if (!string.IsNullOrEmpty(installer) && File.Exists(installer))
+					ProgressText = LocalizationEx.GetUiString("loader_checking_version", Thread.CurrentThread.CurrentCulture);
+					var minUpdateType = (UpdateType)Properties.Settings.Default.MinUpdateType;
+					var update = await ApplicationUpdater.CheckForRemoteUpdateAsync(minUpdateType).ConfigureAwait(false);
+					if (update.CanUpdate)
 					{
-						ProgressText = LocalizationEx.GetUiString("loader_starting_update", Thread.CurrentThread.CurrentCulture);
+						ProgressText =
+							string.Format(LocalizationEx.GetUiString("loader_new_version_found", Thread.CurrentThread.CurrentCulture),
+								update.Update.Version);
 						await Task.Delay(200).ConfigureAwait(false);
-						Process.Start(installer);
-						Process.GetCurrentProcess().Kill();
+						var installer = await StartRemoteUpdateDownload(update).ConfigureAwait(false);
+						if (!string.IsNullOrEmpty(installer) && File.Exists(installer))
+						{
+							ProgressText = LocalizationEx.GetUiString("loader_starting_update", Thread.CurrentThread.CurrentCulture);
+							await Task.Delay(200).ConfigureAwait(false);
+							Process.Start(installer);
+							Process.GetCurrentProcess().Kill();
+						}
+						else
+						{
+							await Task.Delay(500).ConfigureAwait(false);
+							ProgressText = LocalizationEx.GetUiString("loader_update_failed", Thread.CurrentThread.CurrentCulture);
+						}
 					}
 					else
 					{
-						await Task.Delay(500).ConfigureAwait(false);
-						ProgressText = LocalizationEx.GetUiString("loader_update_failed", Thread.CurrentThread.CurrentCulture);
+						ProgressText = LocalizationEx.GetUiString("loader_latest_version", Thread.CurrentThread.CurrentCulture);
 					}
-				}
-				else
-				{
-					ProgressText = LocalizationEx.GetUiString("loader_latest_version", Thread.CurrentThread.CurrentCulture);
 				}
 
 				ProgressText =

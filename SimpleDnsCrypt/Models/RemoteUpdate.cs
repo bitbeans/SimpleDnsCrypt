@@ -1,8 +1,5 @@
 ﻿using System;
-using YamlDotNet.Core;
-using YamlDotNet.RepresentationModel;
-using YamlDotNet.Serialization;
-using YamlDotNet.Serialization.NodeTypeResolvers;
+using System.ComponentModel;
 using Version = System.Version;
 
 namespace SimpleDnsCrypt.Models
@@ -29,14 +26,22 @@ namespace SimpleDnsCrypt.Models
 	public enum UpdateType
 	{
 		/// <summary>
-		///     A regular update.
-		/// </summary>
-		Standard = 0,
-
-		/// <summary>
 		///     A critical update, which should be done as soon as possible.
 		/// </summary>
-		Critical = 1
+		[Description("Critical")]
+		Critical = 0,
+
+		/// <summary>
+		///     A stable update.
+		/// </summary>
+		[Description("Stable")]
+		Stable = 1,
+
+		/// <summary>
+		///     A preview version.
+		/// </summary>
+		[Description("Preview")]
+		Preview = 2
 	}
 
 	/// <summary>

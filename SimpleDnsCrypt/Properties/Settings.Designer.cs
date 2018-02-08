@@ -106,5 +106,29 @@ namespace SimpleDnsCrypt.Properties {
                 this["PreferredLanguage"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2")]
+        public int MinUpdateType {
+            get {
+                return ((int)(this["MinUpdateType"]));
+            }
+            set {
+                this["MinUpdateType"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AutoUpdate {
+            get {
+                return ((bool)(this["AutoUpdate"]));
+            }
+            set {
+                this["AutoUpdate"] = value;
+            }
+        }
     }
 }

@@ -17,7 +17,12 @@ namespace SimpleDnsCrypt.Helper
 	{
 		private static readonly ILog Log = LogManagerHelper.Factory();
 
-		public static async Task<RemoteUpdate> CheckForRemoteUpdateAsync()
+		/// <summary>
+		/// Check for a new version on the remote server (github.com).
+		/// </summary>
+		/// <param name="minUpdateType"></param>
+		/// <returns></returns>
+		public static async Task<RemoteUpdate> CheckForRemoteUpdateAsync(UpdateType minUpdateType = UpdateType.Stable)
 		{
 			var remoteUpdate = new RemoteUpdate();
 			try
@@ -56,7 +61,14 @@ namespace SimpleDnsCrypt.Helper
 					else
 					{
 						// the remote version is newer as the local version
-						remoteUpdate.CanUpdate = true;
+						if ((int)remoteUpdate.Update.Type >= (int)minUpdateType)
+						{
+							remoteUpdate.CanUpdate = true;
+						}
+						else
+						{
+							remoteUpdate.CanUpdate = false;
+						}
 					}
 				}
 			}
