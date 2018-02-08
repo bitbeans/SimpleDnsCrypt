@@ -217,7 +217,10 @@
     <value>טוען {0} . . .</value>
   </data>
   <data name="loader_missing_files" xml:space="preserve">
-    <value>קבצים חסרים בתיקייה {0}:\n{1}\n\nשקול התקנה חדשה של {2}</value>
+    <value>קבצים חסרים בתיקייה {0}:
+{1}
+
+שקול התקנה חדשה של {2}</value>
   </data>
   <data name="loader_all_files_available" xml:space="preserve">
     <value>כל הקבצים הנחוצים נמצאו</value>
