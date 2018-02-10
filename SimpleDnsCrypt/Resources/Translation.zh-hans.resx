@@ -121,243 +121,243 @@
     <value>网卡列表</value>
   </data>
   <data name="default_settings_show_hidden_cards" xml:space="preserve">
-    <value>Show hidden cards</value>
+    <value>显示隐藏网卡</value>
   </data>
   <data name="default_settings_service_header" xml:space="preserve">
-    <value>Service</value>
+    <value>服务</value>
   </data>
   <data name="default_settings_service" xml:space="preserve">
-    <value>DNSCrypt Service</value>
+    <value>DNSCrypt服务</value>
   </data>
   <data name="default_settings_configuration" xml:space="preserve">
-    <value>Configuration</value>
+    <value>设置</value>
   </data>
   <data name="default_settings_configuration_ipv4" xml:space="preserve">
-    <value>Using IPv4 Server</value>
+    <value>使用IPv4服务器</value>
   </data>
   <data name="default_settings_configuration_ipv4_tooltip" xml:space="preserve">
-    <value>Use servers reachable over IPv4</value>
+    <value>使用在 IPv4网络可以到达的服务器</value>
   </data>
   <data name="default_settings_configuration_ipv6" xml:space="preserve">
-    <value>Using IPv6 Server</value>
+    <value>使用IPv6服务器</value>
   </data>
   <data name="default_settings_configuration_ipv6_tooltip" xml:space="preserve">
-    <value>Use servers reachable over IPv6 (do not enable if you don&apos;t have IPv6 connectivity)</value>
+    <value>使用支持IPv6的服务器（如果没有IPv6连接，请勿启用）</value>
   </data>
   <data name="default_settings_configuration_dnssec" xml:space="preserve">
-    <value>Only servers with DNSSEC support</value>
+    <value>只显示支持DNSSEC的服务器</value>
   </data>
   <data name="default_settings_configuration_dnssec_tooltip" xml:space="preserve">
-    <value>Server must support DNS security extensions</value>
+    <value>服务器必须支持DNS安全扩展</value>
   </data>
   <data name="default_settings_configuration_nolog" xml:space="preserve">
-    <value>Only servers without logging</value>
+    <value>只显示不保留日志的服务器</value>
   </data>
   <data name="default_settings_configuration_nolog_tooltip" xml:space="preserve">
-    <value>Server must not log user queries</value>
+    <value>服务器不得记录用户请求</value>
   </data>
   <data name="default_settings_configuration_nofilter" xml:space="preserve">
-    <value>Only servers without filter</value>
+    <value>只显示不支持过滤器的服务器</value>
   </data>
   <data name="default_settings_configuration_nofilter_tooltip" xml:space="preserve">
-    <value>Server must not enforce its own blacklist (for parental control, ads blocking...)</value>
+    <value>服务器必须强制启用专用黑名单（用于家长控制、广告拦截等用途）</value>
   </data>
   <data name="tabitem_mainmenu" xml:space="preserve">
-    <value>Main Menu</value>
+    <value>主菜单</value>
   </data>
   <data name="loader_administrative_rights_available" xml:space="preserve">
-    <value>Administrative rights are available</value>
+    <value>可获取管理员权限</value>
   </data>
   <data name="loader_administrative_rights_missing" xml:space="preserve">
-    <value>Missing administrative rights!</value>
+    <value>缺少管理员权限</value>
   </data>
   <data name="loader_checking_version" xml:space="preserve">
-    <value>Checking for new version . . .</value>
+    <value>检查新版本</value>
   </data>
   <data name="loader_new_version_found" xml:space="preserve">
-    <value>A newer version was found: {0}</value>
+    <value>找到新版本</value>
   </data>
   <data name="loader_starting_update" xml:space="preserve">
-    <value>Starting update . . .</value>
+    <value>开始升级</value>
   </data>
   <data name="loader_update_failed" xml:space="preserve">
-    <value>Update failed, continue . . .</value>
+    <value>升级失败，继续......</value>
   </data>
   <data name="loader_latest_version" xml:space="preserve">
-    <value>You are using the latest version</value>
+    <value>您正在使用最新版</value>
   </data>
   <data name="loader_unsigned" xml:space="preserve">
-    <value>unsigned</value>
+    <value>未签名</value>
   </data>
   <data name="loader_missing" xml:space="preserve">
-    <value>missing</value>
+    <value>缺少</value>
   </data>
   <data name="loader_downloading_signature" xml:space="preserve">
-    <value>Downloading signature . . .</value>
+    <value>正在下载签名</value>
   </data>
   <data name="loader_downloading_installer" xml:space="preserve">
-    <value>Downloading installer . . .</value>
+    <value>正在下载安装包</value>
   </data>
   <data name="loader_starting" xml:space="preserve">
-    <value>Starting . . .</value>
+    <value>开始</value>
   </data>
   <data name="loader_validate_folder" xml:space="preserve">
-    <value>Validating {0} folder</value>
+    <value>正在验证 {0} 文件夹 </value>
   </data>
   <data name="loader_loading_network_cards" xml:space="preserve">
-    <value>Loading network cards . . .</value>
+    <value>正在读取网卡信息</value>
   </data>
   <data name="loader_failed_loading" xml:space="preserve">
-    <value>Could not load {0}</value>
+    <value>无法载入 {0}</value>
   </data>
   <data name="loader_successfully_loaded" xml:space="preserve">
-    <value>{0} successfully loaded</value>
+    <value>{0} 已成功载入</value>
   </data>
   <data name="loader_loading" xml:space="preserve">
-    <value>Loading {0} . . .</value>
+    <value>正在载入{0} </value>
   </data>
   <data name="loader_missing_files" xml:space="preserve">
-    <value>Missing files in the {0} folder:\n{1}\n\nThink about a new installation of {2}</value>
+    <value> {0} 文件夹缺少文件:\n{1}\n\n尝试使用 {2}的全新安装</value>
   </data>
   <data name="loader_all_files_available" xml:space="preserve">
-    <value>All required files have been found</value>
+    <value>全部必须文件都已具备</value>
   </data>
   <data name="about" xml:space="preserve">
-    <value>About</value>
+    <value>关于</value>
   </data>
   <data name="about_software" xml:space="preserve">
-    <value>Software</value>
+    <value>软件</value>
   </data>
   <data name="about_license" xml:space="preserve">
-    <value>License</value>
+    <value>许可文件</value>
   </data>
   <data name="about_view_on_github" xml:space="preserve">
-    <value>View on GitHub</value>
+    <value>在Github上查看</value>
   </data>
   <data name="tabitem_querylog" xml:space="preserve">
-    <value>Query Log</value>
+    <value>查询日志</value>
   </data>
   <data name="querylog" xml:space="preserve">
-    <value>Query Log</value>
+    <value>查询日志</value>
   </data>
   <data name="querylog_waiting_for_data" xml:space="preserve">
-    <value>waiting for DNS queries</value>
+    <value>正在等待DNS查询结果</value>
   </data>
   <data name="querylog_entry_count" xml:space="preserve">
-    <value>Entries:</value>
+    <value>条目：</value>
   </data>
   <data name="querylog_source_file" xml:space="preserve">
-    <value>Source:</value>
+    <value>源代码</value>
   </data>
   <data name="querylog_button_clear" xml:space="preserve">
-    <value>Clear List</value>
+    <value>清除列表</value>
   </data>
   <data name="querylog_button_block" xml:space="preserve">
-    <value>Block Selected</value>
+    <value>封禁已选</value>
   </data>
   <data name="domainblocklog" xml:space="preserve">
-    <value>Domain Block Log</value>
+    <value>域名封禁日志</value>
   </data>
   <data name="domainblocklog_waiting_for_data" xml:space="preserve">
-    <value>waiting for blocked DNS queries</value>
+    <value>正在等待已封禁的DNS请求</value>
   </data>
   <data name="domainblocklog_entry_count" xml:space="preserve">
-    <value>Entries:</value>
+    <value>条目</value>
   </data>
   <data name="domainblocklog_source_file" xml:space="preserve">
-    <value>Source:</value>
+    <value>源代码</value>
   </data>
   <data name="domainblocklog_button_clear" xml:space="preserve">
-    <value>Clear List</value>
+    <value>清除列表</value>
   </data>
   <data name="tabitem_domainblocklog" xml:space="preserve">
-    <value>Domain Block Log</value>
+    <value>域名封禁日志</value>
   </data>
   <data name="tabitem_addressblocklog" xml:space="preserve">
-    <value>Address Block Log</value>
+    <value>地址封禁日志</value>
   </data>
   <data name="tabitem_domainblacklist" xml:space="preserve">
-    <value>Domain Blacklist</value>
+    <value>域名黑名单</value>
   </data>
   <data name="tabitem_addressblacklist" xml:space="preserve">
-    <value>Address Blacklist</value>
+    <value>地址黑名单</value>
   </data>
   <data name="settings" xml:space="preserve">
-    <value>Settings</value>
+    <value>设置</value>
   </data>
   <data name="settings_domain_blacklist" xml:space="preserve">
-    <value>Show &quot;Domain Blacklist&quot; Tab</value>
+    <value>显示“域名黑名单”标签</value>
   </data>
   <data name="settings_address_blacklist" xml:space="preserve">
-    <value>Show &quot;Address Blacklist&quot; Tab</value>
+    <value>显示“地址黑名单”标签</value>
   </data>
   <data name="settings_domain_block" xml:space="preserve">
-    <value>Show &quot;Domain Block Log&quot; Tab</value>
+    <value>显示“域名封禁日志”标签</value>
   </data>
   <data name="settings_address_block" xml:space="preserve">
-    <value>Show &quot;Address Block Log&quot; Tab</value>
+    <value>显示“地址封禁日志”标签</value>
   </data>
   <data name="settings_query_log" xml:space="preserve">
-    <value>Show &quot;Query Log&quot; Tab</value>
+    <value>显示“请求日志”标签</value>
   </data>
   <data name="tabitem_resolvers" xml:space="preserve">
-    <value>Resolvers</value>
+    <value>解析器</value>
   </data>
   <data name="tabitem_advanced_settings" xml:space="preserve">
-    <value>Advanced Settings</value>
+    <value>高级设置</value>
   </data>
   <data name="settings_advanced_settings" xml:space="preserve">
-    <value>Show &quot;Advanced Settings&quot; Tab</value>
+    <value>显示“高级设置”标签</value>
   </data>
   <data name="yes" xml:space="preserve">
-    <value>yes</value>
+    <value>是</value>
   </data>
   <data name="no" xml:space="preserve">
-    <value>no</value>
+    <value>否</value>
   </data>
   <data name="cancel" xml:space="preserve">
-    <value>cancel</value>
+    <value>取消</value>
   </data>
   <data name="ok" xml:space="preserve">
-    <value>OK</value>
+    <value>好的</value>
   </data>
   <data name="dialog_message_uninstall" xml:space="preserve">
-    <value>Do you want to remove the installed Windows service?</value>
+    <value>你希望移除已安装的系统服务吗？</value>
   </data>
   <data name="dialog_uninstall_title" xml:space="preserve">
-    <value>Uninstalling the service</value>
+    <value>正在卸载服务</value>
   </data>
   <data name="advanced_settings_uninstall_title" xml:space="preserve">
-    <value>Uninstalling the service</value>
+    <value>正在卸载服务</value>
   </data>
   <data name="advanced_settings_uninstall_text" xml:space="preserve">
-    <value>Remove the installed Windows service</value>
+    <value>移除已安装的系统服务</value>
   </data>
   <data name="advanced_settings_uninstall_button" xml:space="preserve">
-    <value>Remove service</value>
+    <value>移除服务</value>
   </data>
   <data name="default_settings_apply_settings" xml:space="preserve">
-    <value>Apply settings</value>
+    <value>应用设置</value>
   </data>
   <data name="advanced_settings_dnscache" xml:space="preserve">
-    <value>DNS Cache</value>
+    <value>DNS缓存</value>
   </data>
   <data name="resolvers_dnscrypt_mode_header" xml:space="preserve">
-    <value>DNSCrypt Mode</value>
+    <value>DNSCrypt 模式</value>
   </data>
   <data name="resolvers_dnscrypt_mode_description" xml:space="preserve">
-    <value>In automatic mode, all available servers are used. dnscrypt-proxy automatically selects the fastest resolvers.</value>
+    <value>在自动模式下，所有可用服务器都会被使用。dnscrypt-proxy会自动选择最快的解析器</value>
   </data>
   <data name="resolvers_dnscrypt_automatic_mode" xml:space="preserve">
-    <value>Automatic Mode</value>
+    <value>自动模式</value>
   </data>
   <data name="disabled" xml:space="preserve">
-    <value>Disabled</value>
+    <value>禁用</value>
   </data>
   <data name="enabled" xml:space="preserve">
-    <value>Enabled</value>
+    <value>启用</value>
   </data>
   <data name="resolvers_available_resolvers_header" xml:space="preserve">
-    <value>Available Resolvers</value>
+    <value>可用的解析器</value>
   </data>
 </root>
