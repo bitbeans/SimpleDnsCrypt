@@ -61,7 +61,7 @@ namespace SimpleDnsCrypt.Helper
 					else
 					{
 						// the remote version is newer as the local version
-						if ((int)remoteUpdate.Update.Type >= (int)minUpdateType)
+						if ((int)minUpdateType >= (int)remoteUpdate.Update.Type)
 						{
 							remoteUpdate.CanUpdate = true;
 						}
