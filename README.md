@@ -25,7 +25,7 @@ At least one system with Windows 7 SP1 and the installation of. NET Framework 4.
 
 ### Installing
 
-To install Simple DNSCrypt use the latest (stable) MSI packages: [x86](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.4.6/SimpleDNSCrypt.msi) or [x64](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.4.6/SimpleDNSCrypt64.msi).
+To install Simple DNSCrypt use the latest (stable) MSI packages: [x86](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.4.5/SimpleDNSCrypt.msi) or [x64](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.4.5/SimpleDNSCrypt64.msi).
 
 ### File Signing
 
@@ -33,7 +33,7 @@ The MSI package and the SimpleDnsCrypt.exe are signed via a *COMODO RSA Code Sig
 The files are signed under the name: *EAM Experience Area Münsingen GmbH*
 
 You also can verify the MSI packages with [minisign](https://jedisct1.github.io/minisign/).
-The minisign signatures [x86](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.4.6/SimpleDNSCrypt.msi.minisig) and [x64](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.4.6/SimpleDNSCrypt64.msi.minisig) can be verified with the following command:
+The minisign signatures [x86](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.4.5/SimpleDNSCrypt.msi.minisig) and [x64](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.4.5/SimpleDNSCrypt64.msi.minisig) can be verified with the following command:
 
 	minisign -Vm SimpleDNSCrypt.msi -P RWTSM+4BNNvkZPNkHgE88ETlhWa+0HDzU5CN8TvbyvmhVUcr6aQXfssV
 	minisign -Vm SimpleDNSCrypt64.msi -P RWTSM+4BNNvkZPNkHgE88ETlhWa+0HDzU5CN8TvbyvmhVUcr6aQXfssV
