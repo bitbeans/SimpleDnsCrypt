@@ -361,63 +361,63 @@
     <value>Налични сървъри</value>
   </data>
   <data name="loader_redistributable_package_check" xml:space="preserve">
-    <value>Checking Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
+    <value>Проверяване на Microsoft Visual C++ Redistributable за Visual Studio 2017</value>
   </data>
   <data name="loader_redistributable_package_already_installed" xml:space="preserve">
-    <value>Microsoft Visual C++ Redistributable for Visual Studio 2017 is already installed</value>
+    <value>Microsoft Visual C++ Redistributable за Visual Studio 2017 е вече инсталиран</value>
   </data>
   <data name="loader_redistributable_package_installing" xml:space="preserve">
-    <value>Installing: Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
+    <value>Инсталиране: Microsoft Visual C++ Redistributable за Visual Studio 2017</value>
   </data>
   <data name="loader_redistributable_package_ready" xml:space="preserve">
-    <value>Microsoft Visual C++ Redistributable for Visual Studio 2017 is now installed</value>
+    <value>Инсталиран е Microsoft Visual C++ Redistributable за Visual Studio 2017</value>
   </data>
   <data name="message_title_no_server_selected" xml:space="preserve">
-    <value>No server selected</value>
+    <value>Няма избрани сървъри</value>
   </data>
   <data name="message_content_no_server_selected" xml:space="preserve">
-    <value>At least one server must be selected. Otherwise, dnscrypt-proxy uses all servers corresponding to the selected filters.</value>
+    <value>Трябва да бъде избран поне един сървър. В противен случай dnscrypt-proxy използва всички сървъри, съответстващи на избраните филтри.</value>
   </data>
   <data name="message_title_service_not_running" xml:space="preserve">
-    <value>Service not running</value>
+    <value>Услугата не е стартирана</value>
   </data>
   <data name="message_content_service_not_running" xml:space="preserve">
-    <value>You should start the DnsCrypt service first!</value>
+    <value>Първо трябва да стартиране DnsCrypt услугата!</value>
   </data>
   <data name="message_title_uninstallation_successful" xml:space="preserve">
-    <value>Uninstallation successful</value>
+    <value>Деинсталирането е успешно</value>
   </data>
   <data name="message_content_uninstallation_successful" xml:space="preserve">
-    <value>Uninstallation was successful! DNS requests are no longer encrypted.</value>
+    <value>Деинсталирането бе успешно! DNS заявките вече не са криптирани.</value>
   </data>
   <data name="message_title_uninstallation_error" xml:space="preserve">
-    <value>Uninstallation error</value>
+    <value>Грешка при деинсталиране</value>
   </data>
   <data name="message_content_uninstallation_error" xml:space="preserve">
-    <value>Uninstallation could not be performed. Try to stop the service manually and uninstall it again.</value>
+    <value>Деинсталирането не може да се извърши. Опитайте да спрете услугата  ръчно и я деинсталирайте отново.</value>
   </data>
   <data name="open_log_directory" xml:space="preserve">
-    <value>Open log directory</value>
+    <value>Отваряне на директорията с дневници</value>
   </data>
   <data name="settings_update_auto" xml:space="preserve">
-    <value>Check for updates on startup</value>
+    <value>Проверяване за обновявания при стартиране</value>
   </data>
   <data name="settings_update_channel" xml:space="preserve">
-    <value>Update Channel:</value>
+    <value>Канал за обновяване:</value>
   </data>
   <data name="advanced_settings_dnscache_content" xml:space="preserve">
-    <value>DNS cache to reduce latency and outgoing traffic</value>
+    <value>DNS кеш за намаляне на закъснения и изходящ трафик</value>
   </data>
   <data name="advanced_settings_blockipv6" xml:space="preserve">
-    <value>Block IPv6</value>
+    <value>Блокиране на IPv6</value>
   </data>
   <data name="advanced_settings_blockipv6_content" xml:space="preserve">
-    <value>Immediately respond to IPv6-related queries with an empty response</value>
+    <value>Моментално отговаряне с празен отговор на свързани с IPv6 заявки</value>
   </data>
   <data name="advanced_settings_forcetcp" xml:space="preserve">
-    <value>Force TCP</value>
+    <value>Налагане на TCP</value>
   </data>
   <data name="advanced_settings_forcetcp_content" xml:space="preserve">
-    <value>Always use TCP to connect to upstream servers</value>
+    <value>Винаги се използва TCP за свързване с висшестоящи сървъри</value>
   </data>
 </root>
