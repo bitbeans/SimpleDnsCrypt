@@ -299,10 +299,6 @@
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Translation.pt-br.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>Translation.resx</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Translation.bg.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
@@ -319,15 +315,7 @@
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Translation.zh-hant.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>Translation.resx</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Translation.de.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>Translation.resx</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Translation.da.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
@@ -335,23 +323,11 @@
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Translation.no.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>Translation.resx</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Translation.ru.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Translation.tr.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>Translation.resx</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Translation.en.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>Translation.resx</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Translation.ja.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
@@ -375,15 +351,7 @@
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Translation.nl.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>Translation.resx</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Translation.fa.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>Translation.resx</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Translation.sv.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
