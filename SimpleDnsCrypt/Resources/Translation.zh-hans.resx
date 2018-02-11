@@ -157,7 +157,7 @@
     <value>服务器不得记录用户请求</value>
   </data>
   <data name="default_settings_configuration_nofilter" xml:space="preserve">
-    <value>只显示不支持过滤器的服务器</value>
+    <value>只显示不进行内容筛选的服务器</value>
   </data>
   <data name="default_settings_configuration_nofilter_tooltip" xml:space="preserve">
     <value>服务器必须强制启用专用黑名单（用于家长控制、广告拦截等用途）</value>
@@ -175,7 +175,7 @@
     <value>检查新版本</value>
   </data>
   <data name="loader_new_version_found" xml:space="preserve">
-    <value>找到新版本</value>
+    <value>找到新版本：{0}</value>
   </data>
   <data name="loader_starting_update" xml:space="preserve">
     <value>开始升级</value>
@@ -235,10 +235,10 @@
     <value>在Github上查看</value>
   </data>
   <data name="tabitem_querylog" xml:space="preserve">
-    <value>查询日志</value>
+    <value>日志</value>
   </data>
   <data name="querylog" xml:space="preserve">
-    <value>查询日志</value>
+    <value>日志</value>
   </data>
   <data name="querylog_waiting_for_data" xml:space="preserve">
     <value>正在等待DNS查询结果</value>
@@ -247,7 +247,7 @@
     <value>条目：</value>
   </data>
   <data name="querylog_source_file" xml:space="preserve">
-    <value>源代码</value>
+    <value>来源：</value>
   </data>
   <data name="querylog_button_clear" xml:space="preserve">
     <value>清除列表</value>
@@ -265,7 +265,7 @@
     <value>条目</value>
   </data>
   <data name="domainblocklog_source_file" xml:space="preserve">
-    <value>源代码</value>
+    <value>来源：</value>
   </data>
   <data name="domainblocklog_button_clear" xml:space="preserve">
     <value>清除列表</value>
@@ -298,10 +298,10 @@
     <value>显示“地址封禁日志”标签</value>
   </data>
   <data name="settings_query_log" xml:space="preserve">
-    <value>显示“请求日志”标签</value>
+    <value>显示“日志”标签</value>
   </data>
   <data name="tabitem_resolvers" xml:space="preserve">
-    <value>解析器</value>
+    <value>服务器列表</value>
   </data>
   <data name="tabitem_advanced_settings" xml:space="preserve">
     <value>高级设置</value>
@@ -346,7 +346,7 @@
     <value>DNSCrypt 模式</value>
   </data>
   <data name="resolvers_dnscrypt_mode_description" xml:space="preserve">
-    <value>在自动模式下，所有可用服务器都会被使用。dnscrypt-proxy会自动选择最快的解析器</value>
+    <value>在自动模式下，所有可用服务器都会被使用。dnscrypt-proxy会自动选择最快的服务器</value>
   </data>
   <data name="resolvers_dnscrypt_automatic_mode" xml:space="preserve">
     <value>自动模式</value>
@@ -358,66 +358,66 @@
     <value>启用</value>
   </data>
   <data name="resolvers_available_resolvers_header" xml:space="preserve">
-    <value>可用的解析器</value>
+    <value>可用的服务器</value>
   </data>
   <data name="loader_redistributable_package_check" xml:space="preserve">
-    <value>Checking Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
+    <value>正在检查 Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
   </data>
   <data name="loader_redistributable_package_already_installed" xml:space="preserve">
-    <value>Microsoft Visual C++ Redistributable for Visual Studio 2017 is already installed</value>
+    <value>Microsoft Visual C++ Redistributable for Visual Studio 2017 已安装</value>
   </data>
   <data name="loader_redistributable_package_installing" xml:space="preserve">
-    <value>Installing: Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
+    <value>正在安装：Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
   </data>
   <data name="loader_redistributable_package_ready" xml:space="preserve">
-    <value>Microsoft Visual C++ Redistributable for Visual Studio 2017 is now installed</value>
+    <value>Microsoft Visual C++ Redistributable for Visual Studio 2017 已经安装完毕</value>
   </data>
   <data name="message_title_no_server_selected" xml:space="preserve">
-    <value>No server selected</value>
+    <value>未选择服务器</value>
   </data>
   <data name="message_content_no_server_selected" xml:space="preserve">
-    <value>At least one server must be selected. Otherwise, dnscrypt-proxy uses all servers corresponding to the selected filters.</value>
+    <value>至少应该选择一个服务器。否则，dnscrypt-proxy将会使用所有符合筛选条件的服务器</value>
   </data>
   <data name="message_title_service_not_running" xml:space="preserve">
-    <value>Service not running</value>
+    <value>服务未运行</value>
   </data>
   <data name="message_content_service_not_running" xml:space="preserve">
-    <value>You should start the DnsCrypt service first!</value>
+    <value>请先启动DnsCrypt服务</value>
   </data>
   <data name="message_title_uninstallation_successful" xml:space="preserve">
-    <value>Uninstallation successful</value>
+    <value>成功卸载</value>
   </data>
   <data name="message_content_uninstallation_successful" xml:space="preserve">
-    <value>Uninstallation was successful! DNS requests are no longer encrypted.</value>
+    <value>卸载已经成功，DNS请求不再被加密</value>
   </data>
   <data name="message_title_uninstallation_error" xml:space="preserve">
-    <value>Uninstallation error</value>
+    <value>卸载出现问题</value>
   </data>
   <data name="message_content_uninstallation_error" xml:space="preserve">
-    <value>Uninstallation could not be performed. Try to stop the service manually and uninstall it again.</value>
+    <value>无法卸载。请手动停止服务然后重新尝试卸载。</value>
   </data>
   <data name="open_log_directory" xml:space="preserve">
-    <value>Open log directory</value>
+    <value>打开日志文件夹</value>
   </data>
   <data name="settings_update_auto" xml:space="preserve">
-    <value>Check for updates on startup</value>
+    <value>开机时检查更新</value>
   </data>
   <data name="settings_update_channel" xml:space="preserve">
-    <value>Update Channel:</value>
+    <value>更新频道</value>
   </data>
   <data name="advanced_settings_dnscache_content" xml:space="preserve">
-    <value>DNS cache to reduce latency and outgoing traffic</value>
+    <value>使用DNS缓存以减少延迟和发送流量</value>
   </data>
   <data name="advanced_settings_blockipv6" xml:space="preserve">
-    <value>Block IPv6</value>
+    <value>阻止 IPv6</value>
   </data>
   <data name="advanced_settings_blockipv6_content" xml:space="preserve">
-    <value>Immediately respond to IPv6-related queries with an empty response</value>
+    <value>立刻向 IPv6相关请求发送空白响应</value>
   </data>
   <data name="advanced_settings_forcetcp" xml:space="preserve">
-    <value>Force TCP</value>
+    <value>强制使用TCP</value>
   </data>
   <data name="advanced_settings_forcetcp_content" xml:space="preserve">
-    <value>Always use TCP to connect to upstream servers</value>
+    <value>总是用TCP连接上游服务器</value>
   </data>
 </root>
