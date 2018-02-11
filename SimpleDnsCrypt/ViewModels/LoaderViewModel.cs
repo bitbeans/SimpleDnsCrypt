@@ -189,10 +189,13 @@ namespace SimpleDnsCrypt.ViewModels
 				}
 			}
 
+			var selectedLanguage = languages.SingleOrDefault(l => l.ShortCode.Equals(LocalizeDictionary.Instance.Culture.TwoLetterISOLanguageName)) ??
+			                       languages.SingleOrDefault(l => l.ShortCode.Equals(LocalizeDictionary.Instance.Culture.Name));
+
 			_mainViewModel = new MainViewModel(_windowManager, _events)
 			{
 				Languages = languages,
-				SelectedLanguage = languages.SingleOrDefault(l => l.ShortCode.Equals(LocalizeDictionary.Instance.Culture.Name))
+				SelectedLanguage = selectedLanguage
 			};
 
 			InitializeApplication();
