@@ -23,6 +23,9 @@ New version based on dnscrypt-proxy 2.0.
 
 At least one system with Windows 7 SP1 and the installation of. NET Framework 4.6.1 is currently required.
 
+You also will need: Microsoft Visual C++ Redistributable for Visual Studio 2017 [x64](https://aka.ms/vs/15/release/VC_redist.x64.exe) or [x86](https://aka.ms/vs/15/release/VC_redist.x86.exe)
+
+
 ### Installing
 
 To install Simple DNSCrypt use the latest (stable) MSI packages: [x86](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.4.6/SimpleDNSCrypt.msi) or [x64](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.4.6/SimpleDNSCrypt64.msi).
