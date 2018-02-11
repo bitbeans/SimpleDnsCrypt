@@ -192,8 +192,7 @@ namespace SimpleDnsCrypt.ViewModels
 			_mainViewModel = new MainViewModel(_windowManager, _events)
 			{
 				Languages = languages,
-				SelectedLanguage =
-					languages.SingleOrDefault(l => l.ShortCode.Equals(LocalizeDictionary.Instance.Culture.TwoLetterISOLanguageName))
+				SelectedLanguage = languages.SingleOrDefault(l => l.ShortCode.Equals(LocalizeDictionary.Instance.Culture.Name))
 			};
 
 			InitializeApplication();
