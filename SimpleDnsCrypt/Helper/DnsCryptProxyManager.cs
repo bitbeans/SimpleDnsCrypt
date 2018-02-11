@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
+using System.Security.AccessControl;
 using System.ServiceProcess;
 using System.Text;
 using System.Threading;
 using Caliburn.Micro;
+using Microsoft.Win32;
 using Nett;
 using Newtonsoft.Json;
 using SimpleDnsCrypt.Config;
@@ -267,7 +269,27 @@ namespace SimpleDnsCrypt.Helper
 		public static bool Install()
 		{
 			var result = ExecuteWithArguments("-service install");
-			return result.Success;
+			if (result.Success)
+			{
+				return true;
+			}
+
+			try
+			{
+				if (string.IsNullOrEmpty(result.StandardError)) return false;
+				if (result.StandardError.Contains("SYSTEM\\CurrentControlSet\\Services\\EventLog\\Application\\dnscrypt-proxy"))
+				{
+					Registry.LocalMachine.DeleteSubKey(@"SYSTEM\CurrentControlSet\Services\EventLog\Application\dnscrypt-proxy",
+						false);
+					return Install();
+				}
+			}
+			catch (Exception exception)
+			{
+				Log.Error(exception);
+			}
+
+			return false;
 		}
 
 		/// <summary>
@@ -277,6 +299,21 @@ namespace SimpleDnsCrypt.Helper
 		public static bool Uninstall()
 		{
 			var result = ExecuteWithArguments("-service uninstall");
+			try
+			{
+				var eventLogKey = Registry.LocalMachine.OpenSubKey(@"SYSTEM\CurrentControlSet\Services\EventLog\Application\dnscrypt-proxy",
+					RegistryRights.ReadKey);
+				var eventLogKeyValue = eventLogKey?.GetValue("CustomSource");
+				if (eventLogKeyValue != null)
+				{
+					Registry.LocalMachine.DeleteSubKey(@"SYSTEM\CurrentControlSet\Services\EventLog\Application\dnscrypt-proxy", false);
+				}
+			}
+			catch (Exception exception)
+			{
+				Log.Error(exception);
+			}
+
 			return result.Success;
 		}
 

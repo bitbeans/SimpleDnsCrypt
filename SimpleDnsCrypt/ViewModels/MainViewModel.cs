@@ -623,7 +623,10 @@ namespace SimpleDnsCrypt.ViewModels
 			try
 			{
 				var logDirectory = Path.Combine(Directory.GetCurrentDirectory(), "logs");
-				Process.Start(logDirectory);
+				if (Directory.Exists(logDirectory))
+				{
+					Process.Start(logDirectory);
+				}
 			}
 			catch (Exception exception)
 			{
@@ -649,8 +652,8 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 			else
 			{
-				//TODO: translate
-				_windowManager.ShowMetroMessageBox("At least one server must be selected. Otherwise, dnscrypt-proxy uses all servers corresponding to the selected filters.", "No server selected",
+				_windowManager.ShowMetroMessageBox(LocalizationEx.GetUiString("message_content_no_server_selected", Thread.CurrentThread.CurrentCulture),
+					LocalizationEx.GetUiString("message_title_no_server_selected", Thread.CurrentThread.CurrentCulture),
 					MessageBoxButton.OK, BoxType.Warning);
 			}
 		}

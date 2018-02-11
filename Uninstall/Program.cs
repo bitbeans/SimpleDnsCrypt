@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Net.NetworkInformation;
 using System.Threading;
+using Microsoft.Win32;
 
 namespace Uninstall
 {
@@ -40,6 +41,7 @@ namespace Uninstall
 		{
 			Console.WriteLine("removing dnscrypt service");
 			ExecuteWithArguments("-service uninstall");
+			Registry.LocalMachine.DeleteSubKey(@"SYSTEM\CurrentControlSet\Services\EventLog\Application\dnscrypt-proxy", false);
 		}
 
 		/// <summary>
