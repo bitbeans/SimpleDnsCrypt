@@ -244,7 +244,7 @@
     <value>menunggu query DNS</value>
   </data>
   <data name="querylog_entry_count" xml:space="preserve">
-    <value>Entries:</value>
+    <value>Entri:</value>
   </data>
   <data name="querylog_source_file" xml:space="preserve">
     <value>Sumber:</value>
@@ -262,7 +262,7 @@
     <value>menunggu query DNS yang terblokir</value>
   </data>
   <data name="domainblocklog_entry_count" xml:space="preserve">
-    <value>Entries:</value>
+    <value>Entri:</value>
   </data>
   <data name="domainblocklog_source_file" xml:space="preserve">
     <value>Sumber:</value>
@@ -343,21 +343,81 @@
     <value>DNS Cache</value>
   </data>
   <data name="resolvers_dnscrypt_mode_header" xml:space="preserve">
-    <value>DNSCrypt Mode</value>
+    <value>Mode DNSCypt</value>
   </data>
   <data name="resolvers_dnscrypt_mode_description" xml:space="preserve">
-    <value>In automatic mode, all available servers are used. dnscrypt-proxy automatically selects the fastest resolvers.</value>
+    <value>Dalam mode otomatis, semua server yang tersedia akan digunakan. dnscrypt-proxy akan memilih server tercepat secara otomatis</value>
   </data>
   <data name="resolvers_dnscrypt_automatic_mode" xml:space="preserve">
-    <value>Automatic Mode</value>
+    <value>Mode Otomatis</value>
   </data>
   <data name="disabled" xml:space="preserve">
-    <value>Disabled</value>
+    <value>Nonaktifkan</value>
   </data>
   <data name="enabled" xml:space="preserve">
-    <value>Enabled</value>
+    <value>Aktifkan</value>
   </data>
   <data name="resolvers_available_resolvers_header" xml:space="preserve">
-    <value>Available Resolvers</value>
+    <value>Resolver yang tersedia</value>
+  </data>
+  <data name="loader_redistributable_package_check" xml:space="preserve">
+    <value>Memerika Microsoft Visual C++ Redistributable untuk Visual Studio 2017 </value>
+  </data>
+  <data name="loader_redistributable_package_already_installed" xml:space="preserve">
+    <value>Microsoft Visual C++ Redistributable untuk Visual Studio 2017 telah terinstal</value>
+  </data>
+  <data name="loader_redistributable_package_installing" xml:space="preserve">
+    <value>Menginstall Microsoft Visual C++ Redistributable untuk Visual Studio 2017 </value>
+  </data>
+  <data name="loader_redistributable_package_ready" xml:space="preserve">
+    <value>Microsoft Visual C++ Redistributable untuk Visual Studio 2017 sekarang telah terinstall</value>
+  </data>
+  <data name="message_title_no_server_selected" xml:space="preserve">
+    <value>Tidak ada server yang dipilih</value>
+  </data>
+  <data name="message_content_no_server_selected" xml:space="preserve">
+    <value>Setidaknya satu server harus dipilih. Jika tidak, dnscrypt-proxy menggunakan semua server yang sesuai dengan filter yang dipilih.</value>
+  </data>
+  <data name="message_title_service_not_running" xml:space="preserve">
+    <value>Layanan DnsCrypt tidak aktif</value>
+  </data>
+  <data name="message_content_service_not_running" xml:space="preserve">
+    <value>Anda harus mengaktifkan layanan DnsCrypt terlebih dahulu</value>
+  </data>
+  <data name="message_title_uninstallation_successful" xml:space="preserve">
+    <value>Uninstall sukses</value>
+  </data>
+  <data name="message_content_uninstallation_successful" xml:space="preserve">
+    <value>Uninstall telah berhasil! DNS tidak terenkripsi</value>
+  </data>
+  <data name="message_title_uninstallation_error" xml:space="preserve">
+    <value>Uninstall error</value>
+  </data>
+  <data name="message_content_uninstallation_error" xml:space="preserve">
+    <value>Uninstall tidak dapat dilakukan. Coba hentikan layanan DnsCrypt secara manual dan uninstall sekali lagi</value>
+  </data>
+  <data name="open_log_directory" xml:space="preserve">
+    <value>Buka folder log</value>
+  </data>
+  <data name="settings_update_auto" xml:space="preserve">
+    <value>Periksa pembaharuan ketika memulai aplikasi</value>
+  </data>
+  <data name="settings_update_channel" xml:space="preserve">
+    <value>Channel Pembaharuan:</value>
+  </data>
+  <data name="advanced_settings_dnscache_content" xml:space="preserve">
+    <value>Gunakan cache DNS untuk memperkecil latency dan lalu lintas data keluar</value>
+  </data>
+  <data name="advanced_settings_blockipv6" xml:space="preserve">
+    <value>Blokir IPv6</value>
+  </data>
+  <data name="advanced_settings_blockipv6_content" xml:space="preserve">
+    <value>Segera merespon permintaan queries IPv6 dengan respon kosong</value>
+  </data>
+  <data name="advanced_settings_forcetcp" xml:space="preserve">
+    <value>Tetap gunakan protokol TCP</value>
+  </data>
+  <data name="advanced_settings_forcetcp_content" xml:space="preserve">
+    <value>Selalu gunakan protokol TCP untuk terhubung ke server upstream</value>
   </data>
 </root>

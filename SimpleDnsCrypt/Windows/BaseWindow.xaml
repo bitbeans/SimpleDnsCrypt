@@ -23,7 +23,7 @@
             <controls:MetroProgressBar Width="100" Height="20" IsIndeterminate="True" Orientation="Horizontal" 
                                        VerticalAlignment="Center" Margin="0,0,20,0" Foreground="White"
                                        Visibility="{Binding IsWorkingOnService, Converter={StaticResource BoolToVisibilityConverter}}"/>
-            <Button Cursor="Hand" x:Name="OpenLogDirectory" cal:Message.Attach="OpenLogDirectory" ToolTip="Open log directory">
+            <Button Cursor="Hand" x:Name="OpenLogDirectory" cal:Message.Attach="OpenLogDirectory" ToolTip="{lex:Loc Key=open_log_directory}">
                 <iconPacks:PackIconMaterial Kind="ClipboardText"/>
             </Button>
             <Button Cursor="Hand" x:Name="About" cal:Message.Attach="About" ToolTip="{lex:Loc Key=about}">

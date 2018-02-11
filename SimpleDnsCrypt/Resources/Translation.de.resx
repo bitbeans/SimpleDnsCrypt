@@ -366,4 +366,64 @@
   <data name="resolvers_available_resolvers_header" xml:space="preserve">
     <value>Verfügbare Resolver</value>
   </data>
+  <data name="loader_redistributable_package_check" xml:space="preserve">
+    <value>Überprüfe Microsoft Visual C++ Redistributable für Visual Studio 2017</value>
+  </data>
+  <data name="loader_redistributable_package_already_installed" xml:space="preserve">
+    <value>Microsoft Visual C++ Redistributable für Visual Studio 2017 ist bereits installiert</value>
+  </data>
+  <data name="loader_redistributable_package_installing" xml:space="preserve">
+    <value>Installiere: Microsoft Visual C++ Redistributable für Visual Studio 2017</value>
+  </data>
+  <data name="loader_redistributable_package_ready" xml:space="preserve">
+    <value>Microsoft Visual C++ Redistributable für Visual Studio 2017 ist nun installiert</value>
+  </data>
+  <data name="message_title_no_server_selected" xml:space="preserve">
+    <value>Kein Server ausgewählt</value>
+  </data>
+  <data name="message_content_no_server_selected" xml:space="preserve">
+    <value>Es muss mindestens ein Server ausgewählt sein. Andernfalls verwendet dnscrypt-proxy alle Server, die den ausgewählten Filtern entsprechen.</value>
+  </data>
+  <data name="message_title_service_not_running" xml:space="preserve">
+    <value>Dienst läuft nicht</value>
+  </data>
+  <data name="message_content_service_not_running" xml:space="preserve">
+    <value>Sie sollten den DnsCrypt-Dienst zuerst starten!</value>
+  </data>
+  <data name="message_title_uninstallation_successful" xml:space="preserve">
+    <value>Deinstallation erfolgreich</value>
+  </data>
+  <data name="message_content_uninstallation_successful" xml:space="preserve">
+    <value>Die Deinstallation war erfolgreich! DNS-Anfragen werden nicht mehr verschlüsselt.</value>
+  </data>
+  <data name="message_title_uninstallation_error" xml:space="preserve">
+    <value>Deinstallationsfehler</value>
+  </data>
+  <data name="message_content_uninstallation_error" xml:space="preserve">
+    <value>Die Deinstallation konnte nicht durchgeführt werden. Versuchen Sie, den Dienst manuell zu stoppen und ihn erneut zu deinstallieren.</value>
+  </data>
+  <data name="open_log_directory" xml:space="preserve">
+    <value>Log-Verzeichnis öffnen</value>
+  </data>
+  <data name="settings_update_auto" xml:space="preserve">
+    <value>Beim Start auf neue Version prüfen</value>
+  </data>
+  <data name="settings_update_channel" xml:space="preserve">
+    <value>Update Kanal:</value>
+  </data>
+  <data name="advanced_settings_dnscache_content" xml:space="preserve">
+    <value>DNS-Cache zur Reduzierung der Latenzzeit und des ausgehenden Datenverkehrs</value>
+  </data>
+  <data name="advanced_settings_blockipv6" xml:space="preserve">
+    <value>Block IPv6</value>
+  </data>
+  <data name="advanced_settings_blockipv6_content" xml:space="preserve">
+    <value>Sofortige Beantwortung von IPv6-Abfragen mit einer leeren Antwort</value>
+  </data>
+  <data name="advanced_settings_forcetcp" xml:space="preserve">
+    <value>Force TCP</value>
+  </data>
+  <data name="advanced_settings_forcetcp_content" xml:space="preserve">
+    <value>Immer TCP verwenden, um eine Verbindung zum Upstream-Servern herzustellen</value>
+  </data>
 </root>

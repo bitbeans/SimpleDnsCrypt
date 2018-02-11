@@ -136,8 +136,8 @@ namespace SimpleDnsCrypt.ViewModels
 					if (DnscryptProxyConfiguration.server_names == null || DnscryptProxyConfiguration.server_names.Count == 0)
 					{
 						_isDnsCryptAutomaticModeEnabled = true;
-						//TODO: translate
-						_windowManager.ShowMetroMessageBox("At least one server must be selected. Otherwise, dnscrypt-proxy uses all servers corresponding to the selected filters.", "No server selected",
+						_windowManager.ShowMetroMessageBox(LocalizationEx.GetUiString("message_content_no_server_selected", Thread.CurrentThread.CurrentCulture),
+							LocalizationEx.GetUiString("message_title_no_server_selected", Thread.CurrentThread.CurrentCulture),
 							MessageBoxButton.OK, BoxType.Warning);
 					}
 				}
@@ -605,8 +605,8 @@ namespace SimpleDnsCrypt.ViewModels
 				}
 				else
 				{
-					//TODO: translate
-					_windowManager.ShowMetroMessageBox("You should start the DnsCrypt service first!", "Service not running",
+					_windowManager.ShowMetroMessageBox(LocalizationEx.GetUiString("message_content_service_not_running", Thread.CurrentThread.CurrentCulture), 
+						LocalizationEx.GetUiString("message_title_service_not_running", Thread.CurrentThread.CurrentCulture),
 						MessageBoxButton.OK, BoxType.Warning);
 				}
 			}
@@ -790,17 +790,15 @@ namespace SimpleDnsCrypt.ViewModels
 				IsUninstallingService = false;
 				if (!DnsCryptProxyManager.IsDnsCryptProxyInstalled())
 				{
-					//TODO: translate
-					_windowManager.ShowMetroMessageBox("Uninstallation was successful! DNS requests are no longer encrypted.",
-						"Uninstallation successful",
+					_windowManager.ShowMetroMessageBox(LocalizationEx.GetUiString("message_content_uninstallation_successful", Thread.CurrentThread.CurrentCulture),
+						LocalizationEx.GetUiString("message_title_uninstallation_successful", Thread.CurrentThread.CurrentCulture),
 						MessageBoxButton.OK, BoxType.Default);
 				}
 				else
 				{
-					//TODO: translate
 					_windowManager.ShowMetroMessageBox(
-						"Uninstallation could not be performed. Try to stop the service manually and uninstall it again.",
-						"Uninstallation error",
+						LocalizationEx.GetUiString("message_content_uninstallation_error", Thread.CurrentThread.CurrentCulture),
+						LocalizationEx.GetUiString("message_title_uninstallation_error", Thread.CurrentThread.CurrentCulture),
 						MessageBoxButton.OK, BoxType.Warning);
 				}
 			}

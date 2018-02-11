@@ -360,4 +360,64 @@
   <data name="resolvers_available_resolvers_header" xml:space="preserve">
     <value>Available Resolvers</value>
   </data>
+  <data name="loader_redistributable_package_check" xml:space="preserve">
+    <value>Checking Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
+  </data>
+  <data name="loader_redistributable_package_already_installed" xml:space="preserve">
+    <value>Microsoft Visual C++ Redistributable for Visual Studio 2017 is already installed</value>
+  </data>
+  <data name="loader_redistributable_package_installing" xml:space="preserve">
+    <value>Installing: Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
+  </data>
+  <data name="loader_redistributable_package_ready" xml:space="preserve">
+    <value>Microsoft Visual C++ Redistributable for Visual Studio 2017 is now installed</value>
+  </data>
+  <data name="message_title_no_server_selected" xml:space="preserve">
+    <value>No server selected</value>
+  </data>
+  <data name="message_content_no_server_selected" xml:space="preserve">
+    <value>At least one server must be selected. Otherwise, dnscrypt-proxy uses all servers corresponding to the selected filters.</value>
+  </data>
+  <data name="message_title_service_not_running" xml:space="preserve">
+    <value>Service not running</value>
+  </data>
+  <data name="message_content_service_not_running" xml:space="preserve">
+    <value>You should start the DnsCrypt service first!</value>
+  </data>
+  <data name="message_title_uninstallation_successful" xml:space="preserve">
+    <value>Uninstallation successful</value>
+  </data>
+  <data name="message_content_uninstallation_successful" xml:space="preserve">
+    <value>Uninstallation was successful! DNS requests are no longer encrypted.</value>
+  </data>
+  <data name="message_title_uninstallation_error" xml:space="preserve">
+    <value>Uninstallation error</value>
+  </data>
+  <data name="message_content_uninstallation_error" xml:space="preserve">
+    <value>Uninstallation could not be performed. Try to stop the service manually and uninstall it again.</value>
+  </data>
+  <data name="open_log_directory" xml:space="preserve">
+    <value>Open log directory</value>
+  </data>
+  <data name="settings_update_auto" xml:space="preserve">
+    <value>Check for updates on startup</value>
+  </data>
+  <data name="settings_update_channel" xml:space="preserve">
+    <value>Update Channel:</value>
+  </data>
+  <data name="advanced_settings_dnscache_content" xml:space="preserve">
+    <value>DNS cache to reduce latency and outgoing traffic</value>
+  </data>
+  <data name="advanced_settings_blockipv6" xml:space="preserve">
+    <value>Block IPv6</value>
+  </data>
+  <data name="advanced_settings_blockipv6_content" xml:space="preserve">
+    <value>Immediately respond to IPv6-related queries with an empty response</value>
+  </data>
+  <data name="advanced_settings_forcetcp" xml:space="preserve">
+    <value>Force TCP</value>
+  </data>
+  <data name="advanced_settings_forcetcp_content" xml:space="preserve">
+    <value>Always use TCP to connect to upstream servers</value>
+  </data>
 </root>

@@ -162,6 +162,7 @@
     <Compile Include="Helper\LocalNetworkInterfaceManager.cs" />
     <Compile Include="Helper\LogManagerHelper.cs" />
     <Compile Include="Helper\NavigationService.cs" />
+    <Compile Include="Helper\PrerequisiteHelper.cs" />
     <Compile Include="Helper\VersionHelper.cs" />
     <Compile Include="Logger\NLogLogger.cs" />
     <Compile Include="LogMode.cs" />

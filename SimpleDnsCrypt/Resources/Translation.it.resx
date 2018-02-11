@@ -310,54 +310,114 @@
     <value>Mostra Scheda &quot;Opzioni Avanzate&quot;</value>
   </data>
   <data name="yes" xml:space="preserve">
-    <value>yes</value>
+    <value>Sì</value>
   </data>
   <data name="no" xml:space="preserve">
-    <value>no</value>
+    <value>No</value>
   </data>
   <data name="cancel" xml:space="preserve">
-    <value>cancel</value>
+    <value>Annulla</value>
   </data>
   <data name="ok" xml:space="preserve">
-    <value>OK</value>
+    <value>Ok</value>
   </data>
   <data name="dialog_message_uninstall" xml:space="preserve">
-    <value>Do you want to remove the installed Windows service?</value>
+    <value>Vuoi rimuovere il servizio installato?</value>
   </data>
   <data name="dialog_uninstall_title" xml:space="preserve">
-    <value>Uninstalling the service</value>
+    <value>Disinstallando il servizio</value>
   </data>
   <data name="advanced_settings_uninstall_title" xml:space="preserve">
-    <value>Uninstalling the service</value>
+    <value>Disinstalla il servizio</value>
   </data>
   <data name="advanced_settings_uninstall_text" xml:space="preserve">
-    <value>Remove the installed Windows service</value>
+    <value>Rimuovi il servizio installato</value>
   </data>
   <data name="advanced_settings_uninstall_button" xml:space="preserve">
-    <value>Remove service</value>
+    <value>Rimuovi il servizio</value>
   </data>
   <data name="default_settings_apply_settings" xml:space="preserve">
-    <value>Apply settings</value>
+    <value>Applica impostazioni</value>
   </data>
   <data name="advanced_settings_dnscache" xml:space="preserve">
-    <value>DNS Cache</value>
+    <value>Cache DNS</value>
   </data>
   <data name="resolvers_dnscrypt_mode_header" xml:space="preserve">
-    <value>DNSCrypt Mode</value>
+    <value>Modalità DNSCrypt</value>
   </data>
   <data name="resolvers_dnscrypt_mode_description" xml:space="preserve">
-    <value>In automatic mode, all available servers are used. dnscrypt-proxy automatically selects the fastest resolvers.</value>
+    <value>Nella modalità automatica, tutti i server disponibili sono utilizzati. dnscrypt-proxy seleziona automaticamente i resolver più veloci.</value>
   </data>
   <data name="resolvers_dnscrypt_automatic_mode" xml:space="preserve">
-    <value>Automatic Mode</value>
+    <value>Modalità Automatica</value>
   </data>
   <data name="disabled" xml:space="preserve">
-    <value>Disabled</value>
+    <value>Disabilita</value>
   </data>
   <data name="enabled" xml:space="preserve">
-    <value>Enabled</value>
+    <value>Abilita</value>
   </data>
   <data name="resolvers_available_resolvers_header" xml:space="preserve">
-    <value>Available Resolvers</value>
+    <value>Resolver Disponibili</value>
+  </data>
+  <data name="loader_redistributable_package_check" xml:space="preserve">
+    <value>Checking Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
+  </data>
+  <data name="loader_redistributable_package_already_installed" xml:space="preserve">
+    <value>Microsoft Visual C++ Redistributable for Visual Studio 2017 is already installed</value>
+  </data>
+  <data name="loader_redistributable_package_installing" xml:space="preserve">
+    <value>Installing: Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
+  </data>
+  <data name="loader_redistributable_package_ready" xml:space="preserve">
+    <value>Microsoft Visual C++ Redistributable for Visual Studio 2017 is now installed</value>
+  </data>
+  <data name="message_title_no_server_selected" xml:space="preserve">
+    <value>No server selected</value>
+  </data>
+  <data name="message_content_no_server_selected" xml:space="preserve">
+    <value>At least one server must be selected. Otherwise, dnscrypt-proxy uses all servers corresponding to the selected filters.</value>
+  </data>
+  <data name="message_title_service_not_running" xml:space="preserve">
+    <value>Service not running</value>
+  </data>
+  <data name="message_content_service_not_running" xml:space="preserve">
+    <value>You should start the DnsCrypt service first!</value>
+  </data>
+  <data name="message_title_uninstallation_successful" xml:space="preserve">
+    <value>Uninstallation successful</value>
+  </data>
+  <data name="message_content_uninstallation_successful" xml:space="preserve">
+    <value>Uninstallation was successful! DNS requests are no longer encrypted.</value>
+  </data>
+  <data name="message_title_uninstallation_error" xml:space="preserve">
+    <value>Uninstallation error</value>
+  </data>
+  <data name="message_content_uninstallation_error" xml:space="preserve">
+    <value>Uninstallation could not be performed. Try to stop the service manually and uninstall it again.</value>
+  </data>
+  <data name="open_log_directory" xml:space="preserve">
+    <value>Open log directory</value>
+  </data>
+  <data name="settings_update_auto" xml:space="preserve">
+    <value>Check for updates on startup</value>
+  </data>
+  <data name="settings_update_channel" xml:space="preserve">
+    <value>Update Channel:</value>
+  </data>
+  <data name="advanced_settings_dnscache_content" xml:space="preserve">
+    <value>DNS cache to reduce latency and outgoing traffic</value>
+  </data>
+  <data name="advanced_settings_blockipv6" xml:space="preserve">
+    <value>Block IPv6</value>
+  </data>
+  <data name="advanced_settings_blockipv6_content" xml:space="preserve">
+    <value>Immediately respond to IPv6-related queries with an empty response</value>
+  </data>
+  <data name="advanced_settings_forcetcp" xml:space="preserve">
+    <value>Force TCP</value>
+  </data>
+  <data name="advanced_settings_forcetcp_content" xml:space="preserve">
+    <value>Always use TCP to connect to upstream servers</value>
   </data>
 </root>

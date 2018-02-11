@@ -14,7 +14,6 @@ using System.Security.Principal;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Windows;
 using WPFLocalizeExtension.Engine;
 
 namespace SimpleDnsCrypt.ViewModels
@@ -51,6 +50,23 @@ namespace SimpleDnsCrypt.ViewModels
 						LocalizationEx.GetUiString("loader_administrative_rights_missing", Thread.CurrentThread.CurrentCulture);
 					await Task.Delay(3000).ConfigureAwait(false);
 					Process.GetCurrentProcess().Kill();
+				}
+
+				ProgressText = LocalizationEx.GetUiString("loader_redistributable_package_check", Thread.CurrentThread.CurrentCulture);
+				if (PrerequisiteHelper.IsRedistributablePackageInstalled())
+				{
+					ProgressText = LocalizationEx.GetUiString("loader_redistributable_package_already_installed", Thread.CurrentThread.CurrentCulture);
+				}
+				else
+				{
+					ProgressText = LocalizationEx.GetUiString("loader_redistributable_package_installing", Thread.CurrentThread.CurrentCulture);
+					//minisign needs this (to verify the installer with libsodium)
+					await PrerequisiteHelper.DownloadAndInstallRedistributablePackage();
+					if (PrerequisiteHelper.IsRedistributablePackageInstalled())
+					{
+						ProgressText = LocalizationEx.GetUiString("loader_redistributable_package_ready", Thread.CurrentThread.CurrentCulture);
+						await Task.Delay(1000).ConfigureAwait(false);
+					}
 				}
 
 				if (Properties.Settings.Default.AutoUpdate)
@@ -153,13 +169,24 @@ namespace SimpleDnsCrypt.ViewModels
 			var languages = LocalizationEx.GetSupportedLanguages();
 			if (!string.IsNullOrEmpty(Properties.Settings.Default.PreferredLanguage))
 			{
+				Log.Info($"Preferred language: {Properties.Settings.Default.PreferredLanguage}");
 				var preferredLanguage = languages.FirstOrDefault(l => l.ShortCode.Equals(Properties.Settings.Default.PreferredLanguage));
 				LocalizeDictionary.Instance.Culture = preferredLanguage != null ? new CultureInfo(preferredLanguage.CultureCode) : Thread.CurrentThread.CurrentCulture;
 			}
 			else
 			{
-				Log.Warn($"Translation for {Thread.CurrentThread.CurrentCulture.Name} is not available");
-				LocalizeDictionary.Instance.Culture = new CultureInfo("en");
+				var language = languages.FirstOrDefault(l =>
+					l.ShortCode.Equals(Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName));
+				if (language != null)
+				{
+					Log.Info($"Using {language.ShortCode} as language");
+					LocalizeDictionary.Instance.Culture = new CultureInfo(language.CultureCode);
+				}
+				else
+				{
+					Log.Warn($"Translation for {Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName} is not available");
+					LocalizeDictionary.Instance.Culture = new CultureInfo("en");
+				}
 			}
 
 			_mainViewModel = new MainViewModel(_windowManager, _events)

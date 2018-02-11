@@ -541,7 +541,7 @@
                                                 <RowDefinition Height="35" />
                                             </Grid.RowDefinitions>
                                             <Label Foreground="#FF575757" Grid.Row="0" Grid.Column="0"
-                                                   Content="DNS cache to reduce latency and outgoing traffic"
+                                                   Content="{lex:Loc Key=advanced_settings_dnscache_content}"
                                                    VerticalAlignment="Bottom"
                                                    HorizontalAlignment="Left" Margin="0,0,0,5">
                                             </Label>
@@ -565,7 +565,7 @@
                                                                         HorizontalAlignment="Left"
                                                                         VerticalAlignment="Center" />
                                             <TextBlock Grid.Column="1" Grid.Row="0"
-                                                       Text="Block IPv6"
+                                                       Text="{lex:Loc Key=advanced_settings_blockipv6}"
                                                        TextWrapping="Wrap" VerticalAlignment="Center"
                                                        Foreground="#FF8ab329" FontSize="20"
                                                        Opacity="0.7" Margin="5,0,0,3" FontWeight="Bold">
@@ -580,7 +580,7 @@
                                                 <RowDefinition Height="35" />
                                             </Grid.RowDefinitions>
                                             <Label Foreground="#FF575757" Grid.Row="0" Grid.Column="0"
-                                                   Content="Immediately respond to IPv6-related queries with an empty response"
+                                                   Content="{lex:Loc Key=advanced_settings_blockipv6_content}"
                                                    VerticalAlignment="Bottom"
                                                    HorizontalAlignment="Left" Margin="0,0,0,5">
                                             </Label>
@@ -604,7 +604,7 @@
                                                                         HorizontalAlignment="Left"
                                                                         VerticalAlignment="Center" />
                                             <TextBlock Grid.Column="1" Grid.Row="0"
-                                                       Text="Force TCP"
+                                                       Text="{lex:Loc Key=advanced_settings_forcetcpt}"
                                                        TextWrapping="Wrap" VerticalAlignment="Center"
                                                        Foreground="#FF8ab329" FontSize="20"
                                                        Opacity="0.7" Margin="5,0,0,3" FontWeight="Bold">
@@ -619,7 +619,7 @@
                                                 <RowDefinition Height="35" />
                                             </Grid.RowDefinitions>
                                             <Label Foreground="#FF575757" Grid.Row="0" Grid.Column="0"
-                                                   Content="Always use TCP to connect to upstream servers"
+                                                   Content="{lex:Loc Key=advanced_settings_forcetcp_content}"
                                                    VerticalAlignment="Bottom"
                                                    HorizontalAlignment="Left" Margin="0,0,0,5">
                                             </Label>

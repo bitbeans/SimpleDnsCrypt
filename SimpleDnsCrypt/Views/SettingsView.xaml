@@ -82,10 +82,10 @@
                     <StackPanel Orientation="Vertical">
                         <CheckBox IsChecked="{Binding IsAutoUpdateEnabled}"
                                   Margin="5"
-                                  Content="Check for updates on startup"
+                                  Content="{lex:Loc Key=settings_update_auto}"
                                   Cursor="Hand" Foreground="#FF575757" />
                         <StackPanel Margin="5,0,0,0" Orientation="Horizontal">
-                            <TextBlock Foreground="#FF575757" Text="Update Channel:" VerticalAlignment="Center" />
+                            <TextBlock Foreground="#FF575757" Text="{lex:Loc Key=settings_update_channel}" VerticalAlignment="Center" />
                             <ComboBox VerticalContentAlignment="Center"
                                       Width="90"
                                       ItemsSource="{Binding Path=SelectedUpdateType, Converter={converters:EnumToCollectionConverter}, Mode=OneTime}"

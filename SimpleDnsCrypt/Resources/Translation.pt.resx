@@ -163,7 +163,7 @@
     <value>Servidor não deve forçar a sua própria lista negra (para controlos parentais, bloqueio de anúncios...)</value>
   </data>
   <data name="tabitem_mainmenu" xml:space="preserve">
-    <value>Menu principal</value>
+    <value>Menu Principal</value>
   </data>
   <data name="loader_administrative_rights_available" xml:space="preserve">
     <value>Direitos de administrador disponíveis</value>
@@ -184,7 +184,7 @@
     <value>Atualização falhou, continuar...</value>
   </data>
   <data name="loader_latest_version" xml:space="preserve">
-    <value>Está a usar a última versão</value>
+    <value>Está a utilizar a última versão</value>
   </data>
   <data name="loader_unsigned" xml:space="preserve">
     <value>não assinado</value>
@@ -217,7 +217,7 @@
     <value>A carregar {0}...</value>
   </data>
   <data name="loader_missing_files" xml:space="preserve">
-    <value>Ficheiros em falta na {0} pasta: \n{0}\n\nPensar em nova instalação de {2}</value>
+    <value>Ficheiros em falta na pasta {0}: \n{0}\n\nPensar em nova instalação de {2}</value>
   </data>
   <data name="loader_all_files_available" xml:space="preserve">
     <value>Todos os ficheiros necessários foram encontrados</value>
@@ -226,7 +226,7 @@
     <value>Acerca</value>
   </data>
   <data name="about_software" xml:space="preserve">
-    <value>Programa</value>
+    <value>Software</value>
   </data>
   <data name="about_license" xml:space="preserve">
     <value>Licença</value>
@@ -235,10 +235,10 @@
     <value>Ver no GitHub</value>
   </data>
   <data name="tabitem_querylog" xml:space="preserve">
-    <value>Registo de entradas</value>
+    <value>Registo de interrogações</value>
   </data>
   <data name="querylog" xml:space="preserve">
-    <value>Registo de </value>
+    <value>Registo de interrogações</value>
   </data>
   <data name="querylog_waiting_for_data" xml:space="preserve">
     <value>À espera das interrogações de DNS</value>
@@ -328,7 +328,7 @@
     <value>A desinstalar o serviço</value>
   </data>
   <data name="advanced_settings_uninstall_title" xml:space="preserve">
-    <value>A desinstalar o serviço</value>
+    <value>Desinstalar o serviço</value>
   </data>
   <data name="advanced_settings_uninstall_text" xml:space="preserve">
     <value>Remover o serviço do Windows instalado</value>
@@ -340,10 +340,10 @@
     <value>Aplicar definições</value>
   </data>
   <data name="advanced_settings_dnscache" xml:space="preserve">
-    <value>Cacho de DNS</value>
+    <value>Cache de DNS</value>
   </data>
   <data name="resolvers_dnscrypt_mode_header" xml:space="preserve">
-    <value>Modo DNSCrypt</value>
+    <value>Modo do DNSCrypt</value>
   </data>
   <data name="resolvers_dnscrypt_mode_description" xml:space="preserve">
     <value>No modo automático, todos os servidores disponíveis são utilizados. O dnscrypt-proxy automaticamente seleciona os resolutores mais rápidos.</value>
@@ -359,5 +359,65 @@
   </data>
   <data name="resolvers_available_resolvers_header" xml:space="preserve">
     <value>Resolutores Disponíveis</value>
+  </data>
+  <data name="loader_redistributable_package_check" xml:space="preserve">
+    <value>Checking Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
+  </data>
+  <data name="loader_redistributable_package_already_installed" xml:space="preserve">
+    <value>Microsoft Visual C++ Redistributable for Visual Studio 2017 is already installed</value>
+  </data>
+  <data name="loader_redistributable_package_installing" xml:space="preserve">
+    <value>Installing: Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
+  </data>
+  <data name="loader_redistributable_package_ready" xml:space="preserve">
+    <value>Microsoft Visual C++ Redistributable for Visual Studio 2017 is now installed</value>
+  </data>
+  <data name="message_title_no_server_selected" xml:space="preserve">
+    <value>No server selected</value>
+  </data>
+  <data name="message_content_no_server_selected" xml:space="preserve">
+    <value>At least one server must be selected. Otherwise, dnscrypt-proxy uses all servers corresponding to the selected filters.</value>
+  </data>
+  <data name="message_title_service_not_running" xml:space="preserve">
+    <value>Service not running</value>
+  </data>
+  <data name="message_content_service_not_running" xml:space="preserve">
+    <value>You should start the DnsCrypt service first!</value>
+  </data>
+  <data name="message_title_uninstallation_successful" xml:space="preserve">
+    <value>Uninstallation successful</value>
+  </data>
+  <data name="message_content_uninstallation_successful" xml:space="preserve">
+    <value>Uninstallation was successful! DNS requests are no longer encrypted.</value>
+  </data>
+  <data name="message_title_uninstallation_error" xml:space="preserve">
+    <value>Uninstallation error</value>
+  </data>
+  <data name="message_content_uninstallation_error" xml:space="preserve">
+    <value>Uninstallation could not be performed. Try to stop the service manually and uninstall it again.</value>
+  </data>
+  <data name="open_log_directory" xml:space="preserve">
+    <value>Open log directory</value>
+  </data>
+  <data name="settings_update_auto" xml:space="preserve">
+    <value>Check for updates on startup</value>
+  </data>
+  <data name="settings_update_channel" xml:space="preserve">
+    <value>Update Channel:</value>
+  </data>
+  <data name="advanced_settings_dnscache_content" xml:space="preserve">
+    <value>DNS cache to reduce latency and outgoing traffic</value>
+  </data>
+  <data name="advanced_settings_blockipv6" xml:space="preserve">
+    <value>Block IPv6</value>
+  </data>
+  <data name="advanced_settings_blockipv6_content" xml:space="preserve">
+    <value>Immediately respond to IPv6-related queries with an empty response</value>
+  </data>
+  <data name="advanced_settings_forcetcp" xml:space="preserve">
+    <value>Force TCP</value>
+  </data>
+  <data name="advanced_settings_forcetcp_content" xml:space="preserve">
+    <value>Always use TCP to connect to upstream servers</value>
   </data>
 </root>

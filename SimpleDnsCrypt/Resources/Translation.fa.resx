@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="default_settings_network_cards" xml:space="preserve">
-    <value>رابط های شبکه</value>
+    <value>رابط‌های‌شبکه</value>
   </data>
   <data name="default_settings_show_hidden_cards" xml:space="preserve">
     <value>نمایش رابط های مخفی شده</value>
@@ -235,129 +235,189 @@
     <value>مشاهده در گیت‌هاب</value>
   </data>
   <data name="tabitem_querylog" xml:space="preserve">
-    <value>لاگ پرس و جوها</value>
+    <value>گزارش‌فعالیت</value>
   </data>
   <data name="querylog" xml:space="preserve">
-    <value>لاگ پرس و جوها</value>
+    <value>گزارش‌فعالیت</value>
   </data>
   <data name="querylog_waiting_for_data" xml:space="preserve">
-    <value>انتظار برای پاسخ های DNS</value>
+    <value>انتظار برای پرس و جوی DNS</value>
   </data>
   <data name="querylog_entry_count" xml:space="preserve">
-    <value>ورودی ها:</value>
+    <value>موارد:</value>
   </data>
   <data name="querylog_source_file" xml:space="preserve">
-    <value>مبدا:</value>
+    <value>مسیر فایل:</value>
   </data>
   <data name="querylog_button_clear" xml:space="preserve">
     <value>پاکسازی لیست</value>
   </data>
   <data name="querylog_button_block" xml:space="preserve">
-    <value>مسدود کردن انتخاب شده ها</value>
+    <value>مسدود کردن انتخابی</value>
   </data>
   <data name="domainblocklog" xml:space="preserve">
-    <value>Domain Block Log</value>
+    <value>گزارش‌‌دامنه‌مسدود</value>
   </data>
   <data name="domainblocklog_waiting_for_data" xml:space="preserve">
-    <value>waiting for blocked DNS queries</value>
+    <value>انتظار برای پرس و جوی DNS مسدود شده</value>
   </data>
   <data name="domainblocklog_entry_count" xml:space="preserve">
-    <value>Entries:</value>
+    <value>موارد:</value>
   </data>
   <data name="domainblocklog_source_file" xml:space="preserve">
-    <value>Source:</value>
+    <value>مسیر فایل:</value>
   </data>
   <data name="domainblocklog_button_clear" xml:space="preserve">
-    <value>Clear List</value>
+    <value>پاکسازی لیست</value>
   </data>
   <data name="tabitem_domainblocklog" xml:space="preserve">
-    <value>Domain Block Log</value>
+    <value>گزارش‌دامنه‌مسدود</value>
   </data>
   <data name="tabitem_addressblocklog" xml:space="preserve">
-    <value>Address Block Log</value>
+    <value>گزارش‌آدرس‌مسدود</value>
   </data>
   <data name="tabitem_domainblacklist" xml:space="preserve">
-    <value>Domain Blacklist</value>
+    <value>لیست‌سیاه‌دامنه</value>
   </data>
   <data name="tabitem_addressblacklist" xml:space="preserve">
-    <value>Address Blacklist</value>
+    <value>لیست‌سیاه‌آدرس</value>
   </data>
   <data name="settings" xml:space="preserve">
-    <value>Settings</value>
+    <value>تنظیمات</value>
   </data>
   <data name="settings_domain_blacklist" xml:space="preserve">
-    <value>Show &quot;Domain Blacklist&quot; Tab</value>
+    <value>نمایش تب &quot;لیست سیاه دامنه&quot;</value>
   </data>
   <data name="settings_address_blacklist" xml:space="preserve">
-    <value>Show &quot;Address Blacklist&quot; Tab</value>
+    <value>نمایش تب &quot;لیست سیاه آدرس&quot;</value>
   </data>
   <data name="settings_domain_block" xml:space="preserve">
-    <value>Show &quot;Domain Block Log&quot; Tab</value>
+    <value>نمایش تب &quot;گزارش دامنه مسدود&quot;</value>
   </data>
   <data name="settings_address_block" xml:space="preserve">
-    <value>Show &quot;Address Block Log&quot; Tab</value>
+    <value>نمایش تب &quot;گزارش آدرس مسدود&quot;</value>
   </data>
   <data name="settings_query_log" xml:space="preserve">
-    <value>Show &quot;Query Log&quot; Tab</value>
+    <value>نمایش تب &quot;گزارش فعالیت&quot;</value>
   </data>
   <data name="tabitem_resolvers" xml:space="preserve">
-    <value>Resolvers</value>
+    <value>تحلیل‌کننده‌ها</value>
   </data>
   <data name="tabitem_advanced_settings" xml:space="preserve">
-    <value>Advanced Settings</value>
+    <value>تنظیمات‌پیشرفه</value>
   </data>
   <data name="settings_advanced_settings" xml:space="preserve">
-    <value>Show &quot;Advanced Settings&quot; Tab</value>
+    <value>نمایش تب &quot;تنظیمات پیشرفته&quot;</value>
   </data>
   <data name="yes" xml:space="preserve">
-    <value>yes</value>
+    <value>بله</value>
   </data>
   <data name="no" xml:space="preserve">
-    <value>no</value>
+    <value>خیر</value>
   </data>
   <data name="cancel" xml:space="preserve">
-    <value>cancel</value>
+    <value>لغو</value>
   </data>
   <data name="ok" xml:space="preserve">
-    <value>OK</value>
+    <value>تایید</value>
   </data>
   <data name="dialog_message_uninstall" xml:space="preserve">
-    <value>Do you want to remove the installed Windows service?</value>
+    <value>آیا میخواهید تا سرویس مربوطه نصب شده حذف گردد؟</value>
   </data>
   <data name="dialog_uninstall_title" xml:space="preserve">
-    <value>Uninstalling the service</value>
+    <value>حذف کردن سرویس</value>
   </data>
   <data name="advanced_settings_uninstall_title" xml:space="preserve">
-    <value>Uninstalling the service</value>
+    <value>حذف کردن سرویس</value>
   </data>
   <data name="advanced_settings_uninstall_text" xml:space="preserve">
-    <value>Remove the installed Windows service</value>
+    <value>حذف سرویس مربوطه نصب شده</value>
   </data>
   <data name="advanced_settings_uninstall_button" xml:space="preserve">
-    <value>Remove service</value>
+    <value>حذف سرویس</value>
   </data>
   <data name="default_settings_apply_settings" xml:space="preserve">
-    <value>Apply settings</value>
+    <value>اعمال تنظیمات</value>
   </data>
   <data name="advanced_settings_dnscache" xml:space="preserve">
-    <value>DNS Cache</value>
+    <value>کش DNS</value>
   </data>
   <data name="resolvers_dnscrypt_mode_header" xml:space="preserve">
-    <value>DNSCrypt Mode</value>
+    <value>حالت DNSCrypt</value>
   </data>
   <data name="resolvers_dnscrypt_mode_description" xml:space="preserve">
-    <value>In automatic mode, all available servers are used. dnscrypt-proxy automatically selects the fastest resolvers.</value>
+    <value>در حالت اتوماتیک، تمام سرور های در دسترس مورد استفاده قرار میگیرند. dnscrypt-proxy به طور خودکار سریع ترین تحلیل کننده را انتخاب می نماید.</value>
   </data>
   <data name="resolvers_dnscrypt_automatic_mode" xml:space="preserve">
-    <value>Automatic Mode</value>
+    <value>حالت اتوماتیک</value>
   </data>
   <data name="disabled" xml:space="preserve">
-    <value>Disabled</value>
+    <value>غیر‌فعال</value>
   </data>
   <data name="enabled" xml:space="preserve">
-    <value>Enabled</value>
+    <value>فعال</value>
   </data>
   <data name="resolvers_available_resolvers_header" xml:space="preserve">
-    <value>Available Resolvers</value>
+    <value>تحلیل کننده های در دسترس</value>
+  </data>
+  <data name="loader_redistributable_package_check" xml:space="preserve">
+    <value>Checking Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
+  </data>
+  <data name="loader_redistributable_package_already_installed" xml:space="preserve">
+    <value>Microsoft Visual C++ Redistributable for Visual Studio 2017 is already installed</value>
+  </data>
+  <data name="loader_redistributable_package_installing" xml:space="preserve">
+    <value>Installing: Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
+  </data>
+  <data name="loader_redistributable_package_ready" xml:space="preserve">
+    <value>Microsoft Visual C++ Redistributable for Visual Studio 2017 is now installed</value>
+  </data>
+  <data name="message_title_no_server_selected" xml:space="preserve">
+    <value>No server selected</value>
+  </data>
+  <data name="message_content_no_server_selected" xml:space="preserve">
+    <value>At least one server must be selected. Otherwise, dnscrypt-proxy uses all servers corresponding to the selected filters.</value>
+  </data>
+  <data name="message_title_service_not_running" xml:space="preserve">
+    <value>Service not running</value>
+  </data>
+  <data name="message_content_service_not_running" xml:space="preserve">
+    <value>You should start the DnsCrypt service first!</value>
+  </data>
+  <data name="message_title_uninstallation_successful" xml:space="preserve">
+    <value>Uninstallation successful</value>
+  </data>
+  <data name="message_content_uninstallation_successful" xml:space="preserve">
+    <value>Uninstallation was successful! DNS requests are no longer encrypted.</value>
+  </data>
+  <data name="message_title_uninstallation_error" xml:space="preserve">
+    <value>Uninstallation error</value>
+  </data>
+  <data name="message_content_uninstallation_error" xml:space="preserve">
+    <value>Uninstallation could not be performed. Try to stop the service manually and uninstall it again.</value>
+  </data>
+  <data name="open_log_directory" xml:space="preserve">
+    <value>Open log directory</value>
+  </data>
+  <data name="settings_update_auto" xml:space="preserve">
+    <value>Check for updates on startup</value>
+  </data>
+  <data name="settings_update_channel" xml:space="preserve">
+    <value>Update Channel:</value>
+  </data>
+  <data name="advanced_settings_dnscache_content" xml:space="preserve">
+    <value>DNS cache to reduce latency and outgoing traffic</value>
+  </data>
+  <data name="advanced_settings_blockipv6" xml:space="preserve">
+    <value>Block IPv6</value>
+  </data>
+  <data name="advanced_settings_blockipv6_content" xml:space="preserve">
+    <value>Immediately respond to IPv6-related queries with an empty response</value>
+  </data>
+  <data name="advanced_settings_forcetcp" xml:space="preserve">
+    <value>Force TCP</value>
+  </data>
+  <data name="advanced_settings_forcetcp_content" xml:space="preserve">
+    <value>Always use TCP to connect to upstream servers</value>
   </data>
 </root>

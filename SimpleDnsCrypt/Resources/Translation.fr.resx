@@ -118,246 +118,317 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="default_settings_network_cards" xml:space="preserve">
-    <value>Cartes Réseaux</value>
+    <value>Cartes réseaux</value>
   </data>
   <data name="default_settings_show_hidden_cards" xml:space="preserve">
-    <value>Show hidden cards</value>
+    <value>Afficher les cartes masquées</value>
   </data>
   <data name="default_settings_service_header" xml:space="preserve">
     <value>Service</value>
   </data>
   <data name="default_settings_service" xml:space="preserve">
-    <value>DNSCrypt Service</value>
+    <value>Service DNSCrypt</value>
   </data>
   <data name="default_settings_configuration" xml:space="preserve">
-    <value>Configuration</value>
+    <value>Paramètres</value>
   </data>
   <data name="default_settings_configuration_ipv4" xml:space="preserve">
-    <value>Using IPv4 Server</value>
+    <value>Utiliser un serveur IPv4</value>
   </data>
   <data name="default_settings_configuration_ipv4_tooltip" xml:space="preserve">
-    <value>Use servers reachable over IPv4</value>
+    <value>Utiliser les serveurs accessibles en IPv4</value>
   </data>
   <data name="default_settings_configuration_ipv6" xml:space="preserve">
-    <value>Using IPv6 Server</value>
+    <value>Utiliser un serveur IPv6</value>
   </data>
   <data name="default_settings_configuration_ipv6_tooltip" xml:space="preserve">
-    <value>Use servers reachable over IPv6 (do not enable if you don&apos;t have IPv6 connectivity)</value>
+    <value>Utiliser les serveurs possibles sous IPv6 (ne pas activer si vous n&apos;utilisez pas la connectivité IPv6)</value>
   </data>
   <data name="default_settings_configuration_dnssec" xml:space="preserve">
-    <value>Only servers with DNSSEC support</value>
+    <value>Uniquement les serveurs avec le support DNSSEC</value>
   </data>
   <data name="default_settings_configuration_dnssec_tooltip" xml:space="preserve">
-    <value>Server must support DNS security extensions</value>
+    <value>Le serveur doit supporter les extensions de sécurité DNS</value>
   </data>
   <data name="default_settings_configuration_nolog" xml:space="preserve">
-    <value>Only servers without logging</value>
+    <value>Seulement les serveurs sans journaux</value>
   </data>
   <data name="default_settings_configuration_nolog_tooltip" xml:space="preserve">
-    <value>Server must not log user queries</value>
+    <value>Le serveur ne doit pas enregistrer les journaux des requêtes de l&apos;utilisateur.</value>
+    <comment>Plutôt &quot;enregistrer&quot; que &quot;garder&quot; ici je pense. Cela semble plus logique pour le terme &quot;log&quot;</comment>
   </data>
   <data name="default_settings_configuration_nofilter" xml:space="preserve">
-    <value>Only servers without filter</value>
+    <value>Seulement les serveurs sans filtre</value>
   </data>
   <data name="default_settings_configuration_nofilter_tooltip" xml:space="preserve">
-    <value>Server must not enforce its own blacklist (for parental control, ads blocking...)</value>
+    <value>Le serveur ne doit pas forcer sa propre liste noire (pour le contrôle parental, blocage de publicités,...)</value>
+    <comment>Oubli du &quot;ô&quot; à &quot;contrôle&quot;</comment>
   </data>
   <data name="tabitem_mainmenu" xml:space="preserve">
-    <value>Main Menu</value>
+    <value>Menu principal</value>
   </data>
   <data name="loader_administrative_rights_available" xml:space="preserve">
-    <value>Administrative rights are available</value>
+    <value>Les droits administrateur sont disponible</value>
   </data>
   <data name="loader_administrative_rights_missing" xml:space="preserve">
-    <value>Missing administrative rights!</value>
+    <value>Les droits administrateurs sont manquants!</value>
   </data>
   <data name="loader_checking_version" xml:space="preserve">
-    <value>Checking for new version . . .</value>
+    <value>Vérification d&apos;une nouvelle version...</value>
   </data>
   <data name="loader_new_version_found" xml:space="preserve">
-    <value>A newer version was found: {0}</value>
+    <value>Une version plus récente a été trouvée: {0}</value>
+    <comment>&quot;newer&quot; représente une version plus récente. Je n&apos;avais pas remarqué jusqu&apos;ici la petite faute.</comment>
   </data>
   <data name="loader_starting_update" xml:space="preserve">
-    <value>Starting update . . .</value>
+    <value>Début de la mise à jour...</value>
   </data>
   <data name="loader_update_failed" xml:space="preserve">
-    <value>Update failed, continue . . .</value>
+    <value>Mise à jour échouée, continuez...</value>
   </data>
   <data name="loader_latest_version" xml:space="preserve">
-    <value>You are using the latest version</value>
+    <value>Vous utilisez la dernière version</value>
   </data>
   <data name="loader_unsigned" xml:space="preserve">
-    <value>unsigned</value>
+    <value>Non signé</value>
   </data>
   <data name="loader_missing" xml:space="preserve">
-    <value>missing</value>
+    <value>Manquant</value>
   </data>
   <data name="loader_downloading_signature" xml:space="preserve">
-    <value>Downloading signature . . .</value>
+    <value>Téléchargement de la signature...</value>
   </data>
   <data name="loader_downloading_installer" xml:space="preserve">
-    <value>Downloading installer . . .</value>
+    <value>Téléchargement de l&apos;installeur...</value>
   </data>
   <data name="loader_starting" xml:space="preserve">
-    <value>Starting . . .</value>
+    <value>Démarrage...</value>
   </data>
   <data name="loader_validate_folder" xml:space="preserve">
-    <value>Validating {0} folder</value>
+    <value>Validation du dossier {0}</value>
   </data>
   <data name="loader_loading_network_cards" xml:space="preserve">
-    <value>Loading network cards . . .</value>
+    <value>Chargement des cartes réseaux...</value>
   </data>
   <data name="loader_failed_loading" xml:space="preserve">
-    <value>Could not load {0}</value>
+    <value>Impossible de charger {0}</value>
   </data>
   <data name="loader_successfully_loaded" xml:space="preserve">
-    <value>{0} successfully loaded</value>
+    <value>{0} correctement chargé</value>
   </data>
   <data name="loader_loading" xml:space="preserve">
-    <value>Loading {0} . . .</value>
+    <value>Chargement de {0} ...</value>
   </data>
   <data name="loader_missing_files" xml:space="preserve">
-    <value>Missing files in the {0} folder:\n{1}\n\nThink about a new installation of {2}</value>
+    <value>Fichiers manquants dans le répertoire {0}\n{1}\n\nPensez à une nouvelle installation de {2}</value>
   </data>
   <data name="loader_all_files_available" xml:space="preserve">
-    <value>All required files have been found</value>
+    <value>Tous les fichiers requis ont été trouvé</value>
+    <comment>vérifier si &quot;tous&quot; ou &quot;tout&quot;</comment>
   </data>
   <data name="about" xml:space="preserve">
-    <value>About</value>
+    <value>A propos</value>
   </data>
   <data name="about_software" xml:space="preserve">
-    <value>Software</value>
+    <value>Programme</value>
   </data>
   <data name="about_license" xml:space="preserve">
-    <value>License</value>
+    <value>Licence</value>
   </data>
   <data name="about_view_on_github" xml:space="preserve">
-    <value>View on GitHub</value>
+    <value>Voir sur GitHub</value>
   </data>
   <data name="tabitem_querylog" xml:space="preserve">
-    <value>Query Log</value>
+    <value>Récupérer les journaux</value>
   </data>
   <data name="querylog" xml:space="preserve">
-    <value>Query Log</value>
+    <value>Récupérer les journaux</value>
   </data>
   <data name="querylog_waiting_for_data" xml:space="preserve">
-    <value>waiting for DNS queries</value>
+    <value>en attente des requêtes DNS</value>
   </data>
   <data name="querylog_entry_count" xml:space="preserve">
-    <value>Entries:</value>
+    <value>Entrées:</value>
   </data>
   <data name="querylog_source_file" xml:space="preserve">
     <value>Source:</value>
   </data>
   <data name="querylog_button_clear" xml:space="preserve">
-    <value>Clear List</value>
+    <value>Effacer la liste</value>
   </data>
   <data name="querylog_button_block" xml:space="preserve">
-    <value>Block Selected</value>
+    <value>Bloqué sélectionné</value>
   </data>
   <data name="domainblocklog" xml:space="preserve">
-    <value>Domain Block Log</value>
+    <value>Journaux des domaines bloqués</value>
+    <comment>pas sûr s&apos;il faut mettre au pluriel</comment>
   </data>
   <data name="domainblocklog_waiting_for_data" xml:space="preserve">
-    <value>waiting for blocked DNS queries</value>
+    <value>en attente des requêtes DNS bloquées</value>
   </data>
   <data name="domainblocklog_entry_count" xml:space="preserve">
-    <value>Entries:</value>
+    <value>Entrées:</value>
   </data>
   <data name="domainblocklog_source_file" xml:space="preserve">
     <value>Source:</value>
   </data>
   <data name="domainblocklog_button_clear" xml:space="preserve">
-    <value>Clear List</value>
+    <value>Effacer la liste</value>
   </data>
   <data name="tabitem_domainblocklog" xml:space="preserve">
-    <value>Domain Block Log</value>
+    <value>Journaux des domaines bloqués</value>
+    <comment>pas sûr s&apos;il faut mettre au pluriel</comment>
   </data>
   <data name="tabitem_addressblocklog" xml:space="preserve">
-    <value>Address Block Log</value>
+    <value>Journaux des adresses bloquées</value>
+    <comment>pas sûr s&apos;il faut mettre au pluriel</comment>
   </data>
   <data name="tabitem_domainblacklist" xml:space="preserve">
-    <value>Domain Blacklist</value>
+    <value>Liste noire de domaine</value>
   </data>
   <data name="tabitem_addressblacklist" xml:space="preserve">
-    <value>Address Blacklist</value>
+    <value>Liste noire d&apos;adresse</value>
   </data>
   <data name="settings" xml:space="preserve">
-    <value>Settings</value>
+    <value>Paramètres</value>
   </data>
   <data name="settings_domain_blacklist" xml:space="preserve">
-    <value>Show &quot;Domain Blacklist&quot; Tab</value>
+    <value>Afficher l&apos;onglet &quot;Liste noire de domaine&quot;</value>
   </data>
   <data name="settings_address_blacklist" xml:space="preserve">
-    <value>Show &quot;Address Blacklist&quot; Tab</value>
+    <value>Afficher l&apos;onglet &quot;Liste noire d&apos;adresse&quot;</value>
   </data>
   <data name="settings_domain_block" xml:space="preserve">
-    <value>Show &quot;Domain Block Log&quot; Tab</value>
+    <value>Afficher l&apos;onglet &quot;Journaux des domaines bloqués&quot;</value>
+    <comment>pas sûr s&apos;il faut mettre au pluriel</comment>
   </data>
   <data name="settings_address_block" xml:space="preserve">
-    <value>Show &quot;Address Block Log&quot; Tab</value>
+    <value>Afficher l&apos;onglet &quot;Journaux des adresses bloquées&quot;</value>
+    <comment>pas sûr s&apos;il faut mettre au pluriel</comment>
   </data>
   <data name="settings_query_log" xml:space="preserve">
-    <value>Show &quot;Query Log&quot; Tab</value>
+    <value>Afficher l&apos;onglet &quot;récupérer les journaux&quot;</value>
+    <comment>pas sûr s&apos;il faut mettre au pluriel</comment>
   </data>
   <data name="tabitem_resolvers" xml:space="preserve">
-    <value>Resolvers</value>
+    <value>Résolveurs</value>
   </data>
   <data name="tabitem_advanced_settings" xml:space="preserve">
-    <value>Advanced Settings</value>
+    <value>Paramètres avancés</value>
   </data>
   <data name="settings_advanced_settings" xml:space="preserve">
-    <value>Show &quot;Advanced Settings&quot; Tab</value>
+    <value>Afficher l&apos;onglet &quot;paramètres avancés&quot;</value>
   </data>
   <data name="yes" xml:space="preserve">
-    <value>yes</value>
+    <value>oui</value>
   </data>
   <data name="no" xml:space="preserve">
-    <value>no</value>
+    <value>non</value>
   </data>
   <data name="cancel" xml:space="preserve">
-    <value>cancel</value>
+    <value>annuler</value>
   </data>
   <data name="ok" xml:space="preserve">
     <value>OK</value>
   </data>
   <data name="dialog_message_uninstall" xml:space="preserve">
-    <value>Do you want to remove the installed Windows service?</value>
+    <value>Voulez-vous retirer le service Windows installé ?</value>
   </data>
   <data name="dialog_uninstall_title" xml:space="preserve">
-    <value>Uninstalling the service</value>
+    <value>Désinstaller le service</value>
   </data>
   <data name="advanced_settings_uninstall_title" xml:space="preserve">
-    <value>Uninstalling the service</value>
+    <value>Désinstaller le service</value>
   </data>
   <data name="advanced_settings_uninstall_text" xml:space="preserve">
-    <value>Remove the installed Windows service</value>
+    <value>Retirer le service Windows installé</value>
   </data>
   <data name="advanced_settings_uninstall_button" xml:space="preserve">
-    <value>Remove service</value>
+    <value>Retirer le service</value>
   </data>
   <data name="default_settings_apply_settings" xml:space="preserve">
-    <value>Apply settings</value>
+    <value>Appliquer les paramètres</value>
   </data>
   <data name="advanced_settings_dnscache" xml:space="preserve">
-    <value>DNS Cache</value>
+    <value>Cache DNS</value>
   </data>
   <data name="resolvers_dnscrypt_mode_header" xml:space="preserve">
-    <value>DNSCrypt Mode</value>
+    <value>Mode DNSCrypt</value>
   </data>
   <data name="resolvers_dnscrypt_mode_description" xml:space="preserve">
-    <value>In automatic mode, all available servers are used. dnscrypt-proxy automatically selects the fastest resolvers.</value>
+    <value>En mode automatique, tous les serveurs disponibles sont utilisés. dnscrypt-proxy sélectionne automatiquement les résolveurs les plus rapides.</value>
+    <comment>vérifier si &quot;tous&quot; ou &quot;tout&quot;</comment>
   </data>
   <data name="resolvers_dnscrypt_automatic_mode" xml:space="preserve">
-    <value>Automatic Mode</value>
+    <value>Mode automatique</value>
   </data>
   <data name="disabled" xml:space="preserve">
-    <value>Disabled</value>
+    <value>Désactivé</value>
   </data>
   <data name="enabled" xml:space="preserve">
-    <value>Enabled</value>
+    <value>Activé</value>
   </data>
   <data name="resolvers_available_resolvers_header" xml:space="preserve">
-    <value>Available Resolvers</value>
+    <value>Résolveurs disponibles</value>
+  </data>
+  <data name="loader_redistributable_package_check" xml:space="preserve">
+    <value>Checking Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
+  </data>
+  <data name="loader_redistributable_package_already_installed" xml:space="preserve">
+    <value>Microsoft Visual C++ Redistributable for Visual Studio 2017 is already installed</value>
+  </data>
+  <data name="loader_redistributable_package_installing" xml:space="preserve">
+    <value>Installing: Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
+  </data>
+  <data name="loader_redistributable_package_ready" xml:space="preserve">
+    <value>Microsoft Visual C++ Redistributable for Visual Studio 2017 is now installed</value>
+  </data>
+  <data name="message_title_no_server_selected" xml:space="preserve">
+    <value>No server selected</value>
+  </data>
+  <data name="message_content_no_server_selected" xml:space="preserve">
+    <value>At least one server must be selected. Otherwise, dnscrypt-proxy uses all servers corresponding to the selected filters.</value>
+  </data>
+  <data name="message_title_service_not_running" xml:space="preserve">
+    <value>Service not running</value>
+  </data>
+  <data name="message_content_service_not_running" xml:space="preserve">
+    <value>You should start the DnsCrypt service first!</value>
+  </data>
+  <data name="message_title_uninstallation_successful" xml:space="preserve">
+    <value>Uninstallation successful</value>
+  </data>
+  <data name="message_content_uninstallation_successful" xml:space="preserve">
+    <value>Uninstallation was successful! DNS requests are no longer encrypted.</value>
+  </data>
+  <data name="message_title_uninstallation_error" xml:space="preserve">
+    <value>Uninstallation error</value>
+  </data>
+  <data name="message_content_uninstallation_error" xml:space="preserve">
+    <value>Uninstallation could not be performed. Try to stop the service manually and uninstall it again.</value>
+  </data>
+  <data name="open_log_directory" xml:space="preserve">
+    <value>Open log directory</value>
+  </data>
+  <data name="settings_update_auto" xml:space="preserve">
+    <value>Check for updates on startup</value>
+  </data>
+  <data name="settings_update_channel" xml:space="preserve">
+    <value>Update Channel:</value>
+  </data>
+  <data name="advanced_settings_dnscache_content" xml:space="preserve">
+    <value>DNS cache to reduce latency and outgoing traffic</value>
+  </data>
+  <data name="advanced_settings_blockipv6" xml:space="preserve">
+    <value>Block IPv6</value>
+  </data>
+  <data name="advanced_settings_blockipv6_content" xml:space="preserve">
+    <value>Immediately respond to IPv6-related queries with an empty response</value>
+  </data>
+  <data name="advanced_settings_forcetcp" xml:space="preserve">
+    <value>Force TCP</value>
+  </data>
+  <data name="advanced_settings_forcetcp_content" xml:space="preserve">
+    <value>Always use TCP to connect to upstream servers</value>
   </data>
 </root>
