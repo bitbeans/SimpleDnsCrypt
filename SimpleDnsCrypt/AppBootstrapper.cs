@@ -65,7 +65,7 @@ namespace SimpleDnsCrypt {
         {
 	        try
 	        {
-		        if (e.Args.Length == 1)
+				if (e.Args.Length == 1)
 		        {
 			        if (e.Args[0].Equals("-debug"))
 			        {

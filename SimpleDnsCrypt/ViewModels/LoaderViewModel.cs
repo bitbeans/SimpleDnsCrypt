@@ -149,7 +149,6 @@ namespace SimpleDnsCrypt.ViewModels
 			_events = events;
 			_events.Subscribe(this);
 			_titleText = $"{Global.ApplicationName} {VersionHelper.PublishVersion} {VersionHelper.PublishBuild}";
-
 			LocalizeDictionary.Instance.SetCurrentThreadCulture = true;
 			var languages = LocalizationEx.GetSupportedLanguages();
 			if (!string.IsNullOrEmpty(Properties.Settings.Default.PreferredLanguage))
@@ -159,7 +158,8 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 			else
 			{
-				LocalizeDictionary.Instance.Culture = Thread.CurrentThread.CurrentCulture;
+				Log.Warn($"Translation for {Thread.CurrentThread.CurrentCulture.Name} is not available");
+				LocalizeDictionary.Instance.Culture = new CultureInfo("en");
 			}
 
 			_mainViewModel = new MainViewModel(_windowManager, _events)
