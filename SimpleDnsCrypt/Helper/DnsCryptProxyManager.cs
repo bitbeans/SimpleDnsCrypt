@@ -67,6 +67,10 @@ namespace SimpleDnsCrypt.Helper
 						return false;
 				}
 			}
+			catch (InvalidOperationException)
+			{
+				return false;
+			}
 			catch (Exception exception)
 			{
 				Log.Error(exception);
