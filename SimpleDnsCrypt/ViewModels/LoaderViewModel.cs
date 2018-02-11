@@ -99,6 +99,10 @@ namespace SimpleDnsCrypt.ViewModels
 						ProgressText = LocalizationEx.GetUiString("loader_latest_version", Thread.CurrentThread.CurrentCulture);
 					}
 				}
+				else
+				{
+					await Task.Delay(500).ConfigureAwait(false);
+				}
 
 				ProgressText =
 					string.Format(LocalizationEx.GetUiString("loader_validate_folder", Thread.CurrentThread.CurrentCulture),
