@@ -130,7 +130,7 @@
     <value>DNSCrypt szolgáltatás</value>
   </data>
   <data name="default_settings_configuration" xml:space="preserve">
-    <value>Configuration</value>
+    <value>Konfiguráció</value>
   </data>
   <data name="default_settings_configuration_ipv4" xml:space="preserve">
     <value>IPv4 kiszolgáló használata</value>
@@ -145,7 +145,7 @@
     <value>IPv6-on keresztül elérhető szerverek használata (ne engedélyezze, ha nincs IPv6-kapcsolat)</value>
   </data>
   <data name="default_settings_configuration_dnssec" xml:space="preserve">
-    <value>Csak a DNSSEC támogatással rendelkező szerverek támogatják</value>
+    <value>Csak a DNSSEC támogatással rendelkező szerverek</value>
   </data>
   <data name="default_settings_configuration_dnssec_tooltip" xml:space="preserve">
     <value>A kiszolgálónak támogatnia kell a DNS biztonsági bővítményeket</value>
@@ -163,7 +163,8 @@
     <value>A szerver nem érvényesítheti saját feketelistáját (szülői felügyelet, hirdetések blokkolása ...)</value>
   </data>
   <data name="tabitem_mainmenu" xml:space="preserve">
-    <value>Főmenü</value>
+    <value>Főmenü
+</value>
   </data>
   <data name="loader_administrative_rights_available" xml:space="preserve">
     <value>Adminisztrációs jogok állnak rendelkezésre</value>
@@ -220,10 +221,10 @@
     <value>A (z) {0} mappában hiányzó fájlok: \ n {1} \ n \ nA {2}</value>
   </data>
   <data name="loader_all_files_available" xml:space="preserve">
-    <value>Minden szükséges fájlt találtunk</value>
+    <value>Minden szükséges fájl megtalálható</value>
   </data>
   <data name="about" xml:space="preserve">
-    <value>About</value>
+    <value>Magunkról</value>
   </data>
   <data name="about_software" xml:space="preserve">
     <value>Szoftver</value>
@@ -259,7 +260,7 @@
     <value>Domain blokknapló</value>
   </data>
   <data name="domainblocklog_waiting_for_data" xml:space="preserve">
-    <value>blokkolt DNS lekérdezések várása</value>
+    <value>várakozás a blokkolt DNS lekérdezésre</value>
   </data>
   <data name="domainblocklog_entry_count" xml:space="preserve">
     <value>Bejegyzés:</value>
@@ -271,28 +272,28 @@
     <value>Lista törlése</value>
   </data>
   <data name="tabitem_domainblocklog" xml:space="preserve">
-    <value>Domain blokknapló</value>
+    <value>Domain blokk napló</value>
   </data>
   <data name="tabitem_addressblocklog" xml:space="preserve">
-    <value>Cím blokknapló</value>
+    <value>Cím blokk napló</value>
   </data>
   <data name="tabitem_domainblacklist" xml:space="preserve">
-    <value>Domain Feketelista</value>
+    <value>Domain feketelista</value>
   </data>
   <data name="tabitem_addressblacklist" xml:space="preserve">
-    <value>Cím fekete lista</value>
+    <value>Cím feketelista</value>
   </data>
   <data name="settings" xml:space="preserve">
     <value>Beállítások</value>
   </data>
   <data name="settings_domain_blacklist" xml:space="preserve">
-    <value>A &quot;Feketefedelista&quot; lap megjelenítése</value>
+    <value>A &quot;feketelista&quot; lap megjelenítése</value>
   </data>
   <data name="settings_address_blacklist" xml:space="preserve">
     <value>A &quot;Cím feketelista&quot; fül megjelenítése</value>
   </data>
   <data name="settings_domain_block" xml:space="preserve">
-    <value>A &quot;Domainblokk naplója&quot; lap megjelenítése</value>
+    <value>A &quot;Domain blokk naplója&quot; lap megjelenítése</value>
   </data>
   <data name="settings_address_block" xml:space="preserve">
     <value>A &quot;Cím blokk naplója&quot; lap megjelenítése</value>
@@ -301,7 +302,7 @@
     <value>A &quot;Lekérdezési napló&quot; lap megjelenítése</value>
   </data>
   <data name="tabitem_resolvers" xml:space="preserve">
-    <value>feloldók</value>
+    <value>Névkiszolgálók</value>
   </data>
   <data name="tabitem_advanced_settings" xml:space="preserve">
     <value>További beállítások</value>
@@ -316,10 +317,10 @@
     <value>nem</value>
   </data>
   <data name="cancel" xml:space="preserve">
-    <value>megszünteti</value>
+    <value>megszüntet</value>
   </data>
   <data name="ok" xml:space="preserve">
-    <value>rendben</value>
+    <value>OK</value>
   </data>
   <data name="dialog_message_uninstall" xml:space="preserve">
     <value>Szeretné eltávolítani a telepített Windows-szolgáltatást?</value>
@@ -358,66 +359,66 @@
     <value>Engedélyezve</value>
   </data>
   <data name="resolvers_available_resolvers_header" xml:space="preserve">
-    <value>Elérhető Resolverek</value>
+    <value>Elérhető névkiszolgálók</value>
   </data>
   <data name="loader_redistributable_package_check" xml:space="preserve">
-    <value>Checking Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
+    <value>A Microsoft Visual C ++ redisztribuáló Visual Studio 2017 verziójának ellenőrzése</value>
   </data>
   <data name="loader_redistributable_package_already_installed" xml:space="preserve">
-    <value>Microsoft Visual C++ Redistributable for Visual Studio 2017 is already installed</value>
+    <value>A Visual Studio 2017 újratervezett Microsoft Visual C ++ verziója már telepítve van</value>
   </data>
   <data name="loader_redistributable_package_installing" xml:space="preserve">
-    <value>Installing: Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
+    <value>Telepítés: Microsoft Visual C ++ redisztribuálható a Visual Studio 2017-hez</value>
   </data>
   <data name="loader_redistributable_package_ready" xml:space="preserve">
-    <value>Microsoft Visual C++ Redistributable for Visual Studio 2017 is now installed</value>
+    <value>A Microsoft Visual C ++ újraelosztható a Visual Studio 2017-hez</value>
   </data>
   <data name="message_title_no_server_selected" xml:space="preserve">
-    <value>No server selected</value>
+    <value>Nincs kiválasztott kiszolgáló</value>
   </data>
   <data name="message_content_no_server_selected" xml:space="preserve">
-    <value>At least one server must be selected. Otherwise, dnscrypt-proxy uses all servers corresponding to the selected filters.</value>
+    <value>Legalább egy kiszolgálót kell kiválasztani. Ellenkező esetben a dnscrypt-proxy a kiválasztott szűrőkhöz tartozó összes kiszolgálót használja.</value>
   </data>
   <data name="message_title_service_not_running" xml:space="preserve">
-    <value>Service not running</value>
+    <value>A szolgáltatás nem fut</value>
   </data>
   <data name="message_content_service_not_running" xml:space="preserve">
-    <value>You should start the DnsCrypt service first!</value>
+    <value>Először el kell indítania a DnsCrypt szolgáltatást!</value>
   </data>
   <data name="message_title_uninstallation_successful" xml:space="preserve">
-    <value>Uninstallation successful</value>
+    <value>Az eltávolítás sikeres</value>
   </data>
   <data name="message_content_uninstallation_successful" xml:space="preserve">
-    <value>Uninstallation was successful! DNS requests are no longer encrypted.</value>
+    <value>Az eltávolítás sikeres volt! A DNS-kérelmek nincsenek már titkosított formában.</value>
   </data>
   <data name="message_title_uninstallation_error" xml:space="preserve">
-    <value>Uninstallation error</value>
+    <value>Eltávolítási hiba</value>
   </data>
   <data name="message_content_uninstallation_error" xml:space="preserve">
-    <value>Uninstallation could not be performed. Try to stop the service manually and uninstall it again.</value>
+    <value>Az eltávolítás nem hajtható végre. Próbáld meg manuálisan leállítani a szolgáltatást, és újra eltávolítani.</value>
   </data>
   <data name="open_log_directory" xml:space="preserve">
-    <value>Open log directory</value>
+    <value>Naplókönyvtár megnyitása</value>
   </data>
   <data name="settings_update_auto" xml:space="preserve">
-    <value>Check for updates on startup</value>
+    <value>Frissítések keresése az indításkor</value>
   </data>
   <data name="settings_update_channel" xml:space="preserve">
-    <value>Update Channel:</value>
+    <value>Csatorna frissítése:</value>
   </data>
   <data name="advanced_settings_dnscache_content" xml:space="preserve">
-    <value>DNS cache to reduce latency and outgoing traffic</value>
+    <value>DNS-gyorsítótár a késleltetés és a kimenő forgalom csökkentése érdekében</value>
   </data>
   <data name="advanced_settings_blockipv6" xml:space="preserve">
-    <value>Block IPv6</value>
+    <value>Az IPv6 blokkolása</value>
   </data>
   <data name="advanced_settings_blockipv6_content" xml:space="preserve">
-    <value>Immediately respond to IPv6-related queries with an empty response</value>
+    <value>Azonnal válaszoljon az IPv6-hez kapcsolódó lekérdezésekre, üres válasz esetén</value>
   </data>
   <data name="advanced_settings_forcetcp" xml:space="preserve">
-    <value>Force TCP</value>
+    <value>TCP használata</value>
   </data>
   <data name="advanced_settings_forcetcp_content" xml:space="preserve">
-    <value>Always use TCP to connect to upstream servers</value>
+    <value>Mindig használja a TCP-t, hogy csatlakozzon az upstream kiszolgálókhoz</value>
   </data>
 </root>
