@@ -86,7 +86,7 @@
                                   Cursor="Hand" Foreground="#FF575757" />
                         <StackPanel Margin="5,0,0,0" Orientation="Horizontal">
                             <TextBlock Foreground="#FF575757" Text="{lex:Loc Key=settings_update_channel}" VerticalAlignment="Center" />
-                            <ComboBox VerticalContentAlignment="Center"
+                            <ComboBox VerticalContentAlignment="Center" IsEnabled="False"
                                       Width="90"
                                       ItemsSource="{Binding Path=SelectedUpdateType, Converter={converters:EnumToCollectionConverter}, Mode=OneTime}"
                                       SelectedValuePath="Value"

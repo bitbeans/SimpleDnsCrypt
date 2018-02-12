@@ -72,6 +72,9 @@ namespace SimpleDnsCrypt.ViewModels
 				if (Properties.Settings.Default.AutoUpdate)
 				{
 					ProgressText = LocalizationEx.GetUiString("loader_checking_version", Thread.CurrentThread.CurrentCulture);
+					//TODO: remove in future version (for now we only have one channel)
+					Properties.Settings.Default.MinUpdateType = 2;
+					Properties.Settings.Default.Save();
 					var minUpdateType = (UpdateType)Properties.Settings.Default.MinUpdateType;
 					var update = await ApplicationUpdater.CheckForRemoteUpdateAsync(minUpdateType).ConfigureAwait(false);
 					if (update.CanUpdate)
