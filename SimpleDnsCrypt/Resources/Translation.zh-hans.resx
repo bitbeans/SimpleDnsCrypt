@@ -244,7 +244,7 @@
     <value>正在等待DNS查询结果</value>
   </data>
   <data name="querylog_entry_count" xml:space="preserve">
-    <value>条目：</value>
+    <value>条目数量：</value>
   </data>
   <data name="querylog_source_file" xml:space="preserve">
     <value>来源：</value>
@@ -262,7 +262,7 @@
     <value>正在等待已封禁的DNS请求</value>
   </data>
   <data name="domainblocklog_entry_count" xml:space="preserve">
-    <value>条目</value>
+    <value>条目数量：</value>
   </data>
   <data name="domainblocklog_source_file" xml:space="preserve">
     <value>来源：</value>
@@ -400,7 +400,7 @@
     <value>打开日志文件夹</value>
   </data>
   <data name="settings_update_auto" xml:space="preserve">
-    <value>开机时检查更新</value>
+    <value>程序启动时检查更新</value>
   </data>
   <data name="settings_update_channel" xml:space="preserve">
     <value>更新频道</value>
