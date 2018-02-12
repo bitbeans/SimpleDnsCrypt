@@ -211,10 +211,10 @@
     <value>No se puede cargar {0}</value>
   </data>
   <data name="loader_successfully_loaded" xml:space="preserve">
-    <value>{0] cargado exitosamente</value>
+    <value>{0} cargado exitosamente</value>
   </data>
   <data name="loader_loading" xml:space="preserve">
-    <value>Cargando [0]...</value>
+    <value>Cargando {0}...</value>
   </data>
   <data name="loader_missing_files" xml:space="preserve">
     <value>Faltan archivos en la carpeta {0}:\n{1}\n\nConsidera una nueva instalación de {2}</value>
