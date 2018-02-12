@@ -199,7 +199,7 @@
     <value>Загрузка установщика . . .</value>
   </data>
   <data name="loader_starting" xml:space="preserve">
-    <value>Начало . . .</value>
+    <value>Запуск . . .</value>
   </data>
   <data name="loader_validate_folder" xml:space="preserve">
     <value>Проверка папки {0}</value>
@@ -214,7 +214,7 @@
     <value>{0} успешно загружен</value>
   </data>
   <data name="loader_loading" xml:space="preserve">
-    <value>Загружаю {0} . . .</value>
+    <value>Загрузка {0} . . .</value>
   </data>
   <data name="loader_missing_files" xml:space="preserve">
     <value>Отсутствуют файлы в папке {0}:\n{1}\n\nЛучше переустановить {2}</value>
@@ -307,16 +307,16 @@
     <value>Расширенные настройки</value>
   </data>
   <data name="settings_advanced_settings" xml:space="preserve">
-    <value>Вкладка&quot;Расширенные настройки&quot;</value>
+    <value>Показывать вкладку &quot;Расширенные настройки&quot;</value>
   </data>
   <data name="yes" xml:space="preserve">
-    <value>Да</value>
+    <value>да</value>
   </data>
   <data name="no" xml:space="preserve">
-    <value>Нет</value>
+    <value>нет</value>
   </data>
   <data name="cancel" xml:space="preserve">
-    <value>Отмена</value>
+    <value>отмена</value>
   </data>
   <data name="ok" xml:space="preserve">
     <value>OK</value>
@@ -340,7 +340,7 @@
     <value>Применить</value>
   </data>
   <data name="advanced_settings_dnscache" xml:space="preserve">
-    <value>Кеш DNS</value>
+    <value>DNS-кэш</value>
   </data>
   <data name="resolvers_dnscrypt_mode_header" xml:space="preserve">
     <value>Режим DNSCrypt</value>
@@ -361,63 +361,63 @@
     <value>Доступные резольверы</value>
   </data>
   <data name="loader_redistributable_package_check" xml:space="preserve">
-    <value>Checking Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
+    <value>Проверка Microsoft Visual C++ Redistributable для Visual Studio 2017</value>
   </data>
   <data name="loader_redistributable_package_already_installed" xml:space="preserve">
-    <value>Microsoft Visual C++ Redistributable for Visual Studio 2017 is already installed</value>
+    <value>Microsoft Visual C++ Redistributable для Visual Studio 2017 уже установлен</value>
   </data>
   <data name="loader_redistributable_package_installing" xml:space="preserve">
-    <value>Installing: Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
+    <value>Установка: Microsoft Visual C++ Redistributable для Visual Studio 2017</value>
   </data>
   <data name="loader_redistributable_package_ready" xml:space="preserve">
-    <value>Microsoft Visual C++ Redistributable for Visual Studio 2017 is now installed</value>
+    <value>Microsoft Visual C++ Redistributable дляVisual Studio 2017 теперь установлен</value>
   </data>
   <data name="message_title_no_server_selected" xml:space="preserve">
-    <value>No server selected</value>
+    <value>Не выбран ни один сервер</value>
   </data>
   <data name="message_content_no_server_selected" xml:space="preserve">
-    <value>At least one server must be selected. Otherwise, dnscrypt-proxy uses all servers corresponding to the selected filters.</value>
+    <value>Минимум один сервер должен быть выбран. Иначе, dnscrypt-proxy использует все сервера к выбранным фильтрам.</value>
   </data>
   <data name="message_title_service_not_running" xml:space="preserve">
-    <value>Service not running</value>
+    <value>Служба не запущена</value>
   </data>
   <data name="message_content_service_not_running" xml:space="preserve">
-    <value>You should start the DnsCrypt service first!</value>
+    <value>Запустите сначала службу DnsCrypt!</value>
   </data>
   <data name="message_title_uninstallation_successful" xml:space="preserve">
-    <value>Uninstallation successful</value>
+    <value>Удаление успешно</value>
   </data>
   <data name="message_content_uninstallation_successful" xml:space="preserve">
-    <value>Uninstallation was successful! DNS requests are no longer encrypted.</value>
+    <value>Удаление произошло успешно! DNS запросы больше не зашифровываются.</value>
   </data>
   <data name="message_title_uninstallation_error" xml:space="preserve">
-    <value>Uninstallation error</value>
+    <value>Ошибка удаления</value>
   </data>
   <data name="message_content_uninstallation_error" xml:space="preserve">
-    <value>Uninstallation could not be performed. Try to stop the service manually and uninstall it again.</value>
+    <value>Невозможно выполнить удаление. Попробуйте сначала остановить службу вручную и повторить снова.</value>
   </data>
   <data name="open_log_directory" xml:space="preserve">
-    <value>Open log directory</value>
+    <value>Открыть директорию c журналом событий</value>
   </data>
   <data name="settings_update_auto" xml:space="preserve">
-    <value>Check for updates on startup</value>
+    <value>Проверять на обновления при запуске</value>
   </data>
   <data name="settings_update_channel" xml:space="preserve">
-    <value>Update Channel:</value>
+    <value>Канал обновлений:</value>
   </data>
   <data name="advanced_settings_dnscache_content" xml:space="preserve">
-    <value>DNS cache to reduce latency and outgoing traffic</value>
+    <value>DNS-кэш для уменьшения задержки и исх. траффика</value>
   </data>
   <data name="advanced_settings_blockipv6" xml:space="preserve">
-    <value>Block IPv6</value>
+    <value>Блокировать IPv6</value>
   </data>
   <data name="advanced_settings_blockipv6_content" xml:space="preserve">
-    <value>Immediately respond to IPv6-related queries with an empty response</value>
+    <value>Немедленно реагировать на IPv6 запросы пустым ответом</value>
   </data>
   <data name="advanced_settings_forcetcp" xml:space="preserve">
-    <value>Force TCP</value>
+    <value>Принуждать TCP</value>
   </data>
   <data name="advanced_settings_forcetcp_content" xml:space="preserve">
-    <value>Always use TCP to connect to upstream servers</value>
+    <value>Всегда использовать TCP для исходящих соединений</value>
   </data>
 </root>
