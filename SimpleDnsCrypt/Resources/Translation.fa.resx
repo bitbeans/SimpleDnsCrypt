@@ -127,13 +127,13 @@
     <value>سرویس ها</value>
   </data>
   <data name="default_settings_service" xml:space="preserve">
-    <value>سرویس های DNSCrypt</value>
+    <value>DNS</value>
   </data>
   <data name="default_settings_configuration" xml:space="preserve">
     <value>تنظیمات</value>
   </data>
   <data name="default_settings_configuration_ipv4" xml:space="preserve">
-    <value>استفاده از سرور IPv4</value>
+    <value>‏استفاده از سرور IPv4</value>
   </data>
   <data name="default_settings_configuration_ipv4_tooltip" xml:space="preserve">
     <value>استفاده از سرورهایی که تحت IPv4 قابل دسترسی می باشند</value>
@@ -163,7 +163,7 @@
     <value>سرور نباید لیست سیاه خود را اعمال کند(برای مقاصد کنترل والدین، مسدود کردن دامین های تبلیغی و ...)</value>
   </data>
   <data name="tabitem_mainmenu" xml:space="preserve">
-    <value>صفحه اصلی</value>
+    <value>صفحه‌اصلی</value>
   </data>
   <data name="loader_administrative_rights_available" xml:space="preserve">
     <value>دسترسی مدیریتی فراهم است</value>
