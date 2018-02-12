@@ -160,7 +160,7 @@
     <value>Apenas servidores sem filtro</value>
   </data>
   <data name="default_settings_configuration_nofilter_tooltip" xml:space="preserve">
-    <value>Servidor não deve forçar a sua própria lista negra (para controlos parentais, bloqueio de anúncios...)</value>
+    <value>Servidor não deve forçar a sua própria lista negra (para controlo parental, bloqueio de anúncios...)</value>
   </data>
   <data name="tabitem_mainmenu" xml:space="preserve">
     <value>Menu Principal</value>
@@ -175,7 +175,7 @@
     <value>À procura de uma nova versão...</value>
   </data>
   <data name="loader_new_version_found" xml:space="preserve">
-    <value>Uma nova versão foi encontrada: {0}</value>
+    <value>Uma versão mais recente foi encontrada: {0}</value>
   </data>
   <data name="loader_starting_update" xml:space="preserve">
     <value>A iniciar a atualização...</value>
@@ -202,7 +202,7 @@
     <value>A iniciar...</value>
   </data>
   <data name="loader_validate_folder" xml:space="preserve">
-    <value>A validar {0} a pasta</value>
+    <value>A validar a pasta {0}</value>
   </data>
   <data name="loader_loading_network_cards" xml:space="preserve">
     <value>A carregar as placas de rede...</value>
@@ -217,7 +217,7 @@
     <value>A carregar {0}...</value>
   </data>
   <data name="loader_missing_files" xml:space="preserve">
-    <value>Ficheiros em falta na pasta {0}: \n{0}\n\nPensar em nova instalação de {2}</value>
+    <value>Ficheiros em falta na pasta {0}: \n{1\n\nPensar em nova instalação de {2}</value>
   </data>
   <data name="loader_all_files_available" xml:space="preserve">
     <value>Todos os ficheiros necessários foram encontrados</value>
@@ -259,7 +259,7 @@
     <value>Registo de Domínios Bloqueados</value>
   </data>
   <data name="domainblocklog_waiting_for_data" xml:space="preserve">
-    <value>à espera de interrogações de DNS bloqueadas</value>
+    <value>a aguardar interrogações de DNS bloqueadas</value>
   </data>
   <data name="domainblocklog_entry_count" xml:space="preserve">
     <value>Entradas:</value>
@@ -301,7 +301,7 @@
     <value>Mostrar o Separador &quot;Registo de Interrogações&quot;</value>
   </data>
   <data name="tabitem_resolvers" xml:space="preserve">
-    <value>Resolutor</value>
+    <value>Resolutores</value>
   </data>
   <data name="tabitem_advanced_settings" xml:space="preserve">
     <value>Definições Avançadas</value>
@@ -346,7 +346,7 @@
     <value>Modo do DNSCrypt</value>
   </data>
   <data name="resolvers_dnscrypt_mode_description" xml:space="preserve">
-    <value>No modo automático, todos os servidores disponíveis são utilizados. O dnscrypt-proxy automaticamente seleciona os resolutores mais rápidos.</value>
+    <value>No modo automático, todos os servidores disponíveis são utilizados. O dnscrypt-proxy seleciona automaticamente os resolutores mais rápidos.</value>
   </data>
   <data name="resolvers_dnscrypt_automatic_mode" xml:space="preserve">
     <value>Modo automático</value>
@@ -361,63 +361,64 @@
     <value>Resolutores Disponíveis</value>
   </data>
   <data name="loader_redistributable_package_check" xml:space="preserve">
-    <value>Checking Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
+    <value>A verificar Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
   </data>
   <data name="loader_redistributable_package_already_installed" xml:space="preserve">
-    <value>Microsoft Visual C++ Redistributable for Visual Studio 2017 is already installed</value>
+    <value>O Microsoft Visual C++ Redistributable for Visual Studio 2017 já se encontra instalado</value>
   </data>
   <data name="loader_redistributable_package_installing" xml:space="preserve">
-    <value>Installing: Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
+    <value>A instalar: Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
   </data>
   <data name="loader_redistributable_package_ready" xml:space="preserve">
-    <value>Microsoft Visual C++ Redistributable for Visual Studio 2017 is now installed</value>
+    <value>O Microsoft Visual C++ Redistributable for Visual Studio 2017 está agora instalado</value>
   </data>
   <data name="message_title_no_server_selected" xml:space="preserve">
-    <value>No server selected</value>
+    <value>Nenhum servidor selecionado</value>
   </data>
   <data name="message_content_no_server_selected" xml:space="preserve">
-    <value>At least one server must be selected. Otherwise, dnscrypt-proxy uses all servers corresponding to the selected filters.</value>
+    <value>Pelo menos um servidor deve ser selecionado. Caso contrário, o dnscrypt-proxy utiliza todos os servidores correspondentes aos filtros selecionados.</value>
   </data>
   <data name="message_title_service_not_running" xml:space="preserve">
-    <value>Service not running</value>
+    <value>Serviço parado</value>
   </data>
   <data name="message_content_service_not_running" xml:space="preserve">
-    <value>You should start the DnsCrypt service first!</value>
+    <value>Deve iniciar o serviço do DNSCrypt primeiro!</value>
+    <comment>&quot;DNSCrypt&quot; with DNS in capitals</comment>
   </data>
   <data name="message_title_uninstallation_successful" xml:space="preserve">
-    <value>Uninstallation successful</value>
+    <value>Desinstalação bem-sucedida</value>
   </data>
   <data name="message_content_uninstallation_successful" xml:space="preserve">
-    <value>Uninstallation was successful! DNS requests are no longer encrypted.</value>
+    <value>Desinstalação efetuada com sucesso! Os pedidos de DNS deixaram de ser encriptados</value>
   </data>
   <data name="message_title_uninstallation_error" xml:space="preserve">
-    <value>Uninstallation error</value>
+    <value>Erro na desinstalação</value>
   </data>
   <data name="message_content_uninstallation_error" xml:space="preserve">
-    <value>Uninstallation could not be performed. Try to stop the service manually and uninstall it again.</value>
+    <value>Não foi possível efetuar a desinstalação. Tente parar o serviço manualmente e desinstalá-lo novamente.</value>
   </data>
   <data name="open_log_directory" xml:space="preserve">
-    <value>Open log directory</value>
+    <value>Abrir o diretório dos registos</value>
   </data>
   <data name="settings_update_auto" xml:space="preserve">
-    <value>Check for updates on startup</value>
+    <value>Verificar por atualizações no início</value>
   </data>
   <data name="settings_update_channel" xml:space="preserve">
-    <value>Update Channel:</value>
+    <value>Canal de atualização:</value>
   </data>
   <data name="advanced_settings_dnscache_content" xml:space="preserve">
-    <value>DNS cache to reduce latency and outgoing traffic</value>
+    <value>Cache de DNS para reduzir a latência e o tráfego de saída</value>
   </data>
   <data name="advanced_settings_blockipv6" xml:space="preserve">
-    <value>Block IPv6</value>
+    <value>Bloquear IPv6</value>
   </data>
   <data name="advanced_settings_blockipv6_content" xml:space="preserve">
-    <value>Immediately respond to IPv6-related queries with an empty response</value>
+    <value>Responder de imediato a interrogações relacionadas com IPv6 com uma resposta vazia</value>
   </data>
   <data name="advanced_settings_forcetcp" xml:space="preserve">
-    <value>Force TCP</value>
+    <value>Forçar TCP</value>
   </data>
   <data name="advanced_settings_forcetcp_content" xml:space="preserve">
-    <value>Always use TCP to connect to upstream servers</value>
+    <value>Utilizar sempre TCP para ligar aos servidores upstream</value>
   </data>
 </root>
