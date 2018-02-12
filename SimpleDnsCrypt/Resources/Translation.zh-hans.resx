@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="default_settings_network_cards" xml:space="preserve">
-    <value>网卡列表</value>
+    <value>网卡</value>
   </data>
   <data name="default_settings_show_hidden_cards" xml:space="preserve">
     <value>显示隐藏网卡</value>
@@ -205,7 +205,7 @@
     <value>正在验证 {0} 文件夹 </value>
   </data>
   <data name="loader_loading_network_cards" xml:space="preserve">
-    <value>正在读取网卡信息</value>
+    <value>正在读取网卡信息...</value>
   </data>
   <data name="loader_failed_loading" xml:space="preserve">
     <value>无法载入 {0}</value>
@@ -301,7 +301,7 @@
     <value>显示“日志”标签</value>
   </data>
   <data name="tabitem_resolvers" xml:space="preserve">
-    <value>服务器列表</value>
+    <value>服务器</value>
   </data>
   <data name="tabitem_advanced_settings" xml:space="preserve">
     <value>高级设置</value>
@@ -325,10 +325,10 @@
     <value>你希望移除已安装的系统服务吗？</value>
   </data>
   <data name="dialog_uninstall_title" xml:space="preserve">
-    <value>正在卸载服务</value>
+    <value>卸载服务</value>
   </data>
   <data name="advanced_settings_uninstall_title" xml:space="preserve">
-    <value>正在卸载服务</value>
+    <value>卸载服务</value>
   </data>
   <data name="advanced_settings_uninstall_text" xml:space="preserve">
     <value>移除已安装的系统服务</value>
