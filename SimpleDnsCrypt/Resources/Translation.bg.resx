@@ -361,7 +361,7 @@
     <value>Налични сървъри</value>
   </data>
   <data name="loader_redistributable_package_check" xml:space="preserve">
-    <value>Проверяване на Microsoft Visual C++ Redistributable за Visual Studio 2017</value>
+    <value>Проверка на Microsoft Visual C++ Redistributable за Visual Studio 2017</value>
   </data>
   <data name="loader_redistributable_package_already_installed" xml:space="preserve">
     <value>Microsoft Visual C++ Redistributable за Visual Studio 2017 е вече инсталиран</value>
@@ -400,7 +400,7 @@
     <value>Отваряне на директорията с дневници</value>
   </data>
   <data name="settings_update_auto" xml:space="preserve">
-    <value>Проверяване за обновявания при стартиране</value>
+    <value>Проверка за обновявания при стартиране</value>
   </data>
   <data name="settings_update_channel" xml:space="preserve">
     <value>Канал за обновяване:</value>
