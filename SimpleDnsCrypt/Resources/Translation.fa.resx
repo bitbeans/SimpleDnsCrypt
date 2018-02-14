@@ -406,7 +406,6 @@
     <value>Update Channel:</value>
   </data>
   <data name="advanced_settings_dnscache_content" xml:space="preserve">
-    <value>DNS cache to reduce latency and outgoing traffic</value>
     <value>به منظور کاهش زمان انتظار تحلیل آدرس ها DNS حافظه کش</value>
   </data>
   <data name="advanced_settings_blockipv6" xml:space="preserve">
@@ -419,7 +418,6 @@
     <value> TCP استفاده دائمی از</value>
   </data>
   <data name="advanced_settings_forcetcp_content" xml:space="preserve">
-    <value>Always use TCP to connect to upstream servers</value>
     <value>به منظور ارتباط با سرورهای تحلیلگر TCP به کارگیری دائمی ارتباط</value>
   </data>
 </root>
