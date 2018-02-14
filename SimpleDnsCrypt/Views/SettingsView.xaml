@@ -7,7 +7,7 @@
              xmlns:converters="clr-namespace:SimpleDnsCrypt.Converters"
              xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
              mc:Ignorable="d"
-             Height="Auto" Width="300"
+             Height="Auto" MinWidth="340"
              lex:LocalizeDictionary.DesignCulture="en"
              lex:ResxLocalizationProvider.DefaultAssembly="SimpleDnsCrypt"
              lex:ResxLocalizationProvider.DefaultDictionary="Translation">
