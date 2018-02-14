@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="default_settings_network_cards" xml:space="preserve">
+    <value>Κάρτες Δικτύου</value>
+  </data>
+  <data name="default_settings_show_hidden_cards" xml:space="preserve">
+    <value>Εμφάνιση κρυφών καρτών</value>
+  </data>
+  <data name="default_settings_service_header" xml:space="preserve">
+    <value>Υπηρεσία</value>
+  </data>
+  <data name="default_settings_service" xml:space="preserve">
+    <value>DNSCrypt Υπηρεσία</value>
+  </data>
+  <data name="default_settings_configuration" xml:space="preserve">
+    <value>Διαμόρφωση</value>
+  </data>
+  <data name="default_settings_configuration_ipv4" xml:space="preserve">
+    <value>Χρήση τού IPv4 διακομιστή</value>
+  </data>
+  <data name="default_settings_configuration_ipv4_tooltip" xml:space="preserve">
+    <value>Χρήση προσβάσιμου διακομιστή μέσω IPv4</value>
+  </data>
+  <data name="default_settings_configuration_ipv6" xml:space="preserve">
+    <value>Χρήση τού IPv6 διακομιστή  </value>
+  </data>
+  <data name="default_settings_configuration_ipv6_tooltip" xml:space="preserve">
+    <value>Χρήση προσβάσιμου διακομιστή μέσω IPv6 (δεν επιτρέπεται, αν δεν έχετε την δυνατότητα σύνδεσης)</value>
+  </data>
+  <data name="default_settings_configuration_dnssec" xml:space="preserve">
+    <value>Μόνο διακομιστές με υποστήριξη DNSSEC</value>
+  </data>
+  <data name="default_settings_configuration_dnssec_tooltip" xml:space="preserve">
+    <value>Ο διακομιστής πρέπει να υποστηρίζει επεκτάσεις ασφαλείας DNS </value>
+  </data>
+  <data name="default_settings_configuration_nolog" xml:space="preserve">
+    <value>Μόνο διακομιστές χωρίς σύνδεση</value>
+  </data>
+  <data name="default_settings_configuration_nolog_tooltip" xml:space="preserve">
+    <value>Ο διακομιστής πρέπει να συνδεθεί με τα ερωτήματα των χρηστών</value>
+  </data>
+  <data name="default_settings_configuration_nofilter" xml:space="preserve">
+    <value>Μόνο διακομιστές χωρίς φίλτρα</value>
+  </data>
+  <data name="default_settings_configuration_nofilter_tooltip" xml:space="preserve">
+    <value>Ο διακομιστής δεν πρέπει να επιβάλει την δική του μαύρη λίστα (για λειτουργία γονικού ελέγχου, μπλοκάρισμα διαφημίσεων...)</value>
+  </data>
+  <data name="tabitem_mainmenu" xml:space="preserve">
+    <value>Κύριο Μενού</value>
+  </data>
+  <data name="loader_administrative_rights_available" xml:space="preserve">
+    <value>Τα δικαιώματα διαχείρισης είναι διαθέσιμα</value>
+  </data>
+  <data name="loader_administrative_rights_missing" xml:space="preserve">
+    <value>Τα δικαιώματα διαχείρισης είναι ελλειπής</value>
+  </data>
+  <data name="loader_checking_version" xml:space="preserve">
+    <value>Έλεγχος για νέα έκδοση . . .</value>
+  </data>
+  <data name="loader_new_version_found" xml:space="preserve">
+    <value>Μια νεότερη έκδοση βρέθηκε: {0}</value>
+  </data>
+  <data name="loader_starting_update" xml:space="preserve">
+    <value>Εναρξη ενημέρωσης ...</value>
+  </data>
+  <data name="loader_update_failed" xml:space="preserve">
+    <value>Η ενημέρωση απέτυχε, συνέχεια...</value>
+  </data>
+  <data name="loader_latest_version" xml:space="preserve">
+    <value>Χρησιμοποιείτε την πιο πρόσφατη έκδοση</value>
+  </data>
+  <data name="loader_unsigned" xml:space="preserve">
+    <value>ανυπόγραφο</value>
+  </data>
+  <data name="loader_missing" xml:space="preserve">
+    <value>ελλειπής</value>
+  </data>
+  <data name="loader_downloading_signature" xml:space="preserve">
+    <value>Λήψη υπογραφής . . .</value>
+  </data>
+  <data name="loader_downloading_installer" xml:space="preserve">
+    <value>Λήψη προγράμματος εγκατάστασης . . .</value>
+  </data>
+  <data name="loader_starting" xml:space="preserve">
+    <value>Εναρξη...</value>
+  </data>
+  <data name="loader_validate_folder" xml:space="preserve">
+    <value>Επικύρωση {0} φακέλου</value>
+  </data>
+  <data name="loader_loading_network_cards" xml:space="preserve">
+    <value>Φόρτωση καρτών δικτύου . . .</value>
+  </data>
+  <data name="loader_failed_loading" xml:space="preserve">
+    <value>Αδυναμία φόρτωσης του {0}</value>
+  </data>
+  <data name="loader_successfully_loaded" xml:space="preserve">
+    <value>{0} φορτώθηκε με επιτυχία</value>
+  </data>
+  <data name="loader_loading" xml:space="preserve">
+    <value>Φόρτωση του {0} . . .</value>
+  </data>
+  <data name="loader_missing_files" xml:space="preserve">
+    <value>Ελλειπής αρχεία, στον {0} φάκελο:\n{1}\n\nΘέλετε να γίνει νέα εγκατάσταση του {2}</value>
+  </data>
+  <data name="loader_all_files_available" xml:space="preserve">
+    <value>Όλα τα απαιτούμενα αρχεία έχουν βρεθεί</value>
+  </data>
+  <data name="about" xml:space="preserve">
+    <value>Σχετικά με</value>
+  </data>
+  <data name="about_software" xml:space="preserve">
+    <value>Λογισμικό</value>
+  </data>
+  <data name="about_license" xml:space="preserve">
+    <value>Άδεια χρήσης</value>
+  </data>
+  <data name="about_view_on_github" xml:space="preserve">
+    <value>Εμφάνιση στο GitHub</value>
+  </data>
+  <data name="tabitem_querylog" xml:space="preserve">
+    <value>Καταγραφή αιτημάτων</value>
+  </data>
+  <data name="querylog" xml:space="preserve">
+    <value>Καταγραφή ερωτημάτων</value>
+  </data>
+  <data name="querylog_waiting_for_data" xml:space="preserve">
+    <value>αναμονή για αιτήματα DNS</value>
+  </data>
+  <data name="querylog_entry_count" xml:space="preserve">
+    <value>Καταχωρήσεις:</value>
+  </data>
+  <data name="querylog_source_file" xml:space="preserve">
+    <value>Πηγή:</value>
+  </data>
+  <data name="querylog_button_clear" xml:space="preserve">
+    <value>Εκκαθάριση λίστας</value>
+  </data>
+  <data name="querylog_button_block" xml:space="preserve">
+    <value>Αποκλεισμός Επιλεγμένων</value>
+  </data>
+  <data name="domainblocklog" xml:space="preserve">
+    <value>Καταγραφή μπλοκαρισμένου τομέα</value>
+  </data>
+  <data name="domainblocklog_waiting_for_data" xml:space="preserve">
+    <value>Αναμονή για καταγραφές μπλοκαρισμένου τομέα</value>
+  </data>
+  <data name="domainblocklog_entry_count" xml:space="preserve">
+    <value>Καταχωρήσεις: </value>
+  </data>
+  <data name="domainblocklog_source_file" xml:space="preserve">
+    <value>Πηγή: </value>
+  </data>
+  <data name="domainblocklog_button_clear" xml:space="preserve">
+    <value>Εκκαθάριση λίστας</value>
+  </data>
+  <data name="tabitem_domainblocklog" xml:space="preserve">
+    <value>Καταγραφή μπλοκαρισμένου τομέα</value>
+  </data>
+  <data name="tabitem_addressblocklog" xml:space="preserve">
+    <value>Καταγραφή μπλοκαρισμένης διεύθυνσης</value>
+  </data>
+  <data name="tabitem_domainblacklist" xml:space="preserve">
+    <value>Μάυρη λίστα τομέα</value>
+  </data>
+  <data name="tabitem_addressblacklist" xml:space="preserve">
+    <value>Μάυρη λίστα διευθύνσεων</value>
+  </data>
+  <data name="settings" xml:space="preserve">
+    <value>Ρυθμίσεις</value>
+  </data>
+  <data name="settings_domain_blacklist" xml:space="preserve">
+    <value>Εμφάνιση καρτέλας &quot;Μάυρη λίστα τομέα&quot; </value>
+  </data>
+  <data name="settings_address_blacklist" xml:space="preserve">
+    <value>Εμφάνιση καρτέλας &quot;Μάυρη λίστα διευθύνσεων&quot;</value>
+  </data>
+  <data name="settings_domain_block" xml:space="preserve">
+    <value>Εμφάνιση καρτέλας &quot;Καταγραφή μπλοκαρισμένου τομέα&quot;</value>
+  </data>
+  <data name="settings_address_block" xml:space="preserve">
+    <value>Εμφάνιση καρτέλας &quot;Καταγραφή μπλοκαρισμένης διεύθυνσης&quot;</value>
+  </data>
+  <data name="settings_query_log" xml:space="preserve">
+    <value>Εμφάνιση καρτέλας &quot;Καταγραφή ερωτημάτων&quot; </value>
+  </data>
+  <data name="tabitem_resolvers" xml:space="preserve">
+    <value>Αναλυτές</value>
+  </data>
+  <data name="tabitem_advanced_settings" xml:space="preserve">
+    <value>Ρυθμίσεις για προχωρημένους</value>
+  </data>
+  <data name="settings_advanced_settings" xml:space="preserve">
+    <value>Εμφάνιση καρτέλας &quot;Ρυθμίσεις για προχωρημένους&quot;</value>
+  </data>
+  <data name="yes" xml:space="preserve">
+    <value>ναί</value>
+  </data>
+  <data name="no" xml:space="preserve">
+    <value>όχι</value>
+  </data>
+  <data name="cancel" xml:space="preserve">
+    <value>ακύρωση</value>
+  </data>
+  <data name="ok" xml:space="preserve">
+    <value>ΟΚ</value>
+  </data>
+  <data name="dialog_message_uninstall" xml:space="preserve">
+    <value>Θέλετε να καταργήσετε την εγκατεστημένη υπηρεσία τού Windows;</value>
+  </data>
+  <data name="dialog_uninstall_title" xml:space="preserve">
+    <value>Απεγκατάσταση της υπηρεσίας</value>
+  </data>
+  <data name="advanced_settings_uninstall_title" xml:space="preserve">
+    <value>Απεγκατάσταση της υπηρεσίας</value>
+  </data>
+  <data name="advanced_settings_uninstall_text" xml:space="preserve">
+    <value>Κατάργηση της εγκατεστημένης υπηρεσίας τού Windows;</value>
+  </data>
+  <data name="advanced_settings_uninstall_button" xml:space="preserve">
+    <value>Κατάργηση υπηρεσίας</value>
+  </data>
+  <data name="default_settings_apply_settings" xml:space="preserve">
+    <value>Εφαρμογή ρυθμίσεων</value>
+  </data>
+  <data name="advanced_settings_dnscache" xml:space="preserve">
+    <value>DNS Cache</value>
+  </data>
+  <data name="resolvers_dnscrypt_mode_header" xml:space="preserve">
+    <value>DNSCrypt Λειτουργία</value>
+  </data>
+  <data name="resolvers_dnscrypt_mode_description" xml:space="preserve">
+    <value>Στην αυτόματη λειτουργία, όλοι οι διαθέσιμοι διακομιστές θα χρησιμοποιηθούν. το dnscrypt-proxy επιλέγει αυτόματα τούς ταχύτερους αναλυτές.</value>
+  </data>
+  <data name="resolvers_dnscrypt_automatic_mode" xml:space="preserve">
+    <value>Αυτόματη Λειτουργία</value>
+  </data>
+  <data name="disabled" xml:space="preserve">
+    <value>Απενεργοποίηση</value>
+  </data>
+  <data name="enabled" xml:space="preserve">
+    <value>Ενεργοποίηση</value>
+  </data>
+  <data name="resolvers_available_resolvers_header" xml:space="preserve">
+    <value>Διαθέσιμοι αναλυτές</value>
+  </data>
+  <data name="loader_redistributable_package_check" xml:space="preserve">
+    <value>Έλεγχος διαθεσιμότητας τού Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
+  </data>
+  <data name="loader_redistributable_package_already_installed" xml:space="preserve">
+    <value>Το Microsoft Visual C++ Redistributable for Visual Studio 2017 είναι ήδη εγκατεστημένο</value>
+  </data>
+  <data name="loader_redistributable_package_installing" xml:space="preserve">
+    <value>Εναρξη εγκατάστασης τού: Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
+  </data>
+  <data name="loader_redistributable_package_ready" xml:space="preserve">
+    <value>Το Microsoft Visual C++ Redistributable for Visual Studio 2017 είναι τώρα εγκατεστημένο</value>
+  </data>
+  <data name="message_title_no_server_selected" xml:space="preserve">
+    <value>Δεν επιλεγθηκε διακομιστής</value>
+  </data>
+  <data name="message_content_no_server_selected" xml:space="preserve">
+    <value>Τουλάχιστον ένας διακομιστή, πρέπει να επιλεγθεί. Διαφορετικά, το dnscrypt-proxy θα χρησιμοποιεί όλους τους διακομιστές που αντιστοιχούν στα επιλεγμένο φίλτρα.</value>
+  </data>
+  <data name="message_title_service_not_running" xml:space="preserve">
+    <value>Η υπηρεσία δεν λειτουργεί</value>
+  </data>
+  <data name="message_content_service_not_running" xml:space="preserve">
+    <value>Θα πρέπει να γίνει έναρξη της DnsCrypt υπηρεσίας πρώτα!</value>
+  </data>
+  <data name="message_title_uninstallation_successful" xml:space="preserve">
+    <value>Η απεγκατάσταση ολοκληρώθηκε με επιτυχία</value>
+  </data>
+  <data name="message_content_uninstallation_successful" xml:space="preserve">
+    <value>Η απεγκατάσταση ολοκληρώθηκε με επιτυχία! Οι αιτήσεις DNS δεν είναι πλέον κρυπτογραφημένες.</value>
+  </data>
+  <data name="message_title_uninstallation_error" xml:space="preserve">
+    <value>Σφάλμα κατά την απεγκατάσταση</value>
+  </data>
+  <data name="message_content_uninstallation_error" xml:space="preserve">
+    <value>Η απεγκατάσταση απέτυχε. Δοκιμάστε να διακόψετε την υπηρεσία με μη αυτόματο τρόπο και να την απεγκαταστήσετε πάλι.</value>
+  </data>
+  <data name="open_log_directory" xml:space="preserve">
+    <value>Ανοιγμα καταλόγου καταγραφής</value>
+  </data>
+  <data name="settings_update_auto" xml:space="preserve">
+    <value>Ελεγχος για ενημερώσεις κατά την εκκίνηση</value>
+  </data>
+  <data name="settings_update_channel" xml:space="preserve">
+    <value>Κανάλι ενημερώσεων:</value>
+  </data>
+  <data name="advanced_settings_dnscache_content" xml:space="preserve">
+    <value>DNS cache για μείωση αδράνειας και εξερχόμενων κινήσεων</value>
+  </data>
+  <data name="advanced_settings_blockipv6" xml:space="preserve">
+    <value>Μπλοκάρισμα τού προτοκόλλου IPv6</value>
+  </data>
+  <data name="advanced_settings_blockipv6_content" xml:space="preserve">
+    <value>Αμεση απάντηση στα IPv6 αιτήματα που σχετίζονται με άδειες καταγραφές</value>
+  </data>
+  <data name="advanced_settings_forcetcp" xml:space="preserve">
+    <value>Δράση τού προτοκόλλου TCP</value>
+  </data>
+  <data name="advanced_settings_forcetcp_content" xml:space="preserve">
+    <value>Συνεχής χρήση τού πρωτοκόλλου TCP για σύνδεση με ανάντους διακομιστές</value>
+  </data>
+</root>
