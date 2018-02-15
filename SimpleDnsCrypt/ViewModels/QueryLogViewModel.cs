@@ -151,9 +151,13 @@ namespace SimpleDnsCrypt.ViewModels
 							}
 							else
 							{
-								DnsCryptProxyManager.Install();
-								DnsCryptProxyManager.Start();
-								await Task.Delay(Global.ServiceStartTime).ConfigureAwait(false);
+								await Task.Run(() => DnsCryptProxyManager.Install()).ConfigureAwait(false);
+								await Task.Delay(Global.ServiceInstallTime).ConfigureAwait(false);
+								if (DnsCryptProxyManager.IsDnsCryptProxyInstalled())
+								{
+									DnsCryptProxyManager.Start();
+									await Task.Delay(Global.ServiceStartTime).ConfigureAwait(false);
+								}
 							}
 					}
 

@@ -63,6 +63,11 @@
 	    /// </summary>
 	    public const int ServiceUninstallTime = 2500;
 
+	    /// <summary>
+	    ///     Time we wait on a service install (ms).
+	    /// </summary>
+	    public const int ServiceInstallTime = 3000;
+
 		/// <summary>
 		///     List of files must exist.
 		/// </summary>
