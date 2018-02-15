@@ -121,46 +121,46 @@
     <value>رابط‌های‌شبکه</value>
   </data>
   <data name="default_settings_show_hidden_cards" xml:space="preserve">
-    <value>نمایش رابط های مخفی شده</value>
+    <value>نمایش‌رابط‌های‌مخفی‌شده</value>
   </data>
   <data name="default_settings_service_header" xml:space="preserve">
-    <value>سرویس ها</value>
+    <value>سرویس‌ها</value>
   </data>
   <data name="default_settings_service" xml:space="preserve">
-    <value>DNS</value>
+    <value>DNSCrypt Service</value>
   </data>
   <data name="default_settings_configuration" xml:space="preserve">
     <value>تنظیمات</value>
   </data>
   <data name="default_settings_configuration_ipv4" xml:space="preserve">
-    <value>‏استفاده از سرور IPv4</value>
+    <value>‏IPv4 استفاده از سرور</value>
   </data>
   <data name="default_settings_configuration_ipv4_tooltip" xml:space="preserve">
-    <value>استفاده از سرورهایی که تحت IPv4 قابل دسترسی می باشند</value>
+    <value>قابل دستیابی می باشند IPv4 به کارگیری سرورهایی که تحت</value>
   </data>
   <data name="default_settings_configuration_ipv6" xml:space="preserve">
-    <value>استفاده از سرور IPv6</value>
+    <value>‏IPv6 استفاده از سرور</value>
   </data>
   <data name="default_settings_configuration_ipv6_tooltip" xml:space="preserve">
-    <value>استفاده از سرورهایی که تحت IPv6 قابل دسترسی می باشند(در صورت عدم برقراری ارتباط IPv6 فعال نکنید)</value>
+    <value>(را ندارید، فعال نکنیدIPv6 قابل دستیابی می باشند(اگر امکان ارتباط تحت IPv6 به کارگیری سرورهایی که تحت</value>
   </data>
   <data name="default_settings_configuration_dnssec" xml:space="preserve">
-    <value>فقط سرورهای با پشتیبانی DNSSEC</value>
+    <value>DNSSEC فقط سرورهای با پشتیبانی</value>
   </data>
   <data name="default_settings_configuration_dnssec_tooltip" xml:space="preserve">
-    <value>سرور باید از ضمیمه های امنیتی DNS پشتیبانی کنند</value>
+    <value>سرور می بایست از افزونه امنیتی نام دامنه، بهره مند باشد</value>
   </data>
   <data name="default_settings_configuration_nolog" xml:space="preserve">
     <value>فقط سرورهای  بدون ثبت لاگ</value>
   </data>
   <data name="default_settings_configuration_nolog_tooltip" xml:space="preserve">
-    <value>سرور نباید درخواست های کاربر را ثبت کند</value>
+    <value>سرور نباید فعالیت های کاربر را لاگ کند</value>
   </data>
   <data name="default_settings_configuration_nofilter" xml:space="preserve">
-    <value>فقط سرورهای بدون فیلترینگ</value>
+    <value>فقط سرورهای بدون فیلتر لیست</value>
   </data>
   <data name="default_settings_configuration_nofilter_tooltip" xml:space="preserve">
-    <value>سرور نباید لیست سیاه خود را اعمال کند(برای مقاصد کنترل والدین، مسدود کردن دامین های تبلیغی و ...)</value>
+    <value>(...سرور نباید لیست سیاه خود را اعمال کند(برای مقاصد کنترل والدین، مسدود کردن تبلیغات و</value>
   </data>
   <data name="tabitem_mainmenu" xml:space="preserve">
     <value>صفحه‌اصلی</value>
@@ -169,22 +169,22 @@
     <value>دسترسی مدیریتی فراهم است</value>
   </data>
   <data name="loader_administrative_rights_missing" xml:space="preserve">
-    <value>دسترسی مدیریتی از دست رفته!</value>
+    <value>!دسترسی مدیریتی از دست رفته</value>
   </data>
   <data name="loader_checking_version" xml:space="preserve">
-    <value>بررسی برای نسخه جدید...</value>
+    <value>...بررسی برای ورژن جدید</value>
   </data>
   <data name="loader_new_version_found" xml:space="preserve">
-    <value>نسخه جدیدتر یافت شد: {0}</value>
+    <value>{0}: نسخه جدیدتری یافت شد</value>
   </data>
   <data name="loader_starting_update" xml:space="preserve">
-    <value>شروع به روزرسانی...</value>
+    <value>...شروع به روزرسانی</value>
   </data>
   <data name="loader_update_failed" xml:space="preserve">
-    <value>آپدیت با شکست مواجه شد، ادامه...</value>
+    <value>... آپدیت با شکست مواجه شد، ادامه</value>
   </data>
   <data name="loader_latest_version" xml:space="preserve">
-    <value>شما از آخرین نسخه استفاده می کنید</value>
+    <value>شما از جدیدترین ورژن استفاده می کنید</value>
   </data>
   <data name="loader_unsigned" xml:space="preserve">
     <value>امضاء نشده</value>
@@ -193,31 +193,31 @@
     <value>از دست رفته</value>
   </data>
   <data name="loader_downloading_signature" xml:space="preserve">
-    <value>دریافت کردن امضاء ها...</value>
+    <value>...دریافت امضاء ها</value>
   </data>
   <data name="loader_downloading_installer" xml:space="preserve">
-    <value>دریافت کردن نصب کننده...</value>
+    <value>...دریافت نصب کننده</value>
   </data>
   <data name="loader_starting" xml:space="preserve">
-    <value>شروع...</value>
+    <value>...شروع</value>
   </data>
   <data name="loader_validate_folder" xml:space="preserve">
     <value>اعتبارسنجی {0} فولدر</value>
   </data>
   <data name="loader_loading_network_cards" xml:space="preserve">
-    <value>بارگزاری رابط های شبکه</value>
+    <value>‫...‫بارگزاری رابط های شبکه</value>
   </data>
   <data name="loader_failed_loading" xml:space="preserve">
-    <value>ناموفق در بارگزاری</value>
+    <value>‫‫{0} ناموفق در بارگزاری</value>
   </data>
   <data name="loader_successfully_loaded" xml:space="preserve">
-    <value>{0} مورد با موفقیت بارگزاری شدند</value>
+    <value>{0} با موفقیت بارگزاری شد</value>
   </data>
   <data name="loader_loading" xml:space="preserve">
-    <value>در حال بارگزاری {0}...</value>
+    <value>‫‫. . . {0} در حال بارگزاری</value>
   </data>
   <data name="loader_missing_files" xml:space="preserve">
-    <value>از دست رفتن فایل ها در {0} فولدر:\n{}1\n\n بهتر است به دنبال یک نصب کننده جدید از {2} باشید</value>
+    <value>به فکر نصب مجدد{2} باشید\n{1}\n\n:از دست رفتن فایل ها در{0} فولدر</value>
   </data>
   <data name="loader_all_files_available" xml:space="preserve">
     <value>تمام فایل های مورد نیاز یافت شد</value>
@@ -226,13 +226,13 @@
     <value>درباره</value>
   </data>
   <data name="about_software" xml:space="preserve">
-    <value>نرم افزار</value>
+    <value>نرم‌افزار</value>
   </data>
   <data name="about_license" xml:space="preserve">
-    <value>جواز</value>
+    <value>لایسنس</value>
   </data>
   <data name="about_view_on_github" xml:space="preserve">
-    <value>مشاهده در گیت‌هاب</value>
+    <value>GitHub مشاهده در</value>
   </data>
   <data name="tabitem_querylog" xml:space="preserve">
     <value>گزارش‌فعالیت</value>
@@ -241,7 +241,7 @@
     <value>گزارش‌فعالیت</value>
   </data>
   <data name="querylog_waiting_for_data" xml:space="preserve">
-    <value>انتظار برای پرس و جوی DNS</value>
+    <value>DNS در انتظار دریافت یک درخواست</value>
   </data>
   <data name="querylog_entry_count" xml:space="preserve">
     <value>موارد:</value>
@@ -253,28 +253,28 @@
     <value>پاکسازی لیست</value>
   </data>
   <data name="querylog_button_block" xml:space="preserve">
-    <value>مسدود کردن انتخابی</value>
+    <value>مسدود کردن مورد انتخاب شده</value>
   </data>
   <data name="domainblocklog" xml:space="preserve">
-    <value>گزارش‌‌دامنه‌مسدود</value>
+    <value>گزارش‌مسدودیت‌دامنه</value>
   </data>
   <data name="domainblocklog_waiting_for_data" xml:space="preserve">
-    <value>انتظار برای پرس و جوی DNS مسدود شده</value>
+    <value>مسدود شده DNS در انتظار یک درخواست به سمت</value>
   </data>
   <data name="domainblocklog_entry_count" xml:space="preserve">
     <value>موارد:</value>
   </data>
   <data name="domainblocklog_source_file" xml:space="preserve">
-    <value>مسیر فایل:</value>
+    <value>مسیر‌فایل:</value>
   </data>
   <data name="domainblocklog_button_clear" xml:space="preserve">
     <value>پاکسازی لیست</value>
   </data>
   <data name="tabitem_domainblocklog" xml:space="preserve">
-    <value>گزارش‌دامنه‌مسدود</value>
+    <value>گزارش‌مسدودیت‌دامنه</value>
   </data>
   <data name="tabitem_addressblocklog" xml:space="preserve">
-    <value>گزارش‌آدرس‌مسدود</value>
+    <value>گزارش‌مسدودیت‌آدرس</value>
   </data>
   <data name="tabitem_domainblacklist" xml:space="preserve">
     <value>لیست‌سیاه‌دامنه</value>
@@ -286,28 +286,28 @@
     <value>تنظیمات</value>
   </data>
   <data name="settings_domain_blacklist" xml:space="preserve">
-    <value>نمایش تب &quot;لیست سیاه دامنه&quot;</value>
+    <value>&quot;نمایش تب &quot;لیست‌سیاه‌دامنه</value>
   </data>
   <data name="settings_address_blacklist" xml:space="preserve">
-    <value>نمایش تب &quot;لیست سیاه آدرس&quot;</value>
+    <value>&quot;نمایش تب &quot;لیست‌سیاه‌آدرس</value>
   </data>
   <data name="settings_domain_block" xml:space="preserve">
-    <value>نمایش تب &quot;گزارش دامنه مسدود&quot;</value>
+    <value>&quot;نمایش تب &quot;گزارش‌مسدودیت‌دامنه</value>
   </data>
   <data name="settings_address_block" xml:space="preserve">
-    <value>نمایش تب &quot;گزارش آدرس مسدود&quot;</value>
+    <value>&quot;نمایش تب &quot;گزارش‌مسدودیت‌آدرس</value>
   </data>
   <data name="settings_query_log" xml:space="preserve">
-    <value>نمایش تب &quot;گزارش فعالیت&quot;</value>
+    <value>&quot; نمایش تب&quot;گزارش‌فعالیت</value>
   </data>
   <data name="tabitem_resolvers" xml:space="preserve">
-    <value>تحلیل‌کننده‌ها</value>
+    <value>تحلیلگرها</value>
   </data>
   <data name="tabitem_advanced_settings" xml:space="preserve">
     <value>تنظیمات‌پیشرفه</value>
   </data>
   <data name="settings_advanced_settings" xml:space="preserve">
-    <value>نمایش تب &quot;تنظیمات پیشرفته&quot;</value>
+    <value>&quot;نمایش تب &quot;تنظیمات‌پیشرفته</value>
   </data>
   <data name="yes" xml:space="preserve">
     <value>بله</value>
@@ -322,7 +322,7 @@
     <value>تایید</value>
   </data>
   <data name="dialog_message_uninstall" xml:space="preserve">
-    <value>آیا میخواهید تا سرویس مربوطه نصب شده حذف گردد؟</value>
+    <value>آیا از حذف سرویس مربوطه اطمینان دارید؟</value>
   </data>
   <data name="dialog_uninstall_title" xml:space="preserve">
     <value>حذف کردن سرویس</value>
@@ -331,25 +331,25 @@
     <value>حذف کردن سرویس</value>
   </data>
   <data name="advanced_settings_uninstall_text" xml:space="preserve">
-    <value>حذف سرویس مربوطه نصب شده</value>
+    <value>پاک کردن سرویس مرتبط نصب شده در ویندوز</value>
   </data>
   <data name="advanced_settings_uninstall_button" xml:space="preserve">
-    <value>حذف سرویس</value>
+    <value>پاک کردن سرویس</value>
   </data>
   <data name="default_settings_apply_settings" xml:space="preserve">
     <value>اعمال تنظیمات</value>
   </data>
   <data name="advanced_settings_dnscache" xml:space="preserve">
-    <value>کش DNS</value>
+    <value>DNS حافظه کش</value>
   </data>
   <data name="resolvers_dnscrypt_mode_header" xml:space="preserve">
-    <value>حالت DNSCrypt</value>
+    <value>DNSCrypt Mode</value>
   </data>
   <data name="resolvers_dnscrypt_mode_description" xml:space="preserve">
-    <value>در حالت اتوماتیک، تمام سرور های در دسترس مورد استفاده قرار میگیرند. dnscrypt-proxy به طور خودکار سریع ترین تحلیل کننده را انتخاب می نماید.</value>
+    <value>.به طور خودکار سریع ترین تحلیلگرها را انتخاب می نماید dnscrypt-proxy .در حالت اتوماتیک، تمامی سرور های در دسترس مورد استفاده قرار میگیرند</value>
   </data>
   <data name="resolvers_dnscrypt_automatic_mode" xml:space="preserve">
-    <value>حالت اتوماتیک</value>
+    <value>حالت‌اتوماتیک</value>
   </data>
   <data name="disabled" xml:space="preserve">
     <value>غیر‌فعال</value>
@@ -358,7 +358,7 @@
     <value>فعال</value>
   </data>
   <data name="resolvers_available_resolvers_header" xml:space="preserve">
-    <value>تحلیل کننده های در دسترس</value>
+    <value>تحلیلگر‌های‌موجود</value>
   </data>
   <data name="loader_redistributable_package_check" xml:space="preserve">
     <value>Checking Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
@@ -373,51 +373,51 @@
     <value>Microsoft Visual C++ Redistributable for Visual Studio 2017 is now installed</value>
   </data>
   <data name="message_title_no_server_selected" xml:space="preserve">
-    <value>No server selected</value>
+    <value>هیچ سروری انتخاب نشده</value>
   </data>
   <data name="message_content_no_server_selected" xml:space="preserve">
-    <value>At least one server must be selected. Otherwise, dnscrypt-proxy uses all servers corresponding to the selected filters.</value>
+    <value>حداقل یک سرور می بایست انتخاب شود. در غیر اینصورت نرم افزار از تمام سرور های موجود متنظار با فیلتر ها، استفاده خواهد نمود</value>
   </data>
   <data name="message_title_service_not_running" xml:space="preserve">
-    <value>Service not running</value>
+    <value>سرویس اجرا نشده</value>
   </data>
   <data name="message_content_service_not_running" xml:space="preserve">
-    <value>You should start the DnsCrypt service first!</value>
+    <value>!را اجرا نمایید DnsCrypt شما می بایست ابتدا سرویس</value>
   </data>
   <data name="message_title_uninstallation_successful" xml:space="preserve">
-    <value>Uninstallation successful</value>
+    <value>موفقیت عملیات حذف</value>
   </data>
   <data name="message_content_uninstallation_successful" xml:space="preserve">
-    <value>Uninstallation was successful! DNS requests are no longer encrypted.</value>
+    <value>.از این پس رمزگذاری نخواهند شد DNS عملیات حذف موفقیت آمیز بود! ترافیک</value>
   </data>
   <data name="message_title_uninstallation_error" xml:space="preserve">
-    <value>Uninstallation error</value>
+    <value>شکست عملیات حذف</value>
   </data>
   <data name="message_content_uninstallation_error" xml:space="preserve">
-    <value>Uninstallation could not be performed. Try to stop the service manually and uninstall it again.</value>
+    <value>.عملیات حذف با شکست مواجه شد. توقف دستی سرویس و حذف مجدد را امتحان کنید</value>
   </data>
   <data name="open_log_directory" xml:space="preserve">
-    <value>Open log directory</value>
+    <value>باز کردن مسیر ذخیره لاگ ها</value>
   </data>
   <data name="settings_update_auto" xml:space="preserve">
-    <value>Check for updates on startup</value>
+    <value>بررسی برای ورژن جدید در ابتدای اجرا</value>
   </data>
   <data name="settings_update_channel" xml:space="preserve">
     <value>Update Channel:</value>
   </data>
   <data name="advanced_settings_dnscache_content" xml:space="preserve">
-    <value>DNS cache to reduce latency and outgoing traffic</value>
+    <value>به منظور کاهش زمان انتظار تحلیل آدرس ها DNS حافظه کش</value>
   </data>
   <data name="advanced_settings_blockipv6" xml:space="preserve">
-    <value>Block IPv6</value>
+    <value>IPv6 مسدود سازی</value>
   </data>
   <data name="advanced_settings_blockipv6_content" xml:space="preserve">
-    <value>Immediately respond to IPv6-related queries with an empty response</value>
+    <value>به صورت بلادرنگ IPv6 ارسال یک پاسخ خالی به درخواست های مربوط به</value>
   </data>
   <data name="advanced_settings_forcetcp" xml:space="preserve">
-    <value>Force TCP</value>
+    <value> TCP استفاده دائمی از</value>
   </data>
   <data name="advanced_settings_forcetcp_content" xml:space="preserve">
-    <value>Always use TCP to connect to upstream servers</value>
+    <value>به منظور ارتباط با سرورهای تحلیلگر TCP به کارگیری دائمی ارتباط</value>
   </data>
 </root>
