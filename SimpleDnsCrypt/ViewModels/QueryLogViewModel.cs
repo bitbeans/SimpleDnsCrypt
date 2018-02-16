@@ -209,8 +209,12 @@ namespace SimpleDnsCrypt.ViewModels
 					if (DnsCryptProxyManager.IsDnsCryptProxyRunning())
 					{
 						dnscryptProxyConfiguration.query_log.file = null;
-						DnsCryptProxyManager.Restart();
-						await Task.Delay(Global.ServiceRestartTime).ConfigureAwait(false);
+						DnscryptProxyConfigurationManager.DnscryptProxyConfiguration = dnscryptProxyConfiguration;
+						if (DnscryptProxyConfigurationManager.SaveConfiguration())
+						{
+							DnsCryptProxyManager.Restart();
+							await Task.Delay(Global.ServiceRestartTime).ConfigureAwait(false);
+						}
 					}
 					Execute.OnUIThread(() => { QueryLogLines.Clear(); });
 					Execute.OnUIThread(() => { QueryLogFile = string.Empty; });
