@@ -33,7 +33,7 @@
                 <Image Grid.Row="0" Source="/SimpleDnsCrypt;component/Images/128x128.png" Height="128" Width="128"></Image>
                 <TextBlock TextAlignment="Center" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" 
                            Foreground="#FF8ab329" FontSize="18" Opacity="0.7" FontWeight="Bold" Text="{Binding TitleText}"/>
-                <ProgressBar Grid.Row="2" IsIndeterminate="True"></ProgressBar>
+                <ProgressBar Height="10"  Grid.Row="2" IsIndeterminate="True"></ProgressBar>
                 <TextBlock TextAlignment="Center" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" 
                             FontSize="14" Foreground="Gray" Text="{Binding ProgressText}"/>
             </Grid>

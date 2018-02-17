@@ -130,5 +130,17 @@ namespace SimpleDnsCrypt.Properties {
                 this["AutoUpdate"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string DomainWhitelist {
+            get {
+                return ((string)(this["DomainWhitelist"]));
+            }
+            set {
+                this["DomainWhitelist"] = value;
+            }
+        }
     }
 }

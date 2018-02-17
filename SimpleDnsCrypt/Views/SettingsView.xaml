@@ -69,7 +69,7 @@
                               Margin="5"
                               Content="{lex:Loc Key=settings_address_block}"
                               Cursor="Hand" Foreground="#FF575757" />
-                    <CheckBox IsEnabled="False"
+                    <CheckBox IsEnabled="True"
                               IsChecked="{Binding IsDomainBlacklistTabVisible}"
                               Margin="5"
                               Content="{lex:Loc Key=settings_domain_blacklist}"

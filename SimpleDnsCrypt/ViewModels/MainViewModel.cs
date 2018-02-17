@@ -307,7 +307,8 @@ namespace SimpleDnsCrypt.ViewModels
 		{
 			try
 			{
-				if (selectionChangedEventArgs?.AddedItems.Count != 1) return;
+				if (selectionChangedEventArgs.Source.GetType() != typeof(TabControl)) return;
+				if (selectionChangedEventArgs.AddedItems.Count != 1) return;
 				var tabItem = (TabItem) selectionChangedEventArgs.AddedItems[0];
 				if (string.IsNullOrEmpty((string) tabItem.Tag)) return;
 
