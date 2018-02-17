@@ -1,0 +1,29 @@
+﻿<controls:BaseMetroDialog x:Class="SimpleDnsCrypt.Controls.BaseMetroDialog"
+                          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                          xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+                          xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+                          Title="Hard work is being done . . ." Foreground="#FF575757">
+    <Grid HorizontalAlignment="Left" VerticalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <iconPacks:PackIconMaterial Grid.Column="0" Grid.Row="0" Height="40" Margin="0,10,0,0"
+                                    Width="40" Kind="FileMultiple"
+                                    Opacity="0.7" 
+                                    Foreground="#FF8ab329"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center" />
+        <controls:MetroProgressBar Grid.Column="1" Grid.Row="0" MinWidth="350" Height="40" IsIndeterminate="True"
+                                   Orientation="Horizontal"
+                                   VerticalAlignment="Center" Margin="10,10,10,0" Foreground="#FF8ab329" Opacity="0.7" />
+        <iconPacks:PackIconMaterial Grid.Column="2" Grid.Row="0" Height="40" Margin="0,10,0,0"
+                                    Width="40" Kind="Database"
+                                    Opacity="0.7"
+                                    Foreground="#FF8ab329"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center" />
+    </Grid>
+</controls:BaseMetroDialog>

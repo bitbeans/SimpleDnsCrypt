@@ -137,6 +137,9 @@
     <Compile Include="AppBootstrapper.cs" />
     <Compile Include="AppWindowManager.cs" />
     <Compile Include="Config\Global.cs" />
+    <Compile Include="Controls\BaseMetroDialog.xaml.cs">
+      <DependentUpon>BaseMetroDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Converters\BoolToForegroundConverter.cs" />
     <Compile Include="Converters\BoolToTextConverter.cs" />
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
@@ -191,6 +194,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Translation.resx</DependentUpon>
     </Compile>
+    <Page Include="Controls\BaseMetroDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\HyperlinkButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

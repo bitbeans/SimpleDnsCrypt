@@ -1,20 +1,18 @@
 ﻿using Caliburn.Micro;
+using DnsCrypt.Blacklist;
+using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
 using SimpleDnsCrypt.Config;
+using SimpleDnsCrypt.Helper;
+using SimpleDnsCrypt.Models;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.ComponentModel.Composition;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DnsCrypt.Blacklist;
-using MahApps.Metro.Controls;
-using MahApps.Metro.Controls.Dialogs;
-using SimpleDnsCrypt.Helper;
-using SimpleDnsCrypt.Models;
 using Application = System.Windows.Application;
 using OpenFileDialog = Microsoft.Win32.OpenFileDialog;
 using Screen = Caliburn.Micro.Screen;
@@ -25,8 +23,9 @@ namespace SimpleDnsCrypt.ViewModels
 	[Export(typeof(DomainBlacklistViewModel))]
 	public class DomainBlacklistViewModel : Screen
 	{
-		private const string WhitelistFileName = "domain-whitelist.txt";
-		private const string BlacklistFileName = "domain-blacklist.txt";
+		private const string WhitelistRuleFileName = "domain-whitelist.txt";
+		private const string BlacklistRuleFileName = "domain-blacklist.txt";
+		private const string BlacklistFileName = "blacklist.txt";
 
 		private static readonly ILog Log = LogManagerHelper.Factory();
 		private readonly IWindowManager _windowManager;
@@ -37,7 +36,11 @@ namespace SimpleDnsCrypt.ViewModels
 		
 		private string _selectedDomainBlacklistEntry;
 		private string _selectedDomainWhitelistEntry;
-		private string _domainWhitelistFilePath;
+		private string _domainWhitelistRuleFilePath;
+		private string _domainBlacklistRuleRuleFilePath;
+		private bool _isBlacklistEnabled;
+		private string _domainBlacklistFile;
+
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="DomainBlacklistViewModel"/> class
@@ -53,22 +56,184 @@ namespace SimpleDnsCrypt.ViewModels
 		    _domainBlacklist = new BindableCollection<string>();
 		    _domainWhitelist = new BindableCollection<string>();
 
-		    if (!string.IsNullOrEmpty(Properties.Settings.Default.DomainWhitelist))
+		    if (!string.IsNullOrEmpty(Properties.Settings.Default.DomainBlacklist))
 		    {
-			    _domainWhitelistFilePath = Properties.Settings.Default.DomainWhitelist;
+				_domainBlacklistFile = Properties.Settings.Default.DomainBlacklist;
+			}
+			else
+		    {
+				//set default
+				_domainBlacklistFile = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, BlacklistFileName);
+				Properties.Settings.Default.DomainBlacklist = _domainBlacklistFile;
+				Properties.Settings.Default.Save();
+			}
+
+			if (!string.IsNullOrEmpty(Properties.Settings.Default.DomainWhitelistRules))
+		    {
+			    _domainWhitelistRuleFilePath = Properties.Settings.Default.DomainWhitelistRules;
 			    Task.Run(async () =>
 			    {
-					await ReadWhitelistFromFile();
+					await ReadWhitelistRulesFromFile();
 				});
 		    }
 		    else
 		    {
 				//set default
-				_domainWhitelistFilePath = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, WhitelistFileName);
-			    Properties.Settings.Default.DomainWhitelist = _domainWhitelistFilePath;
+				_domainWhitelistRuleFilePath = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, WhitelistRuleFileName);
+			    Properties.Settings.Default.DomainWhitelistRules = _domainWhitelistRuleFilePath;
 			    Properties.Settings.Default.Save();
 			}
-	    }
+
+		    if (!string.IsNullOrEmpty(Properties.Settings.Default.DomainBlacklistRules))
+		    {
+			    _domainBlacklistRuleRuleFilePath = Properties.Settings.Default.DomainBlacklistRules;
+			    Task.Run(async () =>
+			    {
+				    await ReadBlacklistRulesFromFile();
+			    });
+		    }
+		    else
+		    {
+				//set default
+			    _domainBlacklistRuleRuleFilePath = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, BlacklistRuleFileName);
+			    Properties.Settings.Default.DomainBlacklistRules = _domainBlacklistRuleRuleFilePath;
+			    Properties.Settings.Default.Save();
+		    }
+		}
+
+		public string DomainBlacklistFile
+		{
+			get => _domainBlacklistFile;
+			set
+			{
+				if (value.Equals(_domainBlacklistFile)) return;
+				_domainBlacklistFile = value;
+				Properties.Settings.Default.DomainBlacklist = _domainBlacklistFile;
+				Properties.Settings.Default.Save();
+				NotifyOfPropertyChange(() => DomainBlacklistFile);
+			}
+		}
+
+		public bool IsBlacklistEnabled
+		{
+			get => _isBlacklistEnabled;
+			set
+			{
+				_isBlacklistEnabled = value;
+				ManageDnsCryptBlacklist(DnscryptProxyConfigurationManager.DnscryptProxyConfiguration);
+				NotifyOfPropertyChange(() => IsBlacklistEnabled);
+			}
+		}
+
+		private async void ManageDnsCryptBlacklist(DnscryptProxyConfiguration dnscryptProxyConfiguration)
+		{
+			const string defaultLogFormat = "ltsv";
+			try
+			{
+				if (_isBlacklistEnabled)
+				{
+					if (dnscryptProxyConfiguration == null) return;
+
+					var saveAndRestartService = false;
+					if (dnscryptProxyConfiguration.blacklist == null)
+					{
+						dnscryptProxyConfiguration.blacklist = new Blacklist()
+						{
+							blacklist_file = _domainBlacklistFile,
+							log_format = defaultLogFormat,
+							log_file = "blocked.log"
+						};
+						saveAndRestartService = true;
+					}
+
+					if (string.IsNullOrEmpty(dnscryptProxyConfiguration.blacklist.log_format) ||
+					    !dnscryptProxyConfiguration.blacklist.log_format.Equals(defaultLogFormat))
+					{
+						dnscryptProxyConfiguration.blacklist.log_format = defaultLogFormat;
+						saveAndRestartService = true;
+					}
+
+					if (string.IsNullOrEmpty(dnscryptProxyConfiguration.blacklist.blacklist_file) ||
+					    !dnscryptProxyConfiguration.blacklist.blacklist_file.Equals(_domainBlacklistFile))
+					{
+						dnscryptProxyConfiguration.blacklist.blacklist_file = _domainBlacklistFile;
+						saveAndRestartService = true;
+					}
+
+					if (saveAndRestartService)
+					{
+						DnscryptProxyConfigurationManager.DnscryptProxyConfiguration = dnscryptProxyConfiguration;
+						if (DnscryptProxyConfigurationManager.SaveConfiguration())
+							if (DnsCryptProxyManager.IsDnsCryptProxyInstalled())
+							{
+								if (DnsCryptProxyManager.IsDnsCryptProxyRunning())
+								{
+									DnsCryptProxyManager.Restart();
+									await Task.Delay(Global.ServiceRestartTime).ConfigureAwait(false);
+								}
+								else
+								{
+									DnsCryptProxyManager.Start();
+									await Task.Delay(Global.ServiceStartTime).ConfigureAwait(false);
+								}
+							}
+							else
+							{
+								await Task.Run(() => DnsCryptProxyManager.Install()).ConfigureAwait(false);
+								await Task.Delay(Global.ServiceInstallTime).ConfigureAwait(false);
+								if (DnsCryptProxyManager.IsDnsCryptProxyInstalled())
+								{
+									DnsCryptProxyManager.Start();
+									await Task.Delay(Global.ServiceStartTime).ConfigureAwait(false);
+								}
+							}
+					}
+				}
+				else
+				{
+					//disable blacklist again
+					_isBlacklistEnabled = false;
+					if (DnsCryptProxyManager.IsDnsCryptProxyRunning())
+					{
+						dnscryptProxyConfiguration.blacklist.blacklist_file = null;
+						DnscryptProxyConfigurationManager.DnscryptProxyConfiguration = dnscryptProxyConfiguration;
+						if (DnscryptProxyConfigurationManager.SaveConfiguration())
+						{
+							DnsCryptProxyManager.Restart();
+							await Task.Delay(Global.ServiceRestartTime).ConfigureAwait(false);
+						}
+					}
+				}
+			}
+			catch (Exception exception)
+			{
+				Log.Error(exception);
+			}
+		}
+
+		public void ChangeBlacklistFilePath()
+		{
+			try
+			{
+				var blacklistFolderDialog = new FolderBrowserDialog
+				{
+					ShowNewFolderButton = true
+				};
+				if (!string.IsNullOrEmpty(_domainBlacklistFile))
+				{
+					blacklistFolderDialog.SelectedPath = Path.GetDirectoryName(_domainBlacklistFile);
+				}
+				var result = blacklistFolderDialog.ShowDialog();
+				if (result == DialogResult.OK)
+				{
+					DomainBlacklistFile = Path.Combine(blacklistFolderDialog.SelectedPath, BlacklistFileName);
+				}
+			}
+			catch (Exception exception)
+			{
+				Log.Error(exception);
+			}
+		}
 
 		#region Whitelist
 
@@ -93,17 +258,17 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 		}
 
-		public string DomainWhitelistFilePath
+		public string DomainWhitelistRuleFilePath
 		{
-			get => _domainWhitelistFilePath;
+			get => _domainWhitelistRuleFilePath;
 			set
 			{
-				if (value.Equals(_domainWhitelistFilePath)) return;
-				_domainWhitelistFilePath = value;
-				Properties.Settings.Default.DomainWhitelist = _domainWhitelistFilePath;
+				if (value.Equals(_domainWhitelistRuleFilePath)) return;
+				_domainWhitelistRuleFilePath = value;
+				Properties.Settings.Default.DomainWhitelistRules = _domainWhitelistRuleFilePath;
 				Properties.Settings.Default.Save();
-				SaveWhitelistToFile();
-				NotifyOfPropertyChange(() => DomainWhitelistFilePath);
+				SaveWhitelistRulesToFile();
+				NotifyOfPropertyChange(() => DomainWhitelistRuleFilePath);
 			}
 		}
 
@@ -125,7 +290,7 @@ namespace SimpleDnsCrypt.ViewModels
 				if (!enumerable.Any()) return;
 				DomainWhitelist.Clear();
 				DomainWhitelist = new BindableCollection<string>(enumerable);
-				SaveWhitelistToFile();
+				SaveWhitelistRulesToFile();
 			}
 			catch (Exception exception)
 			{
@@ -153,7 +318,7 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 		}
 
-		public void ChangeWhitelistFilePath()
+		public void ChangeWhitelistRulesFilePath()
 		{
 			try
 			{
@@ -161,14 +326,14 @@ namespace SimpleDnsCrypt.ViewModels
 				{
 					ShowNewFolderButton = true
 				};
-				if (!string.IsNullOrEmpty(_domainWhitelistFilePath))
+				if (!string.IsNullOrEmpty(_domainWhitelistRuleFilePath))
 				{
-					whitelistFolderDialog.SelectedPath = Path.GetDirectoryName(_domainWhitelistFilePath);
+					whitelistFolderDialog.SelectedPath = Path.GetDirectoryName(_domainWhitelistRuleFilePath);
 				}
 				var result = whitelistFolderDialog.ShowDialog();
 				if (result == DialogResult.OK)
 				{
-					DomainWhitelistFilePath = Path.Combine(whitelistFolderDialog.SelectedPath, WhitelistFileName);
+					DomainWhitelistRuleFilePath = Path.Combine(whitelistFolderDialog.SelectedPath, WhitelistRuleFileName);
 				}
 			}
 			catch (Exception exception)
@@ -177,12 +342,12 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 		}
 
-		private async Task ReadWhitelistFromFile()
+		private async Task ReadWhitelistRulesFromFile()
 		{
 			try
 			{
-				if (string.IsNullOrEmpty(_domainWhitelistFilePath)) return;
-				var whitelist = await AddressBlacklist.ReadAllLinesAsync(_domainWhitelistFilePath);
+				if (string.IsNullOrEmpty(_domainWhitelistRuleFilePath)) return;
+				var whitelist = await AddressBlacklist.ReadAllLinesAsync(_domainWhitelistRuleFilePath);
 				DomainWhitelist.Clear();
 				DomainWhitelist = new BindableCollection<string>(whitelist);
 			}
@@ -192,13 +357,13 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 		}
 
-		public void SaveWhitelistToFile()
+		public void SaveWhitelistRulesToFile()
 		{
 			try
 			{
-				if (!string.IsNullOrEmpty(_domainWhitelistFilePath))
+				if (!string.IsNullOrEmpty(_domainWhitelistRuleFilePath))
 				{
-					File.WriteAllLines(_domainWhitelistFilePath, _domainWhitelist, Encoding.UTF8);
+					File.WriteAllLines(_domainWhitelistRuleFilePath, _domainWhitelist, Encoding.UTF8);
 				}
 			}
 			catch (Exception exception)
@@ -213,7 +378,7 @@ namespace SimpleDnsCrypt.ViewModels
 			{
 				if (string.IsNullOrEmpty(_selectedDomainWhitelistEntry)) return;
 				DomainWhitelist.Remove(_selectedDomainWhitelistEntry);
-				SaveWhitelistToFile();
+				SaveWhitelistRulesToFile();
 			}
 			catch (Exception exception)
 			{
@@ -242,7 +407,107 @@ namespace SimpleDnsCrypt.ViewModels
 				var enumerable = parsed as string[] ?? parsed.ToArray();
 				if (enumerable.Length <= 0) return;
 				DomainWhitelist.AddRange(enumerable);
-				SaveWhitelistToFile();
+				SaveWhitelistRulesToFile();
+			}
+			catch (Exception exception)
+			{
+				Log.Error(exception);
+			}
+		}
+		#endregion
+
+		#region Blacklist
+		public async Task BuildBlacklist()
+		{
+			var tmpFile = Path.GetTempFileName();
+			try
+			{
+				var dialogSettings = new MetroDialogSettings
+				{
+					ColorScheme = MetroDialogColorScheme.Theme
+				};
+				var metroWindow = Application.Current.Windows.OfType<MetroWindow>().FirstOrDefault();
+
+				var dialog = new Controls.BaseMetroDialog();
+				await metroWindow.ShowMetroDialogAsync(dialog, dialogSettings);
+
+				var blacklistRules = _domainBlacklist;
+				var blacklistSource = new List<string>();
+				var blacklistLocalRules = new List<string>();
+				foreach (var blacklistRule in blacklistRules)
+				{
+					if (blacklistRule.StartsWith("http://") || 
+					    blacklistRule.StartsWith("https://") ||
+					    blacklistRule.StartsWith("file:"))
+					{
+						blacklistSource.Add(blacklistRule);
+					}
+					else
+					{
+						blacklistLocalRules.Add(blacklistRule);
+					}
+				}
+
+				File.WriteAllLines(tmpFile, blacklistLocalRules);
+				blacklistSource.Add($"file:{tmpFile}");
+
+				var rules = await AddressBlacklist.Build(blacklistSource, new List<string>(_domainWhitelist));
+				if (rules != null)
+				{
+					File.WriteAllLines(_domainBlacklistFile, rules);  
+				}
+				await metroWindow.HideMetroDialogAsync(dialog);
+			}
+			catch (Exception exception)
+			{
+				Log.Error(exception);
+			}
+			finally
+			{
+				File.Delete(tmpFile);
+			}
+		}
+
+		public async void AddBlacklistRule()
+		{
+			try
+			{
+				var dialogSettings = new MetroDialogSettings
+				{
+					AffirmativeButtonText = "Add",
+					NegativeButtonText = "Cancel",
+					ColorScheme = MetroDialogColorScheme.Theme
+				};
+
+				var metroWindow = Application.Current.Windows.OfType<MetroWindow>().FirstOrDefault();
+				var dialogResult = await metroWindow.ShowInputAsync("New domain blacklist rule", "Example: *.example.com, ads.*, *sex*, you also can add a list (seperated by: ,) " +
+				                                                                                 "or a file starting with: file:custom-rules.txt or a remote url starting with http:// or https://", dialogSettings);
+				if (string.IsNullOrEmpty(dialogResult)) return;
+				dialogResult = dialogResult.Replace(" ", "");
+				var list = dialogResult.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+
+				var remote = new List<string>();
+				var local = new List<string>();
+				foreach (var l in list)
+				{
+					if (l.StartsWith("http://") || l.StartsWith("https://") || l.StartsWith("file:"))
+					{
+						remote.Add(l);
+					}
+					else
+					{
+						local.Add(l);
+					}
+				}
+				var parsed = AddressBlacklist.ParseBlacklist(local, true);
+				var enumerable = parsed as string[] ?? parsed.ToArray();
+				if (enumerable.Length > 0)
+				{
+					DomainBlacklist.AddRange(enumerable);
+				}
+				
+				DomainBlacklist.AddRange(remote);
+				SaveBlacklistRulesToFile();
 			}
 			catch (Exception exception)
 			{
@@ -250,17 +515,65 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 		}
 
-		#endregion
+		public void RemoveBlacklistRule()
+		{
+			try
+			{
+				if (string.IsNullOrEmpty(_selectedDomainBlacklistEntry)) return;
+				DomainBlacklist.Remove(_selectedDomainBlacklistEntry);
+				SaveBlacklistRulesToFile();
+			}
+			catch (Exception exception)
+			{
+				Log.Error(exception);
+			}
+		}
 
-		#region Blacklist
+		public async void ImportBlacklistRules()
+		{
+			try
+			{
+				var openBlacklistFileDialog = new OpenFileDialog
+				{
+					Multiselect = false,
+					RestoreDirectory = true
+				};
+				var result = openBlacklistFileDialog.ShowDialog();
+				if (result == null) return;
+				if (!result.Value) return;
+				var blacklistLines = await AddressBlacklist.ReadAllLinesAsync(openBlacklistFileDialog.FileName);
+				var parsed = AddressBlacklist.ParseBlacklist(blacklistLines, true);
+				var enumerable = parsed as string[] ?? parsed.ToArray();
+				if (!enumerable.Any()) return;
+				DomainBlacklist.Clear();
+				DomainBlacklist = new BindableCollection<string>(enumerable);
+				SaveBlacklistRulesToFile();
+			}
+			catch (Exception exception)
+			{
+				Log.Error(exception);
+			}
+		}
 
-
-		#endregion
-
-
-
-
-
+		public void ExportBlacklistRules()
+		{
+			try
+			{
+				var saveBlacklistFileDialog = new SaveFileDialog
+				{
+					RestoreDirectory = true,
+					AddExtension = true,
+					DefaultExt = ".txt"
+				};
+				var result = saveBlacklistFileDialog.ShowDialog();
+				if (result != DialogResult.OK) return;
+				File.WriteAllLines(saveBlacklistFileDialog.FileName, _domainBlacklist);
+			}
+			catch (Exception exception)
+			{
+				Log.Error(exception);
+			}
+		}
 
 		public string SelectedDomainBlacklistEntry
 		{
@@ -283,9 +596,73 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 		}
 
+		public string DomainBlacklistRuleFilePath
+		{
+			get => _domainBlacklistRuleRuleFilePath;
+			set
+			{
+				if (value.Equals(_domainBlacklistRuleRuleFilePath)) return;
+				_domainBlacklistRuleRuleFilePath = value;
+				Properties.Settings.Default.DomainBlacklistRules = _domainBlacklistRuleRuleFilePath;
+				Properties.Settings.Default.Save();
+				SaveBlacklistRulesToFile();
+				NotifyOfPropertyChange(() => DomainBlacklistRuleFilePath);
+			}
+		}
 
+		public void SaveBlacklistRulesToFile()
+		{
+			try
+			{
+				if (!string.IsNullOrEmpty(_domainBlacklistRuleRuleFilePath))
+				{
+					File.WriteAllLines(_domainBlacklistRuleRuleFilePath, _domainBlacklist, Encoding.UTF8);
+				}
+			}
+			catch (Exception exception)
+			{
+				Log.Error(exception);
+			}
+		}
 
+		private async Task ReadBlacklistRulesFromFile()
+		{
+			try
+			{
+				if (string.IsNullOrEmpty(_domainBlacklistRuleRuleFilePath)) return;
+				var blacklist = await AddressBlacklist.ReadAllLinesAsync(_domainBlacklistRuleRuleFilePath);
+				DomainBlacklist.Clear();
+				DomainBlacklist = new BindableCollection<string>(blacklist);
+			}
+			catch (Exception exception)
+			{
+				Log.Error(exception);
+			}
+		}
 
-
+		public void ChangeBlacklistRulesFilePath()
+		{
+			try
+			{
+				var blacklistFolderDialog = new FolderBrowserDialog
+				{
+					ShowNewFolderButton = true
+				};
+				if (!string.IsNullOrEmpty(_domainBlacklistRuleRuleFilePath))
+				{
+					blacklistFolderDialog.SelectedPath = Path.GetDirectoryName(_domainBlacklistRuleRuleFilePath);
+				}
+				var result = blacklistFolderDialog.ShowDialog();
+				if (result == DialogResult.OK)
+				{
+					DomainBlacklistRuleFilePath = Path.Combine(blacklistFolderDialog.SelectedPath, BlacklistRuleFileName);
+				}
+			}
+			catch (Exception exception)
+			{
+				Log.Error(exception);
+			}
+		}
+		#endregion
 	}
 }

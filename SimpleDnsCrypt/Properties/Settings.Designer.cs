@@ -134,12 +134,48 @@ namespace SimpleDnsCrypt.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string DomainWhitelist {
+        public string DomainWhitelistRules {
             get {
-                return ((string)(this["DomainWhitelist"]));
+                return ((string)(this["DomainWhitelistRules"]));
             }
             set {
-                this["DomainWhitelist"] = value;
+                this["DomainWhitelistRules"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string DomainBlacklistRules {
+            get {
+                return ((string)(this["DomainBlacklistRules"]));
+            }
+            set {
+                this["DomainBlacklistRules"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string DomainBlacklist {
+            get {
+                return ((string)(this["DomainBlacklist"]));
+            }
+            set {
+                this["DomainBlacklist"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string QueryLogFile {
+            get {
+                return ((string)(this["QueryLogFile"]));
+            }
+            set {
+                this["QueryLogFile"] = value;
             }
         }
     }

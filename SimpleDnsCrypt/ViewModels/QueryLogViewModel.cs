@@ -4,10 +4,12 @@ using System.ComponentModel.Composition;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Caliburn.Micro;
 using SimpleDnsCrypt.Config;
 using SimpleDnsCrypt.Helper;
 using SimpleDnsCrypt.Models;
+using Screen = Caliburn.Micro.Screen;
 
 namespace SimpleDnsCrypt.ViewModels
 {
@@ -17,6 +19,7 @@ namespace SimpleDnsCrypt.ViewModels
 		private static readonly ILog Log = LogManagerHelper.Factory();
 		private readonly IWindowManager _windowManager;
 		private readonly IEventAggregator _events;
+		private const string DefaultLogFileName = "query.log";
 
 		private ObservableCollection<QueryLogLine> _queryLogLines;
 		private string _queryLogFile;
@@ -31,6 +34,18 @@ namespace SimpleDnsCrypt.ViewModels
 			_events.Subscribe(this);
 			_isQueryLogLogging = false;
 			_queryLogLines = new ObservableCollection<QueryLogLine>();
+
+			if (!string.IsNullOrEmpty(Properties.Settings.Default.QueryLogFile))
+			{
+				_queryLogFile = Properties.Settings.Default.QueryLogFile;
+			}
+			else
+			{
+				//set default
+				_queryLogFile = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, DefaultLogFileName);
+				Properties.Settings.Default.QueryLogFile = _queryLogFile;
+				Properties.Settings.Default.Save();
+			}
 		}
 
 		private void AddLogLine(QueryLogLine queryLogLine)
@@ -52,7 +67,6 @@ namespace SimpleDnsCrypt.ViewModels
 		{
 			Execute.OnUIThread(() => { QueryLogLines.Clear(); });
 		}
-
 
 		public ObservableCollection<QueryLogLine> QueryLogLines
 		{
@@ -97,9 +111,32 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 		}
 
+		public void ChangeQueryLogFilePath()
+		{
+			try
+			{
+				var queryLogFolderDialog = new FolderBrowserDialog
+				{
+					ShowNewFolderButton = true
+				};
+				if (!string.IsNullOrEmpty(_queryLogFile))
+				{
+					queryLogFolderDialog.SelectedPath = Path.GetDirectoryName(_queryLogFile);
+				}
+				var result = queryLogFolderDialog.ShowDialog();
+				if (result == DialogResult.OK)
+				{
+					QueryLogFile = Path.Combine(queryLogFolderDialog.SelectedPath, DefaultLogFileName);
+				}
+			}
+			catch (Exception exception)
+			{
+				Log.Error(exception);
+			}
+		}
+
 		private async void QueryLog(DnscryptProxyConfiguration dnscryptProxyConfiguration)
 		{
-			const string defaultLogFileName = "query.log";
 			const string defaultLogFormat = "ltsv";
 			try
 			{
@@ -112,7 +149,7 @@ namespace SimpleDnsCrypt.ViewModels
 					{
 						dnscryptProxyConfiguration.query_log = new QueryLog
 						{
-							file = defaultLogFileName,
+							file = _queryLogFile,
 							format = defaultLogFormat
 						};
 						saveAndRestartService = true;
@@ -126,9 +163,9 @@ namespace SimpleDnsCrypt.ViewModels
 					}
 
 					if (string.IsNullOrEmpty(dnscryptProxyConfiguration.query_log.file) ||
-					    !dnscryptProxyConfiguration.query_log.file.Equals(defaultLogFileName))
+					    !dnscryptProxyConfiguration.query_log.file.Equals(_queryLogFile))
 					{
-						dnscryptProxyConfiguration.query_log.file = defaultLogFileName;
+						dnscryptProxyConfiguration.query_log.file = _queryLogFile;
 						saveAndRestartService = true;
 					}
 
@@ -160,9 +197,6 @@ namespace SimpleDnsCrypt.ViewModels
 								}
 							}
 					}
-
-					QueryLogFile = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder,
-						dnscryptProxyConfiguration.query_log.file);
 
 					if (!string.IsNullOrEmpty(_queryLogFile))
 						if (File.Exists(_queryLogFile))
@@ -217,7 +251,6 @@ namespace SimpleDnsCrypt.ViewModels
 						}
 					}
 					Execute.OnUIThread(() => { QueryLogLines.Clear(); });
-					Execute.OnUIThread(() => { QueryLogFile = string.Empty; });
 				}
 			}
 			catch (Exception exception)

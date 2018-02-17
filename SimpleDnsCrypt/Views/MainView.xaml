@@ -801,56 +801,105 @@
                                                            Text="{lex:Loc Key=querylog_waiting_for_data}" />
                                             </StackPanel>
                                         </Grid>
-                                        <Grid>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="400" />
-                                                <ColumnDefinition Width="*" />
-                                            </Grid.ColumnDefinitions>
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition />
-                                                <RowDefinition />
-                                            </Grid.RowDefinitions>
-                                            <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="0"
-                                                        VerticalAlignment="Center" Margin="10,0,0,0">
+                                        <Grid Margin="10,8,0,0">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="100"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="40"/>
+                                                </Grid.RowDefinitions>
+
                                                 <TextBlock Foreground="#FF575757" FontSize="12"
-                                                           VerticalAlignment="Center"
+                                                           VerticalAlignment="Center" Grid.Row="0" Grid.Column="0"
                                                            Text="{lex:Loc Key=querylog_entry_count}">
                                                 </TextBlock>
                                                 <TextBlock Foreground="#FF575757" FontSize="12" FontWeight="Bold"
-                                                           VerticalAlignment="Center"
-                                                           Text="{Binding QueryLogLines.Count}" Margin="2,1,0,0">
+                                                           VerticalAlignment="Center" Grid.Row="0" Grid.Column="1"
+                                                           Text="{Binding QueryLogLines.Count}">
                                                 </TextBlock>
-                                            </StackPanel>
-                                            <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="1"
-                                                        Grid.ColumnSpan="2"
-                                                        VerticalAlignment="Center" Margin="10,2,0,0">
-                                                <TextBlock Foreground="#FF575757" FontSize="12"
-                                                           VerticalAlignment="Center"
-                                                           Text="{lex:Loc Key=querylog_source_file}">
-                                                </TextBlock>
-                                                <TextBlock Foreground="#FF575757" FontSize="12" FontWeight="Bold"
-                                                           VerticalAlignment="Center"
-                                                           Text="{Binding QueryLogFile}" Margin="2,1,0,0">
-                                                </TextBlock>
-                                            </StackPanel>
-                                            <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="0"
+
+                                            <StackPanel Orientation="Horizontal" Grid.Column="2" Grid.Row="0"
                                                         HorizontalAlignment="Right">
-                                                <Button cal:Message.Attach="[Event Click] = [Action ClearQueryLog()]"
-                                                        Width="Auto"
-                                                        Cursor="Hand"
-                                                        Content="{lex:Loc Key=querylog_button_clear}"
-                                                        Style="{DynamicResource AccentedSquareButtonStyle}"
-                                                        HorizontalAlignment="Right" Margin="0,0,10,0">
+                                                <Button x:Name="ClearQueryLog" cal:Message.Attach="ClearQueryLog"
+                                                            Background="White"
+                                                            Width="30"
+                                                            Height="30"
+                                                            Cursor="Hand"
+                                                            HorizontalContentAlignment="Center"
+                                                            VerticalContentAlignment="Center"
+                                                            BorderBrush="{DynamicResource AccentColorBrush}"
+                                                            FocusVisualStyle="{DynamicResource MahApps.Metro.Styles.MetroCircleFocusVisual}"
+                                                            Style="{DynamicResource MahApps.Metro.Styles.MetroCircleButtonStyle}" Margin="5,0,0,0">
+                                                    <iconPacks:PackIconMaterial
+                                                            Kind="NotificationClearAll"
+                                                            Width="15"
+                                                            Height="15"
+                                                            HorizontalContentAlignment="Center"
+                                                            VerticalContentAlignment="Center"
+                                                            Foreground="{DynamicResource AccentColorBrush}"/>
+                                                    <Button.ToolTip>
+                                                        <Label Content="{lex:Loc Key=querylog_button_clear}" FontWeight="DemiBold" />
+                                                    </Button.ToolTip>
                                                 </Button>
-                                                <Button IsEnabled="False"
-                                                        cal:Message.Attach="[Event Click] = [Action BlockQueryLogEntry()]"
-                                                        Width="Auto"
-                                                        Cursor="Hand"
-                                                        Content="{lex:Loc Key=querylog_button_block}"
-                                                        Style="{DynamicResource AccentedSquareButtonStyle}"
-                                                        HorizontalAlignment="Right" Margin="0,0,10,0">
+                                                <Button x:Name="BlockQueryLogEntry" cal:Message.Attach="BlockQueryLogEntry"
+                                                            Background="White" IsEnabled="False"
+                                                            Width="30"
+                                                            Height="30"
+                                                            Cursor="Hand"
+                                                            HorizontalContentAlignment="Center"
+                                                            VerticalContentAlignment="Center"
+                                                            BorderBrush="{DynamicResource AccentColorBrush}"
+                                                            FocusVisualStyle="{DynamicResource MahApps.Metro.Styles.MetroCircleFocusVisual}"
+                                                            Style="{DynamicResource MahApps.Metro.Styles.MetroCircleButtonStyle}" Margin="5,0,5,0">
+                                                    <iconPacks:PackIconMaterial
+                                                            Kind="BlockHelper"
+                                                            Width="15"
+                                                            Height="15"
+                                                            HorizontalContentAlignment="Center"
+                                                            VerticalContentAlignment="Center"
+                                                            Foreground="{DynamicResource AccentColorBrush}"/>
+                                                    <Button.ToolTip>
+                                                        <Label
+                                                                Content="{lex:Loc Key=querylog_button_block}"
+                                                                FontWeight="DemiBold" />
+                                                    </Button.ToolTip>
                                                 </Button>
                                             </StackPanel>
+                                            <TextBlock Foreground="#FF575757" FontSize="12"
+                                                           VerticalAlignment="Center" Grid.Row="1" Grid.Column="0"
+                                                           Text="{lex:Loc Key=querylog_source_file}">
+                                            </TextBlock>
+                                            <TextBox Text="{Binding QueryLogFile}" 
+                                                         Background="#FF8ab329" Opacity="0.4" BorderBrush="#FF575757"
+                                                         IsReadOnly="True" Grid.Row="1" Grid.Column="1"
+                                                         VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Stretch"
+                                                         />
+                                            <Button x:Name="ChangeQueryLogFilePath" cal:Message.Attach="ChangeQueryLogFilePath"
+                                                            Background="White" IsEnabled="{Binding IsQueryLogLogging, Converter={StaticResource ReverseBoolToEnabledConverter}}"
+                                                            Width="30"
+                                                            Height="30" HorizontalAlignment="Right"
+                                                            Cursor="Hand" Grid.Row="1" Grid.Column="2"
+                                                            HorizontalContentAlignment="Center"
+                                                            VerticalContentAlignment="Center"
+                                                            BorderBrush="{DynamicResource AccentColorBrush}"
+                                                            FocusVisualStyle="{DynamicResource MahApps.Metro.Styles.MetroCircleFocusVisual}"
+                                                            Style="{DynamicResource MahApps.Metro.Styles.MetroCircleButtonStyle}" Margin="5,0,5,0">
+                                                <iconPacks:PackIconMaterial
+                                                            Kind="DotsHorizontal"
+                                                            Width="15"
+                                                            Height="15"
+                                                            HorizontalContentAlignment="Center"
+                                                            VerticalContentAlignment="Center"
+                                                            Foreground="{DynamicResource AccentColorBrush}"/>
+                                                <Button.ToolTip>
+                                                    <Label
+                                                                Content="..."
+                                                                FontWeight="DemiBold" />
+                                                </Button.ToolTip>
+                                            </Button>
                                         </Grid>
                                     </StackPanel>
                                 </Border>
@@ -1084,31 +1133,66 @@
                                                                         HorizontalAlignment="Left"
                                                                         VerticalAlignment="Center" />
                                             <TextBlock Grid.Column="1" Grid.Row="0"
-                                                       Text="Awesome Blacklist"
-                                                       TextWrapping="Wrap" VerticalAlignment="Center"
+                                                       Text="Domain Blacklist &amp; Whitelist"
+                                                       TextWrapping="Wrap" VerticalAlignment="Top"
                                                        Foreground="#FF8ab329" FontSize="20"
-                                                       Opacity="0.7" Margin="5,0,0,3" FontWeight="Bold">
+                                                       Opacity="0.7" Margin="5,0,0,0" FontWeight="Bold">
                                             </TextBlock>
-                                            <Label Foreground="#FF575757" Grid.Column="0" Grid.Row="1"
-                                                   Grid.ColumnSpan="3"
-                                                   Content="configure ...."
-                                                   VerticalAlignment="Bottom"
-                                                   HorizontalAlignment="Left" Margin="0,0,0,5">
-                                            </Label>
+                                            <controls:ToggleSwitchButton HorizontalAlignment="Right" Margin="0,0,70,0" Cursor="Hand"
+                                                IsChecked="{Binding IsBlacklistEnabled}" Grid.Column="2" Grid.Row="0" />
+                                            <StackPanel Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Orientation="Horizontal" Margin="0,10,0,0">
+                                                <Label Width="120" VerticalContentAlignment="Center" Foreground="#FF575757" Content="Blacklist:"/>
+                                                <TextBox Text="{Binding DomainBlacklistFile}" Background="#FF8ab329" Opacity="0.4" BorderBrush="#FF575757"
+                                                         Width="560" IsReadOnly="True" HorizontalAlignment="Left"
+                                                         VerticalContentAlignment="Center"
+                                                         Margin="0,0,0,0"/>
+                                                <Button x:Name="ChangeBlacklistFilePath" cal:Message.Attach="ChangeBlacklistFilePath"
+                                                            Background="White" 
+                                                            IsEnabled="{Binding IsBlacklistEnabled, Converter={StaticResource ReverseBoolToEnabledConverter}}"
+                                                            Width="30"
+                                                            Height="30"
+                                                            Cursor="Hand"
+                                                            HorizontalContentAlignment="Center"
+                                                            VerticalContentAlignment="Center"
+                                                            BorderBrush="{DynamicResource AccentColorBrush}"
+                                                            FocusVisualStyle="{DynamicResource MahApps.Metro.Styles.MetroCircleFocusVisual}"
+                                                            Style="{DynamicResource MahApps.Metro.Styles.MetroCircleButtonStyle}" Margin="15,0,0,0">
+                                                    <iconPacks:PackIconMaterial
+                                                            Kind="DotsHorizontal"
+                                                            Width="15"
+                                                            Height="15"
+                                                            HorizontalContentAlignment="Center"
+                                                            VerticalContentAlignment="Center"
+                                                            Foreground="{DynamicResource AccentColorBrush}"/>
+                                                    <Button.ToolTip>
+                                                        <Label
+                                                                Content="..."
+                                                                FontWeight="DemiBold" />
+                                                    </Button.ToolTip>
+                                                </Button>
+                                            </StackPanel>
 
-                                            <Label Foreground="#FF575757" Grid.Column="0" Grid.Row="2"
-                                                   Grid.ColumnSpan="3" FontSize="16" FontWeight="Bold"
-                                                   Content="Whitelist Rules"
-                                                   VerticalAlignment="Bottom"
-                                                   HorizontalAlignment="Left" Margin="0,0,0,0">
-                                            </Label>
-
+                                            <StackPanel Orientation="Horizontal" Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="2">
+                                                <Label Foreground="#FF575757" 
+                                                       FontSize="16" FontWeight="Bold"
+                                                       Content="Whitelist Rules"
+                                                       VerticalAlignment="Center"
+                                                       HorizontalAlignment="Left" >
+                                                </Label>
+                                                <Label Foreground="#FF575757" 
+                                                       FontSize="12" 
+                                                       Content="(all entries are ignored during blacklist generation)"
+                                                       Margin="0,2,0,0"
+                                                       VerticalAlignment="Center"
+                                                       HorizontalAlignment="Left" >
+                                                </Label>
+                                            </StackPanel>
                                             <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3">
                                                 <ListView BorderBrush="#198AB328"
                                                           IsEnabled="{Binding IsWorking, Converter={StaticResource ReverseBoolToEnabledConverter}}"
                                                           ScrollViewer.VerticalScrollBarVisibility="Visible"
                                                           ScrollViewer.CanContentScroll="True"
-                                                          Height="210" Width="550" 
+                                                          Height="210" Width="680" 
                                                           SelectedItem="{Binding Path=SelectedDomainWhitelistEntry}"
                                                           ItemsSource="{Binding Path=DomainWhitelist}">
                                                     <ListView.ItemTemplate>
@@ -1216,12 +1300,12 @@
                                                 </StackPanel>
                                             </StackPanel>
                                             <StackPanel Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="4" Orientation="Horizontal" Margin="0,5,0,0">
-                                                <Label Width="200" VerticalContentAlignment="Center" Foreground="#FF575757" Content="Whitelist Path:"/>
-                                                <TextBox Text="{Binding DomainWhitelistFilePath}"  Background="#FFE0E0E0"
-                                                         Width="350" IsReadOnly="True"
+                                                <Label Width="120" VerticalContentAlignment="Center" Foreground="#FF575757" Content="Whitelist Rules:"/>
+                                                <TextBox Text="{Binding DomainWhitelistRuleFilePath}" Background="#FF8ab329" Opacity="0.4" BorderBrush="#FF575757"
+                                                         Width="560" IsReadOnly="True"
                                                          VerticalContentAlignment="Center"
                                                          Margin="0,0,0,0"/>
-                                                <Button x:Name="ChangeWhitelistFilePath" cal:Message.Attach="ChangeWhitelistFilePath"
+                                                <Button x:Name="ChangeWhitelistRulesFilePath" cal:Message.Attach="ChangeWhitelistRulesFilePath"
                                                             Background="White"
                                                             Width="30"
                                                             Height="30"
@@ -1244,59 +1328,187 @@
                                                                 FontWeight="DemiBold" />
                                                     </Button.ToolTip>
                                                 </Button>
-
                                             </StackPanel>
-                                            
-                                            
-                                            
-                                            
-
-                                            <Label Foreground="#FF575757" Grid.Column="0" Grid.Row="5"
-                                                   Grid.ColumnSpan="3" FontSize="18"
-                                                   Content="Blacklist"
-                                                   VerticalAlignment="Bottom"
-                                                   HorizontalAlignment="Left" Margin="0,0,0,5">
-                                            </Label>
-                                            <ListView BorderBrush="#198AB328"
-                                                      IsEnabled="{Binding IsWorking, Converter={StaticResource ReverseBoolToEnabledConverter}}"
-                                                      ScrollViewer.VerticalScrollBarVisibility="Visible"
-                                                      ScrollViewer.CanContentScroll="True" Margin="10" Grid.Column="0"
-                                                      Grid.Row="6" Height="110"
-                                                      SelectedItem="{Binding Path=SelectedDomainBlockRule}"
-                                                      ItemsSource="{Binding Path=DomainRuleCollection}"
-                                                      Grid.ColumnSpan="3">
-                                                <ListView.ItemTemplate>
-                                                    <DataTemplate>
-                                                        <Label Content="{Binding}" FontSize="10"
-                                                               Foreground="#FF575757" />
-                                                    </DataTemplate>
-                                                </ListView.ItemTemplate>
-                                            </ListView>
-
-                                            <StackPanel Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3"
-                                                        Orientation="Horizontal">
-                                                <Button x:Name="s1"
-                                                        Cursor="Hand"
-                                                        Content="Add local rule"
-                                                        Width="Auto" HorizontalAlignment="Right"
-                                                        Style="{DynamicResource AccentedSquareButtonStyle}" />
-                                                <Button x:Name="s2"
-                                                        Cursor="Hand"
-                                                        Content="Add remote rule"
-                                                        Width="Auto" HorizontalAlignment="Right"
-                                                        Style="{DynamicResource AccentedSquareButtonStyle}" />
-                                                <Button x:Name="s3"
-                                                        Cursor="Hand"
-                                                        Content="remove entry"
-                                                        Width="Auto" HorizontalAlignment="Right"
-                                                        Style="{DynamicResource AccentedSquareButtonStyle}" />
-                                                <Button x:Name="s4"
-                                                        Cursor="Hand"
-                                                        Content="build"
-                                                        Width="Auto" HorizontalAlignment="Right"
-                                                        Style="{DynamicResource AccentedSquareButtonStyle}" />
+                                            <StackPanel Orientation="Horizontal" Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="5">
+                                                <Label Foreground="#FF575757" 
+                                                       FontSize="16" FontWeight="Bold"
+                                                       Content="Blacklist Rules"
+                                                       VerticalAlignment="Center"
+                                                       HorizontalAlignment="Left" >
+                                                </Label>
+                                                <Label Foreground="#FF575757" 
+                                                       FontSize="12" 
+                                                       Content="(all entries are merged to a blacklist)"
+                                                       Margin="0,2,0,0"
+                                                       VerticalAlignment="Center"
+                                                       HorizontalAlignment="Left" >
+                                                </Label>
                                             </StackPanel>
-
+                                            <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="3">
+                                                <ListView BorderBrush="#198AB328"
+                                                          IsEnabled="{Binding IsWorking, Converter={StaticResource ReverseBoolToEnabledConverter}}"
+                                                          ScrollViewer.VerticalScrollBarVisibility="Visible"
+                                                          ScrollViewer.CanContentScroll="True"
+                                                          Height="210" Width="680" 
+                                                          SelectedItem="{Binding Path=SelectedDomainBlacklistEntry}"
+                                                          ItemsSource="{Binding Path=DomainBlacklist}">
+                                                    <ListView.ItemTemplate>
+                                                        <DataTemplate>
+                                                            <Label Content="{Binding}" 
+                                                                   FontSize="10"
+                                                                   Foreground="#FF575757" />
+                                                        </DataTemplate>
+                                                    </ListView.ItemTemplate>
+                                                </ListView>
+                                                <StackPanel Orientation="Vertical" Margin="15,0,0,0">
+                                                    <Button x:Name="AddBlacklistRule" cal:Message.Attach="AddBlacklistRule"
+                                                        Background="White"
+                                                        Width="30"
+                                                        Height="30"
+                                                        Cursor="Hand"
+                                                        HorizontalContentAlignment="Center"
+                                                        VerticalContentAlignment="Center"
+                                                        BorderBrush="{DynamicResource AccentColorBrush}"
+                                                        FocusVisualStyle="{DynamicResource MahApps.Metro.Styles.MetroCircleFocusVisual}"
+                                                        Style="{DynamicResource MahApps.Metro.Styles.MetroCircleButtonStyle}">
+                                                        <iconPacks:PackIconMaterial
+                                                            Kind="Plus"
+                                                            Width="15"
+                                                            Height="15"
+                                                            HorizontalContentAlignment="Center"
+                                                            VerticalContentAlignment="Center"
+                                                            Foreground="{DynamicResource AccentColorBrush}" />
+                                                        <Button.ToolTip>
+                                                            <Label
+                                                                Content="Add a new blacklist rule"
+                                                                FontWeight="DemiBold" />
+                                                        </Button.ToolTip>
+                                                    </Button>
+                                                    <Button x:Name="RemoveBlacklistRule" cal:Message.Attach="RemoveBlacklistRule"
+                                                            Background="White"
+                                                            Width="30"
+                                                            Height="30"
+                                                            Cursor="Hand"
+                                                            HorizontalContentAlignment="Center"
+                                                            VerticalContentAlignment="Center"
+                                                            BorderBrush="{DynamicResource AccentColorBrush}"
+                                                            FocusVisualStyle="{DynamicResource MahApps.Metro.Styles.MetroCircleFocusVisual}"
+                                                            Style="{DynamicResource MahApps.Metro.Styles.MetroCircleButtonStyle}" Margin="0,7,0,0">
+                                                        <iconPacks:PackIconMaterial
+                                                            Kind="Minus"
+                                                            Width="15"
+                                                            Height="15"
+                                                            HorizontalContentAlignment="Center"
+                                                            VerticalContentAlignment="Center"
+                                                            Foreground="{DynamicResource AccentColorBrush}"/>
+                                                        <Button.ToolTip>
+                                                            <Label
+                                                                Content="Remove the selected blacklist rule"
+                                                                FontWeight="DemiBold" />
+                                                        </Button.ToolTip>
+                                                    </Button>
+                                                    <Button x:Name="ImportBlacklistRules" cal:Message.Attach="ImportBlacklistRules"
+                                                            Background="White"
+                                                            Width="30"
+                                                            Height="30"
+                                                            Cursor="Hand"
+                                                            HorizontalContentAlignment="Center"
+                                                            VerticalContentAlignment="Center"
+                                                            BorderBrush="{DynamicResource AccentColorBrush}"
+                                                            FocusVisualStyle="{DynamicResource MahApps.Metro.Styles.MetroCircleFocusVisual}"
+                                                            Style="{DynamicResource MahApps.Metro.Styles.MetroCircleButtonStyle}" Margin="0,7,0,0">
+                                                        <iconPacks:PackIconMaterial
+                                                            Kind="FileImport"
+                                                            Width="15"
+                                                            Height="15"
+                                                            HorizontalContentAlignment="Center"
+                                                            VerticalContentAlignment="Center"
+                                                            Foreground="{DynamicResource AccentColorBrush}"/>
+                                                        <Button.ToolTip>
+                                                            <Label
+                                                                Content="Import a file of blacklist rules"
+                                                                FontWeight="DemiBold" />
+                                                        </Button.ToolTip>
+                                                    </Button>
+                                                    <Button x:Name="ExportBlacklistRules" cal:Message.Attach="ExportBlacklistRules"
+                                                            Background="White"
+                                                            Width="30"
+                                                            Height="30"
+                                                            Cursor="Hand"
+                                                            HorizontalContentAlignment="Center"
+                                                            VerticalContentAlignment="Center"
+                                                            BorderBrush="{DynamicResource AccentColorBrush}"
+                                                            FocusVisualStyle="{DynamicResource MahApps.Metro.Styles.MetroCircleFocusVisual}"
+                                                            Style="{DynamicResource MahApps.Metro.Styles.MetroCircleButtonStyle}" Margin="0,7,0,0">
+                                                        <iconPacks:PackIconMaterial
+                                                            Kind="FileExport"
+                                                            Width="15"
+                                                            Height="15"
+                                                            HorizontalContentAlignment="Center"
+                                                            VerticalContentAlignment="Center"
+                                                            Foreground="{DynamicResource AccentColorBrush}"/>
+                                                        <Button.ToolTip>
+                                                            <Label
+                                                                Content="Export the blacklist rules to a file"
+                                                                FontWeight="DemiBold" />
+                                                        </Button.ToolTip>
+                                                    </Button>
+                                                    <Button x:Name="BuildBlacklist" cal:Message.Attach="BuildBlacklist"
+                                                            Background="White"
+                                                            Width="30"
+                                                            Height="30"
+                                                            Cursor="Hand"
+                                                            HorizontalContentAlignment="Center"
+                                                            VerticalContentAlignment="Center"
+                                                            BorderBrush="{DynamicResource AccentColorBrush}"
+                                                            FocusVisualStyle="{DynamicResource MahApps.Metro.Styles.MetroCircleFocusVisual}"
+                                                            Style="{DynamicResource MahApps.Metro.Styles.MetroCircleButtonStyle}" Margin="0,7,0,0">
+                                                        <iconPacks:PackIconMaterial
+                                                            Kind="Creation"
+                                                            Width="15"
+                                                            Height="15"
+                                                            HorizontalContentAlignment="Center"
+                                                            VerticalContentAlignment="Center"
+                                                            Foreground="{DynamicResource AccentColorBrush}"/>
+                                                        <Button.ToolTip>
+                                                            <Label
+                                                                Content="Build the dnscrypt-proxy blacklist"
+                                                                FontWeight="DemiBold" />
+                                                        </Button.ToolTip>
+                                                    </Button>
+                                                </StackPanel>
+                                            </StackPanel>
+                                            <StackPanel Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="7" Orientation="Horizontal" Margin="0,5,0,0">
+                                                <Label Width="120" VerticalContentAlignment="Center" Foreground="#FF575757" Content="Blacklist Rules:"/>
+                                                <TextBox Text="{Binding DomainBlacklistRuleFilePath}" 
+                                                         Background="#FF8ab329" Opacity="0.4" BorderBrush="#FF575757"
+                                                         Width="560" IsReadOnly="True"
+                                                         VerticalContentAlignment="Center"
+                                                         Margin="0,0,0,0"/>
+                                                <Button x:Name="ChangeBlacklistRulesFilePath" cal:Message.Attach="ChangeBlacklistRulesFilePath"
+                                                            Background="White"
+                                                            Width="30"
+                                                            Height="30"
+                                                            Cursor="Hand"
+                                                            HorizontalContentAlignment="Center"
+                                                            VerticalContentAlignment="Center"
+                                                            BorderBrush="{DynamicResource AccentColorBrush}"
+                                                            FocusVisualStyle="{DynamicResource MahApps.Metro.Styles.MetroCircleFocusVisual}"
+                                                            Style="{DynamicResource MahApps.Metro.Styles.MetroCircleButtonStyle}" Margin="15,0,0,0">
+                                                    <iconPacks:PackIconMaterial
+                                                            Kind="DotsHorizontal"
+                                                            Width="15"
+                                                            Height="15"
+                                                            HorizontalContentAlignment="Center"
+                                                            VerticalContentAlignment="Center"
+                                                            Foreground="{DynamicResource AccentColorBrush}"/>
+                                                    <Button.ToolTip>
+                                                        <Label
+                                                                Content="..."
+                                                                FontWeight="DemiBold" />
+                                                    </Button.ToolTip>
+                                                </Button>
+                                            </StackPanel>
                                         </Grid>
                                     </StackPanel>
                                 </Border>
