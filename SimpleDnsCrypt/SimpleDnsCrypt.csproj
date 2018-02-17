@@ -67,8 +67,8 @@
       <HintPath>..\packages\Costura.Fody.1.6.2\lib\dotnet\Costura.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="DnsCrypt.Blacklist">
-      <HintPath>..\..\DnsCrypt.Toolbox\DnsCrypt.Blacklist\bin\Debug\netstandard2.0\DnsCrypt.Blacklist.dll</HintPath>
+    <Reference Include="DnsCrypt.Blacklist, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DnsCrypt.Blacklist.0.1.0\lib\netstandard2.0\DnsCrypt.Blacklist.dll</HintPath>
     </Reference>
     <Reference Include="Helper, Version=0.1.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\helper-net.0.1.3\lib\net\Helper.dll</HintPath>
