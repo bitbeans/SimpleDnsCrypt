@@ -3,7 +3,8 @@
                           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                           xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
                           xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
-                          Title="Hard work is being done . . ." Foreground="#FF575757">
+                          xmlns:lex="http://wpflocalizeextension.codeplex.com"
+                          Title="{lex:Loc Key=working_dialog_title}" Foreground="#FF575757">
     <Grid HorizontalAlignment="Left" VerticalAlignment="Center">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />

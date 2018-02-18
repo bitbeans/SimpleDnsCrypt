@@ -896,7 +896,7 @@
                                                             Foreground="{DynamicResource AccentColorBrush}"/>
                                                 <Button.ToolTip>
                                                     <Label
-                                                                Content="..."
+                                                                Content="{lex:Loc Key=button_select_path}"
                                                                 FontWeight="DemiBold" />
                                                 </Button.ToolTip>
                                             </Button>
@@ -1133,7 +1133,7 @@
                                                                         HorizontalAlignment="Left"
                                                                         VerticalAlignment="Center" />
                                             <TextBlock Grid.Column="1" Grid.Row="0"
-                                                       Text="Domain Blacklist &amp; Whitelist"
+                                                       Text="{lex:Loc Key=blacklist_header}"
                                                        TextWrapping="Wrap" VerticalAlignment="Top"
                                                        Foreground="#FF8ab329" FontSize="20"
                                                        Opacity="0.7" Margin="5,0,0,0" FontWeight="Bold">
@@ -1141,7 +1141,7 @@
                                             <controls:ToggleSwitchButton HorizontalAlignment="Right" Margin="0,0,70,0" Cursor="Hand"
                                                 IsChecked="{Binding IsBlacklistEnabled}" Grid.Column="2" Grid.Row="0" />
                                             <StackPanel Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Orientation="Horizontal" Margin="0,10,0,0">
-                                                <Label Width="120" VerticalContentAlignment="Center" Foreground="#FF575757" Content="Blacklist:"/>
+                                                <Label Width="120" VerticalContentAlignment="Center" Foreground="#FF575757" Content="{lex:Loc Key=blacklist_path}" Height="30" VerticalAlignment="Top"/>
                                                 <TextBox Text="{Binding DomainBlacklistFile}" Background="#FF8ab329" Opacity="0.4" BorderBrush="#FF575757"
                                                          Width="560" IsReadOnly="True" HorizontalAlignment="Left"
                                                          VerticalContentAlignment="Center"
@@ -1166,7 +1166,7 @@
                                                             Foreground="{DynamicResource AccentColorBrush}"/>
                                                     <Button.ToolTip>
                                                         <Label
-                                                                Content="..."
+                                                                Content="{lex:Loc Key=button_select_path}"
                                                                 FontWeight="DemiBold" />
                                                     </Button.ToolTip>
                                                 </Button>
@@ -1175,13 +1175,13 @@
                                             <StackPanel Orientation="Horizontal" Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="2">
                                                 <Label Foreground="#FF575757" 
                                                        FontSize="16" FontWeight="Bold"
-                                                       Content="Whitelist Rules"
+                                                       Content="{lex:Loc Key=whitelist_rules_header}"
                                                        VerticalAlignment="Center"
                                                        HorizontalAlignment="Left" >
                                                 </Label>
                                                 <Label Foreground="#FF575757" 
                                                        FontSize="12" 
-                                                       Content="(all entries are ignored during blacklist generation)"
+                                                       Content="{lex:Loc Key=whitelist_rules_sub_header}"
                                                        Margin="0,2,0,0"
                                                        VerticalAlignment="Center"
                                                        HorizontalAlignment="Left" >
@@ -1224,7 +1224,7 @@
                                                             Foreground="{DynamicResource AccentColorBrush}" />
                                                         <Button.ToolTip>
                                                             <Label
-                                                                Content="Add a new whitelist rule"
+                                                                Content="{lex:Loc Key=button_whitelist_add}"
                                                                 FontWeight="DemiBold" />
                                                         </Button.ToolTip>
                                                     </Button>
@@ -1247,7 +1247,7 @@
                                                             Foreground="{DynamicResource AccentColorBrush}"/>
                                                         <Button.ToolTip>
                                                             <Label
-                                                                Content="Remove the selected whitelist rule"
+                                                                Content="{lex:Loc Key=button_whitelist_remove}"
                                                                 FontWeight="DemiBold" />
                                                         </Button.ToolTip>
                                                     </Button>
@@ -1270,7 +1270,7 @@
                                                             Foreground="{DynamicResource AccentColorBrush}"/>
                                                         <Button.ToolTip>
                                                             <Label
-                                                                Content="Import a file of whitelist rules"
+                                                                Content="{lex:Loc Key=button_whitelist_import}"
                                                                 FontWeight="DemiBold" />
                                                         </Button.ToolTip>
                                                     </Button>
@@ -1293,14 +1293,14 @@
                                                             Foreground="{DynamicResource AccentColorBrush}"/>
                                                         <Button.ToolTip>
                                                             <Label
-                                                                Content="Export the whitelist rules to a file"
+                                                                Content="{lex:Loc Key=button_whitelist_export}"
                                                                 FontWeight="DemiBold" />
                                                         </Button.ToolTip>
                                                     </Button>
                                                 </StackPanel>
                                             </StackPanel>
                                             <StackPanel Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="4" Orientation="Horizontal" Margin="0,5,0,0">
-                                                <Label Width="120" VerticalContentAlignment="Center" Foreground="#FF575757" Content="Whitelist Rules:"/>
+                                                <Label Width="120" VerticalContentAlignment="Center" Foreground="#FF575757" Content="{lex:Loc Key=whitelist_rules_path}"/>
                                                 <TextBox Text="{Binding DomainWhitelistRuleFilePath}" Background="#FF8ab329" Opacity="0.4" BorderBrush="#FF575757"
                                                          Width="560" IsReadOnly="True"
                                                          VerticalContentAlignment="Center"
@@ -1324,7 +1324,7 @@
                                                             Foreground="{DynamicResource AccentColorBrush}"/>
                                                     <Button.ToolTip>
                                                         <Label
-                                                                Content="..."
+                                                                Content="{lex:Loc Key=button_select_path}"
                                                                 FontWeight="DemiBold" />
                                                     </Button.ToolTip>
                                                 </Button>
@@ -1332,13 +1332,13 @@
                                             <StackPanel Orientation="Horizontal" Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="5">
                                                 <Label Foreground="#FF575757" 
                                                        FontSize="16" FontWeight="Bold"
-                                                       Content="Blacklist Rules"
+                                                       Content="{lex:Loc Key=blacklist_rules_header}"
                                                        VerticalAlignment="Center"
                                                        HorizontalAlignment="Left" >
                                                 </Label>
                                                 <Label Foreground="#FF575757" 
                                                        FontSize="12" 
-                                                       Content="(all entries are merged to a blacklist)"
+                                                       Content="{lex:Loc Key=blacklist_rules_sub_header}"
                                                        Margin="0,2,0,0"
                                                        VerticalAlignment="Center"
                                                        HorizontalAlignment="Left" >
@@ -1380,7 +1380,7 @@
                                                             Foreground="{DynamicResource AccentColorBrush}" />
                                                         <Button.ToolTip>
                                                             <Label
-                                                                Content="Add a new blacklist rule"
+                                                                Content="{lex:Loc Key=button_blacklist_add}"
                                                                 FontWeight="DemiBold" />
                                                         </Button.ToolTip>
                                                     </Button>
@@ -1403,7 +1403,7 @@
                                                             Foreground="{DynamicResource AccentColorBrush}"/>
                                                         <Button.ToolTip>
                                                             <Label
-                                                                Content="Remove the selected blacklist rule"
+                                                                Content="{lex:Loc Key=button_blacklist_remove}"
                                                                 FontWeight="DemiBold" />
                                                         </Button.ToolTip>
                                                     </Button>
@@ -1426,7 +1426,7 @@
                                                             Foreground="{DynamicResource AccentColorBrush}"/>
                                                         <Button.ToolTip>
                                                             <Label
-                                                                Content="Import a file of blacklist rules"
+                                                                Content="{lex:Loc Key=button_blacklist_import}"
                                                                 FontWeight="DemiBold" />
                                                         </Button.ToolTip>
                                                     </Button>
@@ -1449,7 +1449,7 @@
                                                             Foreground="{DynamicResource AccentColorBrush}"/>
                                                         <Button.ToolTip>
                                                             <Label
-                                                                Content="Export the blacklist rules to a file"
+                                                                Content="{lex:Loc Key=button_blacklist_export}"
                                                                 FontWeight="DemiBold" />
                                                         </Button.ToolTip>
                                                     </Button>
@@ -1472,14 +1472,14 @@
                                                             Foreground="{DynamicResource AccentColorBrush}"/>
                                                         <Button.ToolTip>
                                                             <Label
-                                                                Content="Build the dnscrypt-proxy blacklist"
+                                                                Content="{lex:Loc Key=button_blacklist_build}"
                                                                 FontWeight="DemiBold" />
                                                         </Button.ToolTip>
                                                     </Button>
                                                 </StackPanel>
                                             </StackPanel>
                                             <StackPanel Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="7" Orientation="Horizontal" Margin="0,5,0,0">
-                                                <Label Width="120" VerticalContentAlignment="Center" Foreground="#FF575757" Content="Blacklist Rules:"/>
+                                                <Label Width="120" VerticalContentAlignment="Center" Foreground="#FF575757" Content="{lex:Loc Key=blacklist_rules_path}"/>
                                                 <TextBox Text="{Binding DomainBlacklistRuleFilePath}" 
                                                          Background="#FF8ab329" Opacity="0.4" BorderBrush="#FF575757"
                                                          Width="560" IsReadOnly="True"
@@ -1504,7 +1504,7 @@
                                                             Foreground="{DynamicResource AccentColorBrush}"/>
                                                     <Button.ToolTip>
                                                         <Label
-                                                                Content="..."
+                                                                Content="{lex:Loc Key=button_select_path}"
                                                                 FontWeight="DemiBold" />
                                                     </Button.ToolTip>
                                                 </Button>

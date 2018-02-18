@@ -10,6 +10,7 @@ using System.ComponentModel.Composition;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DnsCrypt.Blacklist;
@@ -392,13 +393,14 @@ namespace SimpleDnsCrypt.ViewModels
 			{
 				var dialogSettings = new MetroDialogSettings
 				{
-					AffirmativeButtonText = "Add",
-					NegativeButtonText = "Cancel",
+					AffirmativeButtonText = LocalizationEx.GetUiString("add", Thread.CurrentThread.CurrentCulture),
+					NegativeButtonText = LocalizationEx.GetUiString("cancel", Thread.CurrentThread.CurrentCulture),
 					ColorScheme = MetroDialogColorScheme.Theme
 				};
 
 				var metroWindow = Application.Current.Windows.OfType<MetroWindow>().FirstOrDefault();
-				var dialogResult = await metroWindow.ShowInputAsync("New domain whitelist rule", "Example: *.example.com, ads.*, *sex*, you also can add a list (seperated by: ,)", dialogSettings);
+				var dialogResult = await metroWindow.ShowInputAsync(LocalizationEx.GetUiString("message_title_new_whitelist_rule", Thread.CurrentThread.CurrentCulture),
+					LocalizationEx.GetUiString("message_content_new_whitelist_rule", Thread.CurrentThread.CurrentCulture), dialogSettings);
 
 				if (string.IsNullOrEmpty(dialogResult)) return;
 				dialogResult = dialogResult.Replace(" ", "");
@@ -474,14 +476,14 @@ namespace SimpleDnsCrypt.ViewModels
 			{
 				var dialogSettings = new MetroDialogSettings
 				{
-					AffirmativeButtonText = "Add",
-					NegativeButtonText = "Cancel",
+					AffirmativeButtonText = LocalizationEx.GetUiString("add", Thread.CurrentThread.CurrentCulture),
+					NegativeButtonText = LocalizationEx.GetUiString("cancel", Thread.CurrentThread.CurrentCulture),
 					ColorScheme = MetroDialogColorScheme.Theme
 				};
 
 				var metroWindow = Application.Current.Windows.OfType<MetroWindow>().FirstOrDefault();
-				var dialogResult = await metroWindow.ShowInputAsync("New domain blacklist rule", "Example: *.example.com, ads.*, *sex*, you also can add a list (seperated by: ,) " +
-				                                                                                 "or a file starting with: file:custom-rules.txt or a remote url starting with http:// or https://", dialogSettings);
+				var dialogResult = await metroWindow.ShowInputAsync(LocalizationEx.GetUiString("message_title_new_blacklist_rule", Thread.CurrentThread.CurrentCulture),
+					LocalizationEx.GetUiString("message_content_new_blacklist_rule", Thread.CurrentThread.CurrentCulture), dialogSettings);
 				if (string.IsNullOrEmpty(dialogResult)) return;
 				dialogResult = dialogResult.Replace(" ", "");
 				var list = dialogResult.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
