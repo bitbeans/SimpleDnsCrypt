@@ -158,12 +158,12 @@ namespace SimpleDnsCrypt.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string DomainBlacklist {
+        public string DomainBlacklistFile {
             get {
-                return ((string)(this["DomainBlacklist"]));
+                return ((string)(this["DomainBlacklistFile"]));
             }
             set {
-                this["DomainBlacklist"] = value;
+                this["DomainBlacklistFile"] = value;
             }
         }
         

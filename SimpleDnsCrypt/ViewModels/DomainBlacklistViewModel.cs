@@ -1,5 +1,4 @@
 ﻿using Caliburn.Micro;
-using DnsCrypt.Blacklist;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
 using SimpleDnsCrypt.Config;
@@ -13,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DnsCrypt.Blacklist;
 using Application = System.Windows.Application;
 using OpenFileDialog = Microsoft.Win32.OpenFileDialog;
 using Screen = Caliburn.Micro.Screen;
@@ -31,13 +31,13 @@ namespace SimpleDnsCrypt.ViewModels
 		private readonly IWindowManager _windowManager;
 	    private readonly IEventAggregator _events;
 
-		private BindableCollection<string> _domainBlacklist;
-		private BindableCollection<string> _domainWhitelist;
+		private BindableCollection<string> _domainBlacklistRules;
+		private BindableCollection<string> _domainWhitelistRules;
 		
 		private string _selectedDomainBlacklistEntry;
 		private string _selectedDomainWhitelistEntry;
 		private string _domainWhitelistRuleFilePath;
-		private string _domainBlacklistRuleRuleFilePath;
+		private string _domainBlacklistRuleFilePath;
 		private bool _isBlacklistEnabled;
 		private string _domainBlacklistFile;
 
@@ -53,18 +53,18 @@ namespace SimpleDnsCrypt.ViewModels
 		    _windowManager = windowManager;
 		    _events = events;
 		    _events.Subscribe(this);
-		    _domainBlacklist = new BindableCollection<string>();
-		    _domainWhitelist = new BindableCollection<string>();
+		    _domainBlacklistRules = new BindableCollection<string>();
+		    _domainWhitelistRules = new BindableCollection<string>();
 
-		    if (!string.IsNullOrEmpty(Properties.Settings.Default.DomainBlacklist))
+		    if (!string.IsNullOrEmpty(Properties.Settings.Default.DomainBlacklistFile))
 		    {
-				_domainBlacklistFile = Properties.Settings.Default.DomainBlacklist;
+				_domainBlacklistFile = Properties.Settings.Default.DomainBlacklistFile;
 			}
 			else
 		    {
 				//set default
 				_domainBlacklistFile = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, BlacklistFileName);
-				Properties.Settings.Default.DomainBlacklist = _domainBlacklistFile;
+				Properties.Settings.Default.DomainBlacklistFile = _domainBlacklistFile;
 				Properties.Settings.Default.Save();
 			}
 
@@ -86,7 +86,7 @@ namespace SimpleDnsCrypt.ViewModels
 
 		    if (!string.IsNullOrEmpty(Properties.Settings.Default.DomainBlacklistRules))
 		    {
-			    _domainBlacklistRuleRuleFilePath = Properties.Settings.Default.DomainBlacklistRules;
+			    _domainBlacklistRuleFilePath = Properties.Settings.Default.DomainBlacklistRules;
 			    Task.Run(async () =>
 			    {
 				    await ReadBlacklistRulesFromFile();
@@ -95,8 +95,8 @@ namespace SimpleDnsCrypt.ViewModels
 		    else
 		    {
 				//set default
-			    _domainBlacklistRuleRuleFilePath = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, BlacklistRuleFileName);
-			    Properties.Settings.Default.DomainBlacklistRules = _domainBlacklistRuleRuleFilePath;
+			    _domainBlacklistRuleFilePath = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, BlacklistRuleFileName);
+			    Properties.Settings.Default.DomainBlacklistRules = _domainBlacklistRuleFilePath;
 			    Properties.Settings.Default.Save();
 		    }
 		}
@@ -108,7 +108,7 @@ namespace SimpleDnsCrypt.ViewModels
 			{
 				if (value.Equals(_domainBlacklistFile)) return;
 				_domainBlacklistFile = value;
-				Properties.Settings.Default.DomainBlacklist = _domainBlacklistFile;
+				Properties.Settings.Default.DomainBlacklistFile = _domainBlacklistFile;
 				Properties.Settings.Default.Save();
 				NotifyOfPropertyChange(() => DomainBlacklistFile);
 			}
@@ -247,14 +247,14 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 		}
 
-		public BindableCollection<string> DomainWhitelist
+		public BindableCollection<string> DomainWhitelistRules
 		{
-			get => _domainWhitelist;
+			get => _domainWhitelistRules;
 			set
 			{
-				if (value.Equals(_domainWhitelist)) return;
-				_domainWhitelist = value;
-				NotifyOfPropertyChange(() => DomainWhitelist);
+				if (value.Equals(_domainWhitelistRules)) return;
+				_domainWhitelistRules = value;
+				NotifyOfPropertyChange(() => DomainWhitelistRules);
 			}
 		}
 
@@ -284,12 +284,12 @@ namespace SimpleDnsCrypt.ViewModels
 				var result = openWhitelistFileDialog.ShowDialog();
 				if (result == null) return;
 				if (!result.Value) return;
-				var whitelistLines = await AddressBlacklist.ReadAllLinesAsync(openWhitelistFileDialog.FileName);
-				var parsed = AddressBlacklist.ParseBlacklist(whitelistLines, true);
+				var whitelistLines = await DomainBlacklist.ReadAllLinesAsync(openWhitelistFileDialog.FileName);
+				var parsed = DomainBlacklist.ParseBlacklist(whitelistLines, true);
 				var enumerable = parsed as string[] ?? parsed.ToArray();
 				if (!enumerable.Any()) return;
-				DomainWhitelist.Clear();
-				DomainWhitelist = new BindableCollection<string>(enumerable);
+				DomainWhitelistRules.Clear();
+				DomainWhitelistRules = new BindableCollection<string>(enumerable);
 				SaveWhitelistRulesToFile();
 			}
 			catch (Exception exception)
@@ -310,7 +310,7 @@ namespace SimpleDnsCrypt.ViewModels
 				};
 				var result = saveWhitelistFileDialog.ShowDialog();
 				if (result != DialogResult.OK) return;
-				File.WriteAllLines(saveWhitelistFileDialog.FileName, _domainWhitelist);
+				File.WriteAllLines(saveWhitelistFileDialog.FileName, _domainWhitelistRules);
 			}
 			catch (Exception exception)
 			{
@@ -347,9 +347,9 @@ namespace SimpleDnsCrypt.ViewModels
 			try
 			{
 				if (string.IsNullOrEmpty(_domainWhitelistRuleFilePath)) return;
-				var whitelist = await AddressBlacklist.ReadAllLinesAsync(_domainWhitelistRuleFilePath);
-				DomainWhitelist.Clear();
-				DomainWhitelist = new BindableCollection<string>(whitelist);
+				var whitelist = await DomainBlacklist.ReadAllLinesAsync(_domainWhitelistRuleFilePath);
+				DomainWhitelistRules.Clear();
+				DomainWhitelistRules = new BindableCollection<string>(whitelist);
 			}
 			catch (Exception exception)
 			{
@@ -363,7 +363,7 @@ namespace SimpleDnsCrypt.ViewModels
 			{
 				if (!string.IsNullOrEmpty(_domainWhitelistRuleFilePath))
 				{
-					File.WriteAllLines(_domainWhitelistRuleFilePath, _domainWhitelist, Encoding.UTF8);
+					File.WriteAllLines(_domainWhitelistRuleFilePath, _domainWhitelistRules, Encoding.UTF8);
 				}
 			}
 			catch (Exception exception)
@@ -377,7 +377,7 @@ namespace SimpleDnsCrypt.ViewModels
 			try
 			{
 				if (string.IsNullOrEmpty(_selectedDomainWhitelistEntry)) return;
-				DomainWhitelist.Remove(_selectedDomainWhitelistEntry);
+				DomainWhitelistRules.Remove(_selectedDomainWhitelistEntry);
 				SaveWhitelistRulesToFile();
 			}
 			catch (Exception exception)
@@ -403,10 +403,10 @@ namespace SimpleDnsCrypt.ViewModels
 				if (string.IsNullOrEmpty(dialogResult)) return;
 				dialogResult = dialogResult.Replace(" ", "");
 				var list = dialogResult.Split(new []{','}, StringSplitOptions.RemoveEmptyEntries);
-				var parsed = AddressBlacklist.ParseBlacklist(list, true);
+				var parsed = DomainBlacklist.ParseBlacklist(list, true);
 				var enumerable = parsed as string[] ?? parsed.ToArray();
 				if (enumerable.Length <= 0) return;
-				DomainWhitelist.AddRange(enumerable);
+				DomainWhitelistRules.AddRange(enumerable);
 				SaveWhitelistRulesToFile();
 			}
 			catch (Exception exception)
@@ -431,7 +431,7 @@ namespace SimpleDnsCrypt.ViewModels
 				var dialog = new Controls.BaseMetroDialog();
 				await metroWindow.ShowMetroDialogAsync(dialog, dialogSettings);
 
-				var blacklistRules = _domainBlacklist;
+				var blacklistRules = _domainBlacklistRules;
 				var blacklistSource = new List<string>();
 				var blacklistLocalRules = new List<string>();
 				foreach (var blacklistRule in blacklistRules)
@@ -451,7 +451,7 @@ namespace SimpleDnsCrypt.ViewModels
 				File.WriteAllLines(tmpFile, blacklistLocalRules);
 				blacklistSource.Add($"file:{tmpFile}");
 
-				var rules = await AddressBlacklist.Build(blacklistSource, new List<string>(_domainWhitelist));
+				var rules = await DomainBlacklist.Build(blacklistSource, new List<string>(_domainWhitelistRules));
 				if (rules != null)
 				{
 					File.WriteAllLines(_domainBlacklistFile, rules);  
@@ -499,14 +499,14 @@ namespace SimpleDnsCrypt.ViewModels
 						local.Add(l);
 					}
 				}
-				var parsed = AddressBlacklist.ParseBlacklist(local, true);
+				var parsed = DomainBlacklist.ParseBlacklist(local, true);
 				var enumerable = parsed as string[] ?? parsed.ToArray();
 				if (enumerable.Length > 0)
 				{
-					DomainBlacklist.AddRange(enumerable);
+					DomainBlacklistRules.AddRange(enumerable);
 				}
 				
-				DomainBlacklist.AddRange(remote);
+				DomainBlacklistRules.AddRange(remote);
 				SaveBlacklistRulesToFile();
 			}
 			catch (Exception exception)
@@ -520,7 +520,7 @@ namespace SimpleDnsCrypt.ViewModels
 			try
 			{
 				if (string.IsNullOrEmpty(_selectedDomainBlacklistEntry)) return;
-				DomainBlacklist.Remove(_selectedDomainBlacklistEntry);
+				DomainBlacklistRules.Remove(_selectedDomainBlacklistEntry);
 				SaveBlacklistRulesToFile();
 			}
 			catch (Exception exception)
@@ -541,12 +541,12 @@ namespace SimpleDnsCrypt.ViewModels
 				var result = openBlacklistFileDialog.ShowDialog();
 				if (result == null) return;
 				if (!result.Value) return;
-				var blacklistLines = await AddressBlacklist.ReadAllLinesAsync(openBlacklistFileDialog.FileName);
-				var parsed = AddressBlacklist.ParseBlacklist(blacklistLines, true);
+				var blacklistLines = await DomainBlacklist.ReadAllLinesAsync(openBlacklistFileDialog.FileName);
+				var parsed = DomainBlacklist.ParseBlacklist(blacklistLines, true);
 				var enumerable = parsed as string[] ?? parsed.ToArray();
 				if (!enumerable.Any()) return;
-				DomainBlacklist.Clear();
-				DomainBlacklist = new BindableCollection<string>(enumerable);
+				DomainBlacklistRules.Clear();
+				DomainBlacklistRules = new BindableCollection<string>(enumerable);
 				SaveBlacklistRulesToFile();
 			}
 			catch (Exception exception)
@@ -567,7 +567,7 @@ namespace SimpleDnsCrypt.ViewModels
 				};
 				var result = saveBlacklistFileDialog.ShowDialog();
 				if (result != DialogResult.OK) return;
-				File.WriteAllLines(saveBlacklistFileDialog.FileName, _domainBlacklist);
+				File.WriteAllLines(saveBlacklistFileDialog.FileName, _domainBlacklistRules);
 			}
 			catch (Exception exception)
 			{
@@ -585,25 +585,25 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 		}
 
-		public BindableCollection<string> DomainBlacklist
+		public BindableCollection<string> DomainBlacklistRules
 		{
-			get => _domainBlacklist;
+			get => _domainBlacklistRules;
 			set
 			{
-				if (value.Equals(_domainBlacklist)) return;
-				_domainBlacklist = value;
-				NotifyOfPropertyChange(() => DomainBlacklist);
+				if (value.Equals(_domainBlacklistRules)) return;
+				_domainBlacklistRules = value;
+				NotifyOfPropertyChange(() => DomainBlacklistRules);
 			}
 		}
 
 		public string DomainBlacklistRuleFilePath
 		{
-			get => _domainBlacklistRuleRuleFilePath;
+			get => _domainBlacklistRuleFilePath;
 			set
 			{
-				if (value.Equals(_domainBlacklistRuleRuleFilePath)) return;
-				_domainBlacklistRuleRuleFilePath = value;
-				Properties.Settings.Default.DomainBlacklistRules = _domainBlacklistRuleRuleFilePath;
+				if (value.Equals(_domainBlacklistRuleFilePath)) return;
+				_domainBlacklistRuleFilePath = value;
+				Properties.Settings.Default.DomainBlacklistFile = _domainBlacklistRuleFilePath;
 				Properties.Settings.Default.Save();
 				SaveBlacklistRulesToFile();
 				NotifyOfPropertyChange(() => DomainBlacklistRuleFilePath);
@@ -614,9 +614,9 @@ namespace SimpleDnsCrypt.ViewModels
 		{
 			try
 			{
-				if (!string.IsNullOrEmpty(_domainBlacklistRuleRuleFilePath))
+				if (!string.IsNullOrEmpty(_domainBlacklistRuleFilePath))
 				{
-					File.WriteAllLines(_domainBlacklistRuleRuleFilePath, _domainBlacklist, Encoding.UTF8);
+					File.WriteAllLines(_domainBlacklistRuleFilePath, _domainBlacklistRules, Encoding.UTF8);
 				}
 			}
 			catch (Exception exception)
@@ -629,10 +629,10 @@ namespace SimpleDnsCrypt.ViewModels
 		{
 			try
 			{
-				if (string.IsNullOrEmpty(_domainBlacklistRuleRuleFilePath)) return;
-				var blacklist = await AddressBlacklist.ReadAllLinesAsync(_domainBlacklistRuleRuleFilePath);
-				DomainBlacklist.Clear();
-				DomainBlacklist = new BindableCollection<string>(blacklist);
+				if (string.IsNullOrEmpty(_domainBlacklistRuleFilePath)) return;
+				var blacklist = await DomainBlacklist.ReadAllLinesAsync(_domainBlacklistRuleFilePath);
+				DomainBlacklistRules.Clear();
+				DomainBlacklistRules = new BindableCollection<string>(blacklist);
 			}
 			catch (Exception exception)
 			{
@@ -648,9 +648,9 @@ namespace SimpleDnsCrypt.ViewModels
 				{
 					ShowNewFolderButton = true
 				};
-				if (!string.IsNullOrEmpty(_domainBlacklistRuleRuleFilePath))
+				if (!string.IsNullOrEmpty(_domainBlacklistRuleFilePath))
 				{
-					blacklistFolderDialog.SelectedPath = Path.GetDirectoryName(_domainBlacklistRuleRuleFilePath);
+					blacklistFolderDialog.SelectedPath = Path.GetDirectoryName(_domainBlacklistRuleFilePath);
 				}
 				var result = blacklistFolderDialog.ShowDialog();
 				if (result == DialogResult.OK)

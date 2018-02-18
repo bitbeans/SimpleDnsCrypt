@@ -1194,7 +1194,7 @@
                                                           ScrollViewer.CanContentScroll="True"
                                                           Height="210" Width="680" 
                                                           SelectedItem="{Binding Path=SelectedDomainWhitelistEntry}"
-                                                          ItemsSource="{Binding Path=DomainWhitelist}">
+                                                          ItemsSource="{Binding Path=DomainWhitelistRules}">
                                                     <ListView.ItemTemplate>
                                                         <DataTemplate>
                                                             <Label Content="{Binding}" 
@@ -1351,7 +1351,7 @@
                                                           ScrollViewer.CanContentScroll="True"
                                                           Height="210" Width="680" 
                                                           SelectedItem="{Binding Path=SelectedDomainBlacklistEntry}"
-                                                          ItemsSource="{Binding Path=DomainBlacklist}">
+                                                          ItemsSource="{Binding Path=DomainBlacklistRules}">
                                                     <ListView.ItemTemplate>
                                                         <DataTemplate>
                                                             <Label Content="{Binding}" 

@@ -35,7 +35,7 @@
     <Setting Name="DomainBlacklistRules" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="DomainBlacklist" Type="System.String" Scope="User">
+    <Setting Name="DomainBlacklistFile" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="QueryLogFile" Type="System.String" Scope="User">
