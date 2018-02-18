@@ -502,6 +502,6 @@
     <value>Blacklist:</value>
   </data>
   <data name="blacklist_header" xml:space="preserve">
-    <value>Domain Blacklist und Whitelist</value>
+    <value>Domain Blacklist and Whitelist</value>
   </data>
 </root>
