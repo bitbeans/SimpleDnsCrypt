@@ -426,4 +426,76 @@
   <data name="advanced_settings_forcetcp_content" xml:space="preserve">
     <value>Immer TCP verwenden, um eine Verbindung zum Upstream-Servern herzustellen</value>
   </data>
+  <data name="add" xml:space="preserve">
+    <value>Hinzufügen</value>
+  </data>
+  <data name="message_title_new_whitelist_rule" xml:space="preserve">
+    <value>Neue Whitelisten Regel hinzufügen</value>
+  </data>
+  <data name="message_content_new_whitelist_rule" xml:space="preserve">
+    <value>Beispiel: *.example.com, ads.*, *sex*, es ist ebenfalls möglich eine durch Komma getrennte Liste hinzuzufügen</value>
+  </data>
+  <data name="message_title_new_blacklist_rule" xml:space="preserve">
+    <value>Neue Blacklisten Regel hinzufügen</value>
+  </data>
+  <data name="message_content_new_blacklist_rule" xml:space="preserve">
+    <value>Beispiel: *.example.com, ads.*, *sex*, es ist ebenfalls möglich eine durch Komma getrennte Liste hinzuzufügen, eine Datei beginnend mit file:my-custom-rules.txt oder eine URL beginnend mit http:// oder https://.</value>
+  </data>
+  <data name="working_dialog_title" xml:space="preserve">
+    <value>Harte Arbeit wird vollbracht . . .</value>
+  </data>
+  <data name="button_select_path" xml:space="preserve">
+    <value>Pfad wählen</value>
+  </data>
+  <data name="button_blacklist_build" xml:space="preserve">
+    <value>dnscrypt-proxy Blackliste bauen</value>
+  </data>
+  <data name="button_blacklist_import" xml:space="preserve">
+    <value>Existierende Blacklisten Regeln importieren</value>
+  </data>
+  <data name="button_blacklist_export" xml:space="preserve">
+    <value>Blacklisten Regeln exportieren</value>
+  </data>
+  <data name="button_blacklist_remove" xml:space="preserve">
+    <value>Ausgewählte Blacklisten Regel entfernen</value>
+  </data>
+  <data name="button_blacklist_add" xml:space="preserve">
+    <value>Neue Blacklisten Regel hinzufügen</value>
+  </data>
+  <data name="button_whitelist_import" xml:space="preserve">
+    <value>Existierende Whitelisten Regeln importieren</value>
+  </data>
+  <data name="button_whitelist_export" xml:space="preserve">
+    <value>Whitelisten Regeln exportieren</value>
+  </data>
+  <data name="button_whitelist_remove" xml:space="preserve">
+    <value>Ausgewählte Whitelisten Regel entfernen</value>
+  </data>
+  <data name="button_whitelist_add" xml:space="preserve">
+    <value>Neue Whitelisten Regel hinzufügen</value>
+  </data>
+  <data name="whitelist_rules_header" xml:space="preserve">
+    <value>Whitelisten Regeln</value>
+  </data>
+  <data name="whitelist_rules_sub_header" xml:space="preserve">
+    <value>(alle Einträge werden während der Blacklisten Generierung ignoriert)</value>
+  </data>
+  <data name="whitelist_rules_path" xml:space="preserve">
+    <value>Whitelisten Regeln:</value>
+  </data>
+  <data name="blacklist_rules_header" xml:space="preserve">
+    <value>Blacklisten Regeln</value>
+  </data>
+  <data name="blacklist_rules_sub_header" xml:space="preserve">
+    <value>(alle Einträge werden zu einer Blackliste zusammengeführt)</value>
+  </data>
+  <data name="blacklist_rules_path" xml:space="preserve">
+    <value>Blacklisten Regeln:</value>
+  </data>
+  <data name="blacklist_path" xml:space="preserve">
+    <value>Blackliste:</value>
+  </data>
+  <data name="blacklist_header" xml:space="preserve">
+    <value>Domain Blackliste und Whiteliste</value>
+  </data>
 </root>
