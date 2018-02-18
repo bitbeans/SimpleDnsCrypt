@@ -1,11 +1,11 @@
 update:
-  version: 0.4.8
+  version: 0.4.9
   type: 2
-  release: 2018-02-12
+  release: 2018-02-18
   publickey: RWTSM+4BNNvkZPNkHgE88ETlhWa+0HDzU5CN8TvbyvmhVUcr6aQXfssV
   installer:
-    uri: https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.4.8/SimpleDNSCrypt64.msi
+    uri: https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.4.9/SimpleDNSCrypt64.msi
     name: SimpleDNSCrypt64.msi
   signature:
-    uri: https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.4.8/SimpleDNSCrypt64.msi.minisig
+    uri: https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.4.9/SimpleDNSCrypt64.msi.minisig
   
