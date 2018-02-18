@@ -3,6 +3,6 @@
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
                       ShowTitleBar="False" ShowCloseButton="False" ShowMinButton="False" ShowInTaskbar="False" TitleForeground="White"
-                      ShowMaxRestoreButton="False" WindowStyle="None" Topmost="True" ResizeMode="NoResize" IsTabStop="False" WindowStartupLocation="CenterScreen">
+                      ShowMaxRestoreButton="False" UseNoneWindowStyle="True" WindowStyle="None" Topmost="True" ResizeMode="NoResize" IsTabStop="False" WindowStartupLocation="CenterScreen">
     <Grid/>
 </controls:MetroWindow>
