@@ -68,6 +68,14 @@
 	    /// </summary>
 	    public const int ServiceInstallTime = 3000;
 
+	    public const string DomainBlockLogFileName = "blocked.log";
+	    public const string QueryLogFileName = "query.log";
+
+	    public const string WhitelistRuleFileName = "domain-whitelist.txt";
+	    public const string BlacklistRuleFileName = "domain-blacklist.txt";
+	    public const string BlacklistFileName = "blacklist.txt";
+
+
 		/// <summary>
 		///     List of files must exist.
 		/// </summary>

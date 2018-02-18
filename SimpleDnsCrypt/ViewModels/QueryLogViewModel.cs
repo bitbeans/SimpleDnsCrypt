@@ -19,7 +19,6 @@ namespace SimpleDnsCrypt.ViewModels
 		private static readonly ILog Log = LogManagerHelper.Factory();
 		private readonly IWindowManager _windowManager;
 		private readonly IEventAggregator _events;
-		private const string DefaultLogFileName = "query.log";
 
 		private ObservableCollection<QueryLogLine> _queryLogLines;
 		private string _queryLogFile;
@@ -42,7 +41,7 @@ namespace SimpleDnsCrypt.ViewModels
 			else
 			{
 				//set default
-				_queryLogFile = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, DefaultLogFileName);
+				_queryLogFile = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, Global.QueryLogFileName);
 				Properties.Settings.Default.QueryLogFile = _queryLogFile;
 				Properties.Settings.Default.Save();
 			}
@@ -126,7 +125,7 @@ namespace SimpleDnsCrypt.ViewModels
 				var result = queryLogFolderDialog.ShowDialog();
 				if (result == DialogResult.OK)
 				{
-					QueryLogFile = Path.Combine(queryLogFolderDialog.SelectedPath, DefaultLogFileName);
+					QueryLogFile = Path.Combine(queryLogFolderDialog.SelectedPath, Global.QueryLogFileName);
 				}
 			}
 			catch (Exception exception)
@@ -173,6 +172,7 @@ namespace SimpleDnsCrypt.ViewModels
 					{
 						DnscryptProxyConfigurationManager.DnscryptProxyConfiguration = dnscryptProxyConfiguration;
 						if (DnscryptProxyConfigurationManager.SaveConfiguration())
+						{
 							if (DnsCryptProxyManager.IsDnsCryptProxyInstalled())
 							{
 								if (DnsCryptProxyManager.IsDnsCryptProxyRunning())
@@ -196,6 +196,7 @@ namespace SimpleDnsCrypt.ViewModels
 									await Task.Delay(Global.ServiceStartTime).ConfigureAwait(false);
 								}
 							}
+						}
 					}
 
 					if (!string.IsNullOrEmpty(_queryLogFile))

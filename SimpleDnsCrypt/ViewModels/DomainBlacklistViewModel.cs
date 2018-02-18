@@ -24,10 +24,6 @@ namespace SimpleDnsCrypt.ViewModels
 	[Export(typeof(DomainBlacklistViewModel))]
 	public class DomainBlacklistViewModel : Screen
 	{
-		private const string WhitelistRuleFileName = "domain-whitelist.txt";
-		private const string BlacklistRuleFileName = "domain-blacklist.txt";
-		private const string BlacklistFileName = "blacklist.txt";
-
 		private static readonly ILog Log = LogManagerHelper.Factory();
 		private readonly IWindowManager _windowManager;
 	    private readonly IEventAggregator _events;
@@ -64,7 +60,7 @@ namespace SimpleDnsCrypt.ViewModels
 			else
 		    {
 				//set default
-				_domainBlacklistFile = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, BlacklistFileName);
+				_domainBlacklistFile = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, Global.BlacklistFileName);
 				Properties.Settings.Default.DomainBlacklistFile = _domainBlacklistFile;
 				Properties.Settings.Default.Save();
 			}
@@ -80,7 +76,7 @@ namespace SimpleDnsCrypt.ViewModels
 		    else
 		    {
 				//set default
-				_domainWhitelistRuleFilePath = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, WhitelistRuleFileName);
+				_domainWhitelistRuleFilePath = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, Global.WhitelistRuleFileName);
 			    Properties.Settings.Default.DomainWhitelistRules = _domainWhitelistRuleFilePath;
 			    Properties.Settings.Default.Save();
 			}
@@ -96,7 +92,7 @@ namespace SimpleDnsCrypt.ViewModels
 		    else
 		    {
 				//set default
-			    _domainBlacklistRuleFilePath = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, BlacklistRuleFileName);
+			    _domainBlacklistRuleFilePath = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, Global.BlacklistRuleFileName);
 			    Properties.Settings.Default.DomainBlacklistRules = _domainBlacklistRuleFilePath;
 			    Properties.Settings.Default.Save();
 		    }
@@ -138,11 +134,10 @@ namespace SimpleDnsCrypt.ViewModels
 					var saveAndRestartService = false;
 					if (dnscryptProxyConfiguration.blacklist == null)
 					{
-						dnscryptProxyConfiguration.blacklist = new Blacklist()
+						dnscryptProxyConfiguration.blacklist = new Blacklist
 						{
 							blacklist_file = _domainBlacklistFile,
-							log_format = defaultLogFormat,
-							log_file = "blocked.log"
+							log_format = defaultLogFormat
 						};
 						saveAndRestartService = true;
 					}
@@ -227,7 +222,7 @@ namespace SimpleDnsCrypt.ViewModels
 				var result = blacklistFolderDialog.ShowDialog();
 				if (result == DialogResult.OK)
 				{
-					DomainBlacklistFile = Path.Combine(blacklistFolderDialog.SelectedPath, BlacklistFileName);
+					DomainBlacklistFile = Path.Combine(blacklistFolderDialog.SelectedPath, Global.BlacklistFileName);
 				}
 			}
 			catch (Exception exception)
@@ -334,7 +329,7 @@ namespace SimpleDnsCrypt.ViewModels
 				var result = whitelistFolderDialog.ShowDialog();
 				if (result == DialogResult.OK)
 				{
-					DomainWhitelistRuleFilePath = Path.Combine(whitelistFolderDialog.SelectedPath, WhitelistRuleFileName);
+					DomainWhitelistRuleFilePath = Path.Combine(whitelistFolderDialog.SelectedPath, Global.WhitelistRuleFileName);
 				}
 			}
 			catch (Exception exception)
@@ -657,7 +652,7 @@ namespace SimpleDnsCrypt.ViewModels
 				var result = blacklistFolderDialog.ShowDialog();
 				if (result == DialogResult.OK)
 				{
-					DomainBlacklistRuleFilePath = Path.Combine(blacklistFolderDialog.SelectedPath, BlacklistRuleFileName);
+					DomainBlacklistRuleFilePath = Path.Combine(blacklistFolderDialog.SelectedPath, Global.BlacklistRuleFileName);
 				}
 			}
 			catch (Exception exception)

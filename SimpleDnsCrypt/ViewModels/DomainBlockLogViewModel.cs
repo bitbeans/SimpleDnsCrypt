@@ -14,6 +14,7 @@ namespace SimpleDnsCrypt.ViewModels
 	[Export(typeof(DomainBlockLogViewModel))]
 	public class DomainBlockLogViewModel : Screen
 	{
+		private static readonly ILog Log = LogManagerHelper.Factory();
 		private readonly IWindowManager _windowManager;
 		private readonly IEventAggregator _events;
 
@@ -90,7 +91,6 @@ namespace SimpleDnsCrypt.ViewModels
 
 		private async void DomainBlockLog(DnscryptProxyConfiguration dnscryptProxyConfiguration)
 		{
-			const string defaultLogFileName = "blocked.log";
 			const string defaultLogFormat = "ltsv";
 			try
 			{
@@ -103,7 +103,7 @@ namespace SimpleDnsCrypt.ViewModels
 					{
 						dnscryptProxyConfiguration.blacklist = new Blacklist
 						{
-							blacklist_file = defaultLogFileName,
+							log_file = Global.DomainBlockLogFileName,
 							log_format = defaultLogFormat
 						};
 						saveAndRestartService = true;
@@ -116,10 +116,10 @@ namespace SimpleDnsCrypt.ViewModels
 						saveAndRestartService = true;
 					}
 
-					if (string.IsNullOrEmpty(dnscryptProxyConfiguration.blacklist.blacklist_file) ||
-						!dnscryptProxyConfiguration.blacklist.blacklist_file.Equals(defaultLogFileName))
+					if (string.IsNullOrEmpty(dnscryptProxyConfiguration.blacklist.log_file) ||
+						!dnscryptProxyConfiguration.blacklist.log_file.Equals(Global.DomainBlockLogFileName))
 					{
-						dnscryptProxyConfiguration.blacklist.blacklist_file = defaultLogFileName;
+						dnscryptProxyConfiguration.blacklist.log_file = Global.DomainBlockLogFileName;
 						saveAndRestartService = true;
 					}
 
@@ -127,6 +127,7 @@ namespace SimpleDnsCrypt.ViewModels
 					{
 						DnscryptProxyConfigurationManager.DnscryptProxyConfiguration = dnscryptProxyConfiguration;
 						if (DnscryptProxyConfigurationManager.SaveConfiguration())
+						{
 							if (DnsCryptProxyManager.IsDnsCryptProxyInstalled())
 							{
 								if (DnsCryptProxyManager.IsDnsCryptProxyRunning())
@@ -142,14 +143,19 @@ namespace SimpleDnsCrypt.ViewModels
 							}
 							else
 							{
-								DnsCryptProxyManager.Install();
-								DnsCryptProxyManager.Start();
-								await Task.Delay(Global.ServiceStartTime).ConfigureAwait(false);
+								await Task.Run(() => DnsCryptProxyManager.Install()).ConfigureAwait(false);
+								await Task.Delay(Global.ServiceInstallTime).ConfigureAwait(false);
+								if (DnsCryptProxyManager.IsDnsCryptProxyInstalled())
+								{
+									DnsCryptProxyManager.Start();
+									await Task.Delay(Global.ServiceStartTime).ConfigureAwait(false);
+								}
 							}
+						}
 					}
 
 					DomainBlockLogFile = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder,
-						dnscryptProxyConfiguration.blacklist.blacklist_file);
+						dnscryptProxyConfiguration.blacklist.log_file);
 
 					if (!string.IsNullOrEmpty(_domainBlockLogFile))
 						if (File.Exists(_domainBlockLogFile))
@@ -191,11 +197,26 @@ namespace SimpleDnsCrypt.ViewModels
 				}
 				else
 				{
+					//disable block log again
+					_isDomainBlockLogLogging = false;
+					if (DnsCryptProxyManager.IsDnsCryptProxyRunning())
+					{
+						if (dnscryptProxyConfiguration.blacklist?.log_file != null)
+						{
+							DnscryptProxyConfigurationManager.DnscryptProxyConfiguration = dnscryptProxyConfiguration;
+							if (DnscryptProxyConfigurationManager.SaveConfiguration())
+							{
+								DnsCryptProxyManager.Restart();
+								await Task.Delay(Global.ServiceRestartTime).ConfigureAwait(false);
+							}
+						}
+					}
 					Execute.OnUIThread(() => { DomainBlockLogLines.Clear(); });
 				}
 			}
-			catch (Exception)
+			catch (Exception exception)
 			{
+				Log.Error(exception);
 			}
 		}
 	}

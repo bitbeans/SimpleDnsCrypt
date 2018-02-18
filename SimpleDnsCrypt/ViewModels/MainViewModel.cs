@@ -115,6 +115,16 @@ namespace SimpleDnsCrypt.ViewModels
 			{
 				QueryLogViewModel.IsQueryLogLogging = true;
 			}
+
+			if (!string.IsNullOrEmpty(DnscryptProxyConfiguration?.blacklist?.log_file))
+			{
+				DomainBlockLogViewModel.IsDomainBlockLogLogging = true;
+			}
+
+			if (!string.IsNullOrEmpty(DnscryptProxyConfiguration?.blacklist?.blacklist_file))
+			{
+				DomainBlacklistViewModel.IsBlacklistEnabled = true;
+			}
 		}
 
 		public bool IsDnsCryptAutomaticModeEnabled
@@ -392,7 +402,6 @@ namespace SimpleDnsCrypt.ViewModels
 				DnscryptProxyConfigurationManager.DnscryptProxyConfiguration = _dnscryptProxyConfiguration;
 				if (DnscryptProxyConfigurationManager.SaveConfiguration())
 				{
-					//DnscryptProxyConfigurationManager.LoadConfiguration();
 					_dnscryptProxyConfiguration = DnscryptProxyConfigurationManager.DnscryptProxyConfiguration;
 					IsWorkingOnService = true;
 					if (DnsCryptProxyManager.IsDnsCryptProxyInstalled())

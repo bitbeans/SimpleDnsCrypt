@@ -175,7 +175,6 @@
     <Compile Include="LogMode.cs" />
     <Compile Include="Models\AddressBlockLogLine.cs" />
     <Compile Include="Models\AvailableResolver.cs" />
-    <Compile Include="Models\BlacklistRule.cs" />
     <Compile Include="Models\BoxType.cs" />
     <Compile Include="Models\DomainBlockLogLine.cs" />
     <Compile Include="Models\DnscryptProxyConfiguration.cs" />

@@ -13,7 +13,7 @@ namespace SimpleDnsCrypt.ViewModels
 		private readonly IWindowManager _windowManager;
 		private readonly IEventAggregator _events;
 
-		private ObservableCollection<BlacklistRule> _addressBlacklist;
+		private BindableCollection<string> _addressBlacklist;
 		private string _selectedAddressBlacklistEntry;
 
 		/// <summary>
@@ -27,7 +27,7 @@ namespace SimpleDnsCrypt.ViewModels
 			_windowManager = windowManager;
 			_events = events;
 			_events.Subscribe(this);
-			_addressBlacklist = new ObservableCollection<BlacklistRule>();
+			_addressBlacklist = new BindableCollection<string>();
 			LoadAddressBlacklist();
 		}
 
@@ -42,7 +42,7 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 		}
 
-		public ObservableCollection<BlacklistRule> AddressBlacklist
+		public BindableCollection<string> AddressBlacklist
 		{
 			get => _addressBlacklist;
 			set
