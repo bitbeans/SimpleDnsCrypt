@@ -64,6 +64,10 @@ If you can add or correct a language, feel free to do so:
 
 ![advanced](https://raw.githubusercontent.com/bitbeans/SimpleDnsCrypt/master/img/preview/advancedsettings.png)
 
+![blacklist](https://raw.githubusercontent.com/bitbeans/SimpleDnsCrypt/master/img/preview/blacklist.png)
+
+![blocklog](https://raw.githubusercontent.com/bitbeans/SimpleDnsCrypt/master/img/preview/blocklog.png)
+
 ![settings](https://raw.githubusercontent.com/bitbeans/SimpleDnsCrypt/master/img/preview/settings.png)
 
 ## Built With
