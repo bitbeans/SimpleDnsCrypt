@@ -454,6 +454,16 @@ namespace SimpleDnsCrypt.ViewModels
 				{
 					File.WriteAllLines(_domainBlacklistFile, rules);  
 				}
+
+				if (DnsCryptProxyManager.IsDnsCryptProxyInstalled())
+				{
+					if (DnsCryptProxyManager.IsDnsCryptProxyRunning())
+					{
+						DnsCryptProxyManager.Restart();
+						await Task.Delay(Global.ServiceRestartTime);
+					}
+				}
+
 				await metroWindow.HideMetroDialogAsync(dialog);
 			}
 			catch (Exception exception)

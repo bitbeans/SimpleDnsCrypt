@@ -6,8 +6,13 @@ using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel.Composition;
 using System.IO;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
+using DnsCrypt.Blacklist;
+using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
 
 namespace SimpleDnsCrypt.ViewModels
 {
@@ -86,6 +91,39 @@ namespace SimpleDnsCrypt.ViewModels
 				_isDomainBlockLogLogging = value;
 				DomainBlockLog(DnscryptProxyConfigurationManager.DnscryptProxyConfiguration);
 				NotifyOfPropertyChange(() => IsDomainBlockLogLogging);
+			}
+		}
+
+		public async void UnblockBlockLogEntry()
+		{
+			try
+			{
+				if (_selectedDomainBlockLogLine == null) return;
+				if (MainViewModel.Instance.DomainBlacklistViewModel == null) return;
+				var dialogSettings = new MetroDialogSettings
+				{
+					DefaultText = _selectedDomainBlockLogLine.Message.ToLower(),
+					AffirmativeButtonText = LocalizationEx.GetUiString("add", Thread.CurrentThread.CurrentCulture),
+					NegativeButtonText = LocalizationEx.GetUiString("cancel", Thread.CurrentThread.CurrentCulture),
+					ColorScheme = MetroDialogColorScheme.Theme
+				};
+
+				var metroWindow = Application.Current.Windows.OfType<MetroWindow>().FirstOrDefault();
+				//TODO: translate
+				var dialogResult = await metroWindow.ShowInputAsync(LocalizationEx.GetUiString("message_title_new_whitelist_rule", Thread.CurrentThread.CurrentCulture),
+					"Rule:", dialogSettings);
+
+				if (string.IsNullOrEmpty(dialogResult)) return;
+				var newCustomRule = dialogResult.ToLower().Trim();
+				var parsed = DomainBlacklist.ParseBlacklist(newCustomRule, true);
+				var enumerable = parsed as string[] ?? parsed.ToArray();
+				if (enumerable.Length != 1) return;
+				MainViewModel.Instance.DomainBlacklistViewModel.DomainWhitelistRules.Add(enumerable[0]);
+				MainViewModel.Instance.DomainBlacklistViewModel.SaveWhitelistRulesToFile();
+			}
+			catch (Exception exception)
+			{
+				Log.Error(exception);
 			}
 		}
 

@@ -1059,7 +1059,7 @@
                                                 </Button>
                                                 <Button x:Name="UnblockBlockLogEntry"
                                                         cal:Message.Attach="UnblockBlockLogEntry"
-                                                        Background="White" IsEnabled="False"
+                                                        Background="White"
                                                         Width="30"
                                                         Height="30"
                                                         Cursor="Hand"

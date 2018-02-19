@@ -75,8 +75,9 @@ namespace SimpleDnsCrypt.ViewModels
 				};
 
 				var metroWindow = Application.Current.Windows.OfType<MetroWindow>().FirstOrDefault();
-				var dialogResult = await metroWindow.ShowInputAsync("new",
-					"rule", dialogSettings);
+				//TODO: translate
+				var dialogResult = await metroWindow.ShowInputAsync(LocalizationEx.GetUiString("message_title_new_blacklist_rule", Thread.CurrentThread.CurrentCulture),
+					"Rule:", dialogSettings);
 
 				if (string.IsNullOrEmpty(dialogResult)) return;
 				var newCustomRule = dialogResult.ToLower().Trim();
