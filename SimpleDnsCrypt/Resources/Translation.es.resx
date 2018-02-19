@@ -361,135 +361,135 @@
     <value>Resolvers Disponibles</value>
   </data>
   <data name="loader_redistributable_package_check" xml:space="preserve">
-    <value>Checking Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
+    <value>Comprobando Microsoft Visual C++ Redistributable para Visual Studio 2017</value>
   </data>
   <data name="loader_redistributable_package_already_installed" xml:space="preserve">
-    <value>Microsoft Visual C++ Redistributable for Visual Studio 2017 is already installed</value>
+    <value>Microsoft Visual C++ Redistributable para Visual Studio 2017 ya está instalado</value>
   </data>
   <data name="loader_redistributable_package_installing" xml:space="preserve">
-    <value>Installing: Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
+    <value>Instalando Microsoft Visual C++ Redistributable para Visual Studio 2017</value>
   </data>
   <data name="loader_redistributable_package_ready" xml:space="preserve">
-    <value>Microsoft Visual C++ Redistributable for Visual Studio 2017 is now installed</value>
+    <value>Microsoft Visual C++ Redistributable para Visual Studio 2017 está ahora instalado</value>
   </data>
   <data name="message_title_no_server_selected" xml:space="preserve">
-    <value>No server selected</value>
+    <value>No hay servidor seleccionado</value>
   </data>
   <data name="message_content_no_server_selected" xml:space="preserve">
-    <value>At least one server must be selected. Otherwise, dnscrypt-proxy uses all servers corresponding to the selected filters.</value>
+    <value>Al menos un servidor debe ser seleccionado. Si no, dnscrypt-proxy usa todos los servidores corresponidentes con los filtros seleccionados.</value>
   </data>
   <data name="message_title_service_not_running" xml:space="preserve">
-    <value>Service not running</value>
+    <value>El servicio no está funcionando</value>
   </data>
   <data name="message_content_service_not_running" xml:space="preserve">
-    <value>You should start the DnsCrypt service first!</value>
+    <value>¡Deberías iniciar el servicio DNSCrypt primero!</value>
   </data>
   <data name="message_title_uninstallation_successful" xml:space="preserve">
-    <value>Uninstallation successful</value>
+    <value>Desinstalación exitosa</value>
   </data>
   <data name="message_content_uninstallation_successful" xml:space="preserve">
-    <value>Uninstallation was successful! DNS requests are no longer encrypted.</value>
+    <value>¡La desinstalación fue exitosa! Las consultas DNS ya no están encriptadas.</value>
   </data>
   <data name="message_title_uninstallation_error" xml:space="preserve">
-    <value>Uninstallation error</value>
+    <value>Error de desinstalación</value>
   </data>
   <data name="message_content_uninstallation_error" xml:space="preserve">
-    <value>Uninstallation could not be performed. Try to stop the service manually and uninstall it again.</value>
+    <value>La desinstalación no pudo ser realizada. Intenta parar el servicio manualmente y desinstalalo de nuevo.</value>
   </data>
   <data name="open_log_directory" xml:space="preserve">
-    <value>Open log directory</value>
+    <value>Abrir directorio de registro</value>
   </data>
   <data name="settings_update_auto" xml:space="preserve">
-    <value>Check for updates on startup</value>
+    <value>Comprobar actualizaciones al inicio</value>
   </data>
   <data name="settings_update_channel" xml:space="preserve">
-    <value>Update Channel:</value>
+    <value>Canal de Actualización:</value>
   </data>
   <data name="advanced_settings_dnscache_content" xml:space="preserve">
-    <value>DNS cache to reduce latency and outgoing traffic</value>
+    <value>Caché DNS para reducir la latencia y el tráfico saliente</value>
   </data>
   <data name="advanced_settings_blockipv6" xml:space="preserve">
-    <value>Block IPv6</value>
+    <value>Bloquear IPv6</value>
   </data>
   <data name="advanced_settings_blockipv6_content" xml:space="preserve">
-    <value>Immediately respond to IPv6-related queries with an empty response</value>
+    <value>Responder inmediatamente a consultas relacionadas con IPv6 con una respuesta vacía</value>
   </data>
   <data name="advanced_settings_forcetcp" xml:space="preserve">
-    <value>Force TCP</value>
+    <value>Forzar TCP</value>
   </data>
   <data name="advanced_settings_forcetcp_content" xml:space="preserve">
-    <value>Always use TCP to connect to upstream servers</value>
+    <value>Usar siempre TCP para conectar con servidores de carga</value>
   </data>
   <data name="add" xml:space="preserve">
-    <value>Add</value>
+    <value>Añadir</value>
   </data>
   <data name="message_title_new_whitelist_rule" xml:space="preserve">
-    <value>Add new domain whitelist rule</value>
+    <value>Añadir nueva regla a la lista blanca de dominios</value>
   </data>
   <data name="message_content_new_whitelist_rule" xml:space="preserve">
-    <value>Example: *.example.com, ads.*, *sex*, you also can add a comma-separated list of rules</value>
+    <value>Ejemplo: *.example.com, ads.*, *sex*, también puedes añadir una lista de reglas separadas por comas.</value>
   </data>
   <data name="message_title_new_blacklist_rule" xml:space="preserve">
-    <value>Add new domain blacklist rule</value>
+    <value>Añadir nueva regla a la lista negra de dominios</value>
   </data>
   <data name="message_content_new_blacklist_rule" xml:space="preserve">
-    <value>Example: *.example.com, ads.*, *sex*, you can also add a comma-separated list of rules, a file that starts with file:my-custom-rules.txt or a remote URL that begins with http:// or https://.</value>
+    <value>Ejemplo: *.example.com, ads.*, *sex*, también puedes añadir una lista de reglas separadas por comas, un archivo que empieza con archivo:my-custom-rules-txt o una URL remota que empieza con http:// o http://.</value>
   </data>
   <data name="working_dialog_title" xml:space="preserve">
-    <value>Hard work is being done . . .</value>
+    <value>Se está haciendo un duro trabajo . . .</value>
   </data>
   <data name="button_select_path" xml:space="preserve">
-    <value>Select path</value>
+    <value>Seleccionar ruta</value>
   </data>
   <data name="button_blacklist_build" xml:space="preserve">
-    <value>Build the dnscrypt-proxy blacklist</value>
+    <value>Construir la lista negra dnscrypt-proxy</value>
   </data>
   <data name="button_blacklist_import" xml:space="preserve">
-    <value>Import existing blacklist rules</value>
+    <value>Importar reglas de lista negra</value>
   </data>
   <data name="button_blacklist_export" xml:space="preserve">
-    <value>Export blacklist rules</value>
+    <value>Exportar reglas de lista negra</value>
   </data>
   <data name="button_blacklist_remove" xml:space="preserve">
-    <value>Remove selected blacklist rule</value>
+    <value>Eliminar regla de lista negra seleccionada</value>
   </data>
   <data name="button_blacklist_add" xml:space="preserve">
-    <value>Add a new blacklist rule</value>
+    <value>Añadir una nueva regla de lista negra</value>
   </data>
   <data name="button_whitelist_import" xml:space="preserve">
-    <value>Import existing whitelist rules</value>
+    <value>Importar reglas de lista blanca</value>
   </data>
   <data name="button_whitelist_export" xml:space="preserve">
-    <value>Export whitelist rules</value>
+    <value>Exportar reglas de lista blanca</value>
   </data>
   <data name="button_whitelist_remove" xml:space="preserve">
-    <value>Remove selected whitelist rule</value>
+    <value>Eliminar regla de lista blanca seleccionada</value>
   </data>
   <data name="button_whitelist_add" xml:space="preserve">
-    <value>Add a new whitelist rule</value>
+    <value>Añadir una nueva regla de lista blanca</value>
   </data>
   <data name="whitelist_rules_header" xml:space="preserve">
-    <value>Whitelist Rules</value>
+    <value>Reglas de Lista Blanca</value>
   </data>
   <data name="whitelist_rules_sub_header" xml:space="preserve">
-    <value>(all entries are ignored during blacklist generation)</value>
+    <value>(todas las entradas son ignoradas durante la generación de la lista negra)</value>
   </data>
   <data name="whitelist_rules_path" xml:space="preserve">
-    <value>Whitelist Rules:</value>
+    <value>Reglas de Lista Blanca:</value>
   </data>
   <data name="blacklist_rules_header" xml:space="preserve">
-    <value>Blacklist Rules</value>
+    <value>Reglas de Lista Negra</value>
   </data>
   <data name="blacklist_rules_sub_header" xml:space="preserve">
-    <value>(all entries are merged to a blacklist)</value>
+    <value>(todas las entradas se unieron a una lista negra)</value>
   </data>
   <data name="blacklist_rules_path" xml:space="preserve">
-    <value>Blacklist Rules:</value>
+    <value>Reglas de Lista Negra:</value>
   </data>
   <data name="blacklist_path" xml:space="preserve">
-    <value>Blacklist:</value>
+    <value>Lista Negra:</value>
   </data>
   <data name="blacklist_header" xml:space="preserve">
-    <value>Domain Blacklist und Whitelist</value>
+    <value>Lista Negra y Lista Blanca de Dominios</value>
   </data>
 </root>
