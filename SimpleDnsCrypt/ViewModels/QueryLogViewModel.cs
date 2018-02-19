@@ -2,13 +2,18 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel.Composition;
 using System.IO;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Caliburn.Micro;
+using DnsCrypt.Blacklist;
+using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
 using SimpleDnsCrypt.Config;
 using SimpleDnsCrypt.Helper;
 using SimpleDnsCrypt.Models;
+using Application = System.Windows.Application;
 using Screen = Caliburn.Micro.Screen;
 
 namespace SimpleDnsCrypt.ViewModels
@@ -55,10 +60,35 @@ namespace SimpleDnsCrypt.ViewModels
 			});
 		}
 
-		public void BlockQueryLogEntry()
+		public async void BlockQueryLogEntry()
 		{
-			if (_selectedQueryLogLine != null)
+			try
 			{
+				if (_selectedQueryLogLine == null) return;
+				if (MainViewModel.Instance.DomainBlacklistViewModel == null) return;
+				var dialogSettings = new MetroDialogSettings
+				{
+					DefaultText = _selectedQueryLogLine.Remote.ToLower(),
+					AffirmativeButtonText = LocalizationEx.GetUiString("add", Thread.CurrentThread.CurrentCulture),
+					NegativeButtonText = LocalizationEx.GetUiString("cancel", Thread.CurrentThread.CurrentCulture),
+					ColorScheme = MetroDialogColorScheme.Theme
+				};
+
+				var metroWindow = Application.Current.Windows.OfType<MetroWindow>().FirstOrDefault();
+				var dialogResult = await metroWindow.ShowInputAsync("new",
+					"rule", dialogSettings);
+
+				if (string.IsNullOrEmpty(dialogResult)) return;
+				var newCustomRule = dialogResult.ToLower().Trim();
+				var parsed = DomainBlacklist.ParseBlacklist(newCustomRule, true);
+				var enumerable = parsed as string[] ?? parsed.ToArray();
+				if (enumerable.Length != 1) return;
+				MainViewModel.Instance.DomainBlacklistViewModel.DomainBlacklistRules.Add(enumerable[0]);
+				MainViewModel.Instance.DomainBlacklistViewModel.SaveBlacklistRulesToFile();
+			}
+			catch (Exception exception)
+			{
+				Log.Error(exception);
 			}
 		}
 

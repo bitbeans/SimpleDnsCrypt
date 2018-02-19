@@ -63,6 +63,8 @@ namespace SimpleDnsCrypt.ViewModels
 		private bool _isUninstallingService;
 		private bool _isDnsCryptAutomaticModeEnabled;
 
+		public static MainViewModel Instance { get; set; }
+
 		/// <summary>
 		/// Initializes a new instance of the <see cref="MainViewModel"/> class
 		/// </summary>
@@ -71,6 +73,7 @@ namespace SimpleDnsCrypt.ViewModels
 		[ImportingConstructor]
 		public MainViewModel(IWindowManager windowManager, IEventAggregator events)
 		{
+			Instance = this;
 			_windowManager = windowManager;
 			_events = events;
 			_events.Subscribe(this);

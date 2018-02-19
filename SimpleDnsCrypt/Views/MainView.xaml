@@ -848,7 +848,7 @@
                                                 </Button>
                                                 <Button x:Name="BlockQueryLogEntry"
                                                         cal:Message.Attach="BlockQueryLogEntry"
-                                                        Background="White" IsEnabled="False"
+                                                        Background="White" 
                                                         Width="30"
                                                         Height="30"
                                                         Cursor="Hand"

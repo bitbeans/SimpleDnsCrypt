@@ -343,6 +343,7 @@ namespace SimpleDnsCrypt.ViewModels
 			try
 			{
 				if (string.IsNullOrEmpty(_domainWhitelistRuleFilePath)) return;
+				if (!File.Exists(_domainWhitelistRuleFilePath)) return;
 				var whitelist = await DomainBlacklist.ReadAllLinesAsync(_domainWhitelistRuleFilePath);
 				DomainWhitelistRules.Clear();
 				DomainWhitelistRules = new BindableCollection<string>(whitelist);
@@ -627,6 +628,7 @@ namespace SimpleDnsCrypt.ViewModels
 			try
 			{
 				if (string.IsNullOrEmpty(_domainBlacklistRuleFilePath)) return;
+				if (!File.Exists(_domainBlacklistRuleFilePath)) return;
 				var blacklist = await DomainBlacklist.ReadAllLinesAsync(_domainBlacklistRuleFilePath);
 				DomainBlacklistRules.Clear();
 				DomainBlacklistRules = new BindableCollection<string>(blacklist);
