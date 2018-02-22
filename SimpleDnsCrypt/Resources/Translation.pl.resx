@@ -277,19 +277,19 @@
     <value>Dziennik zablokowanych adresów</value>
   </data>
   <data name="tabitem_domainblacklist" xml:space="preserve">
-    <value>Zablokowane domeny</value>
+    <value>Blokowane domeny</value>
   </data>
   <data name="tabitem_addressblacklist" xml:space="preserve">
-    <value>Zablokowane adresy</value>
+    <value>Blokowane adresy</value>
   </data>
   <data name="settings" xml:space="preserve">
     <value>Ustawienia</value>
   </data>
   <data name="settings_domain_blacklist" xml:space="preserve">
-    <value>Pokaż kartę „zablokowane domeny”</value>
+    <value>Pokaż kartę „blokowane domeny”</value>
   </data>
   <data name="settings_address_blacklist" xml:space="preserve">
-    <value>Pokaż kartę „zablokowane adresy”</value>
+    <value>Pokaż kartę „blokowane adresy”</value>
   </data>
   <data name="settings_domain_block" xml:space="preserve">
     <value>Pokaż kartę „dziennik zablokowanych domen”</value>
@@ -400,7 +400,7 @@
     <value>Otwórz katalog dziennika</value>
   </data>
   <data name="settings_update_auto" xml:space="preserve">
-    <value>Sprawdź aktualizację przy starcie</value>
+    <value>Sprawdź aktualizacje przy starcie</value>
   </data>
   <data name="settings_update_channel" xml:space="preserve">
     <value>Kanał aktualizacji:</value>
@@ -421,46 +421,46 @@
     <value>Zawsze użyj TCP podczas połączenia z serwerami</value>
   </data>
   <data name="add" xml:space="preserve">
-    <value>Add</value>
+    <value>Dodaj</value>
   </data>
   <data name="message_title_new_whitelist_rule" xml:space="preserve">
-    <value>Add new domain whitelist rule</value>
+    <value>Dodaj regułę do białej listy</value>
   </data>
   <data name="message_content_new_whitelist_rule" xml:space="preserve">
-    <value>Example: *.example.com, ads.*, *sex*, you also can add a comma-separated list of rules</value>
+    <value>Przykład: *.example.com, ads.*, *sex*, możesz także dodać listę domen rozdzielonych przecinkami</value>
   </data>
   <data name="message_title_new_blacklist_rule" xml:space="preserve">
-    <value>Add new domain blacklist rule</value>
+    <value>Dodaj domenę do czarnej listy</value>
   </data>
   <data name="message_content_new_blacklist_rule" xml:space="preserve">
-    <value>Example: *.example.com, ads.*, *sex*, you can also add a comma-separated list of rules, a file that starts with file:my-custom-rules.txt or a remote URL that begins with http:// or https://.</value>
+    <value>Przykład: *.example.com, ads.*, *sex*, możesz także dodać listę domen rozdzielonych przecinkami, czy też plik my-custom-rules.txt lub odnośnik zaczynający się od http:// or https://.</value>
   </data>
   <data name="working_dialog_title" xml:space="preserve">
-    <value>Hard work is being done . . .</value>
+    <value>Ciężko pracuję…</value>
   </data>
   <data name="button_select_path" xml:space="preserve">
-    <value>Select path</value>
+    <value>Przeglądaj</value>
   </data>
   <data name="button_blacklist_build" xml:space="preserve">
-    <value>Build the dnscrypt-proxy blacklist</value>
+    <value>Utwórz listę blokowania dnscrypt-proxy</value>
   </data>
   <data name="button_blacklist_import" xml:space="preserve">
-    <value>Import existing blacklist rules</value>
+    <value>Import czarnej listy</value>
   </data>
   <data name="button_blacklist_export" xml:space="preserve">
-    <value>Export blacklist rules</value>
+    <value>Eksport czarnej listy</value>
   </data>
   <data name="button_blacklist_remove" xml:space="preserve">
-    <value>Remove selected blacklist rule</value>
+    <value>Usuń regułę blokowania</value>
   </data>
   <data name="button_blacklist_add" xml:space="preserve">
-    <value>Add a new blacklist rule</value>
+    <value>Dodaj regułę blokowania</value>
   </data>
   <data name="button_whitelist_import" xml:space="preserve">
-    <value>Import existing whitelist rules</value>
+    <value>Import białej listy</value>
   </data>
   <data name="button_whitelist_export" xml:space="preserve">
-    <value>Export whitelist rules</value>
+    <value>Eksport białej listy</value>
   </data>
   <data name="button_whitelist_remove" xml:space="preserve">
     <value>Remove selected whitelist rule</value>
@@ -490,6 +490,6 @@
     <value>Blacklist:</value>
   </data>
   <data name="blacklist_header" xml:space="preserve">
-    <value>Domain Blacklist und Whitelist</value>
+    <value>Domain Blacklist and Whitelist</value>
   </data>
 </root>
