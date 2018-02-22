@@ -160,7 +160,7 @@
     <value>Chỉ máy chỉ không có bộ lọc</value>
   </data>
   <data name="default_settings_configuration_nofilter_tooltip" xml:space="preserve">
-    <value>Máy chủ không thực thi danh sách đen của chính mình (dành cho Kiểm soát cha mẹ, chặn quảng cáo...)</value>
+    <value>Máy chủ không thực thi danh sách chặn của chính mình (dành cho Kiểm soát cha mẹ, chặn quảng cáo...)</value>
   </data>
   <data name="tabitem_mainmenu" xml:space="preserve">
     <value>Danh mục chính</value>
@@ -277,19 +277,19 @@
     <value>Nhật ký địa chỉ</value>
   </data>
   <data name="tabitem_domainblacklist" xml:space="preserve">
-    <value>Danh sách đen của tên miền</value>
+    <value>Danh sách chặn của tên miền</value>
   </data>
   <data name="tabitem_addressblacklist" xml:space="preserve">
-    <value>Danh sách đen của địa chỉ</value>
+    <value>Danh sách chặn của địa chỉ</value>
   </data>
   <data name="settings" xml:space="preserve">
     <value>Cấu hình</value>
   </data>
   <data name="settings_domain_blacklist" xml:space="preserve">
-    <value>Hiện thẻ &quot;Danh sách đen của tên miền&quot;</value>
+    <value>Hiện thẻ &quot;Danh sách chặn của tên miền&quot;</value>
   </data>
   <data name="settings_address_blacklist" xml:space="preserve">
-    <value>Hiện thẻ &quot;Danh sách đen của địa chỉ&quot;</value>
+    <value>Hiện thẻ &quot;Danh sách chặn của địa chỉ&quot;</value>
   </data>
   <data name="settings_domain_block" xml:space="preserve">
     <value>Hiện thẻ &quot;Nhật ký tên miền&quot;</value>
@@ -325,10 +325,10 @@
     <value>Bạn có muốn loại bỏ dịch vụ Windows đã cài đặt?</value>
   </data>
   <data name="dialog_uninstall_title" xml:space="preserve">
-    <value>Đang gỡ bỏ dịch vụ</value>
+    <value>Gỡ bỏ dịch vụ</value>
   </data>
   <data name="advanced_settings_uninstall_title" xml:space="preserve">
-    <value>Đang gỡ bỏ dịch vụ</value>
+    <value>Gỡ bỏ dịch vụ</value>
   </data>
   <data name="advanced_settings_uninstall_text" xml:space="preserve">
     <value>Loại bỏ dịch vụ Windows đã cài đặt</value>
@@ -361,135 +361,135 @@
     <value>Máy chủ phân giải sẵn có</value>
   </data>
   <data name="loader_redistributable_package_check" xml:space="preserve">
-    <value>Checking Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
+    <value>Đang kiểm tra Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
   </data>
   <data name="loader_redistributable_package_already_installed" xml:space="preserve">
-    <value>Microsoft Visual C++ Redistributable for Visual Studio 2017 is already installed</value>
+    <value>Microsoft Visual C++ Redistributable for Visual Studio 2017 đã được cài đặt</value>
   </data>
   <data name="loader_redistributable_package_installing" xml:space="preserve">
-    <value>Installing: Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
+    <value>Đang cài đặt: Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
   </data>
   <data name="loader_redistributable_package_ready" xml:space="preserve">
-    <value>Microsoft Visual C++ Redistributable for Visual Studio 2017 is now installed</value>
+    <value>Microsoft Visual C++ Redistributable for Visual Studio 2017 đã cài đặt</value>
   </data>
   <data name="message_title_no_server_selected" xml:space="preserve">
-    <value>No server selected</value>
+    <value>Không có máy chủ được chọn</value>
   </data>
   <data name="message_content_no_server_selected" xml:space="preserve">
-    <value>At least one server must be selected. Otherwise, dnscrypt-proxy uses all servers corresponding to the selected filters.</value>
+    <value>Phải có ít nhất 1 máy chủ được chọn. Nếu không, dnscrypt-proxy sử dụng tất cả các máy chủ tương ứng với các bộ lọc đã chọn.</value>
   </data>
   <data name="message_title_service_not_running" xml:space="preserve">
-    <value>Service not running</value>
+    <value>Dịch vụ không chạy</value>
   </data>
   <data name="message_content_service_not_running" xml:space="preserve">
-    <value>You should start the DnsCrypt service first!</value>
+    <value>Bạn nên bắt đầu dịch vụ DNSCrypt trước tiên!</value>
   </data>
   <data name="message_title_uninstallation_successful" xml:space="preserve">
-    <value>Uninstallation successful</value>
+    <value>Quá trình gỡ cài đặt thành công</value>
   </data>
   <data name="message_content_uninstallation_successful" xml:space="preserve">
-    <value>Uninstallation was successful! DNS requests are no longer encrypted.</value>
+    <value>Quá trình gỡ cài đặt đã thành công! Yêu cầu DNS không còn được mã hóa.</value>
   </data>
   <data name="message_title_uninstallation_error" xml:space="preserve">
-    <value>Uninstallation error</value>
+    <value>Lỗi quá trình gỡ cài đặt</value>
   </data>
   <data name="message_content_uninstallation_error" xml:space="preserve">
-    <value>Uninstallation could not be performed. Try to stop the service manually and uninstall it again.</value>
+    <value>Quá trình gỡ cài đặt không thể thực hiện. Hãy cố gắng ngừng dịch vụ bằng tay và gỡ cài đặt lại.</value>
   </data>
   <data name="open_log_directory" xml:space="preserve">
-    <value>Open log directory</value>
+    <value>Mở thư mục nhật ký</value>
   </data>
   <data name="settings_update_auto" xml:space="preserve">
-    <value>Check for updates on startup</value>
+    <value>Kiểm tra cập nhật lúc khởi động</value>
   </data>
   <data name="settings_update_channel" xml:space="preserve">
-    <value>Update Channel:</value>
+    <value>Kênh cập nhật:</value>
   </data>
   <data name="advanced_settings_dnscache_content" xml:space="preserve">
-    <value>DNS cache to reduce latency and outgoing traffic</value>
+    <value>Bộ nhớ cache DNS để giảm độ trễ và lưu lượng đi</value>
   </data>
   <data name="advanced_settings_blockipv6" xml:space="preserve">
-    <value>Block IPv6</value>
+    <value>Chặn IPv6</value>
   </data>
   <data name="advanced_settings_blockipv6_content" xml:space="preserve">
-    <value>Immediately respond to IPv6-related queries with an empty response</value>
+    <value>Ngay lập tức trả lời các truy vấn liên quan đến IPv6 với phản hồi rỗng</value>
   </data>
   <data name="advanced_settings_forcetcp" xml:space="preserve">
-    <value>Force TCP</value>
+    <value>Sử dụng cổng TCP</value>
   </data>
   <data name="advanced_settings_forcetcp_content" xml:space="preserve">
-    <value>Always use TCP to connect to upstream servers</value>
+    <value>Luôn sử dụng cổng TCP để kết nối với các máy chủ nguồn</value>
   </data>
   <data name="add" xml:space="preserve">
-    <value>Add</value>
+    <value>Thêm</value>
   </data>
   <data name="message_title_new_whitelist_rule" xml:space="preserve">
-    <value>Add new domain whitelist rule</value>
+    <value>Thêm quy tắt loại trừ tên miền mới</value>
   </data>
   <data name="message_content_new_whitelist_rule" xml:space="preserve">
-    <value>Example: *.example.com, ads.*, *sex*, you also can add a comma-separated list of rules</value>
+    <value>Ví dụ: *.vietnam.com, quangcao.*, *sex*, bạn cũng có thể thêm danh sách các quy tắc</value>
   </data>
   <data name="message_title_new_blacklist_rule" xml:space="preserve">
-    <value>Add new domain blacklist rule</value>
+    <value>Thêm quy tắc chặn tên miền</value>
   </data>
   <data name="message_content_new_blacklist_rule" xml:space="preserve">
-    <value>Example: *.example.com, ads.*, *sex*, you can also add a comma-separated list of rules, a file that starts with file:my-custom-rules.txt or a remote URL that begins with http:// or https://.</value>
+    <value>Ví dụ: *.vietnam.com, quangcao.*, *sex*, bạn cũng có thể thêm lệnh chặn cho quy tắt, một tập tin chứa quy tắt như taptin.txt hoặc một địa chỉ URL bắt đầu với http:// hoặc https://.</value>
   </data>
   <data name="working_dialog_title" xml:space="preserve">
-    <value>Hard work is being done . . .</value>
+    <value>Đợi chút! Công việc khó khăn đang thực hiện...</value>
   </data>
   <data name="button_select_path" xml:space="preserve">
-    <value>Select path</value>
+    <value>Chọn đường dẫn</value>
   </data>
   <data name="button_blacklist_build" xml:space="preserve">
-    <value>Build the dnscrypt-proxy blacklist</value>
+    <value>Xây dựng danh sách chặn dnscrypt-proxy</value>
   </data>
   <data name="button_blacklist_import" xml:space="preserve">
-    <value>Import existing blacklist rules</value>
+    <value>Nhập các quy tắc chặn hiện có</value>
   </data>
   <data name="button_blacklist_export" xml:space="preserve">
-    <value>Export blacklist rules</value>
+    <value>Xuất các quy tắc danh sách chặn</value>
   </data>
   <data name="button_blacklist_remove" xml:space="preserve">
-    <value>Remove selected blacklist rule</value>
+    <value>Loại bỏ quy tắc chặn đã chọn</value>
   </data>
   <data name="button_blacklist_add" xml:space="preserve">
-    <value>Add a new blacklist rule</value>
+    <value>Thêm quy tắc chặn mới</value>
   </data>
   <data name="button_whitelist_import" xml:space="preserve">
-    <value>Import existing whitelist rules</value>
+    <value>Nhập các quy tắc loại trừ hiện có</value>
   </data>
   <data name="button_whitelist_export" xml:space="preserve">
-    <value>Export whitelist rules</value>
+    <value>Xuất các quy tắc loại trừ</value>
   </data>
   <data name="button_whitelist_remove" xml:space="preserve">
-    <value>Remove selected whitelist rule</value>
+    <value>Loại bỏ quy tắc loại trừ đã chọn</value>
   </data>
   <data name="button_whitelist_add" xml:space="preserve">
-    <value>Add a new whitelist rule</value>
+    <value>Thêm quy tắc loại trừ mới</value>
   </data>
   <data name="whitelist_rules_header" xml:space="preserve">
-    <value>Whitelist Rules</value>
+    <value>Quy tắt loại trừ</value>
   </data>
   <data name="whitelist_rules_sub_header" xml:space="preserve">
-    <value>(all entries are ignored during blacklist generation)</value>
+    <value>(tất cả các mục nhập sẽ bị bỏ qua trong quá trình tạo danh sách đen)</value>
   </data>
   <data name="whitelist_rules_path" xml:space="preserve">
-    <value>Whitelist Rules:</value>
+    <value>Quy tắt loại trừ:</value>
   </data>
   <data name="blacklist_rules_header" xml:space="preserve">
-    <value>Blacklist Rules</value>
+    <value>Quy tắc chặn</value>
   </data>
   <data name="blacklist_rules_sub_header" xml:space="preserve">
-    <value>(all entries are merged to a blacklist)</value>
+    <value>(tất cả các mục được hợp nhất vào một danh sách đen)</value>
   </data>
   <data name="blacklist_rules_path" xml:space="preserve">
-    <value>Blacklist Rules:</value>
+    <value>Quy tắt danh sách chặn:</value>
   </data>
   <data name="blacklist_path" xml:space="preserve">
-    <value>Blacklist:</value>
+    <value>Danh sách chặn:</value>
   </data>
   <data name="blacklist_header" xml:space="preserve">
-    <value>Domain Blacklist und Whitelist</value>
+    <value>Danh sách chặn và loại trừ</value>
   </data>
 </root>
