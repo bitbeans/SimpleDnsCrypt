@@ -292,10 +292,10 @@
     <value>Вкладка &quot;Черный список адресов&quot;</value>
   </data>
   <data name="settings_domain_block" xml:space="preserve">
-    <value>Вкладка &quot;Лог блокированных доменов&quot;</value>
+    <value>Вкладка &quot;Журнал блокировки доменов&quot;</value>
   </data>
   <data name="settings_address_block" xml:space="preserve">
-    <value>Вкладка &quot;Лог блокированных адресов&quot;</value>
+    <value>Вкладка &quot;Журнал блокировки адресов&quot;</value>
   </data>
   <data name="settings_query_log" xml:space="preserve">
     <value>Вкладка &quot;Журнал запросов&quot;</value>
@@ -388,7 +388,7 @@
     <value>Удаление успешно</value>
   </data>
   <data name="message_content_uninstallation_successful" xml:space="preserve">
-    <value>Удаление произошло успешно! DNS запросы больше не зашифровываются.</value>
+    <value>Удаление произошло успешно! DNS запросы больше не шифруются.</value>
   </data>
   <data name="message_title_uninstallation_error" xml:space="preserve">
     <value>Ошибка удаления</value>
@@ -400,13 +400,13 @@
     <value>Открыть директорию c журналом событий</value>
   </data>
   <data name="settings_update_auto" xml:space="preserve">
-    <value>Проверять на обновления при запуске</value>
+    <value>Проверять обновления при запуске</value>
   </data>
   <data name="settings_update_channel" xml:space="preserve">
     <value>Канал обновлений:</value>
   </data>
   <data name="advanced_settings_dnscache_content" xml:space="preserve">
-    <value>DNS-кэш для уменьшения задержки и исх. траффика</value>
+    <value>Кэш DNS для уменьшения задержки и исх. траффика</value>
   </data>
   <data name="advanced_settings_blockipv6" xml:space="preserve">
     <value>Блокировать IPv6</value>
@@ -415,81 +415,81 @@
     <value>Немедленно реагировать на IPv6 запросы пустым ответом</value>
   </data>
   <data name="advanced_settings_forcetcp" xml:space="preserve">
-    <value>Принуждать TCP</value>
+    <value>Принудительно TCP</value>
   </data>
   <data name="advanced_settings_forcetcp_content" xml:space="preserve">
     <value>Всегда использовать TCP для исходящих соединений</value>
   </data>
   <data name="add" xml:space="preserve">
-    <value>Add</value>
+    <value>Добавить</value>
   </data>
   <data name="message_title_new_whitelist_rule" xml:space="preserve">
-    <value>Add new domain whitelist rule</value>
+    <value>Добавить новое правило белого списка</value>
   </data>
   <data name="message_content_new_whitelist_rule" xml:space="preserve">
-    <value>Example: *.example.com, ads.*, *sex*, you also can add a comma-separated list of rules</value>
+    <value>Пример: *.example.com, ads.*, *sex*, также можете добавить список правил, разделенных запятыми</value>
   </data>
   <data name="message_title_new_blacklist_rule" xml:space="preserve">
-    <value>Add new domain blacklist rule</value>
+    <value>Добавить новое правило черного списка</value>
   </data>
   <data name="message_content_new_blacklist_rule" xml:space="preserve">
-    <value>Example: *.example.com, ads.*, *sex*, you can also add a comma-separated list of rules, a file that starts with file:my-custom-rules.txt or a remote URL that begins with http:// or https://.</value>
+    <value>Пример: *.example.com, ads.*, *sex*, также можете добавить список правил, разделенных запятыми, файл - который начинается с file:my-custom-rules.txt или удаленный URL-адрес, который начинается с http:// или https://.</value>
   </data>
   <data name="working_dialog_title" xml:space="preserve">
-    <value>Hard work is being done . . .</value>
+    <value>Ведется тяжелая работа . . .</value>
   </data>
   <data name="button_select_path" xml:space="preserve">
-    <value>Select path</value>
+    <value>Выберите путь</value>
   </data>
   <data name="button_blacklist_build" xml:space="preserve">
-    <value>Build the dnscrypt-proxy blacklist</value>
+    <value>Создать черный список dnscrypt-proxy</value>
   </data>
   <data name="button_blacklist_import" xml:space="preserve">
-    <value>Import existing blacklist rules</value>
+    <value>Импорт правил черного списка</value>
   </data>
   <data name="button_blacklist_export" xml:space="preserve">
-    <value>Export blacklist rules</value>
+    <value>Экспорт правил черного списка</value>
   </data>
   <data name="button_blacklist_remove" xml:space="preserve">
-    <value>Remove selected blacklist rule</value>
+    <value>Удалить выбранное правило черного списка</value>
   </data>
   <data name="button_blacklist_add" xml:space="preserve">
-    <value>Add a new blacklist rule</value>
+    <value>Добавить новое правило черного списка</value>
   </data>
   <data name="button_whitelist_import" xml:space="preserve">
-    <value>Import existing whitelist rules</value>
+    <value>Импорт правил белого списка</value>
   </data>
   <data name="button_whitelist_export" xml:space="preserve">
-    <value>Export whitelist rules</value>
+    <value>Экспорт правил белого списка</value>
   </data>
   <data name="button_whitelist_remove" xml:space="preserve">
-    <value>Remove selected whitelist rule</value>
+    <value>Удалить выбранное правило из белого списка</value>
   </data>
   <data name="button_whitelist_add" xml:space="preserve">
-    <value>Add a new whitelist rule</value>
+    <value>Добавить новое правило белого списка</value>
   </data>
   <data name="whitelist_rules_header" xml:space="preserve">
-    <value>Whitelist Rules</value>
+    <value>Правила белого списка</value>
   </data>
   <data name="whitelist_rules_sub_header" xml:space="preserve">
-    <value>(all entries are ignored during blacklist generation)</value>
+    <value>(все записи игнорируются во время генерации черного списка)</value>
   </data>
   <data name="whitelist_rules_path" xml:space="preserve">
-    <value>Whitelist Rules:</value>
+    <value>Правила белого списка:</value>
   </data>
   <data name="blacklist_rules_header" xml:space="preserve">
-    <value>Blacklist Rules</value>
+    <value>Правила черного списка</value>
   </data>
   <data name="blacklist_rules_sub_header" xml:space="preserve">
-    <value>(all entries are merged to a blacklist)</value>
+    <value>(все записи объединяются в черный список)</value>
   </data>
   <data name="blacklist_rules_path" xml:space="preserve">
-    <value>Blacklist Rules:</value>
+    <value>Правила черного списка:</value>
   </data>
   <data name="blacklist_path" xml:space="preserve">
-    <value>Blacklist:</value>
+    <value>Черный список:</value>
   </data>
   <data name="blacklist_header" xml:space="preserve">
-    <value>Domain Blacklist und Whitelist</value>
+    <value>Черный и белый списки доменов</value>
   </data>
 </root>
