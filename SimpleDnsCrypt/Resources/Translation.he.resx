@@ -133,13 +133,13 @@
     <value>הגדרות</value>
   </data>
   <data name="default_settings_configuration_ipv4" xml:space="preserve">
-    <value>משתמש בשרת IPv4</value>
+    <value>השתמש בשרת IPv4</value>
   </data>
   <data name="default_settings_configuration_ipv4_tooltip" xml:space="preserve">
     <value>השתמש בשרתים זמינים באמצעות IPv4</value>
   </data>
   <data name="default_settings_configuration_ipv6" xml:space="preserve">
-    <value>משתמש בשרת IPv6</value>
+    <value>השתמש בשרת IPv6</value>
   </data>
   <data name="default_settings_configuration_ipv6_tooltip" xml:space="preserve">
     <value>השתמש בשרתים הזמינים באמצעות IPv6 (אל תאפשר אם אין לך חיבור IPv6)</value>
@@ -386,16 +386,16 @@
     <value>Microsoft Visual C++ Redistributable for Visual Studio 2017 is now installed</value>
   </data>
   <data name="message_title_no_server_selected" xml:space="preserve">
-    <value>No server selected</value>
+    <value>לא נבחר שרת</value>
   </data>
   <data name="message_content_no_server_selected" xml:space="preserve">
     <value>At least one server must be selected. Otherwise, dnscrypt-proxy uses all servers corresponding to the selected filters.</value>
   </data>
   <data name="message_title_service_not_running" xml:space="preserve">
-    <value>Service not running</value>
+    <value>השירות לא פעיל</value>
   </data>
   <data name="message_content_service_not_running" xml:space="preserve">
-    <value>You should start the DnsCrypt service first!</value>
+    <value>עליך להפעיל את שירות DnsCrypt!</value>
   </data>
   <data name="message_title_uninstallation_successful" xml:space="preserve">
     <value>Uninstallation successful</value>
@@ -404,7 +404,7 @@
     <value>Uninstallation was successful! DNS requests are no longer encrypted.</value>
   </data>
   <data name="message_title_uninstallation_error" xml:space="preserve">
-    <value>Uninstallation error</value>
+    <value>ארעה שגיאה בהסרה</value>
   </data>
   <data name="message_content_uninstallation_error" xml:space="preserve">
     <value>Uninstallation could not be performed. Try to stop the service manually and uninstall it again.</value>
@@ -413,31 +413,31 @@
     <value>Open log directory</value>
   </data>
   <data name="settings_update_auto" xml:space="preserve">
-    <value>Check for updates on startup</value>
+    <value>בדוק עבור עדכונים בהפעלה</value>
   </data>
   <data name="settings_update_channel" xml:space="preserve">
-    <value>Update Channel:</value>
+    <value>ערוץ עדכונים:</value>
   </data>
   <data name="advanced_settings_dnscache_content" xml:space="preserve">
-    <value>DNS cache to reduce latency and outgoing traffic</value>
+    <value>שמור במטמון שאילתות DNS על מנת להקטין זמני המתנה ותעבורה יוצאת</value>
   </data>
   <data name="advanced_settings_blockipv6" xml:space="preserve">
-    <value>Block IPv6</value>
+    <value>חסום IPv6</value>
   </data>
   <data name="advanced_settings_blockipv6_content" xml:space="preserve">
-    <value>Immediately respond to IPv6-related queries with an empty response</value>
+    <value>הגב מיידית לשאילתות IPv6 עם תגובה ריקה</value>
   </data>
   <data name="advanced_settings_forcetcp" xml:space="preserve">
-    <value>Force TCP</value>
+    <value>הכרח TCP</value>
   </data>
   <data name="advanced_settings_forcetcp_content" xml:space="preserve">
-    <value>Always use TCP to connect to upstream servers</value>
+    <value>השתמש תמיד ב-TCP על מנת להתחבר לשרתים</value>
   </data>
   <data name="add" xml:space="preserve">
-    <value>Add</value>
+    <value>הוסף</value>
   </data>
   <data name="message_title_new_whitelist_rule" xml:space="preserve">
-    <value>Add new domain whitelist rule</value>
+    <value>הוסף שם מתחם חדש לרשימה הלבנה</value>
   </data>
   <data name="message_content_new_whitelist_rule" xml:space="preserve">
     <value>Example: *.example.com, ads.*, *sex*, you also can add a comma-separated list of rules</value>
@@ -452,7 +452,7 @@
     <value>Hard work is being done . . .</value>
   </data>
   <data name="button_select_path" xml:space="preserve">
-    <value>Select path</value>
+    <value>בחר נתיב</value>
   </data>
   <data name="button_blacklist_build" xml:space="preserve">
     <value>Build the dnscrypt-proxy blacklist</value>
@@ -467,7 +467,7 @@
     <value>Remove selected blacklist rule</value>
   </data>
   <data name="button_blacklist_add" xml:space="preserve">
-    <value>Add a new blacklist rule</value>
+    <value>הוסף חוק לרשימה שחורה</value>
   </data>
   <data name="button_whitelist_import" xml:space="preserve">
     <value>Import existing whitelist rules</value>
@@ -479,10 +479,10 @@
     <value>Remove selected whitelist rule</value>
   </data>
   <data name="button_whitelist_add" xml:space="preserve">
-    <value>Add a new whitelist rule</value>
+    <value>הוסף חוק לרשימה לבנה</value>
   </data>
   <data name="whitelist_rules_header" xml:space="preserve">
-    <value>Whitelist Rules</value>
+    <value>חוקי רשימה לבנה</value>
   </data>
   <data name="whitelist_rules_sub_header" xml:space="preserve">
     <value>(all entries are ignored during blacklist generation)</value>
@@ -491,7 +491,7 @@
     <value>Whitelist Rules:</value>
   </data>
   <data name="blacklist_rules_header" xml:space="preserve">
-    <value>Blacklist Rules</value>
+    <value>חוקי רשימה שחורה</value>
   </data>
   <data name="blacklist_rules_sub_header" xml:space="preserve">
     <value>(all entries are merged to a blacklist)</value>
@@ -500,9 +500,9 @@
     <value>Blacklist Rules:</value>
   </data>
   <data name="blacklist_path" xml:space="preserve">
-    <value>Blacklist:</value>
+    <value>רשימה שחורה:</value>
   </data>
   <data name="blacklist_header" xml:space="preserve">
-    <value>Domain Blacklist und Whitelist</value>
+    <value>Domain Blacklist and Whitelist</value>
   </data>
 </root>
