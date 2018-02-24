@@ -182,6 +182,13 @@ namespace SimpleDnsCrypt.ViewModels
 		[ImportingConstructor]
 		public LoaderViewModel(IWindowManager windowManager, IEventAggregator events)
 		{
+			if (Properties.Settings.Default.UpgradeRequired)
+			{
+				Properties.Settings.Default.Upgrade();
+				Properties.Settings.Default.UpgradeRequired = false;
+				Properties.Settings.Default.Save();
+			}
+
 			_windowManager = windowManager;
 			_events = events;
 			_events.Subscribe(this);
