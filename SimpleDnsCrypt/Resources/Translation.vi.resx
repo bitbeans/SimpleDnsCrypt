@@ -277,19 +277,19 @@
     <value>Nhật ký địa chỉ</value>
   </data>
   <data name="tabitem_domainblacklist" xml:space="preserve">
-    <value>Danh sách chặn của tên miền</value>
+    <value>Danh sách chặn tên miền</value>
   </data>
   <data name="tabitem_addressblacklist" xml:space="preserve">
-    <value>Danh sách chặn của địa chỉ</value>
+    <value>Danh sách chặn IP</value>
   </data>
   <data name="settings" xml:space="preserve">
     <value>Cấu hình</value>
   </data>
   <data name="settings_domain_blacklist" xml:space="preserve">
-    <value>Hiện thẻ &quot;Danh sách chặn của tên miền&quot;</value>
+    <value>Hiện thẻ &quot;Danh sách chặn tên miền&quot;</value>
   </data>
   <data name="settings_address_blacklist" xml:space="preserve">
-    <value>Hiện thẻ &quot;Danh sách chặn của địa chỉ&quot;</value>
+    <value>Hiện thẻ &quot;Danh sách chặn IP&quot;</value>
   </data>
   <data name="settings_domain_block" xml:space="preserve">
     <value>Hiện thẻ &quot;Nhật ký tên miền&quot;</value>
