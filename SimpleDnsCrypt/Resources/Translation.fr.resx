@@ -430,78 +430,79 @@
     <value>Forcer le TCP</value>
   </data>
   <data name="advanced_settings_forcetcp_content" xml:space="preserve">
-    <value>Always use TCP to connect to upstream servers</value>
+    <value>Toujours utiliser le TCP pour se connecter au serveurs en amont</value>
+    <comment>traduire &quot;upstream&quot; en &quot;en amont&quot; ne fait pas trop français, si quelqu&apos;un a une autre idée qu&apos;il la propose ou corrige la traduction.</comment>
   </data>
   <data name="add" xml:space="preserve">
-    <value>Add</value>
+    <value>Ajouter</value>
   </data>
   <data name="message_title_new_whitelist_rule" xml:space="preserve">
     <value>Add new domain whitelist rule</value>
   </data>
   <data name="message_content_new_whitelist_rule" xml:space="preserve">
-    <value>Example: *.example.com, ads.*, *sex*, you also can add a comma-separated list of rules</value>
+    <value>Exemple: *.exemple.com, publicites.*, *sexe*, vous pouvez aussi ajouter une liste de règles séparées par des virgules. </value>
   </data>
   <data name="message_title_new_blacklist_rule" xml:space="preserve">
     <value>Add new domain blacklist rule</value>
   </data>
   <data name="message_content_new_blacklist_rule" xml:space="preserve">
-    <value>Example: *.example.com, ads.*, *sex*, you can also add a comma-separated list of rules, a file that starts with file:my-custom-rules.txt or a remote URL that begins with http:// or https://.</value>
+    <value>Exemple: *.exemple.com, publicites.*, *sex*, vous pouvez aussi ajouter une liste de règles séparées par des virgules, un fichier qui commence par file:mes-listes-personnalisees.txt ou une URL distante qui commence par http:// ou https://</value>
   </data>
   <data name="working_dialog_title" xml:space="preserve">
-    <value>Hard work is being done . . .</value>
+    <value>Un travail difficile est en train d&apos;être effectué...</value>
   </data>
   <data name="button_select_path" xml:space="preserve">
-    <value>Select path</value>
+    <value>Sélectionner le chemin</value>
   </data>
   <data name="button_blacklist_build" xml:space="preserve">
-    <value>Build the dnscrypt-proxy blacklist</value>
+    <value>Compiler la liste noire de dnscrypt-proxy</value>
   </data>
   <data name="button_blacklist_import" xml:space="preserve">
-    <value>Import existing blacklist rules</value>
+    <value>Importer les règles de liste noire existantes</value>
   </data>
   <data name="button_blacklist_export" xml:space="preserve">
-    <value>Export blacklist rules</value>
+    <value>Exporter les règles de liste noire</value>
   </data>
   <data name="button_blacklist_remove" xml:space="preserve">
-    <value>Remove selected blacklist rule</value>
+    <value>Supprimer la règle de liste noire sélectionnée</value>
   </data>
   <data name="button_blacklist_add" xml:space="preserve">
-    <value>Add a new blacklist rule</value>
+    <value>Ajouter une nouvelle règle de liste noire</value>
   </data>
   <data name="button_whitelist_import" xml:space="preserve">
-    <value>Import existing whitelist rules</value>
+    <value>Importer les règles de liste blanche existantes</value>
   </data>
   <data name="button_whitelist_export" xml:space="preserve">
-    <value>Export whitelist rules</value>
+    <value>Exporter les règles de liste blanche</value>
   </data>
   <data name="button_whitelist_remove" xml:space="preserve">
-    <value>Remove selected whitelist rule</value>
+    <value>Supprimer la règle de liste blanche sélectionnée</value>
   </data>
   <data name="button_whitelist_add" xml:space="preserve">
-    <value>Add a new whitelist rule</value>
+    <value>Ajouter une nouvelle règle de liste blanche</value>
   </data>
   <data name="whitelist_rules_header" xml:space="preserve">
-    <value>Whitelist Rules</value>
+    <value>Règles de liste blanche</value>
   </data>
   <data name="whitelist_rules_sub_header" xml:space="preserve">
-    <value>(all entries are ignored during blacklist generation)</value>
+    <value>(toutes les entrées sont ignorées durant la génération de la liste noire)</value>
   </data>
   <data name="whitelist_rules_path" xml:space="preserve">
-    <value>Whitelist Rules:</value>
+    <value>Règles de liste blanche:</value>
   </data>
   <data name="blacklist_rules_header" xml:space="preserve">
-    <value>Blacklist Rules</value>
+    <value>Règles de liste noire</value>
   </data>
   <data name="blacklist_rules_sub_header" xml:space="preserve">
-    <value>(all entries are merged to a blacklist)</value>
+    <value>(toutes les entrées sont fusionnées dans la liste noire)</value>
   </data>
   <data name="blacklist_rules_path" xml:space="preserve">
-    <value>Blacklist Rules:</value>
+    <value>Règles de liste noire:</value>
   </data>
   <data name="blacklist_path" xml:space="preserve">
-    <value>Blacklist:</value>
+    <value>Liste noire:</value>
   </data>
   <data name="blacklist_header" xml:space="preserve">
-    <value>Domain Blacklist und Whitelist</value>
+    <value>Liste noire et liste blanche de domaine</value>
   </data>
 </root>
