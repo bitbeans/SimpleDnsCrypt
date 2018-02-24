@@ -128,6 +128,7 @@
   </data>
   <data name="default_settings_service" xml:space="preserve">
     <value>DNSCrypt服务</value>
+    <comment>Fuzzy</comment>
   </data>
   <data name="default_settings_configuration" xml:space="preserve">
     <value>设置</value>
@@ -491,5 +492,11 @@
   </data>
   <data name="blacklist_header" xml:space="preserve">
     <value>域名黑名单和白名单</value>
+  </data>
+  <data name="advanced_settings_globalresolver" xml:space="preserve">
+    <value>Global Resolver</value>
+  </data>
+  <data name="advanced_settings_globalresolver_content" xml:space="preserve">
+    <value>If you want this computer to act as gateway device for others (eg. smartphones or other computers)</value>
   </data>
 </root>

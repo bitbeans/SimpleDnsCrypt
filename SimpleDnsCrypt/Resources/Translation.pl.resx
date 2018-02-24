@@ -445,51 +445,57 @@
     <value>Utwórz listę blokowania dnscrypt-proxy</value>
   </data>
   <data name="button_blacklist_import" xml:space="preserve">
-    <value>Import czarnej listy</value>
+    <value>Import listy blokowania</value>
   </data>
   <data name="button_blacklist_export" xml:space="preserve">
-    <value>Eksport czarnej listy</value>
+    <value>Eksport listy blokowania</value>
   </data>
   <data name="button_blacklist_remove" xml:space="preserve">
-    <value>Usuń regułę blokowania</value>
+    <value>Usuń zaznaczone elementy z listy blokowania</value>
   </data>
   <data name="button_blacklist_add" xml:space="preserve">
     <value>Dodaj regułę blokowania</value>
   </data>
   <data name="button_whitelist_import" xml:space="preserve">
-    <value>Import białej listy</value>
+    <value>Import listy wyjątków</value>
   </data>
   <data name="button_whitelist_export" xml:space="preserve">
-    <value>Eksport białej listy</value>
+    <value>Eksport listy wyjątków</value>
   </data>
   <data name="button_whitelist_remove" xml:space="preserve">
-    <value>Remove selected whitelist rule</value>
+    <value>Usuń zaznaczone elementy z listy wyjątków</value>
   </data>
   <data name="button_whitelist_add" xml:space="preserve">
-    <value>Add a new whitelist rule</value>
+    <value>Dodaj regułę do wyjątków</value>
   </data>
   <data name="whitelist_rules_header" xml:space="preserve">
-    <value>Whitelist Rules</value>
+    <value>Wyjątki</value>
   </data>
   <data name="whitelist_rules_sub_header" xml:space="preserve">
-    <value>(all entries are ignored during blacklist generation)</value>
+    <value>(elementy pomijane podczas generowania listy blokowania)</value>
   </data>
   <data name="whitelist_rules_path" xml:space="preserve">
-    <value>Whitelist Rules:</value>
+    <value>Lista wyjątków:</value>
   </data>
   <data name="blacklist_rules_header" xml:space="preserve">
-    <value>Blacklist Rules</value>
+    <value>Lista blokowania</value>
   </data>
   <data name="blacklist_rules_sub_header" xml:space="preserve">
-    <value>(all entries are merged to a blacklist)</value>
+    <value>(elementy wcielane do listy blokowania)</value>
   </data>
   <data name="blacklist_rules_path" xml:space="preserve">
-    <value>Blacklist Rules:</value>
+    <value>Lista blokowania:</value>
   </data>
   <data name="blacklist_path" xml:space="preserve">
-    <value>Blacklist:</value>
+    <value>Lista blokowania:</value>
   </data>
   <data name="blacklist_header" xml:space="preserve">
-    <value>Domain Blacklist and Whitelist</value>
+    <value>Lista blokowania i wyjątki</value>
+  </data>
+  <data name="advanced_settings_globalresolver" xml:space="preserve">
+    <value>Global Resolver</value>
+  </data>
+  <data name="advanced_settings_globalresolver_content" xml:space="preserve">
+    <value>If you want this computer to act as gateway device for others (eg. smartphones or other computers)</value>
   </data>
 </root>

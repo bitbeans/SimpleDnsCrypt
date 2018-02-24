@@ -493,6 +493,12 @@
     <value>Blacklist:</value>
   </data>
   <data name="blacklist_header" xml:space="preserve">
-    <value>Domain Blacklist und Whitelist</value>
+    <value>Domain Blacklist and Whitelist</value>
+  </data>
+  <data name="advanced_settings_globalresolver" xml:space="preserve">
+    <value>Global Resolver</value>
+  </data>
+  <data name="advanced_settings_globalresolver_content" xml:space="preserve">
+    <value>If you want this computer to act as gateway device for others (eg. smartphones or other computers)</value>
   </data>
 </root>

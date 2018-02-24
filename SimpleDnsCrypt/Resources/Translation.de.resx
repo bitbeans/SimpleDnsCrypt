@@ -498,4 +498,10 @@
   <data name="blacklist_header" xml:space="preserve">
     <value>Domain Blackliste und Whiteliste</value>
   </data>
+  <data name="advanced_settings_globalresolver" xml:space="preserve">
+    <value>Globaler Resolver</value>
+  </data>
+  <data name="advanced_settings_globalresolver_content" xml:space="preserve">
+    <value>Wenn Sie möchten, dass dieser Computer als Gateway für andere Geräte (z.B. Smartphones) agiert</value>
+  </data>
 </root>
