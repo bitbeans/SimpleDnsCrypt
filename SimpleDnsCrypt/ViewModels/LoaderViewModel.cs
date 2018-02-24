@@ -150,8 +150,22 @@ namespace SimpleDnsCrypt.ViewModels
 				}
 
 				ProgressText = LocalizationEx.GetUiString("loader_loading_network_cards", Thread.CurrentThread.CurrentCulture);
-				var localNetworkInterfaces = LocalNetworkInterfaceManager.GetLocalNetworkInterfaces(
-					DnscryptProxyConfigurationManager.DnscryptProxyConfiguration.listen_addresses.ToList());
+
+				List<LocalNetworkInterface> localNetworkInterfaces;
+				if (DnscryptProxyConfigurationManager.DnscryptProxyConfiguration.listen_addresses.Contains(Global.GlobalResolver))
+				{
+					var dnsServer = new List<string>
+					{
+						Global.DefaultResolverIpv4,
+						Global.DefaultResolverIpv6
+					};
+					localNetworkInterfaces = LocalNetworkInterfaceManager.GetLocalNetworkInterfaces(dnsServer);
+				}
+				else
+				{
+					localNetworkInterfaces = LocalNetworkInterfaceManager.GetLocalNetworkInterfaces(
+						DnscryptProxyConfigurationManager.DnscryptProxyConfiguration.listen_addresses.ToList());
+				}
 				_mainViewModel.LocalNetworkInterfaces = new BindableCollection<LocalNetworkInterface>();
 				_mainViewModel.LocalNetworkInterfaces.AddRange(localNetworkInterfaces);
 				_mainViewModel.Initialize();

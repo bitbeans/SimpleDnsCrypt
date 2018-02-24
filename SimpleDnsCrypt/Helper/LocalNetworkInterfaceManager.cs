@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Net.NetworkInformation;
+using Caliburn.Micro;
 using SimpleDnsCrypt.Config;
 using SimpleDnsCrypt.Models;
 
@@ -14,6 +15,8 @@ namespace SimpleDnsCrypt.Helper
 	/// </summary>
 	public static class LocalNetworkInterfaceManager
 	{
+		private static readonly ILog Log = LogManagerHelper.Factory();
+
 		/// <summary>
 		///     Get a list of the local network interfaces.
 		/// </summary>
@@ -120,8 +123,9 @@ namespace SimpleDnsCrypt.Helper
 					}));
 				}
 			}
-			catch (Exception)
+			catch (Exception exception)
 			{
+				Log.Error(exception);
 			}
 			return serverAddresses;
 		}
@@ -213,8 +217,9 @@ namespace SimpleDnsCrypt.Helper
 				}
 				return true;
 			}
-			catch (Exception)
+			catch (Exception exception)
 			{
+				Log.Error(exception);
 				return false;
 			}
 		}
