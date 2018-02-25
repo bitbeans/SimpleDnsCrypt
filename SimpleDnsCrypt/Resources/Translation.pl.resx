@@ -493,9 +493,9 @@
     <value>Lista blokowania i wyjątki</value>
   </data>
   <data name="advanced_settings_globalresolver" xml:space="preserve">
-    <value>Global Resolver</value>
+    <value>Główny serwer</value>
   </data>
   <data name="advanced_settings_globalresolver_content" xml:space="preserve">
-    <value>If you want this computer to act as gateway device for others (eg. smartphones or other computers)</value>
+    <value>Jeżeli chcesz, aby ten komputer służył jako bramka do zapytań dla innych urządzeń (smartfonów lub innych komputerów)</value>
   </data>
 </root>
