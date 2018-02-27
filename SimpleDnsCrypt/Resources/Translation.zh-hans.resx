@@ -494,9 +494,9 @@
     <value>域名黑名单和白名单</value>
   </data>
   <data name="advanced_settings_globalresolver" xml:space="preserve">
-    <value>Global Resolver</value>
+    <value>全局代理</value>
   </data>
   <data name="advanced_settings_globalresolver_content" xml:space="preserve">
-    <value>If you want this computer to act as gateway device for others (eg. smartphones or other computers)</value>
+    <value>如果想用此电脑作为其他设备（如手机和电脑）的网关，请启用此项设置</value>
   </data>
 </root>
