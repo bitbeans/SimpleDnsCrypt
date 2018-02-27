@@ -223,7 +223,7 @@
     <value>Tutti i file necessari sono stati trovati</value>
   </data>
   <data name="about" xml:space="preserve">
-    <value>Al riguardo</value>
+    <value>Informazioni</value>
   </data>
   <data name="about_software" xml:space="preserve">
     <value>Software</value>
@@ -244,10 +244,10 @@
     <value>in attesa di query DNS</value>
   </data>
   <data name="querylog_entry_count" xml:space="preserve">
-    <value>Valori:</value>
+    <value>Sorgente:</value>
   </data>
   <data name="querylog_source_file" xml:space="preserve">
-    <value>Sorgente:</value>
+    <value>File di Log:</value>
   </data>
   <data name="querylog_button_clear" xml:space="preserve">
     <value>Svuota Lista</value>
@@ -262,7 +262,7 @@
     <value>in attesa di query DNS bloccate</value>
   </data>
   <data name="domainblocklog_entry_count" xml:space="preserve">
-    <value>Contatore domini bloccati</value>
+    <value>Valori:</value>
   </data>
   <data name="domainblocklog_source_file" xml:space="preserve">
     <value>Sorgente:</value>
@@ -319,7 +319,7 @@
     <value>Annulla</value>
   </data>
   <data name="ok" xml:space="preserve">
-    <value>Ok</value>
+    <value>OK</value>
   </data>
   <data name="dialog_message_uninstall" xml:space="preserve">
     <value>Vuoi rimuovere il servizio installato?</value>
@@ -361,16 +361,16 @@
     <value>Resolver Disponibili</value>
   </data>
   <data name="loader_redistributable_package_check" xml:space="preserve">
-    <value>Controllando Microsoft Visual C++ Redistributable per Visual Studio 2017</value>
+    <value>Controllando se Microsoft Visual C++ Redistributable per Visual Studio 2017 è installato</value>
   </data>
   <data name="loader_redistributable_package_already_installed" xml:space="preserve">
     <value>Microsoft Visual C++ Redistributable per Visual Studio 2017 è già installato</value>
   </data>
   <data name="loader_redistributable_package_installing" xml:space="preserve">
-    <value>Installando: Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
+    <value>Installando: Microsoft Visual C++ Redistributable per Visual Studio 2017</value>
   </data>
   <data name="loader_redistributable_package_ready" xml:space="preserve">
-    <value>Microsoft Visual C++ Redistributable for Visual Studio 2017 è stato installato</value>
+    <value>Microsoft Visual C++ Redistributable per Visual Studio 2017 è stato installato</value>
   </data>
   <data name="message_title_no_server_selected" xml:space="preserve">
     <value>Nessun server selezionato</value>
@@ -382,7 +382,7 @@
     <value>Il servizio non è in esecuzione</value>
   </data>
   <data name="message_content_service_not_running" xml:space="preserve">
-    <value>Devi avviare il servizio DNSCrypt prima!</value>
+    <value>Devi prima avviare il servizio DNSCrypt!</value>
   </data>
   <data name="message_title_uninstallation_successful" xml:space="preserve">
     <value>Disinstallazione completata</value>
@@ -424,37 +424,38 @@
     <value>Aggiungi</value>
   </data>
   <data name="message_title_new_whitelist_rule" xml:space="preserve">
-    <value>Aggiungi dominio alla whitelist</value>
+    <value>Aggiungi un nuovo dominio alla whitelist</value>
   </data>
   <data name="message_content_new_whitelist_rule" xml:space="preserve">
-    <value>Example: *.example.com, ads.*, *sex*, you also can add a comma-separated list of rules</value>
+    <value>Esempio: *.example.com, ads.*,*sex*, puoi anche inserire una lista di regole separate da una virgola</value>
   </data>
   <data name="message_title_new_blacklist_rule" xml:space="preserve">
-    <value>Aggiungi dominio alla blacklist</value>
+    <value>Aggiungi un nuovo dominio alla blacklist</value>
   </data>
   <data name="message_content_new_blacklist_rule" xml:space="preserve">
-    <value>Example: *.example.com, ads.*, *sex*, you can also add a comma-separated list of rules, a file that starts with file:my-custom-rules.txt or a remote URL that begins with http:// or https://.</value>
+    <value>Esempio: *.example.com, ads.*, *sex*, puoi anche inserire una lista di regole, un file che comincia con:my-custom-rules.txt o un URL remoto che comincia con http:// o https://.</value>
   </data>
   <data name="working_dialog_title" xml:space="preserve">
-    <value>Il lavoro duro è in escuzione. . .</value>
+    <value>Consolidando le liste. . .</value>
+    <comment>I propose to change Hard work being done into, consolidating lists, because is what happen.</comment>
   </data>
   <data name="button_select_path" xml:space="preserve">
-    <value>Seleziona cartella</value>
+    <value>Seleziona percorso</value>
   </data>
   <data name="button_blacklist_build" xml:space="preserve">
-    <value>Crea la dnscrypt-proxy blacklist</value>
+    <value>Crea la blacklist per dnscrypt-proxy</value>
   </data>
   <data name="button_blacklist_import" xml:space="preserve">
-    <value>Importa regole blacklis esistenti</value>
+    <value>Importa regole blacklist esistenti</value>
   </data>
   <data name="button_blacklist_export" xml:space="preserve">
     <value>Esporta regole blacklist</value>
   </data>
   <data name="button_blacklist_remove" xml:space="preserve">
-    <value>Rimuovi la regola blacklist selezionata</value>
+    <value>Rimuovi la regola selezionata dalla blacklist</value>
   </data>
   <data name="button_blacklist_add" xml:space="preserve">
-    <value>Aggiungi nuova regola blacklist</value>
+    <value>Aggiungi una nuova regola alla blacklist</value>
   </data>
   <data name="button_whitelist_import" xml:space="preserve">
     <value>Importa regole whitelist esistenti</value>
@@ -463,41 +464,41 @@
     <value>Esporta regole whitelist</value>
   </data>
   <data name="button_whitelist_remove" xml:space="preserve">
-    <value>Rimuovi la regola whitelist selezionata</value>
+    <value>Rimuovi la regola selezionata dalla whitelist</value>
   </data>
   <data name="button_whitelist_add" xml:space="preserve">
-    <value>Aggiungi nuova regola whitelist</value>
+    <value>Aggiungi una nuova regola alla whitelist</value>
   </data>
   <data name="whitelist_rules_header" xml:space="preserve">
-    <value>Regole whitelist</value>
+    <value>Regole Whitelist</value>
   </data>
   <data name="whitelist_rules_sub_header" xml:space="preserve">
-    <value>(all entries are ignored during blacklist generation)</value>
+    <value>(tutti i valori sono ignorati durante la generazione della blacklist)</value>
   </data>
   <data name="whitelist_rules_path" xml:space="preserve">
-    <value>Regole whitelist
+    <value>Regole Whitelist:
 </value>
   </data>
   <data name="blacklist_rules_header" xml:space="preserve">
-    <value>Regole blacklist
+    <value>Regole Blacklist
 </value>
   </data>
   <data name="blacklist_rules_sub_header" xml:space="preserve">
-    <value>(all entries are merged to a blacklist)</value>
+    <value>(tutti i valori sono uniti in una blacklist)</value>
   </data>
   <data name="blacklist_rules_path" xml:space="preserve">
-    <value>Regole blacklist:</value>
+    <value>Regole Blacklist:</value>
   </data>
   <data name="blacklist_path" xml:space="preserve">
     <value>Blacklist:</value>
   </data>
   <data name="blacklist_header" xml:space="preserve">
-    <value> Blacklist e Whitelist domini</value>
+    <value>Blacklist e Whitelist domini</value>
   </data>
   <data name="advanced_settings_globalresolver" xml:space="preserve">
-    <value>Global Resolver</value>
+    <value>Resolver Globale</value>
   </data>
   <data name="advanced_settings_globalresolver_content" xml:space="preserve">
-    <value>If you want this computer to act as gateway device for others (eg. smartphones or other computers)</value>
+    <value>Se vuoi che questo computer funzioni come gateway per altri dispositivi (ad esempio: smartphone ed altri computer)</value>
   </data>
 </root>
