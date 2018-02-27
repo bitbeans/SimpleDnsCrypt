@@ -476,12 +476,10 @@
     <value>(tutti i valori sono ignorati durante la generazione della blacklist)</value>
   </data>
   <data name="whitelist_rules_path" xml:space="preserve">
-    <value>Regole Whitelist:
-</value>
+    <value>Regole Whitelist:</value>
   </data>
   <data name="blacklist_rules_header" xml:space="preserve">
-    <value>Regole Blacklist
-</value>
+    <value>Regole Blacklist</value>
   </data>
   <data name="blacklist_rules_sub_header" xml:space="preserve">
     <value>(tutti i valori sono uniti in una blacklist)</value>
