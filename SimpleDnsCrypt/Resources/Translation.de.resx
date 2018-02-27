@@ -442,7 +442,7 @@
     <value>Beispiel: *.example.com, ads.*, *sex*, es ist ebenfalls möglich eine durch Komma getrennte Liste hinzuzufügen, eine Datei beginnend mit file:my-custom-rules.txt oder eine URL beginnend mit http:// oder https://.</value>
   </data>
   <data name="working_dialog_title" xml:space="preserve">
-    <value>Harte Arbeit wird vollbracht . . .</value>
+    <value>Listen werden zusammengeführt . . .</value>
   </data>
   <data name="button_select_path" xml:space="preserve">
     <value>Pfad wählen</value>
