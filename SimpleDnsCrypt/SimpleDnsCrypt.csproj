@@ -369,6 +369,10 @@
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Translation.tr.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Translation.resx</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Translation.fa.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>

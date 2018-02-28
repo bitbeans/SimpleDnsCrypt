@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="default_settings_network_cards" xml:space="preserve">
+    <value>Ağ Kartları</value>
+  </data>
+  <data name="default_settings_show_hidden_cards" xml:space="preserve">
+    <value>Gizli Ağ Kartlarını Göster</value>
+  </data>
+  <data name="default_settings_service_header" xml:space="preserve">
+    <value>Hizmet</value>
+  </data>
+  <data name="default_settings_service" xml:space="preserve">
+    <value>DNSCrypt Hizmeti</value>
+  </data>
+  <data name="default_settings_configuration" xml:space="preserve">
+    <value>Yapılandırma</value>
+  </data>
+  <data name="default_settings_configuration_ipv4" xml:space="preserve">
+    <value>IPv4 Sunucu Kullanımı</value>
+  </data>
+  <data name="default_settings_configuration_ipv4_tooltip" xml:space="preserve">
+    <value>IPv4 üzerinden erişilebilen sunucuları kullan</value>
+  </data>
+  <data name="default_settings_configuration_ipv6" xml:space="preserve">
+    <value>IPv6 Sunucu Kullanımı</value>
+  </data>
+  <data name="default_settings_configuration_ipv6_tooltip" xml:space="preserve">
+    <value>IPv6 üzerinden erişilebilen sunucuları kullanın (IPv6 bağlantınız yoksa etkinleştirmeyin)</value>
+  </data>
+  <data name="default_settings_configuration_dnssec" xml:space="preserve">
+    <value>Yalnızca DNSSEC desteği olan sunucular</value>
+  </data>
+  <data name="default_settings_configuration_dnssec_tooltip" xml:space="preserve">
+    <value>Sunucu, DNS güvenlik uzantılarını desteklemelidir</value>
+  </data>
+  <data name="default_settings_configuration_nolog" xml:space="preserve">
+    <value>Yalnızca kayıt tutmayan sunucular</value>
+  </data>
+  <data name="default_settings_configuration_nolog_tooltip" xml:space="preserve">
+    <value>Sunucu kullanıcı sorgularını günlüğe kaydetmemeli</value>
+  </data>
+  <data name="default_settings_configuration_nofilter" xml:space="preserve">
+    <value>Yalnızca filtresiz sunucular</value>
+  </data>
+  <data name="default_settings_configuration_nofilter_tooltip" xml:space="preserve">
+    <value>Sunucu kendi kara listesini zorlamamalıdır (ebeveyn kontrolü, reklam engelleme ... için)</value>
+  </data>
+  <data name="tabitem_mainmenu" xml:space="preserve">
+    <value>Ana Menü</value>
+  </data>
+  <data name="loader_administrative_rights_available" xml:space="preserve">
+    <value>Yönetici hakları mevcuttur</value>
+  </data>
+  <data name="loader_administrative_rights_missing" xml:space="preserve">
+    <value>Yönetici hakları eksik!</value>
+  </data>
+  <data name="loader_checking_version" xml:space="preserve">
+    <value>Yeni sürümler için kontrol yapılıyor</value>
+  </data>
+  <data name="loader_new_version_found" xml:space="preserve">
+    <value>Yeni bir sürüm bulundu</value>
+  </data>
+  <data name="loader_starting_update" xml:space="preserve">
+    <value>Güncelleme başlatılıyor...</value>
+  </data>
+  <data name="loader_update_failed" xml:space="preserve">
+    <value>Güncelleme başarısız oldu, devam edin. . .</value>
+  </data>
+  <data name="loader_latest_version" xml:space="preserve">
+    <value>Zaten en son sürümü kullanıyorsunuz</value>
+  </data>
+  <data name="loader_unsigned" xml:space="preserve">
+    <value>imzasız</value>
+  </data>
+  <data name="loader_missing" xml:space="preserve">
+    <value>eksik</value>
+  </data>
+  <data name="loader_downloading_signature" xml:space="preserve">
+    <value>İmza indiriliyor. . .</value>
+  </data>
+  <data name="loader_downloading_installer" xml:space="preserve">
+    <value>Yükleyici indiriliyor...</value>
+  </data>
+  <data name="loader_starting" xml:space="preserve">
+    <value>Başlatılıyor...</value>
+  </data>
+  <data name="loader_validate_folder" xml:space="preserve">
+    <value>{0} klasörünü doğrulama</value>
+  </data>
+  <data name="loader_loading_network_cards" xml:space="preserve">
+    <value>Ağ kartları yükleniyor...</value>
+  </data>
+  <data name="loader_failed_loading" xml:space="preserve">
+    <value>{0} yüklenemedi</value>
+  </data>
+  <data name="loader_successfully_loaded" xml:space="preserve">
+    <value>{0} başarıyla yüklendi</value>
+  </data>
+  <data name="loader_loading" xml:space="preserve">
+    <value>Yükleniyor {0} . . .</value>
+  </data>
+  <data name="loader_missing_files" xml:space="preserve">
+    <value>{0} içindeki dosyalar eksik klasör:\n{1}\n\n {2} &apos;nin yeni bir kurulumunu düşünün</value>
+  </data>
+  <data name="loader_all_files_available" xml:space="preserve">
+    <value>Gerekli tüm dosyalar bulundu</value>
+  </data>
+  <data name="about" xml:space="preserve">
+    <value>Hakkında</value>
+  </data>
+  <data name="about_software" xml:space="preserve">
+    <value>Yazılım</value>
+  </data>
+  <data name="about_license" xml:space="preserve">
+    <value>Lisans</value>
+  </data>
+  <data name="about_view_on_github" xml:space="preserve">
+    <value>Github üzerinde görüntüle</value>
+  </data>
+  <data name="tabitem_querylog" xml:space="preserve">
+    <value>Sorgu Günlüğü</value>
+  </data>
+  <data name="querylog" xml:space="preserve">
+    <value>Sorgu Günlüğü</value>
+  </data>
+  <data name="querylog_waiting_for_data" xml:space="preserve">
+    <value>DNS sorguları için bekleniyor</value>
+  </data>
+  <data name="querylog_entry_count" xml:space="preserve">
+    <value>Girdiler:</value>
+  </data>
+  <data name="querylog_source_file" xml:space="preserve">
+    <value>Kaynak:</value>
+  </data>
+  <data name="querylog_button_clear" xml:space="preserve">
+    <value>Listeyi temizle</value>
+  </data>
+  <data name="querylog_button_block" xml:space="preserve">
+    <value>Seçilen Blok</value>
+  </data>
+  <data name="domainblocklog" xml:space="preserve">
+    <value>Alan Adı Blok Günlüğü</value>
+  </data>
+  <data name="domainblocklog_waiting_for_data" xml:space="preserve">
+    <value>Engellenen DNS sorguları için bekleniyor</value>
+  </data>
+  <data name="domainblocklog_entry_count" xml:space="preserve">
+    <value>Girdiler:</value>
+  </data>
+  <data name="domainblocklog_source_file" xml:space="preserve">
+    <value>Kaynak:</value>
+  </data>
+  <data name="domainblocklog_button_clear" xml:space="preserve">
+    <value>Listeyi temizle</value>
+  </data>
+  <data name="tabitem_domainblocklog" xml:space="preserve">
+    <value>Alan Adı Blok Günlüğü</value>
+  </data>
+  <data name="tabitem_addressblocklog" xml:space="preserve">
+    <value>Adres Blok Günlüğü</value>
+  </data>
+  <data name="tabitem_domainblacklist" xml:space="preserve">
+    <value>Alan Adı Kara Listesi</value>
+  </data>
+  <data name="tabitem_addressblacklist" xml:space="preserve">
+    <value>Adres Kara Listesi</value>
+  </data>
+  <data name="settings" xml:space="preserve">
+    <value>Ayarlar</value>
+  </data>
+  <data name="settings_domain_blacklist" xml:space="preserve">
+    <value>&quot;Alan Adı Kara Listesi&quot; Sekmesini göster</value>
+  </data>
+  <data name="settings_address_blacklist" xml:space="preserve">
+    <value>&quot;Adres Kara Listesi&quot; Sekmesini göster</value>
+  </data>
+  <data name="settings_domain_block" xml:space="preserve">
+    <value>&quot;Alan Adı Blok Günlüğü&quot; Sekmesini göster</value>
+  </data>
+  <data name="settings_address_block" xml:space="preserve">
+    <value>&quot;Adres Blok Günlüğü&quot; Sekmesini göster</value>
+  </data>
+  <data name="settings_query_log" xml:space="preserve">
+    <value>&quot;Sorgu Günlüğü&quot; Sekmesini göster</value>
+  </data>
+  <data name="tabitem_resolvers" xml:space="preserve">
+    <value>Çözümleyiciler</value>
+  </data>
+  <data name="tabitem_advanced_settings" xml:space="preserve">
+    <value>Gelişmiş Ayarlar</value>
+  </data>
+  <data name="settings_advanced_settings" xml:space="preserve">
+    <value>&quot;Gelişmiş Ayarlar&quot; Sekmesini göster</value>
+  </data>
+  <data name="yes" xml:space="preserve">
+    <value>evet</value>
+  </data>
+  <data name="no" xml:space="preserve">
+    <value>hayır</value>
+  </data>
+  <data name="cancel" xml:space="preserve">
+    <value>iptal et</value>
+  </data>
+  <data name="ok" xml:space="preserve">
+    <value>tamam</value>
+  </data>
+  <data name="dialog_message_uninstall" xml:space="preserve">
+    <value>Yüklü Windows hizmetini kaldırmak istiyor musunuz?</value>
+  </data>
+  <data name="dialog_uninstall_title" xml:space="preserve">
+    <value>Hizmet kaldırılıyor</value>
+  </data>
+  <data name="advanced_settings_uninstall_title" xml:space="preserve">
+    <value>Hizmet kaldırılıyor</value>
+  </data>
+  <data name="advanced_settings_uninstall_text" xml:space="preserve">
+    <value>Yüklü Windows hizmetini kaldırma</value>
+  </data>
+  <data name="advanced_settings_uninstall_button" xml:space="preserve">
+    <value>Hizmeti kaldır</value>
+  </data>
+  <data name="default_settings_apply_settings" xml:space="preserve">
+    <value>Ayarları uygula</value>
+  </data>
+  <data name="advanced_settings_dnscache" xml:space="preserve">
+    <value>DNS Önbelleği</value>
+  </data>
+  <data name="resolvers_dnscrypt_mode_header" xml:space="preserve">
+    <value>DNSCrypt Modu</value>
+  </data>
+  <data name="resolvers_dnscrypt_mode_description" xml:space="preserve">
+    <value>Otomatik modda, mevcut tüm sunucular kullanılır. dnscrypt-proxy otomatik olarak en hızlı çözümleyicileri seçer.</value>
+  </data>
+  <data name="resolvers_dnscrypt_automatic_mode" xml:space="preserve">
+    <value>Otomatik Mod</value>
+  </data>
+  <data name="disabled" xml:space="preserve">
+    <value>Devre dışı</value>
+  </data>
+  <data name="enabled" xml:space="preserve">
+    <value>Etkin</value>
+  </data>
+  <data name="resolvers_available_resolvers_header" xml:space="preserve">
+    <value>Kullanılabilir Çözümleyiciler</value>
+  </data>
+  <data name="loader_redistributable_package_check" xml:space="preserve">
+    <value>Visual Studio 2017 için Microsoft Visual C ++ Yeniden Dağıtılabilir Dosyası Denetleniyor</value>
+  </data>
+  <data name="loader_redistributable_package_already_installed" xml:space="preserve">
+    <value>Visual Studio 2017 için Microsoft Visual C ++ Yeniden Dağıtılabilir Dosyası zaten yüklü</value>
+  </data>
+  <data name="loader_redistributable_package_installing" xml:space="preserve">
+    <value>Yükleniyor: Visual Studio 2017 için Microsoft Visual C ++ Yeniden Dağıtılabilir Dosyası</value>
+  </data>
+  <data name="loader_redistributable_package_ready" xml:space="preserve">
+    <value>Visual Studio 2017 için Microsoft Visual C ++ Yeniden Dağıtılabilir Dosyası şimdi yüklendi</value>
+  </data>
+  <data name="message_title_no_server_selected" xml:space="preserve">
+    <value>Sunucu seçilmedi</value>
+  </data>
+  <data name="message_content_no_server_selected" xml:space="preserve">
+    <value>En az bir sunucu seçilmelidir. Aksi takdirde, dnscrypt-proxy, seçilen filtrelere karşılık gelen tüm sunucuları kullanır.</value>
+  </data>
+  <data name="message_title_service_not_running" xml:space="preserve">
+    <value>Hizmet çalışmıyor</value>
+  </data>
+  <data name="message_content_service_not_running" xml:space="preserve">
+    <value>Önce DnsCrypt hizmetini başlatmalısınız!</value>
+  </data>
+  <data name="message_title_uninstallation_successful" xml:space="preserve">
+    <value>Kaldırma işlemi başarıyla tamamlandı</value>
+  </data>
+  <data name="message_content_uninstallation_successful" xml:space="preserve">
+    <value>Kaldırma işlemi başarılı oldu! DNS istekleri artık şifrelenmemektedir.</value>
+  </data>
+  <data name="message_title_uninstallation_error" xml:space="preserve">
+    <value>Kaldırma hatası</value>
+  </data>
+  <data name="message_content_uninstallation_error" xml:space="preserve">
+    <value>Kaldırma işlemi gerçekleştirilemedi. Hizmeti el ile durdurmayı ve yeniden kaldırmayı deneyin.</value>
+  </data>
+  <data name="open_log_directory" xml:space="preserve">
+    <value>Günlük dizinini aç</value>
+  </data>
+  <data name="settings_update_auto" xml:space="preserve">
+    <value>Başlangıçta güncellemeleri kontrol et</value>
+  </data>
+  <data name="settings_update_channel" xml:space="preserve">
+    <value>Güncelleme Kanalı:</value>
+  </data>
+  <data name="advanced_settings_dnscache_content" xml:space="preserve">
+    <value>DNS önbelleği gecikme ve giden trafiği azaltır</value>
+  </data>
+  <data name="advanced_settings_blockipv6" xml:space="preserve">
+    <value>IPv6&apos;yı engelle</value>
+  </data>
+  <data name="advanced_settings_blockipv6_content" xml:space="preserve">
+    <value>IPv6 ile ilgili soruları boş yanıtla hemen yanıtlayın</value>
+  </data>
+  <data name="advanced_settings_forcetcp" xml:space="preserve">
+    <value>TCP&apos;yi zorla</value>
+  </data>
+  <data name="advanced_settings_forcetcp_content" xml:space="preserve">
+    <value>Yükleme sunucularına bağlanmak için daima TCP kullan</value>
+  </data>
+  <data name="add" xml:space="preserve">
+    <value>Ekle</value>
+  </data>
+  <data name="message_title_new_whitelist_rule" xml:space="preserve">
+    <value>Alan adı beyaz listesi kuralı ekle</value>
+  </data>
+  <data name="message_content_new_whitelist_rule" xml:space="preserve">
+    <value>Örnek: * .example.com, ads. *, * Sex *, virgül ile ayrılmış kurallar listesi de ekleyebilirsiniz</value>
+  </data>
+  <data name="message_title_new_blacklist_rule" xml:space="preserve">
+    <value>Alan adı kara listesi kuralı ekle</value>
+  </data>
+  <data name="message_content_new_blacklist_rule" xml:space="preserve">
+    <value>Örnek: *.* example.com reklamlar. *seks*, aynı zamanda kurallar, dosya:my-custom-rules.txt ya da http:// veya https://ile başlayan uzak bir URL ile başlayan bir dosya virgülle ayrılmış listesi ekleyebilirsiniz.</value>
+  </data>
+  <data name="working_dialog_title" xml:space="preserve">
+    <value>Listeler birleşti. . .</value>
+  </data>
+  <data name="button_select_path" xml:space="preserve">
+    <value>Yolu seç</value>
+  </data>
+  <data name="button_blacklist_build" xml:space="preserve">
+    <value>Dnscrypt-proxy kara listesi oluşturun</value>
+  </data>
+  <data name="button_blacklist_import" xml:space="preserve">
+    <value>Mevcut kara liste kurallarını içe aktarın</value>
+  </data>
+  <data name="button_blacklist_export" xml:space="preserve">
+    <value>Kara liste kurallarını dışa aktar</value>
+  </data>
+  <data name="button_blacklist_remove" xml:space="preserve">
+    <value>Seçilen kara liste kuralını kaldır</value>
+  </data>
+  <data name="button_blacklist_add" xml:space="preserve">
+    <value>Yeni bir kara liste kuralı ekleme</value>
+  </data>
+  <data name="button_whitelist_import" xml:space="preserve">
+    <value>Varolan beyaz liste kurallarını içe aktar</value>
+  </data>
+  <data name="button_whitelist_export" xml:space="preserve">
+    <value>Beyaz liste kurallarını dışa aktarma</value>
+  </data>
+  <data name="button_whitelist_remove" xml:space="preserve">
+    <value>Seçilen beyaz liste kuralını kaldır</value>
+  </data>
+  <data name="button_whitelist_add" xml:space="preserve">
+    <value>Yeni bir beyaz liste kuralı ekle</value>
+  </data>
+  <data name="whitelist_rules_header" xml:space="preserve">
+    <value>Beyaz Liste Kuralları</value>
+  </data>
+  <data name="whitelist_rules_sub_header" xml:space="preserve">
+    <value>(kara liste oluşturma sırasında kayıtlar dikkate alınmaz)</value>
+  </data>
+  <data name="whitelist_rules_path" xml:space="preserve">
+    <value>Beyaz Liste Kuralları:</value>
+  </data>
+  <data name="blacklist_rules_header" xml:space="preserve">
+    <value>Kara Liste Kuralları</value>
+  </data>
+  <data name="blacklist_rules_sub_header" xml:space="preserve">
+    <value>(tüm kayıtlar bir kara listeye birleştirilir)</value>
+  </data>
+  <data name="blacklist_rules_path" xml:space="preserve">
+    <value>Kara Liste Kuralları:</value>
+  </data>
+  <data name="blacklist_path" xml:space="preserve">
+    <value>Kara liste:</value>
+  </data>
+  <data name="blacklist_header" xml:space="preserve">
+    <value>Alan Adı Kara Liste ve Beyaz Liste</value>
+  </data>
+  <data name="advanced_settings_globalresolver" xml:space="preserve">
+    <value>Küresel Çözümleyici</value>
+  </data>
+  <data name="advanced_settings_globalresolver_content" xml:space="preserve">
+    <value>Bu bilgisayarın başkaları için ağ geçidi aygıtı (örn. Akıllı telefonlar veya diğer bilgisayarlar) gibi davranmasını istiyorsanız,</value>
+  </data>
+</root>

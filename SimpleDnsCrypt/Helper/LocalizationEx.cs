@@ -53,7 +53,7 @@ namespace SimpleDnsCrypt.Helper
 				new Language {Name = "Russian", ShortCode = "ru", CultureCode = "ru-RU"},
 				new Language {Name = "Spanish", ShortCode = "es", CultureCode = "es-ES"},
 				//new Language {Name = "Swedish", ShortCode = "sv", CultureCode = "sv-SV"},
-				//new Language {Name = "Turkish", ShortCode = "tr", CultureCode = "tr-TR"},
+				new Language {Name = "Turkish", ShortCode = "tr", CultureCode = "tr-TR"},
 				new Language {Name = "Vietnamese", ShortCode = "vi", CultureCode = "vi-VN"}
 			};
 			return supportedLanguages;
