@@ -1,11 +1,11 @@
 update:
-  version: 0.5.2
+  version: 0.5.3
   type: 2
-  release: 2018-02-24
+  release: 2018-03-04
   publickey: RWTSM+4BNNvkZPNkHgE88ETlhWa+0HDzU5CN8TvbyvmhVUcr6aQXfssV
   installer:
-    uri: https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.5.2/SimpleDNSCrypt.msi
+    uri: https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.5.3/SimpleDNSCrypt.msi
     name: SimpleDNSCrypt.msi
   signature:
-    uri: https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.5.2/SimpleDNSCrypt.msi.minisig
+    uri: https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.5.3/SimpleDNSCrypt.msi.minisig
   
