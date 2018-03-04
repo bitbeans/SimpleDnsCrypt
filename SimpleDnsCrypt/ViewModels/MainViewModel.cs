@@ -447,6 +447,8 @@ namespace SimpleDnsCrypt.ViewModels
 				{
 					case "mainTab":
 						SelectedTab = Tabs.MainTab;
+						_isResolverRunning = DnsCryptProxyManager.IsDnsCryptProxyRunning();
+						NotifyOfPropertyChange(() => IsResolverRunning);
 						break;
 					case "resolverTab":
 						SelectedTab = Tabs.ResolverTab;
