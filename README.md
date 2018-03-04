@@ -1,4 +1,4 @@
-[![license](https://img.shields.io/github/license/bitbeans/SimpleDnsCrypt.svg?style=flat-square)](https://github.com/bitbeans/SimpleDnsCrypt/blob/master/LICENSE.md) [![Build status](https://img.shields.io/appveyor/ci/bitbeans/simplednscrypt/master.svg?style=flat-square)](https://ci.appveyor.com/project/bitbeans/simplednscrypt/branch/master) [![Github All Releases](https://img.shields.io/github/release/bitbeans/SimpleDnsCrypt.svg?style=flat-square)](https://github.com/bitbeans/SimpleDnsCrypt/releases/latest) [![dnscrypt--proxy](https://img.shields.io/badge/dnscrypt--proxy-2.0.4-orange.svg?style=flat-square)](https://github.com/jedisct1/dnscrypt-proxy) [![Github All Releases](https://img.shields.io/github/downloads/bitbeans/SimpleDnsCrypt/total.svg?style=flat-square)](https://github.com/bitbeans/SimpleDnsCrypt/releases/latest) [![donate PayPal](https://img.shields.io/badge/donate-PayPal-green.svg?style=flat-square)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=c.hermann@bitbeans.de&item_name=Donation+to+the+Simple+DNSCrypt+project) [![donate pledgie](https://img.shields.io/badge/donate-pledgie-green.svg?style=flat-square)](https://pledgie.com/campaigns/32588)
+[![license](https://img.shields.io/github/license/bitbeans/SimpleDnsCrypt.svg?style=flat-square)](https://github.com/bitbeans/SimpleDnsCrypt/blob/master/LICENSE.md) [![Build status](https://img.shields.io/appveyor/ci/bitbeans/simplednscrypt/master.svg?style=flat-square)](https://ci.appveyor.com/project/bitbeans/simplednscrypt/branch/master) [![Github All Releases](https://img.shields.io/github/release/bitbeans/SimpleDnsCrypt.svg?style=flat-square)](https://github.com/bitbeans/SimpleDnsCrypt/releases/latest) [![dnscrypt--proxy](https://img.shields.io/badge/dnscrypt--proxy-2.0.6-orange.svg?style=flat-square)](https://github.com/jedisct1/dnscrypt-proxy) [![Github All Releases](https://img.shields.io/github/downloads/bitbeans/SimpleDnsCrypt/total.svg?style=flat-square)](https://github.com/bitbeans/SimpleDnsCrypt/releases/latest) [![donate PayPal](https://img.shields.io/badge/donate-PayPal-green.svg?style=flat-square)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=c.hermann@bitbeans.de&item_name=Donation+to+the+Simple+DNSCrypt+project) [![donate pledgie](https://img.shields.io/badge/donate-pledgie-green.svg?style=flat-square)](https://pledgie.com/campaigns/32588)
 
 # ![Simple DNSCrypt](https://raw.githubusercontent.com/bitbeans/SimpleDnsCrypt/master/img/icons/256x256.png)
 
@@ -7,7 +7,7 @@ Simple DNSCrypt is a simple management tool to configure [dnscrypt-proxy](https:
 
 ## Status
 
-New version based on dnscrypt-proxy 2.0.4
+New version based on dnscrypt-proxy 2.0.6
 
 ### Preview Download (CI)
 
@@ -28,7 +28,7 @@ You also will need: Microsoft Visual C++ Redistributable for Visual Studio 2017 
 
 ### Installing
 
-To install Simple DNSCrypt use the latest (stable) MSI packages: [x86](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.5.2/SimpleDNSCrypt.msi) or [x64](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.5.2/SimpleDNSCrypt64.msi).
+To install Simple DNSCrypt use the latest (stable) MSI packages: [x86](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.5.3/SimpleDNSCrypt.msi) or [x64](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.5.3/SimpleDNSCrypt64.msi).
 
 ### File Signing
 
@@ -36,7 +36,7 @@ The MSI package and the SimpleDnsCrypt.exe are signed via a *COMODO RSA Code Sig
 The files are signed under the name: *EAM Experience Area Münsingen GmbH*
 
 You also can verify the MSI packages with [minisign](https://jedisct1.github.io/minisign/).
-The minisign signatures [x86](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.5.2/SimpleDNSCrypt.msi.minisig) and [x64](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.5.2/SimpleDNSCrypt64.msi.minisig) can be verified with the following command:
+The minisign signatures [x86](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.5.3/SimpleDNSCrypt.msi.minisig) and [x64](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.5.3/SimpleDNSCrypt64.msi.minisig) can be verified with the following command:
 
 	minisign -Vm SimpleDNSCrypt.msi -P RWTSM+4BNNvkZPNkHgE88ETlhWa+0HDzU5CN8TvbyvmhVUcr6aQXfssV
 	minisign -Vm SimpleDNSCrypt64.msi -P RWTSM+4BNNvkZPNkHgE88ETlhWa+0HDzU5CN8TvbyvmhVUcr6aQXfssV
