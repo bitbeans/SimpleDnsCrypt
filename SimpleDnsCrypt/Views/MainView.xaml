@@ -59,9 +59,9 @@
                     <TabItem Padding="10,2,10,2" Height="39" VerticalAlignment="Top" Tag="mainTab"
                              Header="{lex:Loc Key=tabitem_mainmenu}">
                         <TabItem.Content>
-                            <StackPanel Orientation="Vertical" Margin="0,10,0,0">
+                            <DockPanel Margin="0,10,0,0">
                                 <Border BorderThickness="1" Background="#198AB328" Padding="10,10" Margin="0,0,0,0"
-                                        MinHeight="75"
+                                        MinHeight="75" DockPanel.Dock="Top"
                                         IsEnabled="{Binding IsSavingConfiguration, Converter={StaticResource ReverseBoolToEnabledConverter}}">
                                     <Border.BorderBrush>
                                         <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile"
@@ -147,7 +147,7 @@
                                     </StackPanel>
                                 </Border>
                                 <Border BorderThickness="1" Background="#198AB328" Padding="10,10" Margin="0,14,0,0"
-                                        MinHeight="75">
+                                        MinHeight="75" DockPanel.Dock="Top">
                                     <Border.BorderBrush>
                                         <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile"
                                                       Opacity="0.4">
@@ -214,7 +214,7 @@
                                         </Grid>
                                     </StackPanel>
                                 </Border>
-                                <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,14,0,0"
+                                <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,14,0,0" DockPanel.Dock="Bottom"
                                         IsEnabled="{Binding IsSavingConfiguration, Converter={StaticResource ReverseBoolToEnabledConverter}}">
                                     <Border.BorderBrush>
                                         <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile"
@@ -303,14 +303,14 @@
                                         </ItemsControl>
                                     </StackPanel>
                                 </Border>
-                            </StackPanel>
+                            </DockPanel>
                         </TabItem.Content>
                     </TabItem>
                     <TabItem Padding="10,2,10,2" Height="39" VerticalAlignment="Top" Tag="resolverTab"
                              Header="{lex:Loc Key=tabitem_resolvers}">
                         <TabItem.Content>
-                            <StackPanel Orientation="Vertical" Margin="0,10,0,0">
-                                <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,14,0,0"
+                            <DockPanel Margin="0,10,0,0">
+                                <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,14,0,0" DockPanel.Dock="Top"
                                         IsEnabled="{Binding IsSavingConfiguration, Converter={StaticResource ReverseBoolToEnabledConverter}}">
                                     <Border.BorderBrush>
                                         <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile"
@@ -358,7 +358,7 @@
                                                                Margin="0,5,0,0" />
                                     </StackPanel>
                                 </Border>
-                                <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,14,0,0"
+                                <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,14,0,0" DockPanel.Dock="Bottom"
                                         IsEnabled="{Binding IsSavingConfiguration, Converter={StaticResource ReverseBoolToEnabledConverter}}">
                                     <Border.BorderBrush>
                                         <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile"
@@ -484,15 +484,15 @@
                                         </Grid>
                                     </StackPanel>
                                 </Border>
-                            </StackPanel>
+                            </DockPanel>
                         </TabItem.Content>
                     </TabItem>
                     <TabItem Padding="10,2,10,2" Height="39" VerticalAlignment="Top" Tag="advancedSettingsTab"
                              Header="{lex:Loc Key=tabitem_advanced_settings}"
                              Visibility="{Binding SettingsViewModel.IsAdvancedSettingsTabVisible, Converter={StaticResource BoolToVisibilityCollapsedConverter}}">
                         <TabItem.Content>
-                            <StackPanel Orientation="Vertical" Margin="0,10,0,0">
-                                <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,14,0,0"
+                            <DockPanel Margin="0,10,0,0">
+                                <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,14,0,0" DockPanel.Dock="Top"
                                         IsEnabled="{Binding IsSavingConfiguration, Converter={StaticResource ReverseBoolToEnabledConverter}}">
                                     <Border.BorderBrush>
                                         <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile"
@@ -675,7 +675,7 @@
                                                 Style="{DynamicResource AccentedSquareButtonStyle}" Margin="0,15,5,5" />
                                     </StackPanel>
                                 </Border>
-                                <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,14,0,0"
+                                <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,14,0,0" DockPanel.Dock="Bottom"
                                         IsEnabled="{Binding IsSavingConfiguration, Converter={StaticResource ReverseBoolToEnabledConverter}}">
                                     <Border.BorderBrush>
                                         <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile"
@@ -737,16 +737,16 @@
                                         </Grid>
                                     </StackPanel>
                                 </Border>
-                            </StackPanel>
+                            </DockPanel>
                         </TabItem.Content>
                     </TabItem>
                     <TabItem Padding="10,2,10,2" Height="39" VerticalAlignment="Top" Tag="queryLogTab"
                              Header="{lex:Loc Key=tabitem_querylog}"
                              Visibility="{Binding SettingsViewModel.IsQueryLogTabVisible, Converter={StaticResource BoolToVisibilityCollapsedConverter}}">
                         <TabItem.Content>
-                            <StackPanel Orientation="Vertical" Margin="0,10,0,0">
+                            <DockPanel Margin="0,10,0,0">
                                 <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,10,0,0"
-                                        DataContext="{Binding QueryLogViewModel}">
+                                        DataContext="{Binding QueryLogViewModel}" DockPanel.Dock="Top">
                                     <Border.BorderBrush>
                                         <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile"
                                                       Opacity="0.4">
@@ -947,16 +947,16 @@
                                         </Grid>
                                     </StackPanel>
                                 </Border>
-                            </StackPanel>
+                            </DockPanel>
                         </TabItem.Content>
                     </TabItem>
                     <TabItem Padding="10,2,10,2" Height="39" VerticalAlignment="Top" Tag="domainBlockLogTab"
                              Visibility="{Binding SettingsViewModel.IsDomainBlockLogTabVisible, Converter={StaticResource BoolToVisibilityCollapsedConverter}}"
                              Header="{lex:Loc Key=tabitem_domainblocklog}">
                         <TabItem.Content>
-                            <StackPanel Orientation="Vertical" Margin="0,10,0,0">
+                            <DockPanel Margin="0,10,0,0">
                                 <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,10,0,0"
-                                        DataContext="{Binding DomainBlockLogViewModel}">
+                                        DataContext="{Binding DomainBlockLogViewModel}" DockPanel.Dock="Top">
                                     <Border.BorderBrush>
                                         <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile"
                                                       Opacity="0.4">
@@ -1159,16 +1159,16 @@
                                         </Grid>
                                     </StackPanel>
                                 </Border>
-                            </StackPanel>
+                            </DockPanel>
                         </TabItem.Content>
                     </TabItem>
                     <TabItem Padding="10,2,10,2" Height="39" VerticalAlignment="Top" Tag="addressBlockLogTab"
                              Visibility="{Binding SettingsViewModel.IsAddressBlockLogTabVisible, Converter={StaticResource BoolToVisibilityCollapsedConverter}}"
                              Header="{lex:Loc Key=tabitem_addressblocklog}">
                         <TabItem.Content>
-                            <StackPanel Orientation="Vertical" Margin="0,10,0,0">
+                            <DockPanel Margin="0,10,0,0">
                                 <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,10,0,0"
-                                        DataContext="{Binding AddressBlockLogViewModel}">
+                                        DataContext="{Binding AddressBlockLogViewModel}" DockPanel.Dock="Top">
                                     <Border.BorderBrush>
                                         <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile"
                                                       Opacity="0.4">
@@ -1190,16 +1190,16 @@
 
                                     </StackPanel>
                                 </Border>
-                            </StackPanel>
+                            </DockPanel>
                         </TabItem.Content>
                     </TabItem>
                     <TabItem Padding="10,2,10,2" Height="39" VerticalAlignment="Top" Tag="domainBlacklistTab"
                              Visibility="{Binding SettingsViewModel.IsDomainBlacklistTabVisible, Converter={StaticResource BoolToVisibilityCollapsedConverter}}"
                              Header="{lex:Loc Key=tabitem_domainblacklist}">
                         <TabItem.Content>
-                            <StackPanel Orientation="Vertical" Margin="0,10,0,0">
+                            <DockPanel Margin="0,10,0,0">
                                 <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,10,0,0"
-                                        DataContext="{Binding DomainBlacklistViewModel}">
+                                        DataContext="{Binding DomainBlacklistViewModel}" DockPanel.Dock="Top">
                                     <Border.BorderBrush>
                                         <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile"
                                                       Opacity="0.4">
@@ -1676,16 +1676,16 @@
                                         </Grid>
                                     </StackPanel>
                                 </Border>
-                            </StackPanel>
+                            </DockPanel>
                         </TabItem.Content>
                     </TabItem>
                     <TabItem Padding="10,2,10,2" Height="39" VerticalAlignment="Top" Tag="addressBlacklistTab"
                              Visibility="{Binding SettingsViewModel.IsAddressBlacklistTabVisible, Converter={StaticResource BoolToVisibilityCollapsedConverter}}"
                              Header="{lex:Loc Key=tabitem_addressblacklist}">
                         <TabItem.Content>
-                            <StackPanel Orientation="Vertical" Margin="0,10,0,0">
+                            <DockPanel Margin="0,10,0,0">
                                 <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,10,0,0"
-                                        DataContext="{Binding AddressBlacklistViewModel}">
+                                        DataContext="{Binding AddressBlacklistViewModel}" DockPanel.Dock="Top">
                                     <Border.BorderBrush>
                                         <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile"
                                                       Opacity="0.4">
@@ -1707,7 +1707,7 @@
 
                                     </StackPanel>
                                 </Border>
-                            </StackPanel>
+                            </DockPanel>
                         </TabItem.Content>
                     </TabItem>
                 </TabControl>
