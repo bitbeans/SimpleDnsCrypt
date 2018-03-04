@@ -1221,7 +1221,6 @@
                                         <Grid>
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="Auto" />
-                                                <ColumnDefinition Width="Auto" />
                                                 <ColumnDefinition Width="*" />
                                             </Grid.ColumnDefinitions>
                                             <Grid.RowDefinitions>
@@ -1249,18 +1248,23 @@
                                             <controls:ToggleSwitchButton HorizontalAlignment="Right" Margin="0,0,70,0"
                                                                          Cursor="Hand"
                                                                          IsChecked="{Binding IsBlacklistEnabled}"
-                                                                         Grid.Column="2" Grid.Row="0" />
-                                            <StackPanel Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3"
-                                                        Orientation="Horizontal" Margin="0,10,0,0">
-                                                <Label Width="120" VerticalContentAlignment="Center"
+                                                                         Grid.Column="1" Grid.Row="0" />
+                                            <Grid Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Margin="0,10,0,0">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                </Grid.ColumnDefinitions>
+
+                                                <Label Width="120" Grid.Column="0" VerticalContentAlignment="Center"
                                                        Foreground="#FF575757" Content="{lex:Loc Key=blacklist_path}"
                                                        Height="30" VerticalAlignment="Top" />
-                                                <TextBox Text="{Binding DomainBlacklistFile}" Background="#FF8ab329"
+                                                <TextBox Grid.Column="1" Text="{Binding DomainBlacklistFile}" Background="#FF8ab329"
                                                          Opacity="0.4" BorderBrush="#FF575757"
-                                                         Width="560" IsReadOnly="True" HorizontalAlignment="Left"
+                                                         MinWidth="560" IsReadOnly="True"
                                                          VerticalContentAlignment="Center"
                                                          Margin="0,0,0,0" />
-                                                <Button x:Name="ChangeBlacklistFilePath"
+                                                <Button Grid.Column="2" x:Name="ChangeBlacklistFilePath"
                                                         cal:Message.Attach="ChangeBlacklistFilePath"
                                                         Background="White"
                                                         IsEnabled="{Binding IsBlacklistEnabled, Converter={StaticResource ReverseBoolToEnabledConverter}}"
@@ -1286,9 +1290,9 @@
                                                             FontWeight="DemiBold" />
                                                     </Button.ToolTip>
                                                 </Button>
-                                            </StackPanel>
+                                            </Grid>
 
-                                            <StackPanel Orientation="Horizontal" Grid.ColumnSpan="3" Grid.Column="0"
+                                            <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2" Grid.Column="0"
                                                         Grid.Row="2">
                                                 <Label Foreground="#FF575757"
                                                        FontSize="16" FontWeight="Bold"
@@ -1304,13 +1308,18 @@
                                                        HorizontalAlignment="Left">
                                                 </Label>
                                             </StackPanel>
-                                            <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="3"
-                                                        Grid.ColumnSpan="3">
-                                                <ListView BorderBrush="#198AB328"
+
+
+                                            <Grid Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                </Grid.ColumnDefinitions>
+                                                <ListView BorderBrush="#198AB328" Grid.Column="0"
                                                           IsEnabled="{Binding IsWorking, Converter={StaticResource ReverseBoolToEnabledConverter}}"
                                                           ScrollViewer.VerticalScrollBarVisibility="Visible"
                                                           ScrollViewer.CanContentScroll="True"
-                                                          Height="210" Width="680"
+                                                          Height="210" MinWidth="680"
                                                           SelectedItem="{Binding Path=SelectedDomainWhitelistEntry}"
                                                           ItemsSource="{Binding Path=DomainWhitelistRules}">
                                                     <ListView.ItemTemplate>
@@ -1321,9 +1330,8 @@
                                                         </DataTemplate>
                                                     </ListView.ItemTemplate>
                                                 </ListView>
-
-                                                <StackPanel Orientation="Vertical" Margin="15,0,0,0">
-                                                    <Button x:Name="AddWhitelistRule"
+                                                <StackPanel Orientation="Vertical" Margin="15,0,0,0" Grid.Column="1">
+                                                    <Button x:Name="AddWhitelistRule" 
                                                             cal:Message.Attach="AddWhitelistRule"
                                                             Background="White"
                                                             Width="30"
@@ -1423,8 +1431,11 @@
                                                         </Button.ToolTip>
                                                     </Button>
                                                 </StackPanel>
-                                            </StackPanel>
-                                            <StackPanel Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="4"
+                                            </Grid>
+                                            
+                                            
+
+                                            <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4"
                                                         Orientation="Horizontal" Margin="0,5,0,0">
                                                 <Label Width="120" VerticalContentAlignment="Center"
                                                        Foreground="#FF575757"
@@ -1460,7 +1471,7 @@
                                                     </Button.ToolTip>
                                                 </Button>
                                             </StackPanel>
-                                            <StackPanel Orientation="Horizontal" Grid.ColumnSpan="3" Grid.Column="0"
+                                            <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2" Grid.Column="0"
                                                         Grid.Row="5">
                                                 <Label Foreground="#FF575757"
                                                        FontSize="16" FontWeight="Bold"
@@ -1477,7 +1488,7 @@
                                                 </Label>
                                             </StackPanel>
                                             <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="6"
-                                                        Grid.ColumnSpan="3">
+                                                        Grid.ColumnSpan="2">
                                                 <ListView BorderBrush="#198AB328"
                                                           IsEnabled="{Binding IsWorking, Converter={StaticResource ReverseBoolToEnabledConverter}}"
                                                           ScrollViewer.VerticalScrollBarVisibility="Visible"
@@ -1619,7 +1630,7 @@
                                                     </Button>
                                                 </StackPanel>
                                             </StackPanel>
-                                            <StackPanel Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="7"
+                                            <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="7"
                                                         Orientation="Horizontal" Margin="0,5,0,0">
                                                 <Label Width="120" VerticalContentAlignment="Center"
                                                        Foreground="#FF575757"
