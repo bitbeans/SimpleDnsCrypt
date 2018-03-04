@@ -1245,7 +1245,7 @@
                                                        Foreground="#FF8ab329" FontSize="20"
                                                        Opacity="0.7" Margin="5,0,0,0" FontWeight="Bold">
                                             </TextBlock>
-                                            <controls:ToggleSwitchButton HorizontalAlignment="Right" Margin="0,0,70,0"
+                                            <controls:ToggleSwitchButton HorizontalAlignment="Right" Margin="0,0,5,0"
                                                                          Cursor="Hand"
                                                                          IsChecked="{Binding IsBlacklistEnabled}"
                                                                          Grid.Column="1" Grid.Row="0" />

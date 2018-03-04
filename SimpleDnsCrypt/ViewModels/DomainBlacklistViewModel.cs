@@ -156,10 +156,17 @@ namespace SimpleDnsCrypt.ViewModels
 						saveAndRestartService = true;
 					}
 
+					if (!File.Exists(_domainBlacklistFile))
+					{
+						File.Create(_domainBlacklistFile).Dispose();
+						await Task.Delay(50);
+					}
+
 					if (saveAndRestartService)
 					{
 						DnscryptProxyConfigurationManager.DnscryptProxyConfiguration = dnscryptProxyConfiguration;
 						if (DnscryptProxyConfigurationManager.SaveConfiguration())
+						{
 							if (DnsCryptProxyManager.IsDnsCryptProxyInstalled())
 							{
 								if (DnsCryptProxyManager.IsDnsCryptProxyRunning())
@@ -183,21 +190,20 @@ namespace SimpleDnsCrypt.ViewModels
 									await Task.Delay(Global.ServiceStartTime).ConfigureAwait(false);
 								}
 							}
+						}
 					}
 				}
 				else
 				{
 					//disable blacklist again
 					_isBlacklistEnabled = false;
+					dnscryptProxyConfiguration.blacklist.blacklist_file = null;
+					DnscryptProxyConfigurationManager.DnscryptProxyConfiguration = dnscryptProxyConfiguration;
+					DnscryptProxyConfigurationManager.SaveConfiguration();
 					if (DnsCryptProxyManager.IsDnsCryptProxyRunning())
 					{
-						dnscryptProxyConfiguration.blacklist.blacklist_file = null;
-						DnscryptProxyConfigurationManager.DnscryptProxyConfiguration = dnscryptProxyConfiguration;
-						if (DnscryptProxyConfigurationManager.SaveConfiguration())
-						{
-							DnsCryptProxyManager.Restart();
-							await Task.Delay(Global.ServiceRestartTime).ConfigureAwait(false);
-						}
+						DnsCryptProxyManager.Restart();
+						await Task.Delay(Global.ServiceRestartTime).ConfigureAwait(false);
 					}
 				}
 			}

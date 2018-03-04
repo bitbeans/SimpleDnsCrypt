@@ -47,9 +47,7 @@ namespace SimpleDnsCrypt.ViewModels
 		private bool _isResolverRunning;
 		private bool _isSavingConfiguration;
 		private bool _isUninstallingService;
-
 		private bool _isWorkingOnService;
-
 		private ObservableCollection<Language> _languages;
 
 		private BindableCollection<LocalNetworkInterface> _localNetworkInterfaces =
@@ -341,26 +339,50 @@ namespace SimpleDnsCrypt.ViewModels
 		public void Initialize()
 		{
 			if (DnsCryptProxyManager.IsDnsCryptProxyInstalled())
+			{
 				if (DnsCryptProxyManager.IsDnsCryptProxyRunning())
+				{
 					_isResolverRunning = true;
+				}
+			}
 
 			if (DnscryptProxyConfiguration != null && (DnscryptProxyConfiguration.server_names == null ||
 			                                           DnscryptProxyConfiguration.server_names.Count == 0))
+			{
 				_isDnsCryptAutomaticModeEnabled = true;
+			}
 			else
+			{
 				_isDnsCryptAutomaticModeEnabled = false;
+			}
 
 			if (!string.IsNullOrEmpty(DnscryptProxyConfiguration?.query_log?.file)) QueryLogViewModel.IsQueryLogLogging = true;
 
 			if (!string.IsNullOrEmpty(DnscryptProxyConfiguration?.blacklist?.log_file))
+			{
+				if (!File.Exists(DnscryptProxyConfiguration.blacklist.log_file))
+				{
+					File.Create(DnscryptProxyConfiguration.blacklist.log_file).Dispose();
+				}
 				DomainBlockLogViewModel.IsDomainBlockLogLogging = true;
+			}
 
 			if (!string.IsNullOrEmpty(DnscryptProxyConfiguration?.blacklist?.blacklist_file))
+			{
+				if (!File.Exists(DnscryptProxyConfiguration.blacklist.blacklist_file))
+				{
+					File.Create(DnscryptProxyConfiguration.blacklist.blacklist_file).Dispose();
+				}
 				DomainBlacklistViewModel.IsBlacklistEnabled = true;
+			}
 
 			if (DnscryptProxyConfiguration?.listen_addresses != null)
+			{
 				if (DnscryptProxyConfiguration.listen_addresses.Contains(Global.GlobalResolver))
+				{
 					_isOperatingAsGlobalResolver = true;
+				}
+			}
 		}
 
 		private void SettingsViewModelOnPropertyChanged(object sender, PropertyChangedEventArgs propertyChangedEventArgs)

@@ -196,58 +196,61 @@ namespace SimpleDnsCrypt.ViewModels
 						dnscryptProxyConfiguration.blacklist.log_file);
 
 					if (!string.IsNullOrEmpty(_domainBlockLogFile))
-						if (File.Exists(_domainBlockLogFile))
-							await Task.Run(() =>
+					{
+						if (!File.Exists(_domainBlockLogFile))
+						{
+							File.Create(_domainBlockLogFile).Dispose();
+							await Task.Delay(50);
+						}
+
+						await Task.Run(() =>
+						{
+							using (var reader = new StreamReader(new FileStream(_domainBlockLogFile,
+								FileMode.Open, FileAccess.Read, FileShare.ReadWrite)))
 							{
-								using (var reader = new StreamReader(new FileStream(_domainBlockLogFile,
-									FileMode.Open, FileAccess.Read, FileShare.ReadWrite)))
+								//start at the end of the file
+								var lastMaxOffset = reader.BaseStream.Length;
+
+								while (_isDomainBlockLogLogging)
 								{
-									//start at the end of the file
-									var lastMaxOffset = reader.BaseStream.Length;
+									Thread.Sleep(100);
+									//if the file size has not changed, idle
+									if (reader.BaseStream.Length == lastMaxOffset)
+										continue;
 
-									while (_isDomainBlockLogLogging)
+									//seek to the last max offset
+									reader.BaseStream.Seek(lastMaxOffset, SeekOrigin.Begin);
+
+									//read out of the file until the EOF
+									string line;
+									while ((line = reader.ReadLine()) != null)
 									{
-										Thread.Sleep(100);
-										//if the file size has not changed, idle
-										if (reader.BaseStream.Length == lastMaxOffset)
-											continue;
-
-										//seek to the last max offset
-										reader.BaseStream.Seek(lastMaxOffset, SeekOrigin.Begin);
-
-										//read out of the file until the EOF
-										string line;
-										while ((line = reader.ReadLine()) != null)
-										{
-											var blockLogLine = new DomainBlockLogLine(line);
-											AddLogLine(blockLogLine);
-										}
-
-										//update the last max offset
-										lastMaxOffset = reader.BaseStream.Position;
+										var blockLogLine = new DomainBlockLogLine(line);
+										AddLogLine(blockLogLine);
 									}
+
+									//update the last max offset
+									lastMaxOffset = reader.BaseStream.Position;
 								}
-							}).ConfigureAwait(false);
-						else
-							IsDomainBlockLogLogging = false;
+							}
+						}).ConfigureAwait(false);
+					}
 					else
+					{
 						IsDomainBlockLogLogging = false;
+					}
 				}
 				else
 				{
 					//disable block log again
 					_isDomainBlockLogLogging = false;
+					dnscryptProxyConfiguration.blacklist.log_file = null;
+					DnscryptProxyConfigurationManager.DnscryptProxyConfiguration = dnscryptProxyConfiguration;
+					DnscryptProxyConfigurationManager.SaveConfiguration();
 					if (DnsCryptProxyManager.IsDnsCryptProxyRunning())
 					{
-						if (dnscryptProxyConfiguration.blacklist?.log_file != null)
-						{
-							DnscryptProxyConfigurationManager.DnscryptProxyConfiguration = dnscryptProxyConfiguration;
-							if (DnscryptProxyConfigurationManager.SaveConfiguration())
-							{
-								DnsCryptProxyManager.Restart();
-								await Task.Delay(Global.ServiceRestartTime).ConfigureAwait(false);
-							}
-						}
+						DnsCryptProxyManager.Restart();
+						await Task.Delay(Global.ServiceRestartTime).ConfigureAwait(false);
 					}
 					Execute.OnUIThread(() => { DomainBlockLogLines.Clear(); });
 				}
