@@ -1256,7 +1256,7 @@
                                                     <ColumnDefinition Width="Auto"/>
                                                 </Grid.ColumnDefinitions>
 
-                                                <Label Width="120" Grid.Column="0" VerticalContentAlignment="Center"
+                                                <Label MinWidth="120" Grid.Column="0" VerticalContentAlignment="Center"
                                                        Foreground="#FF575757" Content="{lex:Loc Key=blacklist_path}"
                                                        Height="30" VerticalAlignment="Top" />
                                                 <TextBox Grid.Column="1" Text="{Binding DomainBlacklistFile}" Background="#FF8ab329"
@@ -1297,18 +1297,13 @@
                                                 <Label Foreground="#FF575757"
                                                        FontSize="16" FontWeight="Bold"
                                                        Content="{lex:Loc Key=whitelist_rules_header}"
-                                                       VerticalAlignment="Center"
-                                                       HorizontalAlignment="Left">
-                                                </Label>
+                                                       VerticalAlignment="Center"/>
                                                 <Label Foreground="#FF575757"
                                                        FontSize="12"
                                                        Content="{lex:Loc Key=whitelist_rules_sub_header}"
                                                        Margin="0,2,0,0"
-                                                       VerticalAlignment="Center"
-                                                       HorizontalAlignment="Left">
-                                                </Label>
+                                                       VerticalAlignment="Center"/>
                                             </StackPanel>
-
 
                                             <Grid Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2">
                                                 <Grid.ColumnDefinitions>
@@ -1432,20 +1427,23 @@
                                                     </Button>
                                                 </StackPanel>
                                             </Grid>
-                                            
-                                            
 
-                                            <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4"
-                                                        Orientation="Horizontal" Margin="0,5,0,0">
-                                                <Label Width="120" VerticalContentAlignment="Center"
-                                                       Foreground="#FF575757"
+
+                                            <Grid Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="0,5,0,0">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label MinWidth="120" VerticalContentAlignment="Center"
+                                                       Foreground="#FF575757" Grid.Column="0"
                                                        Content="{lex:Loc Key=whitelist_rules_path}" />
                                                 <TextBox Text="{Binding DomainWhitelistRuleFilePath}"
                                                          Background="#FF8ab329" Opacity="0.4" BorderBrush="#FF575757"
-                                                         Width="560" IsReadOnly="True"
+                                                         MinWidth="560" IsReadOnly="True" Grid.Column="1"
                                                          VerticalContentAlignment="Center"
                                                          Margin="0,0,0,0" />
-                                                <Button x:Name="ChangeWhitelistRulesFilePath"
+                                                <Button x:Name="ChangeWhitelistRulesFilePath" Grid.Column="2"
                                                         cal:Message.Attach="ChangeWhitelistRulesFilePath"
                                                         Background="White"
                                                         Width="30"
@@ -1470,7 +1468,7 @@
                                                             FontWeight="DemiBold" />
                                                     </Button.ToolTip>
                                                 </Button>
-                                            </StackPanel>
+                                            </Grid>
                                             <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2" Grid.Column="0"
                                                         Grid.Row="5">
                                                 <Label Foreground="#FF575757"
@@ -1487,13 +1485,17 @@
                                                        HorizontalAlignment="Left">
                                                 </Label>
                                             </StackPanel>
-                                            <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="6"
-                                                        Grid.ColumnSpan="2">
-                                                <ListView BorderBrush="#198AB328"
+
+                                            <Grid Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                </Grid.ColumnDefinitions>
+                                                <ListView BorderBrush="#198AB328" Grid.Column="0"
                                                           IsEnabled="{Binding IsWorking, Converter={StaticResource ReverseBoolToEnabledConverter}}"
                                                           ScrollViewer.VerticalScrollBarVisibility="Visible"
                                                           ScrollViewer.CanContentScroll="True"
-                                                          Height="210" Width="680"
+                                                          Height="210" MinWidth="680"
                                                           SelectedItem="{Binding Path=SelectedDomainBlacklistEntry}"
                                                           ItemsSource="{Binding Path=DomainBlacklistRules}">
                                                     <ListView.ItemTemplate>
@@ -1504,8 +1506,8 @@
                                                         </DataTemplate>
                                                     </ListView.ItemTemplate>
                                                 </ListView>
-                                                <StackPanel Orientation="Vertical" Margin="15,0,0,0">
-                                                    <Button x:Name="AddBlacklistRule"
+                                                <StackPanel Orientation="Vertical" Margin="15,0,0,0" Grid.Column="1">
+                                                    <Button x:Name="AddBlacklistRule" 
                                                             cal:Message.Attach="AddBlacklistRule"
                                                             Background="White"
                                                             Width="30"
@@ -1629,20 +1631,25 @@
                                                         </Button.ToolTip>
                                                     </Button>
                                                 </StackPanel>
-                                            </StackPanel>
-                                            <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="7"
-                                                        Orientation="Horizontal" Margin="0,5,0,0">
-                                                <Label Width="120" VerticalContentAlignment="Center"
-                                                       Foreground="#FF575757"
+                                            </Grid>
+
+                                            <Grid Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="2" Margin="0,5,0,0">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label MinWidth="120" VerticalContentAlignment="Center"
+                                                       Foreground="#FF575757" Grid.Column="0"
                                                        Content="{lex:Loc Key=blacklist_rules_path}" />
                                                 <TextBox Text="{Binding DomainBlacklistRuleFilePath}"
                                                          Background="#FF8ab329" Opacity="0.4" BorderBrush="#FF575757"
-                                                         Width="560" IsReadOnly="True"
+                                                         MinWidth="560" IsReadOnly="True" Grid.Column="1"
                                                          VerticalContentAlignment="Center"
                                                          Margin="0,0,0,0" />
                                                 <Button x:Name="ChangeBlacklistRulesFilePath"
                                                         cal:Message.Attach="ChangeBlacklistRulesFilePath"
-                                                        Background="White"
+                                                        Background="White" Grid.Column="2"
                                                         Width="30"
                                                         Height="30"
                                                         Cursor="Hand"
@@ -1665,7 +1672,7 @@
                                                             FontWeight="DemiBold" />
                                                     </Button.ToolTip>
                                                 </Button>
-                                            </StackPanel>
+                                            </Grid>
                                         </Grid>
                                     </StackPanel>
                                 </Border>
