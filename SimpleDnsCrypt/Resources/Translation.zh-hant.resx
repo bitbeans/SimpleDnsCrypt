@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="default_settings_network_cards" xml:space="preserve">
+    <value>網路介面卡</value>
+  </data>
+  <data name="default_settings_show_hidden_cards" xml:space="preserve">
+    <value>顯示隱藏的網路介面卡</value>
+  </data>
+  <data name="default_settings_service_header" xml:space="preserve">
+    <value>服務</value>
+  </data>
+  <data name="default_settings_service" xml:space="preserve">
+    <value>DNSCrypt 服務</value>
+  </data>
+  <data name="default_settings_configuration" xml:space="preserve">
+    <value>設定</value>
+  </data>
+  <data name="default_settings_configuration_ipv4" xml:space="preserve">
+    <value>使用 IPv6 服務</value>
+  </data>
+  <data name="default_settings_configuration_ipv4_tooltip" xml:space="preserve">
+    <value>使用在 IPv4網絡可以到達的服務器</value>
+  </data>
+  <data name="default_settings_configuration_ipv6" xml:space="preserve">
+    <value>使用 IPv6 服務</value>
+  </data>
+  <data name="default_settings_configuration_ipv6_tooltip" xml:space="preserve">
+    <value>使用支援 IPv6 的伺服器（如果沒有 IPv6 連接，請勿啟用）</value>
+  </data>
+  <data name="default_settings_configuration_dnssec" xml:space="preserve">
+    <value>只顯示支援 DNSSEC 的伺服器</value>
+  </data>
+  <data name="default_settings_configuration_dnssec_tooltip" xml:space="preserve">
+    <value>服務器必須支持DNS安全擴展</value>
+  </data>
+  <data name="default_settings_configuration_nolog" xml:space="preserve">
+    <value>只顯示不保留日誌的伺服器</value>
+  </data>
+  <data name="default_settings_configuration_nolog_tooltip" xml:space="preserve">
+    <value>服務器不得記錄用戶請求</value>
+  </data>
+  <data name="default_settings_configuration_nofilter" xml:space="preserve">
+    <value>只顯示不進行內容過慮的伺服器</value>
+  </data>
+  <data name="default_settings_configuration_nofilter_tooltip" xml:space="preserve">
+    <value>伺服器必須強制啟用專用黑名單（用於家長控制、廣告攔截等用途）</value>
+  </data>
+  <data name="tabitem_mainmenu" xml:space="preserve">
+    <value>主選單</value>
+  </data>
+  <data name="loader_administrative_rights_available" xml:space="preserve">
+    <value>可獲取管理員權限</value>
+  </data>
+  <data name="loader_administrative_rights_missing" xml:space="preserve">
+    <value>缺少管理員權限</value>
+  </data>
+  <data name="loader_checking_version" xml:space="preserve">
+    <value>檢查新版本中…</value>
+  </data>
+  <data name="loader_new_version_found" xml:space="preserve">
+    <value>發現一個新版本：{0}</value>
+  </data>
+  <data name="loader_starting_update" xml:space="preserve">
+    <value>開始升級…</value>
+  </data>
+  <data name="loader_update_failed" xml:space="preserve">
+    <value>升級失敗，繼續...</value>
+  </data>
+  <data name="loader_latest_version" xml:space="preserve">
+    <value>您正在使用最新版</value>
+  </data>
+  <data name="loader_unsigned" xml:space="preserve">
+    <value>未簽名</value>
+  </data>
+  <data name="loader_missing" xml:space="preserve">
+    <value>缺少</value>
+  </data>
+  <data name="loader_downloading_signature" xml:space="preserve">
+    <value>正在下載簽名</value>
+  </data>
+  <data name="loader_downloading_installer" xml:space="preserve">
+    <value>正在下載安裝包</value>
+  </data>
+  <data name="loader_starting" xml:space="preserve">
+    <value>開始</value>
+  </data>
+  <data name="loader_validate_folder" xml:space="preserve">
+    <value>正在驗證 {0} 文件夾</value>
+  </data>
+  <data name="loader_loading_network_cards" xml:space="preserve">
+    <value>正在讀取網卡信息...</value>
+  </data>
+  <data name="loader_failed_loading" xml:space="preserve">
+    <value>無法載入 {0}</value>
+  </data>
+  <data name="loader_successfully_loaded" xml:space="preserve">
+    <value>{0} 已成功載入</value>
+  </data>
+  <data name="loader_loading" xml:space="preserve">
+    <value>正在載入{0}</value>
+  </data>
+  <data name="loader_missing_files" xml:space="preserve">
+    <value> {0} 文件夾缺少文件:\n{1}\n\n嘗試使用 {2}的全新安裝</value>
+  </data>
+  <data name="loader_all_files_available" xml:space="preserve">
+    <value>全部必要文件都已具備</value>
+  </data>
+  <data name="about" xml:space="preserve">
+    <value>關於</value>
+  </data>
+  <data name="about_software" xml:space="preserve">
+    <value>軟體</value>
+  </data>
+  <data name="about_license" xml:space="preserve">
+    <value>許可文件</value>
+  </data>
+  <data name="about_view_on_github" xml:space="preserve">
+    <value>在 Github 上查看</value>
+  </data>
+  <data name="tabitem_querylog" xml:space="preserve">
+    <value>日誌</value>
+  </data>
+  <data name="querylog" xml:space="preserve">
+    <value>日誌</value>
+  </data>
+  <data name="querylog_waiting_for_data" xml:space="preserve">
+    <value>正在等待 DNS 查詢結果</value>
+  </data>
+  <data name="querylog_entry_count" xml:space="preserve">
+    <value>條目數量：</value>
+  </data>
+  <data name="querylog_source_file" xml:space="preserve">
+    <value>來源：</value>
+  </data>
+  <data name="querylog_button_clear" xml:space="preserve">
+    <value>清除列表</value>
+  </data>
+  <data name="querylog_button_block" xml:space="preserve">
+    <value>封禁已選</value>
+  </data>
+  <data name="domainblocklog" xml:space="preserve">
+    <value>域名封禁日誌</value>
+  </data>
+  <data name="domainblocklog_waiting_for_data" xml:space="preserve">
+    <value>正在等待已封禁的 DNS 請求</value>
+  </data>
+  <data name="domainblocklog_entry_count" xml:space="preserve">
+    <value>條目數量：</value>
+  </data>
+  <data name="domainblocklog_source_file" xml:space="preserve">
+    <value>來源：</value>
+  </data>
+  <data name="domainblocklog_button_clear" xml:space="preserve">
+    <value>清除列表</value>
+  </data>
+  <data name="tabitem_domainblocklog" xml:space="preserve">
+    <value>域名封禁日誌</value>
+  </data>
+  <data name="tabitem_addressblocklog" xml:space="preserve">
+    <value>地址封禁日誌</value>
+  </data>
+  <data name="tabitem_domainblacklist" xml:space="preserve">
+    <value>域名黑名單</value>
+  </data>
+  <data name="tabitem_addressblacklist" xml:space="preserve">
+    <value>地址黑名單</value>
+  </data>
+  <data name="settings" xml:space="preserve">
+    <value>設置</value>
+  </data>
+  <data name="settings_domain_blacklist" xml:space="preserve">
+    <value>顯示 “域名黑名單” 分頁</value>
+  </data>
+  <data name="settings_address_blacklist" xml:space="preserve">
+    <value>顯示 “地址黑名單” 分頁</value>
+  </data>
+  <data name="settings_domain_block" xml:space="preserve">
+    <value>顯示 “域名封禁日誌” 分頁</value>
+  </data>
+  <data name="settings_address_block" xml:space="preserve">
+    <value>顯示 “地址封禁日誌” 分頁</value>
+  </data>
+  <data name="settings_query_log" xml:space="preserve">
+    <value>顯示 “日誌” 分頁</value>
+  </data>
+  <data name="tabitem_resolvers" xml:space="preserve">
+    <value>伺服器</value>
+  </data>
+  <data name="tabitem_advanced_settings" xml:space="preserve">
+    <value>高級設置</value>
+  </data>
+  <data name="settings_advanced_settings" xml:space="preserve">
+    <value>顯示 “高級設置” 分頁</value>
+  </data>
+  <data name="yes" xml:space="preserve">
+    <value>是</value>
+  </data>
+  <data name="no" xml:space="preserve">
+    <value>否</value>
+  </data>
+  <data name="cancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="ok" xml:space="preserve">
+    <value>好的</value>
+  </data>
+  <data name="dialog_message_uninstall" xml:space="preserve">
+    <value>你希望移除已安裝的系統服務嗎？</value>
+  </data>
+  <data name="dialog_uninstall_title" xml:space="preserve">
+    <value>卸載服務</value>
+  </data>
+  <data name="advanced_settings_uninstall_title" xml:space="preserve">
+    <value>卸載服務</value>
+  </data>
+  <data name="advanced_settings_uninstall_text" xml:space="preserve">
+    <value>移除已安裝的系統服務</value>
+  </data>
+  <data name="advanced_settings_uninstall_button" xml:space="preserve">
+    <value>移除服務</value>
+  </data>
+  <data name="default_settings_apply_settings" xml:space="preserve">
+    <value>應用設置</value>
+  </data>
+  <data name="advanced_settings_dnscache" xml:space="preserve">
+    <value>DNS 快取</value>
+  </data>
+  <data name="resolvers_dnscrypt_mode_header" xml:space="preserve">
+    <value>DNSCrypt 模式</value>
+  </data>
+  <data name="resolvers_dnscrypt_mode_description" xml:space="preserve">
+    <value>在自動模式下，所有可用的伺服都會被使用。 dnscrypt-proxy 會自動選擇最快的服務器</value>
+  </data>
+  <data name="resolvers_dnscrypt_automatic_mode" xml:space="preserve">
+    <value>自動模式</value>
+  </data>
+  <data name="disabled" xml:space="preserve">
+    <value>禁用</value>
+  </data>
+  <data name="enabled" xml:space="preserve">
+    <value>啟用</value>
+  </data>
+  <data name="resolvers_available_resolvers_header" xml:space="preserve">
+    <value>可用的伺服器</value>
+  </data>
+  <data name="loader_redistributable_package_check" xml:space="preserve">
+    <value>正在檢查 Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
+  </data>
+  <data name="loader_redistributable_package_already_installed" xml:space="preserve">
+    <value>Microsoft Visual C++ Redistributable for Visual Studio 2017 已安裝</value>
+  </data>
+  <data name="loader_redistributable_package_installing" xml:space="preserve">
+    <value>正在安裝：Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
+  </data>
+  <data name="loader_redistributable_package_ready" xml:space="preserve">
+    <value>Microsoft Visual C++ Redistributable for Visual Studio 2017 已經安裝完畢</value>
+  </data>
+  <data name="message_title_no_server_selected" xml:space="preserve">
+    <value>未選擇伺服器</value>
+  </data>
+  <data name="message_content_no_server_selected" xml:space="preserve">
+    <value>至少應該選擇一個伺服器。否則，dnscrypt-proxy 將會使用所有符合篩選條件的伺服器</value>
+  </data>
+  <data name="message_title_service_not_running" xml:space="preserve">
+    <value>服務未運行</value>
+  </data>
+  <data name="message_content_service_not_running" xml:space="preserve">
+    <value>請先啟動 DnsCrypt 服務</value>
+  </data>
+  <data name="message_title_uninstallation_successful" xml:space="preserve">
+    <value>成功卸載</value>
+  </data>
+  <data name="message_content_uninstallation_successful" xml:space="preserve">
+    <value>卸載已經成功，DNS 請求不再被加密</value>
+  </data>
+  <data name="message_title_uninstallation_error" xml:space="preserve">
+    <value>卸載出現問題</value>
+  </data>
+  <data name="message_content_uninstallation_error" xml:space="preserve">
+    <value>無法卸載。請手動停止服務然後重新嘗試卸載。</value>
+  </data>
+  <data name="open_log_directory" xml:space="preserve">
+    <value>打開日誌資料夾</value>
+  </data>
+  <data name="settings_update_auto" xml:space="preserve">
+    <value>程序啟動時檢查更新</value>
+  </data>
+  <data name="settings_update_channel" xml:space="preserve">
+    <value>更新頻道</value>
+  </data>
+  <data name="advanced_settings_dnscache_content" xml:space="preserve">
+    <value>使用 DNS 快取以減少延遲和發送流量</value>
+  </data>
+  <data name="advanced_settings_blockipv6" xml:space="preserve">
+    <value>阻止 IPv6</value>
+  </data>
+  <data name="advanced_settings_blockipv6_content" xml:space="preserve">
+    <value>立刻向 IPv6 相關請求發送空白響應</value>
+  </data>
+  <data name="advanced_settings_forcetcp" xml:space="preserve">
+    <value>強制使用 TCP</value>
+  </data>
+  <data name="advanced_settings_forcetcp_content" xml:space="preserve">
+    <value>總是用 TCP 連接上游伺服器</value>
+  </data>
+  <data name="add" xml:space="preserve">
+    <value>添加</value>
+  </data>
+  <data name="message_title_new_whitelist_rule" xml:space="preserve">
+    <value>添加新的域名白名單規則</value>
+  </data>
+  <data name="message_content_new_whitelist_rule" xml:space="preserve">
+    <value>範例：*.example.com, ads.*, *sex*。你也可以添加以逗號分隔開的規則列表。</value>
+  </data>
+  <data name="message_title_new_blacklist_rule" xml:space="preserve">
+    <value>添加新的域名黑名單規則</value>
+  </data>
+  <data name="message_content_new_blacklist_rule" xml:space="preserve">
+    <value>範例： *.example.com, ads.*, *sex*。你也可以添加以逗號分隔開的規則列表，以my-custom-rules.txt 文檔開頭的文件，還可以添加以 http:// 或 https:// 開頭的網址。</value>
+  </data>
+  <data name="working_dialog_title" xml:space="preserve">
+    <value>施工中......</value>
+  </data>
+  <data name="button_select_path" xml:space="preserve">
+    <value>請選擇路徑</value>
+  </data>
+  <data name="button_blacklist_build" xml:space="preserve">
+    <value>生成 dnscrypt-proxy 黑名單</value>
+  </data>
+  <data name="button_blacklist_import" xml:space="preserve">
+    <value>導入黑名單規則</value>
+  </data>
+  <data name="button_blacklist_export" xml:space="preserve">
+    <value>導出黑名單規則</value>
+  </data>
+  <data name="button_blacklist_remove" xml:space="preserve">
+    <value>移除選中的黑名單規則</value>
+  </data>
+  <data name="button_blacklist_add" xml:space="preserve">
+    <value>添加新的黑名單規則</value>
+  </data>
+  <data name="button_whitelist_import" xml:space="preserve">
+    <value>導入白名單規則</value>
+  </data>
+  <data name="button_whitelist_export" xml:space="preserve">
+    <value>導出白名單規則</value>
+  </data>
+  <data name="button_whitelist_remove" xml:space="preserve">
+    <value>移除選中的白名單規則</value>
+  </data>
+  <data name="button_whitelist_add" xml:space="preserve">
+    <value>添加新的白名單規則</value>
+  </data>
+  <data name="whitelist_rules_header" xml:space="preserve">
+    <value>白名單規則</value>
+  </data>
+  <data name="whitelist_rules_sub_header" xml:space="preserve">
+    <value>（在生成黑名單的過程中，所有的條目都會被忽略）</value>
+  </data>
+  <data name="whitelist_rules_path" xml:space="preserve">
+    <value>白名單規則：</value>
+  </data>
+  <data name="blacklist_rules_header" xml:space="preserve">
+    <value>黑名單規則</value>
+  </data>
+  <data name="blacklist_rules_sub_header" xml:space="preserve">
+    <value>（所有條目都會被納入黑名單）</value>
+  </data>
+  <data name="blacklist_rules_path" xml:space="preserve">
+    <value>黑名單規則：</value>
+  </data>
+  <data name="blacklist_path" xml:space="preserve">
+    <value>黑名單：</value>
+  </data>
+  <data name="blacklist_header" xml:space="preserve">
+    <value>域名黑名單和白名單</value>
+  </data>
+  <data name="advanced_settings_globalresolver" xml:space="preserve">
+    <value>全局代理</value>
+  </data>
+  <data name="advanced_settings_globalresolver_content" xml:space="preserve">
+    <value>如果想用此電腦作為其他設備（如手機和電腦）的網路閘道，請啟用此項設置</value>
+  </data>
+</root>

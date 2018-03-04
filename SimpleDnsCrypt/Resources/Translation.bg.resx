@@ -319,7 +319,7 @@
     <value>отказ</value>
   </data>
   <data name="ok" xml:space="preserve">
-    <value>OK</value>
+    <value>добре</value>
   </data>
   <data name="dialog_message_uninstall" xml:space="preserve">
     <value>Искате ли да премахнете услугите, инсталирани в Windows?</value>
@@ -331,7 +331,7 @@
     <value>Деинсталиране на услугата</value>
   </data>
   <data name="advanced_settings_uninstall_text" xml:space="preserve">
-    <value>Премахване на услугите, инсталирани в Windows</value>
+    <value>Премахване на инсталираната в Windows услуга</value>
   </data>
   <data name="advanced_settings_uninstall_button" xml:space="preserve">
     <value>Премахване на услуга</value>
@@ -370,7 +370,7 @@
     <value>Инсталиране: Microsoft Visual C++ Redistributable за Visual Studio 2017</value>
   </data>
   <data name="loader_redistributable_package_ready" xml:space="preserve">
-    <value>Инсталиран е Microsoft Visual C++ Redistributable за Visual Studio 2017</value>
+    <value>Microsoft Visual C++ Redistributable за Visual Studio 2017 е инсталиран</value>
   </data>
   <data name="message_title_no_server_selected" xml:space="preserve">
     <value>Няма избрани сървъри</value>
@@ -382,7 +382,7 @@
     <value>Услугата не е стартирана</value>
   </data>
   <data name="message_content_service_not_running" xml:space="preserve">
-    <value>Първо трябва да стартиране DNSCrypt услугата!</value>
+    <value>Първо трябва да стартирате DNSCrypt услугата!</value>
   </data>
   <data name="message_title_uninstallation_successful" xml:space="preserve">
     <value>Деинсталирането е успешно</value>
@@ -394,7 +394,7 @@
     <value>Грешка при деинсталиране</value>
   </data>
   <data name="message_content_uninstallation_error" xml:space="preserve">
-    <value>Деинсталирането не може да се извърши. Опитайте да спрете услугата  ръчно и я деинсталирайте отново.</value>
+    <value>Деинсталирането не може да се извърши. Опитайте ръчно да спрете услугата и я деинсталирайте отново.</value>
   </data>
   <data name="open_log_directory" xml:space="preserve">
     <value>Отваряне на директорията с дневници</value>
@@ -433,10 +433,10 @@
     <value>Добавяне на нов домейн в черния списък с правила</value>
   </data>
   <data name="message_content_new_blacklist_rule" xml:space="preserve">
-    <value>Пример: *.example.com, ads.*, *sex*, също така, можете да добавите и списък с правила с разделител запетая, файл, започващ с file:мои-потребителски-правила.txt или външен URL адрес започващ с http:// или https://</value>
+    <value>Пример: *.example.com, ads.*, *sex*, също така, можете да добавите и списък с правила с разделител запетая, файл, започващ с file:my-custom-rules.txt или външен URL адрес започващ с http:// или https://</value>
   </data>
   <data name="working_dialog_title" xml:space="preserve">
-    <value>Изпълнява се трудната работа . . .</value>
+    <value>Обединяване на списъците . . .</value>
   </data>
   <data name="button_select_path" xml:space="preserve">
     <value>Избиране на път</value>
@@ -446,27 +446,35 @@
   </data>
   <data name="button_blacklist_import" xml:space="preserve">
     <value>Внасяне на съществуващ черен списък с правила</value>
+    <comment>I suggest to change &apos;Import existing blacklist rules&apos; to &apos;Import existing rules&apos; or &apos;Import rules&apos;. In this case you can use one string for Black and White rules (like Select path button)</comment>
   </data>
   <data name="button_blacklist_export" xml:space="preserve">
     <value>Изнасяне на черен списък с правила</value>
+    <comment>I suggest to change &apos;Export blacklist rules&apos; to &apos;Export rules&apos;. In this case you can use one string for Black and White rules (like Select path button)</comment>
   </data>
   <data name="button_blacklist_remove" xml:space="preserve">
     <value>Премахване на избраното правило от черния списък</value>
+    <comment>I suggest to change &apos;Remove selected blacklist rules&apos; to &apos;Remove selected rules&apos;. In this case you can use one string for Black and White rules (like Select path button)</comment>
   </data>
   <data name="button_blacklist_add" xml:space="preserve">
     <value>Добавяне на ново правило в черния списък</value>
+    <comment>I suggest to change &apos;Add a new blacklist rule&apos; to &apos;Add a new rule&apos; because it run the &apos;Add new domain blacklist rule&apos;. Also in this case you can use one string for Black and White rules (like Select path button)</comment>
   </data>
   <data name="button_whitelist_import" xml:space="preserve">
     <value>Внасяне на съществуващ бял списък с правила</value>
+    <comment>I suggest to change &apos;Import existing whitelist rules&apos; to &apos;Import existing rules&apos; or &apos;Import rules&apos;. In this case you can use one string for Black and White rules (like Select path button)</comment>
   </data>
   <data name="button_whitelist_export" xml:space="preserve">
     <value>Изнасяне на бял списък с правила</value>
+    <comment>I suggest to change &apos;Export whitelist rules&apos; to &apos;Export rules&apos;. In this case you can use one string for Black and White rules (like Select path button)</comment>
   </data>
   <data name="button_whitelist_remove" xml:space="preserve">
-    <value>Премахване на избраното правила от белия списък</value>
+    <value>Премахване на избраното правило от белия списък</value>
+    <comment>I suggest to change &apos;Remove selected whitelist rules&apos; to &apos;Remove selected rules&apos;. In this case you can use one string for Black and White rules (like Select path button)</comment>
   </data>
   <data name="button_whitelist_add" xml:space="preserve">
     <value>Добавяне на ново правило в белия списък</value>
+    <comment>I suggest to change &apos;Add a new whitelist rule&apos; to &apos;Add a new rule&apos; because it run the &apos;Add new domain whitelist rule&apos;. Also in this case you can use one string for Black and White rules (like Select path button)</comment>
   </data>
   <data name="whitelist_rules_header" xml:space="preserve">
     <value>Бял списък с правила</value>
@@ -478,13 +486,13 @@
     <value>Бял списък с правила:</value>
   </data>
   <data name="blacklist_rules_header" xml:space="preserve">
-    <value>Правила за черен списък</value>
+    <value>Черен списък с правила</value>
   </data>
   <data name="blacklist_rules_sub_header" xml:space="preserve">
     <value>(всички записи са обединени в черен списък)</value>
   </data>
   <data name="blacklist_rules_path" xml:space="preserve">
-    <value>Правила за черен списък:</value>
+    <value>Черен списък с правила:</value>
   </data>
   <data name="blacklist_path" xml:space="preserve">
     <value>Черен списък:</value>
