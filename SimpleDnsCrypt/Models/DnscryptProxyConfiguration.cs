@@ -28,6 +28,9 @@ namespace SimpleDnsCrypt.Models
 		private string _log_file;
 		private Dictionary<string, Source> _sources;
 		private bool _use_syslog;
+		private int _log_files_max_size;
+		private int _log_files_max_age;
+		private int _log_files_max_backups;
 		private bool _block_ipv6;
 		private string _forwarding_rules;
 		private int _cache_neg_ttl;
@@ -38,7 +41,7 @@ namespace SimpleDnsCrypt.Models
 		private string _fallback_resolver;
 		private bool _ignore_system_dns;
 		private Dictionary<string, Static> _static;
-		
+
 		[TomlIgnore]
 		public new bool IsNotifying
 		{
@@ -305,6 +308,45 @@ namespace SimpleDnsCrypt.Models
 			{
 				_ignore_system_dns = value;
 				NotifyOfPropertyChange(() => ignore_system_dns);
+			}
+		}
+
+		/// <summary>
+		///  Maximum log files size in MB.
+		/// </summary>
+		public int log_files_max_size
+		{
+			get => _log_files_max_size;
+			set
+			{
+				_log_files_max_size = value;
+				NotifyOfPropertyChange(() => log_files_max_size);
+			}
+		}
+
+		/// <summary>
+		/// Maximum log files age in days.
+		/// </summary>
+		public int log_files_max_age
+		{
+			get => _log_files_max_age;
+			set
+			{
+				_log_files_max_age = value;
+				NotifyOfPropertyChange(() => log_files_max_age);
+			}
+		}
+
+		/// <summary>
+		/// Maximum log files backups to keep.
+		/// </summary>
+		public int log_files_max_backups
+		{
+			get => _log_files_max_backups;
+			set
+			{
+				_log_files_max_backups = value;
+				NotifyOfPropertyChange(() => log_files_max_backups);
 			}
 		}
 
