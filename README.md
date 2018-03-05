@@ -30,6 +30,10 @@ You also will need: Microsoft Visual C++ Redistributable for Visual Studio 2017 
 
 To install Simple DNSCrypt use the latest (stable) MSI packages: [x86](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.5.3/SimpleDNSCrypt.msi) or [x64](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.5.3/SimpleDNSCrypt64.msi).
 
+#### Alternative
+
+https://chocolatey.org/packages/simplednscrypt (maintained by @chantisnake)
+
 ### File Signing
 
 The MSI package and the SimpleDnsCrypt.exe are signed via a *COMODO RSA Code Signing CA*. 
