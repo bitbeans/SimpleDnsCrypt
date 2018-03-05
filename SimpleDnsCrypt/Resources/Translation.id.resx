@@ -121,7 +121,7 @@
     <value>Kartu Jaringan</value>
   </data>
   <data name="default_settings_show_hidden_cards" xml:space="preserve">
-    <value>Tunjukkan semua kartu jaringan</value>
+    <value>Tampilkan semua kartu jaringan</value>
   </data>
   <data name="default_settings_service_header" xml:space="preserve">
     <value>Layanan</value>
@@ -172,7 +172,7 @@
     <value>Hak sebagai administrator tidak ditemukan</value>
   </data>
   <data name="loader_checking_version" xml:space="preserve">
-    <value>Memerika pembaruan . . .</value>
+    <value>Memeriksa pembaruan . . .</value>
   </data>
   <data name="loader_new_version_found" xml:space="preserve">
     <value>Versi terbaru ditemukan: {0}</value>
@@ -421,81 +421,81 @@
     <value>Selalu gunakan protokol TCP untuk terhubung ke server upstream</value>
   </data>
   <data name="add" xml:space="preserve">
-    <value>Add</value>
+    <value>Tambah</value>
   </data>
   <data name="message_title_new_whitelist_rule" xml:space="preserve">
-    <value>Add new domain whitelist rule</value>
+    <value>Tambah kriteria baru whitelist domain</value>
   </data>
   <data name="message_content_new_whitelist_rule" xml:space="preserve">
-    <value>Example: *.example.com, ads.*, *sex*, you also can add a comma-separated list of rules</value>
+    <value>Contoh: *.example.com, ads.*, *sex*, Anda juga dapat menambahkan daftar kriteria dengan dipisahkan tanda koma</value>
   </data>
   <data name="message_title_new_blacklist_rule" xml:space="preserve">
-    <value>Add new domain blacklist rule</value>
+    <value>Tambah kriteria baru blacklist domain</value>
   </data>
   <data name="message_content_new_blacklist_rule" xml:space="preserve">
-    <value>Example: *.example.com, ads.*, *sex*, you can also add a comma-separated list of rules, a file that starts with file:my-custom-rules.txt or a remote URL that begins with http:// or https://.</value>
+    <value>Contoh: *.example.com, ads.*, *sex*, Anda juga dapat menambahkan daftar kriteria dengan dipisahkan tanda koma, sebuah berkas yang dimulai dengan file:my-custom-rules.txt atau pranala luar yang dimulai dengan http:// or https://.</value>
   </data>
   <data name="working_dialog_title" xml:space="preserve">
-    <value>Hard work is being done . . .</value>
+    <value>Menggabungkan list . . .</value>
   </data>
   <data name="button_select_path" xml:space="preserve">
-    <value>Select path</value>
+    <value>Tentukan lokasi</value>
   </data>
   <data name="button_blacklist_build" xml:space="preserve">
-    <value>Build the dnscrypt-proxy blacklist</value>
+    <value>Buat blacklist dnscrypt-proxy</value>
   </data>
   <data name="button_blacklist_import" xml:space="preserve">
-    <value>Import existing blacklist rules</value>
+    <value>Unduh kriteria blacklist yang ada</value>
   </data>
   <data name="button_blacklist_export" xml:space="preserve">
-    <value>Export blacklist rules</value>
+    <value>Unggah kriteria blacklist</value>
   </data>
   <data name="button_blacklist_remove" xml:space="preserve">
-    <value>Remove selected blacklist rule</value>
+    <value>Hapus kriteria blacklist terpilih</value>
   </data>
   <data name="button_blacklist_add" xml:space="preserve">
-    <value>Add a new blacklist rule</value>
+    <value>Buat kriteria blacklist baru</value>
   </data>
   <data name="button_whitelist_import" xml:space="preserve">
-    <value>Import existing whitelist rules</value>
+    <value>Unduh kriteria whitelist yang ada</value>
   </data>
   <data name="button_whitelist_export" xml:space="preserve">
-    <value>Export whitelist rules</value>
+    <value>Unggah kriteria whitelist</value>
   </data>
   <data name="button_whitelist_remove" xml:space="preserve">
-    <value>Remove selected whitelist rule</value>
+    <value>Hapus kriteria whitelist terpilih</value>
   </data>
   <data name="button_whitelist_add" xml:space="preserve">
-    <value>Add a new whitelist rule</value>
+    <value>Buat kriteria whitelist baru</value>
   </data>
   <data name="whitelist_rules_header" xml:space="preserve">
-    <value>Whitelist Rules</value>
+    <value>Kriteria Whitelist</value>
   </data>
   <data name="whitelist_rules_sub_header" xml:space="preserve">
-    <value>(all entries are ignored during blacklist generation)</value>
+    <value>Semua entri diabaikan selama proses pembuatan blacklist</value>
   </data>
   <data name="whitelist_rules_path" xml:space="preserve">
-    <value>Whitelist Rules:</value>
+    <value>Kriteria Whitelist:</value>
   </data>
   <data name="blacklist_rules_header" xml:space="preserve">
-    <value>Blacklist Rules</value>
+    <value>Kriteria Blacklist</value>
   </data>
   <data name="blacklist_rules_sub_header" xml:space="preserve">
-    <value>(all entries are merged to a blacklist)</value>
+    <value>(semua entri telah digabungkan ke dalam daftar blacklist)</value>
   </data>
   <data name="blacklist_rules_path" xml:space="preserve">
-    <value>Blacklist Rules:</value>
+    <value>Kriteria Blacklist:</value>
   </data>
   <data name="blacklist_path" xml:space="preserve">
     <value>Blacklist:</value>
   </data>
   <data name="blacklist_header" xml:space="preserve">
-    <value>Domain Blacklist and Whitelist</value>
+    <value>Blacklist dan Whitelist Domain</value>
   </data>
   <data name="advanced_settings_globalresolver" xml:space="preserve">
-    <value>Global Resolver</value>
+    <value>Resolver Global</value>
   </data>
   <data name="advanced_settings_globalresolver_content" xml:space="preserve">
-    <value>If you want this computer to act as gateway device for others (eg. smartphones or other computers)</value>
+    <value>Jika Anda ingin komputer ini untuk berperan sebagai gateway bagi perangkat lainnya (seperti gawai atau komputer lain)</value>
   </data>
 </root>
