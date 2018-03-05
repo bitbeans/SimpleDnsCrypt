@@ -1,8 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using Caliburn.Micro;
+﻿using Caliburn.Micro;
 using Nett;
-using SimpleDnsCrypt.Models;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 // ReSharper disable InconsistentNaming
 
