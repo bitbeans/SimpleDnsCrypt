@@ -325,10 +325,10 @@
     <value>你希望移除已安裝的系統服務嗎？</value>
   </data>
   <data name="dialog_uninstall_title" xml:space="preserve">
-    <value>卸載服務</value>
+    <value>移除服務</value>
   </data>
   <data name="advanced_settings_uninstall_title" xml:space="preserve">
-    <value>卸載服務</value>
+    <value>移除服務</value>
   </data>
   <data name="advanced_settings_uninstall_text" xml:space="preserve">
     <value>移除已安裝的系統服務</value>
@@ -385,16 +385,16 @@
     <value>請先啟動 DnsCrypt 服務</value>
   </data>
   <data name="message_title_uninstallation_successful" xml:space="preserve">
-    <value>成功卸載</value>
+    <value>成功移除</value>
   </data>
   <data name="message_content_uninstallation_successful" xml:space="preserve">
-    <value>卸載已經成功，DNS 請求不再被加密</value>
+    <value>移除已經成功，DNS 請求不再被加密</value>
   </data>
   <data name="message_title_uninstallation_error" xml:space="preserve">
-    <value>卸載出現問題</value>
+    <value>移除出現問題</value>
   </data>
   <data name="message_content_uninstallation_error" xml:space="preserve">
-    <value>無法卸載。請手動停止服務然後重新嘗試卸載。</value>
+    <value>無法移除。請手動停止服務然後重新嘗試移除。</value>
   </data>
   <data name="open_log_directory" xml:space="preserve">
     <value>打開日誌資料夾</value>
