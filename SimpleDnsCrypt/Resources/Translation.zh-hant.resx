@@ -133,7 +133,7 @@
     <value>設定</value>
   </data>
   <data name="default_settings_configuration_ipv4" xml:space="preserve">
-    <value>使用 IPv6 服務</value>
+    <value>使用 IPv4 服務</value>
   </data>
   <data name="default_settings_configuration_ipv4_tooltip" xml:space="preserve">
     <value>使用在 IPv4網絡可以到達的服務器</value>
