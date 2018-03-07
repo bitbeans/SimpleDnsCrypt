@@ -98,6 +98,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 - [Caliburn.Micro](https://github.com/Caliburn-Micro/Caliburn.Micro)
 - [ControlzEx](https://github.com/ControlzEx/ControlzEx)
 - [Costura.Fody](https://github.com/Fody/Costura)
+- [DnsCrypt.Toolbox](https://github.com/bitbeans/DnsCrypt.Toolbox)
 - [Fody](https://github.com/Fody/Fody)
 - [helper-net](https://github.com/bitbeans/helper-net)
 - [MahApps.Metro](https://github.com/MahApps/MahApps.Metro)
