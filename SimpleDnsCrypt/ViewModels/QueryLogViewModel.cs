@@ -157,6 +157,8 @@ namespace SimpleDnsCrypt.ViewModels
 				if (result == DialogResult.OK)
 				{
 					QueryLogFile = Path.Combine(queryLogFolderDialog.SelectedPath, Global.QueryLogFileName);
+					Properties.Settings.Default.QueryLogFile = _queryLogFile;
+					Properties.Settings.Default.Save();
 				}
 			}
 			catch (Exception exception)
@@ -192,8 +194,7 @@ namespace SimpleDnsCrypt.ViewModels
 						saveAndRestartService = true;
 					}
 
-					if (string.IsNullOrEmpty(dnscryptProxyConfiguration.query_log.file) ||
-					    !dnscryptProxyConfiguration.query_log.file.Equals(_queryLogFile))
+					if (string.IsNullOrEmpty(dnscryptProxyConfiguration.query_log.file))
 					{
 						dnscryptProxyConfiguration.query_log.file = _queryLogFile;
 						saveAndRestartService = true;
@@ -232,6 +233,7 @@ namespace SimpleDnsCrypt.ViewModels
 
 					if (!string.IsNullOrEmpty(_queryLogFile))
 						if (File.Exists(_queryLogFile))
+						{
 							await Task.Run(() =>
 							{
 								using (var reader = new StreamReader(new FileStream(_queryLogFile,
@@ -263,10 +265,15 @@ namespace SimpleDnsCrypt.ViewModels
 									}
 								}
 							}).ConfigureAwait(false);
+						}
 						else
+						{
 							_isQueryLogLogging = false;
+						}
 					else
+					{
 						_isQueryLogLogging = false;
+					}
 				}
 				else
 				{

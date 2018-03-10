@@ -149,8 +149,7 @@ namespace SimpleDnsCrypt.ViewModels
 						saveAndRestartService = true;
 					}
 
-					if (string.IsNullOrEmpty(dnscryptProxyConfiguration.blacklist.blacklist_file) ||
-					    !dnscryptProxyConfiguration.blacklist.blacklist_file.Equals(_domainBlacklistFile))
+					if (string.IsNullOrEmpty(dnscryptProxyConfiguration.blacklist.blacklist_file))
 					{
 						dnscryptProxyConfiguration.blacklist.blacklist_file = _domainBlacklistFile;
 						saveAndRestartService = true;

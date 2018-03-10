@@ -154,8 +154,7 @@ namespace SimpleDnsCrypt.ViewModels
 						saveAndRestartService = true;
 					}
 
-					if (string.IsNullOrEmpty(dnscryptProxyConfiguration.blacklist.log_file) ||
-						!dnscryptProxyConfiguration.blacklist.log_file.Equals(Global.DomainBlockLogFileName))
+					if (string.IsNullOrEmpty(dnscryptProxyConfiguration.blacklist.log_file))
 					{
 						dnscryptProxyConfiguration.blacklist.log_file = Global.DomainBlockLogFileName;
 						saveAndRestartService = true;
