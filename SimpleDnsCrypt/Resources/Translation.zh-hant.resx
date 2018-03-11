@@ -148,7 +148,7 @@
     <value>只顯示支援 DNSSEC 的伺服器</value>
   </data>
   <data name="default_settings_configuration_dnssec_tooltip" xml:space="preserve">
-    <value>服務器必須支持DNS安全擴展</value>
+    <value>服務器必須支援 DNS 安全擴充功能</value>
   </data>
   <data name="default_settings_configuration_nolog" xml:space="preserve">
     <value>只顯示不保留日誌的伺服器</value>
@@ -193,16 +193,16 @@
     <value>缺少</value>
   </data>
   <data name="loader_downloading_signature" xml:space="preserve">
-    <value>正在下載簽名</value>
+    <value>正在下載簽名…</value>
   </data>
   <data name="loader_downloading_installer" xml:space="preserve">
-    <value>正在下載安裝包</value>
+    <value>正在下載安裝包…</value>
   </data>
   <data name="loader_starting" xml:space="preserve">
     <value>開始</value>
   </data>
   <data name="loader_validate_folder" xml:space="preserve">
-    <value>正在驗證 {0} 文件夾</value>
+    <value>正在驗證 {0} 資料夾</value>
   </data>
   <data name="loader_loading_network_cards" xml:space="preserve">
     <value>正在讀取網卡信息...</value>
@@ -217,10 +217,13 @@
     <value>正在載入{0}</value>
   </data>
   <data name="loader_missing_files" xml:space="preserve">
-    <value> {0} 文件夾缺少文件:\n{1}\n\n嘗試使用 {2}的全新安裝</value>
+    <value> {0} 資料夾缺少檔案:
+{1}
+
+嘗試使用 {2}的全新安裝</value>
   </data>
   <data name="loader_all_files_available" xml:space="preserve">
-    <value>全部必要文件都已具備</value>
+    <value>全部必要檔案都已具備</value>
   </data>
   <data name="about" xml:space="preserve">
     <value>關於</value>
@@ -229,7 +232,7 @@
     <value>軟體</value>
   </data>
   <data name="about_license" xml:space="preserve">
-    <value>許可文件</value>
+    <value>證書</value>
   </data>
   <data name="about_view_on_github" xml:space="preserve">
     <value>在 Github 上查看</value>
@@ -241,7 +244,7 @@
     <value>日誌</value>
   </data>
   <data name="querylog_waiting_for_data" xml:space="preserve">
-    <value>正在等待 DNS 查詢結果</value>
+    <value>正在等候 DNS 查詢結果</value>
   </data>
   <data name="querylog_entry_count" xml:space="preserve">
     <value>條目數量：</value>
@@ -253,13 +256,13 @@
     <value>清除列表</value>
   </data>
   <data name="querylog_button_block" xml:space="preserve">
-    <value>封禁已選</value>
+    <value>已選阻擋</value>
   </data>
   <data name="domainblocklog" xml:space="preserve">
-    <value>域名封禁日誌</value>
+    <value>域名阻擋日誌</value>
   </data>
   <data name="domainblocklog_waiting_for_data" xml:space="preserve">
-    <value>正在等待已封禁的 DNS 請求</value>
+    <value>正在等待已阻擋的 DNS 請求</value>
   </data>
   <data name="domainblocklog_entry_count" xml:space="preserve">
     <value>條目數量：</value>
@@ -271,16 +274,16 @@
     <value>清除列表</value>
   </data>
   <data name="tabitem_domainblocklog" xml:space="preserve">
-    <value>域名封禁日誌</value>
+    <value>域名阻擋日誌</value>
   </data>
   <data name="tabitem_addressblocklog" xml:space="preserve">
-    <value>地址封禁日誌</value>
+    <value>網址阻擋日誌</value>
   </data>
   <data name="tabitem_domainblacklist" xml:space="preserve">
     <value>域名黑名單</value>
   </data>
   <data name="tabitem_addressblacklist" xml:space="preserve">
-    <value>地址黑名單</value>
+    <value>網址黑名單</value>
   </data>
   <data name="settings" xml:space="preserve">
     <value>設置</value>
@@ -289,13 +292,13 @@
     <value>顯示 “域名黑名單” 分頁</value>
   </data>
   <data name="settings_address_blacklist" xml:space="preserve">
-    <value>顯示 “地址黑名單” 分頁</value>
+    <value>顯示 “網址黑名單” 分頁</value>
   </data>
   <data name="settings_domain_block" xml:space="preserve">
-    <value>顯示 “域名封禁日誌” 分頁</value>
+    <value>顯示 “域名阻擋日誌” 分頁</value>
   </data>
   <data name="settings_address_block" xml:space="preserve">
-    <value>顯示 “地址封禁日誌” 分頁</value>
+    <value>顯示 “網址阻擋日誌” 分頁</value>
   </data>
   <data name="settings_query_log" xml:space="preserve">
     <value>顯示 “日誌” 分頁</value>
@@ -406,7 +409,7 @@
     <value>更新頻道</value>
   </data>
   <data name="advanced_settings_dnscache_content" xml:space="preserve">
-    <value>使用 DNS 快取以減少延遲和發送流量</value>
+    <value>啟用 DNS 快取以減少延遲和發送流量</value>
   </data>
   <data name="advanced_settings_blockipv6" xml:space="preserve">
     <value>阻止 IPv6</value>
