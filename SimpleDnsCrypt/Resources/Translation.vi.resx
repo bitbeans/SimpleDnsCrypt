@@ -472,7 +472,7 @@
     <value>Quy tắt loại trừ</value>
   </data>
   <data name="whitelist_rules_sub_header" xml:space="preserve">
-    <value>(tất cả các mục nhập sẽ bị bỏ qua trong quá trình tạo danh sách đen)</value>
+    <value>(tất cả các mục nhập sẽ bị bỏ qua trong quá trình tạo danh sách chặn)</value>
   </data>
   <data name="whitelist_rules_path" xml:space="preserve">
     <value>Quy tắt loại trừ:</value>
@@ -481,7 +481,7 @@
     <value>Quy tắc chặn</value>
   </data>
   <data name="blacklist_rules_sub_header" xml:space="preserve">
-    <value>(tất cả các mục được hợp nhất vào một danh sách đen)</value>
+    <value>(tất cả các mục được hợp nhất vào một danh sách chặn)</value>
   </data>
   <data name="blacklist_rules_path" xml:space="preserve">
     <value>Quy tắt danh sách chặn:</value>
