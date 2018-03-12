@@ -136,31 +136,31 @@
     <value>使用 IPv4 服務</value>
   </data>
   <data name="default_settings_configuration_ipv4_tooltip" xml:space="preserve">
-    <value>使用在 IPv4網絡可以到達的服務器</value>
+    <value>使用在 IPv4 網絡下可以到達的伺服器</value>
   </data>
   <data name="default_settings_configuration_ipv6" xml:space="preserve">
     <value>使用 IPv6 服務</value>
   </data>
   <data name="default_settings_configuration_ipv6_tooltip" xml:space="preserve">
-    <value>使用支援 IPv6 的伺服器（如果沒有 IPv6 連接，請勿啟用）</value>
+    <value>使用支援 IPv6 的伺服器（如果沒有 IPv6 連線能力，請勿啟用）</value>
   </data>
   <data name="default_settings_configuration_dnssec" xml:space="preserve">
     <value>只顯示支援 DNSSEC 的伺服器</value>
   </data>
   <data name="default_settings_configuration_dnssec_tooltip" xml:space="preserve">
-    <value>服務器必須支援 DNS 安全擴充功能</value>
+    <value>伺服器必須支援 DNS 安全擴充功能</value>
   </data>
   <data name="default_settings_configuration_nolog" xml:space="preserve">
     <value>只顯示不保留日誌的伺服器</value>
   </data>
   <data name="default_settings_configuration_nolog_tooltip" xml:space="preserve">
-    <value>服務器不得記錄用戶請求</value>
+    <value>伺服器必須不記錄用戶請求</value>
   </data>
   <data name="default_settings_configuration_nofilter" xml:space="preserve">
     <value>只顯示不進行內容過慮的伺服器</value>
   </data>
   <data name="default_settings_configuration_nofilter_tooltip" xml:space="preserve">
-    <value>伺服器必須強制啟用專用黑名單（用於家長控制、廣告攔截等用途）</value>
+    <value>伺服器必須不強制啟用專用黑名單（用於家長控制、廣告攔截等內容過濾用途）</value>
   </data>
   <data name="tabitem_mainmenu" xml:space="preserve">
     <value>主選單</value>
@@ -169,13 +169,13 @@
     <value>可獲取管理員權限</value>
   </data>
   <data name="loader_administrative_rights_missing" xml:space="preserve">
-    <value>缺少管理員權限</value>
+    <value>需要管理員權限</value>
   </data>
   <data name="loader_checking_version" xml:space="preserve">
     <value>檢查新版本中…</value>
   </data>
   <data name="loader_new_version_found" xml:space="preserve">
-    <value>發現一個新版本：{0}</value>
+    <value>發現新版本：{0}</value>
   </data>
   <data name="loader_starting_update" xml:space="preserve">
     <value>開始升級…</value>
@@ -184,28 +184,28 @@
     <value>升級失敗，繼續...</value>
   </data>
   <data name="loader_latest_version" xml:space="preserve">
-    <value>您正在使用最新版</value>
+    <value>您正使用的程式版本是最新的</value>
   </data>
   <data name="loader_unsigned" xml:space="preserve">
-    <value>未簽名</value>
+    <value>未經數位簽章</value>
   </data>
   <data name="loader_missing" xml:space="preserve">
-    <value>缺少</value>
+    <value>數位簽章缺失</value>
   </data>
   <data name="loader_downloading_signature" xml:space="preserve">
-    <value>正在下載簽名…</value>
+    <value>正在下載簽章校驗檔…</value>
   </data>
   <data name="loader_downloading_installer" xml:space="preserve">
-    <value>正在下載安裝包…</value>
+    <value>正在下載安裝程式…</value>
   </data>
   <data name="loader_starting" xml:space="preserve">
-    <value>開始</value>
+    <value>正在啓動...</value>
   </data>
   <data name="loader_validate_folder" xml:space="preserve">
     <value>正在驗證 {0} 資料夾</value>
   </data>
   <data name="loader_loading_network_cards" xml:space="preserve">
-    <value>正在讀取網卡信息...</value>
+    <value>正在獲取網路介面卡資訊...</value>
   </data>
   <data name="loader_failed_loading" xml:space="preserve">
     <value>無法載入 {0}</value>
@@ -214,13 +214,13 @@
     <value>{0} 已成功載入</value>
   </data>
   <data name="loader_loading" xml:space="preserve">
-    <value>正在載入{0}</value>
+    <value>正在載入 {0} ...</value>
   </data>
   <data name="loader_missing_files" xml:space="preserve">
     <value> {0} 資料夾缺少檔案:
 {1}
 
-嘗試使用 {2}的全新安裝</value>
+嘗試使用 {2} 的全新安裝</value>
   </data>
   <data name="loader_all_files_available" xml:space="preserve">
     <value>全部必要檔案都已具備</value>
@@ -232,7 +232,7 @@
     <value>軟體</value>
   </data>
   <data name="about_license" xml:space="preserve">
-    <value>證書</value>
+    <value>授權條款</value>
   </data>
   <data name="about_view_on_github" xml:space="preserve">
     <value>在 Github 上查看</value>
@@ -286,31 +286,31 @@
     <value>網址黑名單</value>
   </data>
   <data name="settings" xml:space="preserve">
-    <value>設置</value>
+    <value>設定</value>
   </data>
   <data name="settings_domain_blacklist" xml:space="preserve">
-    <value>顯示 “域名黑名單” 分頁</value>
+    <value>顯示「域名黑名單」分頁</value>
   </data>
   <data name="settings_address_blacklist" xml:space="preserve">
-    <value>顯示 “網址黑名單” 分頁</value>
+    <value>顯示「網址黑名單」分頁</value>
   </data>
   <data name="settings_domain_block" xml:space="preserve">
-    <value>顯示 “域名阻擋日誌” 分頁</value>
+    <value>顯示「域名阻擋日誌」分頁</value>
   </data>
   <data name="settings_address_block" xml:space="preserve">
-    <value>顯示 “網址阻擋日誌” 分頁</value>
+    <value>顯示「網址阻擋日誌」分頁</value>
   </data>
   <data name="settings_query_log" xml:space="preserve">
-    <value>顯示 “日誌” 分頁</value>
+    <value>顯示「日誌」分頁</value>
   </data>
   <data name="tabitem_resolvers" xml:space="preserve">
     <value>伺服器</value>
   </data>
   <data name="tabitem_advanced_settings" xml:space="preserve">
-    <value>高級設置</value>
+    <value>進階設定</value>
   </data>
   <data name="settings_advanced_settings" xml:space="preserve">
-    <value>顯示 “高級設置” 分頁</value>
+    <value>顯示 「進階設定」 分頁</value>
   </data>
   <data name="yes" xml:space="preserve">
     <value>是</value>
@@ -325,22 +325,22 @@
     <value>好的</value>
   </data>
   <data name="dialog_message_uninstall" xml:space="preserve">
-    <value>你希望移除已安裝的系統服務嗎？</value>
+    <value>你想移除已安裝的 DNSCrypt 系統服務嗎？</value>
   </data>
   <data name="dialog_uninstall_title" xml:space="preserve">
-    <value>移除服務</value>
+    <value>移除 DNSCrypt 服務</value>
   </data>
   <data name="advanced_settings_uninstall_title" xml:space="preserve">
-    <value>移除服務</value>
+    <value>移除 DNSCrypt 服務</value>
   </data>
   <data name="advanced_settings_uninstall_text" xml:space="preserve">
-    <value>移除已安裝的系統服務</value>
+    <value>移除已安裝的 DNSCrypt 系統服務</value>
   </data>
   <data name="advanced_settings_uninstall_button" xml:space="preserve">
-    <value>移除服務</value>
+    <value>移除 DNSCrypt 服務</value>
   </data>
   <data name="default_settings_apply_settings" xml:space="preserve">
-    <value>應用設置</value>
+    <value>套用設定</value>
   </data>
   <data name="advanced_settings_dnscache" xml:space="preserve">
     <value>DNS 快取</value>
@@ -349,7 +349,7 @@
     <value>DNSCrypt 模式</value>
   </data>
   <data name="resolvers_dnscrypt_mode_description" xml:space="preserve">
-    <value>在自動模式下，所有可用的伺服都會被使用。 dnscrypt-proxy 會自動選擇最快的服務器</value>
+    <value>在自動模式下，所有可用的伺服都會被使用。 dnscrypt-proxy 會自動選擇響應最快的服務器</value>
   </data>
   <data name="resolvers_dnscrypt_automatic_mode" xml:space="preserve">
     <value>自動模式</value>
@@ -382,28 +382,28 @@
     <value>至少應該選擇一個伺服器。否則，dnscrypt-proxy 將會使用所有符合篩選條件的伺服器</value>
   </data>
   <data name="message_title_service_not_running" xml:space="preserve">
-    <value>服務未運行</value>
+    <value>服務尚未運行</value>
   </data>
   <data name="message_content_service_not_running" xml:space="preserve">
-    <value>請先啟動 DnsCrypt 服務</value>
+    <value>請先啟動 DNSCrypt 服務</value>
   </data>
   <data name="message_title_uninstallation_successful" xml:space="preserve">
-    <value>成功移除</value>
+    <value>移除成功</value>
   </data>
   <data name="message_content_uninstallation_successful" xml:space="preserve">
-    <value>移除已經成功，DNS 請求不再被加密</value>
+    <value>已成功移除 DNSCrypt 服務，DNS 請求不再被加密</value>
   </data>
   <data name="message_title_uninstallation_error" xml:space="preserve">
-    <value>移除出現問題</value>
+    <value>移除過程出現問題</value>
   </data>
   <data name="message_content_uninstallation_error" xml:space="preserve">
-    <value>無法移除。請手動停止服務然後重新嘗試移除。</value>
+    <value>無法移除。請手動停止 dnscrypt-proxy 服務然後重新嘗試移除。</value>
   </data>
   <data name="open_log_directory" xml:space="preserve">
     <value>打開日誌資料夾</value>
   </data>
   <data name="settings_update_auto" xml:space="preserve">
-    <value>程序啟動時檢查更新</value>
+    <value>程式啟動時檢查更新</value>
   </data>
   <data name="settings_update_channel" xml:space="preserve">
     <value>更新頻道</value>
@@ -412,7 +412,7 @@
     <value>啟用 DNS 快取以減少延遲和發送流量</value>
   </data>
   <data name="advanced_settings_blockipv6" xml:space="preserve">
-    <value>阻止 IPv6</value>
+    <value>阻擋 IPv6</value>
   </data>
   <data name="advanced_settings_blockipv6_content" xml:space="preserve">
     <value>立刻向 IPv6 相關請求發送空白響應</value>
@@ -421,25 +421,25 @@
     <value>強制使用 TCP</value>
   </data>
   <data name="advanced_settings_forcetcp_content" xml:space="preserve">
-    <value>總是用 TCP 連接上游伺服器</value>
+    <value>總是用 TCP 與上游 DNS 伺服器連線</value>
   </data>
   <data name="add" xml:space="preserve">
-    <value>添加</value>
+    <value>新增</value>
   </data>
   <data name="message_title_new_whitelist_rule" xml:space="preserve">
-    <value>添加新的域名白名單規則</value>
+    <value>新增域名白名單規則</value>
   </data>
   <data name="message_content_new_whitelist_rule" xml:space="preserve">
     <value>範例：*.example.com, ads.*, *sex*。你也可以添加以逗號分隔開的規則列表。</value>
   </data>
   <data name="message_title_new_blacklist_rule" xml:space="preserve">
-    <value>添加新的域名黑名單規則</value>
+    <value>新增域名黑名單規則</value>
   </data>
   <data name="message_content_new_blacklist_rule" xml:space="preserve">
-    <value>範例： *.example.com, ads.*, *sex*。你也可以添加以逗號分隔開的規則列表，以my-custom-rules.txt 文檔開頭的文件，還可以添加以 http:// 或 https:// 開頭的網址。</value>
+    <value>範例： *.example.com, ads.*, *sex*。你也可以添加以逗號分隔開的規則列表，以 my-custom-rules.txt 文檔開頭的文件，還可以添加以 http:// 或 https:// 開頭的遠端檔案網址。</value>
   </data>
   <data name="working_dialog_title" xml:space="preserve">
-    <value>施工中......</value>
+    <value>列表正在合併中......</value>
   </data>
   <data name="button_select_path" xml:space="preserve">
     <value>請選擇路徑</value>
@@ -448,28 +448,28 @@
     <value>生成 dnscrypt-proxy 黑名單</value>
   </data>
   <data name="button_blacklist_import" xml:space="preserve">
-    <value>導入黑名單規則</value>
+    <value>匯入黑名單規則</value>
   </data>
   <data name="button_blacklist_export" xml:space="preserve">
-    <value>導出黑名單規則</value>
+    <value>匯出黑名單規則</value>
   </data>
   <data name="button_blacklist_remove" xml:space="preserve">
     <value>移除選中的黑名單規則</value>
   </data>
   <data name="button_blacklist_add" xml:space="preserve">
-    <value>添加新的黑名單規則</value>
+    <value>新增黑名單規則</value>
   </data>
   <data name="button_whitelist_import" xml:space="preserve">
-    <value>導入白名單規則</value>
+    <value>匯入白名單規則</value>
   </data>
   <data name="button_whitelist_export" xml:space="preserve">
-    <value>導出白名單規則</value>
+    <value>匯出白名單規則</value>
   </data>
   <data name="button_whitelist_remove" xml:space="preserve">
     <value>移除選中的白名單規則</value>
   </data>
   <data name="button_whitelist_add" xml:space="preserve">
-    <value>添加新的白名單規則</value>
+    <value>新增白名單規則</value>
   </data>
   <data name="whitelist_rules_header" xml:space="preserve">
     <value>白名單規則</value>
@@ -496,9 +496,9 @@
     <value>域名黑名單和白名單</value>
   </data>
   <data name="advanced_settings_globalresolver" xml:space="preserve">
-    <value>全局代理</value>
+    <value>全域代理</value>
   </data>
   <data name="advanced_settings_globalresolver_content" xml:space="preserve">
-    <value>如果想用此電腦作為其他設備（如手機和電腦）的網路閘道，請啟用此項設置</value>
+    <value>如果想用此電腦作為其他設備（如手機、電腦）的網路閘道，請啟用此項設置</value>
   </data>
 </root>
