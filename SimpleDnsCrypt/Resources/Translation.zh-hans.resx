@@ -121,47 +121,47 @@
     <value>网卡</value>
   </data>
   <data name="default_settings_show_hidden_cards" xml:space="preserve">
-    <value>显示隐藏网卡</value>
+    <value>显示隐藏的网卡</value>
   </data>
   <data name="default_settings_service_header" xml:space="preserve">
     <value>服务</value>
   </data>
   <data name="default_settings_service" xml:space="preserve">
-    <value>DNSCrypt服务</value>
+    <value>DNSCrypt 服务</value>
     <comment>Fuzzy</comment>
   </data>
   <data name="default_settings_configuration" xml:space="preserve">
     <value>设置</value>
   </data>
   <data name="default_settings_configuration_ipv4" xml:space="preserve">
-    <value>使用IPv4服务器</value>
+    <value>使用 IPv4 服务器</value>
   </data>
   <data name="default_settings_configuration_ipv4_tooltip" xml:space="preserve">
-    <value>使用在 IPv4网络可以到达的服务器</value>
+    <value>使用在 IPv4 网络下可以到达的服务器</value>
   </data>
   <data name="default_settings_configuration_ipv6" xml:space="preserve">
-    <value>使用IPv6服务器</value>
+    <value>使用 IPv6 服务器</value>
   </data>
   <data name="default_settings_configuration_ipv6_tooltip" xml:space="preserve">
-    <value>使用支持IPv6的服务器（如果没有IPv6连接，请勿启用）</value>
+    <value>使用支持 IPv6 的服务器（如果没有 IPv6 连接能力，请勿启用）</value>
   </data>
   <data name="default_settings_configuration_dnssec" xml:space="preserve">
-    <value>只显示支持DNSSEC的服务器</value>
+    <value>只显示支持 DNSSEC 的服务器</value>
   </data>
   <data name="default_settings_configuration_dnssec_tooltip" xml:space="preserve">
-    <value>服务器必须支持DNS安全扩展</value>
+    <value>服务器必须支持 DNS 安全扩展</value>
   </data>
   <data name="default_settings_configuration_nolog" xml:space="preserve">
     <value>只显示不保留日志的服务器</value>
   </data>
   <data name="default_settings_configuration_nolog_tooltip" xml:space="preserve">
-    <value>服务器不得记录用户请求</value>
+    <value>服务器必须不记录用户请求</value>
   </data>
   <data name="default_settings_configuration_nofilter" xml:space="preserve">
     <value>只显示不进行内容筛选的服务器</value>
   </data>
   <data name="default_settings_configuration_nofilter_tooltip" xml:space="preserve">
-    <value>服务器必须强制启用专用黑名单（用于家长控制、广告拦截等用途）</value>
+    <value>服务器必须不强制启用专用黑名单（用于家长控制、广告拦截等内容筛选用途）</value>
   </data>
   <data name="tabitem_mainmenu" xml:space="preserve">
     <value>主菜单</value>
@@ -170,13 +170,13 @@
     <value>可获取管理员权限</value>
   </data>
   <data name="loader_administrative_rights_missing" xml:space="preserve">
-    <value>缺少管理员权限</value>
+    <value>需要管理员权限</value>
   </data>
   <data name="loader_checking_version" xml:space="preserve">
-    <value>检查新版本</value>
+    <value>检查新版本中...</value>
   </data>
   <data name="loader_new_version_found" xml:space="preserve">
-    <value>找到新版本：{0}</value>
+    <value>发现新版本：{0}</value>
   </data>
   <data name="loader_starting_update" xml:space="preserve">
     <value>开始升级</value>
@@ -185,28 +185,28 @@
     <value>升级失败，继续......</value>
   </data>
   <data name="loader_latest_version" xml:space="preserve">
-    <value>您正在使用最新版</value>
+    <value>您正在使用的程序版本是最新的</value>
   </data>
   <data name="loader_unsigned" xml:space="preserve">
     <value>未签名</value>
   </data>
   <data name="loader_missing" xml:space="preserve">
-    <value>缺少</value>
+    <value>签名缺少</value>
   </data>
   <data name="loader_downloading_signature" xml:space="preserve">
-    <value>正在下载签名</value>
+    <value>正在下载签名校验文件...</value>
   </data>
   <data name="loader_downloading_installer" xml:space="preserve">
-    <value>正在下载安装包</value>
+    <value>正在下载安装程序...</value>
   </data>
   <data name="loader_starting" xml:space="preserve">
-    <value>开始</value>
+    <value>正在开启...</value>
   </data>
   <data name="loader_validate_folder" xml:space="preserve">
-    <value>正在验证 {0} 文件夹 </value>
+    <value>正在验证 {0} 文件夹</value>
   </data>
   <data name="loader_loading_network_cards" xml:space="preserve">
-    <value>正在读取网卡信息...</value>
+    <value>正在获取网卡信息...</value>
   </data>
   <data name="loader_failed_loading" xml:space="preserve">
     <value>无法载入 {0}</value>
@@ -233,7 +233,7 @@
     <value>许可文件</value>
   </data>
   <data name="about_view_on_github" xml:space="preserve">
-    <value>在Github上查看</value>
+    <value>在 Github 上查看</value>
   </data>
   <data name="tabitem_querylog" xml:space="preserve">
     <value>日志</value>
@@ -242,7 +242,7 @@
     <value>日志</value>
   </data>
   <data name="querylog_waiting_for_data" xml:space="preserve">
-    <value>正在等待DNS查询结果</value>
+    <value>正在等待 DNS 查询结果</value>
   </data>
   <data name="querylog_entry_count" xml:space="preserve">
     <value>条目数量：</value>
@@ -260,7 +260,7 @@
     <value>域名封禁日志</value>
   </data>
   <data name="domainblocklog_waiting_for_data" xml:space="preserve">
-    <value>正在等待已封禁的DNS请求</value>
+    <value>正在等待已封禁的 DNS 请求</value>
   </data>
   <data name="domainblocklog_entry_count" xml:space="preserve">
     <value>条目数量：</value>
@@ -323,31 +323,31 @@
     <value>好的</value>
   </data>
   <data name="dialog_message_uninstall" xml:space="preserve">
-    <value>你希望移除已安装的系统服务吗？</value>
+    <value>你希望移除已安装的 DNSCrypt 系统服务吗？</value>
   </data>
   <data name="dialog_uninstall_title" xml:space="preserve">
-    <value>卸载服务</value>
+    <value>卸载 DNSCrypt 服务</value>
   </data>
   <data name="advanced_settings_uninstall_title" xml:space="preserve">
-    <value>卸载服务</value>
+    <value>卸载 DNSCrypt 服务</value>
   </data>
   <data name="advanced_settings_uninstall_text" xml:space="preserve">
-    <value>移除已安装的系统服务</value>
+    <value>移除已安装的 DNSCrypt 系统服务</value>
   </data>
   <data name="advanced_settings_uninstall_button" xml:space="preserve">
-    <value>移除服务</value>
+    <value>移除 DNSCrypt 服务</value>
   </data>
   <data name="default_settings_apply_settings" xml:space="preserve">
     <value>应用设置</value>
   </data>
   <data name="advanced_settings_dnscache" xml:space="preserve">
-    <value>DNS缓存</value>
+    <value>DNS 缓存</value>
   </data>
   <data name="resolvers_dnscrypt_mode_header" xml:space="preserve">
     <value>DNSCrypt 模式</value>
   </data>
   <data name="resolvers_dnscrypt_mode_description" xml:space="preserve">
-    <value>在自动模式下，所有可用服务器都会被使用。dnscrypt-proxy会自动选择最快的服务器</value>
+    <value>在自动模式下，所有可用服务器都会被使用。dnscrypt-proxy 会自动选择响应最快的服务器</value>
   </data>
   <data name="resolvers_dnscrypt_automatic_mode" xml:space="preserve">
     <value>自动模式</value>
@@ -380,22 +380,22 @@
     <value>至少应该选择一个服务器。否则，dnscrypt-proxy将会使用所有符合筛选条件的服务器</value>
   </data>
   <data name="message_title_service_not_running" xml:space="preserve">
-    <value>服务未运行</value>
+    <value>服务尚未运行</value>
   </data>
   <data name="message_content_service_not_running" xml:space="preserve">
-    <value>请先启动DnsCrypt服务</value>
+    <value>请先启动 DNSCrypt 服务</value>
   </data>
   <data name="message_title_uninstallation_successful" xml:space="preserve">
     <value>成功卸载</value>
   </data>
   <data name="message_content_uninstallation_successful" xml:space="preserve">
-    <value>卸载已经成功，DNS请求不再被加密</value>
+    <value>已成功卸载 DNSCrypt 服务，DNS 请求不再被加密</value>
   </data>
   <data name="message_title_uninstallation_error" xml:space="preserve">
-    <value>卸载出现问题</value>
+    <value>卸载过程出现问题</value>
   </data>
   <data name="message_content_uninstallation_error" xml:space="preserve">
-    <value>无法卸载。请手动停止服务然后重新尝试卸载。</value>
+    <value>无法卸载。请手动停止 dnscrypt-proxy 服务然后重新尝试卸载。</value>
   </data>
   <data name="open_log_directory" xml:space="preserve">
     <value>打开日志文件夹</value>
@@ -407,19 +407,19 @@
     <value>更新频道</value>
   </data>
   <data name="advanced_settings_dnscache_content" xml:space="preserve">
-    <value>使用DNS缓存以减少延迟和发送流量</value>
+    <value>使用 DNS 缓存以减少延迟和发送流量</value>
   </data>
   <data name="advanced_settings_blockipv6" xml:space="preserve">
     <value>阻止 IPv6</value>
   </data>
   <data name="advanced_settings_blockipv6_content" xml:space="preserve">
-    <value>立刻向 IPv6相关请求发送空白响应</value>
+    <value>立刻向 IPv6 相关请求发送空白响应</value>
   </data>
   <data name="advanced_settings_forcetcp" xml:space="preserve">
-    <value>强制使用TCP</value>
+    <value>强制使用 TCP</value>
   </data>
   <data name="advanced_settings_forcetcp_content" xml:space="preserve">
-    <value>总是用TCP连接上游服务器</value>
+    <value>总是用 TCP 与上游 DNS 服务器连接</value>
   </data>
   <data name="add" xml:space="preserve">
     <value>添加</value>
@@ -437,7 +437,7 @@
     <value>示例： *.example.com, ads.*, *sex*。你也可以添加以逗号分隔开的规则列表，以my-custom-rules.txt 文档开头的文件，还可以添加以 http:// 或 https:// 开头的网络地址。</value>
   </data>
   <data name="working_dialog_title" xml:space="preserve">
-    <value>施工中......</value>
+    <value>列表正在合併中......</value>
   </data>
   <data name="button_select_path" xml:space="preserve">
     <value>请选择路径</value>
@@ -497,6 +497,6 @@
     <value>全局代理</value>
   </data>
   <data name="advanced_settings_globalresolver_content" xml:space="preserve">
-    <value>如果想用此电脑作为其他设备（如手机和电脑）的网关，请启用此项设置</value>
+    <value>如果想用此电脑作为其他设备（如手机、电脑）的网关，请启用此项设置</value>
   </data>
 </root>
