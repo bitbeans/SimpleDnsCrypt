@@ -1,4 +1,10 @@
+using Caliburn.Micro;
+using SimpleDnsCrypt.Config;
+using SimpleDnsCrypt.Extensions;
+using SimpleDnsCrypt.Helper;
+using SimpleDnsCrypt.Models;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -11,11 +17,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using Caliburn.Micro;
-using SimpleDnsCrypt.Config;
-using SimpleDnsCrypt.Extensions;
-using SimpleDnsCrypt.Helper;
-using SimpleDnsCrypt.Models;
 
 namespace SimpleDnsCrypt.ViewModels
 {
@@ -32,7 +33,7 @@ namespace SimpleDnsCrypt.ViewModels
 	}
 
 	[Export(typeof(MainViewModel))]
-	public class MainViewModel : PropertyChangedBase
+	public class MainViewModel : PropertyChangedBase, INotifyDataErrorInfo
 	{
 		private static readonly ILog Log = LogManagerHelper.Factory();
 		private readonly IEventAggregator _events;
@@ -386,6 +387,11 @@ namespace SimpleDnsCrypt.ViewModels
 					_isOperatingAsGlobalResolver = true;
 				}
 			}
+
+			if (DnscryptProxyConfiguration?.fallback_resolver != null)
+			{
+				FallbackResolver = DnscryptProxyConfiguration.fallback_resolver;
+			}
 		}
 
 		private void SettingsViewModelOnPropertyChanged(object sender, PropertyChangedEventArgs propertyChangedEventArgs)
@@ -676,7 +682,10 @@ namespace SimpleDnsCrypt.ViewModels
 
 		public void SaveAdvancedSettings()
 		{
-			SaveDnsCryptConfiguration();
+			if (!HasErrors)
+			{
+				SaveDnsCryptConfiguration();
+			}
 		}
 
 		#endregion
@@ -837,5 +846,50 @@ namespace SimpleDnsCrypt.ViewModels
 		}
 
 		#endregion
+
+		private string _fallbackResolver;
+		public string FallbackResolver
+		{
+			get => _fallbackResolver;
+			set
+			{
+				_fallbackResolver = value;
+				ValidateFallbackResolver();
+				NotifyOfPropertyChange(() => FallbackResolver);
+			}
+		}
+
+		private readonly Dictionary<string, string> _validationErrors = new Dictionary<string, string>();
+
+		public IEnumerable GetErrors(string propertyName)
+		{
+			return _validationErrors.TryGetValue(propertyName, out var value) ? new List<string>(1) { value } : null;
+		}
+
+		public event EventHandler<DataErrorsChangedEventArgs> ErrorsChanged;
+
+		public bool HasErrors => _validationErrors.Any();
+
+		
+		private void ValidateFallbackResolver()
+		{
+			if (string.IsNullOrEmpty(_fallbackResolver))
+			{
+				_validationErrors.Add("FallbackResolver", "invalid");
+			}
+			else
+			{
+				var validatedFallbackResolver = ValidationHelper.ValidateIpEndpoint(_fallbackResolver);
+				if (!string.IsNullOrEmpty(validatedFallbackResolver))
+				{
+					_fallbackResolver = validatedFallbackResolver;
+					_validationErrors.Remove("FallbackResolver");
+				}
+				else
+				{
+					_validationErrors.Add("FallbackResolver", "invalid");
+				}
+			}
+		}
 	}
 }

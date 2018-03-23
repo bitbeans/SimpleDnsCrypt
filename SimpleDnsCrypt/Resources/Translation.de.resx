@@ -504,4 +504,10 @@
   <data name="advanced_settings_globalresolver_content" xml:space="preserve">
     <value>Wenn Sie möchten, dass dieser Computer als Gateway für andere Geräte (z.B. Smartphones) agiert</value>
   </data>
+  <data name="advanced_settings_fallback_resolver" xml:space="preserve">
+    <value>Fallback Resolver</value>
+  </data>
+  <data name="advanced_settings_fallback_resolver_content" xml:space="preserve">
+    <value>Dies ist ein normaler, unverschlüsselter DNS-Resolver, der nur für die Abfrage der initialen Resolverliste verwendet wird und nur dann, wenn die DNS-Konfiguration des Systems nicht funktioniert. Nutzer in China müssen hier vielleicht 114.114.114.114:53 verwenden.</value>
+  </data>
 </root>

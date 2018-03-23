@@ -443,7 +443,7 @@
                                         </StackPanel>
                                         <Grid>
                                             <Grid.RowDefinitions>
-                                                <RowDefinition Height="350" />
+                                                <RowDefinition Height="370" />
                                             </Grid.RowDefinitions>
                                             <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,5,0,0">
                                                 <ItemsControl ItemsSource="{Binding Resolvers}" IsEnabled="True"
@@ -539,11 +539,11 @@
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="35" />
                                             </Grid.RowDefinitions>
-                                            <Label Foreground="#FF575757" Grid.Row="0" Grid.Column="0"
-                                                   Content="{lex:Loc Key=advanced_settings_dnscache_content}"
+                                            <TextBlock Foreground="#FF575757" Grid.Row="0" Grid.Column="0" TextWrapping="Wrap"
+                                                   Text="{lex:Loc Key=advanced_settings_dnscache_content}"
                                                    VerticalAlignment="Bottom"
                                                    HorizontalAlignment="Left" Margin="0,0,0,5">
-                                            </Label>
+                                            </TextBlock>
                                             <controls:ToggleSwitchButton
                                                 IsEnabled="{Binding IsWorkingOnService, Converter={StaticResource ReverseBoolToEnabledConverter}}"
                                                 Grid.Row="0" Grid.Column="1" Cursor="Hand"
@@ -572,17 +572,17 @@
                                         </Grid>
                                         <Grid>
                                             <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="400" />
+                                                <ColumnDefinition Width="Auto" />
                                                 <ColumnDefinition Width="*" />
                                             </Grid.ColumnDefinitions>
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="35" />
                                             </Grid.RowDefinitions>
-                                            <Label Foreground="#FF575757" Grid.Row="0" Grid.Column="0"
-                                                   Content="{lex:Loc Key=advanced_settings_blockipv6_content}"
+                                            <TextBlock Foreground="#FF575757" Grid.Row="0" Grid.Column="0" TextWrapping="Wrap"
+                                                   Text="{lex:Loc Key=advanced_settings_blockipv6_content}"
                                                    VerticalAlignment="Bottom"
                                                    HorizontalAlignment="Left" Margin="0,0,0,5">
-                                            </Label>
+                                            </TextBlock>
                                             <controls:ToggleSwitchButton
                                                 IsEnabled="{Binding IsWorkingOnService, Converter={StaticResource ReverseBoolToEnabledConverter}}"
                                                 Grid.Row="0" Grid.Column="1" Cursor="Hand"
@@ -611,17 +611,17 @@
                                         </Grid>
                                         <Grid>
                                             <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="400" />
+                                                <ColumnDefinition Width="Auto" />
                                                 <ColumnDefinition Width="*" />
                                             </Grid.ColumnDefinitions>
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="35" />
                                             </Grid.RowDefinitions>
-                                            <Label Foreground="#FF575757" Grid.Row="0" Grid.Column="0"
-                                                   Content="{lex:Loc Key=advanced_settings_forcetcp_content}"
+                                            <TextBlock Foreground="#FF575757" Grid.Row="0" Grid.Column="0" TextWrapping="Wrap"
+                                                   Text="{lex:Loc Key=advanced_settings_forcetcp_content}"
                                                    VerticalAlignment="Bottom"
                                                    HorizontalAlignment="Left" Margin="0,0,0,5">
-                                            </Label>
+                                            </TextBlock>
                                             <controls:ToggleSwitchButton
                                                 IsEnabled="{Binding IsWorkingOnService, Converter={StaticResource ReverseBoolToEnabledConverter}}"
                                                 Grid.Row="0" Grid.Column="1" Cursor="Hand"
@@ -650,23 +650,71 @@
                                         </Grid>
                                         <Grid>
                                             <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="550" />
+                                                <ColumnDefinition Width="Auto" />
                                                 <ColumnDefinition Width="*" />
                                             </Grid.ColumnDefinitions>
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="35" />
                                             </Grid.RowDefinitions>
-                                            <Label Foreground="#FF575757" Grid.Row="0" Grid.Column="0"
-                                                   Content="{lex:Loc Key=advanced_settings_globalresolver_content}"
+                                            <TextBlock Foreground="#FF575757" Grid.Row="0" Grid.Column="0" TextWrapping="Wrap"
+                                                   Text="{lex:Loc Key=advanced_settings_globalresolver_content}"
                                                    VerticalAlignment="Bottom"
                                                    HorizontalAlignment="Left" Margin="0,0,0,5">
-                                            </Label>
+                                            </TextBlock>
                                             <controls:ToggleSwitchButton
                                                 IsEnabled="{Binding IsWorkingOnService, Converter={StaticResource ReverseBoolToEnabledConverter}}"
                                                 Grid.Row="0" Grid.Column="1" Cursor="Hand"
                                                 IsChecked="{Binding IsOperatingAsGlobalResolver}"
                                                 HorizontalAlignment="Right" VerticalAlignment="Top">
                                             </controls:ToggleSwitchButton>
+                                        </Grid>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <iconPacks:PackIconMaterial Grid.Column="0" Grid.Row="0" Height="20"
+                                                                        Width="20" Kind="BackupRestore"
+                                                                        Opacity="0.7"
+                                                                        Foreground="#FF8ab329"
+                                                                        HorizontalAlignment="Left"
+                                                                        VerticalAlignment="Center" />
+                                            <TextBlock Grid.Column="1" Grid.Row="0"
+                                                       Text="{lex:Loc Key=advanced_settings_fallback_resolver}"
+                                                       TextWrapping="Wrap" VerticalAlignment="Center"
+                                                       Foreground="#FF8ab329" FontSize="20"
+                                                       Opacity="0.7" Margin="5,0,0,3" FontWeight="Bold">
+                                            </TextBlock>
+                                        </Grid>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="550" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Foreground="#FF575757" Grid.Row="0" Grid.Column="0" TextWrapping="Wrap"
+                                                   Text="{lex:Loc Key=advanced_settings_fallback_resolver_content}"
+                                                   VerticalAlignment="Bottom"
+                                                   HorizontalAlignment="Left" Margin="0,0,0,5">
+                                            </TextBlock>
+                                            <TextBox
+                                                IsEnabled="{Binding IsWorkingOnService, Converter={StaticResource ReverseBoolToEnabledConverter}}"
+                                                Grid.Row="0" Grid.Column="1" Cursor="Hand" MinWidth="65" Width="Auto" Text="{Binding FallbackResolver}"
+                                                controls:TextBoxHelper.Watermark="9.9.9.9:53" Background="#FF8ab329" Opacity="0.8" BorderBrush="#FF575757"
+                                                HorizontalAlignment="Right" VerticalAlignment="Top" TextAlignment="Right" IsTabStop="False">
+                                                <Validation.ErrorTemplate>
+                                                    <ControlTemplate>
+                                                        <Grid>
+                                                            <Border BorderThickness="1" BorderBrush="DarkOrange">
+                                                                <AdornedElementPlaceholder />
+                                                            </Border>
+                                                        </Grid>
+                                                    </ControlTemplate>
+                                                </Validation.ErrorTemplate>
+                                            </TextBox>
                                         </Grid>
                                         <Button x:Name="SaveAdvancedSettings"
                                                 Cursor="Hand"
@@ -797,7 +845,7 @@
                                             <ListView SelectedItem="{Binding SelectedQueryLogLine}"
                                                       BorderBrush="#198AB328"
                                                       Foreground="#FF575757" FontSize="12" SelectionMode="Single"
-                                                      ItemsSource="{Binding QueryLogLines, Mode=OneWay}" Margin="10" MinHeight="450" Background="#198AB328"
+                                                      ItemsSource="{Binding QueryLogLines, Mode=OneWay}" Margin="10" MinHeight="400" Background="#198AB328"
                                                       VirtualizingStackPanel.VirtualizationMode="Recycling">
                                                 <ListView.ItemContainerStyle>
                                                     <Style TargetType="{x:Type ListViewItem}">
@@ -1322,7 +1370,7 @@
                                                         IsEnabled="{Binding IsWorking, Converter={StaticResource ReverseBoolToEnabledConverter}}"
                                                         ScrollViewer.VerticalScrollBarVisibility="Visible"
                                                         ScrollViewer.CanContentScroll="True"
-                                                        MinHeight="210" MinWidth="680"
+                                                        MinHeight="180" MinWidth="680"
                                                         SelectedItem="{Binding Path=SelectedDomainWhitelistEntry}"
                                                         ItemsSource="{Binding Path=DomainWhitelistRules}">
                                                 <ListView.ItemTemplate>
@@ -1502,7 +1550,7 @@
                                                         IsEnabled="{Binding IsWorking, Converter={StaticResource ReverseBoolToEnabledConverter}}"
                                                         ScrollViewer.VerticalScrollBarVisibility="Visible"
                                                         ScrollViewer.CanContentScroll="True"
-                                                        MinHeight="210" MinWidth="680"
+                                                        MinHeight="180" MinWidth="680"
                                                         SelectedItem="{Binding Path=SelectedDomainBlacklistEntry}"
                                                         ItemsSource="{Binding Path=DomainBlacklistRules}">
                                                 <ListView.ItemTemplate>

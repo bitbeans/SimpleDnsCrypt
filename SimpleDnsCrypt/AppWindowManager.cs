@@ -56,7 +56,7 @@ namespace SimpleDnsCrypt
 					{
 						Content = view,
 						ResizeMode = ResizeMode.CanResizeWithGrip,
-						SizeToContent = SizeToContent.Height
+						SizeToContent = SizeToContent.Manual
 					};
 				}
 
