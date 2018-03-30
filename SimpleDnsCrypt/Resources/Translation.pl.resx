@@ -498,4 +498,10 @@
   <data name="advanced_settings_globalresolver_content" xml:space="preserve">
     <value>Jeżeli chcesz, aby ten komputer służył jako bramka do zapytań dla innych urządzeń (smartfonów lub innych komputerów)</value>
   </data>
+  <data name="advanced_settings_fallback_resolver" xml:space="preserve">
+    <value>Zapasowy serwer</value>
+  </data>
+  <data name="advanced_settings_fallback_resolver_content" xml:space="preserve">
+    <value>Ten normalny, nieszyfrowany serwer DNS będzie użyty tylko do pierwszego zapytania o listę serwerów, i tylko wtedy, kiedy systemowe ustawienia DNS nie zadziałają. Ludzie w Chinach mogą użyć 114.114.114.114:53.</value>
+  </data>
 </root>
