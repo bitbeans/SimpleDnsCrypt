@@ -499,4 +499,10 @@
   <data name="advanced_settings_globalresolver_content" xml:space="preserve">
     <value>如果想用此电脑作为其他设备（如手机、电脑）的网关，请启用此项设置</value>
   </data>
+  <data name="advanced_settings_fallback_resolver" xml:space="preserve">
+    <value>备用 DNS 服务器</value>
+  </data>
+  <data name="advanced_settings_fallback_resolver_content" xml:space="preserve">
+    <value>备用服务器是未经加密的普通 DNS 服务器，它仅用于这两个用途： DNSCrypt-proxy 服务启动时获取可用服务器清单，作为操作系统的 DNS 服务器配置不可用时的一个备份选项。如果你在中国大陆使用的话，这里填 114.114.114.114:53</value>
+  </data>
 </root>
