@@ -652,7 +652,7 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		private ObservableCollection<Stamp> _stamps;
-		public string url { get; set; }
+		public string[] urls { get; set; }
 		public string minisign_key { get; set; }
 		public string cache_file { get; set; }
 		public string format { get; set; }
