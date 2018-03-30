@@ -154,7 +154,7 @@
     <value>Hanya server tanpa jejak pencatatan</value>
   </data>
   <data name="default_settings_configuration_nolog_tooltip" xml:space="preserve">
-    <value>Server tidak boleh mencatat queries pengguna</value>
+    <value>Server tidak boleh mencatat kueri pengguna</value>
   </data>
   <data name="default_settings_configuration_nofilter" xml:space="preserve">
     <value>Hanya server tanpa filter</value>
@@ -163,7 +163,7 @@
     <value>Server tidak memaksakan daftar hitam miliknya (seperti parental control dan iklan...)</value>
   </data>
   <data name="tabitem_mainmenu" xml:space="preserve">
-    <value>Menu utama</value>
+    <value>Menu Utama</value>
   </data>
   <data name="loader_administrative_rights_available" xml:space="preserve">
     <value>Hak sebagai administrator tersedia</value>
@@ -184,7 +184,7 @@
     <value>Pembaruan telah gagal, melanjutkan . . .</value>
   </data>
   <data name="loader_latest_version" xml:space="preserve">
-    <value>Anda menggunakan versi terakhir</value>
+    <value>Anda menggunakan versi terbaru</value>
   </data>
   <data name="loader_unsigned" xml:space="preserve">
     <value>unsigned</value>
@@ -217,16 +217,16 @@
     <value>Memuat {0} . . .</value>
   </data>
   <data name="loader_missing_files" xml:space="preserve">
-    <value>Tidak ditemukan file didalam folder {0} :\n{1}\n\nPertimbangkan memulai instalasi baru dari {2}</value>
+    <value>Tidak ditemukan berkas didalam folder {0} :\n{1}\n\nPertimbangkan memulai instalasi baru dari {2}</value>
   </data>
   <data name="loader_all_files_available" xml:space="preserve">
-    <value>Semua file yang dibutuhkan telah ditemukan</value>
+    <value>Semua berkas yang dibutuhkan telah ditemukan</value>
   </data>
   <data name="about" xml:space="preserve">
     <value>Tentang</value>
   </data>
   <data name="about_software" xml:space="preserve">
-    <value>Software</value>
+    <value>Perangkat Lunak</value>
   </data>
   <data name="about_license" xml:space="preserve">
     <value>Lisensi</value>
@@ -235,13 +235,13 @@
     <value>Lihat di GitHub</value>
   </data>
   <data name="tabitem_querylog" xml:space="preserve">
-    <value>Catatan query</value>
+    <value>Catatan kueri</value>
   </data>
   <data name="querylog" xml:space="preserve">
-    <value>Catatan query</value>
+    <value>Catatan Kueri</value>
   </data>
   <data name="querylog_waiting_for_data" xml:space="preserve">
-    <value>menunggu query DNS</value>
+    <value>menunggu kueri DNS</value>
   </data>
   <data name="querylog_entry_count" xml:space="preserve">
     <value>Entri:</value>
@@ -259,7 +259,7 @@
     <value>Catatan Domain Terblokir</value>
   </data>
   <data name="domainblocklog_waiting_for_data" xml:space="preserve">
-    <value>menunggu query DNS yang terblokir</value>
+    <value>menunggu kueri DNS yang terblokir</value>
   </data>
   <data name="domainblocklog_entry_count" xml:space="preserve">
     <value>Entri:</value>
@@ -277,40 +277,40 @@
     <value>Catatan Alamat Terblokir</value>
   </data>
   <data name="tabitem_domainblacklist" xml:space="preserve">
-    <value>Blacklist Domain</value>
+    <value>Daftar Hitam Domain</value>
   </data>
   <data name="tabitem_addressblacklist" xml:space="preserve">
-    <value>Blacklist Alamat</value>
+    <value>Daftar Hitam Alamat</value>
   </data>
   <data name="settings" xml:space="preserve">
     <value>Pengaturan</value>
   </data>
   <data name="settings_domain_blacklist" xml:space="preserve">
-    <value>Tampilkan Tab &quot;Domain Blacklist&quot;</value>
+    <value>Tampilkan Tab &quot;Daftar Hitam Domain&quot;</value>
   </data>
   <data name="settings_address_blacklist" xml:space="preserve">
-    <value>Tampilkan Tab &quot;Alamat Blacklist&quot;</value>
+    <value>Tampilkan Tab &quot;Daftar Hitam Alamat&quot;</value>
   </data>
   <data name="settings_domain_block" xml:space="preserve">
-    <value>Tampilkan Tab &quot;Domain Blacklist&quot;</value>
+    <value>Tampilkan Tab &quot;Catatan Domain Terblokir&quot;</value>
   </data>
   <data name="settings_address_block" xml:space="preserve">
-    <value>Tampilkan Tab &quot;Alamat Blacklist&quot;</value>
+    <value>Tampilkan Tab &quot;Catatan Alamat Terblokir&quot;</value>
   </data>
   <data name="settings_query_log" xml:space="preserve">
-    <value>Tampilkan Tab &quot;Catatan query&quot;</value>
+    <value>Tampilkan Tab &quot;Catatan Kueri&quot;</value>
   </data>
   <data name="tabitem_resolvers" xml:space="preserve">
     <value>Resolvers</value>
   </data>
   <data name="tabitem_advanced_settings" xml:space="preserve">
-    <value>Pengaturan lanjutan</value>
+    <value>Pengaturan Lanjutan</value>
   </data>
   <data name="settings_advanced_settings" xml:space="preserve">
-    <value>Tampilkan tab &quot;Pengaturan lanjutan&quot;</value>
+    <value>Tampilkan tab &quot;Pengaturan Lanjutan&quot;</value>
   </data>
   <data name="yes" xml:space="preserve">
-    <value>Ya</value>
+    <value>ya</value>
   </data>
   <data name="no" xml:space="preserve">
     <value>tidak</value>
@@ -361,16 +361,16 @@
     <value>Resolver yang tersedia</value>
   </data>
   <data name="loader_redistributable_package_check" xml:space="preserve">
-    <value>Memerika Microsoft Visual C++ Redistributable untuk Visual Studio 2017 </value>
+    <value>Memerika Microsoft Visual C++ Redistributable untuk Visual Studio 2017</value>
   </data>
   <data name="loader_redistributable_package_already_installed" xml:space="preserve">
-    <value>Microsoft Visual C++ Redistributable untuk Visual Studio 2017 telah terinstal</value>
+    <value>Microsoft Visual C++ Redistributable untuk Visual Studio 2017 telah terpasang</value>
   </data>
   <data name="loader_redistributable_package_installing" xml:space="preserve">
-    <value>Menginstall Microsoft Visual C++ Redistributable untuk Visual Studio 2017 </value>
+    <value>Memasang Microsoft Visual C++ Redistributable untuk Visual Studio 2017</value>
   </data>
   <data name="loader_redistributable_package_ready" xml:space="preserve">
-    <value>Microsoft Visual C++ Redistributable untuk Visual Studio 2017 sekarang telah terinstall</value>
+    <value>Microsoft Visual C++ Redistributable untuk Visual Studio 2017 sekarang telah terpasang</value>
   </data>
   <data name="message_title_no_server_selected" xml:space="preserve">
     <value>Tidak ada server yang dipilih</value>
@@ -385,16 +385,16 @@
     <value>Anda harus mengaktifkan layanan DnsCrypt terlebih dahulu</value>
   </data>
   <data name="message_title_uninstallation_successful" xml:space="preserve">
-    <value>Uninstall sukses</value>
+    <value>Pencopotan berhasil</value>
   </data>
   <data name="message_content_uninstallation_successful" xml:space="preserve">
-    <value>Uninstall telah berhasil! DNS tidak terenkripsi</value>
+    <value>Pencopotan telah berhasil! Permintaan DNS tidak lagi terenkripsi</value>
   </data>
   <data name="message_title_uninstallation_error" xml:space="preserve">
-    <value>Uninstall error</value>
+    <value>Kesalahan pencopotan</value>
   </data>
   <data name="message_content_uninstallation_error" xml:space="preserve">
-    <value>Uninstall tidak dapat dilakukan. Coba hentikan layanan DnsCrypt secara manual dan uninstall sekali lagi</value>
+    <value>Pencopotan tidak dapat dilakukan. Coba hentikan layanan secara manual dan copot sekali lagi.</value>
   </data>
   <data name="open_log_directory" xml:space="preserve">
     <value>Buka folder log</value>
@@ -403,10 +403,10 @@
     <value>Periksa pembaharuan ketika memulai aplikasi</value>
   </data>
   <data name="settings_update_channel" xml:space="preserve">
-    <value>Channel Pembaharuan:</value>
+    <value>Saluran Pembaharuan:</value>
   </data>
   <data name="advanced_settings_dnscache_content" xml:space="preserve">
-    <value>Gunakan cache DNS untuk memperkecil latency dan lalu lintas data keluar</value>
+    <value>Gunakan cache DNS untuk memperkecil latensi dan lalu lintas data keluar</value>
   </data>
   <data name="advanced_settings_blockipv6" xml:space="preserve">
     <value>Blokir IPv6</value>
@@ -415,87 +415,93 @@
     <value>Segera merespon permintaan queries IPv6 dengan respon kosong</value>
   </data>
   <data name="advanced_settings_forcetcp" xml:space="preserve">
-    <value>Tetap gunakan protokol TCP</value>
+    <value>Paksa TCP</value>
   </data>
   <data name="advanced_settings_forcetcp_content" xml:space="preserve">
-    <value>Selalu gunakan protokol TCP untuk terhubung ke server upstream</value>
+    <value>Selalu gunakan TCP untuk terhubung ke server hulu</value>
   </data>
   <data name="add" xml:space="preserve">
     <value>Tambah</value>
   </data>
   <data name="message_title_new_whitelist_rule" xml:space="preserve">
-    <value>Tambah kriteria baru whitelist domain</value>
+    <value>Tambah aturan daftar putih domain yang baru</value>
   </data>
   <data name="message_content_new_whitelist_rule" xml:space="preserve">
-    <value>Contoh: *.example.com, ads.*, *sex*, Anda juga dapat menambahkan daftar kriteria dengan dipisahkan tanda koma</value>
+    <value>Contoh: *.example.com, ads.*, *sex*, Anda juga dapat menambahkan daftar aturan dengan dipisahkan tanda koma</value>
   </data>
   <data name="message_title_new_blacklist_rule" xml:space="preserve">
-    <value>Tambah kriteria baru blacklist domain</value>
+    <value>Tambah aturan daftar hitam domain yang baru</value>
   </data>
   <data name="message_content_new_blacklist_rule" xml:space="preserve">
-    <value>Contoh: *.example.com, ads.*, *sex*, Anda juga dapat menambahkan daftar kriteria dengan dipisahkan tanda koma, sebuah berkas yang dimulai dengan file:my-custom-rules.txt atau pranala luar yang dimulai dengan http:// or https://.</value>
+    <value>Contoh: *.example.com, ads.*, *sex*, Anda juga dapat menambahkan daftar aturan dengan dipisahkan tanda koma, sebuah berkas yang dimulai dengan file:my-custom-rules.txt atau pranala luar yang dimulai dengan http:// or https://.</value>
   </data>
   <data name="working_dialog_title" xml:space="preserve">
-    <value>Menggabungkan list . . .</value>
+    <value>Menggabungkan daftar . . .</value>
   </data>
   <data name="button_select_path" xml:space="preserve">
     <value>Tentukan lokasi</value>
   </data>
   <data name="button_blacklist_build" xml:space="preserve">
-    <value>Buat blacklist dnscrypt-proxy</value>
+    <value>Buat daftar hitam dnscrypt-proxy</value>
   </data>
   <data name="button_blacklist_import" xml:space="preserve">
-    <value>Unduh kriteria blacklist yang ada</value>
+    <value>Impor aturan daftar hitam yang ada</value>
   </data>
   <data name="button_blacklist_export" xml:space="preserve">
-    <value>Unggah kriteria blacklist</value>
+    <value>Ekspor aturan daftar hitam</value>
   </data>
   <data name="button_blacklist_remove" xml:space="preserve">
-    <value>Hapus kriteria blacklist terpilih</value>
+    <value>Hapus aturan daftar hitam yang dipilih</value>
   </data>
   <data name="button_blacklist_add" xml:space="preserve">
-    <value>Buat kriteria blacklist baru</value>
+    <value>Tambah aturan daftar hitam yang baru</value>
   </data>
   <data name="button_whitelist_import" xml:space="preserve">
-    <value>Unduh kriteria whitelist yang ada</value>
+    <value>Impor aturan daftar putih yang ada</value>
   </data>
   <data name="button_whitelist_export" xml:space="preserve">
-    <value>Unggah kriteria whitelist</value>
+    <value>Ekspor aturan daftar putih</value>
   </data>
   <data name="button_whitelist_remove" xml:space="preserve">
-    <value>Hapus kriteria whitelist terpilih</value>
+    <value>Hapus aturan daftar putih terpilih</value>
   </data>
   <data name="button_whitelist_add" xml:space="preserve">
-    <value>Buat kriteria whitelist baru</value>
+    <value>Tambah aturan daftar putih</value>
   </data>
   <data name="whitelist_rules_header" xml:space="preserve">
-    <value>Kriteria Whitelist</value>
+    <value>Aturan Daftar Putih</value>
   </data>
   <data name="whitelist_rules_sub_header" xml:space="preserve">
-    <value>Semua entri diabaikan selama proses pembuatan blacklist</value>
+    <value>(semua entri akan diabaikan selama proses pembuatan daftar hitam)</value>
   </data>
   <data name="whitelist_rules_path" xml:space="preserve">
-    <value>Kriteria Whitelist:</value>
+    <value>Aturan Daftar Putih:</value>
   </data>
   <data name="blacklist_rules_header" xml:space="preserve">
-    <value>Kriteria Blacklist</value>
+    <value>Aturan Daftar Hitam</value>
   </data>
   <data name="blacklist_rules_sub_header" xml:space="preserve">
-    <value>(semua entri telah digabungkan ke dalam daftar blacklist)</value>
+    <value>(semua entri telah digabungkan ke dalam daftar hitam)</value>
   </data>
   <data name="blacklist_rules_path" xml:space="preserve">
-    <value>Kriteria Blacklist:</value>
+    <value>Aturan Daftar Hitam:</value>
   </data>
   <data name="blacklist_path" xml:space="preserve">
-    <value>Blacklist:</value>
+    <value>Daftar Hitam:</value>
   </data>
   <data name="blacklist_header" xml:space="preserve">
-    <value>Blacklist dan Whitelist Domain</value>
+    <value>Daftar Hitam dan Daftar Putih Domain</value>
   </data>
   <data name="advanced_settings_globalresolver" xml:space="preserve">
     <value>Resolver Global</value>
   </data>
   <data name="advanced_settings_globalresolver_content" xml:space="preserve">
     <value>Jika Anda ingin komputer ini untuk berperan sebagai gateway bagi perangkat lainnya (seperti gawai atau komputer lain)</value>
+  </data>
+  <data name="advanced_settings_fallback_resolver" xml:space="preserve">
+    <value>Resolver Fallback</value>
+  </data>
+  <data name="advanced_settings_fallback_resolver_content" xml:space="preserve">
+    <value>Merupakan resolver DNS normal tanpa enkripsi yang hanya akan digunakan untuk kueri saat mengambil daftar resolver awal, jika konfigurasi DNS sistem tidak bekerja. Penduduk di Cina mungkin perlu menggunakan 114.114.114.114:53.</value>
   </data>
 </root>
