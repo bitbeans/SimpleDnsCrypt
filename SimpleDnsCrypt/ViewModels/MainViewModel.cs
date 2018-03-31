@@ -518,6 +518,32 @@ namespace SimpleDnsCrypt.ViewModels
 			{
 				if (DnscryptProxyConfiguration == null) return;
 				DnscryptProxyConfigurationManager.DnscryptProxyConfiguration = _dnscryptProxyConfiguration;
+
+				if (DnscryptProxyConfiguration?.server_names?.Count > 0)
+				{
+					LoadResolvers();
+					IsDnsCryptAutomaticModeEnabled = false;
+					//check if all selected servers still match the selected filters
+					var selectedServerNames = DnscryptProxyConfiguration.server_names;
+					foreach (var serverName in selectedServerNames.ToList())
+					{
+						var s = _resolvers.FirstOrDefault(r => r.Name.Equals(serverName));
+						if (s == null)
+						{
+							selectedServerNames.Remove(serverName);
+						}
+						else
+						{
+							s.IsInServerList = true;
+						}
+					}
+					DnscryptProxyConfiguration.server_names = selectedServerNames;
+					if (DnscryptProxyConfiguration?.server_names?.Count == 0)
+					{
+						IsDnsCryptAutomaticModeEnabled = true;
+					}
+				}
+
 				if (DnscryptProxyConfigurationManager.SaveConfiguration())
 				{
 					_dnscryptProxyConfiguration = DnscryptProxyConfigurationManager.DnscryptProxyConfiguration;
