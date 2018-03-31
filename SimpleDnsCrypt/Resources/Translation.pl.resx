@@ -504,4 +504,10 @@
   <data name="advanced_settings_fallback_resolver_content" xml:space="preserve">
     <value>Ten normalny, nieszyfrowany serwer DNS będzie użyty tylko do pierwszego zapytania o listę serwerów, i tylko wtedy, kiedy systemowe ustawienia DNS nie zadziałają. Ludzie w Chinach mogą użyć 114.114.114.114:53.</value>
   </data>
+  <data name="trayicon_tooltip" xml:space="preserve">
+    <value>Simple DNSCrypt</value>
+  </data>
+  <data name="trayicon_exit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
 </root>

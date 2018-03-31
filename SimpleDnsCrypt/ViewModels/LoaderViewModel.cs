@@ -25,10 +25,10 @@ namespace SimpleDnsCrypt.ViewModels
 		private readonly IEventAggregator _events;
 		private static readonly ILog Log = LogManagerHelper.Factory();
 		private readonly MainViewModel _mainViewModel;
-		
+		private readonly SystemTrayViewModel _systemTrayViewModel;
+
 		private string _progressText;
 		private string _titleText;
-		
 
 		public LoaderViewModel()
 		{
@@ -170,7 +170,17 @@ namespace SimpleDnsCrypt.ViewModels
 				_mainViewModel.LocalNetworkInterfaces.AddRange(localNetworkInterfaces);
 				_mainViewModel.Initialize();
 				ProgressText = LocalizationEx.GetUiString("loader_starting", Thread.CurrentThread.CurrentCulture);
-				Execute.OnUIThread(() => _windowManager.ShowWindow(_mainViewModel));
+
+				if (Properties.Settings.Default.TrayMode)
+				{
+					Execute.OnUIThread(() => _windowManager.ShowWindow(_systemTrayViewModel));
+					Execute.OnUIThread(() => _systemTrayViewModel.ShowWindow());
+				}
+				else
+				{
+					Execute.OnUIThread(() => _windowManager.ShowWindow(_mainViewModel));
+				}
+
 				TryClose(true);
 			}
 			catch (Exception exception)
@@ -220,11 +230,13 @@ namespace SimpleDnsCrypt.ViewModels
 			var selectedLanguage = languages.SingleOrDefault(l => l.ShortCode.Equals(LocalizeDictionary.Instance.Culture.TwoLetterISOLanguageName)) ??
 			                       languages.SingleOrDefault(l => l.ShortCode.Equals(LocalizeDictionary.Instance.Culture.Name));
 
+			
 			_mainViewModel = new MainViewModel(_windowManager, _events)
 			{
 				Languages = languages,
 				SelectedLanguage = selectedLanguage
 			};
+			_systemTrayViewModel = new SystemTrayViewModel(_windowManager, _events, _mainViewModel);
 
 			InitializeApplication();
 		}

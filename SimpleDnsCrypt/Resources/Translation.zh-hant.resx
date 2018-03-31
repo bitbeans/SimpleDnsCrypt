@@ -507,4 +507,10 @@
   <data name="advanced_settings_fallback_resolver_content" xml:space="preserve">
     <value>備援伺服器是未經加密的普通 DNS 伺服器，它僅用於兩個用途：DNSCrypt-proxy 服務啓動時抓取可用伺服器清單，作爲作業系統的 DNS 設定不可用時的一個備援選項。如果你在中國大陸使用，這裡填 114.114.114.114:53</value>
   </data>
+  <data name="trayicon_tooltip" xml:space="preserve">
+    <value>Simple DNSCrypt</value>
+  </data>
+  <data name="trayicon_exit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
 </root>

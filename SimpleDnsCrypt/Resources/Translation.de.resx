@@ -510,4 +510,10 @@
   <data name="advanced_settings_fallback_resolver_content" xml:space="preserve">
     <value>Dies ist ein normaler, unverschlüsselter DNS-Resolver, der nur für die Abfrage der initialen Resolverliste verwendet wird und nur dann, wenn die DNS-Konfiguration des Systems nicht funktioniert. Nutzer in China müssen hier vielleicht 114.114.114.114:53 verwenden.</value>
   </data>
+  <data name="trayicon_tooltip" xml:space="preserve">
+    <value>Simple DNSCrypt</value>
+  </data>
+  <data name="trayicon_exit" xml:space="preserve">
+    <value>Beenden</value>
+  </data>
 </root>

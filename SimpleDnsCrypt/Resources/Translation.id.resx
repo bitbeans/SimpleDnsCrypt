@@ -400,10 +400,10 @@
     <value>Buka folder log</value>
   </data>
   <data name="settings_update_auto" xml:space="preserve">
-    <value>Periksa pembaharuan ketika memulai aplikasi</value>
+    <value>Periksa pembaruan ketika memulai aplikasi</value>
   </data>
   <data name="settings_update_channel" xml:space="preserve">
-    <value>Saluran Pembaharuan:</value>
+    <value>Saluran Pembaruan:</value>
   </data>
   <data name="advanced_settings_dnscache_content" xml:space="preserve">
     <value>Gunakan cache DNS untuk memperkecil latensi dan lalu lintas data keluar</value>
@@ -503,5 +503,11 @@
   </data>
   <data name="advanced_settings_fallback_resolver_content" xml:space="preserve">
     <value>Merupakan resolver DNS normal tanpa enkripsi yang hanya akan digunakan untuk kueri saat mengambil daftar resolver awal, jika konfigurasi DNS sistem tidak bekerja. Penduduk di Cina mungkin perlu menggunakan 114.114.114.114:53.</value>
+  </data>
+  <data name="trayicon_tooltip" xml:space="preserve">
+    <value>Simple DNSCrypt</value>
+  </data>
+  <data name="trayicon_exit" xml:space="preserve">
+    <value>Exit</value>
   </data>
 </root>

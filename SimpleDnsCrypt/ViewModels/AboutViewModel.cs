@@ -132,6 +132,21 @@ namespace SimpleDnsCrypt.ViewModels
 					},
 					new License
 					{
+						LicenseHeaderText = "Hardcodet NotifyIcon",
+						LicenseText = await LoadLicense("Hardcodet.NotifyIcon.txt").ConfigureAwait(false),
+						LicenseRegularLink = new LicenseLink
+						{
+							LinkText = "http://www.hardcodet.net/projects/wpf-notifyicon [http]",
+							LinkUri = new Uri("http://www.hardcodet.net/projects/wpf-notifyicon")
+						},
+						LicenseCodeLink = new LicenseLink
+						{
+							LinkText = LocalizationEx.GetUiString("about_view_on_github", Thread.CurrentThread.CurrentCulture),
+							LinkUri = new Uri("https://bitbucket.org/hardcodet/notifyicon-wpf/src")
+						}
+					},
+					new License
+					{
 						LicenseHeaderText = "YamlDotNet",
 						LicenseText = await LoadLicense("YamlDotNet.txt").ConfigureAwait(false),
 						LicenseCodeLink = new LicenseLink

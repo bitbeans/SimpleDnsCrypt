@@ -100,6 +100,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 - [Costura.Fody](https://github.com/Fody/Costura)
 - [DnsCrypt.Toolbox](https://github.com/bitbeans/DnsCrypt.Toolbox)
 - [Fody](https://github.com/Fody/Fody)
+- [notifyicon-wpf](https://bitbucket.org/hardcodet/notifyicon-wpf/src)
 - [helper-net](https://github.com/bitbeans/helper-net)
 - [MahApps.Metro](https://github.com/MahApps/MahApps.Metro)
 - [minisign-net](https://github.com/bitbeans/minisign-net)
