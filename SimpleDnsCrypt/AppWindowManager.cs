@@ -52,14 +52,25 @@ namespace SimpleDnsCrypt
 				}
 				else
 				{
-					window = new BaseWindow
+					if (model.GetType() == typeof(SystemTrayViewModel))
 					{
-						Content = view,
-						ResizeMode = ResizeMode.CanResizeWithGrip,
-						SizeToContent = SizeToContent.Manual
-					};
+						window = new BaseTrayWindow
+						{
+							Content = view,
+							ResizeMode = ResizeMode.NoResize,
+							SizeToContent = SizeToContent.Manual
+						};
+					}
+					else
+					{
+						window = new BaseWindow
+						{
+							Content = view,
+							ResizeMode = ResizeMode.CanResizeWithGrip,
+							SizeToContent = SizeToContent.Manual
+						};
+					}
 				}
-
 				window.SetValue(View.IsGeneratedProperty, true);
 			}
 			else

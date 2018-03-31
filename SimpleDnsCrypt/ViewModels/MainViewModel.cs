@@ -17,6 +17,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using TabControl = System.Windows.Controls.TabControl;
 
 namespace SimpleDnsCrypt.ViewModels
 {
@@ -33,7 +34,7 @@ namespace SimpleDnsCrypt.ViewModels
 	}
 
 	[Export(typeof(MainViewModel))]
-	public class MainViewModel : PropertyChangedBase, INotifyDataErrorInfo
+	public class MainViewModel : Screen, INotifyDataErrorInfo
 	{
 		private static readonly ILog Log = LogManagerHelper.Factory();
 		private readonly IEventAggregator _events;
@@ -917,5 +918,9 @@ namespace SimpleDnsCrypt.ViewModels
 				}
 			}
 		}
+
+		#region Tray
+
+		#endregion
 	}
 }

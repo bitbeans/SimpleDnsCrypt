@@ -70,6 +70,9 @@
     <Reference Include="DnsCrypt.Blacklist, Version=0.1.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\DnsCrypt.Blacklist.0.1.1\lib\netstandard2.0\DnsCrypt.Blacklist.dll</HintPath>
     </Reference>
+    <Reference Include="Hardcodet.Wpf.TaskbarNotification, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hardcodet.NotifyIcon.Wpf.1.0.8\lib\net451\Hardcodet.Wpf.TaskbarNotification.dll</HintPath>
+    </Reference>
     <Reference Include="Helper, Version=0.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\helper-net.0.2.0\lib\netstandard2.0\Helper.dll</HintPath>
     </Reference>
@@ -225,8 +228,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ViewModels\SystemTrayViewModel.cs" />
     <Compile Include="Windows\BaseMessageDialogWindow.xaml.cs">
       <DependentUpon>BaseMessageDialogWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\BaseTrayWindow.xaml.cs">
+      <DependentUpon>BaseTrayWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\SplashDialogWindow.xaml.cs">
       <DependentUpon>SplashDialogWindow.xaml</DependentUpon>
@@ -273,7 +280,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\SystemTrayView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\BaseMessageDialogWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\BaseTrayWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -426,6 +441,7 @@
   <ItemGroup>
     <Content Include="DNSx64\dnscrypt-proxy.exe" />
     <Content Include="DNSx86\dnscrypt-proxy.exe" />
+    <EmbeddedResource Include="Resources\Licenses\Hardcodet.NotifyIcon.txt" />
     <EmbeddedResource Include="Resources\Licenses\NLog.txt" />
     <EmbeddedResource Include="Resources\Licenses\Baseclass.Contrib.Nuget.Output.txt" />
     <EmbeddedResource Include="Resources\Licenses\ControlzEx.txt" />

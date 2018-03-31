@@ -421,81 +421,93 @@
     <value>Συνεχής χρήση τού πρωτοκόλλου TCP για σύνδεση με ανάντους διακομιστές</value>
   </data>
   <data name="add" xml:space="preserve">
-    <value>Add</value>
+    <value>Προσθήκη</value>
   </data>
   <data name="message_title_new_whitelist_rule" xml:space="preserve">
-    <value>Add new domain whitelist rule</value>
+    <value>Προσθήκη νέου τομέα στην λευκή λίστα κανόνων</value>
   </data>
   <data name="message_content_new_whitelist_rule" xml:space="preserve">
-    <value>Example: *.example.com, ads.*, *sex*, you also can add a comma-separated list of rules</value>
+    <value>Παράδειγμα: *.example.com, διαφημίσεις.*, *σεξ*, μπορείτε επίσης να προσθέσετε μία διαχωρισμένη με κόμμα, λίστα με κανόνες</value>
   </data>
   <data name="message_title_new_blacklist_rule" xml:space="preserve">
-    <value>Add new domain blacklist rule</value>
+    <value>Προσθήκη νέου τομέα στην μαύρη λίστα κανόνων</value>
   </data>
   <data name="message_content_new_blacklist_rule" xml:space="preserve">
-    <value>Example: *.example.com, ads.*, *sex*, you can also add a comma-separated list of rules, a file that starts with file:my-custom-rules.txt or a remote URL that begins with http:// or https://.</value>
+    <value>Παράδειγμα: *.example.com, διαφημίσεις.*, *σεξ*, μπορείτε επίσης να προσθέσετε μία διαχωρισμένη με κόμμα, λίστα κανόνων, ένα αρχείο που ξεκινά με file:my-custom-rules.txt η μια διεύθυνση URL που αρχίζει με http:// η https://.</value>
   </data>
   <data name="working_dialog_title" xml:space="preserve">
-    <value>Hard work is being done . . .</value>
+    <value>Η σκληρή δουλειά τελειώνει . . .</value>
   </data>
   <data name="button_select_path" xml:space="preserve">
-    <value>Select path</value>
+    <value>Επιλογή διαδρομής</value>
   </data>
   <data name="button_blacklist_build" xml:space="preserve">
-    <value>Build the dnscrypt-proxy blacklist</value>
+    <value>Δημιουργία dnscrypt-μεσολάβητη μαύρης λίστας</value>
   </data>
   <data name="button_blacklist_import" xml:space="preserve">
-    <value>Import existing blacklist rules</value>
+    <value>Εισαγωγή υπάρχον μαύρης λίστας κανόνων</value>
   </data>
   <data name="button_blacklist_export" xml:space="preserve">
-    <value>Export blacklist rules</value>
+    <value>Εξαγωγή μαύρης λίστας κανόνων</value>
   </data>
   <data name="button_blacklist_remove" xml:space="preserve">
-    <value>Remove selected blacklist rule</value>
+    <value>Κατάργηση επιλεγμένων κανόνων από την μαύρη λίστα </value>
   </data>
   <data name="button_blacklist_add" xml:space="preserve">
-    <value>Add a new blacklist rule</value>
+    <value>Προσθήκη νέου κανόνα στην μάυρη λίστα</value>
   </data>
   <data name="button_whitelist_import" xml:space="preserve">
-    <value>Import existing whitelist rules</value>
+    <value>Εισαγωγή υπάρχον λευκής λίστας κανόνων </value>
   </data>
   <data name="button_whitelist_export" xml:space="preserve">
-    <value>Export whitelist rules</value>
+    <value>Εξαγωγή λευκής λίστας κανόνων</value>
   </data>
   <data name="button_whitelist_remove" xml:space="preserve">
-    <value>Remove selected whitelist rule</value>
+    <value>Κατάργηση επιλεγμένων κανόνων από την λευκή λίστα</value>
   </data>
   <data name="button_whitelist_add" xml:space="preserve">
-    <value>Add a new whitelist rule</value>
+    <value>Προσθήκη νέου κανόνα στην λευκή λίστα </value>
   </data>
   <data name="whitelist_rules_header" xml:space="preserve">
-    <value>Whitelist Rules</value>
+    <value>Κανόνες λευκής λίστας</value>
   </data>
   <data name="whitelist_rules_sub_header" xml:space="preserve">
-    <value>(all entries are ignored during blacklist generation)</value>
+    <value>(όλες οι συμμετοχές στην μαύρη λίστα αγνοούνται)</value>
   </data>
   <data name="whitelist_rules_path" xml:space="preserve">
-    <value>Whitelist Rules:</value>
+    <value>Κανόνες λευκής λίστας:</value>
   </data>
   <data name="blacklist_rules_header" xml:space="preserve">
-    <value>Blacklist Rules</value>
+    <value>Κανόνες μάυρης λίστας:</value>
   </data>
   <data name="blacklist_rules_sub_header" xml:space="preserve">
-    <value>(all entries are merged to a blacklist)</value>
+    <value>(όλες οι συμμετοχές συγχωνεύονται σε μια μαύρη λίστα)</value>
   </data>
   <data name="blacklist_rules_path" xml:space="preserve">
-    <value>Blacklist Rules:</value>
+    <value>Κανόνες μάυρης λίστας:</value>
   </data>
   <data name="blacklist_path" xml:space="preserve">
-    <value>Blacklist:</value>
+    <value>Μάυρη λίστα:</value>
   </data>
   <data name="blacklist_header" xml:space="preserve">
-    <value>Domain Blacklist and Whitelist</value>
+    <value>Τομέας μαύρης και λευκής λίστας </value>
   </data>
   <data name="advanced_settings_globalresolver" xml:space="preserve">
-    <value>Global Resolver</value>
+    <value>Καθολική επίδραση</value>
   </data>
   <data name="advanced_settings_globalresolver_content" xml:space="preserve">
-    <value>If you want this computer to act as gateway device for others (eg. smartphones or other computers)</value>
+    <value>Αν θέλετε αυτός ο υπολογιστής να λειτουργήσει ως πύλη για άλλες συσκεύες (π.χ. κινητά τηλέφωνα η άλλους υπολογιστές)</value>
+  </data>
+  <data name="advanced_settings_fallback_resolver" xml:space="preserve">
+    <value>Fallback Resolver</value>
+  </data>
+  <data name="advanced_settings_fallback_resolver_content" xml:space="preserve">
+    <value>This is a normal, non-encrypted DNS resolver, that will be only used for one-shot queries when retrieving the initial resolvers list, and only if the system DNS configuration doesn&apos;t work. People in China may need to use 114.114.114.114:53 here.</value>
+  </data>
+  <data name="trayicon_tooltip" xml:space="preserve">
+    <value>Simple DNSCrypt</value>
+  </data>
+  <data name="trayicon_exit" xml:space="preserve">
+    <value>Exit</value>
   </data>
 </root>
