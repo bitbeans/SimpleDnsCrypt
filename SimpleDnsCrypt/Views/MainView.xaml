@@ -30,6 +30,7 @@
             <converters:BoolToForegroundConverter x:Key="BoolToForegroundConverter" />
             <converters:IntegerToBoolConverter x:Key="IntegerToBoolConverter" />
             <converters:IntegerToVisibilityConverter x:Key="IntegerToVisibilityConverter" />
+            <converters:HeightConverter x:Key="HeightConverter" />
         </ResourceDictionary>
     </UserControl.Resources>
     <ScrollViewer VerticalScrollBarVisibility="Auto">
@@ -214,7 +215,8 @@
                                         </Grid>
                                     </StackPanel>
                                 </Border>
-                                <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,14,0,0" DockPanel.Dock="Bottom"
+                                <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,14,0,0"
+                                        DockPanel.Dock="Bottom"
                                         IsEnabled="{Binding IsSavingConfiguration, Converter={StaticResource ReverseBoolToEnabledConverter}}">
                                     <Border.BorderBrush>
                                         <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile"
@@ -310,7 +312,8 @@
                              Header="{lex:Loc Key=tabitem_resolvers}">
                         <TabItem.Content>
                             <DockPanel Margin="0,10,0,0">
-                                <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,14,0,0" DockPanel.Dock="Top"
+                                <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,14,0,0"
+                                        DockPanel.Dock="Top"
                                         IsEnabled="{Binding IsSavingConfiguration, Converter={StaticResource ReverseBoolToEnabledConverter}}">
                                     <Border.BorderBrush>
                                         <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile"
@@ -358,7 +361,8 @@
                                                                Margin="0,5,0,0" />
                                     </StackPanel>
                                 </Border>
-                                <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,14,0,0" DockPanel.Dock="Bottom"
+                                <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,14,0,0"
+                                        DockPanel.Dock="Bottom"
                                         IsEnabled="{Binding IsSavingConfiguration, Converter={StaticResource ReverseBoolToEnabledConverter}}">
                                     <Border.BorderBrush>
                                         <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile"
@@ -442,8 +446,8 @@
                                                        Margin="5,5,0,2" />
                                         </StackPanel>
                                         <Grid>
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition Height="370" />
+                                            <Grid.RowDefinitions >
+                                                <RowDefinition Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=ActualHeight, Converter={StaticResource HeightConverter}, ConverterParameter='Resolvers'}"/>
                                             </Grid.RowDefinitions>
                                             <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,5,0,0">
                                                 <ItemsControl ItemsSource="{Binding Resolvers}" IsEnabled="True"
@@ -492,7 +496,8 @@
                              Visibility="{Binding SettingsViewModel.IsAdvancedSettingsTabVisible, Converter={StaticResource BoolToVisibilityCollapsedConverter}}">
                         <TabItem.Content>
                             <DockPanel Margin="0,10,0,0">
-                                <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,14,0,0" DockPanel.Dock="Top"
+                                <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,14,0,0"
+                                        DockPanel.Dock="Top"
                                         IsEnabled="{Binding IsSavingConfiguration, Converter={StaticResource ReverseBoolToEnabledConverter}}">
                                     <Border.BorderBrush>
                                         <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile"
@@ -539,10 +544,11 @@
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="35" />
                                             </Grid.RowDefinitions>
-                                            <TextBlock Foreground="#FF575757" Grid.Row="0" Grid.Column="0" TextWrapping="Wrap"
-                                                   Text="{lex:Loc Key=advanced_settings_dnscache_content}"
-                                                   VerticalAlignment="Bottom"
-                                                   HorizontalAlignment="Left" Margin="0,0,0,5">
+                                            <TextBlock Foreground="#FF575757" Grid.Row="0" Grid.Column="0"
+                                                       TextWrapping="Wrap"
+                                                       Text="{lex:Loc Key=advanced_settings_dnscache_content}"
+                                                       VerticalAlignment="Bottom"
+                                                       HorizontalAlignment="Left" Margin="0,0,0,5">
                                             </TextBlock>
                                             <controls:ToggleSwitchButton
                                                 IsEnabled="{Binding IsWorkingOnService, Converter={StaticResource ReverseBoolToEnabledConverter}}"
@@ -578,10 +584,11 @@
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="35" />
                                             </Grid.RowDefinitions>
-                                            <TextBlock Foreground="#FF575757" Grid.Row="0" Grid.Column="0" TextWrapping="Wrap"
-                                                   Text="{lex:Loc Key=advanced_settings_blockipv6_content}"
-                                                   VerticalAlignment="Bottom"
-                                                   HorizontalAlignment="Left" Margin="0,0,0,5">
+                                            <TextBlock Foreground="#FF575757" Grid.Row="0" Grid.Column="0"
+                                                       TextWrapping="Wrap"
+                                                       Text="{lex:Loc Key=advanced_settings_blockipv6_content}"
+                                                       VerticalAlignment="Bottom"
+                                                       HorizontalAlignment="Left" Margin="0,0,0,5">
                                             </TextBlock>
                                             <controls:ToggleSwitchButton
                                                 IsEnabled="{Binding IsWorkingOnService, Converter={StaticResource ReverseBoolToEnabledConverter}}"
@@ -617,10 +624,11 @@
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="35" />
                                             </Grid.RowDefinitions>
-                                            <TextBlock Foreground="#FF575757" Grid.Row="0" Grid.Column="0" TextWrapping="Wrap"
-                                                   Text="{lex:Loc Key=advanced_settings_forcetcp_content}"
-                                                   VerticalAlignment="Bottom"
-                                                   HorizontalAlignment="Left" Margin="0,0,0,5">
+                                            <TextBlock Foreground="#FF575757" Grid.Row="0" Grid.Column="0"
+                                                       TextWrapping="Wrap"
+                                                       Text="{lex:Loc Key=advanced_settings_forcetcp_content}"
+                                                       VerticalAlignment="Bottom"
+                                                       HorizontalAlignment="Left" Margin="0,0,0,5">
                                             </TextBlock>
                                             <controls:ToggleSwitchButton
                                                 IsEnabled="{Binding IsWorkingOnService, Converter={StaticResource ReverseBoolToEnabledConverter}}"
@@ -656,10 +664,11 @@
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="35" />
                                             </Grid.RowDefinitions>
-                                            <TextBlock Foreground="#FF575757" Grid.Row="0" Grid.Column="0" TextWrapping="Wrap"
-                                                   Text="{lex:Loc Key=advanced_settings_globalresolver_content}"
-                                                   VerticalAlignment="Bottom"
-                                                   HorizontalAlignment="Left" Margin="0,0,0,5">
+                                            <TextBlock Foreground="#FF575757" Grid.Row="0" Grid.Column="0"
+                                                       TextWrapping="Wrap"
+                                                       Text="{lex:Loc Key=advanced_settings_globalresolver_content}"
+                                                       VerticalAlignment="Bottom"
+                                                       HorizontalAlignment="Left" Margin="0,0,0,5">
                                             </TextBlock>
                                             <controls:ToggleSwitchButton
                                                 IsEnabled="{Binding IsWorkingOnService, Converter={StaticResource ReverseBoolToEnabledConverter}}"
@@ -695,16 +704,20 @@
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="*" />
                                             </Grid.RowDefinitions>
-                                            <TextBlock Foreground="#FF575757" Grid.Row="0" Grid.Column="0" TextWrapping="Wrap"
-                                                   Text="{lex:Loc Key=advanced_settings_fallback_resolver_content}"
-                                                   VerticalAlignment="Bottom"
-                                                   HorizontalAlignment="Left" Margin="0,0,0,5">
+                                            <TextBlock Foreground="#FF575757" Grid.Row="0" Grid.Column="0"
+                                                       TextWrapping="Wrap"
+                                                       Text="{lex:Loc Key=advanced_settings_fallback_resolver_content}"
+                                                       VerticalAlignment="Bottom"
+                                                       HorizontalAlignment="Left" Margin="0,0,0,5">
                                             </TextBlock>
                                             <TextBox
                                                 IsEnabled="{Binding IsWorkingOnService, Converter={StaticResource ReverseBoolToEnabledConverter}}"
-                                                Grid.Row="0" Grid.Column="1" Cursor="Hand" MinWidth="65" Width="Auto" Text="{Binding FallbackResolver}"
-                                                controls:TextBoxHelper.Watermark="9.9.9.9:53" Background="#FF8ab329" Opacity="0.8" BorderBrush="#FF575757"
-                                                HorizontalAlignment="Right" VerticalAlignment="Top" TextAlignment="Right" IsTabStop="False">
+                                                Grid.Row="0" Grid.Column="1" Cursor="Hand" MinWidth="65" Width="Auto"
+                                                Text="{Binding FallbackResolver}"
+                                                controls:TextBoxHelper.Watermark="9.9.9.9:53" Background="#FF8ab329"
+                                                Opacity="0.8" BorderBrush="#FF575757"
+                                                HorizontalAlignment="Right" VerticalAlignment="Top"
+                                                TextAlignment="Right" IsTabStop="False">
                                                 <Validation.ErrorTemplate>
                                                     <ControlTemplate>
                                                         <Grid>
@@ -723,7 +736,8 @@
                                                 Style="{DynamicResource AccentedSquareButtonStyle}" Margin="0,15,5,5" />
                                     </StackPanel>
                                 </Border>
-                                <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,14,0,0" DockPanel.Dock="Bottom"
+                                <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,14,0,0"
+                                        DockPanel.Dock="Bottom"
                                         IsEnabled="{Binding IsSavingConfiguration, Converter={StaticResource ReverseBoolToEnabledConverter}}">
                                     <Border.BorderBrush>
                                         <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile"
@@ -812,11 +826,12 @@
                                             </DrawingBrush.Drawing>
                                         </DrawingBrush>
                                     </Border.BorderBrush>
-                                    <Grid>
+                                    <Grid
+                                        Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=ActualHeight, Converter={StaticResource HeightConverter}, ConverterParameter='QueryLog'}">
                                         <Grid.RowDefinitions>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="*"/>
-                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="Auto" />
                                         </Grid.RowDefinitions>
                                         <Grid Grid.Row="0">
                                             <Grid.ColumnDefinitions>
@@ -844,8 +859,12 @@
                                         <Grid Grid.Row="1">
                                             <ListView SelectedItem="{Binding SelectedQueryLogLine}"
                                                       BorderBrush="#198AB328"
+                                                      VerticalContentAlignment="Stretch"
+                                                      ScrollViewer.CanContentScroll="True"
+                                                      ScrollViewer.VerticalScrollBarVisibility="Visible"
                                                       Foreground="#FF575757" FontSize="12" SelectionMode="Single"
-                                                      ItemsSource="{Binding QueryLogLines, Mode=OneWay}" Margin="10" MinHeight="400" Background="#198AB328"
+                                                      ItemsSource="{Binding QueryLogLines, Mode=OneWay}" Margin="10"
+                                                      Background="#198AB328"
                                                       VirtualizingStackPanel.VirtualizationMode="Recycling">
                                                 <ListView.ItemContainerStyle>
                                                     <Style TargetType="{x:Type ListViewItem}">
@@ -874,6 +893,7 @@
                                                     </DataTemplate>
                                                 </ListView.ItemTemplate>
                                             </ListView>
+
                                             <StackPanel Orientation="Vertical" HorizontalAlignment="Center"
                                                         VerticalAlignment="Center">
                                                 <StackPanel.Visibility>
@@ -1026,11 +1046,11 @@
                                             </DrawingBrush.Drawing>
                                         </DrawingBrush>
                                     </Border.BorderBrush>
-                                    <Grid>
+                                    <Grid Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=ActualHeight, Converter={StaticResource HeightConverter}, ConverterParameter='DomainBlockLog'}">
                                         <Grid.RowDefinitions>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="*"/>
-                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="Auto" />
                                         </Grid.RowDefinitions>
                                         <Grid Grid.Row="0">
                                             <Grid.ColumnDefinitions>
@@ -1058,9 +1078,12 @@
                                         <Grid Grid.Row="1">
                                             <ListView SelectedItem="{Binding SelectedDomainBlockLogLine}"
                                                       BorderBrush="#198AB328"
+                                                      VerticalContentAlignment="Stretch"
+                                                      ScrollViewer.CanContentScroll="True"
+                                                      ScrollViewer.VerticalScrollBarVisibility="Visible"
                                                       Foreground="#FF575757" FontSize="12" SelectionMode="Single"
                                                       ItemsSource="{Binding DomainBlockLogLines, Mode=OneWay}"
-                                                      Margin="10" MinHeight="450" Background="#198AB328"
+                                                      Margin="10" Background="#198AB328"
                                                       VirtualizingStackPanel.VirtualizationMode="Recycling">
                                                 <ListView.ItemContainerStyle>
                                                     <Style TargetType="{x:Type ListViewItem}">
@@ -1273,21 +1296,21 @@
                                             </DrawingBrush.Drawing>
                                         </DrawingBrush>
                                     </Border.BorderBrush>
-                              
+
                                     <Grid>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="Auto" />
                                             <ColumnDefinition Width="*" />
                                         </Grid.ColumnDefinitions>
                                         <Grid.RowDefinitions>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="*"/>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="*"/>
-                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="Auto" />
                                         </Grid.RowDefinitions>
                                         <iconPacks:PackIconMaterial Grid.Column="0" Grid.Row="0" Height="20"
                                                                     Width="20" Kind="BlockHelper"
@@ -1296,30 +1319,31 @@
                                                                     HorizontalAlignment="Left"
                                                                     VerticalAlignment="Center" />
                                         <TextBlock Grid.Column="1" Grid.Row="0"
-                                                    Text="{lex:Loc Key=blacklist_header}"
-                                                    TextWrapping="Wrap" VerticalAlignment="Center"
-                                                    Foreground="#FF8ab329" FontSize="20"
-                                                    Opacity="0.7" Margin="5,0,0,0" FontWeight="Bold">
+                                                   Text="{lex:Loc Key=blacklist_header}"
+                                                   TextWrapping="Wrap" VerticalAlignment="Center"
+                                                   Foreground="#FF8ab329" FontSize="20"
+                                                   Opacity="0.7" Margin="5,0,0,0" FontWeight="Bold">
                                         </TextBlock>
                                         <controls:ToggleSwitchButton HorizontalAlignment="Right" Margin="0,0,5,0"
-                                                                        Cursor="Hand"
-                                                                        IsChecked="{Binding IsBlacklistEnabled}"
-                                                                        Grid.Column="1" Grid.Row="0" />
+                                                                     Cursor="Hand"
+                                                                     IsChecked="{Binding IsBlacklistEnabled}"
+                                                                     Grid.Column="1" Grid.Row="0" />
                                         <Grid Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Margin="0,10,0,0">
                                             <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="Auto"/>
-                                                <ColumnDefinition Width="*"/>
-                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
                                             </Grid.ColumnDefinitions>
 
                                             <Label MinWidth="120" Grid.Column="0" VerticalContentAlignment="Center"
-                                                    Foreground="#FF575757" Content="{lex:Loc Key=blacklist_path}"
-                                                    Height="30" VerticalAlignment="Top" />
-                                            <TextBox Grid.Column="1" Text="{Binding DomainBlacklistFile}" Background="#FF8ab329"
-                                                        Opacity="0.4" BorderBrush="#FF575757"
-                                                        MinWidth="560" IsReadOnly="True"
-                                                        VerticalContentAlignment="Center"
-                                                        Margin="0,0,0,0" />
+                                                   Foreground="#FF575757" Content="{lex:Loc Key=blacklist_path}"
+                                                   Height="30" VerticalAlignment="Top" />
+                                            <TextBox Grid.Column="1" Text="{Binding DomainBlacklistFile}"
+                                                     Background="#FF8ab329"
+                                                     Opacity="0.4" BorderBrush="#FF575757"
+                                                     MinWidth="560" IsReadOnly="True"
+                                                     VerticalContentAlignment="Center"
+                                                     Margin="0,0,0,0" />
                                             <Button Grid.Column="2" x:Name="ChangeBlacklistFilePath"
                                                     cal:Message.Attach="ChangeBlacklistFilePath"
                                                     Background="White"
@@ -1351,38 +1375,38 @@
                                         <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2" Grid.Column="0"
                                                     Grid.Row="2">
                                             <Label Foreground="#FF575757"
-                                                    FontSize="16" FontWeight="Bold"
-                                                    Content="{lex:Loc Key=whitelist_rules_header}"
-                                                    VerticalAlignment="Center"/>
+                                                   FontSize="16" FontWeight="Bold"
+                                                   Content="{lex:Loc Key=whitelist_rules_header}"
+                                                   VerticalAlignment="Center" />
                                             <Label Foreground="#FF575757"
-                                                    FontSize="12"
-                                                    Content="{lex:Loc Key=whitelist_rules_sub_header}"
-                                                    Margin="0,2,0,0"
-                                                    VerticalAlignment="Center"/>
+                                                   FontSize="12"
+                                                   Content="{lex:Loc Key=whitelist_rules_sub_header}"
+                                                   Margin="0,2,0,0"
+                                                   VerticalAlignment="Center" />
                                         </StackPanel>
 
                                         <Grid Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2">
                                             <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="*"/>
-                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
                                             </Grid.ColumnDefinitions>
                                             <ListView BorderBrush="#198AB328" Grid.Column="0"
-                                                        IsEnabled="{Binding IsWorking, Converter={StaticResource ReverseBoolToEnabledConverter}}"
-                                                        ScrollViewer.VerticalScrollBarVisibility="Visible"
-                                                        ScrollViewer.CanContentScroll="True"
-                                                        MinHeight="180" MinWidth="680"
-                                                        SelectedItem="{Binding Path=SelectedDomainWhitelistEntry}"
-                                                        ItemsSource="{Binding Path=DomainWhitelistRules}">
+                                                      IsEnabled="{Binding IsWorking, Converter={StaticResource ReverseBoolToEnabledConverter}}"
+                                                      ScrollViewer.VerticalScrollBarVisibility="Visible"
+                                                      ScrollViewer.CanContentScroll="True"
+                                                      MinHeight="180" MinWidth="680"
+                                                      SelectedItem="{Binding Path=SelectedDomainWhitelistEntry}"
+                                                      ItemsSource="{Binding Path=DomainWhitelistRules}">
                                                 <ListView.ItemTemplate>
                                                     <DataTemplate>
                                                         <Label Content="{Binding}"
-                                                                FontSize="10"
-                                                                Foreground="#FF575757" />
+                                                               FontSize="10"
+                                                               Foreground="#FF575757" />
                                                     </DataTemplate>
                                                 </ListView.ItemTemplate>
                                             </ListView>
                                             <StackPanel Orientation="Vertical" Margin="15,0,0,0" Grid.Column="1">
-                                                <Button x:Name="AddWhitelistRule" 
+                                                <Button x:Name="AddWhitelistRule"
                                                         cal:Message.Attach="AddWhitelistRule"
                                                         Background="White"
                                                         Width="30"
@@ -1486,18 +1510,18 @@
 
                                         <Grid Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="0,5,0,0">
                                             <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="Auto"/>
-                                                <ColumnDefinition Width="*"/>
-                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
                                             </Grid.ColumnDefinitions>
                                             <Label MinWidth="120" VerticalContentAlignment="Center"
-                                                    Foreground="#FF575757" Grid.Column="0"
-                                                    Content="{lex:Loc Key=whitelist_rules_path}" />
+                                                   Foreground="#FF575757" Grid.Column="0"
+                                                   Content="{lex:Loc Key=whitelist_rules_path}" />
                                             <TextBox Text="{Binding DomainWhitelistRuleFilePath}"
-                                                        Background="#FF8ab329" Opacity="0.4" BorderBrush="#FF575757"
-                                                        MinWidth="560" IsReadOnly="True" Grid.Column="1"
-                                                        VerticalContentAlignment="Center"
-                                                        Margin="0,0,0,0" />
+                                                     Background="#FF8ab329" Opacity="0.4" BorderBrush="#FF575757"
+                                                     MinWidth="560" IsReadOnly="True" Grid.Column="1"
+                                                     VerticalContentAlignment="Center"
+                                                     Margin="0,0,0,0" />
                                             <Button x:Name="ChangeWhitelistRulesFilePath" Grid.Column="2"
                                                     cal:Message.Attach="ChangeWhitelistRulesFilePath"
                                                     Background="White"
@@ -1527,42 +1551,42 @@
                                         <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2" Grid.Column="0"
                                                     Grid.Row="5">
                                             <Label Foreground="#FF575757"
-                                                    FontSize="16" FontWeight="Bold"
-                                                    Content="{lex:Loc Key=blacklist_rules_header}"
-                                                    VerticalAlignment="Center"
-                                                    HorizontalAlignment="Left">
+                                                   FontSize="16" FontWeight="Bold"
+                                                   Content="{lex:Loc Key=blacklist_rules_header}"
+                                                   VerticalAlignment="Center"
+                                                   HorizontalAlignment="Left">
                                             </Label>
                                             <Label Foreground="#FF575757"
-                                                    FontSize="12"
-                                                    Content="{lex:Loc Key=blacklist_rules_sub_header}"
-                                                    Margin="0,2,0,0"
-                                                    VerticalAlignment="Center"
-                                                    HorizontalAlignment="Left">
+                                                   FontSize="12"
+                                                   Content="{lex:Loc Key=blacklist_rules_sub_header}"
+                                                   Margin="0,2,0,0"
+                                                   VerticalAlignment="Center"
+                                                   HorizontalAlignment="Left">
                                             </Label>
                                         </StackPanel>
 
                                         <Grid Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2">
                                             <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="*"/>
-                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
                                             </Grid.ColumnDefinitions>
                                             <ListView BorderBrush="#198AB328" Grid.Column="0"
-                                                        IsEnabled="{Binding IsWorking, Converter={StaticResource ReverseBoolToEnabledConverter}}"
-                                                        ScrollViewer.VerticalScrollBarVisibility="Visible"
-                                                        ScrollViewer.CanContentScroll="True"
-                                                        MinHeight="180" MinWidth="680"
-                                                        SelectedItem="{Binding Path=SelectedDomainBlacklistEntry}"
-                                                        ItemsSource="{Binding Path=DomainBlacklistRules}">
+                                                      IsEnabled="{Binding IsWorking, Converter={StaticResource ReverseBoolToEnabledConverter}}"
+                                                      ScrollViewer.VerticalScrollBarVisibility="Visible"
+                                                      ScrollViewer.CanContentScroll="True"
+                                                      MinHeight="180" MinWidth="680"
+                                                      SelectedItem="{Binding Path=SelectedDomainBlacklistEntry}"
+                                                      ItemsSource="{Binding Path=DomainBlacklistRules}">
                                                 <ListView.ItemTemplate>
                                                     <DataTemplate>
                                                         <Label Content="{Binding}"
-                                                                FontSize="10"
-                                                                Foreground="#FF575757" />
+                                                               FontSize="10"
+                                                               Foreground="#FF575757" />
                                                     </DataTemplate>
                                                 </ListView.ItemTemplate>
                                             </ListView>
                                             <StackPanel Orientation="Vertical" Margin="15,0,0,0" Grid.Column="1">
-                                                <Button x:Name="AddBlacklistRule" 
+                                                <Button x:Name="AddBlacklistRule"
                                                         cal:Message.Attach="AddBlacklistRule"
                                                         Background="White"
                                                         Width="30"
@@ -1690,18 +1714,18 @@
 
                                         <Grid Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="2" Margin="0,5,0,0">
                                             <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="Auto"/>
-                                                <ColumnDefinition Width="*"/>
-                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
                                             </Grid.ColumnDefinitions>
                                             <Label MinWidth="120" VerticalContentAlignment="Center"
-                                                    Foreground="#FF575757" Grid.Column="0"
-                                                    Content="{lex:Loc Key=blacklist_rules_path}" />
+                                                   Foreground="#FF575757" Grid.Column="0"
+                                                   Content="{lex:Loc Key=blacklist_rules_path}" />
                                             <TextBox Text="{Binding DomainBlacklistRuleFilePath}"
-                                                        Background="#FF8ab329" Opacity="0.4" BorderBrush="#FF575757"
-                                                        MinWidth="560" IsReadOnly="True" Grid.Column="1"
-                                                        VerticalContentAlignment="Center"
-                                                        Margin="0,0,0,0" />
+                                                     Background="#FF8ab329" Opacity="0.4" BorderBrush="#FF575757"
+                                                     MinWidth="560" IsReadOnly="True" Grid.Column="1"
+                                                     VerticalContentAlignment="Center"
+                                                     Margin="0,0,0,0" />
                                             <Button x:Name="ChangeBlacklistRulesFilePath"
                                                     cal:Message.Attach="ChangeBlacklistRulesFilePath"
                                                     Background="White" Grid.Column="2"
@@ -1729,7 +1753,7 @@
                                             </Button>
                                         </Grid>
                                     </Grid>
- 
+
                                 </Border>
                             </DockPanel>
                         </TabItem.Content>
