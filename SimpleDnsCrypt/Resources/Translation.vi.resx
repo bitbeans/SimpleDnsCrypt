@@ -250,7 +250,7 @@
     <value>Nguồn:</value>
   </data>
   <data name="querylog_button_clear" xml:space="preserve">
-    <value>Làm sạch danh sách</value>
+    <value>Dọn danh sách</value>
   </data>
   <data name="querylog_button_block" xml:space="preserve">
     <value>Chặn mục đã chọn</value>
@@ -268,7 +268,7 @@
     <value>Nguồn:</value>
   </data>
   <data name="domainblocklog_button_clear" xml:space="preserve">
-    <value>Làm sạch danh sách</value>
+    <value>Dọn danh sách</value>
   </data>
   <data name="tabitem_domainblocklog" xml:space="preserve">
     <value>Nhật ký tên miền</value>
@@ -322,7 +322,7 @@
     <value>OK</value>
   </data>
   <data name="dialog_message_uninstall" xml:space="preserve">
-    <value>Bạn có muốn loại bỏ dịch vụ Windows đã cài đặt?</value>
+    <value>Bạn có muốn gỡ bỏ dịch vụ Windows đã cài đặt?</value>
   </data>
   <data name="dialog_uninstall_title" xml:space="preserve">
     <value>Gỡ bỏ dịch vụ</value>
@@ -331,10 +331,10 @@
     <value>Gỡ bỏ dịch vụ</value>
   </data>
   <data name="advanced_settings_uninstall_text" xml:space="preserve">
-    <value>Loại bỏ dịch vụ Windows đã cài đặt</value>
+    <value>Gỡ bỏ dịch vụ Windows đã cài đặt</value>
   </data>
   <data name="advanced_settings_uninstall_button" xml:space="preserve">
-    <value>Loại bỏ dịch vụ</value>
+    <value>Gỡ bỏ dịch vụ</value>
   </data>
   <data name="default_settings_apply_settings" xml:space="preserve">
     <value>Áp dụng cài đặt</value>
@@ -451,7 +451,7 @@
     <value>Xuất các quy tắc danh sách chặn</value>
   </data>
   <data name="button_blacklist_remove" xml:space="preserve">
-    <value>Loại bỏ quy tắc chặn đã chọn</value>
+    <value>Xóa bỏ quy tắc chặn đã chọn</value>
   </data>
   <data name="button_blacklist_add" xml:space="preserve">
     <value>Thêm quy tắc chặn mới</value>
@@ -463,7 +463,7 @@
     <value>Xuất các quy tắc loại trừ</value>
   </data>
   <data name="button_whitelist_remove" xml:space="preserve">
-    <value>Loại bỏ quy tắc loại trừ đã chọn</value>
+    <value>Gỡ bỏ quy tắc loại trừ đã chọn</value>
   </data>
   <data name="button_whitelist_add" xml:space="preserve">
     <value>Thêm quy tắc loại trừ mới</value>
@@ -496,18 +496,18 @@
     <value>Global Resolver</value>
   </data>
   <data name="advanced_settings_globalresolver_content" xml:space="preserve">
-    <value>Nếu bạn muốn máy tính này hoạt động như một thiết bị gateway cho những người khác (VD: điện thoại thông minh hoặc các máy tính khác)</value>
+    <value>Nếu bạn muốn máy tính này hoạt động như một thiết bị gateway cho những người khác</value>
   </data>
   <data name="advanced_settings_fallback_resolver" xml:space="preserve">
-    <value>Fallback Resolver</value>
+    <value>Phân giải dự phòng</value>
   </data>
   <data name="advanced_settings_fallback_resolver_content" xml:space="preserve">
-    <value>This is a normal, non-encrypted DNS resolver, that will be only used for one-shot queries when retrieving the initial resolvers list, and only if the system DNS configuration doesn&apos;t work. People in China may need to use 114.114.114.114:53 here.</value>
+    <value>Đây là máy phân giải DNS thông thường, không được mã hóa, sẽ chỉ được sử dụng cho các truy vấn một lần khi truy xuất danh sách các công cụ giải quyết đầu tiên, và chỉ khi cấu hình DNS hệ thống không hoạt động. Người ở Trung Quốc có thể cần sử dụng 114.114.114.114:53 tại đây.</value>
   </data>
   <data name="trayicon_tooltip" xml:space="preserve">
     <value>Simple DNSCrypt</value>
   </data>
   <data name="trayicon_exit" xml:space="preserve">
-    <value>Exit</value>
+    <value>Thoát</value>
   </data>
 </root>
