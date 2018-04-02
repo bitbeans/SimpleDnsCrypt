@@ -500,15 +500,15 @@
     <value>Se deseja que este computador atue como dispositivo de ponte de ligação para outros (ex. smartphones ou outros computadores)</value>
   </data>
   <data name="advanced_settings_fallback_resolver" xml:space="preserve">
-    <value>Resolvedor de Fallback</value>
+    <value>Resolvedor de Recurso</value>
   </data>
   <data name="advanced_settings_fallback_resolver_content" xml:space="preserve">
-    <value>Trata-se de um resolvedor de DNS normal, não criptografado, que será usado apenas para consultas instantâneas ao recuperar a lista inicial de resolvedores, e somente se a configuração do DNS do sistema não funcionar. As pessoas na China podem precisar usar 114.114.114.114 : 53 aqui.</value>
+    <value>Este é um resolvedor de DNS normal, não encriptado, que será apenas usado para consultas instantâneas ao aceder à lista inicial de resolvedores, e somente se a configuração do DNS do sistema não funcionar. Pessoas na China podem precisar usar 114.114.114.114:53 aqui.</value>
   </data>
   <data name="trayicon_tooltip" xml:space="preserve">
     <value>Simple DNSCrypt</value>
   </data>
   <data name="trayicon_exit" xml:space="preserve">
-    <value>Exit</value>
+    <value>Sair</value>
   </data>
 </root>
