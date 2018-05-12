@@ -697,7 +697,11 @@ namespace SimpleDnsCrypt.ViewModels
 			try
 			{
 				var logDirectory = Path.Combine(Directory.GetCurrentDirectory(), "logs");
-				if (Directory.Exists(logDirectory)) Process.Start(logDirectory);
+				if (!Directory.Exists(logDirectory))
+				{
+					Directory.CreateDirectory(logDirectory);
+				}
+				Process.Start(logDirectory);
 			}
 			catch (Exception exception)
 			{
