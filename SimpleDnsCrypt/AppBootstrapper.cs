@@ -5,6 +5,7 @@ using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
 using System.ComponentModel.Composition.Primitives;
 using System.Linq;
+using System.Threading;
 using System.Windows;
 using Caliburn.Micro;
 using SimpleDnsCrypt.Helper;
@@ -16,6 +17,7 @@ namespace SimpleDnsCrypt {
     public class AppBootstrapper : BootstrapperBase {
 	    private CompositionContainer _container;
 	    private static readonly ILog Log = LogManagerHelper.Factory();
+	    private static Mutex _mutex = null;
 
 		public AppBootstrapper() {
 	        LogManager.GetLog = type => new NLogLogger(type);
@@ -65,6 +67,15 @@ namespace SimpleDnsCrypt {
         {
 	        try
 	        {
+				// prevent multiple instances
+		        const string appName = "SimpleDnsCrypt";
+		        _mutex = new Mutex(true, appName, out var createdNew);
+
+		        if (!createdNew)
+		        {
+			        Application.Current.Shutdown();
+		        }
+
 				if (e.Args.Length == 1)
 		        {
 			        if (e.Args[0].Equals("-debug"))
