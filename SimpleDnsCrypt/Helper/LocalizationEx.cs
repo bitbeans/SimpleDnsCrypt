@@ -35,6 +35,7 @@ namespace SimpleDnsCrypt.Helper
 				new Language {Name = "Bulgarian", ShortCode = "bg", CultureCode = "bg-BG"},
 				new Language {Name = "Chinese Simp.", ShortCode = "zh-Hans", CultureCode = "zh-Hans"},
 				new Language {Name = "Chinese Trad.", ShortCode = "zh-Hant", CultureCode = "zh-Hant"},
+				new Language {Name = "Czech", ShortCode = "cs", CultureCode = "cs-CZ"},
 				//new Language {Name = "Danish", ShortCode = "da", CultureCode = "da-DK"},
 				//new Language {Name = "Dutch", ShortCode = "nl", CultureCode = "nl-NL"},
 				new Language {Name = "English", ShortCode = "en", CultureCode = "en-US"},
@@ -45,16 +46,19 @@ namespace SimpleDnsCrypt.Helper
 				new Language {Name = "Hungarian", ShortCode = "hu", CultureCode = "hu-HU"},
 				new Language {Name = "Indonesian", ShortCode = "id", CultureCode = "id-ID"},
 				new Language {Name = "Italian", ShortCode = "it", CultureCode = "it-IT"},
-				//new Language {Name = "Japanese", ShortCode = "ja", CultureCode = "ja-JP"},
+				new Language {Name = "Japanese", ShortCode = "ja", CultureCode = "ja-JP"},
+				new Language {Name = "Korean", ShortCode = "ko", CultureCode = "ko-KR"},
+				new Language {Name = "Malay", ShortCode = "ms", CultureCode = "ms-MY"},
 				//new Language {Name = "Norwegian", ShortCode = "no", CultureCode = "no-NO"},
 				new Language {Name = "Persian", ShortCode = "fa", CultureCode = "fa-FA"},
 				new Language {Name = "Polish", ShortCode = "pl", CultureCode = "pl-PL"},
 				new Language {Name = "Portoguese", ShortCode = "pt", CultureCode = "pt-PT"},
+				new Language {Name = "Romanian", ShortCode = "ro", CultureCode = "ro-RO"},
 				new Language {Name = "Russian", ShortCode = "ru", CultureCode = "ru-RU"},
 				new Language {Name = "Spanish", ShortCode = "es", CultureCode = "es-ES"},
 				//new Language {Name = "Swedish", ShortCode = "sv", CultureCode = "sv-SV"},
 				new Language {Name = "Turkish", ShortCode = "tr", CultureCode = "tr-TR"},
-				new Language {Name = "Vietnamese", ShortCode = "vi", CultureCode = "vi-VN"}
+				new Language {Name = "Vietnamese", ShortCode = "vi", CultureCode = "vi-VN"},
 			};
 			return supportedLanguages;
 		}

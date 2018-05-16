@@ -154,13 +154,13 @@
     <value>Server senza logging</value>
   </data>
   <data name="default_settings_configuration_nolog_tooltip" xml:space="preserve">
-    <value>I server non registrano le query degli utenti</value>
+    <value>Il server non deve registrare le query degli utenti</value>
   </data>
   <data name="default_settings_configuration_nofilter" xml:space="preserve">
-    <value>Server senza filtri</value>
+    <value>Solo server senza filtri</value>
   </data>
   <data name="default_settings_configuration_nofilter_tooltip" xml:space="preserve">
-    <value>I Server non usano blacklist (ad esempio: controllo genitori, ads, blocco...)</value>
+    <value>Il Server non deve utilizzare le proprie blacklist (ad esempio: controllo genitori, ads, blocco...)</value>
   </data>
   <data name="tabitem_mainmenu" xml:space="preserve">
     <value>Menù Principale</value>
@@ -202,7 +202,7 @@
     <value>Avvio . . .</value>
   </data>
   <data name="loader_validate_folder" xml:space="preserve">
-    <value>Validando {0} la cartella</value>
+    <value>Validando la cartella {0}</value>
   </data>
   <data name="loader_loading_network_cards" xml:space="preserve">
     <value>Caricando le schede di rete . . .</value>
@@ -214,10 +214,10 @@
     <value>{0} caricato correttamente</value>
   </data>
   <data name="loader_loading" xml:space="preserve">
-    <value>Caricamento {0}  . . .</value>
+    <value>Caricamento di {0}  . . .</value>
   </data>
   <data name="loader_missing_files" xml:space="preserve">
-    <value>File mancanti nella {0} cartella:\n{1}\n\nProva a reinstallare il programma {2}</value>
+    <value>File mancanti nella {0} cartella:\n{1}\n\nProva a reinstallare {2}</value>
   </data>
   <data name="loader_all_files_available" xml:space="preserve">
     <value>Tutti i file necessari sono stati trovati</value>
@@ -244,7 +244,7 @@
     <value>in attesa di query DNS</value>
   </data>
   <data name="querylog_entry_count" xml:space="preserve">
-    <value>Sorgente:</value>
+    <value>Elementi:</value>
   </data>
   <data name="querylog_source_file" xml:space="preserve">
     <value>File di Log:</value>
@@ -262,7 +262,7 @@
     <value>in attesa di query DNS bloccate</value>
   </data>
   <data name="domainblocklog_entry_count" xml:space="preserve">
-    <value>Valori:</value>
+    <value>Elementi:</value>
   </data>
   <data name="domainblocklog_source_file" xml:space="preserve">
     <value>Sorgente:</value>
@@ -352,10 +352,10 @@
     <value>Modalità Automatica</value>
   </data>
   <data name="disabled" xml:space="preserve">
-    <value>Disabilita</value>
+    <value>Disabilitato</value>
   </data>
   <data name="enabled" xml:space="preserve">
-    <value>Abilita</value>
+    <value>Abilitato</value>
   </data>
   <data name="resolvers_available_resolvers_header" xml:space="preserve">
     <value>Resolver Disponibili</value>
@@ -397,7 +397,7 @@
     <value>La disinstallazione non può essere eseguita. Prova ad arrestare il servizio manualmente e disinstallarlo di nuovo.</value>
   </data>
   <data name="open_log_directory" xml:space="preserve">
-    <value>Apri la cartella di log</value>
+    <value>Apri la cartella dei log</value>
   </data>
   <data name="settings_update_auto" xml:space="preserve">
     <value>Controlla aggiornamenti all&apos;avvio</value>
@@ -412,7 +412,7 @@
     <value>Blocca IPv6</value>
   </data>
   <data name="advanced_settings_blockipv6_content" xml:space="preserve">
-    <value>Rispondi alle query relative ad IPv6 con una risposta vuota</value>
+    <value>Rispondi immediatamente alle query IPv6 con una risposta vuota</value>
   </data>
   <data name="advanced_settings_forcetcp" xml:space="preserve">
     <value>Forza TCP</value>
@@ -500,15 +500,15 @@
     <value>Se vuoi che questo computer funzioni come gateway per altri dispositivi (ad esempio: smartphone ed altri computer)</value>
   </data>
   <data name="advanced_settings_fallback_resolver" xml:space="preserve">
-    <value>Fallback Resolver</value>
+    <value>Resolver di riserva</value>
   </data>
   <data name="advanced_settings_fallback_resolver_content" xml:space="preserve">
-    <value>This is a normal, non-encrypted DNS resolver, that will be only used for one-shot queries when retrieving the initial resolvers list, and only if the system DNS configuration doesn&apos;t work. People in China may need to use 114.114.114.114:53 here.</value>
+    <value>Questo è normale, DNS resolver non criptati, verranno usati per solo ottenere la lista di resolver per la prima volta e solo se il sistema di configurazione DNS non funziona, gli utenti in China potrebbero dover usare 114.114.114.114:53 qui</value>
   </data>
   <data name="trayicon_tooltip" xml:space="preserve">
     <value>Simple DNSCrypt</value>
   </data>
   <data name="trayicon_exit" xml:space="preserve">
-    <value>Exit</value>
+    <value>Esci</value>
   </data>
 </root>

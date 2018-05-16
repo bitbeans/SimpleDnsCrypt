@@ -161,7 +161,7 @@
     <value>Seulement les serveurs sans filtre</value>
   </data>
   <data name="default_settings_configuration_nofilter_tooltip" xml:space="preserve">
-    <value>Le serveur ne doit pas forcer sa propre liste noire (pour le contrôle parental, blocage de publicités,...)</value>
+    <value>Le serveur ne doit pas forcer sa propre liste noire (pour le contrôle parental, le blocage de publicités...)</value>
     <comment>Oubli du &quot;ô&quot; à &quot;contrôle&quot;</comment>
   </data>
   <data name="tabitem_mainmenu" xml:space="preserve">
@@ -171,7 +171,7 @@
     <value>Les droits administrateurs sont disponibles</value>
   </data>
   <data name="loader_administrative_rights_missing" xml:space="preserve">
-    <value>Les droits administrateurs sont manquants!</value>
+    <value>Les droits administrateurs sont manquants !</value>
   </data>
   <data name="loader_checking_version" xml:space="preserve">
     <value>Vérification d&apos;une nouvelle version...</value>
@@ -223,7 +223,7 @@
     <value>Fichiers manquants dans le répertoire {0}\n{1}\n\nPensez à une nouvelle installation de {2}</value>
   </data>
   <data name="loader_all_files_available" xml:space="preserve">
-    <value>Tous les fichiers requis ont été trouvé</value>
+    <value>Tous les fichiers requis ont été trouvés</value>
     <comment>vérifier si &quot;tous&quot; ou &quot;tout&quot;</comment>
   </data>
   <data name="about" xml:space="preserve">
@@ -248,10 +248,10 @@
     <value>en attente des requêtes DNS</value>
   </data>
   <data name="querylog_entry_count" xml:space="preserve">
-    <value>Entrées:</value>
+    <value>Entrées :</value>
   </data>
   <data name="querylog_source_file" xml:space="preserve">
-    <value>Source:</value>
+    <value>Source :</value>
   </data>
   <data name="querylog_button_clear" xml:space="preserve">
     <value>Effacer la liste</value>
@@ -267,10 +267,10 @@
     <value>en attente des requêtes DNS bloquées</value>
   </data>
   <data name="domainblocklog_entry_count" xml:space="preserve">
-    <value>Entrées:</value>
+    <value>Entrées :</value>
   </data>
   <data name="domainblocklog_source_file" xml:space="preserve">
-    <value>Source:</value>
+    <value>Source :</value>
   </data>
   <data name="domainblocklog_button_clear" xml:space="preserve">
     <value>Effacer la liste</value>
@@ -378,7 +378,7 @@
     <value>Microsoft Visual C++ Redistributable pour Visual Studio 2017 est déjà installé</value>
   </data>
   <data name="loader_redistributable_package_installing" xml:space="preserve">
-    <value>Installation: Microsoft Visual C++ Redistributable pour Visual Studio 2017</value>
+    <value>Installation : Microsoft Visual C++ Redistributable pour Visual Studio 2017</value>
   </data>
   <data name="loader_redistributable_package_ready" xml:space="preserve">
     <value>Microsoft Visual C++ Redistributable pour Visual Studio 2017 est maintenant installé</value>
@@ -393,13 +393,13 @@
     <value>Le service ne fonctionne pas</value>
   </data>
   <data name="message_content_service_not_running" xml:space="preserve">
-    <value>Vous devez démarrer le service DnsCrypt en premier!</value>
+    <value>Vous devez démarrer le service DnsCrypt en premier !</value>
   </data>
   <data name="message_title_uninstallation_successful" xml:space="preserve">
     <value>Désinstallation avec succès</value>
   </data>
   <data name="message_content_uninstallation_successful" xml:space="preserve">
-    <value>Déinstallation réussite! Les requêtes DNS ne sont plus chiffrées.</value>
+    <value>Désinstallation réussie ! Les requêtes DNS ne sont plus chiffrées.</value>
     <comment>pour info on dit &quot;chiffrer&quot; et non &quot;crypter&quot; : https://chiffrer.info/</comment>
   </data>
   <data name="message_title_uninstallation_error" xml:space="preserve">
@@ -415,10 +415,10 @@
     <value>Vérifier les mises à jour au démarrage</value>
   </data>
   <data name="settings_update_channel" xml:space="preserve">
-    <value>Canal de mise à jour:</value>
+    <value>Canal de mise à jour :</value>
   </data>
   <data name="advanced_settings_dnscache_content" xml:space="preserve">
-    <value>Cache DNS pour réduire la latence et le traffic sortant</value>
+    <value>Cache DNS pour réduire la latence et le trafic sortant</value>
   </data>
   <data name="advanced_settings_blockipv6" xml:space="preserve">
     <value>Bloquer l&apos;IPv6</value>
@@ -437,19 +437,19 @@
     <value>Ajouter</value>
   </data>
   <data name="message_title_new_whitelist_rule" xml:space="preserve">
-    <value>Add new domain whitelist rule</value>
+    <value>Ajouter un domaine en liste blanche</value>
   </data>
   <data name="message_content_new_whitelist_rule" xml:space="preserve">
-    <value>Exemple: *.exemple.com, publicites.*, *sexe*, vous pouvez aussi ajouter une liste de règles séparées par des virgules. </value>
+    <value>Exemple: *.exemple.com, ads.*, *sex*, vous pouvez aussi ajouter une liste de règles séparées par des virgules</value>
   </data>
   <data name="message_title_new_blacklist_rule" xml:space="preserve">
-    <value>Add new domain blacklist rule</value>
+    <value>Ajouter un domaine en liste noire</value>
   </data>
   <data name="message_content_new_blacklist_rule" xml:space="preserve">
-    <value>Exemple: *.exemple.com, publicites.*, *sex*, vous pouvez aussi ajouter une liste de règles séparées par des virgules, un fichier qui commence par file:mes-listes-personnalisees.txt ou une URL distante qui commence par http:// ou https://</value>
+    <value>Exemple: *.exemple.com, ads.*, *sex*, vous pouvez aussi ajouter une liste de règles séparées par des virgules, un fichier qui commence par file:mes-listes-personnalisees.txt ou une URL distante qui commence par http:// ou https://</value>
   </data>
   <data name="working_dialog_title" xml:space="preserve">
-    <value>Un travail difficile est en train d&apos;être effectué...</value>
+    <value>Fusion des listes en cours...</value>
   </data>
   <data name="button_select_path" xml:space="preserve">
     <value>Sélectionner le chemin</value>
@@ -488,7 +488,7 @@
     <value>(toutes les entrées sont ignorées durant la génération de la liste noire)</value>
   </data>
   <data name="whitelist_rules_path" xml:space="preserve">
-    <value>Règles de liste blanche:</value>
+    <value>Règles de liste blanche :</value>
   </data>
   <data name="blacklist_rules_header" xml:space="preserve">
     <value>Règles de liste noire</value>
@@ -497,30 +497,30 @@
     <value>(toutes les entrées sont fusionnées dans la liste noire)</value>
   </data>
   <data name="blacklist_rules_path" xml:space="preserve">
-    <value>Règles de liste noire:</value>
+    <value>Règles de liste noire :</value>
   </data>
   <data name="blacklist_path" xml:space="preserve">
-    <value>Liste noire:</value>
+    <value>Liste noire :</value>
   </data>
   <data name="blacklist_header" xml:space="preserve">
     <value>Liste noire et liste blanche de domaine</value>
   </data>
   <data name="advanced_settings_globalresolver" xml:space="preserve">
-    <value>Global Resolver</value>
+    <value>Résolveur global</value>
   </data>
   <data name="advanced_settings_globalresolver_content" xml:space="preserve">
-    <value>If you want this computer to act as gateway device for others (eg. smartphones or other computers)</value>
+    <value>Faire de cet ordinateur une passerelle pour les autres terminaux (smartphones, autres ordinateurs...)</value>
   </data>
   <data name="advanced_settings_fallback_resolver" xml:space="preserve">
-    <value>Fallback Resolver</value>
+    <value>Résolveur de secours</value>
   </data>
   <data name="advanced_settings_fallback_resolver_content" xml:space="preserve">
-    <value>This is a normal, non-encrypted DNS resolver, that will be only used for one-shot queries when retrieving the initial resolvers list, and only if the system DNS configuration doesn&apos;t work. People in China may need to use 114.114.114.114:53 here.</value>
+    <value>Un résolveur DNS normal, non chiffré, qui sera utilisé seulement pour des requêtes ponctuelles lors de la récupération de la liste initiale de résolveurs, et seulement si la configuration DNS du système ne fonctionne pas. Les résidents en Chine doivent peut-être utiliser 114.114.114.114:53 ici.</value>
   </data>
   <data name="trayicon_tooltip" xml:space="preserve">
     <value>Simple DNSCrypt</value>
   </data>
   <data name="trayicon_exit" xml:space="preserve">
-    <value>Exit</value>
+    <value>Quitter</value>
   </data>
 </root>

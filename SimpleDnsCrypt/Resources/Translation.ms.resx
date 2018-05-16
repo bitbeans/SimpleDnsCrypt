@@ -118,399 +118,396 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="default_settings_network_cards" xml:space="preserve">
-    <value>رابط‌های‌شبکه</value>
+    <value>Kad-kad antara muka rangkaian</value>
   </data>
   <data name="default_settings_show_hidden_cards" xml:space="preserve">
-    <value>نمایش‌رابط‌های‌مخفی‌شده</value>
+    <value>Papar kad-kad tersembunyi </value>
   </data>
   <data name="default_settings_service_header" xml:space="preserve">
-    <value>سرویس‌ها</value>
+    <value>Servis</value>
   </data>
   <data name="default_settings_service" xml:space="preserve">
-    <value>DNSCrypt Service</value>
+    <value>Servis DNSCrypt</value>
   </data>
   <data name="default_settings_configuration" xml:space="preserve">
-    <value>تنظیمات</value>
+    <value>Konfigurasi</value>
   </data>
   <data name="default_settings_configuration_ipv4" xml:space="preserve">
-    <value>‏IPv4 استفاده از سرور</value>
+    <value>Pilih pelayan IPv4</value>
   </data>
   <data name="default_settings_configuration_ipv4_tooltip" xml:space="preserve">
-    <value>قابل دستیابی می باشند IPv4 به کارگیری سرورهایی که تحت</value>
+    <value>Pilih pelayan yang dicapai melalui sambungan IPv4</value>
   </data>
   <data name="default_settings_configuration_ipv6" xml:space="preserve">
-    <value>‏IPv6 استفاده از سرور</value>
+    <value>Pilih pelayan IPv6</value>
   </data>
   <data name="default_settings_configuration_ipv6_tooltip" xml:space="preserve">
-    <value>(را ندارید، فعال نکنیدIPv6 قابل دستیابی می باشند(اگر امکان ارتباط تحت IPv6 به کارگیری سرورهایی که تحت</value>
+    <value>Pilih pelayan yang dapat dicapai melalui IPv6 (jangan aktifkannya jika anda tiada sambungan IPv6)</value>
   </data>
   <data name="default_settings_configuration_dnssec" xml:space="preserve">
-    <value>DNSSEC فقط سرورهای با پشتیبانی</value>
+    <value>Hanya pelayan yang dilengkap dengan sokongan DNSSEC </value>
   </data>
   <data name="default_settings_configuration_dnssec_tooltip" xml:space="preserve">
-    <value>سرور می بایست از افزونه امنیتی نام دامنه، بهره مند باشد</value>
+    <value>Pelayan mesti ada sokongan pelanjutan sekuriti DNS</value>
   </data>
   <data name="default_settings_configuration_nolog" xml:space="preserve">
-    <value>فقط سرورهای  بدون ثبت لاگ</value>
+    <value>Hanya pelayan tanpa pengelogan</value>
   </data>
   <data name="default_settings_configuration_nolog_tooltip" xml:space="preserve">
-    <value>سرور نباید فعالیت های کاربر را لاگ کند</value>
+    <value>Pelayan tidak sesekali menyimpan kueri pengguna</value>
   </data>
   <data name="default_settings_configuration_nofilter" xml:space="preserve">
-    <value>فقط سرورهای بدون فیلتر لیست</value>
+    <value>Hanya pelayan tanpa penapis</value>
   </data>
   <data name="default_settings_configuration_nofilter_tooltip" xml:space="preserve">
-    <value>(...سرور نباید لیست سیاه خود را اعمال کند(برای مقاصد کنترل والدین، مسدود کردن تبلیغات و</value>
+    <value>Pelayan tidak menguatkuasakan senarai hitam sendiri (untuk kawalan ibu-bapa, sekatan iklan...)</value>
   </data>
   <data name="tabitem_mainmenu" xml:space="preserve">
-    <value>صفحه‌اصلی</value>
+    <value>Menu Utama</value>
   </data>
   <data name="loader_administrative_rights_available" xml:space="preserve">
-    <value>دسترسی مدیریتی فراهم است</value>
+    <value>Hak pentadbiran tersedia ada</value>
   </data>
   <data name="loader_administrative_rights_missing" xml:space="preserve">
-    <value>!دسترسی مدیریتی از دست رفته</value>
+    <value>Tiada hak pentadbiran!</value>
   </data>
   <data name="loader_checking_version" xml:space="preserve">
-    <value>...بررسی برای ورژن جدید</value>
+    <value>Semakan untuk versi baru</value>
   </data>
   <data name="loader_new_version_found" xml:space="preserve">
-    <value>{0}: نسخه جدیدتری یافت شد</value>
+    <value>Versi terbaru: {0} ditemui</value>
   </data>
   <data name="loader_starting_update" xml:space="preserve">
-    <value>...شروع به روزرسانی</value>
+    <value>Memulakan kemas kini . . .</value>
   </data>
   <data name="loader_update_failed" xml:space="preserve">
-    <value>... آپدیت با شکست مواجه شد، ادامه</value>
+    <value>Kemas kini gagal, teruskan . . .</value>
   </data>
   <data name="loader_latest_version" xml:space="preserve">
-    <value>شما از جدیدترین ورژن استفاده می کنید</value>
+    <value>Anda memiliki versi terkini</value>
   </data>
   <data name="loader_unsigned" xml:space="preserve">
-    <value>امضاء نشده</value>
+    <value>Tidak bertandatangan</value>
   </data>
   <data name="loader_missing" xml:space="preserve">
-    <value>از دست رفته</value>
+    <value>tiada dijumpai</value>
   </data>
   <data name="loader_downloading_signature" xml:space="preserve">
-    <value>...دریافت امضاء ها</value>
+    <value>Memuat turun tandatangan digital . . .</value>
   </data>
   <data name="loader_downloading_installer" xml:space="preserve">
-    <value>...دریافت نصب کننده</value>
+    <value>Memuat turun pemasang . . .</value>
   </data>
   <data name="loader_starting" xml:space="preserve">
-    <value>...شروع</value>
+    <value>Sedang Bermula . . .</value>
   </data>
   <data name="loader_validate_folder" xml:space="preserve">
-    <value>اعتبارسنجی {0} فولدر</value>
+    <value>Mengesahkan folder {0}</value>
   </data>
   <data name="loader_loading_network_cards" xml:space="preserve">
-    <value>‫...‫بارگزاری رابط های شبکه</value>
+    <value>Memuatkan kad antara muka rangkaian . . .</value>
   </data>
   <data name="loader_failed_loading" xml:space="preserve">
-    <value>‫‫{0} ناموفق در بارگزاری</value>
+    <value>{0} tidak dapat dimuatkan</value>
   </data>
   <data name="loader_successfully_loaded" xml:space="preserve">
-    <value>{0} با موفقیت بارگزاری شد</value>
+    <value>{0} berjaya dimuatkan</value>
   </data>
   <data name="loader_loading" xml:space="preserve">
-    <value>‫‫. . . {0} در حال بارگزاری</value>
+    <value>Memuatkan {0} . . .</value>
   </data>
   <data name="loader_missing_files" xml:space="preserve">
-    <value>پرونده‌های از دست‌رفته در پوشه {0}:
-{1}
-
-به فکر نصب مجدد {2} باشید</value>
+    <value>Kehilangan fail-fail daripada folder {0} :\n{1}\n\nPertimbangkan pemasangan baru {2}</value>
   </data>
   <data name="loader_all_files_available" xml:space="preserve">
-    <value>تمام فایل های مورد نیاز یافت شد</value>
+    <value>Kesemua fail-fail wajib telah dijumpai</value>
   </data>
   <data name="about" xml:space="preserve">
-    <value>درباره</value>
+    <value>Perihal</value>
   </data>
   <data name="about_software" xml:space="preserve">
-    <value>نرم‌افزار</value>
+    <value>Perisian</value>
   </data>
   <data name="about_license" xml:space="preserve">
-    <value>لایسنس</value>
+    <value>Lesen</value>
   </data>
   <data name="about_view_on_github" xml:space="preserve">
-    <value>GitHub مشاهده در</value>
+    <value>Lihat di GitHub</value>
   </data>
   <data name="tabitem_querylog" xml:space="preserve">
-    <value>گزارش‌فعالیت</value>
+    <value>Log Kueri</value>
   </data>
   <data name="querylog" xml:space="preserve">
-    <value>گزارش‌فعالیت</value>
+    <value>Log Kueri</value>
   </data>
   <data name="querylog_waiting_for_data" xml:space="preserve">
-    <value>DNS در انتظار دریافت یک درخواست</value>
+    <value>menantikan kueri DNS</value>
   </data>
   <data name="querylog_entry_count" xml:space="preserve">
-    <value>موارد:</value>
+    <value>Catatan masuk:</value>
   </data>
   <data name="querylog_source_file" xml:space="preserve">
-    <value>مسیر فایل:</value>
+    <value>Sumber:</value>
   </data>
   <data name="querylog_button_clear" xml:space="preserve">
-    <value>پاکسازی لیست</value>
+    <value>Bersihkan Senarai</value>
   </data>
   <data name="querylog_button_block" xml:space="preserve">
-    <value>مسدود کردن مورد انتخاب شده</value>
+    <value>Sekat yang dipilih</value>
   </data>
   <data name="domainblocklog" xml:space="preserve">
-    <value>گزارش‌مسدودیت‌دامنه</value>
+    <value>Log Sekatan Nama Domain</value>
   </data>
   <data name="domainblocklog_waiting_for_data" xml:space="preserve">
-    <value>مسدود شده DNS در انتظار یک درخواست به سمت</value>
+    <value>menanti kueri-kueri DNS yang tersekat</value>
   </data>
   <data name="domainblocklog_entry_count" xml:space="preserve">
-    <value>موارد:</value>
+    <value>Entri-entri:</value>
   </data>
   <data name="domainblocklog_source_file" xml:space="preserve">
-    <value>مسیر‌فایل:</value>
+    <value>Sumber:</value>
   </data>
   <data name="domainblocklog_button_clear" xml:space="preserve">
-    <value>پاکسازی لیست</value>
+    <value>Bersihkan Senarai</value>
   </data>
   <data name="tabitem_domainblocklog" xml:space="preserve">
-    <value>گزارش‌مسدودیت‌دامنه</value>
+    <value>Log Nama Domain tersekat</value>
   </data>
   <data name="tabitem_addressblocklog" xml:space="preserve">
-    <value>گزارش‌مسدودیت‌آدرس</value>
+    <value>Log Alamat tersekat</value>
   </data>
   <data name="tabitem_domainblacklist" xml:space="preserve">
-    <value>لیست‌سیاه‌دامنه</value>
+    <value>Senarai hitam nama domain</value>
   </data>
   <data name="tabitem_addressblacklist" xml:space="preserve">
-    <value>لیست‌سیاه‌آدرس</value>
+    <value>Senarai hitam alamat</value>
   </data>
   <data name="settings" xml:space="preserve">
-    <value>تنظیمات</value>
+    <value>Tetapan</value>
   </data>
   <data name="settings_domain_blacklist" xml:space="preserve">
-    <value>&quot;نمایش تب &quot;لیست‌سیاه‌دامنه</value>
+    <value>Paparkan Tab &quot;Senarai Hitam Domain&quot;</value>
   </data>
   <data name="settings_address_blacklist" xml:space="preserve">
-    <value>&quot;نمایش تب &quot;لیست‌سیاه‌آدرس</value>
+    <value>Paparkan Tab &quot;Senarai Hitam Alamat&quot;</value>
   </data>
   <data name="settings_domain_block" xml:space="preserve">
-    <value>&quot;نمایش تب &quot;گزارش‌مسدودیت‌دامنه</value>
+    <value>Paparkan Tab &quot;Senarai Hitam Domain&quot;</value>
   </data>
   <data name="settings_address_block" xml:space="preserve">
-    <value>&quot;نمایش تب &quot;گزارش‌مسدودیت‌آدرس</value>
+    <value>Paparkan Tab &quot;Senarai Hitam Alamat&quot;</value>
   </data>
   <data name="settings_query_log" xml:space="preserve">
-    <value>&quot; نمایش تب&quot;گزارش‌فعالیت</value>
+    <value>Lihat Tab &quot;Log Kueri&quot;</value>
   </data>
   <data name="tabitem_resolvers" xml:space="preserve">
-    <value>تحلیلگرها</value>
+    <value>Resolver</value>
   </data>
   <data name="tabitem_advanced_settings" xml:space="preserve">
-    <value>تنظیمات‌پیشرفه</value>
+    <value>Tetapan Lanjutan</value>
   </data>
   <data name="settings_advanced_settings" xml:space="preserve">
-    <value>&quot;نمایش تب &quot;تنظیمات‌پیشرفته</value>
+    <value>Paparkan Tab &quot;Tetapan Lanjutan&quot;</value>
   </data>
   <data name="yes" xml:space="preserve">
-    <value>بله</value>
+    <value>ya</value>
   </data>
   <data name="no" xml:space="preserve">
-    <value>خیر</value>
+    <value>tidak</value>
   </data>
   <data name="cancel" xml:space="preserve">
-    <value>لغو</value>
+    <value>batalkan</value>
   </data>
   <data name="ok" xml:space="preserve">
-    <value>تایید</value>
+    <value>Okey</value>
   </data>
   <data name="dialog_message_uninstall" xml:space="preserve">
-    <value>آیا از حذف سرویس مربوطه اطمینان دارید؟</value>
+    <value>Adakah anda mahu menyahaktifkan servis Windows yang dipasang?</value>
   </data>
   <data name="dialog_uninstall_title" xml:space="preserve">
-    <value>حذف کردن سرویس</value>
+    <value>Menyahpasang servis</value>
   </data>
   <data name="advanced_settings_uninstall_title" xml:space="preserve">
-    <value>حذف کردن سرویس</value>
+    <value>Menyahpasang Servis</value>
   </data>
   <data name="advanced_settings_uninstall_text" xml:space="preserve">
-    <value>پاک کردن سرویس مرتبط نصب شده در ویندوز</value>
+    <value>Keluarkan servis Windows yang dipasang</value>
   </data>
   <data name="advanced_settings_uninstall_button" xml:space="preserve">
-    <value>پاک کردن سرویس</value>
+    <value>Nyahpasang servis</value>
   </data>
   <data name="default_settings_apply_settings" xml:space="preserve">
-    <value>اعمال تنظیمات</value>
+    <value>Terapkan tetapan</value>
   </data>
   <data name="advanced_settings_dnscache" xml:space="preserve">
-    <value>DNS حافظه کش</value>
+    <value>Cache DNS</value>
   </data>
   <data name="resolvers_dnscrypt_mode_header" xml:space="preserve">
-    <value>DNSCrypt Mode</value>
+    <value>Mod DNSCrypt</value>
   </data>
   <data name="resolvers_dnscrypt_mode_description" xml:space="preserve">
-    <value>.به طور خودکار سریع ترین تحلیلگرها را انتخاب می نماید dnscrypt-proxy .در حالت اتوماتیک، تمامی سرور های در دسترس مورد استفاده قرار میگیرند</value>
+    <value>Dalam mod otomatik, semua pelayan yang ada digunakan. dnscrypt-proxy dengan otomatik memilih pelayan peleraian-nama terpantas.</value>
   </data>
   <data name="resolvers_dnscrypt_automatic_mode" xml:space="preserve">
-    <value>حالت‌اتوماتیک</value>
+    <value>Mod Otomatik</value>
   </data>
   <data name="disabled" xml:space="preserve">
-    <value>غیر‌فعال</value>
+    <value>Dilumpuhkan</value>
   </data>
   <data name="enabled" xml:space="preserve">
-    <value>فعال</value>
+    <value>Didayakan</value>
   </data>
   <data name="resolvers_available_resolvers_header" xml:space="preserve">
-    <value>تحلیلگر‌های‌موجود</value>
+    <value>Pelerai-pelarai nama yang sedia ada</value>
   </data>
   <data name="loader_redistributable_package_check" xml:space="preserve">
-    <value>Checking Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
+    <value>Memeriksa kehadiran &apos;Microsoft Visual C++ Redistributable for Visual Studio 2017&apos;</value>
   </data>
   <data name="loader_redistributable_package_already_installed" xml:space="preserve">
-    <value>Microsoft Visual C++ Redistributable for Visual Studio 2017 is already installed</value>
+    <value>&apos;Microsoft Visual C++ Redistributable for Visual Studio 2017&apos; sudah terpasang</value>
   </data>
   <data name="loader_redistributable_package_installing" xml:space="preserve">
-    <value>Installing: Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
+    <value>Dalam pemasangan: Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
   </data>
   <data name="loader_redistributable_package_ready" xml:space="preserve">
-    <value>Microsoft Visual C++ Redistributable for Visual Studio 2017 is now installed</value>
+    <value>&apos;Microsoft Visual C++ Redistributable for Visual Studio 2017&apos; kini dipasang</value>
   </data>
   <data name="message_title_no_server_selected" xml:space="preserve">
-    <value>هیچ سروری انتخاب نشده</value>
+    <value>Tiada pelayan terpilih</value>
   </data>
   <data name="message_content_no_server_selected" xml:space="preserve">
-    <value>حداقل یک سرور می بایست انتخاب شود. در غیر اینصورت نرم افزار از تمام سرور های موجود متنظار با فیلتر ها، استفاده خواهد نمود</value>
+    <value>Paling kurang satu pelayan mesti dipilih.  Sekiranya tidak, dnscrypt-proxy menggunakan kesemua pelayan sepadan dengan penapis yang ditetapkan.</value>
   </data>
   <data name="message_title_service_not_running" xml:space="preserve">
-    <value>سرویس اجرا نشده</value>
+    <value>Servis tidak berfungsi</value>
   </data>
   <data name="message_content_service_not_running" xml:space="preserve">
-    <value>!را اجرا نمایید DnsCrypt شما می بایست ابتدا سرویس</value>
+    <value>Anda harus memulakan servis DnsCrypt terlebih dahulu! </value>
   </data>
   <data name="message_title_uninstallation_successful" xml:space="preserve">
-    <value>لغو نصب موفقیت‌آمیز بود</value>
+    <value>Nyah-pasang telah berjaya</value>
   </data>
   <data name="message_content_uninstallation_successful" xml:space="preserve">
-    <value>.از این پس رمزگذاری نخواهند شد DNS عملیات حذف موفقیت آمیز بود! ترافیک</value>
+    <value>Nyah-pasang DNS telah berjaya! Permintaan DNS tidak lagi disulitkan.</value>
   </data>
   <data name="message_title_uninstallation_error" xml:space="preserve">
-    <value>خطا در لغو نصب</value>
+    <value>Ralat sewaktu nyah-pasang</value>
   </data>
   <data name="message_content_uninstallation_error" xml:space="preserve">
-    <value>.عملیات حذف با شکست مواجه شد. توقف دستی سرویس و حذف مجدد را امتحان کنید</value>
+    <value>Nyah-pasang servis tidak dapat dijalankan. Sila cuba menghentikan servis secara manual kemudiannya nyahpasang sekali lagi.</value>
   </data>
   <data name="open_log_directory" xml:space="preserve">
-    <value>باز کردن مسیر ذخیره لاگ ها</value>
+    <value>Buka direktori simpanan log</value>
   </data>
   <data name="settings_update_auto" xml:space="preserve">
-    <value>بررسی برای ورژن جدید در ابتدای اجرا</value>
+    <value>Semak kemas kini pada permulaan</value>
   </data>
   <data name="settings_update_channel" xml:space="preserve">
-    <value>روند به‌روز رسانی:</value>
+    <value>Saluran untuk kemas kini:</value>
   </data>
   <data name="advanced_settings_dnscache_content" xml:space="preserve">
-    <value>به منظور کاهش زمان انتظار تحلیل آدرس ها DNS حافظه کش</value>
+    <value>Cache DNS untuk mengurangkan latensi dan lalu lintas keluar</value>
   </data>
   <data name="advanced_settings_blockipv6" xml:space="preserve">
-    <value>IPv6 مسدود سازی</value>
+    <value>Sekat IPv6</value>
   </data>
   <data name="advanced_settings_blockipv6_content" xml:space="preserve">
-    <value>به صورت بلادرنگ IPv6 ارسال یک پاسخ خالی به درخواست های مربوط به</value>
+    <value>Segera memberi respons kosong untuk kueri jenis-IPv6</value>
   </data>
   <data name="advanced_settings_forcetcp" xml:space="preserve">
-    <value> TCP استفاده دائمی از</value>
+    <value>Paksa penggunaan TCP</value>
   </data>
   <data name="advanced_settings_forcetcp_content" xml:space="preserve">
-    <value>به منظور ارتباط با سرورهای تحلیلگر TCP به کارگیری دائمی ارتباط</value>
+    <value>Selalu gunakan sambungan TCP ke pelayan di hilir</value>
   </data>
   <data name="add" xml:space="preserve">
-    <value>افزودن</value>
+    <value>Tambah</value>
   </data>
   <data name="message_title_new_whitelist_rule" xml:space="preserve">
-    <value>افزودن سفید‌لیست دامنه‌ی جدید</value>
+    <value>Tambah peraturan senarai putih domain baru</value>
   </data>
   <data name="message_content_new_whitelist_rule" xml:space="preserve">
-    <value>Example: *.example.com, ads.*, *sex*, you also can add a comma-separated list of rules</value>
+    <value>Sebagai contoh: *.example.com, ads.*, *sex*, anda juga boleh menyertakan senarai peraturan yang dipisahkan koma</value>
   </data>
   <data name="message_title_new_blacklist_rule" xml:space="preserve">
-    <value>Add new domain blacklist rule</value>
+    <value>Tambah peraturan senarai hitam domain baru</value>
   </data>
   <data name="message_content_new_blacklist_rule" xml:space="preserve">
-    <value>Example: *.example.com, ads.*, *sex*, you can also add a comma-separated list of rules, a file that starts with file:my-custom-rules.txt or a remote URL that begins with http:// or https://.</value>
+    <value>Sebagai contoh: *.example.com, ads.*, *sex*, anda juga boleh menyertakan senarai peraturan yang dipisahkan koma, atau fail yang bermula dengan &apos;fail: peraturan-sendiri.txt&apos; ataupun URL luaran yang bermula dengan http: // atau https: //.</value>
   </data>
   <data name="working_dialog_title" xml:space="preserve">
-    <value>Lists are merged . . .</value>
+    <value>Senarai dicantumkan . . .</value>
   </data>
   <data name="button_select_path" xml:space="preserve">
-    <value>انتخاب مسیر</value>
+    <value>Pilih laluan fail</value>
   </data>
   <data name="button_blacklist_build" xml:space="preserve">
-    <value>Build the dnscrypt-proxy blacklist</value>
+    <value>Bina senarai hitam dnscrypt-proxy</value>
   </data>
   <data name="button_blacklist_import" xml:space="preserve">
-    <value>Import existing blacklist rules</value>
+    <value>Import peraturan senarai hitam yang sedia ada</value>
   </data>
   <data name="button_blacklist_export" xml:space="preserve">
-    <value>Export blacklist rules</value>
+    <value>Eksport senarai hitam</value>
   </data>
   <data name="button_blacklist_remove" xml:space="preserve">
-    <value>Remove selected blacklist rule</value>
+    <value>Buang peraturan senarai hitam yang ditanda</value>
   </data>
   <data name="button_blacklist_add" xml:space="preserve">
-    <value>افزودن شرط سیاه‌لیست جدید</value>
+    <value>Tambah peraturan senarai hitam baru</value>
   </data>
   <data name="button_whitelist_import" xml:space="preserve">
-    <value>Import existing whitelist rules</value>
+    <value>Import peraturan senarai putih yang sedia ada</value>
   </data>
   <data name="button_whitelist_export" xml:space="preserve">
-    <value>Export whitelist rules</value>
+    <value>Eksport peraturan senarai putih</value>
   </data>
   <data name="button_whitelist_remove" xml:space="preserve">
-    <value>Remove selected whitelist rule</value>
+    <value>Buang peraturan senarai putih yang ditanda</value>
   </data>
   <data name="button_whitelist_add" xml:space="preserve">
-    <value>Add a new whitelist rule</value>
+    <value>Tambah peraturan senarai putih baru</value>
   </data>
   <data name="whitelist_rules_header" xml:space="preserve">
-    <value>شرط‌های سفید‌لیست</value>
+    <value>Peraturan-peraturan Senarai Putih</value>
   </data>
   <data name="whitelist_rules_sub_header" xml:space="preserve">
-    <value>(all entries are ignored during blacklist generation)</value>
+    <value>(kesemua penyertaan diabaikan semasa penamaan senarai hitam)</value>
   </data>
   <data name="whitelist_rules_path" xml:space="preserve">
-    <value>Whitelist Rules:</value>
+    <value>Peraturan-peraturan Senarai Putih</value>
   </data>
   <data name="blacklist_rules_header" xml:space="preserve">
-    <value>شرط‌های سیاه‌لیست</value>
+    <value>Peraturan-peraturan Senarai Hitam</value>
   </data>
   <data name="blacklist_rules_sub_header" xml:space="preserve">
-    <value>(all entries are merged to a blacklist)</value>
+    <value>(semua penyertaan digabungkan ke dalam senarai hitam)</value>
   </data>
   <data name="blacklist_rules_path" xml:space="preserve">
-    <value>Blacklist Rules:</value>
+    <value>Peraturan Senarai Hitam:</value>
   </data>
   <data name="blacklist_path" xml:space="preserve">
-    <value>لیست‌سیاه:</value>
+    <value>Senarai hitam:</value>
   </data>
   <data name="blacklist_header" xml:space="preserve">
-    <value>Domain Blacklist and Whitelist</value>
+    <value>Senarai Hitam dan Putih domain</value>
   </data>
   <data name="advanced_settings_globalresolver" xml:space="preserve">
-    <value>ارائه‌دهنده جهانی</value>
+    <value>Penyelesai nama sejagat</value>
   </data>
   <data name="advanced_settings_globalresolver_content" xml:space="preserve">
-    <value>If you want this computer to act as gateway device for others (eg. smartphones or other computers)</value>
+    <value>Sekiranya anda mahukan komputer ini berfungsi sebagai gerbang untuk peranti lain (contohnya telefon pintar atau komputer yang lain)</value>
   </data>
   <data name="advanced_settings_fallback_resolver" xml:space="preserve">
-    <value>Fallback Resolver</value>
+    <value>Geganti resolver sandaran</value>
   </data>
   <data name="advanced_settings_fallback_resolver_content" xml:space="preserve">
-    <value>این یک ارائه‌دهنده معمولی و غیر رمز‌نگاری‌شده DNS است که تنها برای درخواست‌های تکی درابتدای زمان دریافت فهرست ارائه‌دهندگان مورد استفاده قرار می‌گیرد، فقط درصورتی که پیکربندی DNS سیستمی کار نکند. کاربران کشور چین ممکن است که در اینجا نیاز به استفاده از 114.114.114.114:53 داشته باشند.</value>
+    <value>Ini adalah resolver DNS biasa yang tidak disulitkan, yang hanya akan digunakan untuk pertanyaan satu-pukulan apabila mengambil senarai penyelesai permulaan, dan hanya jika konfigurasi DNS sistem tidak berfungsi. Pengguna di China mungkin perlu menggunakan 114.114.114.114:53 di sini.</value>
   </data>
   <data name="trayicon_tooltip" xml:space="preserve">
     <value>Simple DNSCrypt</value>
   </data>
   <data name="trayicon_exit" xml:space="preserve">
-    <value>خروج</value>
+    <value>Keluar</value>
   </data>
 </root>

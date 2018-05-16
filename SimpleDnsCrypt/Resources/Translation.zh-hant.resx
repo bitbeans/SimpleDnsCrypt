@@ -349,7 +349,7 @@
     <value>DNSCrypt 模式</value>
   </data>
   <data name="resolvers_dnscrypt_mode_description" xml:space="preserve">
-    <value>在自動模式下，所有可用的伺服都會被使用。 dnscrypt-proxy 會自動選擇響應最快的服務器</value>
+    <value>在自動模式下，所有可用的伺服器都會被使用。 dnscrypt-proxy 會自動選擇回應最快的伺服器</value>
   </data>
   <data name="resolvers_dnscrypt_automatic_mode" xml:space="preserve">
     <value>自動模式</value>
@@ -511,6 +511,6 @@
     <value>Simple DNSCrypt</value>
   </data>
   <data name="trayicon_exit" xml:space="preserve">
-    <value>Exit</value>
+    <value>退出</value>
   </data>
 </root>

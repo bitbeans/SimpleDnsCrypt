@@ -509,6 +509,6 @@
     <value>Simple DNSCrypt</value>
   </data>
   <data name="trayicon_exit" xml:space="preserve">
-    <value>Exit</value>
+    <value>退出</value>
   </data>
 </root>

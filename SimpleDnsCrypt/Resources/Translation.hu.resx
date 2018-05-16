@@ -500,15 +500,18 @@
     <value>Ha azt szeretné, hogy ez a számítógép mások számára átjáró eszközként működjön (pl. Okos telefonok vagy más számítógépek)</value>
   </data>
   <data name="advanced_settings_fallback_resolver" xml:space="preserve">
-    <value>Fallback Resolver</value>
+    <value>tartalék névkiszolgátó</value>
   </data>
   <data name="advanced_settings_fallback_resolver_content" xml:space="preserve">
-    <value>This is a normal, non-encrypted DNS resolver, that will be only used for one-shot queries when retrieving the initial resolvers list, and only if the system DNS configuration doesn&apos;t work. People in China may need to use 114.114.114.114:53 here.</value>
+    <value>Ez egy normál, nem titkosított DNS-névkiszolgátó, amelyet csak az egyszeri lekérdezésekhez használnak a kezdeti felbontók listájának lekérésekor, és csak akkor, ha a rendszer DNS-konfigurációja nem működik. Kínában élő emberek számára szükség lehet a 114.114.114.114:53 használatára.</value>
+    <comment>Fuzzy</comment>
   </data>
   <data name="trayicon_tooltip" xml:space="preserve">
-    <value>Simple DNSCrypt</value>
+    <value>egyszerü DNSCrypt</value>
+    <comment>Fuzzy</comment>
   </data>
   <data name="trayicon_exit" xml:space="preserve">
-    <value>Exit</value>
+    <value>kijárat</value>
+    <comment>Fuzzy</comment>
   </data>
 </root>
