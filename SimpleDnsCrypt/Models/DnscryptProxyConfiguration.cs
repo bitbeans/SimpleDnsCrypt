@@ -21,12 +21,14 @@ namespace SimpleDnsCrypt.Models
 		private bool _require_nolog;
 		private bool _force_tcp;
 		private int _timeout;
+		private int _keepalive;
 		private string _lb_strategy;
 		private int _cert_refresh_delay;
 		private int _log_level;
 		private string _log_file;
 		private Dictionary<string, Source> _sources;
 		private bool _use_syslog;
+		private int _netprobe_timeout;
 		private int _log_files_max_size;
 		private int _log_files_max_age;
 		private int _log_files_max_backups;
@@ -210,6 +212,19 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		/// <summary>
+		///     Keepalive for HTTP (HTTPS, HTTP/2) queries, in seconds.
+		/// </summary>
+		public int keepalive
+		{
+			get => _keepalive;
+			set
+			{
+				_keepalive = value;
+				NotifyOfPropertyChange(() => keepalive);
+			}
+		}
+
+		/// <summary>
 		/// Load-balancing strategy: 'p2' (default), 'ph', 'fastest' or 'random'
 		/// </summary>
 		public string lb_strategy
@@ -219,6 +234,22 @@ namespace SimpleDnsCrypt.Models
 			{
 				_lb_strategy = value;
 				NotifyOfPropertyChange(() => lb_strategy);
+			}
+		}
+
+		/// <summary>
+		/// Maximum time (in seconds) to wait for network connectivity before initializing the proxy.
+		/// Useful if the proxy is automatically started at boot, and network
+		/// connectivity is not guaranteed to be immediately available.
+		/// Use 0 to disable.
+		/// </summary>
+		public int netprobe_timeout
+		{
+			get => _netprobe_timeout;
+			set
+			{
+				_netprobe_timeout = value;
+				NotifyOfPropertyChange(() => netprobe_timeout);
 			}
 		}
 
