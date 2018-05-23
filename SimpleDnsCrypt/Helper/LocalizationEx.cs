@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Globalization;
+using System.Linq;
 using System.Threading;
 using SimpleDnsCrypt.Models;
 using WPFLocalizeExtension.Engine;
@@ -39,6 +40,7 @@ namespace SimpleDnsCrypt.Helper
 				//new Language {Name = "Danish", ShortCode = "da", CultureCode = "da-DK"},
 				//new Language {Name = "Dutch", ShortCode = "nl", CultureCode = "nl-NL"},
 				new Language {Name = "English", ShortCode = "en", CultureCode = "en-US"},
+				new Language {Name = "Finish", ShortCode = "fi", CultureCode = "fi-FI"},
 				new Language {Name = "French", ShortCode = "fr", CultureCode = "fr-FR"},
 				new Language {Name = "German", ShortCode = "de", CultureCode = "de-DE"},
 				new Language {Name = "Greek", ShortCode = "el", CultureCode = "el-EL"},
@@ -57,9 +59,11 @@ namespace SimpleDnsCrypt.Helper
 				new Language {Name = "Russian", ShortCode = "ru", CultureCode = "ru-RU"},
 				new Language {Name = "Spanish", ShortCode = "es", CultureCode = "es-ES"},
 				//new Language {Name = "Swedish", ShortCode = "sv", CultureCode = "sv-SV"},
+				new Language {Name = "Thai", ShortCode = "th", CultureCode = "th-TH"},
 				new Language {Name = "Turkish", ShortCode = "tr", CultureCode = "tr-TR"},
 				new Language {Name = "Vietnamese", ShortCode = "vi", CultureCode = "vi-VN"},
 			};
+			supportedLanguages.OrderBy(l => l.Name);
 			return supportedLanguages;
 		}
 
