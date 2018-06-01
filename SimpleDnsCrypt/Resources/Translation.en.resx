@@ -522,4 +522,22 @@
   <data name="trayicon_exit" xml:space="preserve">
     <value>Exit</value>
   </data>
+  <data name="address_settings_listen_addresses" xml:space="preserve">
+    <value>Listen Addresses</value>
+  </data>
+  <data name="address_settings_manage_listen_addresses" xml:space="preserve">
+    <value>Manage Listen Addresses</value>
+  </data>
+  <data name="address_settings_description" xml:space="preserve">
+    <value>List of local addresses and ports to listen to. Can be IPv4 and/or IPv6.</value>
+  </data>
+  <data name="address_settings_add" xml:space="preserve">
+    <value>Add new listen address</value>
+  </data>
+  <data name="address_settings_remove" xml:space="preserve">
+    <value>Remove selected listen address</value>
+  </data>
+  <data name="address_settings_restore" xml:space="preserve">
+    <value>Restore default listen addresses</value>
+  </data>
 </root>

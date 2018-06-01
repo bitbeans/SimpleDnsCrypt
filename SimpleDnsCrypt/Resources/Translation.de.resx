@@ -516,4 +516,23 @@
   <data name="trayicon_exit" xml:space="preserve">
     <value>Beenden</value>
   </data>
+  <data name="address_settings_listen_addresses" xml:space="preserve">
+    <value>Adressen</value>
+  </data>
+  <data name="address_settings_manage_listen_addresses" xml:space="preserve">
+    <value>Adressen verwalten</value>
+  </data>
+  <data name="address_settings_description" xml:space="preserve">
+    <value>Liste der lokalen Adressen und Ports, auf welchen dnscrypt-proxy angesprochen werden kann. 
+Kann IPv4 und/oder IPv6 sein.</value>
+  </data>
+  <data name="address_settings_add" xml:space="preserve">
+    <value>Neue Adresse hinzufügen</value>
+  </data>
+  <data name="address_settings_remove" xml:space="preserve">
+    <value>Ausgewählte Adresse entfernen</value>
+  </data>
+  <data name="address_settings_restore" xml:space="preserve">
+    <value>Standard wiederherstellen</value>
+  </data>
 </root>

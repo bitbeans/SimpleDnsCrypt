@@ -499,15 +499,33 @@
     <value>Bu bilgisayarın başkaları için ağ geçidi aygıtı (örn. Akıllı telefonlar veya diğer bilgisayarlar) gibi davranmasını istiyorsanız,</value>
   </data>
   <data name="advanced_settings_fallback_resolver" xml:space="preserve">
-    <value>Fallback Resolver</value>
+    <value>Yedek Çözücü</value>
   </data>
   <data name="advanced_settings_fallback_resolver_content" xml:space="preserve">
-    <value>This is a normal, non-encrypted DNS resolver, that will be only used for one-shot queries when retrieving the initial resolvers list, and only if the system DNS configuration doesn&apos;t work. People in China may need to use 114.114.114.114:53 here.</value>
+    <value>Bu, normal, şifrelenmemiş bir DNS çözümleyicisidir, yalnızca ilk çözümleyici listesi alınırken tek adımlı sorgularda ve yalnızca sistem DNS yapılandırması çalışmadığında kullanılır. Çin&apos;deki insanların 114.114.114.114:53 burada kullanması gerekebilir.</value>
   </data>
   <data name="trayicon_tooltip" xml:space="preserve">
     <value>Simple DNSCrypt</value>
   </data>
   <data name="trayicon_exit" xml:space="preserve">
-    <value>Exit</value>
+    <value>Çıkış</value>
+  </data>
+  <data name="address_settings_listen_addresses" xml:space="preserve">
+    <value>Listen Addresses</value>
+  </data>
+  <data name="address_settings_manage_listen_addresses" xml:space="preserve">
+    <value>Manage Listen Addresses</value>
+  </data>
+  <data name="address_settings_description" xml:space="preserve">
+    <value>List of local addresses and ports to listen to. Can be IPv4 and/or IPv6.</value>
+  </data>
+  <data name="address_settings_add" xml:space="preserve">
+    <value>Add new listen address</value>
+  </data>
+  <data name="address_settings_remove" xml:space="preserve">
+    <value>Remove selected listen address</value>
+  </data>
+  <data name="address_settings_restore" xml:space="preserve">
+    <value>Restore default listen addresses</value>
   </data>
 </root>

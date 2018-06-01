@@ -507,15 +507,33 @@
     <value>Ако искате този компютър да действа като шлюз за други устройства (напр.: смартфони или други компютри)</value>
   </data>
   <data name="advanced_settings_fallback_resolver" xml:space="preserve">
-    <value>Fallback Resolver</value>
+    <value>Резервен сървър</value>
   </data>
   <data name="advanced_settings_fallback_resolver_content" xml:space="preserve">
-    <value>This is a normal, non-encrypted DNS resolver, that will be only used for one-shot queries when retrieving the initial resolvers list, and only if the system DNS configuration doesn&apos;t work. People in China may need to use 114.114.114.114:53 here.</value>
+    <value>Обикновен некриптиран DNS сървър, който ще се използва само за единични заявки при извличане на първоначалния списък със сървъри и само ако системната DNS конфигурация не работи. За хората в Китай може да е необходимо да използват 114.114.114.114:53</value>
   </data>
   <data name="trayicon_tooltip" xml:space="preserve">
     <value>Simple DNSCrypt</value>
   </data>
   <data name="trayicon_exit" xml:space="preserve">
-    <value>Exit</value>
+    <value>Изход</value>
+  </data>
+  <data name="address_settings_listen_addresses" xml:space="preserve">
+    <value>Listen Addresses</value>
+  </data>
+  <data name="address_settings_manage_listen_addresses" xml:space="preserve">
+    <value>Manage Listen Addresses</value>
+  </data>
+  <data name="address_settings_description" xml:space="preserve">
+    <value>List of local addresses and ports to listen to. Can be IPv4 and/or IPv6.</value>
+  </data>
+  <data name="address_settings_add" xml:space="preserve">
+    <value>Add new listen address</value>
+  </data>
+  <data name="address_settings_remove" xml:space="preserve">
+    <value>Remove selected listen address</value>
+  </data>
+  <data name="address_settings_restore" xml:space="preserve">
+    <value>Restore default listen addresses</value>
   </data>
 </root>

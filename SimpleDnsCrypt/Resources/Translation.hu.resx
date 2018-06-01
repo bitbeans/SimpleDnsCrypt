@@ -154,7 +154,7 @@
     <value>Csak a naplózás nélküli kiszolgálók</value>
   </data>
   <data name="default_settings_configuration_nolog_tooltip" xml:space="preserve">
-    <value>A kiszolgálónak nem kell bejelentkeznie a felhasználói lekérdezésekhez</value>
+    <value>A szervernek nem kell naplóznia a felhasználói lekérdezések</value>
   </data>
   <data name="default_settings_configuration_nofilter" xml:space="preserve">
     <value>Csak szűrő nélküli kiszolgálók</value>
@@ -257,7 +257,7 @@
     <value>Blokk kiválasztva</value>
   </data>
   <data name="domainblocklog" xml:space="preserve">
-    <value>Domain blokknapló</value>
+    <value>Domain blokk napló</value>
   </data>
   <data name="domainblocklog_waiting_for_data" xml:space="preserve">
     <value>várakozás a blokkolt DNS lekérdezésre</value>
@@ -317,7 +317,7 @@
     <value>nem</value>
   </data>
   <data name="cancel" xml:space="preserve">
-    <value>megszüntet</value>
+    <value>mégsem</value>
   </data>
   <data name="ok" xml:space="preserve">
     <value>OK</value>
@@ -347,7 +347,7 @@
     <value>DNSCrypt mód</value>
   </data>
   <data name="resolvers_dnscrypt_mode_description" xml:space="preserve">
-    <value>Automatikus módban minden rendelkezésre álló kiszolgálót használnak. A dnscrypt-proxy automatikusan kiválasztja a leggyorsabb felbontókat.</value>
+    <value>Automatikus módban, minden rendelkezésre álló kiszolgálót használatban van. A dnscrypt-proxy automatikusan kiválasztja a leggyorsabb felbontókat.</value>
   </data>
   <data name="resolvers_dnscrypt_automatic_mode" xml:space="preserve">
     <value>Automatikus mód</value>
@@ -362,19 +362,19 @@
     <value>Elérhető névkiszolgálók</value>
   </data>
   <data name="loader_redistributable_package_check" xml:space="preserve">
-    <value>A Microsoft Visual C ++ redisztribuáló Visual Studio 2017 verziójának ellenőrzése</value>
+    <value>A &quot;Microsoft Visual C++ Redistributable for Visual Studio 2017&quot; verziójának ellenőrzése</value>
   </data>
   <data name="loader_redistributable_package_already_installed" xml:space="preserve">
-    <value>A Visual Studio 2017 újratervezett Microsoft Visual C ++ verziója már telepítve van</value>
+    <value>A &quot;Microsoft Visual C++ Redistributable for Visual Studio 2017&quot; már telepítve van</value>
   </data>
   <data name="loader_redistributable_package_installing" xml:space="preserve">
-    <value>Telepítés: Microsoft Visual C ++ redisztribuálható a Visual Studio 2017-hez</value>
+    <value>A &quot;Microsoft Visual C++ Redistributable for Visual Studio 2017&quot; telepítése</value>
   </data>
   <data name="loader_redistributable_package_ready" xml:space="preserve">
-    <value>A Microsoft Visual C ++ újraelosztható a Visual Studio 2017-hez</value>
+    <value>A &quot;Microsoft Visual C++ Redistributable for Visual Studio 2017&quot; most telepítve van</value>
   </data>
   <data name="message_title_no_server_selected" xml:space="preserve">
-    <value>Nincs kiválasztott kiszolgáló</value>
+    <value>Nincs kiválasztott kiszolgáló szerver</value>
   </data>
   <data name="message_content_no_server_selected" xml:space="preserve">
     <value>Legalább egy kiszolgálót kell kiválasztani. Ellenkező esetben a dnscrypt-proxy a kiválasztott szűrőkhöz tartozó összes kiszolgálót használja.</value>
@@ -395,7 +395,7 @@
     <value>Eltávolítási hiba</value>
   </data>
   <data name="message_content_uninstallation_error" xml:space="preserve">
-    <value>Az eltávolítás nem hajtható végre. Próbáld meg manuálisan leállítani a szolgáltatást, és újra eltávolítani.</value>
+    <value>Az eltávolítás nem hajtható végre. Próbáld meg manuálisan leállítani a szolgáltatást és újra eltávolítani.</value>
   </data>
   <data name="open_log_directory" xml:space="preserve">
     <value>Naplókönyvtár megnyitása</value>
@@ -416,7 +416,7 @@
     <value>Azonnal válaszoljon az IPv6-hez kapcsolódó lekérdezésekre, üres válasz esetén</value>
   </data>
   <data name="advanced_settings_forcetcp" xml:space="preserve">
-    <value>TCP használata</value>
+    <value>TCP használata (kényszerítése)</value>
   </data>
   <data name="advanced_settings_forcetcp_content" xml:space="preserve">
     <value>Mindig használja a TCP-t, hogy csatlakozzon az upstream kiszolgálókhoz</value>
@@ -428,7 +428,7 @@
     <value>Új domain engedélyeztetési szabály hozzáadása</value>
   </data>
   <data name="message_content_new_whitelist_rule" xml:space="preserve">
-    <value>Példa: * .example.com, hirdetések *, * sex *, akkor is hozzáadhat vesszővel elválasztott szabályok listáját</value>
+    <value>Példa: * .example.com, hirdetések *, * sex *, hozzáadhat vesszővel elválasztott szabályok listáját</value>
   </data>
   <data name="message_title_new_blacklist_rule" xml:space="preserve">
     <value>Új domain feketelista-szabály hozzáadása</value>
@@ -437,13 +437,13 @@
     <value>Példa: * .example.com, hirdetések *, * sex *, akkor is hozzáadhat vesszõvel elválasztott szabályok listáját, egy fájlt, amely a file-val kezdődik: my-custom-rules.txt vagy egy távoli URL-t, amely http-val kezdődik : // vagy https: //.</value>
   </data>
   <data name="working_dialog_title" xml:space="preserve">
-    <value>Kemény munkát végeznek. . .</value>
+    <value>Listák összevonása ...</value>
   </data>
   <data name="button_select_path" xml:space="preserve">
     <value>Válasszon útvonalat</value>
   </data>
   <data name="button_blacklist_build" xml:space="preserve">
-    <value>Építsd a dnscrypt-proxy feketelistát</value>
+    <value>Dnscrypt-proxy feketelista készítése</value>
   </data>
   <data name="button_blacklist_import" xml:space="preserve">
     <value>Importálja a meglévő feketelista-szabályokat</value>
@@ -458,16 +458,16 @@
     <value>Új feketelista-szabály hozzáadása</value>
   </data>
   <data name="button_whitelist_import" xml:space="preserve">
-    <value>Importálhat engedélyezett engedélyezési listákat</value>
+    <value>Meglévő engedélyezési szabályok inportálása</value>
   </data>
   <data name="button_whitelist_export" xml:space="preserve">
-    <value>A tiltólistára vonatkozó szabályok exportálása</value>
+    <value>Engedélyezett szabályok exportálása</value>
   </data>
   <data name="button_whitelist_remove" xml:space="preserve">
-    <value>Távolítsa el a kiválasztott engedélyezési listát</value>
+    <value>Kiválasztott engedélyezési szabályok eltávolítása</value>
   </data>
   <data name="button_whitelist_add" xml:space="preserve">
-    <value>Adjon hozzá egy új engedélyezési listát</value>
+    <value>Új engedélyezési szabály hozzáadása</value>
   </data>
   <data name="whitelist_rules_header" xml:space="preserve">
     <value>Engedélyező szabályok</value>
@@ -500,18 +500,36 @@
     <value>Ha azt szeretné, hogy ez a számítógép mások számára átjáró eszközként működjön (pl. Okos telefonok vagy más számítógépek)</value>
   </data>
   <data name="advanced_settings_fallback_resolver" xml:space="preserve">
-    <value>tartalék névkiszolgátó</value>
+    <value>Tartalék névkiszolgátó</value>
   </data>
   <data name="advanced_settings_fallback_resolver_content" xml:space="preserve">
     <value>Ez egy normál, nem titkosított DNS-névkiszolgátó, amelyet csak az egyszeri lekérdezésekhez használnak a kezdeti felbontók listájának lekérésekor, és csak akkor, ha a rendszer DNS-konfigurációja nem működik. Kínában élő emberek számára szükség lehet a 114.114.114.114:53 használatára.</value>
     <comment>Fuzzy</comment>
   </data>
   <data name="trayicon_tooltip" xml:space="preserve">
-    <value>egyszerü DNSCrypt</value>
+    <value>Egyszerü DNSCrypt</value>
     <comment>Fuzzy</comment>
   </data>
   <data name="trayicon_exit" xml:space="preserve">
-    <value>kijárat</value>
+    <value>Kilépés</value>
     <comment>Fuzzy</comment>
+  </data>
+  <data name="address_settings_listen_addresses" xml:space="preserve">
+    <value>Listen Addresses</value>
+  </data>
+  <data name="address_settings_manage_listen_addresses" xml:space="preserve">
+    <value>Manage Listen Addresses</value>
+  </data>
+  <data name="address_settings_description" xml:space="preserve">
+    <value>List of local addresses and ports to listen to. Can be IPv4 and/or IPv6.</value>
+  </data>
+  <data name="address_settings_add" xml:space="preserve">
+    <value>Add new listen address</value>
+  </data>
+  <data name="address_settings_remove" xml:space="preserve">
+    <value>Remove selected listen address</value>
+  </data>
+  <data name="address_settings_restore" xml:space="preserve">
+    <value>Restore default listen addresses</value>
   </data>
 </root>

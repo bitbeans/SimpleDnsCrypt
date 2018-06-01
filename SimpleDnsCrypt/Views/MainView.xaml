@@ -524,6 +524,43 @@
                                                 <ColumnDefinition Width="*" />
                                             </Grid.ColumnDefinitions>
                                             <iconPacks:PackIconMaterial Grid.Column="0" Grid.Row="0" Height="20"
+                                                                        Width="20" Kind="Ethernet"
+                                                                        Opacity="0.7"
+                                                                        Foreground="#FF8ab329"
+                                                                        HorizontalAlignment="Left"
+                                                                        VerticalAlignment="Center" />
+                                            <TextBlock Grid.Column="1" Grid.Row="0"
+                                                       Text="{lex:Loc Key=address_settings_listen_addresses}"
+                                                       TextWrapping="Wrap" VerticalAlignment="Center"
+                                                       Foreground="#FF8ab329" FontSize="20"
+                                                       Opacity="0.7" Margin="5,0,0,3" FontWeight="Bold">
+                                            </TextBlock>
+                                        </Grid>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="550" />
+                                                <ColumnDefinition />
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="35" />
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Foreground="#FF575757" Grid.Row="0" Grid.Column="0"
+                                                       TextWrapping="Wrap"
+                                                       Text="{lex:Loc Key=address_settings_description}"
+                                                       VerticalAlignment="Bottom"
+                                                       HorizontalAlignment="Left" Margin="0,0,0,5">
+                                            </TextBlock>
+                                            <Button IsEnabled="{Binding IsWorkingOnService, Converter={StaticResource ReverseBoolToEnabledConverter}}" Width="Auto"
+                                                    Grid.Row="0" Grid.Column="1" Cursor="Hand" Content="{lex:Loc Key=address_settings_manage_listen_addresses}" x:Name="ListenAddresses" Margin="0,0,0,5"
+                                                    HorizontalAlignment="Right" Style="{DynamicResource AccentedSquareButtonStyle}" VerticalAlignment="Top"></Button>
+                                        </Grid>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <iconPacks:PackIconMaterial Grid.Column="0" Grid.Row="0" Height="20"
                                                                         Width="20" Kind="BookOpenPageVariant"
                                                                         Opacity="0.7"
                                                                         Foreground="#FF8ab329"
