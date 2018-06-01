@@ -914,6 +914,7 @@ namespace SimpleDnsCrypt.ViewModels
 				if (!string.IsNullOrEmpty(validatedFallbackResolver))
 				{
 					_fallbackResolver = validatedFallbackResolver;
+					DnscryptProxyConfiguration.fallback_resolver = _fallbackResolver;
 					_validationErrors.Remove("FallbackResolver");
 				}
 				else
