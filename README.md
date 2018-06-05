@@ -1,4 +1,4 @@
-[![license](https://img.shields.io/github/license/bitbeans/SimpleDnsCrypt.svg?style=flat-square)](https://github.com/bitbeans/SimpleDnsCrypt/blob/master/LICENSE.md) [![Build status](https://img.shields.io/appveyor/ci/bitbeans/simplednscrypt/master.svg?style=flat-square)](https://ci.appveyor.com/project/bitbeans/simplednscrypt/branch/master) [![Github All Releases](https://img.shields.io/github/release/bitbeans/SimpleDnsCrypt.svg?style=flat-square)](https://github.com/bitbeans/SimpleDnsCrypt/releases/latest) [![dnscrypt--proxy](https://img.shields.io/badge/dnscrypt--proxy-2.0.14-orange.svg?style=flat-square)](https://github.com/jedisct1/dnscrypt-proxy) [![Github All Releases](https://img.shields.io/github/downloads/bitbeans/SimpleDnsCrypt/total.svg?style=flat-square)](https://github.com/bitbeans/SimpleDnsCrypt/releases/latest) [![donate PayPal](https://img.shields.io/badge/donate-PayPal-green.svg?style=flat-square)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=c.hermann@bitbeans.de&item_name=Donation+to+the+Simple+DNSCrypt+project) [![opencollective](https://opencollective.com/simplednscrypt/tiers/backer/badge.svg?label=backers&color=brightgreen&style=flat-square)](https://opencollective.com/simplednscrypt)
+[![opencollective](https://opencollective.com/simplednscrypt/tiers/backer/badge.svg?label=backers&color=brightgreen&style=flat-square)](https://opencollective.com/simplednscrypt) [![license](https://img.shields.io/github/license/bitbeans/SimpleDnsCrypt.svg?style=flat-square)](https://github.com/bitbeans/SimpleDnsCrypt/blob/master/LICENSE.md) [![Build status](https://img.shields.io/appveyor/ci/bitbeans/simplednscrypt/master.svg?style=flat-square)](https://ci.appveyor.com/project/bitbeans/simplednscrypt/branch/master) [![Github All Releases](https://img.shields.io/github/release/bitbeans/SimpleDnsCrypt.svg?style=flat-square)](https://github.com/bitbeans/SimpleDnsCrypt/releases/latest) [![dnscrypt--proxy](https://img.shields.io/badge/dnscrypt--proxy-2.0.14-orange.svg?style=flat-square)](https://github.com/jedisct1/dnscrypt-proxy) [![Github All Releases](https://img.shields.io/github/downloads/bitbeans/SimpleDnsCrypt/total.svg?style=flat-square)](https://github.com/bitbeans/SimpleDnsCrypt/releases/latest) [![donate PayPal](https://img.shields.io/badge/donate-PayPal-green.svg?style=flat-square)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=c.hermann@bitbeans.de&item_name=Donation+to+the+Simple+DNSCrypt+project) 
 
 # ![Simple DNSCrypt](https://raw.githubusercontent.com/bitbeans/SimpleDnsCrypt/master/img/icons/256x256.png)
 
@@ -76,7 +76,7 @@ If you can add or correct a language, feel free to do so:
 
 ## Built With
 
-* [Visual Studio 2017 (15.5.x)](https://www.visualstudio.com/downloads/)
+* [Visual Studio 2017 (15.7.x)](https://www.visualstudio.com/downloads/)
 * [.NET Framework 4.6.x](https://www.microsoft.com/net/download/windows)
 * [ReSharper](https://www.jetbrains.com/resharper/) 
 * [Advanced Installer](https://www.advancedinstaller.com/)
@@ -87,6 +87,12 @@ If you can add or correct a language, feel free to do so:
 
 See also the list of [Contributors.md](Contributors.md) who participated in this project. 
 If you are a translator, feel free to update this file.
+
+## Backers
+
+Thank you to all our backers! :heart: [[Become a backer](https://opencollective.com/simplednscrypt#backer)]
+
+<a href="https://opencollective.com/simplednscrypt#backers" target="_blank"><img src="https://opencollective.com/simplednscrypt/backers.svg?width=890"></a>
 
 ## License
 
