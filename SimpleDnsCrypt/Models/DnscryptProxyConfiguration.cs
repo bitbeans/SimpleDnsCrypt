@@ -42,6 +42,7 @@ namespace SimpleDnsCrypt.Models
 		private string _fallback_resolver;
 		private bool _ignore_system_dns;
 		private Dictionary<string, Static> _static;
+		private string _proxy;
 
 		[TomlIgnore]
 		public new bool IsNotifying
@@ -195,6 +196,21 @@ namespace SimpleDnsCrypt.Models
 			{
 				_force_tcp = value;
 				NotifyOfPropertyChange(() => force_tcp);
+			}
+		}
+
+		/// <summary>
+		/// HTTP / SOCKS proxy
+		/// Set this ("socks5://127.0.0.1:9050") to route all TCP connections to a local Tor node
+		/// Tor doesn't support UDP, so set `force_tcp` to `true` as well
+		/// </summary>
+		public string proxy
+		{
+			get => _proxy;
+			set
+			{
+				_proxy = value;
+				NotifyOfPropertyChange(() => proxy);
 			}
 		}
 
