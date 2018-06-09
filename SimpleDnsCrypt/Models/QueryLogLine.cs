@@ -13,12 +13,26 @@ namespace SimpleDnsCrypt.Models
 		}
 	}
 
+	public enum QueryLogReturnCode
+	{
+		PASS,
+		FORWARD,
+		DROP,
+		REJECT,
+	    SYNTH,
+	    PARSE_ERROR,
+		NXDOMAIN,
+		RESPONSE_ERROR,
+		SERVER_ERROR
+	}
+
 	public class QueryLogLine : LogLine
 	{
 		public DateTime Date { get; set; }
 		public string Address { get; set; }
 		public string Remote { get; set; }
 		public QueryLogLineType Type { get; set; }
+		public QueryLogReturnCode ReturnCode { get; set; }
 
 		public QueryLogLine(string line)
 		{
@@ -28,7 +42,7 @@ namespace SimpleDnsCrypt.Models
 				//time:1516734518	host:::1	message:stackoverflow.com	type:A
 				var stringSeparators = new[] { "\t" };
 				var parts = line.Split(stringSeparators, StringSplitOptions.RemoveEmptyEntries);
-				if (parts.Length != 4) return;
+				if (parts.Length != 5) return;
 				if (parts[0].StartsWith("time:"))
 				{
 					Date = UnixTimeStampToDateTime(Convert.ToDouble(parts[0].Split(new[] { ":" }, StringSplitOptions.RemoveEmptyEntries)[1]));
@@ -47,6 +61,14 @@ namespace SimpleDnsCrypt.Models
 						out QueryLogLineType queryLogLineType))
 					{
 						Type = queryLogLineType;
+					}
+				}
+				if (parts[4].StartsWith("return:"))
+				{
+					if (Enum.TryParse(parts[4].Split(new[] { ":" }, StringSplitOptions.RemoveEmptyEntries)[1].Trim(),
+						out QueryLogReturnCode queryLogReturnCode))
+					{
+						ReturnCode = queryLogReturnCode;
 					}
 				}
 				else

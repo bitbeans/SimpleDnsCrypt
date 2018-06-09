@@ -147,6 +147,7 @@
     <Compile Include="Controls\BaseMetroDialog.xaml.cs">
       <DependentUpon>BaseMetroDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\LoggingListView.cs" />
     <Compile Include="Converters\BoolToForegroundConverter.cs" />
     <Compile Include="Converters\BoolToTextConverter.cs" />
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />

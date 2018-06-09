@@ -6,6 +6,7 @@
              xmlns:lex="http://wpflocalizeextension.codeplex.com"
              xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
              xmlns:converters="clr-namespace:SimpleDnsCrypt.Converters"
+             xmlns:customControls="clr-namespace:SimpleDnsCrypt.Controls"
              lex:LocalizeDictionary.DesignCulture="en"
              lex:LocalizeDictionary.OutputMissingKeys="False"
              lex:ResxLocalizationProvider.DefaultAssembly="SimpleDnsCrypt"
@@ -894,8 +895,8 @@
                                             </controls:ToggleSwitchButton>
                                         </Grid>
                                         <Grid Grid.Row="1">
-                                            <ListView SelectedItem="{Binding SelectedQueryLogLine}"
-                                                      BorderBrush="#198AB328"
+                                            <customControls:LoggingListView SelectedItem="{Binding SelectedQueryLogLine}"
+                                                      BorderBrush="#198AB328" AutoScroll="True"
                                                       VerticalContentAlignment="Stretch"
                                                       ScrollViewer.CanContentScroll="True"
                                                       ScrollViewer.VerticalScrollBarVisibility="Visible"
@@ -903,17 +904,18 @@
                                                       ItemsSource="{Binding QueryLogLines, Mode=OneWay}" Margin="10"
                                                       Background="#198AB328"
                                                       VirtualizingStackPanel.VirtualizationMode="Recycling">
-                                                <ListView.ItemContainerStyle>
+                                                <customControls:LoggingListView.ItemContainerStyle>
                                                     <Style TargetType="{x:Type ListViewItem}">
                                                         <Setter Property="Background" Value="#198AB328" />
                                                     </Style>
-                                                </ListView.ItemContainerStyle>
-                                                <ListView.ItemTemplate>
+                                                </customControls:LoggingListView.ItemContainerStyle>
+                                                <customControls:LoggingListView.ItemTemplate>
                                                     <DataTemplate>
                                                         <Grid Margin="0,2">
                                                             <Grid.ColumnDefinitions>
                                                                 <ColumnDefinition Width="130" />
                                                                 <ColumnDefinition Width="40" />
+                                                                <ColumnDefinition Width="70" />
                                                                 <ColumnDefinition Width="80" />
                                                                 <ColumnDefinition Width="*" />
                                                             </Grid.ColumnDefinitions>
@@ -922,14 +924,16 @@
                                                                        Foreground="#FF575757" />
                                                             <TextBlock Grid.Column="1" Text="{Binding Type}"
                                                                        Foreground="{Binding Type, Converter={StaticResource QueryLogTypeToColorConverter}}" />
-                                                            <TextBlock Grid.Column="2" Text="{Binding Address}"
+                                                            <TextBlock Grid.Column="2" Text="{Binding ReturnCode}"
                                                                        Foreground="#FF575757" />
-                                                            <TextBlock Grid.Column="3" Text="{Binding Remote}"
+                                                            <TextBlock Grid.Column="3" Text="{Binding Address}"
+                                                                       Foreground="#FF575757" />
+                                                            <TextBlock Grid.Column="4" Text="{Binding Remote}"
                                                                        Foreground="#FF575757" />
                                                         </Grid>
                                                     </DataTemplate>
-                                                </ListView.ItemTemplate>
-                                            </ListView>
+                                                </customControls:LoggingListView.ItemTemplate>
+                                            </customControls:LoggingListView>
 
                                             <StackPanel Orientation="Vertical" HorizontalAlignment="Center"
                                                         VerticalAlignment="Center">
