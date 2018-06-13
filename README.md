@@ -1,4 +1,4 @@
-[![opencollective](https://opencollective.com/simplednscrypt/tiers/backer/badge.svg?label=backers&color=brightgreen&style=flat-square)](https://opencollective.com/simplednscrypt) [![license](https://img.shields.io/github/license/bitbeans/SimpleDnsCrypt.svg?style=flat-square)](https://github.com/bitbeans/SimpleDnsCrypt/blob/master/LICENSE.md) [![Build status](https://img.shields.io/appveyor/ci/bitbeans/simplednscrypt/master.svg?style=flat-square)](https://ci.appveyor.com/project/bitbeans/simplednscrypt/branch/master) [![Github All Releases](https://img.shields.io/github/release/bitbeans/SimpleDnsCrypt.svg?style=flat-square)](https://github.com/bitbeans/SimpleDnsCrypt/releases/latest) [![dnscrypt--proxy](https://img.shields.io/badge/dnscrypt--proxy-2.0.14-orange.svg?style=flat-square)](https://github.com/jedisct1/dnscrypt-proxy) [![Github All Releases](https://img.shields.io/github/downloads/bitbeans/SimpleDnsCrypt/total.svg?style=flat-square)](https://github.com/bitbeans/SimpleDnsCrypt/releases/latest) [![donate PayPal](https://img.shields.io/badge/donate-PayPal-green.svg?style=flat-square)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=c.hermann@bitbeans.de&item_name=Donation+to+the+Simple+DNSCrypt+project) 
+[![Backers on Open Collective](https://opencollective.com/SimpleDnsCrypt/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/SimpleDnsCrypt/sponsors/badge.svg)](#sponsors) [![license](https://img.shields.io/github/license/bitbeans/SimpleDnsCrypt.svg?style=flat-square)](https://github.com/bitbeans/SimpleDnsCrypt/blob/master/LICENSE.md) [![Build status](https://img.shields.io/appveyor/ci/bitbeans/simplednscrypt/master.svg?style=flat-square)](https://ci.appveyor.com/project/bitbeans/simplednscrypt/branch/master) [![Github All Releases](https://img.shields.io/github/release/bitbeans/SimpleDnsCrypt.svg?style=flat-square)](https://github.com/bitbeans/SimpleDnsCrypt/releases/latest) [![dnscrypt--proxy](https://img.shields.io/badge/dnscrypt--proxy-2.0.14-orange.svg?style=flat-square)](https://github.com/jedisct1/dnscrypt-proxy) [![Github All Releases](https://img.shields.io/github/downloads/bitbeans/SimpleDnsCrypt/total.svg?style=flat-square)](https://github.com/bitbeans/SimpleDnsCrypt/releases/latest) [![donate PayPal](https://img.shields.io/badge/donate-PayPal-green.svg?style=flat-square)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=c.hermann@bitbeans.de&item_name=Donation+to+the+Simple+DNSCrypt+project) 
 
 # ![Simple DNSCrypt](https://raw.githubusercontent.com/bitbeans/SimpleDnsCrypt/master/img/icons/256x256.png)
 
@@ -94,6 +94,10 @@ Thank you to all our backers! :heart: [[Become a backer](https://opencollective.
 
 <a href="https://opencollective.com/simplednscrypt#backers" target="_blank"><img src="https://opencollective.com/simplednscrypt/backers.svg?width=890"></a>
 
+
+
+
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
@@ -125,3 +129,31 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * all users, translators and contributors
 * [ReSharper](https://www.jetbrains.com/resharper/) for providing a free open source license
 * [POEditor](https://poeditor.com) for providing a free open source license
+
+### Contributors
+
+This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
+<a href="graphs/contributors"><img src="https://opencollective.com/SimpleDnsCrypt/contributors.svg?width=890&button=false" /></a>
+
+
+### Backers
+
+Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/SimpleDnsCrypt#backer)]
+
+<a href="https://opencollective.com/SimpleDnsCrypt#backers" target="_blank"><img src="https://opencollective.com/SimpleDnsCrypt/backers.svg?width=890"></a>
+
+
+### Sponsors
+
+Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/SimpleDnsCrypt#sponsor)]
+
+<a href="https://opencollective.com/SimpleDnsCrypt/sponsor/0/website" target="_blank"><img src="https://opencollective.com/SimpleDnsCrypt/sponsor/0/avatar.svg"></a>
+<a href="https://opencollective.com/SimpleDnsCrypt/sponsor/1/website" target="_blank"><img src="https://opencollective.com/SimpleDnsCrypt/sponsor/1/avatar.svg"></a>
+<a href="https://opencollective.com/SimpleDnsCrypt/sponsor/2/website" target="_blank"><img src="https://opencollective.com/SimpleDnsCrypt/sponsor/2/avatar.svg"></a>
+<a href="https://opencollective.com/SimpleDnsCrypt/sponsor/3/website" target="_blank"><img src="https://opencollective.com/SimpleDnsCrypt/sponsor/3/avatar.svg"></a>
+<a href="https://opencollective.com/SimpleDnsCrypt/sponsor/4/website" target="_blank"><img src="https://opencollective.com/SimpleDnsCrypt/sponsor/4/avatar.svg"></a>
+<a href="https://opencollective.com/SimpleDnsCrypt/sponsor/5/website" target="_blank"><img src="https://opencollective.com/SimpleDnsCrypt/sponsor/5/avatar.svg"></a>
+<a href="https://opencollective.com/SimpleDnsCrypt/sponsor/6/website" target="_blank"><img src="https://opencollective.com/SimpleDnsCrypt/sponsor/6/avatar.svg"></a>
+<a href="https://opencollective.com/SimpleDnsCrypt/sponsor/7/website" target="_blank"><img src="https://opencollective.com/SimpleDnsCrypt/sponsor/7/avatar.svg"></a>
+<a href="https://opencollective.com/SimpleDnsCrypt/sponsor/8/website" target="_blank"><img src="https://opencollective.com/SimpleDnsCrypt/sponsor/8/avatar.svg"></a>
+<a href="https://opencollective.com/SimpleDnsCrypt/sponsor/9/website" target="_blank"><img src="https://opencollective.com/SimpleDnsCrypt/sponsor/9/avatar.svg"></a>
