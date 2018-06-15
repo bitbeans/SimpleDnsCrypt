@@ -88,16 +88,6 @@ If you can add or correct a language, feel free to do so:
 See also the list of [Contributors.md](Contributors.md) who participated in this project. 
 If you are a translator, feel free to update this file.
 
-## Backers
-
-Thank you to all our backers! :heart: [[Become a backer](https://opencollective.com/simplednscrypt#backer)]
-
-<a href="https://opencollective.com/simplednscrypt#backers" target="_blank"><img src="https://opencollective.com/simplednscrypt/backers.svg?width=890"></a>
-
-
-
-
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
