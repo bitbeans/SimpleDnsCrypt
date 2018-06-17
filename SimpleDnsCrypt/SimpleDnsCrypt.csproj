@@ -436,6 +436,10 @@
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Translation.sv.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Translation.resx</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\app.manifest" />
     <None Include="dnscrypt-proxy\dnscrypt-proxy.toml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -128,7 +128,6 @@
   </data>
   <data name="default_settings_service" xml:space="preserve">
     <value>DNSCrypt 服务</value>
-    <comment>Fuzzy</comment>
   </data>
   <data name="default_settings_configuration" xml:space="preserve">
     <value>设置</value>
@@ -344,7 +343,7 @@
     <value>DNS 缓存</value>
   </data>
   <data name="resolvers_dnscrypt_mode_header" xml:space="preserve">
-    <value>DNSCrypt 模式</value>
+    <value>工作模式</value>
   </data>
   <data name="resolvers_dnscrypt_mode_description" xml:space="preserve">
     <value>在自动模式下，所有可用服务器都会被使用。dnscrypt-proxy 会自动选择响应最快的服务器</value>
@@ -512,21 +511,21 @@
     <value>退出</value>
   </data>
   <data name="address_settings_listen_addresses" xml:space="preserve">
-    <value>Listen Addresses</value>
+    <value>监听地址</value>
   </data>
   <data name="address_settings_manage_listen_addresses" xml:space="preserve">
-    <value>Manage Listen Addresses</value>
+    <value>设置监听地址</value>
   </data>
   <data name="address_settings_description" xml:space="preserve">
-    <value>List of local addresses and ports to listen to. Can be IPv4 and/or IPv6.</value>
+    <value>监听地址/端口列表（包括IPv4和IPv6）</value>
   </data>
   <data name="address_settings_add" xml:space="preserve">
-    <value>Add new listen address</value>
+    <value>添加新的监听地址</value>
   </data>
   <data name="address_settings_remove" xml:space="preserve">
-    <value>Remove selected listen address</value>
+    <value>移除选定的监听地址</value>
   </data>
   <data name="address_settings_restore" xml:space="preserve">
-    <value>Restore default listen addresses</value>
+    <value>重置监听地址</value>
   </data>
 </root>

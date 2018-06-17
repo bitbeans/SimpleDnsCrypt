@@ -118,425 +118,414 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="default_settings_network_cards" xml:space="preserve">
-    <value>네트워크 카드 목록</value>
+    <value>Nätverkskort</value>
   </data>
   <data name="default_settings_show_hidden_cards" xml:space="preserve">
-    <value>숨겨진 카드 표시</value>
+    <value>Visa dolda kort</value>
   </data>
   <data name="default_settings_service_header" xml:space="preserve">
-    <value>서비스</value>
+    <value>Tjänst</value>
   </data>
   <data name="default_settings_service" xml:space="preserve">
-    <value>DNSCrypt 서비스</value>
+    <value>DNSCrypt Tjänst</value>
   </data>
   <data name="default_settings_configuration" xml:space="preserve">
-    <value>환경설정</value>
+    <value>Konfiguration</value>
   </data>
   <data name="default_settings_configuration_ipv4" xml:space="preserve">
-    <value>IPv4 서버 사용</value>
+    <value>Använd IPv4 Server</value>
   </data>
   <data name="default_settings_configuration_ipv4_tooltip" xml:space="preserve">
-    <value>IPv4 통신이 가능한 서버를 사용합니다.</value>
+    <value>Använd servrar som kan nås via IPv4</value>
   </data>
   <data name="default_settings_configuration_ipv6" xml:space="preserve">
-    <value>IPv6 서버 사용</value>
+    <value>Använd IPv6 Server</value>
   </data>
   <data name="default_settings_configuration_ipv6_tooltip" xml:space="preserve">
-    <value>IPv6 통신이 가능한 서버를 사용합니다. (IPv6을 사용하지 않는다면 꺼주세요.)</value>
+    <value>Använd servrar som kan nås via IPv6 (aktivera inte om du inte har IPv6-anslutning)</value>
   </data>
   <data name="default_settings_configuration_dnssec" xml:space="preserve">
-    <value>DNSSEC 지원 서버만 사용</value>
+    <value>Endast servrar som stödjer DNSSEC</value>
   </data>
   <data name="default_settings_configuration_dnssec_tooltip" xml:space="preserve">
-    <value>DNS 보안 확장 기능을 지원하는 서버만 사용합니다.</value>
+    <value>Server måste stödja DNS-säkerhetsförstärkningar</value>
   </data>
   <data name="default_settings_configuration_nolog" xml:space="preserve">
-    <value>로그를 기록하지 않는 서버만 사용</value>
+    <value>Endast servrar utan loggning</value>
   </data>
   <data name="default_settings_configuration_nolog_tooltip" xml:space="preserve">
-    <value>사용자의 기록을 저장하지 않는 서버만 사용합니다.</value>
+    <value>Servern får inte logga användarförfrågningar</value>
   </data>
   <data name="default_settings_configuration_nofilter" xml:space="preserve">
-    <value>특정 사이트를 차단하지 않는 서버만 사용</value>
+    <value>Endast servrar utan filter</value>
   </data>
   <data name="default_settings_configuration_nofilter_tooltip" xml:space="preserve">
-    <value>광고나 성인물 등을 이유로 특정 사이트를 차단하지 않는 서버만 사용합니다.</value>
+    <value>Servern får inte tillämpa sin egen svarta lista (för föräldrakontroll, annonsblockering...)</value>
   </data>
   <data name="tabitem_mainmenu" xml:space="preserve">
-    <value>메인 메뉴</value>
+    <value>Huvudmeny</value>
   </data>
   <data name="loader_administrative_rights_available" xml:space="preserve">
-    <value>관리자 권한 사용 가능</value>
+    <value>Administrativa rättigheter är tillgängliga</value>
   </data>
   <data name="loader_administrative_rights_missing" xml:space="preserve">
-    <value>관리자 권한이 없습니다!</value>
+    <value>Saknade administrativa rättigheter!</value>
   </data>
   <data name="loader_checking_version" xml:space="preserve">
-    <value>새 버전을 확인하는 중...</value>
+    <value>Kontrollera efter ny version. . .</value>
   </data>
   <data name="loader_new_version_found" xml:space="preserve">
-    <value>새 버전이 있습니다: {0}</value>
+    <value>En nyare version hittades: {0}</value>
   </data>
   <data name="loader_starting_update" xml:space="preserve">
-    <value>업데이트를 시작하는 중...</value>
+    <value>Startar uppdatering. . .</value>
   </data>
   <data name="loader_update_failed" xml:space="preserve">
-    <value>업데이트 실패, 건너뛰는 중...</value>
+    <value>Uppdateringen misslyckades, fortsätt. . .</value>
   </data>
   <data name="loader_latest_version" xml:space="preserve">
-    <value>최신 버전을 사용 중입니다.</value>
+    <value>Du använder den senaste versionen</value>
   </data>
   <data name="loader_unsigned" xml:space="preserve">
-    <value>서명되지 않음</value>
+    <value>osignerad</value>
   </data>
   <data name="loader_missing" xml:space="preserve">
-    <value>찾을 수 없음</value>
+    <value>saknas</value>
   </data>
   <data name="loader_downloading_signature" xml:space="preserve">
-    <value>서명 파일 다운로드 중...</value>
+    <value>Nedladdning av signatur. . .</value>
   </data>
   <data name="loader_downloading_installer" xml:space="preserve">
-    <value>설치 파일 다운로드 중...</value>
+    <value>Hämtar installationsprogrammet. . .</value>
   </data>
   <data name="loader_starting" xml:space="preserve">
-    <value>시작 중...</value>
+    <value>Startar. . .</value>
   </data>
   <data name="loader_validate_folder" xml:space="preserve">
-    <value>{0} 폴더 확인 중</value>
+    <value>Validerar {0} -mappen</value>
   </data>
   <data name="loader_loading_network_cards" xml:space="preserve">
-    <value>네트워크 카드를 불러오는 중...</value>
+    <value>Laddar nätverkskort. . .</value>
   </data>
   <data name="loader_failed_loading" xml:space="preserve">
-    <value>{0}를 불러올 수 없습니다</value>
+    <value>Det gick inte att ladda {0}</value>
   </data>
   <data name="loader_successfully_loaded" xml:space="preserve">
-    <value>{0}을 성공적으로 불러왔습니다.</value>
+    <value>{0} framgångsrikt laddad</value>
   </data>
   <data name="loader_loading" xml:space="preserve">
-    <value>{0} 볼러오는 중...</value>
+    <value>Laddar {0}. . .</value>
   </data>
   <data name="loader_missing_files" xml:space="preserve">
-    <value>{0} 폴더에 누락된 파일이 있습니다:\n{1}\n\n{2} 설치를 고려해보세요.</value>
+    <value>Saknade filer i mappen {0}: \ n {1} \ n \ nÖverväg en ny installation av {2}</value>
   </data>
   <data name="loader_all_files_available" xml:space="preserve">
-    <value>필요한 파일들이 모두 있습니다</value>
+    <value>Alla nödvändiga filer har hittats</value>
   </data>
   <data name="about" xml:space="preserve">
-    <value>자세히</value>
+    <value>Om</value>
   </data>
   <data name="about_software" xml:space="preserve">
-    <value>소프트웨어</value>
+    <value>Programvara</value>
   </data>
   <data name="about_license" xml:space="preserve">
-    <value>라이선스</value>
+    <value>Licens</value>
   </data>
   <data name="about_view_on_github" xml:space="preserve">
-    <value>깃허브에서 보기</value>
+    <value>Visa på GitHub</value>
   </data>
   <data name="tabitem_querylog" xml:space="preserve">
-    <value>쿼리 기록</value>
+    <value>Förfrågningslogg</value>
   </data>
   <data name="querylog" xml:space="preserve">
-    <value>쿼리 기록</value>
+    <value>Förfrågningslogg</value>
   </data>
   <data name="querylog_waiting_for_data" xml:space="preserve">
-    <value>DNS 쿼리 대기 중</value>
+    <value>väntar på DNS-förfrågningar</value>
   </data>
   <data name="querylog_entry_count" xml:space="preserve">
-    <value>개수:</value>
+    <value>Inlägg:</value>
   </data>
   <data name="querylog_source_file" xml:space="preserve">
-    <value>원본:</value>
-    <comment>Fuzzy</comment>
+    <value>Källa:</value>
   </data>
   <data name="querylog_button_clear" xml:space="preserve">
-    <value>목록 초기화</value>
+    <value>Rensa listan</value>
   </data>
   <data name="querylog_button_block" xml:space="preserve">
-    <value>선택 쿼리 차단</value>
+    <value>Blockera valda</value>
   </data>
   <data name="domainblocklog" xml:space="preserve">
-    <value>도메인 차단 기록</value>
+    <value>Domänblockeringslogg</value>
   </data>
   <data name="domainblocklog_waiting_for_data" xml:space="preserve">
-    <value>차단된 DNS 쿼리 대기 중</value>
+    <value>väntar på blockerade DNS-frågor</value>
   </data>
   <data name="domainblocklog_entry_count" xml:space="preserve">
-    <value>개수:</value>
+    <value>Inlägg:</value>
   </data>
   <data name="domainblocklog_source_file" xml:space="preserve">
-    <value>원본:</value>
-    <comment>Fuzzy</comment>
+    <value>Källa:</value>
   </data>
   <data name="domainblocklog_button_clear" xml:space="preserve">
-    <value>목록 초기화</value>
+    <value>Rensa lista</value>
   </data>
   <data name="tabitem_domainblocklog" xml:space="preserve">
-    <value>도메인 차단 기록</value>
+    <value>Domänblockeringslogg</value>
   </data>
   <data name="tabitem_addressblocklog" xml:space="preserve">
-    <value>주소 차단 기록</value>
+    <value>Adressblockeringslogg</value>
   </data>
   <data name="tabitem_domainblacklist" xml:space="preserve">
-    <value>도메인 차단 목록</value>
+    <value>Domänsvartlista</value>
   </data>
   <data name="tabitem_addressblacklist" xml:space="preserve">
-    <value>주소 차단 목록</value>
+    <value>Adresssvartlista</value>
   </data>
   <data name="settings" xml:space="preserve">
-    <value>설정</value>
+    <value>inställningar</value>
   </data>
   <data name="settings_domain_blacklist" xml:space="preserve">
-    <value>도메인 차단 목록 탭 표시</value>
+    <value>Visa fliken &quot;Domänsvartlista&quot;</value>
   </data>
   <data name="settings_address_blacklist" xml:space="preserve">
-    <value>주소 차단 목록 탭 표시</value>
+    <value>Visa fliken &quot;Adresssvartlista&quot;</value>
   </data>
   <data name="settings_domain_block" xml:space="preserve">
-    <value>도메인 차단 기록 탭 표시</value>
+    <value>Visa fliken &quot;Domänblockeringslogg&quot;</value>
   </data>
   <data name="settings_address_block" xml:space="preserve">
-    <value>주소 차단 기록 탭 표시</value>
+    <value>Visa fliken &quot;Adressblockeringslogg&quot;</value>
   </data>
   <data name="settings_query_log" xml:space="preserve">
-    <value>쿼리 기록 탭 표시</value>
+    <value>Visa fliken &quot;Förfrågningslogg&quot;</value>
   </data>
   <data name="tabitem_resolvers" xml:space="preserve">
-    <value>서버</value>
+    <value>upplösare</value>
   </data>
   <data name="tabitem_advanced_settings" xml:space="preserve">
-    <value>고급 설정</value>
+    <value>Avancerade inställningar</value>
   </data>
   <data name="settings_advanced_settings" xml:space="preserve">
-    <value>고급 설정 탭 표시</value>
+    <value>Visa fliken Avancerade inställningar</value>
   </data>
   <data name="yes" xml:space="preserve">
-    <value>예</value>
+    <value>ja</value>
   </data>
   <data name="no" xml:space="preserve">
-    <value>아니오</value>
+    <value>Nej</value>
   </data>
   <data name="cancel" xml:space="preserve">
-    <value>취소</value>
+    <value>avbryt</value>
   </data>
   <data name="ok" xml:space="preserve">
-    <value>확인</value>
+    <value>OK</value>
   </data>
   <data name="dialog_message_uninstall" xml:space="preserve">
-    <value>설치된 윈도우 서비스를 제거하시겠습니까?</value>
+    <value>Vill du ta bort den installerade Windows-tjänsten?</value>
   </data>
   <data name="dialog_uninstall_title" xml:space="preserve">
-    <value>서비스 제거중</value>
+    <value>Avinstallerar tjänsten</value>
   </data>
   <data name="advanced_settings_uninstall_title" xml:space="preserve">
-    <value>서비스 제거중</value>
+    <value>Avinstallerar tjänsten</value>
   </data>
   <data name="advanced_settings_uninstall_text" xml:space="preserve">
-    <value>설치된 윈도우 서비스 제거</value>
+    <value>Ta bort den installerade Windows-tjänsten</value>
   </data>
   <data name="advanced_settings_uninstall_button" xml:space="preserve">
-    <value>서비스 제거</value>
+    <value>Ta bort tjänsten</value>
   </data>
   <data name="default_settings_apply_settings" xml:space="preserve">
-    <value>설정 적용</value>
+    <value>Använd inställningar</value>
   </data>
   <data name="advanced_settings_dnscache" xml:space="preserve">
-    <value>DNS 캐시</value>
+    <value>DNS Cache</value>
   </data>
   <data name="resolvers_dnscrypt_mode_header" xml:space="preserve">
-    <value>DNSCrypt 모드</value>
+    <value>DNSCrypt-läge</value>
   </data>
   <data name="resolvers_dnscrypt_mode_description" xml:space="preserve">
-    <value>자동 모드에서는 가능한 모든 서버를 이용하며, dnscrypt-proxy가 그 중 제일 빠른 DNS를 찾아 사용합니다.</value>
+    <value>I automatiskt läge används alla tillgängliga servrar. dnscrypt-proxy väljer automatiskt de snabbaste upplösarna.</value>
   </data>
   <data name="resolvers_dnscrypt_automatic_mode" xml:space="preserve">
-    <value>자동 모드</value>
+    <value>Automatiskt läge</value>
   </data>
   <data name="disabled" xml:space="preserve">
-    <value>비활성화됨</value>
+    <value>Inaktiverad</value>
   </data>
   <data name="enabled" xml:space="preserve">
-    <value>활성화됨</value>
+    <value>Aktiverad</value>
   </data>
   <data name="resolvers_available_resolvers_header" xml:space="preserve">
-    <value>서버 목록</value>
+    <value>Tillgängliga upplösare</value>
   </data>
   <data name="loader_redistributable_package_check" xml:space="preserve">
-    <value>Visual Studio 2017용 Visual C++ 재배포 가능 패키지 설치 확인중</value>
+    <value>Kontrollerar Microsoft Visual C ++ Redistributable för Visual Studio 2017</value>
   </data>
   <data name="loader_redistributable_package_already_installed" xml:space="preserve">
-    <value>Visual Studio 2017용 Visual C++ 재배포 가능 패키지가 이미 설치되어있습니다</value>
+    <value>Microsoft Visual C ++ Redistributable for Visual Studio 2017 är redan installerad</value>
   </data>
   <data name="loader_redistributable_package_installing" xml:space="preserve">
-    <value>Visual Studio 2017용 Visual C++ 재배포 가능 패키지 설치 중</value>
+    <value>Installera: Microsoft Visual C + + Redistributable for Visual Studio 2017</value>
   </data>
   <data name="loader_redistributable_package_ready" xml:space="preserve">
-    <value>Visual Studio 2017용 Visual C++ 재배포 가능 패키지가 설치되었습니다</value>
+    <value>Microsoft Visual C ++ Redistributable för Visual Studio 2017 är nu installerad</value>
   </data>
   <data name="message_title_no_server_selected" xml:space="preserve">
-    <value>서버가 선택되지 않음</value>
+    <value>Ingen server vald</value>
   </data>
   <data name="message_content_no_server_selected" xml:space="preserve">
-    <value>최소 하나 이상의 서버를 사용해야 합니다. 그렇지 않으면, dnscrypt-proxy는 선택된 조건을 만족하는 모든 서버를 사용합니다.</value>
+    <value>Minst en server måste väljas. Annars använder dnscrypt-proxy alla servrar som motsvarar de valda filteren.</value>
   </data>
   <data name="message_title_service_not_running" xml:space="preserve">
-    <value>서비스가 실행되고 있지 않음</value>
+    <value>Tjänsten körs inte</value>
   </data>
   <data name="message_content_service_not_running" xml:space="preserve">
-    <value>먼저 DNSCrypt 서비스를 시작해야 합니다!</value>
+    <value>Du måste starta DnsCrypt-tjänsten först!</value>
   </data>
   <data name="message_title_uninstallation_successful" xml:space="preserve">
-    <value>제거 성공</value>
+    <value>Avinstallationen lyckades</value>
   </data>
   <data name="message_content_uninstallation_successful" xml:space="preserve">
-    <value>제거가 성공적으로 이루어졌습니다! DNS 요청들은 이제 암호화되지 않습니다.</value>
+    <value>Avinstallationen lyckades! DNS-förfrågningar är inte längre krypterade.</value>
   </data>
   <data name="message_title_uninstallation_error" xml:space="preserve">
-    <value>제거 오류</value>
+    <value>Avinstallationsfel</value>
   </data>
   <data name="message_content_uninstallation_error" xml:space="preserve">
-    <value>제거할 수 없습니다. 서비스를 수동으로 중지하고 다시 시도해주세요.</value>
+    <value>Avinstallation kunde inte utföras. Försök att stoppa tjänsten manuellt och avinstallera den igen.</value>
   </data>
   <data name="open_log_directory" xml:space="preserve">
-    <value>로그 디렉토리 열기</value>
+    <value>Öppna loggboken</value>
   </data>
   <data name="settings_update_auto" xml:space="preserve">
-    <value>시작 시 업데이트 확인</value>
+    <value>Kontrollera efter uppdateringar vid start</value>
   </data>
   <data name="settings_update_channel" xml:space="preserve">
-    <value>업데이트 채널:</value>
+    <value>Uppdateringskanal:</value>
   </data>
   <data name="advanced_settings_dnscache_content" xml:space="preserve">
-    <value>DNS 캐시를 사용하여 지연시간과 나가는 트래픽을 줄입니다.</value>
+    <value>DNS-cache för att minska fördröjning och utgående trafik</value>
   </data>
   <data name="advanced_settings_blockipv6" xml:space="preserve">
-    <value>IPv6 차단</value>
+    <value>Blockera IPv6</value>
   </data>
   <data name="advanced_settings_blockipv6_content" xml:space="preserve">
-    <value>즉각적으로 IPv6 관련 쿼리에 빈 응답으로 응답</value>
+    <value>Svara omedelbart på IPv6-relaterade frågor med ett tomt svar</value>
   </data>
   <data name="advanced_settings_forcetcp" xml:space="preserve">
-    <value>TCP 강제</value>
+    <value>Tvinga TCP</value>
   </data>
   <data name="advanced_settings_forcetcp_content" xml:space="preserve">
-    <value>업스트림 서버와 연결할 때 항상 TCP를 사용합니다.</value>
+    <value>Använd alltid TCP för att ansluta till uppströms servrar</value>
   </data>
   <data name="add" xml:space="preserve">
-    <value>추가</value>
+    <value>Lägg till</value>
   </data>
   <data name="message_title_new_whitelist_rule" xml:space="preserve">
-    <value>도메인 예외 규칙 추가</value>
+    <value>Lägg till en ny domän vitlista regel</value>
   </data>
   <data name="message_content_new_whitelist_rule" xml:space="preserve">
-    <value>예시: *.example.com, *sex*, ads, 쉼표로 분리된 규칙 목록</value>
+    <value>Exempel: * .exempel.com, annonser. *, * sex *, du kan också lägga till en kommaseparerad lista över regler</value>
   </data>
   <data name="message_title_new_blacklist_rule" xml:space="preserve">
-    <value>도메인 차단 규칙 추가</value>
+    <value>Lägg till en ny domän svartlistningsregel</value>
   </data>
   <data name="message_content_new_blacklist_rule" xml:space="preserve">
-    <value>예시: *.example.com, *sex*, ads, 쉼표로 분리된 규칙 목록, file:로 시작하는 파일, http://나 https://로 시작하는 외부 링크</value>
+    <value>Exempel: * .exempel.com, annonser. *, * sex *, du kan också lägga till en kommaseparerad lista över regler, en fil som börjar med filen: my-custom-rules.txt eller en avlägsen URL som börjar med http : // eller https: //.</value>
   </data>
   <data name="working_dialog_title" xml:space="preserve">
-    <value>목록 병합됨...</value>
+    <value>Listorna slås samman. . .</value>
   </data>
   <data name="button_select_path" xml:space="preserve">
-    <value>경로 선택</value>
+    <value>Välj sökväg</value>
   </data>
   <data name="button_blacklist_build" xml:space="preserve">
-    <value>dnscrypt-proxy 차단 목록 생성</value>
+    <value>Skapa dnscrypt-proxy-svartlistan</value>
   </data>
   <data name="button_blacklist_import" xml:space="preserve">
-    <value>차단 목록 가져오기</value>
+    <value>Importera befintliga svarta listregler</value>
   </data>
   <data name="button_blacklist_export" xml:space="preserve">
-    <value>차단 목록 내보내기</value>
+    <value>Exportera svartlisteregler</value>
   </data>
   <data name="button_blacklist_remove" xml:space="preserve">
-    <value>선택된 차단 규칙 제거</value>
+    <value>Ta bort vald svartlisteregel</value>
   </data>
   <data name="button_blacklist_add" xml:space="preserve">
-    <value>차단 규칙 추가</value>
+    <value>Lägg till en ny svartlisteregel</value>
   </data>
   <data name="button_whitelist_import" xml:space="preserve">
-    <value>예외 목록 가져오기</value>
+    <value>Importera befintliga vitlisetregler</value>
   </data>
   <data name="button_whitelist_export" xml:space="preserve">
-    <value>예외 목록 내보내기</value>
+    <value>Exportera vitlisteregler</value>
   </data>
   <data name="button_whitelist_remove" xml:space="preserve">
-    <value>선택된 예외 규칙 제거</value>
+    <value>Ta bort vald vitlisteregel</value>
   </data>
   <data name="button_whitelist_add" xml:space="preserve">
-    <value>예외 규칙 추가</value>
+    <value>Lägg till en ny vitlisteregel</value>
   </data>
   <data name="whitelist_rules_header" xml:space="preserve">
-    <value>예외 규칙</value>
+    <value>Vitlisteregler</value>
   </data>
   <data name="whitelist_rules_sub_header" xml:space="preserve">
-    <value>(차단 목록 생성 중에는 모두 무시됩니다.)</value>
+    <value>(alla poster ignoreras under skapande av svartlista)</value>
   </data>
   <data name="whitelist_rules_path" xml:space="preserve">
-    <value>예외 규칙:</value>
+    <value>Vitlisteregler:</value>
   </data>
   <data name="blacklist_rules_header" xml:space="preserve">
-    <value>차단 규칙</value>
+    <value>Svartlisteregler</value>
   </data>
   <data name="blacklist_rules_sub_header" xml:space="preserve">
-    <value>(모두 차단 목록에 병합됩니다.)</value>
+    <value>(alla poster slås samman till en svartlista)</value>
   </data>
   <data name="blacklist_rules_path" xml:space="preserve">
-    <value>차단 규칙:</value>
+    <value>Svartlisteregler:</value>
   </data>
   <data name="blacklist_path" xml:space="preserve">
-    <value>차단 목록:</value>
+    <value>Svartlista:</value>
   </data>
   <data name="blacklist_header" xml:space="preserve">
-    <value>도메인 차단 및 예외 목록</value>
+    <value>Domänsvartlista och -vitlista</value>
   </data>
   <data name="advanced_settings_globalresolver" xml:space="preserve">
-    <value>글로벌 리졸버</value>
-    <comment>Fuzzy</comment>
+    <value>Global upplösare</value>
   </data>
   <data name="advanced_settings_globalresolver_content" xml:space="preserve">
-    <value>이 컴퓨터를 다른 컴퓨터의 게이트웨이로 사용하려면 활성화하세요.</value>
+    <value>Om du vill att den här datorn ska fungera som gateway-enhet för andra (t.ex. smartphones eller andra datorer)</value>
   </data>
   <data name="advanced_settings_fallback_resolver" xml:space="preserve">
-    <value>예비 서버</value>
+    <value>Fallback upplösare</value>
   </data>
   <data name="advanced_settings_fallback_resolver_content" xml:space="preserve">
-    <value>정상적이고 암호화되지 않은 DNS 서버입니다. 설정해둔 DNS가 작동하지 않을 때, 혹은 서버 목록을 받아올 때 사용됩니다. 중국에 거주할 경우, 114.114.114.114:54로 설정해야 할 수도 있습니다.</value>
-    <comment>Fuzzy</comment>
+    <value>Det här är en vanlig, icke-krypterad DNS-resolver, som endast kommer att användas för enkelsökfrågor när du hämtar den ursprungliga upplösningslistan, och endast om systemets DNS-konfiguration inte fungerar. Människor i Kina kan behöva använda 114.114.114.114:53 här.</value>
   </data>
   <data name="trayicon_tooltip" xml:space="preserve">
-    <value>Simple DNSCrypt</value>
+    <value>Enkel DNSCrypt</value>
   </data>
   <data name="trayicon_exit" xml:space="preserve">
-    <value>종료</value>
+    <value>Avsluta</value>
   </data>
   <data name="address_settings_listen_addresses" xml:space="preserve">
-    <value>수신 주소</value>
-    <comment>Fuzzy</comment>
+    <value>Lyssna efter adresser</value>
   </data>
   <data name="address_settings_manage_listen_addresses" xml:space="preserve">
-    <value>수신 주소 관리</value>
-    <comment>Fuzzy</comment>
+    <value>Hantera lyssnade adresser</value>
   </data>
   <data name="address_settings_description" xml:space="preserve">
-    <value>수신을 대기할 로컬 주소와 포트의 목록입니다. IPv4와 IPv6을 사용할 수 있습니다.</value>
-    <comment>대체할만한 단어가 생각나지 않아 일시적으로 &quot;수신 주소&quot;로 번역을 하였으나, 원문의 의미가 제대로 살지 않을 듯 합니다. 더 나은 번역이 있다면 수정해주시길 바랍니다.
-Fuzzy</comment>
+    <value>Lista över lokala adresser och portar att lyssna på. Kan vara IPv4 och / eller IPv6.</value>
   </data>
   <data name="address_settings_add" xml:space="preserve">
-    <value>수신 주소 추가</value>
-    <comment>Fuzzy</comment>
+    <value>Lägg till ny lyssningsadress</value>
   </data>
   <data name="address_settings_remove" xml:space="preserve">
-    <value>선택한 수신 주소 제거</value>
-    <comment>Fuzzy</comment>
+    <value>Ta bort vald lyssningsadress</value>
   </data>
   <data name="address_settings_restore" xml:space="preserve">
-    <value>수신 주소를 기본으로 복구</value>
-    <comment>Fuzzy</comment>
+    <value>Återställ standard lyssningsadresser</value>
   </data>
 </root>
