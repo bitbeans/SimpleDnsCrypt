@@ -569,7 +569,6 @@ namespace SimpleDnsCrypt.ViewModels
 
 				if (DnscryptProxyConfiguration?.server_names?.Count > 0)
 				{
-					LoadResolvers();
 					IsDnsCryptAutomaticModeEnabled = false;
 					//check if all selected servers still match the selected filters
 					var selectedServerNames = DnscryptProxyConfiguration.server_names;
@@ -585,6 +584,7 @@ namespace SimpleDnsCrypt.ViewModels
 							s.IsInServerList = true;
 						}
 					}
+					
 					DnscryptProxyConfiguration.server_names = selectedServerNames;
 					if (DnscryptProxyConfiguration?.server_names?.Count == 0)
 					{
