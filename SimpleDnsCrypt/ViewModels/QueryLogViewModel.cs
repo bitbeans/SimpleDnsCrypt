@@ -268,6 +268,7 @@ namespace SimpleDnsCrypt.ViewModels
 						}
 						else
 						{
+							Log.Warn($"Missing {_queryLogFile}");
 							_isQueryLogLogging = false;
 						}
 					else
