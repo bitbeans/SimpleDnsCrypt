@@ -122,7 +122,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ### Contributors
 
-This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
+This project exists thanks to all the people who contribute. [[Contributors](Contributors.md)].
 <a href="graphs/contributors"><img src="https://opencollective.com/SimpleDnsCrypt/contributors.svg?width=890&button=false" /></a>
 
 
