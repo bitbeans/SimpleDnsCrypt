@@ -17,6 +17,7 @@ namespace SimpleDnsCrypt.ViewModels
 		private bool _isAddressBlacklistTabVisible;
 		private bool _isAddressBlockLogTabVisible;
 		private bool _isAutoUpdateEnabled;
+		private bool _isAutoUpdateSilentEnabled;
 
 		private UpdateType _selectedUpdateType;
 
@@ -37,6 +38,7 @@ namespace SimpleDnsCrypt.ViewModels
 			_isAddressBlacklistTabVisible = Properties.Settings.Default.IsAddressBlacklistTabVisible;
 			_isAddressBlockLogTabVisible = Properties.Settings.Default.IsAddressBlockLogTabVisible;
 			_isAutoUpdateEnabled = Properties.Settings.Default.AutoUpdate;
+			_isAutoUpdateSilentEnabled = Properties.Settings.Default.AutoUpdateSilent;
 			_selectedUpdateType = (UpdateType)Properties.Settings.Default.MinUpdateType;
 		}
 
@@ -138,6 +140,17 @@ namespace SimpleDnsCrypt.ViewModels
 				_isAutoUpdateEnabled = value;
 				Properties.Settings.Default.AutoUpdate = _isAutoUpdateEnabled;
 				NotifyOfPropertyChange(() => IsAutoUpdateEnabled);
+			}
+		}
+
+		public bool IsAutoUpdateSilentEnabled
+		{
+			get => _isAutoUpdateSilentEnabled;
+			set
+			{
+				_isAutoUpdateSilentEnabled = value;
+				Properties.Settings.Default.AutoUpdateSilent = _isAutoUpdateSilentEnabled;
+				NotifyOfPropertyChange(() => IsAutoUpdateSilentEnabled);
 			}
 		}
 	}
