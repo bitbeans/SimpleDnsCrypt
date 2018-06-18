@@ -133,19 +133,19 @@
     <value>Konfigurasi</value>
   </data>
   <data name="default_settings_configuration_ipv4" xml:space="preserve">
-    <value>Pilih pelayan IPv4</value>
+    <value>Gunakan pelayan IPv4</value>
   </data>
   <data name="default_settings_configuration_ipv4_tooltip" xml:space="preserve">
-    <value>Pilih pelayan yang dicapai melalui sambungan IPv4</value>
+    <value>Gunakan pelayan yang boleh dicapai melalui IPv4</value>
   </data>
   <data name="default_settings_configuration_ipv6" xml:space="preserve">
-    <value>Pilih pelayan IPv6</value>
+    <value>Gunakan pelayan IPv6</value>
   </data>
   <data name="default_settings_configuration_ipv6_tooltip" xml:space="preserve">
-    <value>Pilih pelayan yang dapat dicapai melalui IPv6 (jangan aktifkannya jika anda tiada sambungan IPv6)</value>
+    <value>Gunakan pelayan yang dapat dicapai melalui IPv6 (jangan aktifkannya jika anda tiada sambungan IPv6)</value>
   </data>
   <data name="default_settings_configuration_dnssec" xml:space="preserve">
-    <value>Hanya pelayan yang dilengkap dengan sokongan DNSSEC </value>
+    <value>Hanya pelayan dengan sokongan DNSSEC </value>
   </data>
   <data name="default_settings_configuration_dnssec_tooltip" xml:space="preserve">
     <value>Pelayan mesti ada sokongan pelanjutan sekuriti DNS</value>
@@ -157,7 +157,7 @@
     <value>Pelayan tidak sesekali menyimpan kueri pengguna</value>
   </data>
   <data name="default_settings_configuration_nofilter" xml:space="preserve">
-    <value>Hanya pelayan tanpa penapis</value>
+    <value>Hanya pelayan tanpa saringan</value>
   </data>
   <data name="default_settings_configuration_nofilter_tooltip" xml:space="preserve">
     <value>Pelayan tidak menguatkuasakan senarai hitam sendiri (untuk kawalan ibu-bapa, sekatan iklan...)</value>
@@ -172,7 +172,7 @@
     <value>Tiada hak pentadbiran!</value>
   </data>
   <data name="loader_checking_version" xml:space="preserve">
-    <value>Semakan untuk versi baru</value>
+    <value>Menyemak versi baru</value>
   </data>
   <data name="loader_new_version_found" xml:space="preserve">
     <value>Versi terbaru: {0} ditemui</value>
@@ -253,7 +253,7 @@
     <value>Bersihkan Senarai</value>
   </data>
   <data name="querylog_button_block" xml:space="preserve">
-    <value>Sekat yang dipilih</value>
+    <value>Sekat pilihan</value>
   </data>
   <data name="domainblocklog" xml:space="preserve">
     <value>Log Sekatan Nama Domain</value>
@@ -286,16 +286,16 @@
     <value>Tetapan</value>
   </data>
   <data name="settings_domain_blacklist" xml:space="preserve">
-    <value>Paparkan Tab &quot;Senarai Hitam Domain&quot;</value>
+    <value>Paparkan Tab &quot;Senarai Hitam Nama Domain&quot;</value>
   </data>
   <data name="settings_address_blacklist" xml:space="preserve">
     <value>Paparkan Tab &quot;Senarai Hitam Alamat&quot;</value>
   </data>
   <data name="settings_domain_block" xml:space="preserve">
-    <value>Paparkan Tab &quot;Senarai Hitam Domain&quot;</value>
+    <value>Paparkan Tab &quot;Log Nama Domain Tersekat&quot;</value>
   </data>
   <data name="settings_address_block" xml:space="preserve">
-    <value>Paparkan Tab &quot;Senarai Hitam Alamat&quot;</value>
+    <value>Paparkan Tab &quot;Log Sekatan Alamat&quot;</value>
   </data>
   <data name="settings_query_log" xml:space="preserve">
     <value>Lihat Tab &quot;Log Kueri&quot;</value>
@@ -448,7 +448,7 @@
     <value>Import peraturan senarai hitam yang sedia ada</value>
   </data>
   <data name="button_blacklist_export" xml:space="preserve">
-    <value>Eksport senarai hitam</value>
+    <value>Eksport peraturan senarai hitam</value>
   </data>
   <data name="button_blacklist_remove" xml:space="preserve">
     <value>Buang peraturan senarai hitam yang ditanda</value>
@@ -511,21 +511,21 @@
     <value>Keluar</value>
   </data>
   <data name="address_settings_listen_addresses" xml:space="preserve">
-    <value>Listen Addresses</value>
+    <value>Alamat sedang dengar</value>
   </data>
   <data name="address_settings_manage_listen_addresses" xml:space="preserve">
-    <value>Manage Listen Addresses</value>
+    <value>Uruskan alamat sedang dengar</value>
   </data>
   <data name="address_settings_description" xml:space="preserve">
-    <value>List of local addresses and ports to listen to. Can be IPv4 and/or IPv6.</value>
+    <value>Senarai alamat-alamat dan port-port tempatan untuk didengar. Boleh IPv4 dan / atau IPv6</value>
   </data>
   <data name="address_settings_add" xml:space="preserve">
-    <value>Add new listen address</value>
+    <value>Tambah alamat sedang dengar baru.</value>
   </data>
   <data name="address_settings_remove" xml:space="preserve">
-    <value>Remove selected listen address</value>
+    <value>Alih keluar alamat didengar</value>
   </data>
   <data name="address_settings_restore" xml:space="preserve">
-    <value>Restore default listen addresses</value>
+    <value>Pulihkan alamat didengar asal</value>
   </data>
 </root>
