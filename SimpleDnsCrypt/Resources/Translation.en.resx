@@ -142,7 +142,7 @@
     <value>Using IPv6 Server</value>
   </data>
   <data name="default_settings_configuration_ipv6_tooltip" xml:space="preserve">
-    <value>Use servers reachable over IPv6 (do not enable if you don&apos;t have IPv6 connectivity)</value>
+    <value>Use servers reachable over IPv6 (do not enable if you don't have IPv6 connectivity)</value>
   </data>
   <data name="default_settings_configuration_dnssec" xml:space="preserve">
     <value>Only servers with DNSSEC support</value>
@@ -296,19 +296,19 @@
     <value>Settings</value>
   </data>
   <data name="settings_domain_blacklist" xml:space="preserve">
-    <value>Show &quot;Domain Blacklist&quot; Tab</value>
+    <value>Show "Domain Blacklist" Tab</value>
   </data>
   <data name="settings_address_blacklist" xml:space="preserve">
-    <value>Show &quot;Address Blacklist&quot; Tab</value>
+    <value>Show "Address Blacklist" Tab</value>
   </data>
   <data name="settings_domain_block" xml:space="preserve">
-    <value>Show &quot;Domain Block Log&quot; Tab</value>
+    <value>Show "Domain Block Log" Tab</value>
   </data>
   <data name="settings_address_block" xml:space="preserve">
-    <value>Show &quot;Address Block Log&quot; Tab</value>
+    <value>Show "Address Block Log" Tab</value>
   </data>
   <data name="settings_query_log" xml:space="preserve">
-    <value>Show &quot;Query Log&quot; Tab</value>
+    <value>Show "Query Log" Tab</value>
   </data>
   <data name="tabitem_resolvers" xml:space="preserve">
     <value>Resolvers</value>
@@ -317,7 +317,7 @@
     <value>Advanced Settings</value>
   </data>
   <data name="settings_advanced_settings" xml:space="preserve">
-    <value>Show &quot;Advanced Settings&quot; Tab</value>
+    <value>Show "Advanced Settings" Tab</value>
   </data>
   <data name="yes" xml:space="preserve">
     <value>yes</value>
@@ -514,7 +514,7 @@
     <value>Fallback Resolver</value>
   </data>
   <data name="advanced_settings_fallback_resolver_content" xml:space="preserve">
-    <value>This is a normal, non-encrypted DNS resolver, that will be only used for one-shot queries when retrieving the initial resolvers list, and only if the system DNS configuration doesn&apos;t work. People in China may need to use 114.114.114.114:53 here.</value>
+    <value>This is a normal, non-encrypted DNS resolver, that will be only used for one-shot queries when retrieving the initial resolvers list, and only if the system DNS configuration doesn't work. People in China may need to use 114.114.114.114:53 here.</value>
   </data>
   <data name="trayicon_tooltip" xml:space="preserve">
     <value>Simple DNSCrypt</value>
@@ -539,5 +539,8 @@
   </data>
   <data name="address_settings_restore" xml:space="preserve">
     <value>Restore default listen addresses</value>
+  </data>
+  <data name="button_blacklist_clear" xml:space="preserve">
+    <value>Clears all blacklist rules</value>
   </data>
 </root>
