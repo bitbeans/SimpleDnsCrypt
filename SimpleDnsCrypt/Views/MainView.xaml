@@ -1760,8 +1760,31 @@
                                                             Content="{lex:Loc Key=button_blacklist_build}"
                                                             FontWeight="DemiBold" />
                                                     </Button.ToolTip>
-                                                </Button>
-                                            </StackPanel>
+                                            </Button>
+                                            <Button x:Name="ClearDomainBlackList" cal:Message.Attach="ClearDomainBlackList"
+                                                        Background="White"
+                                                        Width="30"
+                                                        Height="30"
+                                                        Cursor="Hand"
+                                                        HorizontalContentAlignment="Center"
+                                                        VerticalContentAlignment="Center"
+                                                        BorderBrush="{DynamicResource AccentColorBrush}"
+                                                        FocusVisualStyle="{DynamicResource MahApps.Metro.Styles.MetroCircleFocusVisual}"
+                                                        Style="{DynamicResource MahApps.Metro.Styles.MetroCircleButtonStyle}"
+                                                        Margin="0,7,0,0">
+                                                <iconPacks:PackIconMaterial
+                                                        Kind="NotificationClearAll"
+                                                        Width="15"
+                                                        Height="15"
+                                                        HorizontalContentAlignment="Center"
+                                                        VerticalContentAlignment="Center"
+                                                        Foreground="{DynamicResource AccentColorBrush}" />
+                                                <Button.ToolTip>
+                                                    <Label Content="{lex:Loc Key=button_blacklist_clear}"
+                                                               FontWeight="DemiBold" />
+                                                </Button.ToolTip>
+                                            </Button>
+                                        </StackPanel>
                                         </Grid>
 
                                         <Grid Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="2" Margin="0,5,0,0">
