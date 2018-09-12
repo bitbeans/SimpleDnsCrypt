@@ -118,64 +118,64 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="default_settings_network_cards" xml:space="preserve">
-    <value>Сетевые карты</value>
+    <value>Network Cards</value>
   </data>
   <data name="default_settings_show_hidden_cards" xml:space="preserve">
-    <value>Показать скрытые карты</value>
+    <value>Show hidden cards</value>
   </data>
   <data name="default_settings_service_header" xml:space="preserve">
-    <value>Служба</value>
+    <value>Service</value>
   </data>
   <data name="default_settings_service" xml:space="preserve">
-    <value>Служба DNSCrypt</value>
+    <value>DNSCrypt Service</value>
   </data>
   <data name="default_settings_configuration" xml:space="preserve">
-    <value>Конфигурация</value>
+    <value>Configuration</value>
   </data>
   <data name="default_settings_configuration_ipv4" xml:space="preserve">
-    <value>Использовать IPv4</value>
+    <value>Using IPv4 Server</value>
   </data>
   <data name="default_settings_configuration_ipv4_tooltip" xml:space="preserve">
-    <value>Использовать серверы, доступные по IPv4</value>
+    <value>Use servers reachable over IPv4</value>
   </data>
   <data name="default_settings_configuration_ipv6" xml:space="preserve">
-    <value>Использовать IPv6</value>
+    <value>Using IPv6 Server</value>
   </data>
   <data name="default_settings_configuration_ipv6_tooltip" xml:space="preserve">
-    <value>Использовать серверы, доступные по IPv6 (не включайте, если у вас нет IPv6)</value>
+    <value>Use servers reachable over IPv6 (do not enable if you don&apos;t have IPv6 connectivity)</value>
   </data>
   <data name="default_settings_configuration_dnssec" xml:space="preserve">
-    <value>Только серверы с DNSSEC</value>
+    <value>Only servers with DNSSEC support</value>
   </data>
   <data name="default_settings_configuration_dnssec_tooltip" xml:space="preserve">
-    <value>Серверы с поддержкой расширенной безопасности DNS</value>
+    <value>Server must support DNS security extensions</value>
   </data>
   <data name="default_settings_configuration_nolog" xml:space="preserve">
-    <value>Только серверы &quot;без логов&quot;</value>
+    <value>Only servers without logging</value>
   </data>
   <data name="default_settings_configuration_nolog_tooltip" xml:space="preserve">
-    <value>Серверы без регистрации запросов пользователя</value>
+    <value>Server must not log user queries</value>
   </data>
   <data name="default_settings_configuration_nofilter" xml:space="preserve">
-    <value>Только серверы без фильтрации</value>
+    <value>Only servers without filter</value>
   </data>
   <data name="default_settings_configuration_nofilter_tooltip" xml:space="preserve">
-    <value>Без применения сервером собственных черных списков (родительский контроль, блокировка рекламы...)</value>
+    <value>Server must not enforce its own blacklist (for parental control, ads blocking...)</value>
   </data>
   <data name="tabitem_mainmenu" xml:space="preserve">
-    <value>Меню</value>
+    <value>Main Menu</value>
   </data>
   <data name="loader_administrative_rights_available" xml:space="preserve">
-    <value>Административные права доступны</value>
+    <value>Administrative rights are available</value>
   </data>
   <data name="loader_administrative_rights_missing" xml:space="preserve">
-    <value>Административные права отсутствуют!</value>
+    <value>Missing administrative rights!</value>
   </data>
   <data name="loader_checking_version" xml:space="preserve">
-    <value>Проверка обновлений . . .</value>
+    <value>Checking for new version . . .</value>
   </data>
   <data name="loader_new_version_found" xml:space="preserve">
-    <value>Обнаружена новая версия: {0}</value>
+    <value>A newer version was found: {0}</value>
   </data>
   <data name="loader_starting_update" xml:space="preserve">
     <value>Запуск обновления . . .</value>

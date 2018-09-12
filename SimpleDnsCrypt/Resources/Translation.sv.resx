@@ -121,7 +121,7 @@
     <value>Nätverkskort</value>
   </data>
   <data name="default_settings_show_hidden_cards" xml:space="preserve">
-    <value>Visa dolda kort</value>
+    <value>Visa dolda nätverkskort</value>
   </data>
   <data name="default_settings_service_header" xml:space="preserve">
     <value>Tjänst</value>
@@ -172,7 +172,7 @@
     <value>Saknade administrativa rättigheter!</value>
   </data>
   <data name="loader_checking_version" xml:space="preserve">
-    <value>Kontrollera efter ny version. . .</value>
+    <value>Sök efter ny version. . .</value>
   </data>
   <data name="loader_new_version_found" xml:space="preserve">
     <value>En nyare version hittades: {0}</value>
@@ -301,7 +301,7 @@
     <value>Visa fliken &quot;Förfrågningslogg&quot;</value>
   </data>
   <data name="tabitem_resolvers" xml:space="preserve">
-    <value>upplösare</value>
+    <value>Upplösare</value>
   </data>
   <data name="tabitem_advanced_settings" xml:space="preserve">
     <value>Avancerade inställningar</value>
@@ -313,7 +313,7 @@
     <value>ja</value>
   </data>
   <data name="no" xml:space="preserve">
-    <value>Nej</value>
+    <value>nej</value>
   </data>
   <data name="cancel" xml:space="preserve">
     <value>avbryt</value>
@@ -418,7 +418,7 @@
     <value>Tvinga TCP</value>
   </data>
   <data name="advanced_settings_forcetcp_content" xml:space="preserve">
-    <value>Använd alltid TCP för att ansluta till uppströms servrar</value>
+    <value>Använd alltid TCP för att ansluta till uppströmsservrar</value>
   </data>
   <data name="add" xml:space="preserve">
     <value>Lägg till</value>
@@ -445,7 +445,7 @@
     <value>Skapa dnscrypt-proxy-svartlistan</value>
   </data>
   <data name="button_blacklist_import" xml:space="preserve">
-    <value>Importera befintliga svarta listregler</value>
+    <value>Importera befintliga svartlisteregler</value>
   </data>
   <data name="button_blacklist_export" xml:space="preserve">
     <value>Exportera svartlisteregler</value>
@@ -499,7 +499,7 @@
     <value>Om du vill att den här datorn ska fungera som gateway-enhet för andra (t.ex. smartphones eller andra datorer)</value>
   </data>
   <data name="advanced_settings_fallback_resolver" xml:space="preserve">
-    <value>Fallback upplösare</value>
+    <value>Reservupplösare</value>
   </data>
   <data name="advanced_settings_fallback_resolver_content" xml:space="preserve">
     <value>Det här är en vanlig, icke-krypterad DNS-resolver, som endast kommer att användas för enkelsökfrågor när du hämtar den ursprungliga upplösningslistan, och endast om systemets DNS-konfiguration inte fungerar. Människor i Kina kan behöva använda 114.114.114.114:53 här.</value>

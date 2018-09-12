@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="default_settings_network_cards" xml:space="preserve">
-    <value>Kad-kad antara muka rangkaian</value>
+    <value>Kad antara-muka rangkaian</value>
   </data>
   <data name="default_settings_show_hidden_cards" xml:space="preserve">
-    <value>Papar kad-kad tersembunyi </value>
+    <value>Papar kad-kad tersembunyi</value>
   </data>
   <data name="default_settings_service_header" xml:space="preserve">
     <value>Servis</value>
@@ -133,22 +133,22 @@
     <value>Konfigurasi</value>
   </data>
   <data name="default_settings_configuration_ipv4" xml:space="preserve">
-    <value>Gunakan pelayan IPv4</value>
+    <value>Menggunakan pelayan IPv4</value>
   </data>
   <data name="default_settings_configuration_ipv4_tooltip" xml:space="preserve">
     <value>Gunakan pelayan yang boleh dicapai melalui IPv4</value>
   </data>
   <data name="default_settings_configuration_ipv6" xml:space="preserve">
-    <value>Gunakan pelayan IPv6</value>
+    <value>Menggunakan pelayan IPv6</value>
   </data>
   <data name="default_settings_configuration_ipv6_tooltip" xml:space="preserve">
-    <value>Gunakan pelayan yang dapat dicapai melalui IPv6 (jangan aktifkannya jika anda tiada sambungan IPv6)</value>
+    <value>Gunakan pelayan yang boleh dicapai melalui IPv6 (jangan aktifkannya jika tiada sambungan IPv6)</value>
   </data>
   <data name="default_settings_configuration_dnssec" xml:space="preserve">
-    <value>Hanya pelayan dengan sokongan DNSSEC </value>
+    <value>Hanya pelayan dengan sokongan DNSSEC</value>
   </data>
   <data name="default_settings_configuration_dnssec_tooltip" xml:space="preserve">
-    <value>Pelayan mesti ada sokongan pelanjutan sekuriti DNS</value>
+    <value>Pelayan menyokong Sambungan Keselamatan Pelayan Nama Domain</value>
   </data>
   <data name="default_settings_configuration_nolog" xml:space="preserve">
     <value>Hanya pelayan tanpa pengelogan</value>
@@ -166,16 +166,16 @@
     <value>Menu Utama</value>
   </data>
   <data name="loader_administrative_rights_available" xml:space="preserve">
-    <value>Hak pentadbiran tersedia ada</value>
+    <value>Hak pentadbiran tersedia</value>
   </data>
   <data name="loader_administrative_rights_missing" xml:space="preserve">
     <value>Tiada hak pentadbiran!</value>
   </data>
   <data name="loader_checking_version" xml:space="preserve">
-    <value>Menyemak versi baru</value>
+    <value>Menyemak versi baru . . .</value>
   </data>
   <data name="loader_new_version_found" xml:space="preserve">
-    <value>Versi terbaru: {0} ditemui</value>
+    <value>Versi baru: {0} telah dijumpa</value>
   </data>
   <data name="loader_starting_update" xml:space="preserve">
     <value>Memulakan kemas kini . . .</value>
@@ -199,7 +199,7 @@
     <value>Memuat turun pemasang . . .</value>
   </data>
   <data name="loader_starting" xml:space="preserve">
-    <value>Sedang Bermula . . .</value>
+    <value>Sedang bermula . . .</value>
   </data>
   <data name="loader_validate_folder" xml:space="preserve">
     <value>Mengesahkan folder {0}</value>
@@ -208,7 +208,7 @@
     <value>Memuatkan kad antara muka rangkaian . . .</value>
   </data>
   <data name="loader_failed_loading" xml:space="preserve">
-    <value>{0} tidak dapat dimuatkan</value>
+    <value>Tidak berjaya memuatkan {0}</value>
   </data>
   <data name="loader_successfully_loaded" xml:space="preserve">
     <value>{0} berjaya dimuatkan</value>
@@ -217,10 +217,10 @@
     <value>Memuatkan {0} . . .</value>
   </data>
   <data name="loader_missing_files" xml:space="preserve">
-    <value>Kehilangan fail-fail daripada folder {0} :\n{1}\n\nPertimbangkan pemasangan baru {2}</value>
+    <value>Berlaku kehilangan fail daripada folder {0} :\n{1}\n\nPertimbangkan pemasangan baru {2}</value>
   </data>
   <data name="loader_all_files_available" xml:space="preserve">
-    <value>Kesemua fail-fail wajib telah dijumpai</value>
+    <value>Semua fail yang diperlukan telah dijumpai</value>
   </data>
   <data name="about" xml:space="preserve">
     <value>Perihal</value>
@@ -229,10 +229,10 @@
     <value>Perisian</value>
   </data>
   <data name="about_license" xml:space="preserve">
-    <value>Lesen</value>
+    <value>Lesen perisian</value>
   </data>
   <data name="about_view_on_github" xml:space="preserve">
-    <value>Lihat di GitHub</value>
+    <value>Lihat pada GitHub</value>
   </data>
   <data name="tabitem_querylog" xml:space="preserve">
     <value>Log Kueri</value>
@@ -241,7 +241,7 @@
     <value>Log Kueri</value>
   </data>
   <data name="querylog_waiting_for_data" xml:space="preserve">
-    <value>menantikan kueri DNS</value>
+    <value>menunngu kueri DNS</value>
   </data>
   <data name="querylog_entry_count" xml:space="preserve">
     <value>Catatan masuk:</value>
@@ -250,25 +250,25 @@
     <value>Sumber:</value>
   </data>
   <data name="querylog_button_clear" xml:space="preserve">
-    <value>Bersihkan Senarai</value>
+    <value>Kosongkan Senarai</value>
   </data>
   <data name="querylog_button_block" xml:space="preserve">
-    <value>Sekat pilihan</value>
+    <value>Sekat pilihan berikut</value>
   </data>
   <data name="domainblocklog" xml:space="preserve">
     <value>Log Sekatan Nama Domain</value>
   </data>
   <data name="domainblocklog_waiting_for_data" xml:space="preserve">
-    <value>menanti kueri-kueri DNS yang tersekat</value>
+    <value>menunggu kueri-kueri DNS yang tersekat</value>
   </data>
   <data name="domainblocklog_entry_count" xml:space="preserve">
-    <value>Entri-entri:</value>
+    <value>Senarai kemasukan:</value>
   </data>
   <data name="domainblocklog_source_file" xml:space="preserve">
     <value>Sumber:</value>
   </data>
   <data name="domainblocklog_button_clear" xml:space="preserve">
-    <value>Bersihkan Senarai</value>
+    <value>Kosongkan Senarai</value>
   </data>
   <data name="tabitem_domainblocklog" xml:space="preserve">
     <value>Log Nama Domain tersekat</value>
@@ -286,25 +286,25 @@
     <value>Tetapan</value>
   </data>
   <data name="settings_domain_blacklist" xml:space="preserve">
-    <value>Paparkan Tab &quot;Senarai Hitam Nama Domain&quot;</value>
+    <value>Tunjukkan Tab &quot;Senarai Hitam Nama Domain&quot;</value>
   </data>
   <data name="settings_address_blacklist" xml:space="preserve">
-    <value>Paparkan Tab &quot;Senarai Hitam Alamat&quot;</value>
+    <value>Tunjukkan Tab &quot;Senarai Hitam Alamat&quot;</value>
   </data>
   <data name="settings_domain_block" xml:space="preserve">
-    <value>Paparkan Tab &quot;Log Nama Domain Tersekat&quot;</value>
+    <value>Tunjukkan Tab &quot;Log Nama Domain Tersekat&quot;</value>
   </data>
   <data name="settings_address_block" xml:space="preserve">
-    <value>Paparkan Tab &quot;Log Sekatan Alamat&quot;</value>
+    <value>Tunjukkan Tab &quot;Log Sekatan Alamat&quot;</value>
   </data>
   <data name="settings_query_log" xml:space="preserve">
-    <value>Lihat Tab &quot;Log Kueri&quot;</value>
+    <value>Tunjukkan Tab &quot;Log Kueri&quot;</value>
   </data>
   <data name="tabitem_resolvers" xml:space="preserve">
     <value>Resolver</value>
   </data>
   <data name="tabitem_advanced_settings" xml:space="preserve">
-    <value>Tetapan Lanjutan</value>
+    <value>Seting Lanjutan</value>
   </data>
   <data name="settings_advanced_settings" xml:space="preserve">
     <value>Paparkan Tab &quot;Tetapan Lanjutan&quot;</value>

@@ -301,7 +301,7 @@
     <value>إظهار تبويب &quot;سجل طلبات البحث&quot;</value>
   </data>
   <data name="tabitem_resolvers" xml:space="preserve">
-    <value>حل له</value>
+    <value>Resolvers</value>
   </data>
   <data name="tabitem_advanced_settings" xml:space="preserve">
     <value>إعدادات متقدمة</value>
@@ -310,16 +310,16 @@
     <value>إظهار تبويب &quot;إعدادات متقدمة&quot;</value>
   </data>
   <data name="yes" xml:space="preserve">
-    <value>yes</value>
+    <value>نعم</value>
   </data>
   <data name="no" xml:space="preserve">
-    <value>no</value>
+    <value>لأ</value>
   </data>
   <data name="cancel" xml:space="preserve">
-    <value>cancel</value>
+    <value>إلغاء</value>
   </data>
   <data name="ok" xml:space="preserve">
-    <value>OK</value>
+    <value>حسنا</value>
   </data>
   <data name="dialog_message_uninstall" xml:space="preserve">
     <value>Do you want to remove the installed Windows service?</value>
@@ -337,7 +337,7 @@
     <value>Remove service</value>
   </data>
   <data name="default_settings_apply_settings" xml:space="preserve">
-    <value>Apply settings</value>
+    <value>تطبيق الإعدادات</value>
   </data>
   <data name="advanced_settings_dnscache" xml:space="preserve">
     <value>DNS Cache</value>
@@ -349,13 +349,13 @@
     <value>In automatic mode, all available servers are used. dnscrypt-proxy automatically selects the fastest resolvers.</value>
   </data>
   <data name="resolvers_dnscrypt_automatic_mode" xml:space="preserve">
-    <value>Automatic Mode</value>
+    <value>الوضع الأوتوماتيكى</value>
   </data>
   <data name="disabled" xml:space="preserve">
-    <value>Disabled</value>
+    <value>إلغاء التفعيل</value>
   </data>
   <data name="enabled" xml:space="preserve">
-    <value>Enabled</value>
+    <value>تفعيل</value>
   </data>
   <data name="resolvers_available_resolvers_header" xml:space="preserve">
     <value>Available Resolvers</value>

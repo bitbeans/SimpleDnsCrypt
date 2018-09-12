@@ -118,414 +118,417 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="default_settings_network_cards" xml:space="preserve">
-    <value>Ağ Kartları</value>
+    <value>Placas de Rede</value>
   </data>
   <data name="default_settings_show_hidden_cards" xml:space="preserve">
-    <value>Gizli Ağ Kartlarını Göster</value>
+    <value>Exibir placas ocultas</value>
   </data>
   <data name="default_settings_service_header" xml:space="preserve">
-    <value>Hizmet</value>
+    <value>Serviço</value>
   </data>
   <data name="default_settings_service" xml:space="preserve">
-    <value>DNSCrypt Hizmeti</value>
+    <value>Serviço do DNSCrypt</value>
   </data>
   <data name="default_settings_configuration" xml:space="preserve">
-    <value>Yapılandırma</value>
+    <value>Configurações</value>
   </data>
   <data name="default_settings_configuration_ipv4" xml:space="preserve">
-    <value>IPv4 Sunucu Kullanımı</value>
+    <value>Usando Servidor IPv4</value>
   </data>
   <data name="default_settings_configuration_ipv4_tooltip" xml:space="preserve">
-    <value>IPv4 üzerinden erişilebilen sunucuları kullan</value>
+    <value>Usar servidores acessíveis por IPv4</value>
   </data>
   <data name="default_settings_configuration_ipv6" xml:space="preserve">
-    <value>IPv6 Sunucu Kullanımı</value>
+    <value>Usando Servidor IPv6</value>
   </data>
   <data name="default_settings_configuration_ipv6_tooltip" xml:space="preserve">
-    <value>IPv6 üzerinden erişilebilen sunucuları kullanın (IPv6 bağlantınız yoksa etkinleştirmeyin)</value>
+    <value>Usar servidores acessíveis por IPv6 (não ative se você não possui conectividade IPv6)</value>
   </data>
   <data name="default_settings_configuration_dnssec" xml:space="preserve">
-    <value>Yalnızca DNSSEC desteği olan sunucular</value>
+    <value>Somente servidores com suporte DNSSEC</value>
   </data>
   <data name="default_settings_configuration_dnssec_tooltip" xml:space="preserve">
-    <value>Sunucu, DNS güvenlik uzantılarını desteklemelidir</value>
+    <value>O servidor deve suportar extensões de segurança DNS</value>
   </data>
   <data name="default_settings_configuration_nolog" xml:space="preserve">
-    <value>Yalnızca kayıt tutmayan sunucular</value>
+    <value>Apenas servidores sem registro</value>
   </data>
   <data name="default_settings_configuration_nolog_tooltip" xml:space="preserve">
-    <value>Sunucu kullanıcı sorgularını günlüğe kaydetmemeli</value>
+    <value>O servidor não deve registrar as consultas do usuário</value>
   </data>
   <data name="default_settings_configuration_nofilter" xml:space="preserve">
-    <value>Yalnızca filtresiz sunucular</value>
+    <value>Somente servidores sem filtro</value>
   </data>
   <data name="default_settings_configuration_nofilter_tooltip" xml:space="preserve">
-    <value>Sunucu kendi kara listesini zorlamamalıdır (ebeveyn kontrolü, reklam engelleme ... için)</value>
+    <value>O servidor não deve impor sua própria lista negra (para controle dos pais, bloqueio de anúncios ...)</value>
   </data>
   <data name="tabitem_mainmenu" xml:space="preserve">
-    <value>Ana Menü</value>
+    <value>Menu Principal</value>
   </data>
   <data name="loader_administrative_rights_available" xml:space="preserve">
-    <value>Yönetici hakları mevcuttur</value>
+    <value>Direitos administrativos estão disponíveis</value>
   </data>
   <data name="loader_administrative_rights_missing" xml:space="preserve">
-    <value>Yönetici hakları eksik!</value>
+    <value>Falta de direitos administrativos!</value>
   </data>
   <data name="loader_checking_version" xml:space="preserve">
-    <value>Yeni sürümler için kontrol yapılıyor</value>
+    <value>Verificando por nova versão...</value>
   </data>
   <data name="loader_new_version_found" xml:space="preserve">
-    <value>Yeni bir sürüm bulundu</value>
+    <value>Uma nova versão está disponível: {0}</value>
   </data>
   <data name="loader_starting_update" xml:space="preserve">
-    <value>Güncelleme başlatılıyor...</value>
+    <value>Iniciando atualização</value>
   </data>
   <data name="loader_update_failed" xml:space="preserve">
-    <value>Güncelleme başarısız oldu, devam edin. . .</value>
+    <value>Falha na atualização, continuar...</value>
   </data>
   <data name="loader_latest_version" xml:space="preserve">
-    <value>Zaten en son sürümü kullanıyorsunuz</value>
+    <value>Você está usando a versão mais recente</value>
   </data>
   <data name="loader_unsigned" xml:space="preserve">
-    <value>imzasız</value>
+    <value>não assinada</value>
   </data>
   <data name="loader_missing" xml:space="preserve">
-    <value>eksik</value>
+    <value>faltando</value>
   </data>
   <data name="loader_downloading_signature" xml:space="preserve">
-    <value>İmza indiriliyor. . .</value>
+    <value>Baixando assinatura...</value>
   </data>
   <data name="loader_downloading_installer" xml:space="preserve">
-    <value>Yükleyici indiriliyor...</value>
+    <value>Baixando instalador...</value>
   </data>
   <data name="loader_starting" xml:space="preserve">
-    <value>Başlatılıyor...</value>
+    <value>Iniciando...</value>
   </data>
   <data name="loader_validate_folder" xml:space="preserve">
-    <value>{0} klasörünü doğrulama</value>
+    <value>Validando pasta {0}</value>
   </data>
   <data name="loader_loading_network_cards" xml:space="preserve">
-    <value>Ağ kartları yükleniyor...</value>
+    <value>Carregando placas de rede...</value>
   </data>
   <data name="loader_failed_loading" xml:space="preserve">
-    <value>{0} yüklenemedi</value>
+    <value>Não foi possível carregar {0}</value>
   </data>
   <data name="loader_successfully_loaded" xml:space="preserve">
-    <value>{0} başarıyla yüklendi</value>
+    <value>{0} carregado com sucesso</value>
   </data>
   <data name="loader_loading" xml:space="preserve">
-    <value>Yükleniyor {0} . . .</value>
+    <value>Carregando {0} ...</value>
   </data>
   <data name="loader_missing_files" xml:space="preserve">
-    <value>{0} içindeki dosyalar eksik klasör:\n{1}\n\n {2} &apos;nin yeni bir kurulumunu düşünün</value>
+    <value>Arquivos faltando na pasta {0}:
+{1}
+
+Pense em uma nova instalação do {2}</value>
   </data>
   <data name="loader_all_files_available" xml:space="preserve">
-    <value>Gerekli tüm dosyalar bulundu</value>
+    <value>Todos os arquivos necessários foram encontrados</value>
   </data>
   <data name="about" xml:space="preserve">
-    <value>Hakkında</value>
+    <value>Sobre</value>
   </data>
   <data name="about_software" xml:space="preserve">
-    <value>Yazılım</value>
+    <value>Software</value>
   </data>
   <data name="about_license" xml:space="preserve">
-    <value>Lisans</value>
+    <value>Licença</value>
   </data>
   <data name="about_view_on_github" xml:space="preserve">
-    <value>Github üzerinde görüntüle</value>
+    <value>Ver no GitHub</value>
   </data>
   <data name="tabitem_querylog" xml:space="preserve">
-    <value>Sorgu Günlüğü</value>
+    <value>Log de Consultas</value>
   </data>
   <data name="querylog" xml:space="preserve">
-    <value>Sorgu Günlüğü</value>
+    <value>Log de Consultas</value>
   </data>
   <data name="querylog_waiting_for_data" xml:space="preserve">
-    <value>DNS sorguları için bekleniyor</value>
+    <value>aguardando por consultas DNS</value>
   </data>
   <data name="querylog_entry_count" xml:space="preserve">
-    <value>Girdiler:</value>
+    <value>Entradas:</value>
   </data>
   <data name="querylog_source_file" xml:space="preserve">
-    <value>Kaynak:</value>
+    <value>Fonte:</value>
   </data>
   <data name="querylog_button_clear" xml:space="preserve">
-    <value>Listeyi temizle</value>
+    <value>Limpar Lista</value>
   </data>
   <data name="querylog_button_block" xml:space="preserve">
-    <value>Seçilen Blok</value>
+    <value>Bloquear Selecionado(s)</value>
   </data>
   <data name="domainblocklog" xml:space="preserve">
-    <value>Alan Adı Blok Günlüğü</value>
+    <value>Log de Bloqueio de Domínio</value>
   </data>
   <data name="domainblocklog_waiting_for_data" xml:space="preserve">
-    <value>Engellenen DNS sorguları için bekleniyor</value>
+    <value>aguardando por consultas DNS bloqueadas</value>
   </data>
   <data name="domainblocklog_entry_count" xml:space="preserve">
-    <value>Girdiler:</value>
+    <value>Entradas:</value>
   </data>
   <data name="domainblocklog_source_file" xml:space="preserve">
-    <value>Kaynak:</value>
+    <value>Fonte:</value>
   </data>
   <data name="domainblocklog_button_clear" xml:space="preserve">
-    <value>Listeyi temizle</value>
+    <value>Limpar Lista</value>
   </data>
   <data name="tabitem_domainblocklog" xml:space="preserve">
-    <value>Alan Adı Blok Günlüğü</value>
+    <value>Log de Bloqueio de Domínio</value>
   </data>
   <data name="tabitem_addressblocklog" xml:space="preserve">
-    <value>Adres Blok Günlüğü</value>
+    <value>Log de Bloqueio de Endereços</value>
   </data>
   <data name="tabitem_domainblacklist" xml:space="preserve">
-    <value>Alan Adı Kara Listesi</value>
+    <value>Lista Negra de Domínios</value>
   </data>
   <data name="tabitem_addressblacklist" xml:space="preserve">
-    <value>Adres Kara Listesi</value>
+    <value>Lista Negra de Endereços</value>
   </data>
   <data name="settings" xml:space="preserve">
-    <value>Ayarlar</value>
+    <value>Configurações</value>
   </data>
   <data name="settings_domain_blacklist" xml:space="preserve">
-    <value>&quot;Alan Adı Kara Listesi&quot; Sekmesini göster</value>
+    <value>Exibir Aba &quot;Lista Negra de Domínios&quot; </value>
   </data>
   <data name="settings_address_blacklist" xml:space="preserve">
-    <value>&quot;Adres Kara Listesi&quot; Sekmesini göster</value>
+    <value>Exibir Aba &quot;Lista Negra de Endereços&quot; </value>
   </data>
   <data name="settings_domain_block" xml:space="preserve">
-    <value>&quot;Alan Adı Blok Günlüğü&quot; Sekmesini göster</value>
+    <value>Exibir Aba &quot;Log de Bloqueio de Domínios&quot; </value>
   </data>
   <data name="settings_address_block" xml:space="preserve">
-    <value>&quot;Adres Blok Günlüğü&quot; Sekmesini göster</value>
+    <value>Exibir Aba &quot;Log de Bloqueio de Endereços&quot; </value>
   </data>
   <data name="settings_query_log" xml:space="preserve">
-    <value>&quot;Sorgu Günlüğü&quot; Sekmesini göster</value>
+    <value>Exibir Aba &quot;Log de Consultas&quot; </value>
   </data>
   <data name="tabitem_resolvers" xml:space="preserve">
-    <value>Çözümleyiciler</value>
+    <value>Resolvedores</value>
   </data>
   <data name="tabitem_advanced_settings" xml:space="preserve">
-    <value>Gelişmiş Ayarlar</value>
+    <value>Configurações Avançadas</value>
   </data>
   <data name="settings_advanced_settings" xml:space="preserve">
-    <value>&quot;Gelişmiş Ayarlar&quot; Sekmesini göster</value>
+    <value>Exibir Aba &quot;Configurações Avançadas&quot; </value>
   </data>
   <data name="yes" xml:space="preserve">
-    <value>evet</value>
+    <value>sim</value>
   </data>
   <data name="no" xml:space="preserve">
-    <value>hayır</value>
+    <value>não</value>
   </data>
   <data name="cancel" xml:space="preserve">
-    <value>iptal et</value>
+    <value>cancelar</value>
   </data>
   <data name="ok" xml:space="preserve">
-    <value>tamam</value>
+    <value>OK</value>
   </data>
   <data name="dialog_message_uninstall" xml:space="preserve">
-    <value>Yüklü Windows hizmetini kaldırmak istiyor musunuz?</value>
+    <value>Deseja remover o serviço instalado do Windows?</value>
   </data>
   <data name="dialog_uninstall_title" xml:space="preserve">
-    <value>Hizmet kaldırılıyor</value>
+    <value>Desinstalando serviço</value>
   </data>
   <data name="advanced_settings_uninstall_title" xml:space="preserve">
-    <value>Hizmet kaldırılıyor</value>
+    <value>Desinstalando serviço</value>
   </data>
   <data name="advanced_settings_uninstall_text" xml:space="preserve">
-    <value>Yüklü Windows hizmetini kaldırma</value>
+    <value>Remover serviço instalado do Windows</value>
   </data>
   <data name="advanced_settings_uninstall_button" xml:space="preserve">
-    <value>Hizmeti kaldır</value>
+    <value>Remover serviço</value>
   </data>
   <data name="default_settings_apply_settings" xml:space="preserve">
-    <value>Ayarları uygula</value>
+    <value>Aplicar configurações</value>
   </data>
   <data name="advanced_settings_dnscache" xml:space="preserve">
-    <value>DNS Önbelleği</value>
+    <value>Cache DNS</value>
   </data>
   <data name="resolvers_dnscrypt_mode_header" xml:space="preserve">
-    <value>DNSCrypt Modu</value>
+    <value>Modo DNSCrypt</value>
   </data>
   <data name="resolvers_dnscrypt_mode_description" xml:space="preserve">
-    <value>Otomatik modda, mevcut tüm sunucular kullanılır. dnscrypt-proxy otomatik olarak en hızlı çözümleyicileri seçer.</value>
+    <value>No modo automático, todos os servidores disponíveis são usados. O dnscrypt-proxy seleciona automaticamente os resolvedores mais rápidos.</value>
   </data>
   <data name="resolvers_dnscrypt_automatic_mode" xml:space="preserve">
-    <value>Otomatik Mod</value>
+    <value>Modo Automático</value>
   </data>
   <data name="disabled" xml:space="preserve">
-    <value>Devre dışı</value>
+    <value>Desativado</value>
   </data>
   <data name="enabled" xml:space="preserve">
-    <value>Etkin</value>
+    <value>Ativado</value>
   </data>
   <data name="resolvers_available_resolvers_header" xml:space="preserve">
-    <value>Kullanılabilir Çözümleyiciler</value>
+    <value>Resolvedores Disponíveis</value>
   </data>
   <data name="loader_redistributable_package_check" xml:space="preserve">
-    <value>Visual Studio 2017 için Microsoft Visual C ++ Yeniden Dağıtılabilir Dosyası Denetleniyor</value>
+    <value>Verificando Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
   </data>
   <data name="loader_redistributable_package_already_installed" xml:space="preserve">
-    <value>Visual Studio 2017 için Microsoft Visual C ++ Yeniden Dağıtılabilir Dosyası zaten yüklü</value>
+    <value>Microsoft Visual C++ Redistributable for Visual Studio 2017 já está instalado</value>
   </data>
   <data name="loader_redistributable_package_installing" xml:space="preserve">
-    <value>Yükleniyor: Visual Studio 2017 için Microsoft Visual C ++ Yeniden Dağıtılabilir Dosyası</value>
+    <value>Instalando: Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
   </data>
   <data name="loader_redistributable_package_ready" xml:space="preserve">
-    <value>Visual Studio 2017 için Microsoft Visual C ++ Yeniden Dağıtılabilir Dosyası şimdi yüklendi</value>
+    <value>Microsoft Visual C++ Redistributable for Visual Studio 2017 agora está instalado</value>
   </data>
   <data name="message_title_no_server_selected" xml:space="preserve">
-    <value>Sunucu seçilmedi</value>
+    <value>Nenhum servidor selecionado</value>
   </data>
   <data name="message_content_no_server_selected" xml:space="preserve">
-    <value>En az bir sunucu seçilmelidir. Aksi takdirde, dnscrypt-proxy, seçilen filtrelere karşılık gelen tüm sunucuları kullanır.</value>
+    <value>Pelo menos um servidor deve ser selecionado. Caso contrário, o dnscrypt-proxy usa todos os servidores correspondentes para os filtros selecionados.</value>
   </data>
   <data name="message_title_service_not_running" xml:space="preserve">
-    <value>Hizmet çalışmıyor</value>
+    <value>O serviço não está em execução</value>
   </data>
   <data name="message_content_service_not_running" xml:space="preserve">
-    <value>Önce DnsCrypt hizmetini başlatmalısınız!</value>
+    <value>Você deve iniciar o serviço do DnsCrypt primeiro!</value>
   </data>
   <data name="message_title_uninstallation_successful" xml:space="preserve">
-    <value>Kaldırma işlemi başarıyla tamamlandı</value>
+    <value>Desinstalado com sucesso</value>
   </data>
   <data name="message_content_uninstallation_successful" xml:space="preserve">
-    <value>Kaldırma işlemi başarılı oldu! DNS istekleri artık şifrelenmemektedir.</value>
+    <value>Desinstalação bem sucedida! As solicitações de DNS já não são criptografadas.</value>
   </data>
   <data name="message_title_uninstallation_error" xml:space="preserve">
-    <value>Kaldırma hatası</value>
+    <value>Erro na desinstalação</value>
   </data>
   <data name="message_content_uninstallation_error" xml:space="preserve">
-    <value>Kaldırma işlemi gerçekleştirilemedi. Hizmeti el ile durdurmayı ve yeniden kaldırmayı deneyin.</value>
+    <value>A Desinstalação não pôde ser executada. Tente parar o serviço manualmente e desinstale-o novamente.</value>
   </data>
   <data name="open_log_directory" xml:space="preserve">
-    <value>Günlük dizinini aç</value>
+    <value>Abrir pasta de logs</value>
   </data>
   <data name="settings_update_auto" xml:space="preserve">
-    <value>Başlangıçta güncellemeleri kontrol et</value>
+    <value>Verificar por atualizações ao iniciar</value>
   </data>
   <data name="settings_update_channel" xml:space="preserve">
-    <value>Güncelleme Kanalı:</value>
+    <value>Canal de Atualização:</value>
   </data>
   <data name="advanced_settings_dnscache_content" xml:space="preserve">
-    <value>DNS önbelleği gecikme ve giden trafiği azaltır</value>
+    <value>Cache DNS para reduzir a latência e o tráfego de saída</value>
   </data>
   <data name="advanced_settings_blockipv6" xml:space="preserve">
-    <value>IPv6&apos;yı engelle</value>
+    <value>Bloquear IPv6</value>
   </data>
   <data name="advanced_settings_blockipv6_content" xml:space="preserve">
-    <value>IPv6 ile ilgili soruları boş yanıtla hemen yanıtlayın</value>
+    <value>Imediatamente responder a consultas relacionadas com IPv6 com uma resposta vazia</value>
   </data>
   <data name="advanced_settings_forcetcp" xml:space="preserve">
-    <value>TCP&apos;yi zorla</value>
+    <value>Forçar TCP</value>
   </data>
   <data name="advanced_settings_forcetcp_content" xml:space="preserve">
-    <value>Yükleme sunucularına bağlanmak için daima TCP kullan</value>
+    <value>Sempre usar TCP para conectar a servidores upstream</value>
   </data>
   <data name="add" xml:space="preserve">
-    <value>Ekle</value>
+    <value>Adicionar</value>
   </data>
   <data name="message_title_new_whitelist_rule" xml:space="preserve">
-    <value>Alan adı beyaz listesi kuralı ekle</value>
+    <value>Adicionar nova regra de lista branca de domínio</value>
   </data>
   <data name="message_content_new_whitelist_rule" xml:space="preserve">
-    <value>Örnek: * .example.com, ads. *, * Sex *, virgül ile ayrılmış kurallar listesi de ekleyebilirsiniz</value>
+    <value>Exemplo: *.exemplo.com, ads.*, *sex*, você também pode adicionar uma lista de regras separada por vírgulas</value>
   </data>
   <data name="message_title_new_blacklist_rule" xml:space="preserve">
-    <value>Alan adı kara listesi kuralı ekle</value>
+    <value>Adicionar nova regra de lista negra de domínio</value>
   </data>
   <data name="message_content_new_blacklist_rule" xml:space="preserve">
-    <value>Örnek: *.* example.com reklamlar. *seks*, aynı zamanda kurallar, dosya:my-custom-rules.txt ya da http:// veya https://ile başlayan uzak bir URL ile başlayan bir dosya virgülle ayrılmış listesi ekleyebilirsiniz.</value>
+    <value>Exemplo: * .exemplo.com, ads.*, *sex*, você também pode adicionar uma lista de regras separadas por vírgulas, um arquivo que começa como file:my-custom-rules.txt ou uma URL remota que começa com http:// ou https://. </value>
   </data>
   <data name="working_dialog_title" xml:space="preserve">
-    <value>Listeler birleşti. . .</value>
+    <value>As listas foram combinadas . . .</value>
   </data>
   <data name="button_select_path" xml:space="preserve">
-    <value>Yolu seç</value>
+    <value>Selecione o caminho</value>
   </data>
   <data name="button_blacklist_build" xml:space="preserve">
-    <value>Dnscrypt-proxy kara listesi oluşturun</value>
+    <value>Criar lista negra dnscrypt-proxy</value>
   </data>
   <data name="button_blacklist_import" xml:space="preserve">
-    <value>Mevcut kara liste kurallarını içe aktarın</value>
+    <value>Importar regras de lista negra existentes</value>
   </data>
   <data name="button_blacklist_export" xml:space="preserve">
-    <value>Kara liste kurallarını dışa aktar</value>
+    <value>Exportar regras de lista negra</value>
   </data>
   <data name="button_blacklist_remove" xml:space="preserve">
-    <value>Seçilen kara liste kuralını kaldır</value>
+    <value>Remover regra de lista negra selecionada</value>
   </data>
   <data name="button_blacklist_add" xml:space="preserve">
-    <value>Yeni bir kara liste kuralı ekleme</value>
+    <value>Adicionar nova regra de lista negra</value>
   </data>
   <data name="button_whitelist_import" xml:space="preserve">
-    <value>Varolan beyaz liste kurallarını içe aktar</value>
+    <value>Importar regras de lista branca existentes</value>
   </data>
   <data name="button_whitelist_export" xml:space="preserve">
-    <value>Beyaz liste kurallarını dışa aktarma</value>
+    <value>Exportar regras de lista branca</value>
   </data>
   <data name="button_whitelist_remove" xml:space="preserve">
-    <value>Seçilen beyaz liste kuralını kaldır</value>
+    <value>Remover regra de lista branca existente</value>
   </data>
   <data name="button_whitelist_add" xml:space="preserve">
-    <value>Yeni bir beyaz liste kuralı ekle</value>
+    <value>Adicionar nova regra de lista branca</value>
   </data>
   <data name="whitelist_rules_header" xml:space="preserve">
-    <value>Beyaz Liste Kuralları</value>
+    <value>Regras de Lista Branca</value>
   </data>
   <data name="whitelist_rules_sub_header" xml:space="preserve">
-    <value>(kara liste oluşturma sırasında kayıtlar dikkate alınmaz)</value>
+    <value>(todas as entradas são ignoradas durante a geração de lista negra)</value>
   </data>
   <data name="whitelist_rules_path" xml:space="preserve">
-    <value>Beyaz Liste Kuralları:</value>
+    <value>Regras de Lista Branca:</value>
   </data>
   <data name="blacklist_rules_header" xml:space="preserve">
-    <value>Kara Liste Kuralları</value>
+    <value>Regras de Lista Negra</value>
   </data>
   <data name="blacklist_rules_sub_header" xml:space="preserve">
-    <value>(tüm kayıtlar bir kara listeye birleştirilir)</value>
+    <value>(todas as entradas foram combinadas para uma lista negra)</value>
   </data>
   <data name="blacklist_rules_path" xml:space="preserve">
-    <value>Kara Liste Kuralları:</value>
+    <value>Regras de Lista Negra:</value>
   </data>
   <data name="blacklist_path" xml:space="preserve">
-    <value>Kara liste:</value>
+    <value>Lista Negra:</value>
   </data>
   <data name="blacklist_header" xml:space="preserve">
-    <value>Alan Adı Kara Liste ve Beyaz Liste</value>
+    <value>Lista Negra e Branca de Domínios</value>
   </data>
   <data name="advanced_settings_globalresolver" xml:space="preserve">
-    <value>Küresel Çözümleyici</value>
+    <value>Resolvedor Global</value>
   </data>
   <data name="advanced_settings_globalresolver_content" xml:space="preserve">
-    <value>Bu bilgisayarın başkaları için ağ geçidi aygıtı (örn. Akıllı telefonlar veya diğer bilgisayarlar) gibi davranmasını istiyorsanız,</value>
+    <value>Se você quiser que este computador aja como dispositivo de gateway para outras pessoas (por exemplo, smartphones ou outros computadores)</value>
   </data>
   <data name="advanced_settings_fallback_resolver" xml:space="preserve">
-    <value>Yedek Çözücü</value>
+    <value>Resolvedor de Fallback</value>
   </data>
   <data name="advanced_settings_fallback_resolver_content" xml:space="preserve">
-    <value>Bu, normal, şifrelenmemiş bir DNS çözümleyicisidir, yalnızca ilk çözümleyici listesi alınırken tek adımlı sorgularda ve yalnızca sistem DNS yapılandırması çalışmadığında kullanılır. Çin&apos;deki insanların 114.114.114.114:53 burada kullanması gerekebilir.</value>
+    <value>Esse é um resolvedor de DNS normal, não criptografado, que será usado apenas para consultas instantâneas ao recuperar a lista de resolvedores iniciais e somente se a configuração de DNS do sistema não funcionar. As pessoas na China talvez precisem usar 114.114.114.114:53 aqui. </value>
   </data>
   <data name="trayicon_tooltip" xml:space="preserve">
     <value>Simple DNSCrypt</value>
   </data>
   <data name="trayicon_exit" xml:space="preserve">
-    <value>Çıkış</value>
+    <value>Sair</value>
   </data>
   <data name="address_settings_listen_addresses" xml:space="preserve">
-    <value>Adresleri Dinle</value>
+    <value>Endereços de Escuta</value>
   </data>
   <data name="address_settings_manage_listen_addresses" xml:space="preserve">
-    <value>Adresleri Dinlemeyi Yönet</value>
+    <value>Gerenciar Endereços de Escuta</value>
   </data>
   <data name="address_settings_description" xml:space="preserve">
-    <value>Dinlenecek yerel adresler ve portların listesi. IPv4 ve / veya IPv6 olabilir.</value>
+    <value>Lista de endereços locais e portas de escuta. Pode ser IPv4 e/ou IPv6.</value>
   </data>
   <data name="address_settings_add" xml:space="preserve">
-    <value>Yeni dinleme adresi ekle</value>
+    <value>Adicionar novos endereços de escuta</value>
   </data>
   <data name="address_settings_remove" xml:space="preserve">
-    <value>Seçilen dinleme adresini kaldır</value>
+    <value>Remover endereços de escuta selecionados</value>
   </data>
   <data name="address_settings_restore" xml:space="preserve">
-    <value>Varsayılan dinleme adreslerini geri yükle</value>
+    <value>Restaurar endereços de escuta padrão</value>
   </data>
 </root>

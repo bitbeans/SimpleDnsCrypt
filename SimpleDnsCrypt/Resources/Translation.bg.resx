@@ -519,21 +519,21 @@
     <value>Изход</value>
   </data>
   <data name="address_settings_listen_addresses" xml:space="preserve">
-    <value>Listen Addresses</value>
+    <value>Адреси за слушане</value>
   </data>
   <data name="address_settings_manage_listen_addresses" xml:space="preserve">
-    <value>Manage Listen Addresses</value>
+    <value>Управление</value>
   </data>
   <data name="address_settings_description" xml:space="preserve">
-    <value>List of local addresses and ports to listen to. Can be IPv4 and/or IPv6.</value>
+    <value>Списък с локални адреси и портове, които да се използват от dnscrypt-proxy. Могат да бъдат IPv4 и/или IPv6.</value>
   </data>
   <data name="address_settings_add" xml:space="preserve">
-    <value>Add new listen address</value>
+    <value>Добавяне на нов адрес</value>
   </data>
   <data name="address_settings_remove" xml:space="preserve">
-    <value>Remove selected listen address</value>
+    <value>Премахване на избрания адрес</value>
   </data>
   <data name="address_settings_restore" xml:space="preserve">
-    <value>Restore default listen addresses</value>
+    <value>Възстановяване на стандартните адреси</value>
   </data>
 </root>

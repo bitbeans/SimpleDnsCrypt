@@ -511,21 +511,21 @@
     <value>Thoát</value>
   </data>
   <data name="address_settings_listen_addresses" xml:space="preserve">
-    <value>Listen Addresses</value>
+    <value>Địa chỉ theo dõi</value>
   </data>
   <data name="address_settings_manage_listen_addresses" xml:space="preserve">
-    <value>Manage Listen Addresses</value>
+    <value>Quản lý địa chỉ theo dõi</value>
   </data>
   <data name="address_settings_description" xml:space="preserve">
-    <value>List of local addresses and ports to listen to. Can be IPv4 and/or IPv6.</value>
+    <value>Danh sách địa chỉ cục bộ và cổng theo dõi. Có thể IPv4 hoặc IPv6</value>
   </data>
   <data name="address_settings_add" xml:space="preserve">
-    <value>Add new listen address</value>
+    <value>Thêm địa chỉ theo dõi mới</value>
   </data>
   <data name="address_settings_remove" xml:space="preserve">
-    <value>Remove selected listen address</value>
+    <value>Loại bỏ địa chỉ theo dõi đã chọn</value>
   </data>
   <data name="address_settings_restore" xml:space="preserve">
-    <value>Restore default listen addresses</value>
+    <value>Khôi phục địa chỉ theo dõi mặc định</value>
   </data>
 </root>
