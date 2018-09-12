@@ -95,7 +95,7 @@ namespace SimpleDnsCrypt.ViewModels
 								var startInfo = new ProcessStartInfo(installer)
 								{
 									Arguments = arguments,
-									UseShellExecute = false
+									UseShellExecute = true
 								};
 								Process.Start(startInfo);
 							}
