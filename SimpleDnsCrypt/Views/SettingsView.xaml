@@ -55,6 +55,11 @@
                         Content="{lex:Loc Key=settings_advanced_settings}"
                         Cursor="Hand" Foreground="#FF575757" />
                     <CheckBox
+                        IsChecked="{Binding IsStartInTrayEnabled}"
+                        Margin="5"
+                        Content="{lex:Loc Key=settings_start_in_tray}"
+                        Cursor="Hand" Foreground="#FF575757" />
+                    <CheckBox
                         IsChecked="{Binding IsQueryLogTabVisible}"
                         Margin="5"
                         Content="{lex:Loc Key=settings_query_log}"
