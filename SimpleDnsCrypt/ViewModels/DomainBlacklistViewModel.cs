@@ -485,6 +485,7 @@ namespace SimpleDnsCrypt.ViewModels
 		{
 			Execute.OnUIThread(() => { DomainBlacklistRules.Clear(); });
 			SaveBlacklistRulesToFile();
+			BuildBlacklist();
 		}
 
 		public async void AddBlacklistRule()
