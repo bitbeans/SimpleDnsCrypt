@@ -88,7 +88,7 @@ namespace SimpleDnsCrypt.ViewModels
 						{
 							ProgressText = LocalizationEx.GetUiString("loader_starting_update", Thread.CurrentThread.CurrentCulture);
 							await Task.Delay(200).ConfigureAwait(false);
-							if (Properties.Settings.Default.AutoUpdate)
+							if (Properties.Settings.Default.AutoUpdateSilent)
 							{
 								// auto install
 								const string arguments = "/qb /passive /norestart";
