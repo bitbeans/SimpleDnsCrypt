@@ -24,3 +24,4 @@ Those listed below have contributed to `SimpleDnsCrypt`, and are the copyright h
  * @bungoume
  * Esmail EL BoB - <esmailelbob01124320019@gmail.com>
  * @ukind
+ * @Mongogamer
