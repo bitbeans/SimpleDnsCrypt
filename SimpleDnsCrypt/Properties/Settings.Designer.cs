@@ -214,5 +214,17 @@ namespace SimpleDnsCrypt.Properties {
                 this["StartInTray"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool TrayMode {
+            get {
+                return ((bool)(this["TrayMode"]));
+            }
+            set {
+                this["TrayMode"] = value;
+            }
+        }
     }
 }

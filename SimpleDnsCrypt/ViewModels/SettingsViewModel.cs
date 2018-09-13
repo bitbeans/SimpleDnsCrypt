@@ -12,6 +12,7 @@ namespace SimpleDnsCrypt.ViewModels
 		private string _windowTitle;
 		private bool _isAdvancedSettingsTabVisible;
 		private bool _isStartInTrayEnabled;
+		private bool _isTrayModeEnabled;
 		private bool _isQueryLogTabVisible;
 		private bool _isDomainBlacklistTabVisible;
 		private bool _isDomainBlockLogTabVisible;
@@ -34,6 +35,7 @@ namespace SimpleDnsCrypt.ViewModels
 			_events.Subscribe(this);
 			_isAdvancedSettingsTabVisible = Properties.Settings.Default.IsAdvancedSettingsTabVisible;
 			_isStartInTrayEnabled = Properties.Settings.Default.StartInTray;
+			_isTrayModeEnabled = Properties.Settings.Default.TrayMode;
 			_isQueryLogTabVisible = Properties.Settings.Default.IsQueryLogTabVisible;
 			_isDomainBlacklistTabVisible = Properties.Settings.Default.IsDomainBlacklistTabVisible;
 			_isDomainBlockLogTabVisible = Properties.Settings.Default.IsDomainBlockLogTabVisible;
@@ -86,7 +88,18 @@ namespace SimpleDnsCrypt.ViewModels
 			{
 				_isStartInTrayEnabled = value;
 				Properties.Settings.Default.StartInTray = _isStartInTrayEnabled;
-				NotifyOfPropertyChange(() => _isStartInTrayEnabled);
+				NotifyOfPropertyChange(() => IsStartInTrayEnabled);
+			}
+		}
+		public bool IsTrayModeEnabled
+		{
+			get => _isTrayModeEnabled;
+			set
+			{
+				_isTrayModeEnabled = value;
+				Properties.Settings.Default.TrayMode = _isTrayModeEnabled;
+				NotifyOfPropertyChange(() => IsTrayModeEnabled);
+				if (!IsTrayModeEnabled && IsStartInTrayEnabled) IsStartInTrayEnabled = false;
 			}
 		}
 

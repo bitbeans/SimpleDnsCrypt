@@ -546,4 +546,7 @@
   <data name="settings_start_in_tray" xml:space="preserve">
     <value>Start Simple DNSCrypt in tray</value>
   </data>
+  <data name="settings_tray_mode" xml:space="preserve">
+    <value>Minimize to tray when closing</value>
+  </data>
 </root>

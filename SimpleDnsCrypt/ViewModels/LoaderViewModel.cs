@@ -185,10 +185,17 @@ namespace SimpleDnsCrypt.ViewModels
 				_mainViewModel.Initialize();
 				ProgressText = LocalizationEx.GetUiString("loader_starting", Thread.CurrentThread.CurrentCulture);
 
-				Execute.OnUIThread(() => _windowManager.ShowWindow(_systemTrayViewModel));
-				if (Properties.Settings.Default.StartInTray)
+				if(Properties.Settings.Default.TrayMode)
 				{
-					Execute.OnUIThread(() => _systemTrayViewModel.HideWindow());
+					Execute.OnUIThread(() => _windowManager.ShowWindow(_systemTrayViewModel));
+					if (Properties.Settings.Default.StartInTray)
+					{
+						Execute.OnUIThread(() => _systemTrayViewModel.HideWindow());
+					}
+					else
+					{
+						Execute.OnUIThread(() => _windowManager.ShowWindow(_mainViewModel));
+					}
 				}
 				else
 				{
