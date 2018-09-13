@@ -541,7 +541,7 @@
     <value>Restore default listen addresses</value>
   </data>
   <data name="button_blacklist_clear" xml:space="preserve">
-    <value>Clears all blacklist rules</value>
+    <value>Clear all blacklist rules</value>
   </data>
   <data name="settings_start_in_tray" xml:space="preserve">
     <value>Start Simple DNSCrypt in tray</value>
