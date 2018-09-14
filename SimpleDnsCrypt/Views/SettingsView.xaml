@@ -58,18 +58,6 @@
                         Content="{lex:Loc Key=settings_advanced_settings}"
                         Cursor="Hand" Foreground="#FF575757" />
                     <CheckBox
-                        IsChecked="{Binding IsTrayModeEnabled}"
-                        Margin="5"
-                        Content="{lex:Loc Key=settings_tray_mode}"
-                        Cursor="Hand" Foreground="#FF575757" />
-                    <CheckBox
-                        IsChecked="{Binding IsStartInTrayEnabled}"
-                        IsEnabled="{Binding IsTrayModeEnabled}"
-                        Visibility="{Binding IsTrayModeEnabled, Converter={StaticResource BooleanToVisibilityConverter}}"
-                        Margin="5"
-                        Content="{lex:Loc Key=settings_start_in_tray}"
-                        Cursor="Hand" Foreground="#FF575757" />
-                    <CheckBox
                         IsChecked="{Binding IsQueryLogTabVisible}"
                         Margin="5"
                         Content="{lex:Loc Key=settings_query_log}"
@@ -94,6 +82,18 @@
                               Margin="5"
                               Content="{lex:Loc Key=settings_address_blacklist}"
                               Cursor="Hand" Foreground="#FF575757" />
+                    <CheckBox
+                        IsChecked="{Binding IsTrayModeEnabled}"
+                        Margin="5"
+                        Content="{lex:Loc Key=settings_tray_mode}"
+                        Cursor="Hand" Foreground="#FF575757" />
+                    <CheckBox
+                        IsChecked="{Binding IsStartInTrayEnabled}"
+                        IsEnabled="{Binding IsTrayModeEnabled}"
+                        Visibility="{Binding IsTrayModeEnabled, Converter={StaticResource BooleanToVisibilityConverter}}"
+                        Margin="5"
+                        Content="{lex:Loc Key=settings_start_in_tray}"
+                        Cursor="Hand" Foreground="#FF575757" />
                     <StackPanel Orientation="Vertical">
                         <CheckBox IsChecked="{Binding IsAutoUpdateEnabled}"
                                   Margin="5"
@@ -101,7 +101,7 @@
                                   Cursor="Hand" Foreground="#FF575757" />
                         <CheckBox IsChecked="{Binding IsAutoUpdateSilentEnabled}"
                                   Margin="5"
-                                  Content="Silently install new versions"
+                                  Content="{lex:Loc Key=settings_update_silent}"
                                   Cursor="Hand" Foreground="#FF575757" />
                         <StackPanel Margin="5,0,0,0" Orientation="Horizontal">
                             <TextBlock Foreground="#FF575757" Text="{lex:Loc Key=settings_update_channel}" VerticalAlignment="Center" />
