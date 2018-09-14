@@ -49,10 +49,25 @@
                     </TextBlock>
                 </StackPanel>
                 <StackPanel Orientation="Vertical">
+                    <StackPanel.Resources>
+                        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+                    </StackPanel.Resources>
                     <CheckBox
                         IsChecked="{Binding IsAdvancedSettingsTabVisible}"
                         Margin="5"
                         Content="{lex:Loc Key=settings_advanced_settings}"
+                        Cursor="Hand" Foreground="#FF575757" />
+                    <CheckBox
+                        IsChecked="{Binding IsTrayModeEnabled}"
+                        Margin="5"
+                        Content="{lex:Loc Key=settings_tray_mode}"
+                        Cursor="Hand" Foreground="#FF575757" />
+                    <CheckBox
+                        IsChecked="{Binding IsStartInTrayEnabled}"
+                        IsEnabled="{Binding IsTrayModeEnabled}"
+                        Visibility="{Binding IsTrayModeEnabled, Converter={StaticResource BooleanToVisibilityConverter}}"
+                        Margin="5"
+                        Content="{lex:Loc Key=settings_start_in_tray}"
                         Cursor="Hand" Foreground="#FF575757" />
                     <CheckBox
                         IsChecked="{Binding IsQueryLogTabVisible}"

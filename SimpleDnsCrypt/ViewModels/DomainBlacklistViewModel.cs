@@ -481,6 +481,13 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 		}
 
+		public void ClearDomainBlackList()
+		{
+			Execute.OnUIThread(() => { DomainBlacklistRules.Clear(); });
+			SaveBlacklistRulesToFile();
+			BuildBlacklist();
+		}
+
 		public async void AddBlacklistRule()
 		{
 			try
