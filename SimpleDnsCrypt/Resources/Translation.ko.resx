@@ -539,4 +539,16 @@ Fuzzy</comment>
     <value>수신 주소를 기본으로 복구</value>
     <comment>Fuzzy</comment>
   </data>
+  <data name="button_blacklist_clear" xml:space="preserve">
+    <value>Clear all blacklist rules</value>
+  </data>
+  <data name="settings_tray_mode" xml:space="preserve">
+    <value>Minimize to tray when closing</value>
+  </data>
+  <data name="settings_start_in_tray" xml:space="preserve">
+    <value>Start Simple DNSCrypt in tray</value>
+  </data>
+  <data name="settings_update_silent" xml:space="preserve">
+    <value>Silently install new versions</value>
+  </data>
 </root>

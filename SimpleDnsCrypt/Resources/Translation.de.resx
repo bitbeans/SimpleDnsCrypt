@@ -535,4 +535,16 @@ Kann IPv4 und/oder IPv6 sein.</value>
   <data name="address_settings_restore" xml:space="preserve">
     <value>Standard wiederherstellen</value>
   </data>
+  <data name="button_blacklist_clear" xml:space="preserve">
+    <value>Alle Blacklisten Regeln entfernen</value>
+  </data>
+  <data name="settings_tray_mode" xml:space="preserve">
+    <value>Beim Schließen minimieren</value>
+  </data>
+  <data name="settings_start_in_tray" xml:space="preserve">
+    <value>Simple DNSCrypt minimiert starten</value>
+  </data>
+  <data name="settings_update_silent" xml:space="preserve">
+    <value>Neue Version automatisch installieren</value>
+  </data>
 </root>
