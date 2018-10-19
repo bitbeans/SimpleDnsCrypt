@@ -529,15 +529,15 @@
     <value>Przywróć domyślne adresy</value>
   </data>
   <data name="button_blacklist_clear" xml:space="preserve">
-    <value>Clear all blacklist rules</value>
+    <value>Wyczyść wszystkie reguły listy blokowania</value>
   </data>
   <data name="settings_tray_mode" xml:space="preserve">
-    <value>Minimize to tray when closing</value>
+    <value>Minimalizuj do zasobnika przy zamykaniu</value>
   </data>
   <data name="settings_start_in_tray" xml:space="preserve">
-    <value>Start Simple DNSCrypt in tray</value>
+    <value>Uruchom w zasobniku systemowym</value>
   </data>
   <data name="settings_update_silent" xml:space="preserve">
-    <value>Silently install new versions</value>
+    <value>Instaluj nowe wersje w tle</value>
   </data>
 </root>

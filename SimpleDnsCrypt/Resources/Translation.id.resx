@@ -160,7 +160,7 @@
     <value>Hanya server tanpa filter</value>
   </data>
   <data name="default_settings_configuration_nofilter_tooltip" xml:space="preserve">
-    <value>Server tidak memaksakan daftar hitam miliknya (seperti parental control dan iklan...)</value>
+    <value>Server tidak memaksakan daftar hitam miliknya (seperti parental control dan pemblokiran iklan...)</value>
   </data>
   <data name="tabitem_mainmenu" xml:space="preserve">
     <value>Menu Utama</value>
@@ -196,7 +196,7 @@
     <value>Mengunduh signature . . .</value>
   </data>
   <data name="loader_downloading_installer" xml:space="preserve">
-    <value>Mengunduh installer . . .</value>
+    <value>Mengunduh pemasangan . . .</value>
   </data>
   <data name="loader_starting" xml:space="preserve">
     <value>Memulai . . .</value>
@@ -277,19 +277,19 @@
     <value>Catatan Alamat Terblokir</value>
   </data>
   <data name="tabitem_domainblacklist" xml:space="preserve">
-    <value>Daftar Hitam Domain</value>
+    <value>Domain Daftar Hitam</value>
   </data>
   <data name="tabitem_addressblacklist" xml:space="preserve">
-    <value>Daftar Hitam Alamat</value>
+    <value>Alamat Daftar Hitam</value>
   </data>
   <data name="settings" xml:space="preserve">
     <value>Pengaturan</value>
   </data>
   <data name="settings_domain_blacklist" xml:space="preserve">
-    <value>Tampilkan Tab &quot;Daftar Hitam Domain&quot;</value>
+    <value>Tampilkan Tab &quot;Domain Daftar Hitam&quot;</value>
   </data>
   <data name="settings_address_blacklist" xml:space="preserve">
-    <value>Tampilkan Tab &quot;Daftar Hitam Alamat&quot;</value>
+    <value>Tampilkan Tab &quot;Alamat Daftar Hitam&quot;</value>
   </data>
   <data name="settings_domain_block" xml:space="preserve">
     <value>Tampilkan Tab &quot;Catatan Domain Terblokir&quot;</value>
@@ -301,7 +301,7 @@
     <value>Tampilkan Tab &quot;Catatan Kueri&quot;</value>
   </data>
   <data name="tabitem_resolvers" xml:space="preserve">
-    <value>Resolvers</value>
+    <value>Resolver</value>
   </data>
   <data name="tabitem_advanced_settings" xml:space="preserve">
     <value>Pengaturan Lanjutan</value>
@@ -340,7 +340,7 @@
     <value>Terapkan pengaturan</value>
   </data>
   <data name="advanced_settings_dnscache" xml:space="preserve">
-    <value>DNS Cache</value>
+    <value>Tembolok DNS</value>
   </data>
   <data name="resolvers_dnscrypt_mode_header" xml:space="preserve">
     <value>Mode DNSCypt</value>
@@ -406,7 +406,7 @@
     <value>Saluran Pembaruan:</value>
   </data>
   <data name="advanced_settings_dnscache_content" xml:space="preserve">
-    <value>Gunakan cache DNS untuk memperkecil latensi dan lalu lintas data keluar</value>
+    <value>Gunakan tembolok DNS untuk memperkecil latensi dan lalu lintas data keluar</value>
   </data>
   <data name="advanced_settings_blockipv6" xml:space="preserve">
     <value>Blokir IPv6</value>
@@ -511,33 +511,33 @@
     <value>Keluar</value>
   </data>
   <data name="address_settings_listen_addresses" xml:space="preserve">
-    <value>Listen Addresses</value>
+    <value>Alamat yang didengarkan</value>
   </data>
   <data name="address_settings_manage_listen_addresses" xml:space="preserve">
-    <value>Manage Listen Addresses</value>
+    <value>Atur Alamat yang didengarkan</value>
   </data>
   <data name="address_settings_description" xml:space="preserve">
-    <value>List of local addresses and ports to listen to. Can be IPv4 and/or IPv6.</value>
+    <value>Daftar alamat local dan port untuk didengarkan, bisa berupa IPv4 dan/atau IPv6</value>
   </data>
   <data name="address_settings_add" xml:space="preserve">
-    <value>Add new listen address</value>
+    <value>Tambah alamat baru untuk didengarkan</value>
   </data>
   <data name="address_settings_remove" xml:space="preserve">
-    <value>Remove selected listen address</value>
+    <value>Hapus alamat yang dipilih</value>
   </data>
   <data name="address_settings_restore" xml:space="preserve">
-    <value>Restore default listen addresses</value>
+    <value>Pulihkan ke alamat default</value>
   </data>
   <data name="button_blacklist_clear" xml:space="preserve">
-    <value>Clear all blacklist rules</value>
+    <value>Hapus seluruh aturan daftar hitam</value>
   </data>
   <data name="settings_tray_mode" xml:space="preserve">
-    <value>Minimize to tray when closing</value>
+    <value>Kecilkan kedalam try jika ditutup</value>
   </data>
   <data name="settings_start_in_tray" xml:space="preserve">
-    <value>Start Simple DNSCrypt in tray</value>
+    <value>Jalankan Simple DNSCrypt dalam mode tray</value>
   </data>
   <data name="settings_update_silent" xml:space="preserve">
-    <value>Silently install new versions</value>
+    <value>Pasang versi terbaru secara senyap</value>
   </data>
 </root>

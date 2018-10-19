@@ -530,15 +530,15 @@
     <value>Restaurar endereços em escuta predefinidos</value>
   </data>
   <data name="button_blacklist_clear" xml:space="preserve">
-    <value>Clear all blacklist rules</value>
+    <value>Limpar todas as regras da lista negra</value>
   </data>
   <data name="settings_tray_mode" xml:space="preserve">
-    <value>Minimize to tray when closing</value>
+    <value>Minimizar para a bandeja ao fechar</value>
   </data>
   <data name="settings_start_in_tray" xml:space="preserve">
-    <value>Start Simple DNSCrypt in tray</value>
+    <value>Iniciar o Simple DNSCrypt na bandeja</value>
   </data>
   <data name="settings_update_silent" xml:space="preserve">
-    <value>Silently install new versions</value>
+    <value>Instalar silencionsamente novas versões</value>
   </data>
 </root>

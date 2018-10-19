@@ -118,64 +118,64 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="default_settings_network_cards" xml:space="preserve">
-    <value>Network Cards</value>
+    <value>Сетевые карты</value>
   </data>
   <data name="default_settings_show_hidden_cards" xml:space="preserve">
-    <value>Show hidden cards</value>
+    <value>Показать скрытые карты</value>
   </data>
   <data name="default_settings_service_header" xml:space="preserve">
-    <value>Service</value>
+    <value>Служба</value>
   </data>
   <data name="default_settings_service" xml:space="preserve">
-    <value>DNSCrypt Service</value>
+    <value>Служба DNSCrypt</value>
   </data>
   <data name="default_settings_configuration" xml:space="preserve">
-    <value>Configuration</value>
+    <value>Конфигурация</value>
   </data>
   <data name="default_settings_configuration_ipv4" xml:space="preserve">
-    <value>Using IPv4 Server</value>
+    <value>Использовать IPv4</value>
   </data>
   <data name="default_settings_configuration_ipv4_tooltip" xml:space="preserve">
-    <value>Use servers reachable over IPv4</value>
+    <value>Использование серверов, доступных по IPv4</value>
   </data>
   <data name="default_settings_configuration_ipv6" xml:space="preserve">
-    <value>Using IPv6 Server</value>
+    <value>Использовать IPv6</value>
   </data>
   <data name="default_settings_configuration_ipv6_tooltip" xml:space="preserve">
-    <value>Use servers reachable over IPv6 (do not enable if you don&apos;t have IPv6 connectivity)</value>
+    <value>Использование серверов, доступных по IPv6 (не включайте, если у вас нет IPv6)</value>
   </data>
   <data name="default_settings_configuration_dnssec" xml:space="preserve">
-    <value>Only servers with DNSSEC support</value>
+    <value>Только серверы с поддержкой DNSSEC</value>
   </data>
   <data name="default_settings_configuration_dnssec_tooltip" xml:space="preserve">
-    <value>Server must support DNS security extensions</value>
+    <value>Сервера с безопасностью DNS</value>
   </data>
   <data name="default_settings_configuration_nolog" xml:space="preserve">
-    <value>Only servers without logging</value>
+    <value>Только серверы без логирования</value>
   </data>
   <data name="default_settings_configuration_nolog_tooltip" xml:space="preserve">
-    <value>Server must not log user queries</value>
+    <value>Сервера не ведущие статистику</value>
   </data>
   <data name="default_settings_configuration_nofilter" xml:space="preserve">
-    <value>Only servers without filter</value>
+    <value>Только серверы без фильтрации</value>
   </data>
   <data name="default_settings_configuration_nofilter_tooltip" xml:space="preserve">
-    <value>Server must not enforce its own blacklist (for parental control, ads blocking...)</value>
+    <value>Сервера не применяющие свой черный список (родительский контроль, блокировка рекламы...)</value>
   </data>
   <data name="tabitem_mainmenu" xml:space="preserve">
-    <value>Main Menu</value>
+    <value>Главное</value>
   </data>
   <data name="loader_administrative_rights_available" xml:space="preserve">
-    <value>Administrative rights are available</value>
+    <value>Административные права доступны</value>
   </data>
   <data name="loader_administrative_rights_missing" xml:space="preserve">
-    <value>Missing administrative rights!</value>
+    <value>Административных прав нет</value>
   </data>
   <data name="loader_checking_version" xml:space="preserve">
-    <value>Checking for new version . . .</value>
+    <value>Проверка новой версии...</value>
   </data>
   <data name="loader_new_version_found" xml:space="preserve">
-    <value>A newer version was found: {0}</value>
+    <value>Обнаружена новая версия: {0}</value>
   </data>
   <data name="loader_starting_update" xml:space="preserve">
     <value>Запуск обновления . . .</value>
@@ -235,10 +235,10 @@
     <value>Посмотреть на GitHub</value>
   </data>
   <data name="tabitem_querylog" xml:space="preserve">
-    <value>Журнал запросов</value>
+    <value>Лог запросов</value>
   </data>
   <data name="querylog" xml:space="preserve">
-    <value>Журнал запросов</value>
+    <value>Лог запросов</value>
   </data>
   <data name="querylog_waiting_for_data" xml:space="preserve">
     <value>ожидание запросов DNS</value>
@@ -256,7 +256,7 @@
     <value>Блокировать выбранные</value>
   </data>
   <data name="domainblocklog" xml:space="preserve">
-    <value>Журнал блокировки доменов</value>
+    <value>Лог блокировки доменов</value>
   </data>
   <data name="domainblocklog_waiting_for_data" xml:space="preserve">
     <value>ожидание блокируемых запросов DNS</value>
@@ -271,10 +271,10 @@
     <value>Очистить список</value>
   </data>
   <data name="tabitem_domainblocklog" xml:space="preserve">
-    <value>Журнал блокировки доменов</value>
+    <value>Лог блокировки доменов</value>
   </data>
   <data name="tabitem_addressblocklog" xml:space="preserve">
-    <value>Журнал блокировки адресов</value>
+    <value>Лог блокировки адресов</value>
   </data>
   <data name="tabitem_domainblacklist" xml:space="preserve">
     <value>Черный список доменов</value>
@@ -292,22 +292,22 @@
     <value>Вкладка &quot;Черный список адресов&quot;</value>
   </data>
   <data name="settings_domain_block" xml:space="preserve">
-    <value>Вкладка &quot;Журнал блокировки доменов&quot;</value>
+    <value>Вкладка &quot;Лог блокировки доменов&quot;</value>
   </data>
   <data name="settings_address_block" xml:space="preserve">
-    <value>Вкладка &quot;Журнал блокировки адресов&quot;</value>
+    <value>Вкладка &quot;Лог блокировки адресов&quot;</value>
   </data>
   <data name="settings_query_log" xml:space="preserve">
-    <value>Вкладка &quot;Журнал запросов&quot;</value>
+    <value>Вкладка &quot;Лог запросов&quot;</value>
   </data>
   <data name="tabitem_resolvers" xml:space="preserve">
     <value>Резольверы</value>
   </data>
   <data name="tabitem_advanced_settings" xml:space="preserve">
-    <value>Расширенные настройки</value>
+    <value>Дополнительно</value>
   </data>
   <data name="settings_advanced_settings" xml:space="preserve">
-    <value>Показывать вкладку &quot;Расширенные настройки&quot;</value>
+    <value>Показывать вкладку &quot;Дополнительно&quot;</value>
   </data>
   <data name="yes" xml:space="preserve">
     <value>да</value>
@@ -397,7 +397,7 @@
     <value>Невозможно выполнить удаление. Попробуйте сначала остановить службу вручную и повторить снова.</value>
   </data>
   <data name="open_log_directory" xml:space="preserve">
-    <value>Открыть директорию c журналом событий</value>
+    <value>Открыть папку c логом событий</value>
   </data>
   <data name="settings_update_auto" xml:space="preserve">
     <value>Проверять обновления при запуске</value>
@@ -529,15 +529,15 @@
     <value>Восстановить адреса прослушивания по умолчанию</value>
   </data>
   <data name="button_blacklist_clear" xml:space="preserve">
-    <value>Clear all blacklist rules</value>
+    <value>Очистить все правила черного списка</value>
   </data>
   <data name="settings_tray_mode" xml:space="preserve">
-    <value>Minimize to tray when closing</value>
+    <value>Свернуть в трей при закрытии</value>
   </data>
   <data name="settings_start_in_tray" xml:space="preserve">
-    <value>Start Simple DNSCrypt in tray</value>
+    <value>Запускать свернутым в трей</value>
   </data>
   <data name="settings_update_silent" xml:space="preserve">
-    <value>Silently install new versions</value>
+    <value>Автоматическая установка новых версий</value>
   </data>
 </root>
