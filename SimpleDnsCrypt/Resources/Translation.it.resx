@@ -133,34 +133,34 @@
     <value>Configurazione</value>
   </data>
   <data name="default_settings_configuration_ipv4" xml:space="preserve">
-    <value>Utilizza server IPv4</value>
+    <value>Utilizza il Protocolo IPv4</value>
   </data>
   <data name="default_settings_configuration_ipv4_tooltip" xml:space="preserve">
-    <value>Utilizza server raggiungibili con IPv4</value>
+    <value>Utilizza Resolvers raggiungibili con il Protocolo IPv4</value>
   </data>
   <data name="default_settings_configuration_ipv6" xml:space="preserve">
-    <value>Utilizza server IPv6</value>
+    <value>Utilizza il Protocolo IPv6</value>
   </data>
   <data name="default_settings_configuration_ipv6_tooltip" xml:space="preserve">
-    <value>Utilizza server raggiungibili con IPv6 (non abilitare se la connettività IPv6 è assente)</value>
+    <value>Utilizza Resolvers raggiungibili con il Protocolo IPv6 (non abilitare se la connettività IPv6 è assente)</value>
   </data>
   <data name="default_settings_configuration_dnssec" xml:space="preserve">
-    <value>Server con supporto DNSSEC</value>
+    <value>Mostra i Resolvers con supporto DNSSEC</value>
   </data>
   <data name="default_settings_configuration_dnssec_tooltip" xml:space="preserve">
-    <value>Server che supportano DNS security extensions</value>
+    <value>Resolvers che supportano DNS security extensions</value>
   </data>
   <data name="default_settings_configuration_nolog" xml:space="preserve">
-    <value>Server senza logging</value>
+    <value>Mostra i Resolvers senza LOGGING</value>
   </data>
   <data name="default_settings_configuration_nolog_tooltip" xml:space="preserve">
-    <value>Il server non deve registrare le query degli utenti</value>
+    <value>Il Resolver non deve registrare le query degli utenti</value>
   </data>
   <data name="default_settings_configuration_nofilter" xml:space="preserve">
-    <value>Solo server senza filtri</value>
+    <value>Mostra i Resolvers senza FILTRI</value>
   </data>
   <data name="default_settings_configuration_nofilter_tooltip" xml:space="preserve">
-    <value>Il Server non deve utilizzare le proprie blacklist (ad esempio: controllo genitori, ads, blocco...)</value>
+    <value>Il Resolver non deve utilizzare le proprie blacklist (ad esempio: controllo genitori, ads, blocco...)</value>
   </data>
   <data name="tabitem_mainmenu" xml:space="preserve">
     <value>Menù Principale</value>
@@ -319,7 +319,7 @@
     <value>Annulla</value>
   </data>
   <data name="ok" xml:space="preserve">
-    <value>OK</value>
+    <value>Ok</value>
   </data>
   <data name="dialog_message_uninstall" xml:space="preserve">
     <value>Vuoi rimuovere il servizio installato?</value>
@@ -346,7 +346,7 @@
     <value>Modalità DNSCrypt</value>
   </data>
   <data name="resolvers_dnscrypt_mode_description" xml:space="preserve">
-    <value>Nella modalità automatica, tutti i server disponibili sono utilizzati. dnscrypt-proxy seleziona automaticamente i resolver più veloci.</value>
+    <value>Nella modalità automatica, tutti i Resolvers disponibili sono utilizzati. dnscrypt-proxy seleziona automaticamente i resolver più veloci.</value>
   </data>
   <data name="resolvers_dnscrypt_automatic_mode" xml:space="preserve">
     <value>Modalità Automatica</value>
@@ -358,7 +358,7 @@
     <value>Abilitato</value>
   </data>
   <data name="resolvers_available_resolvers_header" xml:space="preserve">
-    <value>Resolver Disponibili</value>
+    <value>Resolvers Disponibili</value>
   </data>
   <data name="loader_redistributable_package_check" xml:space="preserve">
     <value>Controllando se Microsoft Visual C++ Redistributable per Visual Studio 2017 è installato</value>
@@ -373,10 +373,10 @@
     <value>Microsoft Visual C++ Redistributable per Visual Studio 2017 è stato installato</value>
   </data>
   <data name="message_title_no_server_selected" xml:space="preserve">
-    <value>Nessun server selezionato</value>
+    <value>Nessun Resolver selezionato</value>
   </data>
   <data name="message_content_no_server_selected" xml:space="preserve">
-    <value>Almeno un server deve essere selezionato. Altrimenti, dnscrypt-proxy utilizza tutti i server corrispondenti ai filtri selezionati.</value>
+    <value>Almeno un Resolver deve essere selezionato. Altrimenti, dnscrypt-proxy utilizza tutti i Resolvers corrispondenti ai filtri selezionati.</value>
   </data>
   <data name="message_title_service_not_running" xml:space="preserve">
     <value>Il servizio non è in esecuzione</value>
@@ -418,7 +418,7 @@
     <value>Forza TCP</value>
   </data>
   <data name="advanced_settings_forcetcp_content" xml:space="preserve">
-    <value>Utilizza sempre TCP per connetterti ai server</value>
+    <value>Utilizza sempre TCP per connetterti ai Resolvers</value>
   </data>
   <data name="add" xml:space="preserve">
     <value>Aggiungi</value>
@@ -530,15 +530,15 @@
     <value>Restore default listen addresses</value>
   </data>
   <data name="button_blacklist_clear" xml:space="preserve">
-    <value>Clear all blacklist rules</value>
+    <value>Cancella le regole della blacklist</value>
   </data>
   <data name="settings_tray_mode" xml:space="preserve">
-    <value>Minimize to tray when closing</value>
+    <value>Minimizza nel system tray durante la chiusura</value>
   </data>
   <data name="settings_start_in_tray" xml:space="preserve">
-    <value>Start Simple DNSCrypt in tray</value>
+    <value>Avvia Simple DNSCrypt nel system tray</value>
   </data>
   <data name="settings_update_silent" xml:space="preserve">
-    <value>Silently install new versions</value>
+    <value>Installa silenziosamente le nuove versioni</value>
   </data>
 </root>
