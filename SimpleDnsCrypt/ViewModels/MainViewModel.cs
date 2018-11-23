@@ -63,6 +63,7 @@ namespace SimpleDnsCrypt.ViewModels
 
 		private SettingsViewModel _settingsViewModel;
 		private ListenAddressesViewModel _listenAddressesViewModel;
+		private ProxiesViewModel _proxiesViewModel;
 		private bool _showHiddenCards;
 		private string _windowTitle;
 
@@ -90,6 +91,7 @@ namespace SimpleDnsCrypt.ViewModels
 			};
 			_settingsViewModel.PropertyChanged += SettingsViewModelOnPropertyChanged;
 			_listenAddressesViewModel = new ListenAddressesViewModel(_windowManager, _events);
+			_proxiesViewModel = new ProxiesViewModel(_windowManager, _events);
 			_queryLogViewModel = new QueryLogViewModel(_windowManager, _events);
 			_domainBlockLogViewModel = new DomainBlockLogViewModel(_windowManager, _events);
 			_domainBlacklistViewModel = new DomainBlacklistViewModel(_windowManager, _events);
@@ -195,6 +197,17 @@ namespace SimpleDnsCrypt.ViewModels
 				if (value.Equals(_settingsViewModel)) return;
 				_settingsViewModel = value;
 				NotifyOfPropertyChange(() => SettingsViewModel);
+			}
+		}
+
+		public ProxiesViewModel ProxiesViewModel
+		{
+			get => _proxiesViewModel;
+			set
+			{
+				if (value.Equals(_proxiesViewModel)) return;
+				_proxiesViewModel = value;
+				NotifyOfPropertyChange(() => ProxiesViewModel);
 			}
 		}
 
@@ -523,6 +536,51 @@ namespace SimpleDnsCrypt.ViewModels
 			settings.WindowStartupLocation = WindowStartupLocation.CenterOwner;
 			var result = _windowManager.ShowDialog(SettingsViewModel, null, settings);
 			if (!result) Properties.Settings.Default.Save();
+		}
+
+		public void Proxies()
+		{
+			dynamic settings = new ExpandoObject();
+			settings.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+			ProxiesViewModel.WindowTitle = "Manage Proxies";
+			ProxiesViewModel.HttpProxyInput = string.IsNullOrEmpty(DnscryptProxyConfiguration.http_proxy) ? "" : DnscryptProxyConfiguration.http_proxy;
+			ProxiesViewModel.SocksProxyInput = string.IsNullOrEmpty(DnscryptProxyConfiguration.proxy) ? "" : DnscryptProxyConfiguration.proxy;
+			var result = _windowManager.ShowDialog(ProxiesViewModel, null, settings);
+			if (result) return;
+			var saveAdvancedSettings = false;
+
+			if (string.IsNullOrEmpty(ProxiesViewModel.HttpProxyInput))
+			{
+				if (!string.IsNullOrEmpty(DnscryptProxyConfiguration.http_proxy))
+				{
+					DnscryptProxyConfiguration.http_proxy = null;
+					saveAdvancedSettings = true;
+				}
+			}
+			else
+			{
+				DnscryptProxyConfiguration.http_proxy = ProxiesViewModel.HttpProxyInput;
+				saveAdvancedSettings = true;
+			}
+
+			if (string.IsNullOrEmpty(ProxiesViewModel.SocksProxyInput))
+			{
+				if (!string.IsNullOrEmpty(DnscryptProxyConfiguration.proxy))
+				{
+					DnscryptProxyConfiguration.proxy = null;
+					saveAdvancedSettings = true;
+				}
+			}
+			else
+			{
+				DnscryptProxyConfiguration.proxy = ProxiesViewModel.SocksProxyInput;
+				saveAdvancedSettings = true;
+			}
+
+			if (saveAdvancedSettings)
+			{
+				SaveAdvancedSettings();
+			}
 		}
 
 		public async void ListenAddresses()

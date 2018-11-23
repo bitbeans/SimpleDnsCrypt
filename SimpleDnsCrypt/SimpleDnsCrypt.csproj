@@ -219,6 +219,7 @@
     <Compile Include="ViewModels\AddressBlockLogViewModel.cs" />
     <Compile Include="ViewModels\ListenAddressesViewModel.cs" />
     <Compile Include="ViewModels\MetroMessageBoxViewModel.cs" />
+    <Compile Include="ViewModels\ProxiesViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\AboutViewModel.cs" />
     <Compile Include="ViewModels\DomainBlacklistViewModel.cs" />
@@ -267,6 +268,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MetroMessageBoxView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProxiesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
