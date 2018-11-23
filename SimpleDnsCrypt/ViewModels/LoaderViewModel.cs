@@ -59,13 +59,19 @@ namespace SimpleDnsCrypt.ViewModels
 				}
 				else
 				{
-					ProgressText = LocalizationEx.GetUiString("loader_redistributable_package_installing", Thread.CurrentThread.CurrentCulture);
-					//minisign needs this (to verify the installer with libsodium)
-					await PrerequisiteHelper.DownloadAndInstallRedistributablePackage();
-					if (PrerequisiteHelper.IsRedistributablePackageInstalled())
+					//Note: if this is disabled, the auto update may not work
+					if (Properties.Settings.Default.InstallRedistributablePackage)
 					{
-						ProgressText = LocalizationEx.GetUiString("loader_redistributable_package_ready", Thread.CurrentThread.CurrentCulture);
-						await Task.Delay(1000).ConfigureAwait(false);
+						ProgressText = LocalizationEx.GetUiString("loader_redistributable_package_installing",
+							Thread.CurrentThread.CurrentCulture);
+						//minisign needs this (to verify the installer with libsodium)
+						await PrerequisiteHelper.DownloadAndInstallRedistributablePackage();
+						if (PrerequisiteHelper.IsRedistributablePackageInstalled())
+						{
+							ProgressText = LocalizationEx.GetUiString("loader_redistributable_package_ready",
+								Thread.CurrentThread.CurrentCulture);
+							await Task.Delay(1000).ConfigureAwait(false);
+						}
 					}
 				}
 
