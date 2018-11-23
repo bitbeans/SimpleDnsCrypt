@@ -542,7 +542,7 @@ namespace SimpleDnsCrypt.ViewModels
 		{
 			dynamic settings = new ExpandoObject();
 			settings.WindowStartupLocation = WindowStartupLocation.CenterOwner;
-			ProxiesViewModel.WindowTitle = "Manage Proxies";
+			ProxiesViewModel.WindowTitle = LocalizationEx.GetUiString("proxy_manage_proxies", Thread.CurrentThread.CurrentCulture);
 			ProxiesViewModel.HttpProxyInput = string.IsNullOrEmpty(DnscryptProxyConfiguration.http_proxy) ? "" : DnscryptProxyConfiguration.http_proxy;
 			ProxiesViewModel.SocksProxyInput = string.IsNullOrEmpty(DnscryptProxyConfiguration.proxy) ? "" : DnscryptProxyConfiguration.proxy;
 			var result = _windowManager.ShowDialog(ProxiesViewModel, null, settings);

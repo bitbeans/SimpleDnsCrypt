@@ -551,4 +551,22 @@ Fuzzy</comment>
   <data name="settings_update_silent" xml:space="preserve">
     <value>Silently install new versions</value>
   </data>
+  <data name="proxy_proxies" xml:space="preserve">
+    <value>Proxies</value>
+  </data>
+  <data name="proxy_manage_proxies" xml:space="preserve">
+    <value>Manage Proxies</value>
+  </data>
+  <data name="proxy_http_header" xml:space="preserve">
+    <value>HTTP/HTTPS proxy</value>
+  </data>
+  <data name="proxy_http_sub" xml:space="preserve">
+    <value>Only for DoH servers</value>
+  </data>
+  <data name="proxy_socks_header" xml:space="preserve">
+    <value>SOCKS proxy</value>
+  </data>
+  <data name="proxy_socks_sub" xml:space="preserve">
+    <value>You can route all TCP connections to a local Tor node. Tor doesn&apos;t support UDP, so you should enable Force TCP (Advanced Settings) as well.</value>
+  </data>
 </root>

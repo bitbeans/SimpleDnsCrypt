@@ -37,28 +37,28 @@
                                                 Foreground="#FF8ab329"
                                                 HorizontalAlignment="Left"
                                                 VerticalAlignment="Center" />
-                    <TextBlock Text="Proxies"
+                    <TextBlock Text="{lex:Loc Key=proxy_proxies}"
                                TextWrapping="Wrap" VerticalAlignment="Center"
                                Foreground="#FF8ab329" FontSize="20"
                                Opacity="0.7" Margin="5,0,0,3" FontWeight="Bold">
                     </TextBlock>
                 </StackPanel>
-                <TextBlock Text="HTTP/HTTPS proxy"
+                <TextBlock Text="{lex:Loc Key=proxy_http_header}"
                            TextWrapping="Wrap" VerticalAlignment="Center"
                            Foreground="#FF8ab329" FontSize="14"
                            Opacity="0.7" Margin="5,8,0,3" FontWeight="Bold">
                 </TextBlock>
-                <TextBlock Text="Only for DoH servers"
+                <TextBlock Text="{lex:Loc Key=proxy_http_sub}"
                            TextWrapping="Wrap" VerticalAlignment="Center"
                            Foreground="#FF575757" Margin="5,0,0,3">
                 </TextBlock>
                 <TextBox Margin="0,5,0,0" mah:TextBoxHelper.Watermark="http://127.0.0.1:8888" Text="{Binding HttpProxyInput}" mah:TextBoxHelper.ClearTextButton="True"></TextBox>
-                <TextBlock Text="SOCKS proxy"
+                <TextBlock Text="{lex:Loc Key=proxy_socks_header}"
                            TextWrapping="Wrap" VerticalAlignment="Center"
                            Foreground="#FF8ab329" FontSize="14"
                            Opacity="0.7" Margin="5,8,0,3" FontWeight="Bold">
                 </TextBlock>
-                <TextBlock Text="You can route all TCP connections to a local Tor node. Tor doesn't support UDP, so you should enable Force TCP (Advanced Settings) as well."
+                <TextBlock Text="{lex:Loc Key=proxy_socks_sub}"
                            TextWrapping="Wrap" VerticalAlignment="Center"
                            Foreground="#FF575757" Margin="5,0,0,3">
                 </TextBlock>

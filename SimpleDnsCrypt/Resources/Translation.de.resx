@@ -547,4 +547,22 @@ Kann IPv4 und/oder IPv6 sein.</value>
   <data name="settings_update_silent" xml:space="preserve">
     <value>Neue Version automatisch installieren</value>
   </data>
+  <data name="proxy_proxies" xml:space="preserve">
+    <value>Proxies</value>
+  </data>
+  <data name="proxy_manage_proxies" xml:space="preserve">
+    <value>Proxies verwalten</value>
+  </data>
+  <data name="proxy_http_header" xml:space="preserve">
+    <value>HTTP/HTTPS Proxy</value>
+  </data>
+  <data name="proxy_http_sub" xml:space="preserve">
+    <value>Nur für DoH Server</value>
+  </data>
+  <data name="proxy_socks_header" xml:space="preserve">
+    <value>SOCKS Proxy</value>
+  </data>
+  <data name="proxy_socks_sub" xml:space="preserve">
+    <value>Alle TCP Verbindungen können über einen lokalen Tor Knoten geleitet werden. Tor unterstützt kein UDP, somit sollte Force TCP (Erweiterte Einstellungen) ebenfalls aktiviert werden</value>
+  </data>
 </root>

@@ -38,7 +38,7 @@ namespace SimpleDnsCrypt.Helper
 				new Language {Name = "Chinese Trad.", ShortCode = "zh-Hant", CultureCode = "zh-Hant"},
 				new Language {Name = "Czech", ShortCode = "cs", CultureCode = "cs-CZ"},
 				new Language {Name = "Danish", ShortCode = "da", CultureCode = "da-DK"},
-				//new Language {Name = "Dutch", ShortCode = "nl", CultureCode = "nl-NL"},
+				new Language {Name = "Dutch", ShortCode = "nl", CultureCode = "nl-NL"},
 				new Language {Name = "English", ShortCode = "en", CultureCode = "en-US"},
 				new Language {Name = "Filipino", ShortCode = "fil", CultureCode = "fil-PH"},
 				new Language {Name = "Finish", ShortCode = "fi", CultureCode = "fi-FI"},
