@@ -20,15 +20,19 @@ namespace SimpleDnsCrypt.Models
 		private bool _require_dnssec;
 		private bool _require_nolog;
 		private bool _force_tcp;
+		private string _http_proxy;
 		private int _timeout;
 		private int _keepalive;
 		private string _lb_strategy;
 		private int _cert_refresh_delay;
+		private bool _dnscrypt_ephemeral_keys;
+		private bool _tls_disable_session_tickets;
 		private int _log_level;
 		private string _log_file;
 		private Dictionary<string, Source> _sources;
 		private bool _use_syslog;
 		private int _netprobe_timeout;
+		private bool _offline_mode;
 		private int _log_files_max_size;
 		private int _log_files_max_age;
 		private int _log_files_max_backups;
@@ -200,9 +204,52 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		/// <summary>
-		/// HTTP / SOCKS proxy
-		/// Set this ("socks5://127.0.0.1:9050") to route all TCP connections to a local Tor node
-		/// Tor doesn't support UDP, so set `force_tcp` to `true` as well
+		/// DNSCrypt: Create a new, unique key for every single DNS query
+		/// This may improve privacy but can also have a significant impact on CPU usage
+		/// Only enable if you don't have a lot of network load
+		/// </summary>
+		public bool dnscrypt_ephemeral_keys
+		{
+			get => _dnscrypt_ephemeral_keys;
+			set
+			{
+				_dnscrypt_ephemeral_keys = value;
+				NotifyOfPropertyChange(() => dnscrypt_ephemeral_keys);
+			}
+		}
+
+		/// <summary>
+		/// DoH: Disable TLS session tickets - increases privacy but also latency.
+		/// </summary>
+		public bool tls_disable_session_tickets
+		{
+			get => _tls_disable_session_tickets;
+			set
+			{
+				_tls_disable_session_tickets = value;
+				NotifyOfPropertyChange(() => tls_disable_session_tickets);
+			}
+		}
+
+		/// <summary>
+		/// Offline mode - Do not use any remote encrypted servers.
+		/// The proxy will remain fully functional to respond to queries that
+		/// plugins can handle directly (forwarding, cloaking, ...)
+		/// </summary>
+		public bool offline_mode
+		{
+			get => _offline_mode;
+			set
+			{
+				_offline_mode = value;
+				NotifyOfPropertyChange(() => offline_mode);
+			}
+		}
+
+		/// <summary>
+		/// SOCKS proxy
+		/// Uncomment the following line to route all TCP connections to a local Tor node
+		/// Tor doesn't support UDP, so set `force_tcp` to `true` as well.
 		/// </summary>
 		public string proxy
 		{
@@ -211,6 +258,20 @@ namespace SimpleDnsCrypt.Models
 			{
 				_proxy = value;
 				NotifyOfPropertyChange(() => proxy);
+			}
+		}
+
+		/// <summary>
+		/// HTTP/HTTPS proxy
+		/// Only for DoH servers
+		/// </summary>
+		public string http_proxy
+		{
+			get => _http_proxy;
+			set
+			{
+				_http_proxy = value;
+				NotifyOfPropertyChange(() => http_proxy);
 			}
 		}
 
