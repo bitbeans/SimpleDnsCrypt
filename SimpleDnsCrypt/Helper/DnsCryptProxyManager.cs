@@ -160,10 +160,32 @@ namespace SimpleDnsCrypt.Helper
 			}
 		}
 
+		/// <summary>
+		/// Get the version of the dnscrypt-proxy.exe.
+		/// </summary>
+		/// <returns></returns>
 		public static string GetVersion()
 		{
 			var result = ExecuteWithArguments("-version");
 			return result.Success ? result.StandardOutput.Replace(Environment.NewLine, "") : string.Empty;
+		}
+
+		/// <summary>
+		///  Check the configuration file.
+		/// </summary>
+		/// <returns></returns>
+		public static bool IsConfigurationFileValid()
+		{
+			try
+			{
+				var result = ExecuteWithArguments("-check");
+				return result.Success;
+			}
+			catch (Exception exception)
+			{
+				Log.Error(exception);
+				return false;
+			}
 		}
 
 		/// <summary>
