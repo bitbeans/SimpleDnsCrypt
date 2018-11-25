@@ -1083,6 +1083,8 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 		}
 
+
+
 		#region Tray
 
 		#endregion

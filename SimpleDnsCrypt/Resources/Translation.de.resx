@@ -565,4 +565,22 @@ Kann IPv4 und/oder IPv6 sein.</value>
   <data name="proxy_socks_sub" xml:space="preserve">
     <value>Alle TCP Verbindungen können über einen lokalen Tor Knoten geleitet werden. Tor unterstützt kein UDP, somit sollte Force TCP (Erweiterte Einstellungen) ebenfalls aktiviert werden</value>
   </data>
+  <data name="advanced_settings_netprobe_timeout" xml:space="preserve">
+    <value>Netprobe Zeitüberschreitung</value>
+  </data>
+  <data name="advanced_settings_netprobe_timeout_content" xml:space="preserve">
+    <value>Maximale Zeit (in Sekunden) die gewartet wird, bis eine Netzwerk-Konnektivität besteht. Nützlich, wenn dnscrypt-proxy automatisch beim Start von Windows gestartet wird und nicht sofort eine Netzwerk-Konnektivität besteht. 0 bedeutet deaktiviert.</value>
+  </data>
+  <data name="default_settings_configuration_dnscrypt" xml:space="preserve">
+    <value>DNSCrypt</value>
+  </data>
+  <data name="default_settings_configuration_dnscrypt_tooltip" xml:space="preserve">
+    <value>Server verwenden die das DNSCrypt Protokoll unterstützen </value>
+  </data>
+  <data name="default_settings_configuration_doh" xml:space="preserve">
+    <value>DNS-over-HTTPS</value>
+  </data>
+  <data name="default_settings_configuration_doh_tooltip" xml:space="preserve">
+    <value>Server verwenden die das DNS-over-HTTPS Protokoll unterstützen </value>
+  </data>
 </root>

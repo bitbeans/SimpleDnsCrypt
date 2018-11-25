@@ -559,4 +559,22 @@
     <value>Можно маршрутизировать все TCP-соединения на локальный узел Tor. Tor не поддерживает UDP, поэтому надо включить &apos;Принудительно TCP&apos; на вкладке &apos;Дополнительно&apos;.</value>
     <comment>Check what would fit into the dialogue.</comment>
   </data>
+  <data name="advanced_settings_netprobe_timeout" xml:space="preserve">
+    <value>Netprobe Timeout</value>
+  </data>
+  <data name="advanced_settings_netprobe_timeout_content" xml:space="preserve">
+    <value>Maximum time (in seconds) to wait for network connectivity before initializing the proxy. Useful if the proxy is automatically started at boot, and network connectivity is not guaranteed to be immediately available. Use 0 to disable.</value>
+  </data>
+  <data name="default_settings_configuration_dnscrypt" xml:space="preserve">
+    <value>DNSCrypt</value>
+  </data>
+  <data name="default_settings_configuration_dnscrypt_tooltip" xml:space="preserve">
+    <value>Use servers implementing the DNSCrypt protocol</value>
+  </data>
+  <data name="default_settings_configuration_doh" xml:space="preserve">
+    <value>DNS-over-HTTPS</value>
+  </data>
+  <data name="default_settings_configuration_doh_tooltip" xml:space="preserve">
+    <value>Use servers implementing the DNS-over-HTTPS protocol</value>
+  </data>
 </root>
