@@ -502,7 +502,11 @@
     <value>备用 DNS 服务器</value>
   </data>
   <data name="advanced_settings_fallback_resolver_content" xml:space="preserve">
-    <value>备用服务器是未经加密的普通 DNS 服务器，它仅用于这两个用途： DNSCrypt-proxy 服务启动时获取可用服务器清单，作为操作系统的 DNS 服务器配置不可用时的一个备份选项。如果你在中国大陆使用的话，这里填 114.114.114.114:53</value>
+    <value>这是未经加密的普通 DNS 服务器，它仅用于两个用途：
+1.DNSCrypt-proxy 服务启动时获取可用服务器清单；
+2.作为操作系统的 DNS 服务器配置不可用时的一个备份选项。
+
+如果你在中国大陆使用的话，这里填 114.114.114.114:53</value>
   </data>
   <data name="trayicon_tooltip" xml:space="preserve">
     <value>Simple DNSCrypt</value>
@@ -541,21 +545,21 @@
     <value>静默安装新版本</value>
   </data>
   <data name="proxy_proxies" xml:space="preserve">
-    <value>Proxies</value>
+    <value>代理</value>
   </data>
   <data name="proxy_manage_proxies" xml:space="preserve">
-    <value>Manage Proxies</value>
+    <value>设置代理</value>
   </data>
   <data name="proxy_http_header" xml:space="preserve">
-    <value>HTTP/HTTPS proxy</value>
+    <value>HTTP/HTTPS 代理</value>
   </data>
   <data name="proxy_http_sub" xml:space="preserve">
-    <value>Only for DoH servers</value>
+    <value>只对 DNS Over HTTPS 服务器生效</value>
   </data>
   <data name="proxy_socks_header" xml:space="preserve">
-    <value>SOCKS proxy</value>
+    <value>SOCKS 代理</value>
   </data>
   <data name="proxy_socks_sub" xml:space="preserve">
-    <value>You can route all TCP connections to a local Tor node. Tor doesn&apos;t support UDP, so you should enable Force TCP (Advanced Settings) as well.</value>
+    <value>你可以把所有的TCP连接导向一个本地的 TOR 节点。TOR不支持UDP，所以你在使用这个项功能时应该在同时高级设置中启用强制使用TCP的选项。</value>
   </data>
 </root>
