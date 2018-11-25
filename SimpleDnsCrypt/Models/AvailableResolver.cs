@@ -18,6 +18,8 @@ namespace SimpleDnsCrypt.Models
 
 		[JsonIgnore]
 		public string ToolTip => $"Ports: {string.Join(",", _ports.ToArray())}";
+		[JsonIgnore]
+		public string DisplayName => $"{_name} ({_protocol})";
 
 		[JsonIgnore]
 		public bool IsInServerList

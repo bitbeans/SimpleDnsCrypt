@@ -907,6 +907,19 @@ namespace SimpleDnsCrypt.ViewModels
 
 			foreach (var resolver in allResolversWithoutFilters)
 			{
+				if (_dnscryptProxyConfiguration.doh_servers)
+					if (!_dnscryptProxyConfiguration.dnscrypt_servers)
+						if (!resolver.Protocol.Equals("DoH"))
+							continue;
+
+				if (_dnscryptProxyConfiguration.dnscrypt_servers)
+					if (!_dnscryptProxyConfiguration.doh_servers)
+						if (!resolver.Protocol.Equals("DNSCrypt"))
+							continue;
+
+				if (!_dnscryptProxyConfiguration.doh_servers && !_dnscryptProxyConfiguration.dnscrypt_servers)
+					continue;
+
 				if (_dnscryptProxyConfiguration.require_dnssec)
 					if (!resolver.DnsSec)
 						continue;
