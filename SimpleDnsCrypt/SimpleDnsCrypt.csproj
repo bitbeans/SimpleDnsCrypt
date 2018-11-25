@@ -166,6 +166,7 @@
     <Compile Include="Converters\ReverseBoolToEnabledConverter.cs" />
     <Compile Include="Converters\ServerListBackgroundConverter.cs" />
     <Compile Include="Converters\TextLengthToFontSizeConverter.cs" />
+    <Compile Include="Converters\UninstallToEnableConverter.cs" />
     <Compile Include="Extensions\Base64UrlExtensions.cs" />
     <Compile Include="Extensions\ColorConverterExtensions.cs" />
     <Compile Include="Extensions\WindowManagerExtensions.cs" />

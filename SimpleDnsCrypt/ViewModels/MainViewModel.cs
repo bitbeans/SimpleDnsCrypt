@@ -47,6 +47,7 @@ namespace SimpleDnsCrypt.ViewModels
 		private bool _isDnsCryptAutomaticModeEnabled;
 		private bool _isOperatingAsGlobalResolver;
 		private bool _isResolverRunning;
+		private bool _isServiceInstalled;
 		private bool _isSavingConfiguration;
 		private bool _isUninstallingService;
 		private bool _isWorkingOnService;
@@ -284,6 +285,17 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 		}
 
+		public bool IsServiceInstalled
+		{
+			get => _isServiceInstalled;
+			set
+			{
+				_isServiceInstalled = value;
+				NotifyOfPropertyChange(() => IsServiceInstalled);
+			}
+		}
+
+
 		public bool IsSavingConfiguration
 		{
 			get => _isSavingConfiguration;
@@ -368,10 +380,15 @@ namespace SimpleDnsCrypt.ViewModels
 		{
 			if (DnsCryptProxyManager.IsDnsCryptProxyInstalled())
 			{
+				_isServiceInstalled = true;
 				if (DnsCryptProxyManager.IsDnsCryptProxyRunning())
 				{
 					_isResolverRunning = true;
 				}
+			}
+			else
+			{
+				_isServiceInstalled = false;
 			}
 
 			if (DnscryptProxyConfiguration != null && (DnscryptProxyConfiguration.server_names == null ||
@@ -483,6 +500,7 @@ namespace SimpleDnsCrypt.ViewModels
 				{
 					case "mainTab":
 						SelectedTab = Tabs.MainTab;
+						IsServiceInstalled = DnsCryptProxyManager.IsDnsCryptProxyInstalled();
 						_isResolverRunning = DnsCryptProxyManager.IsDnsCryptProxyRunning();
 						NotifyOfPropertyChange(() => IsResolverRunning);
 						break;
@@ -655,6 +673,8 @@ namespace SimpleDnsCrypt.ViewModels
 					_dnscryptProxyConfiguration = DnscryptProxyConfigurationManager.DnscryptProxyConfiguration;
 					IsWorkingOnService = true;
 					if (DnsCryptProxyManager.IsDnsCryptProxyInstalled())
+					{
+						IsServiceInstalled = true;
 						if (DnsCryptProxyManager.IsDnsCryptProxyRunning())
 						{
 							await Task.Run(() => { DnsCryptProxyManager.Restart(); }).ConfigureAwait(false);
@@ -665,6 +685,11 @@ namespace SimpleDnsCrypt.ViewModels
 							await Task.Run(() => { DnsCryptProxyManager.Start(); }).ConfigureAwait(false);
 							await Task.Delay(Global.ServiceStartTime).ConfigureAwait(false);
 						}
+					}
+					else
+					{
+						IsServiceInstalled = false;
+					}
 				}
 
 				_isResolverRunning = DnsCryptProxyManager.IsDnsCryptProxyRunning();
@@ -696,6 +721,7 @@ namespace SimpleDnsCrypt.ViewModels
 			{
 				if (DnsCryptProxyManager.IsDnsCryptProxyInstalled())
 				{
+					IsServiceInstalled = true;
 					// service is installed, just start them
 					await Task.Run(() => { DnsCryptProxyManager.Start(); }).ConfigureAwait(false);
 					await Task.Delay(Global.ServiceStartTime).ConfigureAwait(false);
@@ -709,8 +735,13 @@ namespace SimpleDnsCrypt.ViewModels
 					await Task.Delay(Global.ServiceInstallTime).ConfigureAwait(false);
 					if (DnsCryptProxyManager.IsDnsCryptProxyInstalled())
 					{
+						IsServiceInstalled = true;
 						await Task.Run(() => { DnsCryptProxyManager.Start(); }).ConfigureAwait(false);
 						await Task.Delay(Global.ServiceStartTime).ConfigureAwait(false);
+					}
+					else
+					{
+						IsServiceInstalled = false;
 					}
 
 					_isResolverRunning = DnsCryptProxyManager.IsDnsCryptProxyRunning();
@@ -959,15 +990,25 @@ namespace SimpleDnsCrypt.ViewModels
 				ReloadLoadNetworkInterfaces();
 				IsUninstallingService = false;
 				if (!DnsCryptProxyManager.IsDnsCryptProxyInstalled())
+				{
+					IsServiceInstalled = false;
 					_windowManager.ShowMetroMessageBox(
-						LocalizationEx.GetUiString("message_content_uninstallation_successful", Thread.CurrentThread.CurrentCulture),
-						LocalizationEx.GetUiString("message_title_uninstallation_successful", Thread.CurrentThread.CurrentCulture),
+						LocalizationEx.GetUiString("message_content_uninstallation_successful",
+							Thread.CurrentThread.CurrentCulture),
+						LocalizationEx.GetUiString("message_title_uninstallation_successful",
+							Thread.CurrentThread.CurrentCulture),
 						MessageBoxButton.OK, BoxType.Default);
+				}
 				else
+				{
+					IsServiceInstalled = true;
 					_windowManager.ShowMetroMessageBox(
-						LocalizationEx.GetUiString("message_content_uninstallation_error", Thread.CurrentThread.CurrentCulture),
-						LocalizationEx.GetUiString("message_title_uninstallation_error", Thread.CurrentThread.CurrentCulture),
+						LocalizationEx.GetUiString("message_content_uninstallation_error",
+							Thread.CurrentThread.CurrentCulture),
+						LocalizationEx.GetUiString("message_title_uninstallation_error",
+							Thread.CurrentThread.CurrentCulture),
 						MessageBoxButton.OK, BoxType.Warning);
+				}
 			}
 		}
 
