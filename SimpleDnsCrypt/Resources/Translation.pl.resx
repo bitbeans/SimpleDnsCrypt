@@ -541,21 +541,21 @@
     <value>Instaluj nowe wersje w tle</value>
   </data>
   <data name="proxy_proxies" xml:space="preserve">
-    <value>Proxies</value>
+    <value>Proxy</value>
   </data>
   <data name="proxy_manage_proxies" xml:space="preserve">
-    <value>Manage Proxies</value>
+    <value>Ustaw serwery proxy</value>
   </data>
   <data name="proxy_http_header" xml:space="preserve">
-    <value>HTTP/HTTPS proxy</value>
+    <value>Proxy HTTP/HTTPS</value>
   </data>
   <data name="proxy_http_sub" xml:space="preserve">
-    <value>Only for DoH servers</value>
+    <value>Tylko dla serwerów DoH</value>
   </data>
   <data name="proxy_socks_header" xml:space="preserve">
-    <value>SOCKS proxy</value>
+    <value>Proxy SOCKS</value>
   </data>
   <data name="proxy_socks_sub" xml:space="preserve">
-    <value>You can route all TCP connections to a local Tor node. Tor doesn&apos;t support UDP, so you should enable Force TCP (Advanced Settings) as well.</value>
+    <value>Możesz przekierować wszystkie połączenia TCP do lokalnego węzła Tor. Tor nie wspiera UDP, więc powinieneś włączyć „wymuś TCP” w ustawieniach zaawansowanych.</value>
   </data>
 </root>
