@@ -33,20 +33,20 @@
                        Margin="6,6,0,0" Style="{DynamicResource ModalTextStyle}" />
 
             <StackPanel Grid.Row="2" HorizontalAlignment="Right" Margin="0,0,10,10" Orientation="Horizontal">
-                <Button Width="70" Margin="10,0,0,0" Style="{DynamicResource AccentedSquareButtonStyle}" Cursor="Hand"
+                <Button Width="70" Margin="10,0,0,0" Style="{DynamicResource CustomAccentedSquareButtonStyle}" Cursor="Hand"
                         Background="{Binding MessageBoxType, Converter={StaticResource MessageBoxTypeToColor}}"
                         Visibility="{Binding Path=IsYesButtonVisible, Converter={StaticResource BoolToVisibilityCollapsedConverter}}"
                         cal:Message.Attach="Yes" Content="{lex:Loc Key=yes}" />
-                <Button Width="70" Margin="10,0,0,0" Style="{DynamicResource AccentedSquareButtonStyle}" Cursor="Hand"
+                <Button Width="70" Margin="10,0,0,0" Style="{DynamicResource CustomAccentedSquareButtonStyle}" Cursor="Hand"
                         Background="{Binding MessageBoxType, Converter={StaticResource MessageBoxTypeToColor}}"
                         Visibility="{Binding Path=IsNoButtonVisible, Converter={StaticResource BoolToVisibilityCollapsedConverter}}"
                         cal:Message.Attach="No" Content="{lex:Loc Key=no}" />
-                <Button Width="70" Margin="10,0,0,0" Style="{DynamicResource AccentedSquareButtonStyle}" Cursor="Hand"
+                <Button Width="70" Margin="10,0,0,0" Style="{DynamicResource CustomAccentedSquareButtonStyle}" Cursor="Hand"
                         Background="{Binding MessageBoxType, Converter={StaticResource MessageBoxTypeToColor}}"
                         Visibility="{Binding Path=IsOkButtonVisible, Converter={StaticResource BoolToVisibilityCollapsedConverter}}"
                         cal:Message.Attach="Ok" Content="{lex:Loc Key=ok}" />
                 <Button Width="70" Margin="10,0,0,0" IsCancel="True"
-                        Style="{DynamicResource AccentedSquareButtonStyle}" Cursor="Hand"
+                        Style="{DynamicResource CustomAccentedSquareButtonStyle}" Cursor="Hand"
                         Background="{Binding MessageBoxType, Converter={StaticResource MessageBoxTypeToColor}}"
                         Visibility="{Binding Path=IsCancelButtonVisible, Converter={StaticResource BoolToVisibilityCollapsedConverter}}"
                         cal:Message.Attach="Cancel" Content="{lex:Loc Key=cancel}" />

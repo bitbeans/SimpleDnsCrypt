@@ -6,5 +6,6 @@
         <ResourceDictionary Source="/Styles/HyperLinkButton.xaml"/>
         <ResourceDictionary Source="/Styles/CustomMetroListBoxItem.xaml"/>
         <ResourceDictionary Source="/Styles/ModalStyle.xaml"/>
+        <ResourceDictionary Source="/Styles/CustomAccentedSquareButtonStyle.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
