@@ -541,39 +541,50 @@
     <value>Pasang versi terbaru secara senyap</value>
   </data>
   <data name="proxy_proxies" xml:space="preserve">
-    <value>Proxies</value>
+    <value>Proksi</value>
+    <comment>Fuzzy</comment>
   </data>
   <data name="proxy_manage_proxies" xml:space="preserve">
-    <value>Manage Proxies</value>
+    <value>Kelola proksi</value>
+    <comment>Fuzzy</comment>
   </data>
   <data name="proxy_http_header" xml:space="preserve">
-    <value>HTTP/HTTPS proxy</value>
+    <value>Proksi HTTP/HTTPS</value>
+    <comment>Fuzzy</comment>
   </data>
   <data name="proxy_http_sub" xml:space="preserve">
-    <value>Only for DoH servers</value>
+    <value>Hanya untuk server DoH</value>
+    <comment>Fuzzy</comment>
   </data>
   <data name="proxy_socks_header" xml:space="preserve">
-    <value>SOCKS proxy</value>
+    <value>Proksi SOCKS</value>
+    <comment>Fuzzy</comment>
   </data>
   <data name="proxy_socks_sub" xml:space="preserve">
-    <value>You can route all TCP connections to a local Tor node. Tor doesn&apos;t support UDP, so you should enable Force TCP (Advanced Settings) as well.</value>
+    <value>Anda dapat mengarahkan semua koneksi TCP ke simpul Tor lokal. Tor tidak mendukung UDP, jadi Anda harus mengaktifkan Paksa TCP (Pengaturan Tingkat Lanjut) juga.</value>
+    <comment>Fuzzy</comment>
   </data>
   <data name="advanced_settings_netprobe_timeout" xml:space="preserve">
-    <value>Netprobe Timeout</value>
+    <value>Waktu habis Netprobe</value>
+    <comment>Fuzzy</comment>
   </data>
   <data name="advanced_settings_netprobe_timeout_content" xml:space="preserve">
-    <value>Maximum time (in seconds) to wait for network connectivity before initializing the proxy. Useful if the proxy is automatically started at boot, and network connectivity is not guaranteed to be immediately available. Use 0 to disable.</value>
+    <value>Waktu maksimum (dalam detik) untuk menunggu konektivitas jaringan sebelum menginisialisasi proxy. Berguna jika proxy secara otomatis dimulai saat boot, dan konektivitas jaringan tidak dijamin akan segera tersedia. Gunakan 0 untuk menonaktifkan.</value>
+    <comment>Fuzzy</comment>
   </data>
   <data name="default_settings_configuration_dnscrypt" xml:space="preserve">
     <value>DNSCrypt</value>
+    <comment>Fuzzy</comment>
   </data>
   <data name="default_settings_configuration_dnscrypt_tooltip" xml:space="preserve">
-    <value>Use servers implementing the DNSCrypt protocol</value>
+    <value>Gunakan server yang mengimplementasikan protokol DNSCrypt</value>
+    <comment>Fuzzy</comment>
   </data>
   <data name="default_settings_configuration_doh" xml:space="preserve">
-    <value>DNS-over-HTTPS</value>
+    <value>DNS Melewati HTTPS</value>
+    <comment>Fuzzy</comment>
   </data>
   <data name="default_settings_configuration_doh_tooltip" xml:space="preserve">
-    <value>Use servers implementing the DNS-over-HTTPS protocol</value>
+    <value>Gunakan server yang menerapkan protokol DNS-over-HTTPS</value>
   </data>
 </root>
