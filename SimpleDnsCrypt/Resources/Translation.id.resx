@@ -587,4 +587,10 @@
   <data name="default_settings_configuration_doh_tooltip" xml:space="preserve">
     <value>Gunakan server yang menerapkan protokol DNS-over-HTTPS</value>
   </data>
+  <data name="loader_restore_config" xml:space="preserve">
+    <value>Restore {0}</value>
+  </data>
+  <data name="settings_backup_and_restore_config" xml:space="preserve">
+    <value>Backup and restore dnscrypt configuration on update</value>
+  </data>
 </root>
