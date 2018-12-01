@@ -169,7 +169,7 @@
     <value>可获取管理员权限</value>
   </data>
   <data name="loader_administrative_rights_missing" xml:space="preserve">
-    <value>需要管理员权限</value>
+    <value>需要管理员权限！</value>
   </data>
   <data name="loader_checking_version" xml:space="preserve">
     <value>检查新版本中...</value>
@@ -178,7 +178,7 @@
     <value>发现新版本：{0}</value>
   </data>
   <data name="loader_starting_update" xml:space="preserve">
-    <value>开始升级</value>
+    <value>开始升级……</value>
   </data>
   <data name="loader_update_failed" xml:space="preserve">
     <value>升级失败，继续......</value>
@@ -214,7 +214,7 @@
     <value>{0} 已成功载入</value>
   </data>
   <data name="loader_loading" xml:space="preserve">
-    <value>正在载入{0} </value>
+    <value>正在载入{0} ……</value>
   </data>
   <data name="loader_missing_files" xml:space="preserve">
     <value> {0} 文件夹缺少文件:\n{1}\n\n尝试使用 {2}的全新安装</value>
@@ -554,16 +554,16 @@
     <value>HTTP/HTTPS 代理</value>
   </data>
   <data name="proxy_http_sub" xml:space="preserve">
-    <value>只对 DNS Over HTTPS 服务器生效</value>
+    <value>只对 DNS-over-HTTPS 服务器生效</value>
   </data>
   <data name="proxy_socks_header" xml:space="preserve">
     <value>SOCKS 代理</value>
   </data>
   <data name="proxy_socks_sub" xml:space="preserve">
-    <value>你可以把所有的TCP连接导向一个本地的 TOR 节点。TOR不支持UDP，所以你在使用这个项功能时应该在同时高级设置中启用强制使用TCP的选项。</value>
+    <value>你可以把所有的 TCP 连接导向一个本地的 TOR 节点。TOR 不支持 UDP，所以你在使用这个项功能时应该在同时高级设置中启用强制使用 TCP 的选项。</value>
   </data>
   <data name="advanced_settings_netprobe_timeout" xml:space="preserve">
-    <value>Netprobe Timeout</value>
+    <value>网络探测超时</value>
   </data>
   <data name="advanced_settings_netprobe_timeout_content" xml:space="preserve">
     <value>Maximum time (in seconds) to wait for network connectivity before initializing the proxy. Useful if the proxy is automatically started at boot, and network connectivity is not guaranteed to be immediately available. Use 0 to disable.</value>
@@ -572,12 +572,18 @@
     <value>DNSCrypt</value>
   </data>
   <data name="default_settings_configuration_dnscrypt_tooltip" xml:space="preserve">
-    <value>Use servers implementing the DNSCrypt protocol</value>
+    <value>使用 DNSCrypt 协议的服务器</value>
   </data>
   <data name="default_settings_configuration_doh" xml:space="preserve">
     <value>DNS-over-HTTPS</value>
   </data>
   <data name="default_settings_configuration_doh_tooltip" xml:space="preserve">
-    <value>Use servers implementing the DNS-over-HTTPS protocol</value>
+    <value>使用 DNS-over-HTTPS 协议的服务器</value>
+  </data>
+  <data name="loader_restore_config" xml:space="preserve">
+    <value>Restore {0}</value>
+  </data>
+  <data name="settings_backup_and_restore_config" xml:space="preserve">
+    <value>Backup and restore dnscrypt configuration on update</value>
   </data>
 </root>
