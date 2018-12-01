@@ -1,11 +1,11 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Diagnostics;
 using System.IO;
 using System.Net.NetworkInformation;
 using System.Threading;
-using Microsoft.Win32;
 
 namespace Uninstall
 {
@@ -38,7 +38,7 @@ namespace Uninstall
 		{
 			try
 			{
-				var sdcConfig = Path.Combine(Directory.GetCurrentDirectory(), "SimpleDnsCrypt.exe.config");
+				var sdcConfig = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "SimpleDnsCrypt.exe.config");
 				if (!File.Exists(sdcConfig)) return;
 				var sdcConfigMap = new ExeConfigurationFileMap
 				{
@@ -51,7 +51,7 @@ namespace Uninstall
 				var setting = section.Settings.Get("BackupAndRestoreConfigOnUpdate");
 				var backupAndRestoreConfigOnUpdate = Convert.ToBoolean(setting.Value.ValueXml.LastChild.InnerText);
 				if (!backupAndRestoreConfigOnUpdate) return;
-				var config = Path.Combine(Directory.GetCurrentDirectory(), DnsCryptProxyFolder,
+				var config = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, DnsCryptProxyFolder,
 					DnsCryptProxyConfigName);
 				if (!File.Exists(config)) return;
 				var tmp = Path.Combine(Path.GetTempPath(), DnsCryptProxyConfigName + ".bak");
@@ -90,7 +90,8 @@ namespace Uninstall
 				const int timeout = 9000;
 				using (var process = new Process())
 				{
-					process.StartInfo.FileName = Path.Combine(Directory.GetCurrentDirectory(), DnsCryptProxyFolder, DnsCryptProxyExecutableName);
+					process.StartInfo.FileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
+						DnsCryptProxyFolder, DnsCryptProxyExecutableName);
 					process.StartInfo.Arguments = arguments;
 					process.StartInfo.UseShellExecute = false;
 					process.StartInfo.CreateNoWindow = true;
