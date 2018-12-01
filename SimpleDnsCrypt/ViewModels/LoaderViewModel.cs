@@ -151,6 +151,23 @@ namespace SimpleDnsCrypt.ViewModels
 					Process.GetCurrentProcess().Kill();
 				}
 
+				if (Properties.Settings.Default.BackupAndRestoreConfigOnUpdate)
+				{
+					var tmpConfigPath = Path.Combine(Path.GetTempPath(), Global.DnsCryptConfigurationFile + ".bak");
+					if (File.Exists(tmpConfigPath))
+					{
+						ProgressText = string.Format(LocalizationEx.GetUiString("loader_restore_config", Thread.CurrentThread.CurrentCulture),
+							Global.DnsCryptConfigurationFile);
+						var configFile = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, Global.DnsCryptConfigurationFile);
+						if (File.Exists(configFile))
+						{
+							File.Move(configFile, configFile + ".bak");
+							//File.Delete(configFile);
+						}
+						File.Move(tmpConfigPath, configFile);
+					}
+				}
+
 				ProgressText = string.Format(LocalizationEx.GetUiString("loader_loading", Thread.CurrentThread.CurrentCulture),
 					Global.DnsCryptConfigurationFile);
 				if (DnscryptProxyConfigurationManager.LoadConfiguration())

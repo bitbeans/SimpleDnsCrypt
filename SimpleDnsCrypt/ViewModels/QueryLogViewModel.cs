@@ -244,7 +244,7 @@ namespace SimpleDnsCrypt.ViewModels
 
 									while (_isQueryLogLogging)
 									{
-										Thread.Sleep(100);
+										Thread.Sleep(200);
 										//if the file size has not changed, idle
 										if (reader.BaseStream.Length == lastMaxOffset)
 											continue;

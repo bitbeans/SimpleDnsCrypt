@@ -20,6 +20,7 @@ namespace SimpleDnsCrypt.ViewModels
 		private bool _isAddressBlockLogTabVisible;
 		private bool _isAutoUpdateEnabled;
 		private bool _isAutoUpdateSilentEnabled;
+		private bool _backupAndRestoreConfigOnUpdate;
 
 		private UpdateType _selectedUpdateType;
 
@@ -44,6 +45,7 @@ namespace SimpleDnsCrypt.ViewModels
 			_isAutoUpdateEnabled = Properties.Settings.Default.AutoUpdate;
 			_isAutoUpdateSilentEnabled = Properties.Settings.Default.AutoUpdateSilent;
 			_selectedUpdateType = (UpdateType)Properties.Settings.Default.MinUpdateType;
+			_backupAndRestoreConfigOnUpdate = Properties.Settings.Default.BackupAndRestoreConfigOnUpdate;
 		}
 
 		/// <summary>
@@ -177,6 +179,17 @@ namespace SimpleDnsCrypt.ViewModels
 				_isAutoUpdateSilentEnabled = value;
 				Properties.Settings.Default.AutoUpdateSilent = _isAutoUpdateSilentEnabled;
 				NotifyOfPropertyChange(() => IsAutoUpdateSilentEnabled);
+			}
+		}
+
+		public bool BackupAndRestoreConfigOnUpdate
+		{
+			get => _backupAndRestoreConfigOnUpdate;
+			set
+			{
+				_backupAndRestoreConfigOnUpdate = value;
+				Properties.Settings.Default.BackupAndRestoreConfigOnUpdate = _backupAndRestoreConfigOnUpdate;
+				NotifyOfPropertyChange(() => BackupAndRestoreConfigOnUpdate);
 			}
 		}
 	}
