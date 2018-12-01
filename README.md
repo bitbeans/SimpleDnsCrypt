@@ -28,7 +28,7 @@ You also will need: Microsoft Visual C++ Redistributable for Visual Studio 2017 
 
 ### Installing
 
-To install Simple DNSCrypt use the latest (stable) MSI packages: [x86](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.6.0/SimpleDNSCrypt.msi) or [x64](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.6.0/SimpleDNSCrypt64.msi).
+To install Simple DNSCrypt use the latest (stable) MSI packages: [x86](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.6.1/SimpleDNSCrypt.msi) or [x64](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.6.1/SimpleDNSCrypt64.msi).
 
 #### Alternative
 
@@ -40,7 +40,7 @@ The MSI package and the SimpleDnsCrypt.exe are signed via a *COMODO RSA Code Sig
 The files are signed under the name: *Christian Hermann*
 
 You also can verify the MSI packages with [minisign](https://jedisct1.github.io/minisign/).
-The minisign signatures [x86](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.6.0/SimpleDNSCrypt.msi.minisig) and [x64](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.6.0/SimpleDNSCrypt64.msi.minisig) can be verified with the following command:
+The minisign signatures [x86](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.6.1/SimpleDNSCrypt.msi.minisig) and [x64](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.6.1/SimpleDNSCrypt64.msi.minisig) can be verified with the following command:
 
 	minisign -Vm SimpleDNSCrypt.msi -P RWTSM+4BNNvkZPNkHgE88ETlhWa+0HDzU5CN8TvbyvmhVUcr6aQXfssV
 	minisign -Vm SimpleDNSCrypt64.msi -P RWTSM+4BNNvkZPNkHgE88ETlhWa+0HDzU5CN8TvbyvmhVUcr6aQXfssV
@@ -76,7 +76,7 @@ If you can add or correct a language, feel free to do so:
 
 ## Built With
 
-* [Visual Studio 2017 (15.8.x)](https://www.visualstudio.com/downloads/)
+* [Visual Studio 2017 (15.x.x)](https://www.visualstudio.com/downloads/)
 * [.NET Framework 4.6.x](https://www.microsoft.com/net/download/windows)
 * [ReSharper](https://www.jetbrains.com/resharper/) 
 * [Advanced Installer](https://www.advancedinstaller.com/)
