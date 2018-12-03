@@ -577,9 +577,9 @@
     <value>DNS üzerinden HTTPS protokolünü uygulayan sunucuları kullan</value>
   </data>
   <data name="loader_restore_config" xml:space="preserve">
-    <value>Restore {0}</value>
+    <value>Geri Yükle {0}</value>
   </data>
   <data name="settings_backup_and_restore_config" xml:space="preserve">
-    <value>Backup and restore dnscrypt configuration on update</value>
+    <value>Güncelleme sırasında yedekleme ve geri yükleme dnscrypt yapılandırması</value>
   </data>
 </root>
