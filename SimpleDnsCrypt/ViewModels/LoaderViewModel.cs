@@ -161,8 +161,11 @@ namespace SimpleDnsCrypt.ViewModels
 						var configFile = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, Global.DnsCryptConfigurationFile);
 						if (File.Exists(configFile))
 						{
+							if (File.Exists(configFile + ".bak"))
+							{
+								File.Delete(configFile + ".bak");
+							}
 							File.Move(configFile, configFile + ".bak");
-							//File.Delete(configFile);
 						}
 						File.Move(tmpConfigPath, configFile);
 					}
