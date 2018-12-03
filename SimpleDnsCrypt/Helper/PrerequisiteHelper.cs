@@ -1,6 +1,7 @@
 ﻿using Caliburn.Micro;
 using Microsoft.Win32;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Net.Http;
@@ -19,22 +20,40 @@ namespace SimpleDnsCrypt.Helper
 			{
 				if (Environment.Is64BitProcess)
 				{
-					var parametersVc2017X64 = Registry.ClassesRoot.OpenSubKey(@"Installer\Dependencies\,,amd64,14.0,bundle", false);
-					var vc2017X64Version = parametersVc2017X64?.GetValue("Version");
-					if (vc2017X64Version == null) return false;
-					if (((string) vc2017X64Version).StartsWith("14"))
+					var paths2017X64 = new List<string>
 					{
-						return true;
+						@"Installer\Dependencies\,,amd64,14.0,bundle",
+						@"Installer\Dependencies\VC,redist.x64,amd64,14.16,bundle" //changed in 14.16.x
+					};
+					foreach (var path in paths2017X64)
+					{
+						var parametersVc2017X64 = Registry.ClassesRoot.OpenSubKey(path, false);
+						if (parametersVc2017X64 == null) continue;
+						var vc2017X64Version = parametersVc2017X64.GetValue("Version");
+						if (vc2017X64Version == null) return false;
+						if (((string)vc2017X64Version).StartsWith("14"))
+						{
+							return true;
+						}
 					}
 				}
 				else
 				{
-					var parametersVc2017X86 = Registry.ClassesRoot.OpenSubKey(@"Installer\Dependencies\,,x86,14.0,bundle", false);
-					var vc2017X86Version = parametersVc2017X86?.GetValue("Version");
-					if (vc2017X86Version == null) return false;
-					if (((string)vc2017X86Version).StartsWith("14"))
+					var paths2017X86 = new List<string>
 					{
-						return true;
+						@"Installer\Dependencies\,,x86,14.0,bundle",
+						@"Installer\Dependencies\VC,redist.x86,x86,14.16,bundle" //changed in 14.16.x
+					};
+					foreach (var path in paths2017X86)
+					{
+						var parametersVc2017X86 = Registry.ClassesRoot.OpenSubKey(path, false);
+						if (parametersVc2017X86 == null) continue;
+						var vc2017X86Version = parametersVc2017X86.GetValue("Version");
+						if (vc2017X86Version == null) return false;
+						if (((string)vc2017X86Version).StartsWith("14"))
+						{
+							return true;
+						}
 					}
 				}
 				return false;
