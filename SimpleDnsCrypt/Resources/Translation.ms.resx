@@ -124,7 +124,7 @@
     <value>Papar kad-kad tersembunyi</value>
   </data>
   <data name="default_settings_service_header" xml:space="preserve">
-    <value>Perkhidmatan</value>
+    <value>Layanan</value>
   </data>
   <data name="default_settings_service" xml:space="preserve">
     <value>Khidmat DNSCrypt</value>
@@ -157,10 +157,10 @@
     <value>Pelayan tidak sesekali menyimpan kueri pengguna</value>
   </data>
   <data name="default_settings_configuration_nofilter" xml:space="preserve">
-    <value>Hanya pelayan tanpa penapisan kueri</value>
+    <value>Hanya pelayan tanpa penapisan</value>
   </data>
   <data name="default_settings_configuration_nofilter_tooltip" xml:space="preserve">
-    <value>Pelayan tidak menguatkuasakan senarai hitam sendiri (untuk kawalan ibu-bapa, sekatan iklan...)</value>
+    <value>Pelayan tiada senarai hitam wajib sendiri (untuk kawalan ibu-bapa, sekatan iklan...)</value>
   </data>
   <data name="tabitem_mainmenu" xml:space="preserve">
     <value>Menu Utama</value>
@@ -178,7 +178,7 @@
     <value>Versi yang baru: {0} telah dijumpa</value>
   </data>
   <data name="loader_starting_update" xml:space="preserve">
-    <value>Memulakan kemas kini perisian . . .</value>
+    <value>Mulakan kemas kini . . .</value>
   </data>
   <data name="loader_update_failed" xml:space="preserve">
     <value>Kemas kini gagal, teruskan . . .</value>
@@ -187,7 +187,7 @@
     <value>Anda menggunakan versi terkini</value>
   </data>
   <data name="loader_unsigned" xml:space="preserve">
-    <value>Tidak bertandatangan digital</value>
+    <value>tidak ditandatangani</value>
   </data>
   <data name="loader_missing" xml:space="preserve">
     <value>tiada dijumpai</value>
@@ -229,10 +229,10 @@
     <value>Perisian</value>
   </data>
   <data name="about_license" xml:space="preserve">
-    <value>Lesen perisian</value>
+    <value>Lesen</value>
   </data>
   <data name="about_view_on_github" xml:space="preserve">
-    <value>Lihat pada GitHub</value>
+    <value>Lihat di GitHub</value>
   </data>
   <data name="tabitem_querylog" xml:space="preserve">
     <value>Log Kueri</value>
@@ -253,7 +253,7 @@
     <value>Kosongkan Senarai</value>
   </data>
   <data name="querylog_button_block" xml:space="preserve">
-    <value>Sekat pilihan berikut</value>
+    <value>Sekat yang dipilih</value>
   </data>
   <data name="domainblocklog" xml:space="preserve">
     <value>Log Sekatan Nama Domain</value>
@@ -262,7 +262,7 @@
     <value>menunggu kueri-kueri DNS yang tersekat</value>
   </data>
   <data name="domainblocklog_entry_count" xml:space="preserve">
-    <value>Entri-entri:</value>
+    <value>Entri:</value>
   </data>
   <data name="domainblocklog_source_file" xml:space="preserve">
     <value>Sumber:</value>
@@ -286,22 +286,22 @@
     <value>Tetapan</value>
   </data>
   <data name="settings_domain_blacklist" xml:space="preserve">
-    <value>Tunjukkan Tab &quot;Senarai Hitam Nama Domain&quot;</value>
+    <value>Tunjuk Tab &quot;Senarai Hitam Nama Domain&quot;</value>
   </data>
   <data name="settings_address_blacklist" xml:space="preserve">
-    <value>Tunjukkan  Tab &quot;Senarai Hitam Alamat&quot;</value>
+    <value>Tunjuk  Tab &quot;Senarai Hitam Alamat&quot;</value>
   </data>
   <data name="settings_domain_block" xml:space="preserve">
-    <value>Tunjukkan Tab &quot;Log Nama Domain Tersekat&quot;</value>
+    <value>Tunjuk Tab &quot;Log Nama Domain Tersekat&quot;</value>
   </data>
   <data name="settings_address_block" xml:space="preserve">
-    <value>Tunjukkan Tab &quot;Log Sekatan Alamat&quot;</value>
+    <value>Tunjuk Tab &quot;Log Sekatan Alamat&quot;</value>
   </data>
   <data name="settings_query_log" xml:space="preserve">
-    <value>Tunjukkan Tab &quot;Log Kueri&quot;</value>
+    <value>Tunjuk Tab &quot;Log Kueri&quot;</value>
   </data>
   <data name="tabitem_resolvers" xml:space="preserve">
-    <value>Resolver nama-nama domain</value>
+    <value>Pelerai-pelerai nama domain</value>
   </data>
   <data name="tabitem_advanced_settings" xml:space="preserve">
     <value>Tetapan Lanjutan</value>
@@ -340,7 +340,7 @@
     <value>Gunakan tetapan</value>
   </data>
   <data name="advanced_settings_dnscache" xml:space="preserve">
-    <value>Cache DNS tempatan</value>
+    <value>Cache DNS</value>
   </data>
   <data name="resolvers_dnscrypt_mode_header" xml:space="preserve">
     <value>Mod DNSCrypt</value>
@@ -358,7 +358,7 @@
     <value>Aktifkan</value>
   </data>
   <data name="resolvers_available_resolvers_header" xml:space="preserve">
-    <value>Pelerai-pelarai nama yang sedia ada</value>
+    <value>Pelerai-pelarai nama tersedia</value>
   </data>
   <data name="loader_redistributable_package_check" xml:space="preserve">
     <value>Memeriksa kehadiran &apos;Microsoft Visual C++ Redistributable for Visual Studio 2017&apos;</value>
@@ -373,34 +373,34 @@
     <value>&apos;Microsoft Visual C++ Redistributable for Visual Studio 2017&apos; berjaya dipasang</value>
   </data>
   <data name="message_title_no_server_selected" xml:space="preserve">
-    <value>Tiada pelayan terpilih</value>
+    <value>Tiada pelayan dipilih</value>
   </data>
   <data name="message_content_no_server_selected" xml:space="preserve">
-    <value>Paling kurang satu pelayan mesti dipilih. Jika sebaliknya, dnscrypt-proxy menggunakan kesemua pelayan sepadan dengan penapis yang ditetapkan.</value>
+    <value>Paling kurang satu pelayan mesti dipilih. Jika sebaliknya, dnscrypt-proxy menggunakan kesemua pelayan-pelayan berdasarkan kriteria pilihan.</value>
   </data>
   <data name="message_title_service_not_running" xml:space="preserve">
-    <value>Servis tidak berfungsi</value>
+    <value>Servis tidak berjalan</value>
   </data>
   <data name="message_content_service_not_running" xml:space="preserve">
-    <value>Anda harus memulakan servis DNSCrypt terlebih dahulu! </value>
+    <value>Anda harus memulakan servis DNSCrypt terlebih dahulu!</value>
   </data>
   <data name="message_title_uninstallation_successful" xml:space="preserve">
-    <value>Nyah-pasang telah berjaya</value>
+    <value>Nyah-pasang berjaya</value>
   </data>
   <data name="message_content_uninstallation_successful" xml:space="preserve">
     <value>Nyah-pasang DNS telah berjaya! Permintaan DNS tidak lagi disulitkan.</value>
   </data>
   <data name="message_title_uninstallation_error" xml:space="preserve">
-    <value>Ralat ketika nyah-pasang</value>
+    <value>Ralat penyahpasangan</value>
   </data>
   <data name="message_content_uninstallation_error" xml:space="preserve">
-    <value>Nyah-pasang servis tidak dapat dijalankan. Sila cuba menghentikan servis secara manual kemudiannya nyahpasang sekali lagi.</value>
+    <value>Nyah-pasang servis tidak dapat dilakukan. Sila cuba menghentikan servis secara manual kemudiannya nyahpasang sekali lagi.</value>
   </data>
   <data name="open_log_directory" xml:space="preserve">
     <value>Buka direktori simpanan log</value>
   </data>
   <data name="settings_update_auto" xml:space="preserve">
-    <value>Semak untuk kemas kini semasa dimulakan</value>
+    <value>Semak untuk kemas kini pada permulaan</value>
   </data>
   <data name="settings_update_channel" xml:space="preserve">
     <value>Saluran kemas kini:</value>
@@ -418,7 +418,7 @@
     <value>Paksa penggunaan TCP</value>
   </data>
   <data name="advanced_settings_forcetcp_content" xml:space="preserve">
-    <value>Sentiasa menggunakan sambungan TCP ke pelayan huluan</value>
+    <value>Selalu menggunakan sambungan TCP ke pelayan huluan</value>
   </data>
   <data name="add" xml:space="preserve">
     <value>Tambah</value>
@@ -436,7 +436,7 @@
     <value>Sebagai contoh: *.example.com, ads.*, *sex*, anda juga boleh menyertakan senarai peraturan yang dipisahkan koma, atau fail yang bermula dengan &apos;fail: peraturan-sendiri.txt&apos; ataupun URL luaran yang bermula dengan http: // atau https: //.</value>
   </data>
   <data name="working_dialog_title" xml:space="preserve">
-    <value>Senarai dicantumkan . . .</value>
+    <value>Senarai digabungkan . . .</value>
   </data>
   <data name="button_select_path" xml:space="preserve">
     <value>Pilih laluan fail</value>
@@ -445,13 +445,13 @@
     <value>Bina senarai hitam dnscrypt-proxy</value>
   </data>
   <data name="button_blacklist_import" xml:space="preserve">
-    <value>Import peraturan senarai hitam yang sedia ada</value>
+    <value>Import peraturan senarai hitam sedia ada</value>
   </data>
   <data name="button_blacklist_export" xml:space="preserve">
     <value>Eksport peraturan senarai hitam</value>
   </data>
   <data name="button_blacklist_remove" xml:space="preserve">
-    <value>Buang peraturan senarai hitam yang ditanda</value>
+    <value>Buang peraturan senarai hitam yang dipilih</value>
   </data>
   <data name="button_blacklist_add" xml:space="preserve">
     <value>Tambah peraturan senarai hitam baru</value>
@@ -466,25 +466,25 @@
     <value>Buang peraturan senarai putih yang ditanda</value>
   </data>
   <data name="button_whitelist_add" xml:space="preserve">
-    <value>Tambah peraturan senarai putih baru</value>
+    <value>Tambah peraturan senarai putih yang baru</value>
   </data>
   <data name="whitelist_rules_header" xml:space="preserve">
-    <value>Peraturan Daftar Putih</value>
+    <value>Senarai Daftar Putih</value>
   </data>
   <data name="whitelist_rules_sub_header" xml:space="preserve">
-    <value>(kesemua penyertaan diabaikan semasa penyediaan senarai hitam)</value>
+    <value>(kesemua entri diabaikan semasa pembentukan senarai hitam)</value>
   </data>
   <data name="whitelist_rules_path" xml:space="preserve">
     <value>Peraturan Daftar Putih:</value>
   </data>
   <data name="blacklist_rules_header" xml:space="preserve">
-    <value>Peraturan Daftar Hitam</value>
+    <value>Peraturan senarai hitam</value>
   </data>
   <data name="blacklist_rules_sub_header" xml:space="preserve">
-    <value>(semua penyertaan digabungkan ke dalam senarai hitam)</value>
+    <value>(semua penyertaan digabungkan menjadi satu senarai hitam)</value>
   </data>
   <data name="blacklist_rules_path" xml:space="preserve">
-    <value>Peraturan Daftar Hitam:</value>
+    <value>Peraturan senarai hitam:</value>
   </data>
   <data name="blacklist_path" xml:space="preserve">
     <value>Senarai hitam:</value>
@@ -511,19 +511,19 @@
     <value>Keluar</value>
   </data>
   <data name="address_settings_listen_addresses" xml:space="preserve">
-    <value>Alamat-alamat dengar</value>
+    <value>Alamat-alamat pendengar</value>
   </data>
   <data name="address_settings_manage_listen_addresses" xml:space="preserve">
-    <value>Urus alamat-alamat dengar</value>
+    <value>Urus alamat-alamat pendengar</value>
   </data>
   <data name="address_settings_description" xml:space="preserve">
-    <value>Senarai alamat and port-part dengar tempatan. Sama ada IPv4 dan/atau IPv6</value>
+    <value>Senarai alamat and port-port dengar tempatan. Sama ada IPv4 dan/atau IPv6</value>
   </data>
   <data name="address_settings_add" xml:space="preserve">
     <value>Tambah alamat dengar baru</value>
   </data>
   <data name="address_settings_remove" xml:space="preserve">
-    <value>Alih keluar alamat dengar</value>
+    <value>Sisihkan alamat dengar</value>
   </data>
   <data name="address_settings_restore" xml:space="preserve">
     <value>Pulihkan alamat dengar asal</value>
@@ -538,48 +538,48 @@
     <value>Mulakan Simple DNSCrypt dalam tray desktop</value>
   </data>
   <data name="settings_update_silent" xml:space="preserve">
-    <value>Pemasangan senyap untuk versi baru</value>
+    <value>Pemasangan senyap untuk setiap versi baru</value>
   </data>
   <data name="proxy_proxies" xml:space="preserve">
-    <value>Proxies</value>
+    <value>Proksi</value>
   </data>
   <data name="proxy_manage_proxies" xml:space="preserve">
-    <value>Manage Proxies</value>
+    <value>Menguruskan proksi</value>
   </data>
   <data name="proxy_http_header" xml:space="preserve">
-    <value>HTTP/HTTPS proxy</value>
+    <value>Proksi HTTP/HTTPS</value>
   </data>
   <data name="proxy_http_sub" xml:space="preserve">
-    <value>Only for DoH servers</value>
+    <value>Hanya untuk pelayan DOH</value>
   </data>
   <data name="proxy_socks_header" xml:space="preserve">
-    <value>SOCKS proxy</value>
+    <value>Proksi SOCKS</value>
   </data>
   <data name="proxy_socks_sub" xml:space="preserve">
-    <value>You can route all TCP connections to a local Tor node. Tor doesn&apos;t support UDP, so you should enable Force TCP (Advanced Settings) as well.</value>
+    <value>Anda boleh mengarahkan semua sambungan TCP ke nod Tor tempatan. Tor tiada sokongan UDP, jadi anda harus mendayakan Paksakan TCP (Tetapan Lanjutan) juga.</value>
   </data>
   <data name="advanced_settings_netprobe_timeout" xml:space="preserve">
-    <value>Netprobe Timeout</value>
+    <value>Masa tamat netprobe</value>
   </data>
   <data name="advanced_settings_netprobe_timeout_content" xml:space="preserve">
-    <value>Maximum time (in seconds) to wait for network connectivity before initializing the proxy. Useful if the proxy is automatically started at boot, and network connectivity is not guaranteed to be immediately available. Use 0 to disable.</value>
+    <value>Masa maksimum (dalam saat) untuk menunggu sambungan rangkaian sebelum memulakan proksi. Berguna jika proksi secara automatik bermula pada boot, dan sambungan rangkaian tidak dijamin akan segera tersedia. Gunakan 0 untuk nyahdayakan.</value>
   </data>
   <data name="default_settings_configuration_dnscrypt" xml:space="preserve">
     <value>DNSCrypt</value>
   </data>
   <data name="default_settings_configuration_dnscrypt_tooltip" xml:space="preserve">
-    <value>Use servers implementing the DNSCrypt protocol</value>
+    <value>Gunakan pelayan yang menerapkan protokol DNSCrypt</value>
   </data>
   <data name="default_settings_configuration_doh" xml:space="preserve">
     <value>DNS-over-HTTPS</value>
   </data>
   <data name="default_settings_configuration_doh_tooltip" xml:space="preserve">
-    <value>Use servers implementing the DNS-over-HTTPS protocol</value>
+    <value>Gunakan pelayan yang melaksanakan protokol DNS-over-HTTPS</value>
   </data>
   <data name="loader_restore_config" xml:space="preserve">
-    <value>Restore {0}</value>
+    <value>Memulihkan {0}</value>
   </data>
   <data name="settings_backup_and_restore_config" xml:space="preserve">
-    <value>Backup and restore dnscrypt configuration on update</value>
+    <value>Sandarkan dan kembalikan konfigurasi dnscrypt pada kemas kini</value>
   </data>
 </root>
