@@ -566,7 +566,7 @@
     <value>网络探测超时</value>
   </data>
   <data name="advanced_settings_netprobe_timeout_content" xml:space="preserve">
-    <value>Maximum time (in seconds) to wait for network connectivity before initializing the proxy. Useful if the proxy is automatically started at boot, and network connectivity is not guaranteed to be immediately available. Use 0 to disable.</value>
+    <value>初始化代理之前等待网络连接的最长时间（以秒计算）。 如果代理在系统启动时自动启动，并且无法保证网络连接立即可用，则非常有用。 设置0则禁用选项。</value>
   </data>
   <data name="default_settings_configuration_dnscrypt" xml:space="preserve">
     <value>DNSCrypt</value>
@@ -581,9 +581,9 @@
     <value>使用 DNS-over-HTTPS 协议的服务器</value>
   </data>
   <data name="loader_restore_config" xml:space="preserve">
-    <value>Restore {0}</value>
+    <value>恢复 {0}</value>
   </data>
   <data name="settings_backup_and_restore_config" xml:space="preserve">
-    <value>Backup and restore dnscrypt configuration on update</value>
+    <value>在更新时备份并恢复dnscrypt设置</value>
   </data>
 </root>
