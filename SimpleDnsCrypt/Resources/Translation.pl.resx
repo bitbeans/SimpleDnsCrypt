@@ -559,27 +559,27 @@
     <value>Możesz przekierować wszystkie połączenia TCP do lokalnego węzła Tor. Tor nie wspiera UDP, więc powinieneś włączyć „wymuś TCP” w ustawieniach zaawansowanych.</value>
   </data>
   <data name="advanced_settings_netprobe_timeout" xml:space="preserve">
-    <value>Netprobe Timeout</value>
+    <value>Oczekiwanie na połączenie</value>
   </data>
   <data name="advanced_settings_netprobe_timeout_content" xml:space="preserve">
-    <value>Maximum time (in seconds) to wait for network connectivity before initializing the proxy. Useful if the proxy is automatically started at boot, and network connectivity is not guaranteed to be immediately available. Use 0 to disable.</value>
+    <value>Maksymalny czas (w sekundach) oczekiwania na połączenie sieciowe przed uruchomieniem proxy. Przydatne gdy proxy uruchamia się wraz ze startem systemu, ale połączenie sieciowe nie zawsze jest natychmiastowo dostępne. Wpisz wartość 0, aby wyłączyć</value>
   </data>
   <data name="default_settings_configuration_dnscrypt" xml:space="preserve">
     <value>DNSCrypt</value>
   </data>
   <data name="default_settings_configuration_dnscrypt_tooltip" xml:space="preserve">
-    <value>Use servers implementing the DNSCrypt protocol</value>
+    <value>Użyj serwerów wspierających protokół DNSCrypt</value>
   </data>
   <data name="default_settings_configuration_doh" xml:space="preserve">
-    <value>DNS-over-HTTPS</value>
+    <value>DNS-przez-HTTPS</value>
   </data>
   <data name="default_settings_configuration_doh_tooltip" xml:space="preserve">
-    <value>Use servers implementing the DNS-over-HTTPS protocol</value>
+    <value>Użyj serwerów wspierających protokół DNS-over-HTTPS (DoH)</value>
   </data>
   <data name="loader_restore_config" xml:space="preserve">
-    <value>Restore {0}</value>
+    <value>Przywróć {0}</value>
   </data>
   <data name="settings_backup_and_restore_config" xml:space="preserve">
-    <value>Backup and restore dnscrypt configuration on update</value>
+    <value>Utwórz i przywróć kopię zapasową konfiguracji podczas aktualizacji</value>
   </data>
 </root>
