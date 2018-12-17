@@ -589,4 +589,82 @@ Kann IPv4 und/oder IPv6 sein.</value>
   <data name="settings_backup_and_restore_config" xml:space="preserve">
     <value>Konfiguration bei Updates erhalten</value>
   </data>
+  <data name="tabitem_cloakandforward" xml:space="preserve">
+    <value>Cloak und Forward</value>
+  </data>
+  <data name="cloaking" xml:space="preserve">
+    <value>Cloaking</value>
+  </data>
+  <data name="cloaking_path" xml:space="preserve">
+    <value>Cloaking Regeln:</value>
+  </data>
+  <data name="cloaking_rules_header" xml:space="preserve">
+    <value>Cloaking Regeln</value>
+  </data>
+  <data name="cloaking_rules_sub_header" xml:space="preserve">
+    <value>(aktive cloaking Regeln)</value>
+  </data>
+  <data name="button_cloaking_add" xml:space="preserve">
+    <value>Neue Cloaking Regel hinzufügen</value>
+  </data>
+  <data name="button_cloaking_remove" xml:space="preserve">
+    <value>Ausgewählte Cloaking Regel entfernen</value>
+  </data>
+  <data name="button_cloaking_import" xml:space="preserve">
+    <value>Existierende Cloaking Regeln importieren</value>
+  </data>
+  <data name="button_cloaking_export" xml:space="preserve">
+    <value>Cloaking Regeln exportieren</value>
+  </data>
+  <data name="rule_window_cloaking_header" xml:space="preserve">
+    <value>Neue Cloaking Regel hinzufügen</value>
+  </data>
+  <data name="rule_window_cloaking_key_text" xml:space="preserve">
+    <value>Regel Quelle (bsp: www.google.*)</value>
+  </data>
+  <data name="rule_window_cloaking_value_text" xml:space="preserve">
+    <value>Regel Ziel (bsp: forcesafesearch.google.com)</value>
+  </data>
+  <data name="forwarding" xml:space="preserve">
+    <value>Forwarding</value>
+  </data>
+  <data name="forwarding_path" xml:space="preserve">
+    <value>Forwarding Regeln:</value>
+  </data>
+  <data name="forwarding_rules_header" xml:space="preserve">
+    <value>Forwarding Regeln</value>
+  </data>
+  <data name="forwarding_rules_sub_header" xml:space="preserve">
+    <value>(aktive forwarding Regeln)</value>
+  </data>
+  <data name="button_forwarding_add" xml:space="preserve">
+    <value>Neue Forwarding Regel hinzufügen</value>
+  </data>
+  <data name="button_forwarding_remove" xml:space="preserve">
+    <value>Ausgewählte Forwarding Regel entfernen</value>
+  </data>
+  <data name="button_forwarding_import" xml:space="preserve">
+    <value>Existierende Forwarding Regeln importieren</value>
+  </data>
+  <data name="button_forwarding_export" xml:space="preserve">
+    <value>Forwarding Regeln exportieren</value>
+  </data>
+  <data name="rule_window_forwarding_header" xml:space="preserve">
+    <value>Neue Forwarding Regel hinzufügen</value>
+  </data>
+  <data name="rule_window_forwarding_key_text" xml:space="preserve">
+    <value>Regel Quelle (bsp: example.com)</value>
+  </data>
+  <data name="rule_window_forwarding_value_text" xml:space="preserve">
+    <value>Regel Ziel (bsp: 9.9.9.9,8.8.8.8)</value>
+  </data>
+  <data name="rule_window_add" xml:space="preserve">
+    <value>Hinzufügen</value>
+  </data>
+  <data name="rule_window_abort" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="settings_cloak_and_forward" xml:space="preserve">
+    <value>&quot;Cloak und Forward&quot; in Tabs anzeigen</value>
+  </data>
 </root>

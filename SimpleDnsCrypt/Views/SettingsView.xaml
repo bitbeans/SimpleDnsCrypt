@@ -65,7 +65,7 @@
                     <CheckBox
                         IsChecked="{Binding IsCloakAndForwardTabVisible}"
                         Margin="5"
-                        Content="Show Cloak and Forward Tab"
+                        Content="{lex:Loc Key=settings_cloak_and_forward}"
                         Cursor="Hand" Foreground="#FF575757" />
                     <CheckBox IsEnabled="True"
                               IsChecked="{Binding IsDomainBlockLogTabVisible}"

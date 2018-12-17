@@ -582,4 +582,82 @@
   <data name="settings_backup_and_restore_config" xml:space="preserve">
     <value>Güncelleme sırasında yedekleme ve geri yükleme dnscrypt yapılandırması</value>
   </data>
+  <data name="tabitem_cloakandforward" xml:space="preserve">
+    <value>Cloak and Forward</value>
+  </data>
+  <data name="cloaking" xml:space="preserve">
+    <value>Cloaking</value>
+  </data>
+  <data name="cloaking_path" xml:space="preserve">
+    <value>Cloaking Rules:</value>
+  </data>
+  <data name="cloaking_rules_header" xml:space="preserve">
+    <value>Cloaking Rules</value>
+  </data>
+  <data name="cloaking_rules_sub_header" xml:space="preserve">
+    <value>(active cloaking rules)</value>
+  </data>
+  <data name="button_cloaking_add" xml:space="preserve">
+    <value>Add a new cloaking rule</value>
+  </data>
+  <data name="button_cloaking_remove" xml:space="preserve">
+    <value>Remove selected cloaking rule</value>
+  </data>
+  <data name="button_cloaking_import" xml:space="preserve">
+    <value>Import existing cloaking rules</value>
+  </data>
+  <data name="button_cloaking_export" xml:space="preserve">
+    <value>Export cloaking rules</value>
+  </data>
+  <data name="rule_window_cloaking_header" xml:space="preserve">
+    <value>Add new cloaking rule</value>
+  </data>
+  <data name="rule_window_cloaking_key_text" xml:space="preserve">
+    <value>Rule source (eg: www.google.*)</value>
+  </data>
+  <data name="rule_window_cloaking_value_text" xml:space="preserve">
+    <value>Rule target (eg: forcesafesearch.google.com)</value>
+  </data>
+  <data name="forwarding" xml:space="preserve">
+    <value>Forwarding</value>
+  </data>
+  <data name="forwarding_path" xml:space="preserve">
+    <value>Forwarding Rules:</value>
+  </data>
+  <data name="forwarding_rules_header" xml:space="preserve">
+    <value>Forwarding Rules</value>
+  </data>
+  <data name="forwarding_rules_sub_header" xml:space="preserve">
+    <value>(active forwarding rules)</value>
+  </data>
+  <data name="button_forwarding_add" xml:space="preserve">
+    <value>Add a new forwarding rule</value>
+  </data>
+  <data name="button_forwarding_remove" xml:space="preserve">
+    <value>Remove selected forwarding rule</value>
+  </data>
+  <data name="button_forwarding_import" xml:space="preserve">
+    <value>Import existing forwarding rules</value>
+  </data>
+  <data name="button_forwarding_export" xml:space="preserve">
+    <value>Export forwarding rules</value>
+  </data>
+  <data name="rule_window_forwarding_header" xml:space="preserve">
+    <value>Add new forwarding rule</value>
+  </data>
+  <data name="rule_window_forwarding_key_text" xml:space="preserve">
+    <value>Rule source (eg: example.com)</value>
+  </data>
+  <data name="rule_window_forwarding_value_text" xml:space="preserve">
+    <value>Rule target (eg: 9.9.9.9,8.8.8.8)</value>
+  </data>
+  <data name="rule_window_add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="rule_window_abort" xml:space="preserve">
+    <value>Abort</value>
+  </data>
+  <data name="settings_cloak_and_forward" xml:space="preserve">
+    <value>Show &quot;Cloak and Forward&quot; Tab</value>
+  </data>
 </root>

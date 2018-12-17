@@ -1110,7 +1110,7 @@
                 </TabItem>
                 <TabItem Padding="10,2,10,2" Height="39" VerticalAlignment="Top" Tag="cloakAndForwardTab"
                              Visibility="{Binding SettingsViewModel.IsCloakAndForwardTabVisible, Converter={StaticResource BoolToVisibilityCollapsedConverter}}"
-                             Header="Cloak and Forward">
+                             Header="{lex:Loc Key=tabitem_cloakandforward}">
                     <TabItem.Content>
                         <DockPanel Margin="0,10,0,0">
                             <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,10,0,0"
@@ -1151,7 +1151,7 @@
                                                                     HorizontalAlignment="Left"
                                                                     VerticalAlignment="Center" />
                                     <TextBlock Grid.Column="1" Grid.Row="0"
-                                                   Text="Cloaking"
+                                                   Text="{lex:Loc Key=cloaking}"
                                                    TextWrapping="Wrap" VerticalAlignment="Center"
                                                    Foreground="#FF8ab329" FontSize="20"
                                                    Opacity="0.7" Margin="5,0,0,0" FontWeight="Bold">
@@ -1168,7 +1168,7 @@
                                         </Grid.ColumnDefinitions>
 
                                         <Label MinWidth="120" Grid.Column="0" VerticalContentAlignment="Center"
-                                                   Foreground="#FF575757" Content="Cloaking Rules"
+                                                   Foreground="#FF575757" Content="{lex:Loc Key=cloaking_path}"
                                                    Height="30" VerticalAlignment="Top" />
                                         <TextBox Grid.Column="1" Text="{Binding CloakingRulesFile}"
                                                      Background="#FF8ab329"
@@ -1207,11 +1207,11 @@
                                                 Grid.Row="2">
                                         <Label Foreground="#FF575757"
                                                FontSize="16" FontWeight="Bold"
-                                               Content="Cloaking Rules"
+                                               Content="{lex:Loc Key=cloaking_rules_header}"
                                                VerticalAlignment="Center" />
                                         <Label Foreground="#FF575757"
                                                FontSize="12"
-                                               Content="all entries ..."
+                                               Content="{lex:Loc Key=cloaking_rules_sub_header}"
                                                Margin="0,2,0,0"
                                                VerticalAlignment="Center" />
                                     </StackPanel>
@@ -1261,7 +1261,7 @@
                                                         Foreground="{DynamicResource AccentColorBrush}" />
                                                 <Button.ToolTip>
                                                     <Label
-                                                            Content="{lex:Loc Key=button_whitelist_add}"
+                                                            Content="{lex:Loc Key=button_cloaking_add}"
                                                             FontWeight="DemiBold" />
                                                 </Button.ToolTip>
                                             </Button>
@@ -1286,7 +1286,7 @@
                                                         Foreground="{DynamicResource AccentColorBrush}" />
                                                 <Button.ToolTip>
                                                     <Label
-                                                            Content="{lex:Loc Key=button_whitelist_remove}"
+                                                            Content="{lex:Loc Key=button_cloaking_remove}"
                                                             FontWeight="DemiBold" />
                                                 </Button.ToolTip>
                                             </Button>
@@ -1311,7 +1311,7 @@
                                                         Foreground="{DynamicResource AccentColorBrush}" />
                                                 <Button.ToolTip>
                                                     <Label
-                                                            Content="{lex:Loc Key=button_whitelist_import}"
+                                                            Content="{lex:Loc Key=button_cloaking_import}"
                                                             FontWeight="DemiBold" />
                                                 </Button.ToolTip>
                                             </Button>
@@ -1336,7 +1336,7 @@
                                                         Foreground="{DynamicResource AccentColorBrush}" />
                                                 <Button.ToolTip>
                                                     <Label
-                                                            Content="{lex:Loc Key=button_whitelist_export}"
+                                                            Content="{lex:Loc Key=button_cloaking_export}"
                                                             FontWeight="DemiBold" />
                                                 </Button.ToolTip>
                                             </Button>

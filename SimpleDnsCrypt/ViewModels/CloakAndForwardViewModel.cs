@@ -1,15 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel.Composition;
-using System.Dynamic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Forms;
-using Caliburn.Micro;
+﻿using Caliburn.Micro;
 using DnsCrypt.Blacklist;
 using MahApps.Metro.Controls;
 using MahApps.Metro.SimpleChildWindow;
@@ -17,6 +6,14 @@ using SimpleDnsCrypt.Config;
 using SimpleDnsCrypt.Helper;
 using SimpleDnsCrypt.Models;
 using SimpleDnsCrypt.Windows;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.Composition;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 using Application = System.Windows.Application;
 using Screen = Caliburn.Micro.Screen;
 
@@ -231,7 +228,7 @@ namespace SimpleDnsCrypt.ViewModels
 			try
 			{
 				var metroWindow = Application.Current.Windows.OfType<MetroWindow>().FirstOrDefault();
-				var addRuleWindow = new AddRuleWindow {Title = "Neue Cloaking Regel"};
+				var addRuleWindow = new AddRuleWindow(RuleWindowType.Cloaking);
 				var addRuleWindowResult = await metroWindow.ShowChildWindowAsync<AddRuleWindowResult>(addRuleWindow);
 
 				if (!addRuleWindowResult.Result) return;
@@ -258,15 +255,15 @@ namespace SimpleDnsCrypt.ViewModels
 		{
 			try
 			{
-				var saveCloackingFileDialog = new SaveFileDialog
+				var saveCloakingFileDialog = new SaveFileDialog
 				{
 					RestoreDirectory = true,
 					AddExtension = true,
 					DefaultExt = ".txt"
 				};
-				var result = saveCloackingFileDialog.ShowDialog();
+				var result = saveCloakingFileDialog.ShowDialog();
 				if (result != DialogResult.OK) return;
-				SaveCloakingRulesToFile(saveCloackingFileDialog.FileName);
+				SaveCloakingRulesToFile(saveCloakingFileDialog.FileName);
 			}
 			catch (Exception exception)
 			{
