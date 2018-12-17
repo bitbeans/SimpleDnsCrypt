@@ -350,6 +350,7 @@ namespace SimpleDnsCrypt.ViewModels
 				if (result == DialogResult.OK)
 				{
 					ForwardingRulesFile = Path.Combine(forwardingFolderDialog.SelectedPath, Global.ForwardingRulesFileName);
+					SaveForwardingRulesToFile();
 				}
 			}
 			catch (Exception exception)
@@ -526,6 +527,7 @@ namespace SimpleDnsCrypt.ViewModels
 				if (result == DialogResult.OK)
 				{
 					CloakingRulesFile = Path.Combine(cloakingFolderDialog.SelectedPath, Global.CloakingRulesFileName);
+					SaveCloakingRulesToFile();
 				}
 			}
 			catch (Exception exception)
