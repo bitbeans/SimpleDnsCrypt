@@ -1108,6 +1108,245 @@
                         </ScrollViewer>
                     </TabItem.Content>
                 </TabItem>
+                <TabItem Padding="10,2,10,2" Height="39" VerticalAlignment="Top" Tag="cloakAndForwardTab"
+                             Visibility="{Binding SettingsViewModel.IsCloakAndForwardTabVisible, Converter={StaticResource BoolToVisibilityCollapsedConverter}}"
+                             Header="Cloak and Forward">
+                    <TabItem.Content>
+                        <DockPanel Margin="0,10,0,0">
+                            <Border BorderThickness="1" Background="#198AB328" Padding="10" Margin="0,10,0,0"
+                                        DataContext="{Binding CloakAndForwardViewModel}" DockPanel.Dock="Top">
+                                <Border.BorderBrush>
+                                    <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile"
+                                                      Opacity="0.4">
+                                        <DrawingBrush.Drawing>
+                                            <DrawingGroup>
+                                                <GeometryDrawing Brush="#FF8ab329">
+                                                    <GeometryDrawing.Geometry>
+                                                        <GeometryGroup>
+                                                            <RectangleGeometry Rect="0,0,50,50" />
+                                                            <RectangleGeometry Rect="50,50,50,50" />
+                                                        </GeometryGroup>
+                                                    </GeometryDrawing.Geometry>
+                                                </GeometryDrawing>
+                                            </DrawingGroup>
+                                        </DrawingBrush.Drawing>
+                                    </DrawingBrush>
+                                </Border.BorderBrush>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <iconPacks:PackIconMaterial Grid.Column="0" Grid.Row="0" Height="20"
+                                                                    Width="20" Kind="AccountConvert"
+                                                                    Opacity="0.7"
+                                                                    Foreground="#FF8ab329"
+                                                                    HorizontalAlignment="Left"
+                                                                    VerticalAlignment="Center" />
+                                    <TextBlock Grid.Column="1" Grid.Row="0"
+                                                   Text="Cloaking"
+                                                   TextWrapping="Wrap" VerticalAlignment="Center"
+                                                   Foreground="#FF8ab329" FontSize="20"
+                                                   Opacity="0.7" Margin="5,0,0,0" FontWeight="Bold">
+                                    </TextBlock>
+                                    <controls:ToggleSwitchButton HorizontalAlignment="Right" Margin="0,0,5,0"
+                                                                     Cursor="Hand"
+                                                                     IsChecked="{Binding IsCloakingEnabled}"
+                                                                     Grid.Column="1" Grid.Row="0" />
+                                    <Grid Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Margin="0,10,0,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <Label MinWidth="120" Grid.Column="0" VerticalContentAlignment="Center"
+                                                   Foreground="#FF575757" Content="Cloaking Rules"
+                                                   Height="30" VerticalAlignment="Top" />
+                                        <TextBox Grid.Column="1" Text="{Binding CloakingRulesFile}"
+                                                     Background="#FF8ab329"
+                                                     Opacity="0.4" BorderBrush="#FF575757"
+                                                     MinWidth="560" IsReadOnly="True"
+                                                     VerticalContentAlignment="Center"
+                                                     Margin="0,0,0,0" />
+                                        <Button Grid.Column="2" x:Name="ChangeCloakingRulesFile"
+                                                    cal:Message.Attach="ChangeCloakingRulesFile"
+                                                    Background="White"
+                                                    IsEnabled="{Binding IsBlacklistEnabled, Converter={StaticResource ReverseBoolToEnabledConverter}}"
+                                                    Width="30"
+                                                    Height="30"
+                                                    Cursor="Hand"
+                                                    HorizontalContentAlignment="Center"
+                                                    VerticalContentAlignment="Center"
+                                                    BorderBrush="{DynamicResource AccentColorBrush}"
+                                                    FocusVisualStyle="{DynamicResource MahApps.Metro.Styles.MetroCircleFocusVisual}"
+                                                    Style="{DynamicResource MahApps.Metro.Styles.MetroCircleButtonStyle}"
+                                                    Margin="15,0,0,0">
+                                            <iconPacks:PackIconMaterial
+                                                    Kind="DotsHorizontal"
+                                                    Width="15"
+                                                    Height="15"
+                                                    HorizontalContentAlignment="Center"
+                                                    VerticalContentAlignment="Center"
+                                                    Foreground="{DynamicResource AccentColorBrush}" />
+                                            <Button.ToolTip>
+                                                <Label
+                                                        Content="{lex:Loc Key=button_select_path}"
+                                                        FontWeight="DemiBold" />
+                                            </Button.ToolTip>
+                                        </Button>
+                                    </Grid>
+                                    <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2" Grid.Column="0"
+                                                Grid.Row="2">
+                                        <Label Foreground="#FF575757"
+                                               FontSize="16" FontWeight="Bold"
+                                               Content="Cloaking Rules"
+                                               VerticalAlignment="Center" />
+                                        <Label Foreground="#FF575757"
+                                               FontSize="12"
+                                               Content="all entries ..."
+                                               Margin="0,2,0,0"
+                                               VerticalAlignment="Center" />
+                                    </StackPanel>
+                                    <Grid Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <ListView BorderBrush="#198AB328" Grid.Column="0"
+                                                      IsEnabled="{Binding IsWorking, Converter={StaticResource ReverseBoolToEnabledConverter}}"
+                                                      ScrollViewer.VerticalScrollBarVisibility="Visible"
+                                                      ScrollViewer.CanContentScroll="True"
+                                                      MinHeight="180" MinWidth="680"
+                                                      SelectedItem="{Binding Path=SelectedCloakingEntry}"
+                                                      ItemsSource="{Binding Path=CloakingRules}">
+                                            <ListView.ItemTemplate>
+                                                <DataTemplate>
+                                                    <UniformGrid Columns="2">
+                                                        <Label Content="{Binding Key}"
+                                                               FontSize="10"
+                                                               Foreground="#FF575757" />
+                                                        <Label Content="{Binding Value}"
+                                                               FontSize="10"
+                                                               Foreground="#FF575757" />
+                                                    </UniformGrid>
+                                                </DataTemplate>
+                                            </ListView.ItemTemplate>
+                                        </ListView>
+                                        <StackPanel Orientation="Vertical" Margin="15,0,0,0" Grid.Column="1">
+                                            <Button x:Name="AddCloakingRule"
+                                                        cal:Message.Attach="AddCloakingRule"
+                                                        Background="White"
+                                                        Width="30"
+                                                        Height="30"
+                                                        Cursor="Hand"
+                                                        HorizontalContentAlignment="Center"
+                                                        VerticalContentAlignment="Center"
+                                                        BorderBrush="{DynamicResource AccentColorBrush}"
+                                                        FocusVisualStyle="{DynamicResource MahApps.Metro.Styles.MetroCircleFocusVisual}"
+                                                        Style="{DynamicResource MahApps.Metro.Styles.MetroCircleButtonStyle}">
+                                                <iconPacks:PackIconMaterial
+                                                        Kind="Plus"
+                                                        Width="15"
+                                                        Height="15"
+                                                        HorizontalContentAlignment="Center"
+                                                        VerticalContentAlignment="Center"
+                                                        Foreground="{DynamicResource AccentColorBrush}" />
+                                                <Button.ToolTip>
+                                                    <Label
+                                                            Content="{lex:Loc Key=button_whitelist_add}"
+                                                            FontWeight="DemiBold" />
+                                                </Button.ToolTip>
+                                            </Button>
+                                            <Button x:Name="RemoveCloakingRule"
+                                                        cal:Message.Attach="RemoveCloakingRule"
+                                                        Background="White"
+                                                        Width="30"
+                                                        Height="30"
+                                                        Cursor="Hand"
+                                                        HorizontalContentAlignment="Center"
+                                                        VerticalContentAlignment="Center"
+                                                        BorderBrush="{DynamicResource AccentColorBrush}"
+                                                        FocusVisualStyle="{DynamicResource MahApps.Metro.Styles.MetroCircleFocusVisual}"
+                                                        Style="{DynamicResource MahApps.Metro.Styles.MetroCircleButtonStyle}"
+                                                        Margin="0,7,0,0">
+                                                <iconPacks:PackIconMaterial
+                                                        Kind="Minus"
+                                                        Width="15"
+                                                        Height="15"
+                                                        HorizontalContentAlignment="Center"
+                                                        VerticalContentAlignment="Center"
+                                                        Foreground="{DynamicResource AccentColorBrush}" />
+                                                <Button.ToolTip>
+                                                    <Label
+                                                            Content="{lex:Loc Key=button_whitelist_remove}"
+                                                            FontWeight="DemiBold" />
+                                                </Button.ToolTip>
+                                            </Button>
+                                            <Button x:Name="ImportCloakingRules"
+                                                        cal:Message.Attach="ImportCloakingRules"
+                                                        Background="White"
+                                                        Width="30"
+                                                        Height="30"
+                                                        Cursor="Hand"
+                                                        HorizontalContentAlignment="Center"
+                                                        VerticalContentAlignment="Center"
+                                                        BorderBrush="{DynamicResource AccentColorBrush}"
+                                                        FocusVisualStyle="{DynamicResource MahApps.Metro.Styles.MetroCircleFocusVisual}"
+                                                        Style="{DynamicResource MahApps.Metro.Styles.MetroCircleButtonStyle}"
+                                                        Margin="0,7,0,0">
+                                                <iconPacks:PackIconMaterial
+                                                        Kind="FileImport"
+                                                        Width="15"
+                                                        Height="15"
+                                                        HorizontalContentAlignment="Center"
+                                                        VerticalContentAlignment="Center"
+                                                        Foreground="{DynamicResource AccentColorBrush}" />
+                                                <Button.ToolTip>
+                                                    <Label
+                                                            Content="{lex:Loc Key=button_whitelist_import}"
+                                                            FontWeight="DemiBold" />
+                                                </Button.ToolTip>
+                                            </Button>
+                                            <Button x:Name="ExportCloakingRules"
+                                                        cal:Message.Attach="ExportCloakingRules"
+                                                        Background="White"
+                                                        Width="30"
+                                                        Height="30"
+                                                        Cursor="Hand"
+                                                        HorizontalContentAlignment="Center"
+                                                        VerticalContentAlignment="Center"
+                                                        BorderBrush="{DynamicResource AccentColorBrush}"
+                                                        FocusVisualStyle="{DynamicResource MahApps.Metro.Styles.MetroCircleFocusVisual}"
+                                                        Style="{DynamicResource MahApps.Metro.Styles.MetroCircleButtonStyle}"
+                                                        Margin="0,7,0,0">
+                                                <iconPacks:PackIconMaterial
+                                                        Kind="FileExport"
+                                                        Width="15"
+                                                        Height="15"
+                                                        HorizontalContentAlignment="Center"
+                                                        VerticalContentAlignment="Center"
+                                                        Foreground="{DynamicResource AccentColorBrush}" />
+                                                <Button.ToolTip>
+                                                    <Label
+                                                            Content="{lex:Loc Key=button_whitelist_export}"
+                                                            FontWeight="DemiBold" />
+                                                </Button.ToolTip>
+                                            </Button>
+                                        </StackPanel>
+                                    </Grid>
+                                </Grid>
+                            </Border>
+                        </DockPanel>
+                    </TabItem.Content>
+                </TabItem>
                 <TabItem Padding="10,2,10,2" Height="39" VerticalAlignment="Top" Tag="domainBlockLogTab"
                              Visibility="{Binding SettingsViewModel.IsDomainBlockLogTabVisible, Converter={StaticResource BoolToVisibilityCollapsedConverter}}"
                              Header="{lex:Loc Key=tabitem_domainblocklog}">

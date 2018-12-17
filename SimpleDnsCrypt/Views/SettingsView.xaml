@@ -62,6 +62,11 @@
                         Margin="5"
                         Content="{lex:Loc Key=settings_query_log}"
                         Cursor="Hand" Foreground="#FF575757" />
+                    <CheckBox
+                        IsChecked="{Binding IsCloakAndForwardTabVisible}"
+                        Margin="5"
+                        Content="Show Cloak and Forward Tab"
+                        Cursor="Hand" Foreground="#FF575757" />
                     <CheckBox IsEnabled="True"
                               IsChecked="{Binding IsDomainBlockLogTabVisible}"
                               Margin="5"

@@ -250,5 +250,29 @@ namespace SimpleDnsCrypt.Properties {
                 this["BackupAndRestoreConfigOnUpdate"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CloakingRulesFile {
+            get {
+                return ((string)(this["CloakingRulesFile"]));
+            }
+            set {
+                this["CloakingRulesFile"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsCloakAndForwardTabVisible {
+            get {
+                return ((bool)(this["IsCloakAndForwardTabVisible"]));
+            }
+            set {
+                this["IsCloakAndForwardTabVisible"] = value;
+            }
+        }
     }
 }

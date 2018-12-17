@@ -8,7 +8,7 @@
              xmlns:cal="http://www.caliburnproject.org"
              xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
              mc:Ignorable="d"
-             Height="Auto" Width="840"
+             Height="Auto" Width="880"
              lex:LocalizeDictionary.DesignCulture="en"
              lex:ResxLocalizationProvider.DefaultAssembly="SimpleDnsCrypt"
              lex:ResxLocalizationProvider.DefaultDictionary="Translation">
@@ -60,7 +60,7 @@
                                    Foreground="#FF8ab329" FontSize="18"
                                    Opacity="0.7" FontWeight="Bold">
                         </TextBlock>
-                        <ListBox Margin="0,5,0,0" Width="180" Height="480" ItemsSource="{Binding Licenses}"
+                        <ListBox Margin="0,5,0,0" Width="220" Height="480" ItemsSource="{Binding Licenses}"
                                  SelectedItem="{Binding SelectedLicense}" SelectedIndex="-1" Background="#198AB328"
                                  DisplayMemberPath="LicenseHeaderText" ItemContainerStyle="{StaticResource CustomMetroListBoxItem}">
                         </ListBox>

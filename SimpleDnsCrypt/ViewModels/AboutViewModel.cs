@@ -284,6 +284,16 @@ namespace SimpleDnsCrypt.ViewModels
 							LinkText = LocalizationEx.GetUiString("about_view_on_github", Thread.CurrentThread.CurrentCulture),
 							LinkUri = new Uri("https://github.com/nlog/NLog")
 						}
+					},
+					new License
+					{
+						LicenseHeaderText = "MahApps.Metro.SimpleChildWindow",
+						LicenseText = await LoadLicense("MahApps.Metro.SimpleChildWindow.txt").ConfigureAwait(false),
+						LicenseCodeLink = new LicenseLink
+						{
+							LinkText = LocalizationEx.GetUiString("about_view_on_github", Thread.CurrentThread.CurrentCulture),
+							LinkUri = new Uri("https://github.com/punker76/MahApps.Metro.SimpleChildWindow")
+						}
 					}
 				};
 				var orderedList = tmpList.OrderBy(l => l.LicenseHeaderText);

@@ -75,7 +75,10 @@
 	    public const string BlacklistRuleFileName = "domain-blacklist.txt";
 	    public const string BlacklistFileName = "blacklist.txt";
 
-	    public const string GlobalResolver = "0.0.0.0:53";
+	    public const string CloakingRulesFileName = "cloaking-rules.txt";
+
+
+		public const string GlobalResolver = "0.0.0.0:53";
 	    public const string DefaultResolverIpv4 = "127.0.0.1:53";
 	    public const string DefaultResolverIpv6 = "[::1]:53";
 

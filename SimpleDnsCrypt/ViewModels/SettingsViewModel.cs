@@ -18,6 +18,7 @@ namespace SimpleDnsCrypt.ViewModels
 		private bool _isDomainBlockLogTabVisible;
 		private bool _isAddressBlacklistTabVisible;
 		private bool _isAddressBlockLogTabVisible;
+		private bool _isCloakAndForwardTabVisible;
 		private bool _isAutoUpdateEnabled;
 		private bool _isAutoUpdateSilentEnabled;
 		private bool _backupAndRestoreConfigOnUpdate;
@@ -42,6 +43,7 @@ namespace SimpleDnsCrypt.ViewModels
 			_isDomainBlockLogTabVisible = Properties.Settings.Default.IsDomainBlockLogTabVisible;
 			_isAddressBlacklistTabVisible = Properties.Settings.Default.IsAddressBlacklistTabVisible;
 			_isAddressBlockLogTabVisible = Properties.Settings.Default.IsAddressBlockLogTabVisible;
+			_isCloakAndForwardTabVisible = Properties.Settings.Default.IsCloakAndForwardTabVisible;
 			_isAutoUpdateEnabled = Properties.Settings.Default.AutoUpdate;
 			_isAutoUpdateSilentEnabled = Properties.Settings.Default.AutoUpdateSilent;
 			_selectedUpdateType = (UpdateType)Properties.Settings.Default.MinUpdateType;
@@ -69,6 +71,17 @@ namespace SimpleDnsCrypt.ViewModels
 				_selectedUpdateType = value;
 				Properties.Settings.Default.MinUpdateType = (int)_selectedUpdateType;
 				NotifyOfPropertyChange(() => SelectedUpdateType);
+			}
+		}
+
+		public bool IsCloakAndForwardTabVisible
+		{
+			get => _isCloakAndForwardTabVisible;
+			set
+			{
+				_isCloakAndForwardTabVisible = value;
+				Properties.Settings.Default.IsCloakAndForwardTabVisible = _isCloakAndForwardTabVisible;
+				NotifyOfPropertyChange(() => IsCloakAndForwardTabVisible);
 			}
 		}
 

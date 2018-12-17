@@ -82,6 +82,9 @@
     <Reference Include="MahApps.Metro.IconPacks.Material, Version=2.3.0.4, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MahApps.Metro.IconPacks.Material.2.3.0\lib\net46\MahApps.Metro.IconPacks.Material.dll</HintPath>
     </Reference>
+    <Reference Include="MahApps.Metro.SimpleChildWindow, Version=1.5.0.16, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.SimpleChildWindow.1.5.0\lib\net45\MahApps.Metro.SimpleChildWindow.dll</HintPath>
+    </Reference>
     <Reference Include="minisign, Version=0.1.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\minisign-net.0.1.2\lib\net\minisign.dll</HintPath>
     </Reference>
@@ -185,6 +188,7 @@
     <Compile Include="Logger\NLogLogger.cs" />
     <Compile Include="LogMode.cs" />
     <Compile Include="Models\AddressBlockLogLine.cs" />
+    <Compile Include="Models\AddRuleWindowResult.cs" />
     <Compile Include="Models\AvailableResolver.cs" />
     <Compile Include="Models\BoxType.cs" />
     <Compile Include="Models\DomainBlockLogLine.cs" />
@@ -197,6 +201,7 @@
     <Compile Include="Models\QueryLogLine.cs" />
     <Compile Include="Models\QueryLogLineType.cs" />
     <Compile Include="Models\RemoteUpdate.cs" />
+    <Compile Include="Models\Rule.cs" />
     <Compile Include="Models\Stamp.cs" />
     <Compile Include="Models\ValueDescription.cs" />
     <Compile Include="Resources\Translation.Designer.cs">
@@ -222,6 +227,7 @@
     </Page>
     <Compile Include="ViewModels\AddressBlacklistViewModel.cs" />
     <Compile Include="ViewModels\AddressBlockLogViewModel.cs" />
+    <Compile Include="ViewModels\CloakAndForwardViewModel.cs" />
     <Compile Include="ViewModels\ListenAddressesViewModel.cs" />
     <Compile Include="ViewModels\MetroMessageBoxViewModel.cs" />
     <Compile Include="ViewModels\ProxiesViewModel.cs" />
@@ -237,6 +243,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ViewModels\SystemTrayViewModel.cs" />
+    <Compile Include="Windows\AddRuleWindow.xaml.cs">
+      <DependentUpon>AddRuleWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\BaseMessageDialogWindow.xaml.cs">
       <DependentUpon>BaseMessageDialogWindow.xaml</DependentUpon>
     </Compile>
@@ -297,6 +306,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\SystemTrayView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AddRuleWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -505,6 +518,7 @@
   <ItemGroup>
     <Content Include="DNSx64\dnscrypt-proxy.exe" />
     <Content Include="DNSx86\dnscrypt-proxy.exe" />
+    <EmbeddedResource Include="Resources\Licenses\MahApps.Metro.SimpleChildWindow.txt" />
     <EmbeddedResource Include="Resources\Licenses\Hardcodet.NotifyIcon.txt" />
     <EmbeddedResource Include="Resources\Licenses\NLog.txt" />
     <EmbeddedResource Include="Resources\Licenses\Baseclass.Contrib.Nuget.Output.txt" />

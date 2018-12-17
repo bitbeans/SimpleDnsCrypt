@@ -30,7 +30,8 @@ namespace SimpleDnsCrypt.ViewModels
 		DomainBlockLogTab,
 		DomainBlacklistTab,
 		AddressBlockLogTab,
-		AddressBlacklistTab
+		AddressBlacklistTab,
+		CloakAndForwardTab
 	}
 
 	[Export(typeof(MainViewModel))]
@@ -44,6 +45,7 @@ namespace SimpleDnsCrypt.ViewModels
 		private DnscryptProxyConfiguration _dnscryptProxyConfiguration;
 		private DomainBlacklistViewModel _domainBlacklistViewModel;
 		private DomainBlockLogViewModel _domainBlockLogViewModel;
+		private CloakAndForwardViewModel _cloakAndForwardViewModel;
 		private bool _isDnsCryptAutomaticModeEnabled;
 		private bool _isOperatingAsGlobalResolver;
 		private bool _isResolverRunning;
@@ -98,6 +100,7 @@ namespace SimpleDnsCrypt.ViewModels
 			_domainBlacklistViewModel = new DomainBlacklistViewModel(_windowManager, _events);
 			_addressBlockLogViewModel = new AddressBlockLogViewModel(_windowManager, _events);
 			_addressBlacklistViewModel = new AddressBlacklistViewModel(_windowManager, _events);
+			_cloakAndForwardViewModel = new CloakAndForwardViewModel(_windowManager, _events);
 			_resolvers = new BindableCollection<AvailableResolver>();
 		}
 
@@ -176,6 +179,17 @@ namespace SimpleDnsCrypt.ViewModels
 				if (value.Equals(_addressBlockLogViewModel)) return;
 				_addressBlockLogViewModel = value;
 				NotifyOfPropertyChange(() => AddressBlockLogViewModel);
+			}
+		}
+
+		public CloakAndForwardViewModel CloakAndForwardViewModel
+		{
+			get => _cloakAndForwardViewModel;
+			set
+			{
+				if (value.Equals(_cloakAndForwardViewModel)) return;
+				_cloakAndForwardViewModel = value;
+				NotifyOfPropertyChange(() => CloakAndForwardViewModel);
 			}
 		}
 
@@ -436,6 +450,15 @@ namespace SimpleDnsCrypt.ViewModels
 			{
 				FallbackResolver = DnscryptProxyConfiguration.fallback_resolver;
 			}
+
+			if (!string.IsNullOrEmpty(DnscryptProxyConfiguration?.cloaking_rules))
+			{
+				if (!File.Exists(DnscryptProxyConfiguration.cloaking_rules))
+				{
+					File.Create(DnscryptProxyConfiguration.cloaking_rules).Dispose();
+				}
+				CloakAndForwardViewModel.IsCloakingEnabled = true;
+			}
 		}
 
 		private void SettingsViewModelOnPropertyChanged(object sender, PropertyChangedEventArgs propertyChangedEventArgs)
@@ -483,6 +506,11 @@ namespace SimpleDnsCrypt.ViewModels
 							if (SelectedTab == Tabs.AddressBlacklistTab)
 								SelectedTabIndex = 0;
 						break;
+					case "IsCloakAndForwardTabVisible":
+						if (!SettingsViewModel.IsCloakAndForwardTabVisible)
+							if (SelectedTab == Tabs.CloakAndForwardTab)
+								SelectedTabIndex = 0;
+						break;
 				}
 			}
 		}
@@ -513,6 +541,9 @@ namespace SimpleDnsCrypt.ViewModels
 						break;
 					case "queryLogTab":
 						SelectedTab = Tabs.QueryLogTab;
+						break;
+					case "cloakAndForwardTab":
+						SelectedTab = Tabs.CloakAndForwardTab;
 						break;
 					case "domainBlockLogTab":
 						SelectedTab = Tabs.DomainBlockLogTab;
@@ -1082,8 +1113,6 @@ namespace SimpleDnsCrypt.ViewModels
 				}
 			}
 		}
-
-
 
 		#region Tray
 

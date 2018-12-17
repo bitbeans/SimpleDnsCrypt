@@ -38,6 +38,7 @@ namespace SimpleDnsCrypt.Models
 		private int _log_files_max_backups;
 		private bool _block_ipv6;
 		private string _forwarding_rules;
+		private string _cloaking_rules;
 		private int _cache_neg_ttl;
 		private int _cache_max_ttl;
 		private int _cache_min_ttl;
@@ -485,6 +486,19 @@ namespace SimpleDnsCrypt.Models
 			}
 		}
 
+		/// <summary>
+		///     Cloaking rule file.
+		/// </summary>
+		public string cloaking_rules
+		{
+			get => _cloaking_rules;
+			set
+			{
+				_cloaking_rules = value;
+				NotifyOfPropertyChange(() => cloaking_rules);
+			}
+		}
+		
 		/// <summary>
 		///     Enable a DNS cache to reduce latency and outgoing traffic.
 		/// </summary>
