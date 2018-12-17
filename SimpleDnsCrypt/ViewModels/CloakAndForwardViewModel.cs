@@ -325,6 +325,7 @@ namespace SimpleDnsCrypt.ViewModels
 				var result = openForwardingFileDialog.ShowDialog();
 				if (result != DialogResult.OK) return;
 				await ReadForwardingRulesFromFile(openForwardingFileDialog.FileName);
+				SaveForwardingRulesToFile();
 			}
 			catch (Exception exception)
 			{
@@ -617,6 +618,7 @@ namespace SimpleDnsCrypt.ViewModels
 				var result = openCloakingFileDialog.ShowDialog();
 				if (result != DialogResult.OK) return;
 				await ReadCloakingRulesFromFile(openCloakingFileDialog.FileName);
+				SaveCloakingRulesToFile();
 			}
 			catch (Exception exception)
 			{
