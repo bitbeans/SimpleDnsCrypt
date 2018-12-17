@@ -29,7 +29,7 @@ namespace SimpleDnsCrypt.Windows
 			else
 			{
 				Title = LocalizationEx.GetUiString("forwarding", Thread.CurrentThread.CurrentCulture);
-				RuleHeaderIcon.Kind = PackIconMaterialKind.AccountConvert;
+				RuleHeaderIcon.Kind = PackIconMaterialKind.Radar;
 				RuleHeader.Text = LocalizationEx.GetUiString("rule_window_forwarding_header", Thread.CurrentThread.CurrentCulture);
 				RuleKeyDescription.Text = LocalizationEx.GetUiString("rule_window_forwarding_key_text", Thread.CurrentThread.CurrentCulture);
 				RuleValueDescription.Text = LocalizationEx.GetUiString("rule_window_forwarding_value_text", Thread.CurrentThread.CurrentCulture);
