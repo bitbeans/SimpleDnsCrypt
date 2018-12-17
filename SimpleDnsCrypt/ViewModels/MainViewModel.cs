@@ -459,6 +459,15 @@ namespace SimpleDnsCrypt.ViewModels
 				}
 				CloakAndForwardViewModel.IsCloakingEnabled = true;
 			}
+
+			if (!string.IsNullOrEmpty(DnscryptProxyConfiguration?.forwarding_rules))
+			{
+				if (!File.Exists(DnscryptProxyConfiguration.forwarding_rules))
+				{
+					File.Create(DnscryptProxyConfiguration.forwarding_rules).Dispose();
+				}
+				CloakAndForwardViewModel.IsForwardingEnabled = true;
+			}
 		}
 
 		private void SettingsViewModelOnPropertyChanged(object sender, PropertyChangedEventArgs propertyChangedEventArgs)

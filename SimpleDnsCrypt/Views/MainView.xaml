@@ -1346,19 +1346,19 @@
                                             </Button>
                                         </StackPanel>
                                     </Grid>
-                                    <iconPacks:PackIconMaterial Grid.Column="0" Grid.Row="4" Height="20"
+                                    <iconPacks:PackIconMaterial Grid.Column="0" Grid.Row="4" Height="20" Margin="0,7,0,0"
                                                                     Width="20" Kind="Radar"
                                                                     Opacity="0.7"
                                                                     Foreground="#FF8ab329"
                                                                     HorizontalAlignment="Left"
                                                                     VerticalAlignment="Center" />
-                                    <TextBlock Grid.Column="1" Grid.Row="4"
+                                    <TextBlock Grid.Column="1" Grid.Row="4" Margin="5,7,0,0"
                                                    Text="{lex:Loc Key=forwarding}"
                                                    TextWrapping="Wrap" VerticalAlignment="Center"
                                                    Foreground="#FF8ab329" FontSize="20"
-                                                   Opacity="0.7" Margin="5,0,0,0" FontWeight="Bold">
+                                                   Opacity="0.7" FontWeight="Bold">
                                     </TextBlock>
-                                    <controls:ToggleSwitchButton HorizontalAlignment="Right" Margin="0,0,5,0"
+                                    <controls:ToggleSwitchButton HorizontalAlignment="Right" Margin="0,7,5,0"
                                                                      Cursor="Hand"
                                                                      IsChecked="{Binding IsForwardingEnabled}"
                                                                      Grid.Column="1" Grid.Row="4" />
