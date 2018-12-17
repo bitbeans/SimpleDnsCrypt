@@ -102,6 +102,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 - [Fody](https://github.com/Fody/Fody)
 - [helper-net](https://github.com/bitbeans/helper-net)
 - [MahApps.Metro](https://github.com/MahApps/MahApps.Metro)
+- [MahApps.Metro.SimpleChildWindow](https://github.com/punker76/MahApps.Metro.SimpleChildWindow)
 - [minisign-net](https://github.com/bitbeans/minisign-net)
 - [Nett](https://github.com/paiden/Nett)
 - [Newtonsoft.Json](https://github.com/JamesNK/Newtonsoft.Json)

@@ -212,7 +212,7 @@ namespace SimpleDnsCrypt.ViewModels
 
 								while (_isDomainBlockLogLogging)
 								{
-									Thread.Sleep(100);
+									Thread.Sleep(500);
 									//if the file size has not changed, idle
 									if (reader.BaseStream.Length == lastMaxOffset)
 										continue;
