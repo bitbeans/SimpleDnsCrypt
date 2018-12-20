@@ -629,22 +629,22 @@
     <value>Forwarding Rules:</value>
   </data>
   <data name="forwarding_rules_header" xml:space="preserve">
-    <value>Forwarding Rules</value>
+    <value>转发规则</value>
   </data>
   <data name="forwarding_rules_sub_header" xml:space="preserve">
     <value>(active forwarding rules)</value>
   </data>
   <data name="button_forwarding_add" xml:space="preserve">
-    <value>Add a new forwarding rule</value>
+    <value>添加转发规则</value>
   </data>
   <data name="button_forwarding_remove" xml:space="preserve">
-    <value>Remove selected forwarding rule</value>
+    <value>删除指定转发规则</value>
   </data>
   <data name="button_forwarding_import" xml:space="preserve">
-    <value>Import existing forwarding rules</value>
+    <value>导入转发规则</value>
   </data>
   <data name="button_forwarding_export" xml:space="preserve">
-    <value>Export forwarding rules</value>
+    <value>导出转发规则</value>
   </data>
   <data name="rule_window_forwarding_header" xml:space="preserve">
     <value>Add new forwarding rule</value>
