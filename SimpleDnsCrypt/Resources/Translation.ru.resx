@@ -136,31 +136,31 @@
     <value>Использовать IPv4</value>
   </data>
   <data name="default_settings_configuration_ipv4_tooltip" xml:space="preserve">
-    <value>Использование серверов, доступных по IPv4</value>
+    <value>Использовать серверы, доступные по IPv4</value>
   </data>
   <data name="default_settings_configuration_ipv6" xml:space="preserve">
     <value>Использовать IPv6</value>
   </data>
   <data name="default_settings_configuration_ipv6_tooltip" xml:space="preserve">
-    <value>Использование серверов, доступных по IPv6 (не включайте, если у вас нет IPv6)</value>
+    <value>Использовать серверы, доступные по IPv6 (не включайте, если у вас нет IPv6)</value>
   </data>
   <data name="default_settings_configuration_dnssec" xml:space="preserve">
     <value>Только серверы с поддержкой DNSSEC</value>
   </data>
   <data name="default_settings_configuration_dnssec_tooltip" xml:space="preserve">
-    <value>Сервера с безопасностью DNS</value>
+    <value>Серверы с безопасностью DNS</value>
   </data>
   <data name="default_settings_configuration_nolog" xml:space="preserve">
     <value>Только серверы без логирования</value>
   </data>
   <data name="default_settings_configuration_nolog_tooltip" xml:space="preserve">
-    <value>Сервера не ведущие статистику</value>
+    <value>Серверы не ведущие статистику</value>
   </data>
   <data name="default_settings_configuration_nofilter" xml:space="preserve">
     <value>Только серверы без фильтрации</value>
   </data>
   <data name="default_settings_configuration_nofilter_tooltip" xml:space="preserve">
-    <value>Сервера не применяющие свой черный список (родительский контроль, блокировка рекламы...)</value>
+    <value>Серверы не применяющие свой черный список (родительский контроль, блокировка рекламы...)</value>
   </data>
   <data name="tabitem_mainmenu" xml:space="preserve">
     <value>Главное</value>
@@ -307,7 +307,7 @@
     <value>Дополнительно</value>
   </data>
   <data name="settings_advanced_settings" xml:space="preserve">
-    <value>Показывать вкладку &quot;Дополнительно&quot;</value>
+    <value>Вкладка &quot;Дополнительно&quot;</value>
   </data>
   <data name="yes" xml:space="preserve">
     <value>да</value>
@@ -346,7 +346,7 @@
     <value>Режим DNSCrypt</value>
   </data>
   <data name="resolvers_dnscrypt_mode_description" xml:space="preserve">
-    <value>В автоматическом режиме используются все доступные серверы. dnscrypt-proxy автоматически выбирает самые быстрые резольверы.</value>
+    <value>В автоматическом режиме используются все доступные серверы. DNScrypt-proxy автоматически выбирает самые быстрые резольверы.</value>
   </data>
   <data name="resolvers_dnscrypt_automatic_mode" xml:space="preserve">
     <value>Автоматический режим</value>
@@ -376,7 +376,7 @@
     <value>Не выбран ни один сервер</value>
   </data>
   <data name="message_content_no_server_selected" xml:space="preserve">
-    <value>Минимум один сервер должен быть выбран. Иначе, dnscrypt-proxy использует все сервера к выбранным фильтрам.</value>
+    <value>Минимум один сервер должен быть выбран. Иначе, dnscrypt-proxy использует все серверы соответствующие фильтрам.</value>
   </data>
   <data name="message_title_service_not_running" xml:space="preserve">
     <value>Служба не запущена</value>
@@ -436,7 +436,7 @@
     <value>Пример: *.example.com, ads.*, *sex*, также можете добавить список правил, разделенных запятыми, файл - который начинается с file:my-custom-rules.txt или удаленный URL-адрес, который начинается с http:// или https://.</value>
   </data>
   <data name="working_dialog_title" xml:space="preserve">
-    <value>Ведется тяжелая работа . . .</value>
+    <value>Списки объединяются . . .</value>
   </data>
   <data name="button_select_path" xml:space="preserve">
     <value>Выберите путь</value>
@@ -560,105 +560,105 @@
     <comment>Check what would fit into the dialogue.</comment>
   </data>
   <data name="advanced_settings_netprobe_timeout" xml:space="preserve">
-    <value>Netprobe Timeout</value>
+    <value>Таймаут проверки сети</value>
   </data>
   <data name="advanced_settings_netprobe_timeout_content" xml:space="preserve">
-    <value>Maximum time (in seconds) to wait for network connectivity before initializing the proxy. Useful if the proxy is automatically started at boot, and network connectivity is not guaranteed to be immediately available. Use 0 to disable.</value>
+    <value>Время (в секундах) ожидания подключения к сети перед инициализацией прокси-сервера. Полезно, если прокси-сервер в автозагрузке, а сетевое подключение отложено или имеет задержку. Используйте 0 для отключения.</value>
   </data>
   <data name="default_settings_configuration_dnscrypt" xml:space="preserve">
     <value>DNSCrypt</value>
   </data>
   <data name="default_settings_configuration_dnscrypt_tooltip" xml:space="preserve">
-    <value>Use servers implementing the DNSCrypt protocol</value>
+    <value>Использовать серверы, реализующие DNSCrypt</value>
   </data>
   <data name="default_settings_configuration_doh" xml:space="preserve">
-    <value>DNS-over-HTTPS</value>
+    <value>DNS по HTTPS</value>
   </data>
   <data name="default_settings_configuration_doh_tooltip" xml:space="preserve">
-    <value>Use servers implementing the DNS-over-HTTPS protocol</value>
+    <value>Использовать серверы, реализующие DNS по HTTPS</value>
   </data>
   <data name="loader_restore_config" xml:space="preserve">
-    <value>Restore {0}</value>
+    <value>Восстановление {0}</value>
   </data>
   <data name="settings_backup_and_restore_config" xml:space="preserve">
-    <value>Backup and restore dnscrypt configuration on update</value>
+    <value>Бэкап и восстановление конфигурации dnscrypt при обновлении</value>
   </data>
   <data name="tabitem_cloakandforward" xml:space="preserve">
-    <value>Cloak and Forward</value>
+    <value>Маскировка</value>
   </data>
   <data name="cloaking" xml:space="preserve">
-    <value>Cloaking</value>
+    <value>Маскировка</value>
   </data>
   <data name="cloaking_path" xml:space="preserve">
-    <value>Cloaking Rules:</value>
+    <value>Правила маскировки:</value>
   </data>
   <data name="cloaking_rules_header" xml:space="preserve">
-    <value>Cloaking Rules</value>
+    <value>Правила маскировки</value>
   </data>
   <data name="cloaking_rules_sub_header" xml:space="preserve">
-    <value>(active cloaking rules)</value>
+    <value>(активные правила маскировки)</value>
   </data>
   <data name="button_cloaking_add" xml:space="preserve">
-    <value>Add a new cloaking rule</value>
+    <value>Добавить новое правило маскировки</value>
   </data>
   <data name="button_cloaking_remove" xml:space="preserve">
-    <value>Remove selected cloaking rule</value>
+    <value>Удалить выбранное правило маскировк</value>
   </data>
   <data name="button_cloaking_import" xml:space="preserve">
-    <value>Import existing cloaking rules</value>
+    <value>Импорт существующих правил маскировки</value>
   </data>
   <data name="button_cloaking_export" xml:space="preserve">
-    <value>Export cloaking rules</value>
+    <value>Экспорт правил маскировки</value>
   </data>
   <data name="rule_window_cloaking_header" xml:space="preserve">
-    <value>Add new cloaking rule</value>
+    <value>Добавить новое правило маскировки</value>
   </data>
   <data name="rule_window_cloaking_key_text" xml:space="preserve">
-    <value>Rule source (eg: www.google.*)</value>
+    <value>Источник правила (пример: www.google.*)</value>
   </data>
   <data name="rule_window_cloaking_value_text" xml:space="preserve">
-    <value>Rule target (eg: forcesafesearch.google.com)</value>
+    <value>Цель правила (пример, forceafesearch.google.com)</value>
   </data>
   <data name="forwarding" xml:space="preserve">
-    <value>Forwarding</value>
+    <value>Переадресация</value>
   </data>
   <data name="forwarding_path" xml:space="preserve">
-    <value>Forwarding Rules:</value>
+    <value>Правила переадресации:</value>
   </data>
   <data name="forwarding_rules_header" xml:space="preserve">
-    <value>Forwarding Rules</value>
+    <value>Правила переадресации</value>
   </data>
   <data name="forwarding_rules_sub_header" xml:space="preserve">
-    <value>(active forwarding rules)</value>
+    <value>(активные правила переадресации)</value>
   </data>
   <data name="button_forwarding_add" xml:space="preserve">
-    <value>Add a new forwarding rule</value>
+    <value>Добавить новое правило переадресации</value>
   </data>
   <data name="button_forwarding_remove" xml:space="preserve">
-    <value>Remove selected forwarding rule</value>
+    <value>Удалить выбранное правило переадресации</value>
   </data>
   <data name="button_forwarding_import" xml:space="preserve">
-    <value>Import existing forwarding rules</value>
+    <value>Импорт существующих правил переадресации</value>
   </data>
   <data name="button_forwarding_export" xml:space="preserve">
-    <value>Export forwarding rules</value>
+    <value>Экспорт правил переадресации</value>
   </data>
   <data name="rule_window_forwarding_header" xml:space="preserve">
-    <value>Add new forwarding rule</value>
+    <value>Добавить новое правило переадресации</value>
   </data>
   <data name="rule_window_forwarding_key_text" xml:space="preserve">
-    <value>Rule source (eg: example.com)</value>
+    <value>Источник правила (eg: example.com)</value>
   </data>
   <data name="rule_window_forwarding_value_text" xml:space="preserve">
-    <value>Rule target (eg: 9.9.9.9,8.8.8.8)</value>
+    <value>Цель правила (пример, 9.9.9.9,8.8.8.8)</value>
   </data>
   <data name="rule_window_add" xml:space="preserve">
-    <value>Add</value>
+    <value>Добавить</value>
   </data>
   <data name="rule_window_abort" xml:space="preserve">
-    <value>Abort</value>
+    <value>Прервать</value>
   </data>
   <data name="settings_cloak_and_forward" xml:space="preserve">
-    <value>Show &quot;Cloak and Forward&quot; Tab</value>
+    <value>Вкладка &quot;Маскировка&quot;</value>
   </data>
 </root>
