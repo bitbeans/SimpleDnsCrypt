@@ -282,7 +282,6 @@ namespace SimpleDnsCrypt.ViewModels
 					Value = addRuleWindowResult.RuleValue
 				};
 				_forwardingRules.Add(tmp);
-				ForwardingRules.Clear();
 				var orderedTmpRules = _forwardingRules.OrderBy(r => r.Key);
 				ForwardingRules = new BindableCollection<Rule>(orderedTmpRules);
 				SaveForwardingRulesToFile();
@@ -577,7 +576,6 @@ namespace SimpleDnsCrypt.ViewModels
 					Value = addRuleWindowResult.RuleValue
 				};
 				_cloakingRules.Add(tmp);
-				CloakingRules.Clear();
 				var orderedTmpRules = _cloakingRules.OrderBy(r => r.Key);
 				CloakingRules = new BindableCollection<Rule>(orderedTmpRules);
 				SaveCloakingRulesToFile();
