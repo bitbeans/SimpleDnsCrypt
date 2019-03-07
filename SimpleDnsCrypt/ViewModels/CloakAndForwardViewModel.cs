@@ -27,8 +27,6 @@ namespace SimpleDnsCrypt.ViewModels
 		private readonly IEventAggregator _events;
 		private BindableCollection<Rule> _cloakingRules;
 		private BindableCollection<Rule> _forwardingRules;
-		private int _longestCloakingKey;
-		private int _longestForwardingKey;
 
 		private bool _isCloakingEnabled;
 		private bool _isForwardingEnabled;
@@ -51,8 +49,6 @@ namespace SimpleDnsCrypt.ViewModels
 			_events.Subscribe(this);
 			_cloakingRules = new BindableCollection<Rule>();
 			_forwardingRules = new BindableCollection<Rule>();
-			_longestCloakingKey = 0;
-			_longestForwardingKey = 0;
 
 			if (!string.IsNullOrEmpty(Properties.Settings.Default.CloakingRulesFile))
 			{
@@ -114,10 +110,6 @@ namespace SimpleDnsCrypt.ViewModels
 							Key = lineParts[0].Trim(),
 							Value = lineParts[1].Trim()
 						};
-						if (rule.Key.Length > _longestForwardingKey)
-						{
-							_longestForwardingKey = rule.Key.Length;
-						}
 
 						tmpRules.Add(rule);
 					}
@@ -282,7 +274,6 @@ namespace SimpleDnsCrypt.ViewModels
 					Value = addRuleWindowResult.RuleValue
 				};
 				_forwardingRules.Add(tmp);
-				ForwardingRules.Clear();
 				var orderedTmpRules = _forwardingRules.OrderBy(r => r.Key);
 				ForwardingRules = new BindableCollection<Rule>(orderedTmpRules);
 				SaveForwardingRulesToFile();
@@ -359,6 +350,8 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 		}
 
+		private int LongestForwardingKey => this._forwardingRules.Max(z => z.Key.Length);
+
 		public void SaveForwardingRulesToFile(string saveToPath = "")
 		{
 			try
@@ -374,7 +367,7 @@ namespace SimpleDnsCrypt.ViewModels
 				var lines = new List<string>();
 				foreach (var rule in _forwardingRules)
 				{
-					var spaceCount = _longestForwardingKey - rule.Key.Length;
+					var spaceCount = LongestForwardingKey - rule.Key.Length;
 					var sb = new StringBuilder();
 					sb.Append(rule.Key);
 					sb.Append(' ', spaceCount + extraSpace);
@@ -424,10 +417,6 @@ namespace SimpleDnsCrypt.ViewModels
 							Key = lineParts[0].Trim(),
 							Value = lineParts[1].Trim()
 						};
-						if (rule.Key.Length > _longestCloakingKey)
-						{
-							_longestCloakingKey = rule.Key.Length;
-						}
 
 						tmpRules.Add(rule);
 					}
@@ -442,6 +431,8 @@ namespace SimpleDnsCrypt.ViewModels
 				Log.Error(exception);
 			}
 		}
+
+		private int LongestCloakingKey => this._cloakingRules.Max(z => z.Key.Length);
 
 		public void SaveCloakingRulesToFile(string saveToPath = "")
 		{
@@ -458,7 +449,7 @@ namespace SimpleDnsCrypt.ViewModels
 				var lines = new List<string>();
 				foreach (var rule in _cloakingRules)
 				{
-					var spaceCount = _longestCloakingKey - rule.Key.Length;
+					var spaceCount = LongestCloakingKey - rule.Key.Length;
 					var sb = new StringBuilder();
 					sb.Append(rule.Key);
 					sb.Append(' ', spaceCount + extraSpace);
@@ -577,7 +568,6 @@ namespace SimpleDnsCrypt.ViewModels
 					Value = addRuleWindowResult.RuleValue
 				};
 				_cloakingRules.Add(tmp);
-				CloakingRules.Clear();
 				var orderedTmpRules = _cloakingRules.OrderBy(r => r.Key);
 				CloakingRules = new BindableCollection<Rule>(orderedTmpRules);
 				SaveCloakingRulesToFile();
