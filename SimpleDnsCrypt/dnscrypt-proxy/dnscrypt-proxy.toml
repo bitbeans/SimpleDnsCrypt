@@ -23,6 +23,8 @@ cache_size = 256
 cache_min_ttl = 600
 cache_max_ttl = 86400
 cache_neg_ttl = 60
+disabled_server_names = []
+refused_code_in_responses = false
 [query_log]
   format = 'ltsv'
 

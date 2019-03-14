@@ -48,6 +48,8 @@ namespace SimpleDnsCrypt.Models
 		private bool _ignore_system_dns;
 		private Dictionary<string, Static> _static;
 		private string _proxy;
+		private ObservableCollection<string> _disabled_server_names;
+		private bool _refused_code_in_responses;
 
 		[TomlIgnore]
 		public new bool IsNotifying
@@ -118,6 +120,34 @@ namespace SimpleDnsCrypt.Models
 			{
 				_ipv6_servers = value;
 				NotifyOfPropertyChange(() => ipv6_servers);
+			}
+		}
+
+		/// <summary>
+		///     Server names to avoid even if they match all criteria
+		/// </summary>
+		public ObservableCollection<string> disabled_server_names
+		{
+			get => _disabled_server_names;
+			set
+			{
+				_disabled_server_names = value;
+				NotifyOfPropertyChange(() => disabled_server_names);
+			}
+		}
+
+		/// <summary>
+		/// Use the REFUSED return code for blocked responses
+		/// Setting this to `false` means that some responses will be lies.
+		/// Unfortunately, `false` appears to be required for Android 8+
+		/// </summary>
+		public bool refused_code_in_responses
+		{
+			get => _refused_code_in_responses;
+			set
+			{
+				_refused_code_in_responses = value;
+				NotifyOfPropertyChange(() => refused_code_in_responses);
 			}
 		}
 
