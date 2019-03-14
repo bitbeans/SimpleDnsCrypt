@@ -6,7 +6,7 @@ using System.Windows;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Simple DnsCrypt")]
-[assembly: AssemblyCopyright("Copyright © 2015 - 2018 Christian Hermann")]
+[assembly: AssemblyCopyright("Copyright © 2015 - 2019 Christian Hermann")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
@@ -14,5 +14,5 @@ using System.Windows;
 	ResourceDictionaryLocation.None,
 	ResourceDictionaryLocation.SourceAssembly
 )]
-[assembly: AssemblyVersion("0.6.3")]
-[assembly: AssemblyFileVersion("0.6.3")]
+[assembly: AssemblyVersion("0.6.4")]
+[assembly: AssemblyFileVersion("0.6.4")]
