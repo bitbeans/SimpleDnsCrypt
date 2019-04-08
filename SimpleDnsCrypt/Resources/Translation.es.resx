@@ -586,19 +586,19 @@
     <value>Cloak and Forward</value>
   </data>
   <data name="cloaking" xml:space="preserve">
-    <value>Cloaking</value>
+    <value>Camuflaje</value>
   </data>
   <data name="cloaking_path" xml:space="preserve">
-    <value>Cloaking Rules:</value>
+    <value>Reglas de camuflaje:</value>
   </data>
   <data name="cloaking_rules_header" xml:space="preserve">
-    <value>Cloaking Rules</value>
+    <value>Reglas de camuflaje</value>
   </data>
   <data name="cloaking_rules_sub_header" xml:space="preserve">
-    <value>(active cloaking rules)</value>
+    <value>(reglas de camuflaje activas)</value>
   </data>
   <data name="button_cloaking_add" xml:space="preserve">
-    <value>Add a new cloaking rule</value>
+    <value>Agregar nueva regla de camuflaje</value>
   </data>
   <data name="button_cloaking_remove" xml:space="preserve">
     <value>Remove selected cloaking rule</value>

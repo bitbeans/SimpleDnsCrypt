@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="default_settings_network_cards" xml:space="preserve">
-    <value>Schede di Rete</value>
+    <value>Schede di rete</value>
   </data>
   <data name="default_settings_show_hidden_cards" xml:space="preserve">
     <value>Mostra schede nascoste</value>
@@ -145,13 +145,13 @@
     <value>Utilizza server raggiungibili con IPv6 (non abilitare se la connettività IPv6 è assente)</value>
   </data>
   <data name="default_settings_configuration_dnssec" xml:space="preserve">
-    <value>Server con supporto DNSSEC</value>
+    <value>Solo server con supporto DNSSEC</value>
   </data>
   <data name="default_settings_configuration_dnssec_tooltip" xml:space="preserve">
-    <value>Server che supportano DNS security extensions</value>
+    <value>Il server deve supportare le specifiche di sicurezza DNS</value>
   </data>
   <data name="default_settings_configuration_nolog" xml:space="preserve">
-    <value>Server senza logging</value>
+    <value>Solo server senza logging</value>
   </data>
   <data name="default_settings_configuration_nolog_tooltip" xml:space="preserve">
     <value>Il server non deve registrare le query degli utenti</value>
@@ -163,7 +163,7 @@
     <value>Il Server non deve utilizzare le proprie blacklist (ad esempio: controllo genitori, ads, blocco...)</value>
   </data>
   <data name="tabitem_mainmenu" xml:space="preserve">
-    <value>Menù Principale</value>
+    <value>Menù principale</value>
   </data>
   <data name="loader_administrative_rights_available" xml:space="preserve">
     <value>I permessi amministrativi sono disponibili</value>
@@ -202,10 +202,10 @@
     <value>Avvio . . .</value>
   </data>
   <data name="loader_validate_folder" xml:space="preserve">
-    <value>Validando la cartella {0}</value>
+    <value>Sto validando la cartella {0}</value>
   </data>
   <data name="loader_loading_network_cards" xml:space="preserve">
-    <value>Caricando le schede di rete . . .</value>
+    <value>Sto caricando le schede di rete . . .</value>
   </data>
   <data name="loader_failed_loading" xml:space="preserve">
     <value>Impossibile caricare {0}</value>
@@ -235,31 +235,31 @@
     <value>Vedi su GitHub</value>
   </data>
   <data name="tabitem_querylog" xml:space="preserve">
-    <value>Query Log</value>
+    <value>Log delle Query</value>
   </data>
   <data name="querylog" xml:space="preserve">
-    <value>Query Log</value>
+    <value>Log delle query</value>
   </data>
   <data name="querylog_waiting_for_data" xml:space="preserve">
-    <value>in attesa di query DNS</value>
+    <value>in attesa delle query DNS</value>
   </data>
   <data name="querylog_entry_count" xml:space="preserve">
     <value>Elementi:</value>
   </data>
   <data name="querylog_source_file" xml:space="preserve">
-    <value>File di Log:</value>
+    <value>Sorgente:</value>
   </data>
   <data name="querylog_button_clear" xml:space="preserve">
-    <value>Svuota Lista</value>
+    <value>Svuota lista</value>
   </data>
   <data name="querylog_button_block" xml:space="preserve">
-    <value>Blocca Selezionato</value>
+    <value>Blocca selezionato</value>
   </data>
   <data name="domainblocklog" xml:space="preserve">
-    <value>Log Domini Bloccati</value>
+    <value>Log domini bloccati</value>
   </data>
   <data name="domainblocklog_waiting_for_data" xml:space="preserve">
-    <value>in attesa di query DNS bloccate</value>
+    <value>in attesa delle query DNS bloccate</value>
   </data>
   <data name="domainblocklog_entry_count" xml:space="preserve">
     <value>Elementi:</value>
@@ -268,46 +268,46 @@
     <value>Sorgente:</value>
   </data>
   <data name="domainblocklog_button_clear" xml:space="preserve">
-    <value>Svuota Lista</value>
+    <value>Svuota lista</value>
   </data>
   <data name="tabitem_domainblocklog" xml:space="preserve">
-    <value>Log Domini Bloccati</value>
+    <value>Log domini bloccati</value>
   </data>
   <data name="tabitem_addressblocklog" xml:space="preserve">
-    <value>Log Indirizzi Bloccati</value>
+    <value>Log indirizzi bloccati</value>
   </data>
   <data name="tabitem_domainblacklist" xml:space="preserve">
-    <value>Blacklist Domini</value>
+    <value>Domini in blacklist</value>
   </data>
   <data name="tabitem_addressblacklist" xml:space="preserve">
-    <value>Blacklist Indirizzi</value>
+    <value>Indirizzi in blacklist</value>
   </data>
   <data name="settings" xml:space="preserve">
     <value>Impostazioni</value>
   </data>
   <data name="settings_domain_blacklist" xml:space="preserve">
-    <value>Mostra Scheda &quot;Domini Bloccati&quot;</value>
+    <value>Mostra scheda &quot;Domini bloccati&quot;</value>
   </data>
   <data name="settings_address_blacklist" xml:space="preserve">
-    <value>Mostra Scheda &quot;Indirizzi Bloccati&quot;</value>
+    <value>Mostra scheda &quot;Indirizzi bloccati&quot;</value>
   </data>
   <data name="settings_domain_block" xml:space="preserve">
-    <value>Mostra Scheda &quot;Log Domini Bloccati&quot;</value>
+    <value>Mostra scheda &quot;Log domini bloccati&quot;</value>
   </data>
   <data name="settings_address_block" xml:space="preserve">
-    <value>Mostra Scheda &quot;Log Indirizzi Bloccati&quot;</value>
+    <value>Mostra scheda &quot;Log indirizzi bloccati&quot;</value>
   </data>
   <data name="settings_query_log" xml:space="preserve">
-    <value>Mostra Scheda &quot;Query Log&quot;</value>
+    <value>Mostra scheda &quot;Log delle query&quot;</value>
   </data>
   <data name="tabitem_resolvers" xml:space="preserve">
     <value>Resolvers</value>
   </data>
   <data name="tabitem_advanced_settings" xml:space="preserve">
-    <value>Opzioni Avanzate</value>
+    <value>Opzioni avanzate</value>
   </data>
   <data name="settings_advanced_settings" xml:space="preserve">
-    <value>Mostra Scheda &quot;Opzioni Avanzate&quot;</value>
+    <value>Mostra scheda &quot;Opzioni avanzate&quot;</value>
   </data>
   <data name="yes" xml:space="preserve">
     <value>Sì</value>
@@ -325,7 +325,7 @@
     <value>Vuoi rimuovere il servizio installato?</value>
   </data>
   <data name="dialog_uninstall_title" xml:space="preserve">
-    <value>Disinstallando il servizio</value>
+    <value>Sto disinstallando il servizio</value>
   </data>
   <data name="advanced_settings_uninstall_title" xml:space="preserve">
     <value>Disinstalla il servizio</value>
@@ -337,7 +337,7 @@
     <value>Rimuovi il servizio</value>
   </data>
   <data name="default_settings_apply_settings" xml:space="preserve">
-    <value>Applica impostazioni</value>
+    <value>Applica le impostazioni</value>
   </data>
   <data name="advanced_settings_dnscache" xml:space="preserve">
     <value>Cache DNS</value>
@@ -346,10 +346,10 @@
     <value>Modalità DNSCrypt</value>
   </data>
   <data name="resolvers_dnscrypt_mode_description" xml:space="preserve">
-    <value>Nella modalità automatica, tutti i server disponibili sono utilizzati. dnscrypt-proxy seleziona automaticamente i resolver più veloci.</value>
+    <value>Nella modalità automatica, tutti i server disponibili vengono utilizzati. dnscrypt-proxy seleziona automaticamente i resolver più veloci.</value>
   </data>
   <data name="resolvers_dnscrypt_automatic_mode" xml:space="preserve">
-    <value>Modalità Automatica</value>
+    <value>Modalità automatica</value>
   </data>
   <data name="disabled" xml:space="preserve">
     <value>Disabilitato</value>
@@ -358,16 +358,16 @@
     <value>Abilitato</value>
   </data>
   <data name="resolvers_available_resolvers_header" xml:space="preserve">
-    <value>Resolver Disponibili</value>
+    <value>Resolver disponibili</value>
   </data>
   <data name="loader_redistributable_package_check" xml:space="preserve">
-    <value>Controllando se Microsoft Visual C++ Redistributable per Visual Studio 2017 è installato</value>
+    <value>Sto controllando se Microsoft Visual C++ Redistributable per Visual Studio 2017 è installato</value>
   </data>
   <data name="loader_redistributable_package_already_installed" xml:space="preserve">
     <value>Microsoft Visual C++ Redistributable per Visual Studio 2017 è già installato</value>
   </data>
   <data name="loader_redistributable_package_installing" xml:space="preserve">
-    <value>Installando: Microsoft Visual C++ Redistributable per Visual Studio 2017</value>
+    <value>Sto installando: Microsoft Visual C++ Redistributable per Visual Studio 2017</value>
   </data>
   <data name="loader_redistributable_package_ready" xml:space="preserve">
     <value>Microsoft Visual C++ Redistributable per Visual Studio 2017 è stato installato</value>
@@ -403,7 +403,7 @@
     <value>Controlla aggiornamenti all&apos;avvio</value>
   </data>
   <data name="settings_update_channel" xml:space="preserve">
-    <value>Canale di Aggiornamento:</value>
+    <value>Canale di aggiornamento:</value>
   </data>
   <data name="advanced_settings_dnscache_content" xml:space="preserve">
     <value>Cache DNS per ridurre la latenza ed il traffico in uscita</value>
@@ -427,7 +427,7 @@
     <value>Aggiungi un nuovo dominio alla whitelist</value>
   </data>
   <data name="message_content_new_whitelist_rule" xml:space="preserve">
-    <value>Esempio: *.example.com, ads.*,*sex*, puoi anche inserire una lista di regole separate da una virgola</value>
+    <value>Esempio: *.example.com, ads.*,*sex*, puoi anche inserire una lista di regole separate da virgola</value>
   </data>
   <data name="message_title_new_blacklist_rule" xml:space="preserve">
     <value>Aggiungi un nuovo dominio alla blacklist</value>
@@ -436,7 +436,7 @@
     <value>Esempio: *.example.com, ads.*, *sex*, puoi anche inserire una lista di regole, un file che comincia con:my-custom-rules.txt o un URL remoto che comincia con http:// o https://.</value>
   </data>
   <data name="working_dialog_title" xml:space="preserve">
-    <value>Consolidando le liste. . .</value>
+    <value>Sto consolidando le liste. . .</value>
     <comment>I propose to change Hard work being done into, consolidating lists, because is what happen.</comment>
   </data>
   <data name="button_select_path" xml:space="preserve">
@@ -452,58 +452,58 @@
     <value>Esporta regole blacklist</value>
   </data>
   <data name="button_blacklist_remove" xml:space="preserve">
-    <value>Rimuovi la regola selezionata dalla blacklist</value>
+    <value>Rimuovi la regola di blacklist selezionata</value>
   </data>
   <data name="button_blacklist_add" xml:space="preserve">
-    <value>Aggiungi una nuova regola alla blacklist</value>
+    <value>Aggiungi una nuova regola di blacklist</value>
   </data>
   <data name="button_whitelist_import" xml:space="preserve">
-    <value>Importa regole whitelist esistenti</value>
+    <value>Importa regole di whitelist esistenti</value>
   </data>
   <data name="button_whitelist_export" xml:space="preserve">
-    <value>Esporta regole whitelist</value>
+    <value>Esporta regole di whitelist</value>
   </data>
   <data name="button_whitelist_remove" xml:space="preserve">
-    <value>Rimuovi la regola selezionata dalla whitelist</value>
+    <value>Rimuovi la regola di whitelist selezionata</value>
   </data>
   <data name="button_whitelist_add" xml:space="preserve">
-    <value>Aggiungi una nuova regola alla whitelist</value>
+    <value>Aggiungi una nuova regola di whitelist</value>
   </data>
   <data name="whitelist_rules_header" xml:space="preserve">
-    <value>Regole Whitelist</value>
+    <value>Regole di whitelist</value>
   </data>
   <data name="whitelist_rules_sub_header" xml:space="preserve">
-    <value>(tutti i valori sono ignorati durante la generazione della blacklist)</value>
+    <value>(tutti i valori vengono ignorati durante la generazione della blacklist)</value>
   </data>
   <data name="whitelist_rules_path" xml:space="preserve">
-    <value>Regole Whitelist:</value>
+    <value>Regole di whitelist:</value>
   </data>
   <data name="blacklist_rules_header" xml:space="preserve">
-    <value>Regole Blacklist</value>
+    <value>Regole di blacklist</value>
   </data>
   <data name="blacklist_rules_sub_header" xml:space="preserve">
     <value>(tutti i valori sono uniti in una blacklist)</value>
   </data>
   <data name="blacklist_rules_path" xml:space="preserve">
-    <value>Regole Blacklist:</value>
+    <value>Regole di blacklist:</value>
   </data>
   <data name="blacklist_path" xml:space="preserve">
     <value>Blacklist:</value>
   </data>
   <data name="blacklist_header" xml:space="preserve">
-    <value>Blacklist e Whitelist domini</value>
+    <value>Domini di blacklist e whitelist</value>
   </data>
   <data name="advanced_settings_globalresolver" xml:space="preserve">
-    <value>Resolver Globale</value>
+    <value>Resolver globale</value>
   </data>
   <data name="advanced_settings_globalresolver_content" xml:space="preserve">
-    <value>Se vuoi che questo computer funzioni come gateway per altri dispositivi (ad esempio: smartphone ed altri computer)</value>
+    <value>Se vuoi che questo computer funzioni come gateway per altri dispositivi (ad esempio: smartphone o altri computer)</value>
   </data>
   <data name="advanced_settings_fallback_resolver" xml:space="preserve">
     <value>Resolver di riserva</value>
   </data>
   <data name="advanced_settings_fallback_resolver_content" xml:space="preserve">
-    <value>Questo è normale, DNS resolver non criptati, verranno usati per solo ottenere la lista di resolver per la prima volta e solo se il sistema di configurazione DNS non funziona, gli utenti in China potrebbero dover usare 114.114.114.114:53 qui</value>
+    <value>E&apos; normale che DNS resolver non criptati siano usati ma solo per ottenere la lista di resolver la prima volta e solo se il sistema di configurazione DNS non funziona. Gli utenti in Cina potrebbero dover inserire qui 114.114.114.114:53</value>
   </data>
   <data name="trayicon_tooltip" xml:space="preserve">
     <value>Simple DNSCrypt</value>
@@ -515,150 +515,151 @@
     <value>Listen Addresses</value>
   </data>
   <data name="address_settings_manage_listen_addresses" xml:space="preserve">
-    <value>Manage Listen Addresses</value>
+    <value>Gestisci Listen Addresses</value>
   </data>
   <data name="address_settings_description" xml:space="preserve">
-    <value>List of local addresses and ports to listen to. Can be IPv4 and/or IPv6.</value>
+    <value>Elenco di indirizzi e porte locali da ascoltare. Possono essere IPv4 e / o IPv6.</value>
   </data>
   <data name="address_settings_add" xml:space="preserve">
-    <value>Add new listen address</value>
+    <value>Aggiungi nuovo listen adress</value>
   </data>
   <data name="address_settings_remove" xml:space="preserve">
-    <value>Remove selected listen address</value>
+    <value>Rimuovi listen adress selezionato</value>
   </data>
   <data name="address_settings_restore" xml:space="preserve">
-    <value>Restore default listen addresses</value>
+    <value>Ripristina i listen adresses predefiniti</value>
   </data>
   <data name="button_blacklist_clear" xml:space="preserve">
-    <value>Clear all blacklist rules</value>
+    <value>Pulisci tutte le regole di blacklist</value>
   </data>
   <data name="settings_tray_mode" xml:space="preserve">
-    <value>Minimize to tray when closing</value>
+    <value>Minimizza sulla barra quando si chiude</value>
   </data>
   <data name="settings_start_in_tray" xml:space="preserve">
-    <value>Start Simple DNSCrypt in tray</value>
+    <value>Avvia Simple DSNCrypt sulla barra</value>
   </data>
   <data name="settings_update_silent" xml:space="preserve">
-    <value>Silently install new versions</value>
+    <value>Installazione silente delle nuove versioni</value>
   </data>
   <data name="proxy_proxies" xml:space="preserve">
-    <value>Proxies</value>
+    <value>Proxy</value>
   </data>
   <data name="proxy_manage_proxies" xml:space="preserve">
-    <value>Manage Proxies</value>
+    <value>Gestione dei proxy</value>
   </data>
   <data name="proxy_http_header" xml:space="preserve">
     <value>HTTP/HTTPS proxy</value>
   </data>
   <data name="proxy_http_sub" xml:space="preserve">
-    <value>Only for DoH servers</value>
+    <value>Solo per server DoH</value>
   </data>
   <data name="proxy_socks_header" xml:space="preserve">
-    <value>SOCKS proxy</value>
+    <value>Proxy SOCKS</value>
   </data>
   <data name="proxy_socks_sub" xml:space="preserve">
-    <value>You can route all TCP connections to a local Tor node. Tor doesn&apos;t support UDP, so you should enable Force TCP (Advanced Settings) as well.</value>
+    <value>Puoi instradare tutte le connessioni TCP ad un nodo Tor locale. Tor non supporta UDP, quindi devi abilitare anche &quot;Forza TCP&quot; su &quot;Impostazioni avanzate&quot;.</value>
   </data>
   <data name="advanced_settings_netprobe_timeout" xml:space="preserve">
-    <value>Netprobe Timeout</value>
+    <value>Tempo massimo NetProbe</value>
   </data>
   <data name="advanced_settings_netprobe_timeout_content" xml:space="preserve">
-    <value>Maximum time (in seconds) to wait for network connectivity before initializing the proxy. Useful if the proxy is automatically started at boot, and network connectivity is not guaranteed to be immediately available. Use 0 to disable.</value>
+    <value>Tempo massimo (in secondi) da attendere per la connettività di rete prima di inizializzare il proxy. Utile se il proxy viene avviato automaticamente all&apos;avvio e non è garantita la disponibilità immediata della connettività di rete. Metti 0 per disabilitare.</value>
   </data>
   <data name="default_settings_configuration_dnscrypt" xml:space="preserve">
     <value>DNSCrypt</value>
   </data>
   <data name="default_settings_configuration_dnscrypt_tooltip" xml:space="preserve">
-    <value>Use servers implementing the DNSCrypt protocol</value>
+    <value>Utilizzare i server che implementano il protocollo DNSCrypt</value>
   </data>
   <data name="default_settings_configuration_doh" xml:space="preserve">
     <value>DNS-over-HTTPS</value>
   </data>
   <data name="default_settings_configuration_doh_tooltip" xml:space="preserve">
-    <value>Use servers implementing the DNS-over-HTTPS protocol</value>
+    <value>Utilizzare i server che implementano il protocollo DNS-over-HTTPS</value>
   </data>
   <data name="loader_restore_config" xml:space="preserve">
-    <value>Restore {0}</value>
+    <value>Ripristina {0}</value>
   </data>
   <data name="settings_backup_and_restore_config" xml:space="preserve">
-    <value>Backup and restore dnscrypt configuration on update</value>
+    <value>Salva e ripristina la configurazione dsncrypt in caso di aggiornamento</value>
   </data>
   <data name="tabitem_cloakandforward" xml:space="preserve">
-    <value>Cloak and Forward</value>
+    <value>Cloak e forward
+</value>
   </data>
   <data name="cloaking" xml:space="preserve">
     <value>Cloaking</value>
   </data>
   <data name="cloaking_path" xml:space="preserve">
-    <value>Cloaking Rules:</value>
+    <value>Regole di cloaking</value>
   </data>
   <data name="cloaking_rules_header" xml:space="preserve">
-    <value>Cloaking Rules</value>
+    <value>Regole di cloaking</value>
   </data>
   <data name="cloaking_rules_sub_header" xml:space="preserve">
-    <value>(active cloaking rules)</value>
+    <value>(regole attive di cloaking)</value>
   </data>
   <data name="button_cloaking_add" xml:space="preserve">
-    <value>Add a new cloaking rule</value>
+    <value>Aggiungi una regola di cloaking</value>
   </data>
   <data name="button_cloaking_remove" xml:space="preserve">
-    <value>Remove selected cloaking rule</value>
+    <value>Rimuovi la regole di cloaking selezionata</value>
   </data>
   <data name="button_cloaking_import" xml:space="preserve">
-    <value>Import existing cloaking rules</value>
+    <value>Importa regole di cloaking esistente</value>
   </data>
   <data name="button_cloaking_export" xml:space="preserve">
-    <value>Export cloaking rules</value>
+    <value>Esporta regole di cloaking</value>
   </data>
   <data name="rule_window_cloaking_header" xml:space="preserve">
-    <value>Add new cloaking rule</value>
+    <value>Aggiungi una regola di cloaking</value>
   </data>
   <data name="rule_window_cloaking_key_text" xml:space="preserve">
-    <value>Rule source (eg: www.google.*)</value>
+    <value>Regola source (es: www.google.*)</value>
   </data>
   <data name="rule_window_cloaking_value_text" xml:space="preserve">
-    <value>Rule target (eg: forcesafesearch.google.com)</value>
+    <value>Regola target (es: forcesafesearch.google.com)</value>
   </data>
   <data name="forwarding" xml:space="preserve">
     <value>Forwarding</value>
   </data>
   <data name="forwarding_path" xml:space="preserve">
-    <value>Forwarding Rules:</value>
+    <value>Regole di forwarding</value>
   </data>
   <data name="forwarding_rules_header" xml:space="preserve">
-    <value>Forwarding Rules</value>
+    <value>Regole di forwarding</value>
   </data>
   <data name="forwarding_rules_sub_header" xml:space="preserve">
-    <value>(active forwarding rules)</value>
+    <value>(regole attive di forwarding)</value>
   </data>
   <data name="button_forwarding_add" xml:space="preserve">
-    <value>Add a new forwarding rule</value>
+    <value>Aggiungi una nuova regola di forwarding</value>
   </data>
   <data name="button_forwarding_remove" xml:space="preserve">
-    <value>Remove selected forwarding rule</value>
+    <value>Rimuovi una nuova regola di forwarding</value>
   </data>
   <data name="button_forwarding_import" xml:space="preserve">
-    <value>Import existing forwarding rules</value>
+    <value>Importa regole di forwarding esistente</value>
   </data>
   <data name="button_forwarding_export" xml:space="preserve">
-    <value>Export forwarding rules</value>
+    <value>Esporta le regole do forwarding</value>
   </data>
   <data name="rule_window_forwarding_header" xml:space="preserve">
-    <value>Add new forwarding rule</value>
+    <value>Aggiungi nuova regola di forwarding</value>
   </data>
   <data name="rule_window_forwarding_key_text" xml:space="preserve">
-    <value>Rule source (eg: example.com)</value>
+    <value>Regola source (es: google.com)</value>
   </data>
   <data name="rule_window_forwarding_value_text" xml:space="preserve">
-    <value>Rule target (eg: 9.9.9.9,8.8.8.8)</value>
+    <value>Regola target (es: 9.9.9.9, 8.8.8.8)</value>
   </data>
   <data name="rule_window_add" xml:space="preserve">
-    <value>Add</value>
+    <value>Aggiungi</value>
   </data>
   <data name="rule_window_abort" xml:space="preserve">
-    <value>Abort</value>
+    <value>Blocca</value>
   </data>
   <data name="settings_cloak_and_forward" xml:space="preserve">
-    <value>Show &quot;Cloak and Forward&quot; Tab</value>
+    <value>Mostra scheda &quot;Cloak e forward&quot;</value>
   </data>
 </root>

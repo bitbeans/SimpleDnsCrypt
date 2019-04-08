@@ -389,7 +389,7 @@
     <value>לא נבחר שרת</value>
   </data>
   <data name="message_content_no_server_selected" xml:space="preserve">
-    <value>At least one server must be selected. Otherwise, dnscrypt-proxy uses all servers corresponding to the selected filters.</value>
+    <value>חייב לבחור לפחות שרת אחד. אחרת, dnscrypt-proxy משתמש בכל השרתים המתאימים לסינון הנבחר.</value>
   </data>
   <data name="message_title_service_not_running" xml:space="preserve">
     <value>השירות לא פעיל</value>
@@ -398,16 +398,16 @@
     <value>עליך להפעיל את שירות DnsCrypt!</value>
   </data>
   <data name="message_title_uninstallation_successful" xml:space="preserve">
-    <value>Uninstallation successful</value>
+    <value>הוסר בהצלחה</value>
   </data>
   <data name="message_content_uninstallation_successful" xml:space="preserve">
-    <value>Uninstallation was successful! DNS requests are no longer encrypted.</value>
+    <value>הוסר בהצלחה! שאילתות DNS אינן מוצפנות עוד.</value>
   </data>
   <data name="message_title_uninstallation_error" xml:space="preserve">
     <value>ארעה שגיאה בהסרה</value>
   </data>
   <data name="message_content_uninstallation_error" xml:space="preserve">
-    <value>Uninstallation could not be performed. Try to stop the service manually and uninstall it again.</value>
+    <value>לא ניתן לבצע הסרה. נסה לעצור את השירות ידנית ולבצע הסרה בשנית.</value>
   </data>
   <data name="open_log_directory" xml:space="preserve">
     <value>Open log directory</value>
@@ -449,7 +449,7 @@
     <value>Example: *.example.com, ads.*, *sex*, you can also add a comma-separated list of rules, a file that starts with file:my-custom-rules.txt or a remote URL that begins with http:// or https://.</value>
   </data>
   <data name="working_dialog_title" xml:space="preserve">
-    <value>Lists are merged . . .</value>
+    <value>מאחד רשימות . . .</value>
   </data>
   <data name="button_select_path" xml:space="preserve">
     <value>בחר נתיב</value>
@@ -488,7 +488,7 @@
     <value>(all entries are ignored during blacklist generation)</value>
   </data>
   <data name="whitelist_rules_path" xml:space="preserve">
-    <value>Whitelist Rules:</value>
+    <value>חוקי רשימה לבנה:</value>
   </data>
   <data name="blacklist_rules_header" xml:space="preserve">
     <value>חוקי רשימה שחורה</value>
@@ -497,7 +497,7 @@
     <value>(all entries are merged to a blacklist)</value>
   </data>
   <data name="blacklist_rules_path" xml:space="preserve">
-    <value>Blacklist Rules:</value>
+    <value>חוקי רשימה שחורה:</value>
   </data>
   <data name="blacklist_path" xml:space="preserve">
     <value>רשימה שחורה:</value>

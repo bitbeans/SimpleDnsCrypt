@@ -445,35 +445,35 @@
     <value>Създаване на dnscrypt-proxy черен списък</value>
   </data>
   <data name="button_blacklist_import" xml:space="preserve">
-    <value>Внасяне на съществуващ черен списък с правила</value>
+    <value>Внасяне на правила</value>
     <comment>I suggest to change &apos;Import existing blacklist rules&apos; to &apos;Import existing rules&apos; or &apos;Import rules&apos;. In this case you can use one string for Black and White rules (like Select path button)</comment>
   </data>
   <data name="button_blacklist_export" xml:space="preserve">
-    <value>Изнасяне на черен списък с правила</value>
+    <value>Изнасяне на правилата</value>
     <comment>I suggest to change &apos;Export blacklist rules&apos; to &apos;Export rules&apos;. In this case you can use one string for Black and White rules (like Select path button)</comment>
   </data>
   <data name="button_blacklist_remove" xml:space="preserve">
-    <value>Премахване на избраното правило от черния списък</value>
+    <value>Премахване на избраното правило</value>
     <comment>I suggest to change &apos;Remove selected blacklist rules&apos; to &apos;Remove selected rules&apos;. In this case you can use one string for Black and White rules (like Select path button)</comment>
   </data>
   <data name="button_blacklist_add" xml:space="preserve">
-    <value>Добавяне на ново правило в черния списък</value>
+    <value>Добавяне на ново правило</value>
     <comment>I suggest to change &apos;Add a new blacklist rule&apos; to &apos;Add a new rule&apos; because it run the &apos;Add new domain blacklist rule&apos;. Also in this case you can use one string for Black and White rules (like Select path button)</comment>
   </data>
   <data name="button_whitelist_import" xml:space="preserve">
-    <value>Внасяне на съществуващ бял списък с правила</value>
+    <value>Внасяне на правила</value>
     <comment>I suggest to change &apos;Import existing whitelist rules&apos; to &apos;Import existing rules&apos; or &apos;Import rules&apos;. In this case you can use one string for Black and White rules (like Select path button)</comment>
   </data>
   <data name="button_whitelist_export" xml:space="preserve">
-    <value>Изнасяне на бял списък с правила</value>
+    <value>Изнасяне на правилата</value>
     <comment>I suggest to change &apos;Export whitelist rules&apos; to &apos;Export rules&apos;. In this case you can use one string for Black and White rules (like Select path button)</comment>
   </data>
   <data name="button_whitelist_remove" xml:space="preserve">
-    <value>Премахване на избраното правило от белия списък</value>
+    <value>Премахване на избраното правило</value>
     <comment>I suggest to change &apos;Remove selected whitelist rules&apos; to &apos;Remove selected rules&apos;. In this case you can use one string for Black and White rules (like Select path button)</comment>
   </data>
   <data name="button_whitelist_add" xml:space="preserve">
-    <value>Добавяне на ново правило в белия списък</value>
+    <value>Добавяне на ново правило</value>
     <comment>I suggest to change &apos;Add a new whitelist rule&apos; to &apos;Add a new rule&apos; because it run the &apos;Add new domain whitelist rule&apos;. Also in this case you can use one string for Black and White rules (like Select path button)</comment>
   </data>
   <data name="whitelist_rules_header" xml:space="preserve">
@@ -615,7 +615,7 @@
     <value>Внасяне на правила</value>
   </data>
   <data name="button_cloaking_export" xml:space="preserve">
-    <value>Изнасяне на правила</value>
+    <value>Изнасяне на правилата</value>
   </data>
   <data name="rule_window_cloaking_header" xml:space="preserve">
     <value>Добавяне на ново правило</value>
@@ -663,7 +663,7 @@
     <value>Добавяне</value>
   </data>
   <data name="rule_window_abort" xml:space="preserve">
-    <value>Прекратяване</value>
+    <value>Отказ</value>
   </data>
   <data name="settings_cloak_and_forward" xml:space="preserve">
     <value>Раздел &quot;Маскиране&quot;</value>
