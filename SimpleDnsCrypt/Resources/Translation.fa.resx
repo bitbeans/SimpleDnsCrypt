@@ -127,7 +127,7 @@
     <value>سرویس‌ها</value>
   </data>
   <data name="default_settings_service" xml:space="preserve">
-    <value>DNSCrypt Service</value>
+    <value>DNSCrypt سرویس</value>
   </data>
   <data name="default_settings_configuration" xml:space="preserve">
     <value>تنظیمات</value>
@@ -655,10 +655,10 @@
     <value>Rule target (eg: 9.9.9.9,8.8.8.8)</value>
   </data>
   <data name="rule_window_add" xml:space="preserve">
-    <value>Add</value>
+    <value>اضافه کردن</value>
   </data>
   <data name="rule_window_abort" xml:space="preserve">
-    <value>Abort</value>
+    <value>انصراف</value>
   </data>
   <data name="settings_cloak_and_forward" xml:space="preserve">
     <value>Show &quot;Cloak and Forward&quot; Tab</value>
