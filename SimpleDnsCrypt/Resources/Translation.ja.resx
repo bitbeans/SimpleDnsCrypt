@@ -151,16 +151,16 @@
     <value>DNS Security Extensions（DNSSEC）に対応している必要があります</value>
   </data>
   <data name="default_settings_configuration_nolog" xml:space="preserve">
-    <value>ログを記録しない</value>
+    <value>ログ保存無しサーバのみ使用</value>
   </data>
   <data name="default_settings_configuration_nolog_tooltip" xml:space="preserve">
-    <value>リクエストログを記録せず実行</value>
+    <value>ログを取らないサーバのみ使用</value>
   </data>
   <data name="default_settings_configuration_nofilter" xml:space="preserve">
-    <value>Only servers without filter</value>
+    <value>フィルタの無いサーバのみ使用</value>
   </data>
   <data name="default_settings_configuration_nofilter_tooltip" xml:space="preserve">
-    <value>Server must not enforce its own blacklist (for parental control, ads blocking...)</value>
+    <value>独自なブラックリスト(成人コンテンツの禁止、広告ブロック等)を持つサーバを除外</value>
   </data>
   <data name="tabitem_mainmenu" xml:space="preserve">
     <value>メニュー</value>
@@ -208,19 +208,19 @@
     <value>ネットワークアダプタを読み込み中…</value>
   </data>
   <data name="loader_failed_loading" xml:space="preserve">
-    <value>Could not load {0}</value>
+    <value>{0}のロードに失敗しました</value>
   </data>
   <data name="loader_successfully_loaded" xml:space="preserve">
-    <value>{0} successfully loaded</value>
+    <value>{0}のロードに成功しました</value>
   </data>
   <data name="loader_loading" xml:space="preserve">
-    <value>Loading {0} . . .</value>
+    <value>{0}をロード中…</value>
   </data>
   <data name="loader_missing_files" xml:space="preserve">
-    <value>Missing files in the {0} folder:\n{1}\n\nThink about a new installation of {2}</value>
+    <value>フォルダ{0}の中に以下のファイルが見つかりません\n{1}\n\n{2}の新規インストールを御検討下さい</value>
   </data>
   <data name="loader_all_files_available" xml:space="preserve">
-    <value>All required files have been found</value>
+    <value>必要なファイルが全て見つかりました</value>
   </data>
   <data name="about" xml:space="preserve">
     <value>About</value>
@@ -241,61 +241,65 @@
     <value>クエリログ</value>
   </data>
   <data name="querylog_waiting_for_data" xml:space="preserve">
-    <value>waiting for DNS queries</value>
+    <value>DNSクエリを待機中</value>
   </data>
   <data name="querylog_entry_count" xml:space="preserve">
     <value>Entries:</value>
   </data>
   <data name="querylog_source_file" xml:space="preserve">
-    <value>Source:</value>
+    <value>ログファイル</value>
   </data>
   <data name="querylog_button_clear" xml:space="preserve">
     <value>クリア</value>
   </data>
   <data name="querylog_button_block" xml:space="preserve">
-    <value>Block Selected</value>
+    <value>選択をブロック</value>
   </data>
   <data name="domainblocklog" xml:space="preserve">
     <value>ブロックログ</value>
   </data>
   <data name="domainblocklog_waiting_for_data" xml:space="preserve">
-    <value>waiting for blocked DNS queries</value>
+    <value>ブロックされたクエリを待機中</value>
   </data>
   <data name="domainblocklog_entry_count" xml:space="preserve">
     <value>エントリー:</value>
+    <comment>ここは画面に表示されたログの数なのでエントリ数とかカウントとかでどうでしょうか。</comment>
   </data>
   <data name="domainblocklog_source_file" xml:space="preserve">
     <value>ソース:</value>
+    <comment>ブロックログタブのsourceだと思われますが、日本語ですとログファイルのほうがわかりやすいかと思います。いずれにしろquery log tabのsourceと統一するべきでしょう</comment>
   </data>
   <data name="domainblocklog_button_clear" xml:space="preserve">
     <value>クリア</value>
   </data>
   <data name="tabitem_domainblocklog" xml:space="preserve">
-    <value>Domain Block Log</value>
+    <value>ドメインブロック履歴</value>
   </data>
   <data name="tabitem_addressblocklog" xml:space="preserve">
-    <value>Address Block Log</value>
+    <value>アドレスブロック履歴</value>
   </data>
   <data name="tabitem_domainblacklist" xml:space="preserve">
     <value>ブラックリスト</value>
+    <comment>現在、無効化されていますがIPアドレスによるブラックリストが別に登場しそうですのでドメインを付けたほうが良いかと思います。
+Fuzzy</comment>
   </data>
   <data name="tabitem_addressblacklist" xml:space="preserve">
-    <value>Address Blacklist</value>
+    <value>アドレス ブラックリスト</value>
   </data>
   <data name="settings" xml:space="preserve">
     <value>設定</value>
   </data>
   <data name="settings_domain_blacklist" xml:space="preserve">
-    <value>ブラックリストタブを表示</value>
+    <value>ドメインブラックリストタブを表示</value>
   </data>
   <data name="settings_address_blacklist" xml:space="preserve">
-    <value>Show &quot;Address Blacklist&quot; Tab</value>
+    <value>アドレス ブラックリスト タブを表示</value>
   </data>
   <data name="settings_domain_block" xml:space="preserve">
-    <value>ブロックログタブを表示</value>
+    <value>ドメインブロック履歴タブを表示</value>
   </data>
   <data name="settings_address_block" xml:space="preserve">
-    <value>Show &quot;Address Block Log&quot; Tab</value>
+    <value>アドレスブロック履歴タブを表示</value>
   </data>
   <data name="settings_query_log" xml:space="preserve">
     <value>クエリログタブを表示</value>
@@ -346,7 +350,7 @@
     <value>DNSCryptモード</value>
   </data>
   <data name="resolvers_dnscrypt_mode_description" xml:space="preserve">
-    <value>In automatic mode, all available servers are used. dnscrypt-proxy automatically selects the fastest resolvers.</value>
+    <value>自動モードでは全ての有効なサーバが使用されます。dnscrypt-proxyは自動的に最も速いリゾルバを選択します</value>
   </data>
   <data name="resolvers_dnscrypt_automatic_mode" xml:space="preserve">
     <value>自動モード</value>
@@ -376,7 +380,7 @@
     <value>選択されたサーバーがありません</value>
   </data>
   <data name="message_content_no_server_selected" xml:space="preserve">
-    <value>At least one server must be selected. Otherwise, dnscrypt-proxy uses all servers corresponding to the selected filters.</value>
+    <value>最低でも1つはサーバを選択して下さい。でなければ、dnscrypt-proxyは選択したフィルタに対応する全てのサーバを使用します</value>
   </data>
   <data name="message_title_service_not_running" xml:space="preserve">
     <value>サービスは停止しています</value>
@@ -388,13 +392,13 @@
     <value>アンインストールしました</value>
   </data>
   <data name="message_content_uninstallation_successful" xml:space="preserve">
-    <value>Uninstallation was successful! DNS requests are no longer encrypted.</value>
+    <value>アンインストールは成功しました。DNSクエリは今後、暗号化されません</value>
   </data>
   <data name="message_title_uninstallation_error" xml:space="preserve">
     <value>アンインストールに失敗しました</value>
   </data>
   <data name="message_content_uninstallation_error" xml:space="preserve">
-    <value>Uninstallation could not be performed. Try to stop the service manually and uninstall it again.</value>
+    <value>アンインストールが実行できませんでした。サービスを手動で停止しアンインストールを再度実行して下さい</value>
   </data>
   <data name="open_log_directory" xml:space="preserve">
     <value>ログディレクトリを開く</value>
@@ -406,13 +410,13 @@
     <value>アップデートチャンネル:</value>
   </data>
   <data name="advanced_settings_dnscache_content" xml:space="preserve">
-    <value>DNS cache to reduce latency and outgoing traffic</value>
+    <value>DNSキャッシュを利用し待ち時間と外部への接続を削減</value>
   </data>
   <data name="advanced_settings_blockipv6" xml:space="preserve">
     <value>IPv6をブロック</value>
   </data>
   <data name="advanced_settings_blockipv6_content" xml:space="preserve">
-    <value>Immediately respond to IPv6-related queries with an empty response</value>
+    <value>IPv6のクエリに対しすぐに空のレスポンスを返す</value>
   </data>
   <data name="advanced_settings_forcetcp" xml:space="preserve">
     <value>TCPを強制</value>
@@ -443,7 +447,7 @@
     <value>選択</value>
   </data>
   <data name="button_blacklist_build" xml:space="preserve">
-    <value>Build the dnscrypt-proxy blacklist</value>
+    <value>dnscrypt-proxy向けブラックリストを構築</value>
   </data>
   <data name="button_blacklist_import" xml:space="preserve">
     <value>ブラックリストにインポート</value>
@@ -473,7 +477,7 @@
     <value>ホワイトリストのルール</value>
   </data>
   <data name="whitelist_rules_sub_header" xml:space="preserve">
-    <value>(all entries are ignored during blacklist generation)</value>
+    <value>(ブラックリスト生成時にこれらのエントリは無視されます)</value>
   </data>
   <data name="whitelist_rules_path" xml:space="preserve">
     <value>ホワイトリストファイル:</value>
@@ -482,7 +486,7 @@
     <value>ブラックリストのルール</value>
   </data>
   <data name="blacklist_rules_sub_header" xml:space="preserve">
-    <value>(all entries are merged to a blacklist)</value>
+    <value>(全エントリがブラックリストに統合されます)</value>
   </data>
   <data name="blacklist_rules_path" xml:space="preserve">
     <value>ブラックリストルール:</value>
@@ -497,16 +501,16 @@
     <value>グローバルリゾルバ</value>
   </data>
   <data name="advanced_settings_globalresolver_content" xml:space="preserve">
-    <value>If you want this computer to act as gateway device for others (eg. smartphones or other computers)</value>
+    <value>このPCを他の端末のゲートウェイとして利用する場合に選択 (例: スマホや他のPC)</value>
   </data>
   <data name="advanced_settings_fallback_resolver" xml:space="preserve">
-    <value>Fallback Resolver</value>
+    <value>フォールバック リゾルバ</value>
   </data>
   <data name="advanced_settings_fallback_resolver_content" xml:space="preserve">
-    <value>This is a normal, non-encrypted DNS resolver, that will be only used for one-shot queries when retrieving the initial resolvers list, and only if the system DNS configuration doesn&apos;t work. People in China may need to use 114.114.114.114:53 here.</value>
+    <value>通常の非暗号化DNSリゾルバです。システムのDNS設定にてうまくいかない場合に、最初にリゾルバリストを取得する1回のみに使用します。中国国内で必要な場合、114.114.114.114:53を試して下さい</value>
   </data>
   <data name="trayicon_tooltip" xml:space="preserve">
-    <value>Simple DNSCｒｙｐｔ</value>
+    <value>Simple DNSCrypt</value>
   </data>
   <data name="trayicon_exit" xml:space="preserve">
     <value>終了</value>
@@ -515,19 +519,19 @@
     <value>Listen Addresses</value>
   </data>
   <data name="address_settings_manage_listen_addresses" xml:space="preserve">
-    <value>Manage Listen Addresses</value>
+    <value>リストの管理</value>
   </data>
   <data name="address_settings_description" xml:space="preserve">
-    <value>List of local addresses and ports to listen to. Can be IPv4 and/or IPv6.</value>
+    <value>listenするローカルアドレスとポートのリスト。IPv4とIPv6が利用可能です。</value>
   </data>
   <data name="address_settings_add" xml:space="preserve">
-    <value>Add new listen address</value>
+    <value>新規アドレスの追加</value>
   </data>
   <data name="address_settings_remove" xml:space="preserve">
-    <value>Remove selected listen address</value>
+    <value>選択したアドレスの削除</value>
   </data>
   <data name="address_settings_restore" xml:space="preserve">
-    <value>Restore default listen addresses</value>
+    <value>デフォルトのアドレスに戻す</value>
   </data>
   <data name="button_blacklist_clear" xml:space="preserve">
     <value>すべてのルールを削除</value>
@@ -545,43 +549,43 @@
     <value>Proxies</value>
   </data>
   <data name="proxy_manage_proxies" xml:space="preserve">
-    <value>Manage Proxies</value>
+    <value>Proxyの管理</value>
   </data>
   <data name="proxy_http_header" xml:space="preserve">
     <value>HTTP/HTTPS proxy</value>
   </data>
   <data name="proxy_http_sub" xml:space="preserve">
-    <value>Only for DoH servers</value>
+    <value>DoHサーバ向けのみに使用可</value>
   </data>
   <data name="proxy_socks_header" xml:space="preserve">
     <value>SOCKS proxy</value>
   </data>
   <data name="proxy_socks_sub" xml:space="preserve">
-    <value>You can route all TCP connections to a local Tor node. Tor doesn&apos;t support UDP, so you should enable Force TCP (Advanced Settings) as well.</value>
+    <value>全てのTCP接続をローカルのTorノードにルーティングします。TorはUDPをサポートしません。従って詳細設定の&quot;TCP強制&quot;もONにして下さい</value>
   </data>
   <data name="advanced_settings_netprobe_timeout" xml:space="preserve">
-    <value>Netprobe Timeout</value>
+    <value>接続確認のタイムアウト時間</value>
   </data>
   <data name="advanced_settings_netprobe_timeout_content" xml:space="preserve">
-    <value>Maximum time (in seconds) to wait for network connectivity before initializing the proxy. Useful if the proxy is automatically started at boot, and network connectivity is not guaranteed to be immediately available. Use 0 to disable.</value>
+    <value>proxyの初期化前にネットワーク接続の確立に最大で何秒待つか設定します。ブート時から自動的にproxyを開始するがネットワーク接続が直ぐには有効にならない場合に使用します。無効化には0を設定します</value>
   </data>
   <data name="default_settings_configuration_dnscrypt" xml:space="preserve">
     <value>DNSCrypt</value>
   </data>
   <data name="default_settings_configuration_dnscrypt_tooltip" xml:space="preserve">
-    <value>Use servers implementing the DNSCrypt protocol</value>
+    <value>DNSCryptプロトコルに対応するサーバを使用</value>
   </data>
   <data name="default_settings_configuration_doh" xml:space="preserve">
     <value>DNS-over-HTTPS</value>
   </data>
   <data name="default_settings_configuration_doh_tooltip" xml:space="preserve">
-    <value>Use servers implementing the DNS-over-HTTPS protocol</value>
+    <value>DNS-over-HTTPSプロトコルに対応するサーバを使用</value>
   </data>
   <data name="loader_restore_config" xml:space="preserve">
     <value>Restore {0}</value>
   </data>
   <data name="settings_backup_and_restore_config" xml:space="preserve">
-    <value>Backup and restore dnscrypt configuration on update</value>
+    <value>dnscryptの設定を更新時に保存、復元</value>
   </data>
   <data name="tabitem_cloakandforward" xml:space="preserve">
     <value>Cloak and Forward</value>
