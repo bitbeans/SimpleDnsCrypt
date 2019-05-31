@@ -127,7 +127,7 @@
     <value>서비스</value>
   </data>
   <data name="default_settings_service" xml:space="preserve">
-    <value>DNS암호화 서비스</value>
+    <value>DNSCrypt 서비스</value>
   </data>
   <data name="default_settings_configuration" xml:space="preserve">
     <value>환경설정</value>
@@ -136,13 +136,13 @@
     <value>IPv4 서버 사용</value>
   </data>
   <data name="default_settings_configuration_ipv4_tooltip" xml:space="preserve">
-    <value>IPv4 통신 가능 서버 사용</value>
+    <value>IPv4 통신이 가능한 서버만 사용합니다.</value>
   </data>
   <data name="default_settings_configuration_ipv6" xml:space="preserve">
     <value>IPv6 서버 사용</value>
   </data>
   <data name="default_settings_configuration_ipv6_tooltip" xml:space="preserve">
-    <value>IPv6 통신 가능 서버 사용 (IPv6을 사용하지 않는다면 꺼주세요.)</value>
+    <value>IPv6 통신이 가능한 서버만 사용합니다. (IPv6을 사용하지 않는다면 꺼주세요.)</value>
   </data>
   <data name="default_settings_configuration_dnssec" xml:space="preserve">
     <value>DNSSEC 지원 서버만 사용</value>
@@ -160,7 +160,7 @@
     <value>특정 사이트를 차단하지 않는 서버만 사용</value>
   </data>
   <data name="default_settings_configuration_nofilter_tooltip" xml:space="preserve">
-    <value>광고나 성인물 등을 이유로 특정 사이트를 차단하지 않는 서버만 사용합니다.</value>
+    <value>광고나 성인물 등을 이유로 특정 사이트를 차단하는 서버는 사용하지 않습니다.</value>
   </data>
   <data name="tabitem_mainmenu" xml:space="preserve">
     <value>메인 메뉴</value>
@@ -208,13 +208,13 @@
     <value>네트워크 카드를 불러오는 중...</value>
   </data>
   <data name="loader_failed_loading" xml:space="preserve">
-    <value>{0}을/를 불러올 수 없습니다.</value>
+    <value>{0}을(를) 불러올 수 없습니다.</value>
   </data>
   <data name="loader_successfully_loaded" xml:space="preserve">
-    <value>{0}을/를 성공적으로 불러왔습니다.</value>
+    <value>{0}을(를) 성공적으로 불러왔습니다.</value>
   </data>
   <data name="loader_loading" xml:space="preserve">
-    <value>{0}을/를 불러오는 중...</value>
+    <value>{0}을(를) 불러오는 중...</value>
   </data>
   <data name="loader_missing_files" xml:space="preserve">
     <value>{0} 폴더에 누락된 파일이 있습니다:\n{1}\n\n{2} 설치를 고려해보세요.</value>
@@ -253,7 +253,7 @@
     <value>목록 초기화</value>
   </data>
   <data name="querylog_button_block" xml:space="preserve">
-    <value>선택 쿼리 차단</value>
+    <value>선택된 쿼리 차단</value>
   </data>
   <data name="domainblocklog" xml:space="preserve">
     <value>도메인 차단 기록</value>
@@ -325,10 +325,10 @@
     <value>설치된 윈도우 서비스를 제거하시겠습니까?</value>
   </data>
   <data name="dialog_uninstall_title" xml:space="preserve">
-    <value>서비스 제거중</value>
+    <value>서비스 제거 중</value>
   </data>
   <data name="advanced_settings_uninstall_title" xml:space="preserve">
-    <value>서비스 제거중</value>
+    <value>서비스 제거 중</value>
   </data>
   <data name="advanced_settings_uninstall_text" xml:space="preserve">
     <value>설치된 윈도우 서비스 제거</value>
@@ -343,7 +343,7 @@
     <value>DNS 캐시</value>
   </data>
   <data name="resolvers_dnscrypt_mode_header" xml:space="preserve">
-    <value>DNS암호화 모드</value>
+    <value>DNSCrypt 모드</value>
   </data>
   <data name="resolvers_dnscrypt_mode_description" xml:space="preserve">
     <value>자동 모드에서는 가능한 모든 서버를 이용하며, 그 중 제일 빠른 DNS를 찾아 사용합니다.</value>
@@ -376,19 +376,19 @@
     <value>서버가 선택되지 않음</value>
   </data>
   <data name="message_content_no_server_selected" xml:space="preserve">
-    <value>최소 하나 이상의 서버를 사용해야 합니다. 그렇지 않으면, dnscrypt-proxy는 선택된 조건을 만족하는 모든 서버를 사용합니다.</value>
+    <value>하나 이상의 서버가 선택되어야 합니다. 그렇지 않으면, 주어진 조건을 만족하는 모든 서버를 사용합니다.</value>
   </data>
   <data name="message_title_service_not_running" xml:space="preserve">
     <value>서비스가 실행되고 있지 않음</value>
   </data>
   <data name="message_content_service_not_running" xml:space="preserve">
-    <value>먼저 DNS암호화 서비스를 시작해야 합니다!</value>
+    <value>먼저 DNSCrypt 서비스를 시작해야 합니다!</value>
   </data>
   <data name="message_title_uninstallation_successful" xml:space="preserve">
     <value>제거 성공</value>
   </data>
   <data name="message_content_uninstallation_successful" xml:space="preserve">
-    <value>제거가 성공적으로 이루어졌습니다! DNS 요청들은 이제 암호화되지 않습니다</value>
+    <value>제거가 성공적으로 이루어졌습니다! DNS 요청들은 이제 암호화되지 않습니다.</value>
   </data>
   <data name="message_title_uninstallation_error" xml:space="preserve">
     <value>제거 오류</value>
@@ -400,7 +400,7 @@
     <value>기록 저장 폴더 열기</value>
   </data>
   <data name="settings_update_auto" xml:space="preserve">
-    <value>시작 시 업데이트 확인</value>
+    <value>시작 시 업데이트를 확인</value>
   </data>
   <data name="settings_update_channel" xml:space="preserve">
     <value>업데이트 채널 :</value>
@@ -412,7 +412,7 @@
     <value>IPv6 차단</value>
   </data>
   <data name="advanced_settings_blockipv6_content" xml:space="preserve">
-    <value>즉각적으로 IPv6 관련 쿼리에 빈 응답으로 응답</value>
+    <value>IPv6 쿼리에 즉시 빈 응답을 반환합니다.</value>
   </data>
   <data name="advanced_settings_forcetcp" xml:space="preserve">
     <value>TCP 강제</value>
@@ -493,7 +493,8 @@
     <value>도메인 차단 및 예외 목록</value>
   </data>
   <data name="advanced_settings_globalresolver" xml:space="preserve">
-    <value>세계적인 서비스 제공자</value>
+    <value>글로벌 리졸버</value>
+    <comment>원문인 &apos;Global Resolver&apos;에서 &apos;Global&apos;이 &apos;세계적인&apos;을 의미하는 것이 아니며, &apos;Resolver&apos; 역시 &apos;서비스 제공자&apos;와는 의미상 차이가 있어 원래 번역인 &apos;글로벌 리졸버&apos;로 되돌렸습니다.</comment>
   </data>
   <data name="advanced_settings_globalresolver_content" xml:space="preserve">
     <value>이 컴퓨터를 다른 컴퓨터의 게이트웨이로 사용하려면 활성화하세요.</value>
@@ -502,10 +503,11 @@
     <value>예비 서버</value>
   </data>
   <data name="advanced_settings_fallback_resolver_content" xml:space="preserve">
-    <value>정상적이고 암호화되지 않은 DNS 서버입니다. 설정해둔 DNS가 작동하지 않을 때, 혹은 서버 목록을 받아올 때 사용됩니다. 중국에 거주할 경우, 114.114.114.114:54로 설정해야 할 수도 있습니다</value>
+    <value>정상적이고 암호화되지 않은 DNS 서버입니다. 설정해둔 DNS가 작동하지 않을 때, 혹은 서버 목록을 받아올 때 사용됩니다. 중국에 거주할 경우, 114.114.114.114:54로 설정해야 할 수도 있습니다.</value>
   </data>
   <data name="trayicon_tooltip" xml:space="preserve">
-    <value>간단한 DNS암호화</value>
+    <value>Simple DNSCrypt</value>
+    <comment>&apos;Simple DNSCrypt&apos;는 프로그램의 이름이고, 또 적절한 번역도 없으니 &apos;간단한 DNS암호화&apos;와 같이 직역을 하기보다는 그대로 두는 게 좋을 듯 합니다.</comment>
   </data>
   <data name="trayicon_exit" xml:space="preserve">
     <value>종료</value>
@@ -524,7 +526,7 @@
     <value>수신 주소 추가</value>
   </data>
   <data name="address_settings_remove" xml:space="preserve">
-    <value>선택한 수신 주소 제거</value>
+    <value>선택된 수신 주소 제거</value>
   </data>
   <data name="address_settings_restore" xml:space="preserve">
     <value>수신 주소를 기본으로 복구</value>
@@ -536,7 +538,7 @@
     <value>창을 닫으면 트레이로 최소화</value>
   </data>
   <data name="settings_start_in_tray" xml:space="preserve">
-    <value>트레이로 최소화 된 상태로 프로그램 시작</value>
+    <value>트레이로 최소화된 상태에서 프로그램을 시작</value>
   </data>
   <data name="settings_update_silent" xml:space="preserve">
     <value>물어보지 않고 새로운 버전으로 업데이트</value>
@@ -557,19 +559,21 @@
     <value>SOCKS 프록시</value>
   </data>
   <data name="proxy_socks_sub" xml:space="preserve">
-    <value>모든 TCP 연결을 로컬 Tor 노드로 경유 시킬 수 있습니다. Tor는 UDP를 지원하지 않으므로, 고급 설정에서 TCP 강제 옵션을 켜야 합니다.</value>
+    <value>모든 TCP 연결을 로컬 Tor 노드로 경유시킬 수 있습니다. Tor는 UDP를 지원하지 않으므로, 고급 설정에서 TCP 강제 옵션을 켜야 합니다.</value>
   </data>
   <data name="advanced_settings_netprobe_timeout" xml:space="preserve">
-    <value>Netprobe의 탐색 시간이 초과됨</value>
+    <value>Netprobe 제한시간</value>
+    <comment>&apos;제한시간&apos;, &apos;시간제한&apos;, &apos;대기시간&apos; 중 &apos;제한시간&apos;을 골랐습니다. 더 나은 번역이 있다면 수정해주시기 바랍니다.</comment>
   </data>
   <data name="advanced_settings_netprobe_timeout_content" xml:space="preserve">
-    <value>프록시를 초기화하기 전에 네트워크 연결을 대기하는 최대 시간(초)을 입력하세요. 사용하지 않으려면 0을 입력하세요. 부팅 시 프록시가 자동으로 시작되고 네트워크 연결이 즉시 연결되지 않는 경우에 유용에 유용합니다.</value>
+    <value>프록시를 초기화하기 전 네트워크 연결을 대기할 최대 시간을 초 단위로 입력하세요. 부팅 시 프록시가 자동으로 시작되고 네트워크 연결이 즉시 연결되지 않는 경우에 유용합니다. 0일 경우 무기한 대기합니다.</value>
   </data>
   <data name="default_settings_configuration_dnscrypt" xml:space="preserve">
-    <value>DNS암호화</value>
+    <value>DNSCrypt</value>
+    <comment>원문인 &apos;DNSCrypt&apos;가 &apos;DNS 암호화&apos;가 아닌 &apos;DNSCrypt 프로토콜&apos;이라는 특정 기술을 나타내기 위해 사용된 명칭이므로, 이는 번역하지 않고 그대로 놔두는 것이 올바를 듯 합니다.</comment>
   </data>
   <data name="default_settings_configuration_dnscrypt_tooltip" xml:space="preserve">
-    <value>DNS암호화 프로토콜을 구현한 서버를 사용합니다.</value>
+    <value>DNSCrypt 프로토콜을 구현한 서버를 사용합니다.</value>
   </data>
   <data name="default_settings_configuration_doh" xml:space="preserve">
     <value>DNS-over-HTTPS</value>
@@ -581,7 +585,7 @@
     <value>복구됨 {0}</value>
   </data>
   <data name="settings_backup_and_restore_config" xml:space="preserve">
-    <value>업데이트 시 DNS암호화 설정을 백업 및 복구</value>
+    <value>업데이트 시 dnscrypt 설정을 백업 및 복구</value>
   </data>
   <data name="tabitem_cloakandforward" xml:space="preserve">
     <value>은폐와 포워딩</value>
@@ -596,10 +600,10 @@
     <value>은폐 규칙</value>
   </data>
   <data name="cloaking_rules_sub_header" xml:space="preserve">
-    <value>(활성화된 은폐 규칙들)</value>
+    <value>(활성화된 은폐 규칙)</value>
   </data>
   <data name="button_cloaking_add" xml:space="preserve">
-    <value>새로운 은폐 규칙 추가</value>
+    <value>은폐 규칙 추가</value>
   </data>
   <data name="button_cloaking_remove" xml:space="preserve">
     <value>선택된 은폐 규칙 삭제</value>
@@ -611,7 +615,7 @@
     <value>은폐 규칙 내보내기</value>
   </data>
   <data name="rule_window_cloaking_header" xml:space="preserve">
-    <value>새로운 은폐 규칙 추가</value>
+    <value>은폐 규칙 추가</value>
   </data>
   <data name="rule_window_cloaking_key_text" xml:space="preserve">
     <value>규칙 설정 (예 : www.google.*)</value>
@@ -635,7 +639,7 @@
     <value>새로운 포워딩 규칙 추가</value>
   </data>
   <data name="button_forwarding_remove" xml:space="preserve">
-    <value>선택한 포워딩 규칙 삭제</value>
+    <value>선택된 포워딩 규칙 삭제</value>
   </data>
   <data name="button_forwarding_import" xml:space="preserve">
     <value>포워딩 규칙 불러오기</value>
