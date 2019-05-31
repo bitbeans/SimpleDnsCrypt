@@ -25,14 +25,14 @@
 		public const string ApplicationUpdatePublicKey = "RWTSM+4BNNvkZPNkHgE88ETlhWa+0HDzU5CN8TvbyvmhVUcr6aQXfssV";
 
 		/// <summary>
-		/// Microsoft Visual C++ Redistributable for Visual Studio 2017 (x86)
+		/// Microsoft Visual C++ Redistributable for Visual Studio 2015 - 2019 (x86)
 		/// </summary>
-		public const string RedistributablePackage86 = "https://aka.ms/vs/15/release/VC_redist.x86.exe";
+		public const string RedistributablePackage86 = "https://aka.ms/vs/16/release/VC_redist.x86.exe";
 
 		/// <summary>
-		/// Microsoft Visual C++ Redistributable for Visual Studio 2017 (x64)
+		/// Microsoft Visual C++ Redistributable for Visual Studio 2015 - 2019 (x64)
 		/// </summary>
-		public const string RedistributablePackage64 = "https://aka.ms/vs/15/release/VC_redist.x64.exe";
+		public const string RedistributablePackage64 = "https://aka.ms/vs/16/release/VC_redist.x64.exe";
 
 		/// <summary>
 		///     The folder where the dnscrypt-proxy lives in.
