@@ -529,135 +529,135 @@
     <value>Khôi phục địa chỉ theo dõi mặc định</value>
   </data>
   <data name="button_blacklist_clear" xml:space="preserve">
-    <value>Clear all blacklist rules</value>
+    <value>Dọn dẹp danh sách chặn</value>
   </data>
   <data name="settings_tray_mode" xml:space="preserve">
-    <value>Minimize to tray when closing</value>
+    <value>Ẩn vào khay khi đóng</value>
   </data>
   <data name="settings_start_in_tray" xml:space="preserve">
-    <value>Start Simple DNSCrypt in tray</value>
+    <value>Bắt đầu Simple DNSCrypt ẩn</value>
   </data>
   <data name="settings_update_silent" xml:space="preserve">
-    <value>Silently install new versions</value>
+    <value>Cập nhật ngầm phiên bản mới</value>
   </data>
   <data name="proxy_proxies" xml:space="preserve">
     <value>Proxies</value>
   </data>
   <data name="proxy_manage_proxies" xml:space="preserve">
-    <value>Manage Proxies</value>
+    <value>Quản lý Proxies</value>
   </data>
   <data name="proxy_http_header" xml:space="preserve">
-    <value>HTTP/HTTPS proxy</value>
+    <value>Proxy HTTP/HTTPS</value>
   </data>
   <data name="proxy_http_sub" xml:space="preserve">
-    <value>Only for DoH servers</value>
+    <value>Chỉ máy chủ DoH</value>
   </data>
   <data name="proxy_socks_header" xml:space="preserve">
     <value>SOCKS proxy</value>
   </data>
   <data name="proxy_socks_sub" xml:space="preserve">
-    <value>You can route all TCP connections to a local Tor node. Tor doesn&apos;t support UDP, so you should enable Force TCP (Advanced Settings) as well.</value>
+    <value>Bạn có thể định tuyến tất cả các kết nối TCP đến một nút Tor cục bộ. Tor không hỗ trợ UDP, vì vậy bạn cũng nên bật Force TCP (Cài đặt nâng cao).</value>
   </data>
   <data name="advanced_settings_netprobe_timeout" xml:space="preserve">
     <value>Netprobe Timeout</value>
   </data>
   <data name="advanced_settings_netprobe_timeout_content" xml:space="preserve">
-    <value>Maximum time (in seconds) to wait for network connectivity before initializing the proxy. Useful if the proxy is automatically started at boot, and network connectivity is not guaranteed to be immediately available. Use 0 to disable.</value>
+    <value>Thời gian tối đa (tính bằng giây) để chờ kết nối mạng trước khi khởi tạo proxy. Hữu ích nếu proxy được tự động khởi động khi khởi động và kết nối mạng không được đảm bảo sẽ khả dụng ngay lập tức. Sử dụng 0 để tắt.</value>
   </data>
   <data name="default_settings_configuration_dnscrypt" xml:space="preserve">
     <value>DNSCrypt</value>
   </data>
   <data name="default_settings_configuration_dnscrypt_tooltip" xml:space="preserve">
-    <value>Use servers implementing the DNSCrypt protocol</value>
+    <value>Sử dụng máy chủ thực hiện giao thức DNSCrypt</value>
   </data>
   <data name="default_settings_configuration_doh" xml:space="preserve">
     <value>DNS-over-HTTPS</value>
   </data>
   <data name="default_settings_configuration_doh_tooltip" xml:space="preserve">
-    <value>Use servers implementing the DNS-over-HTTPS protocol</value>
+    <value>Sử dụng máy chủ thực hiện giao thức DNS-over-HTTPS</value>
   </data>
   <data name="loader_restore_config" xml:space="preserve">
-    <value>Restore {0}</value>
+    <value>Khôi phục {0}</value>
   </data>
   <data name="settings_backup_and_restore_config" xml:space="preserve">
-    <value>Backup and restore dnscrypt configuration on update</value>
+    <value>Sao lưu và khôi phục cấu hình dnscrypt khi cập nhật</value>
   </data>
   <data name="tabitem_cloakandforward" xml:space="preserve">
-    <value>Cloak and Forward</value>
+    <value>Giấu và Chuyển tiếp</value>
   </data>
   <data name="cloaking" xml:space="preserve">
-    <value>Cloaking</value>
+    <value>Đang giấu</value>
   </data>
   <data name="cloaking_path" xml:space="preserve">
-    <value>Cloaking Rules:</value>
+    <value>Quy tắc giấu:</value>
   </data>
   <data name="cloaking_rules_header" xml:space="preserve">
-    <value>Cloaking Rules</value>
+    <value>Quy tắc giấu</value>
   </data>
   <data name="cloaking_rules_sub_header" xml:space="preserve">
-    <value>(active cloaking rules)</value>
+    <value>(đang kích hoạt quy tắt giấu)</value>
   </data>
   <data name="button_cloaking_add" xml:space="preserve">
-    <value>Add a new cloaking rule</value>
+    <value>Thêm quy tắt giấu mới</value>
   </data>
   <data name="button_cloaking_remove" xml:space="preserve">
-    <value>Remove selected cloaking rule</value>
+    <value>Loại bỏ quy tắt giấu đã chọn</value>
   </data>
   <data name="button_cloaking_import" xml:space="preserve">
-    <value>Import existing cloaking rules</value>
+    <value>Nhập quy tắt giấu có sẵn</value>
   </data>
   <data name="button_cloaking_export" xml:space="preserve">
-    <value>Export cloaking rules</value>
+    <value>Xuất quy tắt giấu</value>
   </data>
   <data name="rule_window_cloaking_header" xml:space="preserve">
-    <value>Add new cloaking rule</value>
+    <value>Thêm quy tắt giấu mới</value>
   </data>
   <data name="rule_window_cloaking_key_text" xml:space="preserve">
-    <value>Rule source (eg: www.google.*)</value>
+    <value>Quy tắt nguồn (ví dụ: www.google.*)</value>
   </data>
   <data name="rule_window_cloaking_value_text" xml:space="preserve">
-    <value>Rule target (eg: forcesafesearch.google.com)</value>
+    <value>Quy tắt đối tượng (ví dụ: forcesafesearch.google.com)</value>
   </data>
   <data name="forwarding" xml:space="preserve">
-    <value>Forwarding</value>
+    <value>Đang chuyển tiếp</value>
   </data>
   <data name="forwarding_path" xml:space="preserve">
-    <value>Forwarding Rules:</value>
+    <value>Quy tắt chuyển tiếp:</value>
   </data>
   <data name="forwarding_rules_header" xml:space="preserve">
-    <value>Forwarding Rules</value>
+    <value>Quy tắt chuyển tiếp</value>
   </data>
   <data name="forwarding_rules_sub_header" xml:space="preserve">
-    <value>(active forwarding rules)</value>
+    <value>(đang kích hoạt quy tắt chuyển tiếp)</value>
   </data>
   <data name="button_forwarding_add" xml:space="preserve">
-    <value>Add a new forwarding rule</value>
+    <value>Thêm quy tắt chuyển tiếp mới</value>
   </data>
   <data name="button_forwarding_remove" xml:space="preserve">
-    <value>Remove selected forwarding rule</value>
+    <value>Xóa quy tắt chuyển tiếp đã chọn</value>
   </data>
   <data name="button_forwarding_import" xml:space="preserve">
-    <value>Import existing forwarding rules</value>
+    <value>Nhập quy tắt chuyển tiếp có sẵn</value>
   </data>
   <data name="button_forwarding_export" xml:space="preserve">
-    <value>Export forwarding rules</value>
+    <value>Xuất quy tắt chuyển tiếp</value>
   </data>
   <data name="rule_window_forwarding_header" xml:space="preserve">
-    <value>Add new forwarding rule</value>
+    <value>Thêm quy tắt chuyển tiếp mới</value>
   </data>
   <data name="rule_window_forwarding_key_text" xml:space="preserve">
-    <value>Rule source (eg: example.com)</value>
+    <value>Quy tắt nguồn (ví dụ: example.com)</value>
   </data>
   <data name="rule_window_forwarding_value_text" xml:space="preserve">
-    <value>Rule target (eg: 9.9.9.9,8.8.8.8)</value>
+    <value>Mục tiêu (ví dụ: 9,9.9.9,8.8.8.8)</value>
   </data>
   <data name="rule_window_add" xml:space="preserve">
-    <value>Add</value>
+    <value>Thêm</value>
   </data>
   <data name="rule_window_abort" xml:space="preserve">
-    <value>Abort</value>
+    <value>Từ chối</value>
   </data>
   <data name="settings_cloak_and_forward" xml:space="preserve">
-    <value>Show &quot;Cloak and Forward&quot; Tab</value>
+    <value>Hiện thẻ &quot;Giấu và Chuyển tiếp&quot;</value>
   </data>
 </root>
