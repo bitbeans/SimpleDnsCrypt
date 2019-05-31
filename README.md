@@ -23,7 +23,11 @@ New version based on dnscrypt-proxy 2.0.22
 
 At least one system with Windows 7 SP1 and the installation of. NET Framework 4.6.1 is currently required.
 
-You also will need: Microsoft Visual C++ Redistributable for Visual Studio 2017 [x64](https://aka.ms/vs/15/release/VC_redist.x64.exe) or [x86](https://aka.ms/vs/15/release/VC_redist.x86.exe)
+You also will need: Microsoft Visual C++ Redistributable for Visual Studio 2015 - 2019 [x64](https://aka.ms/vs/16/release/VC_redist.x64.exe) or [x86](https://aka.ms/vs/16/release/VC_redist.x86.exe)
+
+or
+
+Microsoft Visual C++ Redistributable for Visual Studio 2017 [x64](https://aka.ms/vs/15/release/VC_redist.x64.exe) or [x86](https://aka.ms/vs/15/release/VC_redist.x86.exe)
 
 
 ### Installing
@@ -76,7 +80,7 @@ If you can add or correct a language, feel free to do so:
 
 ## Built With
 
-* [Visual Studio 2017 (15.x.x)](https://www.visualstudio.com/downloads/)
+* [Visual Studio 2019](https://www.visualstudio.com/downloads/)
 * [.NET Framework 4.6.x](https://www.microsoft.com/net/download/windows)
 * [ReSharper](https://www.jetbrains.com/resharper/) 
 * [Advanced Installer](https://www.advancedinstaller.com/)
