@@ -22,11 +22,13 @@ namespace SimpleDnsCrypt.Helper
 				{
 					//check for 2015 - 2019
 					var parametersVc2015to2019x64 = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\DevDiv\VC\Servicing\14.0\RuntimeMinimum", false);
-					if (parametersVc2015to2019x64 == null) return false;
-					var vc2015to2019x64Version = parametersVc2015to2019x64.GetValue("Version");
-					if (((string)vc2015to2019x64Version).StartsWith("14"))
+					if (parametersVc2015to2019x64 != null)
 					{
-						return true;
+						var vc2015to2019x64Version = parametersVc2015to2019x64.GetValue("Version");
+						if (((string)vc2015to2019x64Version).StartsWith("14"))
+						{
+							return true;
+						}
 					}
 					//check for 2017
 					var paths2017X64 = new List<string>
@@ -50,11 +52,13 @@ namespace SimpleDnsCrypt.Helper
 				{
 					//check for 2015 - 2019
 					var parametersVc2015to2019x86 = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\DevDiv\VC\Servicing\14.0\RuntimeMinimum", false);
-					if (parametersVc2015to2019x86 == null) return false;
-					var vc2015to2019x86Version = parametersVc2015to2019x86.GetValue("Version");
-					if (((string)vc2015to2019x86Version).StartsWith("14"))
+					if (parametersVc2015to2019x86 != null)
 					{
-						return true;
+						var vc2015to2019x86Version = parametersVc2015to2019x86.GetValue("Version");
+						if (((string)vc2015to2019x86Version).StartsWith("14"))
+						{
+							return true;
+						}
 					}
 					//check for 2017
 					var paths2017X86 = new List<string>
