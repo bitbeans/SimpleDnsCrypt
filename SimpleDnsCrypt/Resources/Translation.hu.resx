@@ -133,19 +133,19 @@
     <value>Konfiguráció</value>
   </data>
   <data name="default_settings_configuration_ipv4" xml:space="preserve">
-    <value>Az IPv4 kiszolgáló használata</value>
+    <value>IPv4 kiszolgáló használata</value>
   </data>
   <data name="default_settings_configuration_ipv4_tooltip" xml:space="preserve">
-    <value>Az IPv4-en keresztül elérhető kiszolgálók használata</value>
+    <value>IPv4-en keresztül elérhető kiszolgálók használata</value>
   </data>
   <data name="default_settings_configuration_ipv6" xml:space="preserve">
-    <value>Az IPv6 kiszolgáló használata</value>
+    <value>IPv6 kiszolgáló használata</value>
   </data>
   <data name="default_settings_configuration_ipv6_tooltip" xml:space="preserve">
     <value>Az IPv6-on elérhető kiszolgálók használata (ne engedélyezze, ha nem rendelkezik IPv6-kapcsolattal)</value>
   </data>
   <data name="default_settings_configuration_dnssec" xml:space="preserve">
-    <value>Csak DNSSEC támogatással rendelkező szerverek</value>
+    <value>Csak DNSSEC támogatással rendelkező kiszolgálók</value>
   </data>
   <data name="default_settings_configuration_dnssec_tooltip" xml:space="preserve">
     <value>A kiszolgálónak támogatnia kell a DNS biztonsági kiterjesztéseit</value>
@@ -154,19 +154,19 @@
     <value>Csak a naplózás nélküli kiszolgálók</value>
   </data>
   <data name="default_settings_configuration_nolog_tooltip" xml:space="preserve">
-    <value>A kiszolgáló nem jelentkezhet felhasználói lekérdezésekre</value>
+    <value>A kiszolgáló nem naplózza a felhasználói lekérdezéseket</value>
   </data>
   <data name="default_settings_configuration_nofilter" xml:space="preserve">
-    <value>Csak szűrők nélküli kiszolgálók</value>
+    <value>Csak a szűrő nélküli kiszolgálók</value>
   </data>
   <data name="default_settings_configuration_nofilter_tooltip" xml:space="preserve">
-    <value>A kiszolgáló nem érvényesítheti saját feketelistáját (szülői felügyelet, hirdetések blokkolása ...)</value>
+    <value>A kiszolgáló nem érvényesítheti saját tiltólistáját (szülői felügyelet, hirdetések blokkolása ...)</value>
   </data>
   <data name="tabitem_mainmenu" xml:space="preserve">
     <value>Főmenü</value>
   </data>
   <data name="loader_administrative_rights_available" xml:space="preserve">
-    <value>Az adminisztrációs jogok rendelkezésre állnak</value>
+    <value>Az adminisztrációs jogok elérhetőek</value>
   </data>
   <data name="loader_administrative_rights_missing" xml:space="preserve">
     <value>Hiányzó adminisztratív jogok!</value>
@@ -181,7 +181,7 @@
     <value>Frissítés indítása. . .</value>
   </data>
   <data name="loader_update_failed" xml:space="preserve">
-    <value>A frissítés sikertelen, folytassa. . .</value>
+    <value>A frissítés sikertelen, folytatás. . .</value>
   </data>
   <data name="loader_latest_version" xml:space="preserve">
     <value>A legújabb verziót használja</value>
@@ -196,7 +196,7 @@
     <value>Aláírás letöltése. . .</value>
   </data>
   <data name="loader_downloading_installer" xml:space="preserve">
-    <value>A telepítő letöltése. . .</value>
+    <value>Telepítő letöltése. . .</value>
   </data>
   <data name="loader_starting" xml:space="preserve">
     <value>Indítás. . .</value>
@@ -208,31 +208,31 @@
     <value>Hálózati kártyák betöltése. . .</value>
   </data>
   <data name="loader_failed_loading" xml:space="preserve">
-    <value>{0} betöltése nem sikerült</value>
+    <value>Betöltése nem sikerült {0} </value>
   </data>
   <data name="loader_successfully_loaded" xml:space="preserve">
     <value>{0} sikeresen betöltve</value>
   </data>
   <data name="loader_loading" xml:space="preserve">
-    <value>{0} betöltése. . .</value>
+    <value>Betöltés {0} . . .</value>
   </data>
   <data name="loader_missing_files" xml:space="preserve">
-    <value>Hiányzó fájlok a {0} mappában: n {1} n A (z) {2} új telepítésének megvitatása</value>
+    <value>Hiányzó fájlok in the {0} folder:\n{1}\n\nThink about a new installation of {2}</value>
   </data>
   <data name="loader_all_files_available" xml:space="preserve">
     <value>Minden szükséges fájl megtalálható</value>
   </data>
   <data name="about" xml:space="preserve">
-    <value>Ról ről</value>
+    <value>Magunkról</value>
   </data>
   <data name="about_software" xml:space="preserve">
     <value>Szoftver</value>
   </data>
   <data name="about_license" xml:space="preserve">
-    <value>Engedély</value>
+    <value>License</value>
   </data>
   <data name="about_view_on_github" xml:space="preserve">
-    <value>Nézd meg a GitHub-on</value>
+    <value>Megtekintés a GitHub-on</value>
   </data>
   <data name="tabitem_querylog" xml:space="preserve">
     <value>Lekérdezési napló</value>
@@ -256,10 +256,10 @@
     <value>Kiválasztott blokk</value>
   </data>
   <data name="domainblocklog" xml:space="preserve">
-    <value>Domainblokk napló</value>
+    <value>Tiltott Domain napló</value>
   </data>
   <data name="domainblocklog_waiting_for_data" xml:space="preserve">
-    <value>várakozás a blokkolt DNS lekérdezésekre</value>
+    <value>várakozás a tiltott DNS lekérdezésekre</value>
   </data>
   <data name="domainblocklog_entry_count" xml:space="preserve">
     <value>Bejegyzés:</value>
@@ -271,37 +271,37 @@
     <value>Lista törlése</value>
   </data>
   <data name="tabitem_domainblocklog" xml:space="preserve">
-    <value>Domainblokk napló</value>
+    <value>Tiltott Domain napló</value>
   </data>
   <data name="tabitem_addressblocklog" xml:space="preserve">
-    <value>Címblokk napló</value>
+    <value>Tiltott Cím napló</value>
   </data>
   <data name="tabitem_domainblacklist" xml:space="preserve">
-    <value>Domain fekete lista</value>
+    <value>Domain Tiltólista</value>
   </data>
   <data name="tabitem_addressblacklist" xml:space="preserve">
-    <value>Cím fekete lista</value>
+    <value>Cím Tiltólista</value>
   </data>
   <data name="settings" xml:space="preserve">
     <value>Beállítások</value>
   </data>
   <data name="settings_domain_blacklist" xml:space="preserve">
-    <value>A &quot;Domain fekete lista&quot; lap megjelenítése</value>
+    <value>A &quot;Domain Tiltólista&quot; lap megjelenítése</value>
   </data>
   <data name="settings_address_blacklist" xml:space="preserve">
-    <value>A &quot;Cím fekete lista&quot; lap megjelenítése</value>
+    <value>A &quot;Cím Tiltólista&quot; lap megjelenítése</value>
   </data>
   <data name="settings_domain_block" xml:space="preserve">
-    <value>&quot;Domainblokk napló&quot; megjelenítése</value>
+    <value>&quot;Tiltott Domain napló&quot; megjelenítése</value>
   </data>
   <data name="settings_address_block" xml:space="preserve">
-    <value>&quot;Címblokk napló&quot; megjelenítése</value>
+    <value>&quot;Tiltott Cím napló&quot; megjelenítése</value>
   </data>
   <data name="settings_query_log" xml:space="preserve">
-    <value>&quot;Lekérdezésnapló&quot; megjelenítése</value>
+    <value>&quot;Lekérdezési napló&quot; megjelenítése</value>
   </data>
   <data name="tabitem_resolvers" xml:space="preserve">
-    <value>feloldók</value>
+    <value>Névkiszolgálók</value>
   </data>
   <data name="tabitem_advanced_settings" xml:space="preserve">
     <value>További beállítások</value>
@@ -310,7 +310,7 @@
     <value>A &quot;Speciális beállítások&quot; lap megjelenítése</value>
   </data>
   <data name="yes" xml:space="preserve">
-    <value>Igen</value>
+    <value>igen</value>
   </data>
   <data name="no" xml:space="preserve">
     <value>nem</value>
@@ -319,7 +319,7 @@
     <value>megszünteti</value>
   </data>
   <data name="ok" xml:space="preserve">
-    <value>rendben</value>
+    <value>OK</value>
   </data>
   <data name="dialog_message_uninstall" xml:space="preserve">
     <value>Szeretné eltávolítani a telepített Windows szolgáltatást?</value>
@@ -340,37 +340,38 @@
     <value>Beállítások alkalmazása</value>
   </data>
   <data name="advanced_settings_dnscache" xml:space="preserve">
-    <value>DNS-gyorsítótár</value>
+    <value>DNS Gyorsítótár</value>
   </data>
   <data name="resolvers_dnscrypt_mode_header" xml:space="preserve">
     <value>DNSCrypt mód</value>
   </data>
   <data name="resolvers_dnscrypt_mode_description" xml:space="preserve">
-    <value>Automatikus üzemmódban minden rendelkezésre álló szervert használnak. A dnscrypt-proxy automatikusan kiválasztja a leggyorsabb megoldókat.</value>
+    <value>Automatikus üzemmódban minden rendelkezésre álló szervert használnak. A dnscrypt-proxy automatikusan kiválasztja a leggyorsabb névkiszolgálókat.</value>
   </data>
   <data name="resolvers_dnscrypt_automatic_mode" xml:space="preserve">
-    <value>Automatikus üzemmód</value>
+    <value>Automatikus mód</value>
   </data>
   <data name="disabled" xml:space="preserve">
     <value>Tiltva</value>
   </data>
   <data name="enabled" xml:space="preserve">
-    <value>Bekapcsolt</value>
+    <value>Engedélyezett</value>
   </data>
   <data name="resolvers_available_resolvers_header" xml:space="preserve">
-    <value>Elérhető Resolvers</value>
+    <value>Elérhető Névkiszolgálók
+</value>
   </data>
   <data name="loader_redistributable_package_check" xml:space="preserve">
     <value>A Visual C ++ Redistributable for Visual Studio 2017-es verziójának ellenőrzése</value>
   </data>
   <data name="loader_redistributable_package_already_installed" xml:space="preserve">
-    <value>Már telepítve van a Visual Studio 2017 számára újratelepíthető Microsoft Visual C ++</value>
+    <value>Már telepítve van a Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
   </data>
   <data name="loader_redistributable_package_installing" xml:space="preserve">
-    <value>Telepítés: Microsoft Visual C ++ Visual Studio 2017 újratelepíthető</value>
+    <value>Telepítés: Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
   </data>
   <data name="loader_redistributable_package_ready" xml:space="preserve">
-    <value>A Microsoft Visual C ++ a Visual Studio 2017 számára újratelepíthető</value>
+    <value>Microsoft Visual C++ Redistributable for Visual Studio 2017 most telepítve van</value>
   </data>
   <data name="message_title_no_server_selected" xml:space="preserve">
     <value>Nincs kiválasztott szerver</value>
@@ -397,25 +398,25 @@
     <value>Az eltávolítás nem sikerült. Próbálja meg kézzel leállítani a szolgáltatást, és távolítsa el újra.</value>
   </data>
   <data name="open_log_directory" xml:space="preserve">
-    <value>Nyissa meg a naplókönyvtárat</value>
+    <value>Nyissa meg a napló könyvtárat</value>
   </data>
   <data name="settings_update_auto" xml:space="preserve">
-    <value>Ellenőrizze a frissítések indítását</value>
+    <value>Indításkor ellenőrizze az elérhető frissítéseket</value>
   </data>
   <data name="settings_update_channel" xml:space="preserve">
     <value>Csatorna frissítése:</value>
   </data>
   <data name="advanced_settings_dnscache_content" xml:space="preserve">
-    <value>DNS-gyorsítótár a késleltetés és a kimenő forgalom csökkentéséhez</value>
+    <value>DNS gyorsítótár a késleltetés és a kimenő forgalom csökkentése érdekében</value>
   </data>
   <data name="advanced_settings_blockipv6" xml:space="preserve">
     <value>IPv6 blokkolása</value>
   </data>
   <data name="advanced_settings_blockipv6_content" xml:space="preserve">
-    <value>Azonnal válaszoljon az IPv6-hoz kapcsolódó lekérdezésekre egy üres választ</value>
+    <value>Azonnal válaszoljon az IPv6-hoz kapcsolódó lekérdezésekre egy üres válasszal</value>
   </data>
   <data name="advanced_settings_forcetcp" xml:space="preserve">
-    <value>A TCP kényszerítése</value>
+    <value>TCP kényszerítése</value>
   </data>
   <data name="advanced_settings_forcetcp_content" xml:space="preserve">
     <value>Mindig használja a TCP-t az upstream szerverekhez való csatlakozáshoz</value>
@@ -424,82 +425,82 @@
     <value>Hozzáad</value>
   </data>
   <data name="message_title_new_whitelist_rule" xml:space="preserve">
-    <value>Adjon hozzá új domainlistát</value>
+    <value>Új Domain hozzáadása az engedélyezési listához</value>
   </data>
   <data name="message_content_new_whitelist_rule" xml:space="preserve">
     <value>Példa: * .example.com, hirdetések. *, * Szex *, hozzáadhat egy vesszővel elválasztott szabálylistát is</value>
   </data>
   <data name="message_title_new_blacklist_rule" xml:space="preserve">
-    <value>Adjon hozzá új domainlistát</value>
+    <value>Új Domain hozzáadása az tiltólistához</value>
   </data>
   <data name="message_content_new_blacklist_rule" xml:space="preserve">
     <value>Példa: * .example.com, hirdetések. *, * Szex *, vesszővel elválasztott szabálylistát is hozzáadhat, egy fájlt tartalmazó fájl: my-custom-rules.txt vagy egy http-vel kezdődő távoli URL-cím : // vagy https: //.</value>
   </data>
   <data name="working_dialog_title" xml:space="preserve">
-    <value>A listák összeolvadnak. . .</value>
+    <value>A listák összevonva. . .</value>
   </data>
   <data name="button_select_path" xml:space="preserve">
     <value>Válassza ki az útvonalat</value>
   </data>
   <data name="button_blacklist_build" xml:space="preserve">
-    <value>Építsd ki a dnscrypt-proxy feketelistát</value>
+    <value>Dnscrypt-proxy tiltólista készítése</value>
   </data>
   <data name="button_blacklist_import" xml:space="preserve">
-    <value>A meglévő feketelistára vonatkozó szabályok importálása</value>
+    <value>A meglévő tiltólistára vonatkozó szabályok importálása</value>
   </data>
   <data name="button_blacklist_export" xml:space="preserve">
-    <value>Feketelista szabályainak exportálása</value>
+    <value>Tiltólista szabályainak exportálása</value>
   </data>
   <data name="button_blacklist_remove" xml:space="preserve">
-    <value>A kiválasztott feketelista szabály eltávolítása</value>
+    <value>A kiválasztott tiltólista szabály eltávolítása</value>
   </data>
   <data name="button_blacklist_add" xml:space="preserve">
-    <value>Adjon hozzá egy új feketelista szabályt</value>
+    <value>Új tiltólista szabály hozzáadása</value>
   </data>
   <data name="button_whitelist_import" xml:space="preserve">
-    <value>Importálja a meglévő fehér listát</value>
+    <value>Importálja a meglévő engedélyezési listát</value>
   </data>
   <data name="button_whitelist_export" xml:space="preserve">
-    <value>Fehér listák exportálása</value>
+    <value>Engedélyezési listák exportálása</value>
   </data>
   <data name="button_whitelist_remove" xml:space="preserve">
-    <value>Távolítsa el a kiválasztott fehérlistát</value>
+    <value>Távolítsa el a kiválasztott engedélyezési lista szabályt</value>
   </data>
   <data name="button_whitelist_add" xml:space="preserve">
-    <value>Adjon hozzá egy új fehérlistájú szabályt</value>
+    <value>Adjon hozzá egy új engedélyezési lista szabályt</value>
   </data>
   <data name="whitelist_rules_header" xml:space="preserve">
-    <value>Fehér listájú szabályok</value>
+    <value>Engedélyezési lista szabályai</value>
   </data>
   <data name="whitelist_rules_sub_header" xml:space="preserve">
-    <value>(az összes bejegyzés figyelmen kívül marad a feketelista generálása során)</value>
+    <value>(az összes bejegyzés figyelmen kívül marad a tiltólista generálása során)</value>
   </data>
   <data name="whitelist_rules_path" xml:space="preserve">
-    <value>Fehér listájú szabályok:</value>
+    <value>Engedélyezési lista szabályai:</value>
   </data>
   <data name="blacklist_rules_header" xml:space="preserve">
-    <value>Fekete lista szabályai</value>
+    <value>Tiltólista szabályai</value>
   </data>
   <data name="blacklist_rules_sub_header" xml:space="preserve">
-    <value>(az összes bejegyzést egy feketelistára egyesítik)</value>
+    <value>(az összes bejegyzést egy tiltólistára egyesítik)</value>
   </data>
   <data name="blacklist_rules_path" xml:space="preserve">
-    <value>Fekete lista szabályai:</value>
+    <value>Tiltólista szabályai:</value>
   </data>
   <data name="blacklist_path" xml:space="preserve">
-    <value>Feketelista:</value>
+    <value>Tiltólista:</value>
   </data>
   <data name="blacklist_header" xml:space="preserve">
-    <value>Domainlistát és fehérlistát</value>
+    <value>Domain Tiltó és Engedélyezési listák</value>
   </data>
   <data name="advanced_settings_globalresolver" xml:space="preserve">
-    <value>Global Resolver</value>
+    <value>Globális névfeloldás</value>
   </data>
   <data name="advanced_settings_globalresolver_content" xml:space="preserve">
     <value>Ha azt szeretné, hogy ez a számítógép átjáró eszközként működjön mások számára (pl. Okostelefonok vagy más számítógépek)</value>
   </data>
   <data name="advanced_settings_fallback_resolver" xml:space="preserve">
-    <value>Fallback Resolver</value>
+    <value>Fallback névfeloldás</value>
   </data>
   <data name="advanced_settings_fallback_resolver_content" xml:space="preserve">
     <value>Ez egy normál, nem titkosított DNS-feloldó, amelyet csak az egyszeri lekérdezéseknél fognak használni az eredeti resolvers lista lekérésekor, és csak akkor, ha a rendszer DNS-konfigurációja nem működik. Kínában az embereknek itt 114.114.114.114:53-at kell használniuk.</value>
@@ -511,40 +512,40 @@
     <value>Kilépés</value>
   </data>
   <data name="address_settings_listen_addresses" xml:space="preserve">
-    <value>Hallgassa meg a címeket</value>
+    <value>IP címek használata</value>
   </data>
   <data name="address_settings_manage_listen_addresses" xml:space="preserve">
-    <value>Hallgatáscímek kezelése</value>
+    <value>IP címek kezelése</value>
   </data>
   <data name="address_settings_description" xml:space="preserve">
-    <value>A hallgatni kívánt helyi címek és portok listája. Lehet IPv4 és / vagy IPv6.</value>
+    <value>A használni kívánt helyi címek és portok listája. Lehet IPv4 és / vagy IPv6.</value>
   </data>
   <data name="address_settings_add" xml:space="preserve">
-    <value>Új hallgató cím hozzáadása</value>
+    <value>Új cím hozzáadása</value>
   </data>
   <data name="address_settings_remove" xml:space="preserve">
-    <value>A kiválasztott hallgatási cím eltávolítása</value>
+    <value>A kiválasztott cím eltávolítása</value>
   </data>
   <data name="address_settings_restore" xml:space="preserve">
-    <value>Az alapértelmezett hallgatási címek visszaállítása</value>
+    <value>Az alapértelmezett IP címek visszaállítása</value>
   </data>
   <data name="button_blacklist_clear" xml:space="preserve">
     <value>Törölje az összes feketelistára vonatkozó szabályt</value>
   </data>
   <data name="settings_tray_mode" xml:space="preserve">
-    <value>Záráskor minimálisra csökkentse a tálcát</value>
+    <value>Bezáráskor minimalizálja a tálcára</value>
   </data>
   <data name="settings_start_in_tray" xml:space="preserve">
-    <value>Indítsa el az egyszerű DNSCrypt-t a tálcában</value>
+    <value>Simple DNSCrypt indítása a tálcán</value>
   </data>
   <data name="settings_update_silent" xml:space="preserve">
-    <value>Csendesen telepítse az új verziókat</value>
+    <value>Csendben telepítse az új verziókat</value>
   </data>
   <data name="proxy_proxies" xml:space="preserve">
-    <value>Proxies</value>
+    <value>Proxy</value>
   </data>
   <data name="proxy_manage_proxies" xml:space="preserve">
-    <value>Proxies kezelése</value>
+    <value>Proxy kezelése</value>
   </data>
   <data name="proxy_http_header" xml:space="preserve">
     <value>HTTP / HTTPS proxy</value>
@@ -577,25 +578,25 @@
     <value>Használja a DNS-over-HTTPS protokollt megvalósító kiszolgálókat</value>
   </data>
   <data name="loader_restore_config" xml:space="preserve">
-    <value>{0} visszaállítása</value>
+    <value>Visszaállítás {0} </value>
   </data>
   <data name="settings_backup_and_restore_config" xml:space="preserve">
-    <value>A dnscrypt konfiguráció biztonsági mentése és visszaállítása a frissítéskor</value>
+    <value>A dnscrypt konfiguráció biztonsági mentése és visszaállítása frissítéskor</value>
   </data>
   <data name="tabitem_cloakandforward" xml:space="preserve">
-    <value>Köpeny és előre</value>
+    <value>Cloak and Forward</value>
   </data>
   <data name="cloaking" xml:space="preserve">
-    <value>álcázás</value>
+    <value>Cloaking</value>
   </data>
   <data name="cloaking_path" xml:space="preserve">
-    <value>Elcsúszási szabályok:</value>
+    <value>Cloaking szabályok:</value>
   </data>
   <data name="cloaking_rules_header" xml:space="preserve">
-    <value>Felszólalási szabályok</value>
+    <value>Cloaking szabályok</value>
   </data>
   <data name="cloaking_rules_sub_header" xml:space="preserve">
-    <value>(aktív árnyékolási szabályok)</value>
+    <value>(aktív Cloaking szabályok)</value>
   </data>
   <data name="button_cloaking_add" xml:space="preserve">
     <value>Adjon hozzá egy új takarási szabályt</value>
@@ -619,19 +620,19 @@
     <value>Szabálycél (pl. Forceafesearch.google.com)</value>
   </data>
   <data name="forwarding" xml:space="preserve">
-    <value>Szállítmányozás</value>
+    <value>Továbbítás</value>
   </data>
   <data name="forwarding_path" xml:space="preserve">
-    <value>Továbbítási szabályok:</value>
+    <value>Továbbítás szabályai:</value>
   </data>
   <data name="forwarding_rules_header" xml:space="preserve">
-    <value>Továbbítási szabályok</value>
+    <value>Továbbítás szabályai</value>
   </data>
   <data name="forwarding_rules_sub_header" xml:space="preserve">
     <value>(aktív továbbítási szabályok)</value>
   </data>
   <data name="button_forwarding_add" xml:space="preserve">
-    <value>Adjon hozzá egy új továbbítási szabályt</value>
+    <value>Új továbbítási szabály hozzáadása</value>
   </data>
   <data name="button_forwarding_remove" xml:space="preserve">
     <value>A kiválasztott továbbítási szabály eltávolítása</value>
@@ -640,24 +641,24 @@
     <value>A meglévő továbbítási szabályok importálása</value>
   </data>
   <data name="button_forwarding_export" xml:space="preserve">
-    <value>Export továbbítási szabályok</value>
+    <value>Továbbítási szabályok exportálása</value>
   </data>
   <data name="rule_window_forwarding_header" xml:space="preserve">
     <value>Új továbbítási szabály hozzáadása</value>
   </data>
   <data name="rule_window_forwarding_key_text" xml:space="preserve">
-    <value>Szabályforrás (pl. Példa.com)</value>
+    <value>Szabály forrás (pl. Példa.com)</value>
   </data>
   <data name="rule_window_forwarding_value_text" xml:space="preserve">
-    <value>Szabálycél (pl. 9.9.9.9.8.8.8.8)</value>
+    <value>Szabály cél (pl. 9.9.9.9.8.8.8.8)</value>
   </data>
   <data name="rule_window_add" xml:space="preserve">
-    <value>hozzáad</value>
+    <value>Hozzáad</value>
   </data>
   <data name="rule_window_abort" xml:space="preserve">
     <value>Elvetél</value>
   </data>
   <data name="settings_cloak_and_forward" xml:space="preserve">
-    <value>Mutassa a &quot;Köpeny és Előre&quot; fület</value>
+    <value>Mutassa a &quot;Cloak and Továbbítás&quot; fület</value>
   </data>
 </root>
