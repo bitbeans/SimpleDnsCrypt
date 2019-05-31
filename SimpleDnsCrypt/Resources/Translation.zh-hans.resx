@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="default_settings_network_cards" xml:space="preserve">
-    <value>Network Cards</value>
+    <value>网卡</value>
   </data>
   <data name="default_settings_show_hidden_cards" xml:space="preserve">
     <value>显示隐藏的网卡</value>
