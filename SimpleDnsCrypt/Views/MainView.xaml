@@ -959,8 +959,11 @@
                                                             <Grid.ColumnDefinitions>
                                                                 <ColumnDefinition Width="130" />
                                                                 <ColumnDefinition Width="40" />
-                                                                <ColumnDefinition Width="70" />
+                                                                <ColumnDefinition Width="90" />
                                                                 <ColumnDefinition Width="80" />
+                                                                <ColumnDefinition Width="160" />
+                                                                <ColumnDefinition Width="40" />
+                                                                <ColumnDefinition Width="50" />
                                                                 <ColumnDefinition Width="*" />
                                                             </Grid.ColumnDefinitions>
                                                             <TextBlock Grid.Column="0"
@@ -973,6 +976,12 @@
                                                             <TextBlock Grid.Column="3" Text="{Binding Address}"
                                                                        Foreground="#FF575757" />
                                                             <TextBlock Grid.Column="4" Text="{Binding Remote}"
+                                                                       Foreground="#FF575757" />
+                                                            <TextBlock Grid.Column="5" Text="{Binding CachedText}"
+                                                                       Foreground="#FF575757" />
+                                                            <TextBlock Grid.Column="6" Text="{Binding DurationText}"
+                                                                       Foreground="#FF575757" />
+                                                            <TextBlock Grid.Column="7" Text="{Binding Server}"
                                                                        Foreground="#FF575757" />
                                                         </Grid>
                                                     </DataTemplate>
