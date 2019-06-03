@@ -14,6 +14,7 @@ cert_refresh_delay = 240
 fallback_resolver = '9.9.9.9:53'
 ignore_system_dns = false
 netprobe_timeout = 45
+netprobe_address = "255.255.255.0:53"
 log_files_max_size = 10
 log_files_max_age = 7
 log_files_max_backups = 1
