@@ -24,6 +24,7 @@ namespace SimpleDnsCrypt.Models
 		private int _timeout;
 		private int _keepalive;
 		private string _lb_strategy;
+		private bool _lb_estimator;
 		private int _cert_refresh_delay;
 		private bool _dnscrypt_ephemeral_keys;
 		private bool _tls_disable_session_tickets;
@@ -32,6 +33,7 @@ namespace SimpleDnsCrypt.Models
 		private Dictionary<string, Source> _sources;
 		private bool _use_syslog;
 		private int _netprobe_timeout;
+		private string _netprobe_address;
 		private bool _offline_mode;
 		private int _log_files_max_size;
 		private int _log_files_max_age;
@@ -333,7 +335,7 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		/// <summary>
-		/// Load-balancing strategy: 'p2' (default), 'ph', 'fastest' or 'random'
+		/// Load-balancing strategy: 'p2' (default), 'ph', 'first' or 'random'
 		/// </summary>
 		public string lb_strategy
 		{
@@ -345,6 +347,20 @@ namespace SimpleDnsCrypt.Models
 			}
 		}
 
+		/// <summary>
+		/// Set to `true` to constantly try to estimate the latency of all the resolvers
+		/// and adjust the load-balancing parameters accordingly, or to `false` to disable.
+		/// </summary>
+		public bool lb_estimator
+		{
+			get => _lb_estimator;
+			set
+			{
+				_lb_estimator = value;
+				NotifyOfPropertyChange(() => lb_estimator);
+			}
+		}
+		
 		/// <summary>
 		/// Maximum time (in seconds) to wait for network connectivity before initializing the proxy.
 		/// Useful if the proxy is automatically started at boot, and network
@@ -358,6 +374,26 @@ namespace SimpleDnsCrypt.Models
 			{
 				_netprobe_timeout = value;
 				NotifyOfPropertyChange(() => netprobe_timeout);
+			}
+		}
+
+		/// <summary>
+		/// Address and port to try initializing a connection to, just to check
+		/// if the network is up. It can be any address and any port, even if
+		/// there is nothing answering these on the other side. Just don't use
+		/// a local address, as the goal is to check for Internet connectivity.
+		/// On Windows, a datagram with a single, nul byte will be sent, only
+		/// when the system starts.
+		/// On other operating systems, the connection will be initialized
+		/// but nothing will be sent at all.
+		/// </summary>
+		public string netprobe_address
+		{
+			get => _netprobe_address;
+			set
+			{
+				_netprobe_address = value;
+				NotifyOfPropertyChange(() => netprobe_address);
 			}
 		}
 
