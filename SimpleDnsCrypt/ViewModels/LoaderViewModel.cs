@@ -168,6 +168,11 @@ namespace SimpleDnsCrypt.ViewModels
 							File.Move(configFile, configFile + ".bak");
 						}
 						File.Move(tmpConfigPath, configFile);
+						// update the configuration file
+						if (PatchHelper.Patch())
+						{
+							await Task.Delay(500).ConfigureAwait(false);
+						}
 					}
 				}
 
