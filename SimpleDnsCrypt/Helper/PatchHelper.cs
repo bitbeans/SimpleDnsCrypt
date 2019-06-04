@@ -17,6 +17,14 @@
 				DnscryptProxyConfigurationManager.DnscryptProxyConfiguration.netprobe_timeout = 0;
 				return DnscryptProxyConfigurationManager.SaveConfiguration();
             }
+			if (version.Equals("0.6.6"))
+			{
+				//changed: netprobe_address = '9.9.9.9:53'
+				//changed: netprobe_timeout = 60
+				DnscryptProxyConfigurationManager.DnscryptProxyConfiguration.netprobe_address = "9.9.9.9:53";
+				DnscryptProxyConfigurationManager.DnscryptProxyConfiguration.netprobe_timeout = 60;
+				return DnscryptProxyConfigurationManager.SaveConfiguration();
+			}
 			return false;
         }
 	}

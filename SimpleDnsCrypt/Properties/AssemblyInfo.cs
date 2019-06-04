@@ -14,5 +14,5 @@ using System.Windows;
 	ResourceDictionaryLocation.None,
 	ResourceDictionaryLocation.SourceAssembly
 )]
-[assembly: AssemblyVersion("0.6.5")]
-[assembly: AssemblyFileVersion("0.6.5")]
+[assembly: AssemblyVersion("0.6.6")]
+[assembly: AssemblyFileVersion("0.6.6")]
