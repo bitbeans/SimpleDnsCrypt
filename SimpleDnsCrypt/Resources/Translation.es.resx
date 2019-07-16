@@ -121,7 +121,7 @@
     <value>Tarjetas de red</value>
   </data>
   <data name="default_settings_show_hidden_cards" xml:space="preserve">
-    <value>Mostrar tarjetas ocultas</value>
+    <value>Mostrar las tarjetas ocultas</value>
   </data>
   <data name="default_settings_service_header" xml:space="preserve">
     <value>Servicio</value>
@@ -220,7 +220,7 @@
     <value>Faltan archivos en la carpeta {0}:\n{1}\n\nConsidera una nueva instalación de {2}</value>
   </data>
   <data name="loader_all_files_available" xml:space="preserve">
-    <value>Todos los archivos requeridos han sido encontrados</value>
+    <value>Todos los archivos necesarios han sido encontrados</value>
   </data>
   <data name="about" xml:space="preserve">
     <value>Acerca de</value>
@@ -241,7 +241,7 @@
     <value>Registro de consultas</value>
   </data>
   <data name="querylog_waiting_for_data" xml:space="preserve">
-    <value>esperando para consultas DNS</value>
+    <value>esperando consultas DNS</value>
   </data>
   <data name="querylog_entry_count" xml:space="preserve">
     <value>Entradas:</value>
@@ -250,16 +250,16 @@
     <value>Fuente:</value>
   </data>
   <data name="querylog_button_clear" xml:space="preserve">
-    <value>Limpiar lista</value>
+    <value>Limpiar la lista</value>
   </data>
   <data name="querylog_button_block" xml:space="preserve">
-    <value>Bloquear Seleccionado</value>
+    <value>Bloquear lo seleccionado</value>
   </data>
   <data name="domainblocklog" xml:space="preserve">
     <value>Registro de  bloqueo de dominios</value>
   </data>
   <data name="domainblocklog_waiting_for_data" xml:space="preserve">
-    <value>esperando para consultas DNS bloqueadas</value>
+    <value>esperando consultas DNS bloqueadas</value>
   </data>
   <data name="domainblocklog_entry_count" xml:space="preserve">
     <value>Entradas:</value>
@@ -268,7 +268,7 @@
     <value>Fuente:</value>
   </data>
   <data name="domainblocklog_button_clear" xml:space="preserve">
-    <value>Limpiar lista</value>
+    <value>Limpiar la lista</value>
   </data>
   <data name="tabitem_domainblocklog" xml:space="preserve">
     <value>Registro de dominios bloqueados</value>
@@ -331,7 +331,7 @@
     <value>Desinstalar el servcio</value>
   </data>
   <data name="advanced_settings_uninstall_text" xml:space="preserve">
-    <value>Eliminar el servicio instalado de Windows</value>
+    <value>Eliminar el servicio instalado en Windows</value>
   </data>
   <data name="advanced_settings_uninstall_button" xml:space="preserve">
     <value>Eliminar servicio</value>
@@ -346,7 +346,7 @@
     <value>Modo DNSCrypt</value>
   </data>
   <data name="resolvers_dnscrypt_mode_description" xml:space="preserve">
-    <value>En modo automático, todos los servidores disponibles son usados, dnscrypt-proxy seleciona automáticamente los resolutores más rápidos.</value>
+    <value>En modo automático, se usan todos los servidores disponibles, dnscrypt-proxy seleciona automáticamente los resolutores más rápidos.</value>
   </data>
   <data name="resolvers_dnscrypt_automatic_mode" xml:space="preserve">
     <value>Modo automático</value>
@@ -376,19 +376,19 @@
     <value>No hay servidor seleccionado</value>
   </data>
   <data name="message_content_no_server_selected" xml:space="preserve">
-    <value>Al menos un servidor debe ser seleccionado. Si no, dnscrypt-proxy usa todos los servidores corresponidentes con los filtros seleccionados.</value>
+    <value>Al menos un servidor debe ser seleccionado. Si no, dnscrypt-proxy usa todos los servidores correspondientes a los filtros seleccionados.</value>
   </data>
   <data name="message_title_service_not_running" xml:space="preserve">
     <value>El servicio no está funcionando</value>
   </data>
   <data name="message_content_service_not_running" xml:space="preserve">
-    <value>¡Deberías iniciar el servicio DNSCrypt primero!</value>
+    <value>¡Antes deberías iniciar el servicio DNSCrypt!</value>
   </data>
   <data name="message_title_uninstallation_successful" xml:space="preserve">
     <value>Desinstalación exitosa</value>
   </data>
   <data name="message_content_uninstallation_successful" xml:space="preserve">
-    <value>¡La desinstalación fue exitosa! Las consultas DNS ya no están encriptadas.</value>
+    <value>¡La desinstalación fue exitosa! Las consultas DNS ya no están cifradas.</value>
   </data>
   <data name="message_title_uninstallation_error" xml:space="preserve">
     <value>Error de desinstalación</value>
@@ -397,7 +397,7 @@
     <value>La desinstalación no pudo ser realizada. Intenta parar el servicio manualmente y desinstalalo de nuevo.</value>
   </data>
   <data name="open_log_directory" xml:space="preserve">
-    <value>Abrir directorio de registro</value>
+    <value>Abrir la carpeta de registro</value>
   </data>
   <data name="settings_update_auto" xml:space="preserve">
     <value>Comprobar actualizaciones al inicio</value>
@@ -412,7 +412,7 @@
     <value>Bloquear IPv6</value>
   </data>
   <data name="advanced_settings_blockipv6_content" xml:space="preserve">
-    <value>Responder inmediatamente a consultas relacionadas a IPv6 con una respuesta vacía</value>
+    <value>Responder inmediatamente a las consultas relacionadas a IPv6 con una respuesta vacía</value>
   </data>
   <data name="advanced_settings_forcetcp" xml:space="preserve">
     <value>Forzar TCP</value>
@@ -433,10 +433,10 @@
     <value>Añadir nueva regla a la lista negra de dominios</value>
   </data>
   <data name="message_content_new_blacklist_rule" xml:space="preserve">
-    <value>Ejemplo: *.example.com, ads.*, *sex*, también puedes añadir una lista de reglas separadas por comas, un archivo que empieza con archivo:my-custom-rules.txt o una URL remota que comience con http:// o http://.</value>
+    <value>Ejemplo: *.example.com, ads.*, *sex*, también puedes añadir una lista de reglas separadas por comas, un archivo que empieza con file:my-custom-rules.txt o una URL remota que comience con http:// o http://.</value>
   </data>
   <data name="working_dialog_title" xml:space="preserve">
-    <value>Uniendo listas...</value>
+    <value>Fusionando listas...</value>
   </data>
   <data name="button_select_path" xml:space="preserve">
     <value>Seleccionar ruta</value>
@@ -502,7 +502,7 @@
     <value>Resolutor alternativo</value>
   </data>
   <data name="advanced_settings_fallback_resolver_content" xml:space="preserve">
-    <value>Este es un resolutor normal, no encriptado, que sólo se usará para consultas únicas cuando se recupere la lista inicial de resolutores, y sólo si la configuración DNS del sistema no funciona. Personas en China pudieran usar 114.114.114.114:53 aquí.</value>
+    <value>Este es un resolutor normal, no cifrado, que sólo se usará para consultas únicas cuando se esté recuperando la lista inicial de resolutores, y sólo si la configuración DNS del sistema no funciona. Si estás en China puede que aquí necesites usar 114.114.114.114:53.</value>
   </data>
   <data name="trayicon_tooltip" xml:space="preserve">
     <value>Simple DNSCrypt</value>
@@ -580,10 +580,10 @@
     <value>Restaurar {0}</value>
   </data>
   <data name="settings_backup_and_restore_config" xml:space="preserve">
-    <value>Respaldar y restaurar configuración de dnscrypt al actualizar</value>
+    <value>Al actualizar, respaldar y restaurar la configuración de dnscrypt</value>
   </data>
   <data name="tabitem_cloakandforward" xml:space="preserve">
-    <value>Cloak and Forward</value>
+    <value>Camuflaje y reenvío</value>
   </data>
   <data name="cloaking" xml:space="preserve">
     <value>Camuflaje</value>
@@ -598,25 +598,25 @@
     <value>(reglas de camuflaje activas)</value>
   </data>
   <data name="button_cloaking_add" xml:space="preserve">
-    <value>Agregar nueva regla de camuflaje</value>
+    <value>Añadir una nueva regla de camuflaje</value>
   </data>
   <data name="button_cloaking_remove" xml:space="preserve">
-    <value>Remove selected cloaking rule</value>
+    <value>Eliminar la regla de camuflaje seleccionada</value>
   </data>
   <data name="button_cloaking_import" xml:space="preserve">
-    <value>Import existing cloaking rules</value>
+    <value>Importar las reglas de camuflaje existentes</value>
   </data>
   <data name="button_cloaking_export" xml:space="preserve">
-    <value>Export cloaking rules</value>
+    <value>Exportar las reglas de camuflaje</value>
   </data>
   <data name="rule_window_cloaking_header" xml:space="preserve">
-    <value>Add new cloaking rule</value>
+    <value>Añadir una nueva regla de camuflaje</value>
   </data>
   <data name="rule_window_cloaking_key_text" xml:space="preserve">
-    <value>Rule source (eg: www.google.*)</value>
+    <value>Origen de la regla (p. ej.: www.google.*)</value>
   </data>
   <data name="rule_window_cloaking_value_text" xml:space="preserve">
-    <value>Rule target (eg: forcesafesearch.google.com)</value>
+    <value>Objetivo de la regla (p. ej.: forcesafesearch.google.com)</value>
   </data>
   <data name="forwarding" xml:space="preserve">
     <value>Reenvío</value>
@@ -658,6 +658,6 @@
     <value>Abortar</value>
   </data>
   <data name="settings_cloak_and_forward" xml:space="preserve">
-    <value>Show &quot;Cloak and Forward&quot; Tab</value>
+    <value>Mostrar la pestaña &quot;Camuflaje y reenvío&quot;</value>
   </data>
 </root>
