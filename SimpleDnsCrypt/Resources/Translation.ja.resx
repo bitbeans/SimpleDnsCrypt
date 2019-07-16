@@ -151,16 +151,16 @@
     <value>DNS Security Extensions（DNSSEC）に対応している必要があります</value>
   </data>
   <data name="default_settings_configuration_nolog" xml:space="preserve">
-    <value>ログ保存無しサーバのみ使用</value>
+    <value>ログを記録しないサーバのみ使用</value>
   </data>
   <data name="default_settings_configuration_nolog_tooltip" xml:space="preserve">
-    <value>ログを取らないサーバのみ使用</value>
+    <value>ログを取得しないサーバのみ使用</value>
   </data>
   <data name="default_settings_configuration_nofilter" xml:space="preserve">
-    <value>フィルタの無いサーバのみ使用</value>
+    <value>フィルタが無いサーバのみ使用</value>
   </data>
   <data name="default_settings_configuration_nofilter_tooltip" xml:space="preserve">
-    <value>独自なブラックリスト(成人コンテンツの禁止、広告ブロック等)を持つサーバを除外</value>
+    <value>独自のブラックリスト(成人コンテンツの禁止、広告ブロック等)を持つサーバを除外</value>
   </data>
   <data name="tabitem_mainmenu" xml:space="preserve">
     <value>メニュー</value>
@@ -202,7 +202,7 @@
     <value>インストールを開始しています</value>
   </data>
   <data name="loader_validate_folder" xml:space="preserve">
-    <value>Validating {0} folder</value>
+    <value>{0} フォルダを検証中</value>
   </data>
   <data name="loader_loading_network_cards" xml:space="preserve">
     <value>ネットワークアダプタを読み込み中…</value>
@@ -244,7 +244,7 @@
     <value>DNSクエリを待機中</value>
   </data>
   <data name="querylog_entry_count" xml:space="preserve">
-    <value>Entries:</value>
+    <value>エントリー:</value>
   </data>
   <data name="querylog_source_file" xml:space="preserve">
     <value>ログファイル</value>
@@ -516,7 +516,7 @@ Fuzzy</comment>
     <value>終了</value>
   </data>
   <data name="address_settings_listen_addresses" xml:space="preserve">
-    <value>Listen Addresses</value>
+    <value>受信アドレス</value>
   </data>
   <data name="address_settings_manage_listen_addresses" xml:space="preserve">
     <value>リストの管理</value>
@@ -546,19 +546,19 @@ Fuzzy</comment>
     <value>自動的に最新版にする</value>
   </data>
   <data name="proxy_proxies" xml:space="preserve">
-    <value>Proxies</value>
+    <value>プロキシ</value>
   </data>
   <data name="proxy_manage_proxies" xml:space="preserve">
     <value>Proxyの管理</value>
   </data>
   <data name="proxy_http_header" xml:space="preserve">
-    <value>HTTP/HTTPS proxy</value>
+    <value>HTTP/HTTPS プロキシ</value>
   </data>
   <data name="proxy_http_sub" xml:space="preserve">
     <value>DoHサーバ向けのみに使用可</value>
   </data>
   <data name="proxy_socks_header" xml:space="preserve">
-    <value>SOCKS proxy</value>
+    <value>SOCKS プロキシ</value>
   </data>
   <data name="proxy_socks_sub" xml:space="preserve">
     <value>全てのTCP接続をローカルのTorノードにルーティングします。TorはUDPをサポートしません。従って詳細設定の&quot;TCP強制&quot;もONにして下さい</value>
@@ -576,93 +576,93 @@ Fuzzy</comment>
     <value>DNSCryptプロトコルに対応するサーバを使用</value>
   </data>
   <data name="default_settings_configuration_doh" xml:space="preserve">
-    <value>DNS-over-HTTPS</value>
+    <value>DNS over HTTPS</value>
   </data>
   <data name="default_settings_configuration_doh_tooltip" xml:space="preserve">
-    <value>DNS-over-HTTPSプロトコルに対応するサーバを使用</value>
+    <value>DNS over HTTPSプロトコルに対応するサーバを使用</value>
   </data>
   <data name="loader_restore_config" xml:space="preserve">
-    <value>Restore {0}</value>
+    <value>{0} を復元</value>
   </data>
   <data name="settings_backup_and_restore_config" xml:space="preserve">
     <value>dnscryptの設定を更新時に保存、復元</value>
   </data>
   <data name="tabitem_cloakandforward" xml:space="preserve">
-    <value>Cloak and Forward</value>
+    <value>宛先変更と転送</value>
   </data>
   <data name="cloaking" xml:space="preserve">
-    <value>Cloaking</value>
+    <value>応答先変更</value>
   </data>
   <data name="cloaking_path" xml:space="preserve">
-    <value>Cloaking Rules:</value>
+    <value>変更ルール：</value>
   </data>
   <data name="cloaking_rules_header" xml:space="preserve">
-    <value>Cloaking Rules</value>
+    <value>応答先ルール</value>
   </data>
   <data name="cloaking_rules_sub_header" xml:space="preserve">
-    <value>(active cloaking rules)</value>
+    <value>(能動的変更ルール)</value>
   </data>
   <data name="button_cloaking_add" xml:space="preserve">
-    <value>Add a new cloaking rule</value>
+    <value>ルールを追加</value>
   </data>
   <data name="button_cloaking_remove" xml:space="preserve">
-    <value>Remove selected cloaking rule</value>
+    <value>選択したルールを削除</value>
   </data>
   <data name="button_cloaking_import" xml:space="preserve">
-    <value>Import existing cloaking rules</value>
+    <value>変更ルールをインポート</value>
   </data>
   <data name="button_cloaking_export" xml:space="preserve">
-    <value>Export cloaking rules</value>
+    <value>変更ルールをエクスポート</value>
   </data>
   <data name="rule_window_cloaking_header" xml:space="preserve">
-    <value>Add new cloaking rule</value>
+    <value>応答先変更ルールの追加</value>
   </data>
   <data name="rule_window_cloaking_key_text" xml:space="preserve">
-    <value>Rule source (eg: www.google.*)</value>
+    <value>変更元 （例: www.google.*）</value>
   </data>
   <data name="rule_window_cloaking_value_text" xml:space="preserve">
-    <value>Rule target (eg: forcesafesearch.google.com)</value>
+    <value>変更先 (例：forcesafesearch.google.com)</value>
   </data>
   <data name="forwarding" xml:space="preserve">
-    <value>Forwarding</value>
+    <value>宛先転送</value>
   </data>
   <data name="forwarding_path" xml:space="preserve">
-    <value>Forwarding Rules:</value>
+    <value>転送ルール：</value>
   </data>
   <data name="forwarding_rules_header" xml:space="preserve">
-    <value>Forwarding Rules</value>
+    <value>転送ルール</value>
   </data>
   <data name="forwarding_rules_sub_header" xml:space="preserve">
-    <value>(active forwarding rules)</value>
+    <value>(能動的転送ルール)</value>
   </data>
   <data name="button_forwarding_add" xml:space="preserve">
-    <value>Add a new forwarding rule</value>
+    <value>ルールを追加</value>
   </data>
   <data name="button_forwarding_remove" xml:space="preserve">
-    <value>Remove selected forwarding rule</value>
+    <value>選択したルールを削除</value>
   </data>
   <data name="button_forwarding_import" xml:space="preserve">
-    <value>Import existing forwarding rules</value>
+    <value>転送ルールをインポート</value>
   </data>
   <data name="button_forwarding_export" xml:space="preserve">
-    <value>Export forwarding rules</value>
+    <value>転送ルールをエクスポート</value>
   </data>
   <data name="rule_window_forwarding_header" xml:space="preserve">
-    <value>Add new forwarding rule</value>
+    <value>転送ルールを追加</value>
   </data>
   <data name="rule_window_forwarding_key_text" xml:space="preserve">
-    <value>Rule source (eg: example.com)</value>
+    <value>転送ルール (例： example.jp)</value>
   </data>
   <data name="rule_window_forwarding_value_text" xml:space="preserve">
-    <value>Rule target (eg: 9.9.9.9,8.8.8.8)</value>
+    <value>転送先 (例： 9.9.9.9, 8.8.8.8)</value>
   </data>
   <data name="rule_window_add" xml:space="preserve">
-    <value>Add</value>
+    <value>追加</value>
   </data>
   <data name="rule_window_abort" xml:space="preserve">
-    <value>Abort</value>
+    <value>中止</value>
   </data>
   <data name="settings_cloak_and_forward" xml:space="preserve">
-    <value>Show &quot;Cloak and Forward&quot; Tab</value>
+    <value>宛先変更と転送タブの表示</value>
   </data>
 </root>
