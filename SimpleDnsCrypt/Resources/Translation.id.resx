@@ -142,7 +142,7 @@
     <value>Gunakan server IPv6</value>
   </data>
   <data name="default_settings_configuration_ipv6_tooltip" xml:space="preserve">
-    <value>Gunakan server yang dapat dijangkau melalui IPv6 (jangan diaktifkan apabila anda tidak memiliki koneksi IPv6)</value>
+    <value>Gunakan server yang dapat dijangkau melalui IPv6 (jangan diaktifkan apabila Anda tidak memiliki koneksi IPv6)</value>
   </data>
   <data name="default_settings_configuration_dnssec" xml:space="preserve">
     <value>Hanya server dengan dukungan DNSSEC</value>
@@ -172,25 +172,25 @@
     <value>Hak sebagai administrator tidak ditemukan</value>
   </data>
   <data name="loader_checking_version" xml:space="preserve">
-    <value>Memeriksa pembaruan . . .</value>
+    <value>Memeriksa pemutakhiran . . .</value>
   </data>
   <data name="loader_new_version_found" xml:space="preserve">
-    <value>Versi terbaru ditemukan: {0}</value>
+    <value>Versi mutakhir ditemukan: {0}</value>
   </data>
   <data name="loader_starting_update" xml:space="preserve">
-    <value>Memulai pembaruan . . .</value>
+    <value>Memulai pemutakhiran . . .</value>
   </data>
   <data name="loader_update_failed" xml:space="preserve">
-    <value>Pembaruan telah gagal, melanjutkan . . .</value>
+    <value>Pemutakhiran gagal, melanjutkan . . .</value>
   </data>
   <data name="loader_latest_version" xml:space="preserve">
-    <value>Anda menggunakan versi terbaru</value>
+    <value>Anda menggunakan versi mutakhir</value>
   </data>
   <data name="loader_unsigned" xml:space="preserve">
     <value>unsigned</value>
   </data>
   <data name="loader_missing" xml:space="preserve">
-    <value>missing</value>
+    <value>tidak ditemukan</value>
   </data>
   <data name="loader_downloading_signature" xml:space="preserve">
     <value>Mengunduh signature . . .</value>
@@ -202,7 +202,7 @@
     <value>Memulai . . .</value>
   </data>
   <data name="loader_validate_folder" xml:space="preserve">
-    <value>Memvalidasi {0} folder</value>
+    <value>Memvalidasi {0} direktori</value>
   </data>
   <data name="loader_loading_network_cards" xml:space="preserve">
     <value>Memuat kartu jaringan . . .</value>
@@ -217,7 +217,7 @@
     <value>Memuat {0} . . .</value>
   </data>
   <data name="loader_missing_files" xml:space="preserve">
-    <value>Tidak ditemukan berkas didalam folder {0} :\n{1}\n\nPertimbangkan memulai instalasi baru dari {2}</value>
+    <value>Tidak ditemukan berkas di dalam direktori {0} :\n{1}\n\nPertimbangkan memulai instalasi baru dari {2}</value>
   </data>
   <data name="loader_all_files_available" xml:space="preserve">
     <value>Semua berkas yang dibutuhkan telah ditemukan</value>
@@ -235,7 +235,7 @@
     <value>Lihat di GitHub</value>
   </data>
   <data name="tabitem_querylog" xml:space="preserve">
-    <value>Catatan kueri</value>
+    <value>Catatan Kueri</value>
   </data>
   <data name="querylog" xml:space="preserve">
     <value>Catatan Kueri</value>
@@ -253,7 +253,7 @@
     <value>Hapus Daftar</value>
   </data>
   <data name="querylog_button_block" xml:space="preserve">
-    <value>Blokir yang dipilih</value>
+    <value>Blokir Yang Dipilih</value>
   </data>
   <data name="domainblocklog" xml:space="preserve">
     <value>Catatan Domain Terblokir</value>
@@ -310,28 +310,28 @@
     <value>Tampilkan tab &quot;Pengaturan Lanjutan&quot;</value>
   </data>
   <data name="yes" xml:space="preserve">
-    <value>ya</value>
+    <value>Ya</value>
   </data>
   <data name="no" xml:space="preserve">
-    <value>tidak</value>
+    <value>Tidak</value>
   </data>
   <data name="cancel" xml:space="preserve">
-    <value>batal</value>
+    <value>Batal</value>
   </data>
   <data name="ok" xml:space="preserve">
-    <value>OK</value>
+    <value>Oke</value>
   </data>
   <data name="dialog_message_uninstall" xml:space="preserve">
-    <value>Apakah anda ingin menghapus layanan DNSCrypt yang terpasang pada Windows?</value>
+    <value>Apakah Anda ingin menghapus layanan DNSCrypt yang terpasang pada Windows?</value>
   </data>
   <data name="dialog_uninstall_title" xml:space="preserve">
     <value>Mencopot layanan</value>
   </data>
   <data name="advanced_settings_uninstall_title" xml:space="preserve">
-    <value>Menghapus layanan</value>
+    <value>Mencopot layanan</value>
   </data>
   <data name="advanced_settings_uninstall_text" xml:space="preserve">
-    <value>Menghapus layanan yang terpasang</value>
+    <value>Menghapus layanan DNSCrypt yang terpasang</value>
   </data>
   <data name="advanced_settings_uninstall_button" xml:space="preserve">
     <value>Menghapus layanan</value>
@@ -352,10 +352,10 @@
     <value>Mode Otomatis</value>
   </data>
   <data name="disabled" xml:space="preserve">
-    <value>Nonaktifkan</value>
+    <value>Mati</value>
   </data>
   <data name="enabled" xml:space="preserve">
-    <value>Aktifkan</value>
+    <value>Nyala</value>
   </data>
   <data name="resolvers_available_resolvers_header" xml:space="preserve">
     <value>Resolver yang tersedia</value>
@@ -364,13 +364,13 @@
     <value>Memerika Microsoft Visual C++ Redistributable untuk Visual Studio 2017</value>
   </data>
   <data name="loader_redistributable_package_already_installed" xml:space="preserve">
-    <value>Microsoft Visual C++ Redistributable untuk Visual Studio 2017 telah terpasang</value>
+    <value>Microsoft Visual C++ Redistributable untuk Visual Studio 2017 telah terinstal</value>
   </data>
   <data name="loader_redistributable_package_installing" xml:space="preserve">
     <value>Memasang Microsoft Visual C++ Redistributable untuk Visual Studio 2017</value>
   </data>
   <data name="loader_redistributable_package_ready" xml:space="preserve">
-    <value>Microsoft Visual C++ Redistributable untuk Visual Studio 2017 sekarang telah terpasang</value>
+    <value>Microsoft Visual C++ Redistributable untuk Visual Studio 2017 sekarang telah terinstal</value>
   </data>
   <data name="message_title_no_server_selected" xml:space="preserve">
     <value>Tidak ada server yang dipilih</value>
@@ -379,31 +379,31 @@
     <value>Setidaknya satu server harus dipilih. Jika tidak, dnscrypt-proxy menggunakan semua server yang sesuai dengan filter yang dipilih.</value>
   </data>
   <data name="message_title_service_not_running" xml:space="preserve">
-    <value>Layanan DnsCrypt tidak aktif</value>
+    <value>Layanan DNSCrypt tidak aktif</value>
   </data>
   <data name="message_content_service_not_running" xml:space="preserve">
-    <value>Anda harus mengaktifkan layanan DnsCrypt terlebih dahulu</value>
+    <value>Anda harus mengaktifkan layanan DNSCrypt terlebih dahulu!</value>
   </data>
   <data name="message_title_uninstallation_successful" xml:space="preserve">
     <value>Pencopotan berhasil</value>
   </data>
   <data name="message_content_uninstallation_successful" xml:space="preserve">
-    <value>Pencopotan telah berhasil! Permintaan DNS tidak lagi terenkripsi</value>
+    <value>Pencopotan telah berhasil! Permintaan DNS tidak lagi terenkripsi.</value>
   </data>
   <data name="message_title_uninstallation_error" xml:space="preserve">
-    <value>Kesalahan pencopotan</value>
+    <value>Galat pencopotan</value>
   </data>
   <data name="message_content_uninstallation_error" xml:space="preserve">
     <value>Pencopotan tidak dapat dilakukan. Coba hentikan layanan secara manual dan copot sekali lagi.</value>
   </data>
   <data name="open_log_directory" xml:space="preserve">
-    <value>Buka folder log</value>
+    <value>Buka direktori catatan</value>
   </data>
   <data name="settings_update_auto" xml:space="preserve">
-    <value>Periksa pembaruan ketika memulai aplikasi</value>
+    <value>Periksa pemutakhiran saat memulai aplikasi</value>
   </data>
   <data name="settings_update_channel" xml:space="preserve">
-    <value>Saluran Pembaruan:</value>
+    <value>Saluran Pemutakhiran:</value>
   </data>
   <data name="advanced_settings_dnscache_content" xml:space="preserve">
     <value>Gunakan tembolok DNS untuk memperkecil latensi dan lalu lintas data keluar</value>
@@ -412,7 +412,7 @@
     <value>Blokir IPv6</value>
   </data>
   <data name="advanced_settings_blockipv6_content" xml:space="preserve">
-    <value>Segera merespon permintaan queries IPv6 dengan respon kosong</value>
+    <value>Segera merespon permintaan kueri IPv6 dengan respons kosong</value>
   </data>
   <data name="advanced_settings_forcetcp" xml:space="preserve">
     <value>Paksa TCP</value>
@@ -490,7 +490,7 @@
     <value>Daftar Hitam:</value>
   </data>
   <data name="blacklist_header" xml:space="preserve">
-    <value>Daftar Hitam dan Daftar Putih Domain</value>
+    <value>Domain Daftar Hitam dan Daftar Putih</value>
   </data>
   <data name="advanced_settings_globalresolver" xml:space="preserve">
     <value>Resolver Global</value>
@@ -511,13 +511,13 @@
     <value>Keluar</value>
   </data>
   <data name="address_settings_listen_addresses" xml:space="preserve">
-    <value>Alamat yang didengarkan</value>
+    <value>Alamat Yang Didengarkan</value>
   </data>
   <data name="address_settings_manage_listen_addresses" xml:space="preserve">
-    <value>Atur Alamat yang didengarkan</value>
+    <value>Atur Alamat Yang Didengarkan</value>
   </data>
   <data name="address_settings_description" xml:space="preserve">
-    <value>Daftar alamat local dan port untuk didengarkan, bisa berupa IPv4 dan/atau IPv6</value>
+    <value>Daftar alamat lokal dan port untuk didengarkan, bisa berupa IPv4 dan/atau IPv6</value>
   </data>
   <data name="address_settings_add" xml:space="preserve">
     <value>Tambah alamat baru untuk didengarkan</value>
@@ -532,13 +532,13 @@
     <value>Hapus seluruh aturan daftar hitam</value>
   </data>
   <data name="settings_tray_mode" xml:space="preserve">
-    <value>Kecilkan kedalam try jika ditutup</value>
+    <value>Kecilkan ke penampan saat ditutup</value>
   </data>
   <data name="settings_start_in_tray" xml:space="preserve">
-    <value>Jalankan Simple DNSCrypt dalam mode tray</value>
+    <value>Jalankan Simple DNSCrypt di penampan</value>
   </data>
   <data name="settings_update_silent" xml:space="preserve">
-    <value>Pasang versi terbaru secara senyap</value>
+    <value>Pasang versi mutakhir secara senyap</value>
   </data>
   <data name="proxy_proxies" xml:space="preserve">
     <value>Proksi</value>
@@ -565,7 +565,7 @@
     <comment>Fuzzy</comment>
   </data>
   <data name="advanced_settings_netprobe_timeout" xml:space="preserve">
-    <value>Waktu habis Netprobe</value>
+    <value>Waktu Habis Netprobe</value>
     <comment>Fuzzy</comment>
   </data>
   <data name="advanced_settings_netprobe_timeout_content" xml:space="preserve">
@@ -585,31 +585,31 @@
     <comment>Fuzzy</comment>
   </data>
   <data name="default_settings_configuration_doh_tooltip" xml:space="preserve">
-    <value>Gunakan server yang menerapkan protokol DNS-over-HTTPS</value>
+    <value>Gunakan server yang menerapkan protokol DNS Melewati HTTPS</value>
   </data>
   <data name="loader_restore_config" xml:space="preserve">
     <value>Memulihkan {0}</value>
   </data>
   <data name="settings_backup_and_restore_config" xml:space="preserve">
-    <value>Cadangkan dan pulihkan konfigurasi dnscrypt saat pembaruan</value>
+    <value>Cadangkan dan pulihkan konfigurasi DNSCrypt saat pemutakhiran</value>
   </data>
   <data name="tabitem_cloakandforward" xml:space="preserve">
-    <value>Jubah dan Maju</value>
+    <value>Selubung dan Teruskan</value>
   </data>
   <data name="cloaking" xml:space="preserve">
-    <value>Cloaking</value>
+    <value>Penyelubungan</value>
   </data>
   <data name="cloaking_path" xml:space="preserve">
-    <value>Aturan Cloaking:</value>
+    <value>Aturan Penyelubungan:</value>
   </data>
   <data name="cloaking_rules_header" xml:space="preserve">
-    <value>Aturan Cloaking</value>
+    <value>Aturan Penyelubungan</value>
   </data>
   <data name="cloaking_rules_sub_header" xml:space="preserve">
     <value>(aturan penyelubungan aktif)</value>
   </data>
   <data name="button_cloaking_add" xml:space="preserve">
-    <value>Tambahkan aturan penyelubungan baru</value>
+    <value>Tambah aturan penyelubungan baru</value>
   </data>
   <data name="button_cloaking_remove" xml:space="preserve">
     <value>Hapus aturan penyelubungan yang dipilih</value>
@@ -621,13 +621,13 @@
     <value>Ekspor aturan penyelubungan</value>
   </data>
   <data name="rule_window_cloaking_header" xml:space="preserve">
-    <value>Tambahkan aturan penyelubungan baru</value>
+    <value>Tambah aturan penyelubungan baru</value>
   </data>
   <data name="rule_window_cloaking_key_text" xml:space="preserve">
-    <value>Sumber aturan (mis .: www.google. *)</value>
+    <value>Sumber aturan (mis.: www.google.*)</value>
   </data>
   <data name="rule_window_cloaking_value_text" xml:space="preserve">
-    <value>Target aturan (mis: forcesafesearch.google.com)</value>
+    <value>Target aturan (mis.: forcesafesearch.google.com)</value>
   </data>
   <data name="forwarding" xml:space="preserve">
     <value>Penerusan</value>
@@ -642,7 +642,7 @@
     <value>(aturan penerusan aktif)</value>
   </data>
   <data name="button_forwarding_add" xml:space="preserve">
-    <value>Tambahkan aturan penerusan baru</value>
+    <value>Tambah aturan penerusan baru</value>
   </data>
   <data name="button_forwarding_remove" xml:space="preserve">
     <value>Hapus aturan penerusan yang dipilih</value>
@@ -657,18 +657,18 @@
     <value>Tambahkan aturan penerusan baru</value>
   </data>
   <data name="rule_window_forwarding_key_text" xml:space="preserve">
-    <value>Sumber aturan (misalnya: example.com)</value>
+    <value>Sumber aturan (mis.: example.com)</value>
   </data>
   <data name="rule_window_forwarding_value_text" xml:space="preserve">
-    <value>Target aturan (mis: 9.9.9.9.8.8.8.8)</value>
+    <value>Target aturan (mis.: 9.9.9.9,8.8.8.8)</value>
   </data>
   <data name="rule_window_add" xml:space="preserve">
-    <value>Menambahkan</value>
+    <value>Tambah</value>
   </data>
   <data name="rule_window_abort" xml:space="preserve">
-    <value>Menggugurkan</value>
+    <value>Batal</value>
   </data>
   <data name="settings_cloak_and_forward" xml:space="preserve">
-    <value>Tampilkan Tab &quot;Cloak and Forward&quot;</value>
+    <value>Tampilkan Tab &quot;Selubung dan Teruskan&quot;</value>
   </data>
 </root>
