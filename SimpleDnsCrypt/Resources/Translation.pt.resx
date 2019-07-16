@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="default_settings_network_cards" xml:space="preserve">
-    <value>Placas de Rede</value>
+    <value>Placas de rede</value>
   </data>
   <data name="default_settings_show_hidden_cards" xml:space="preserve">
     <value>Mostrar placas ocultas</value>
@@ -136,13 +136,13 @@
     <value>A utilizar Servidor IPv4</value>
   </data>
   <data name="default_settings_configuration_ipv4_tooltip" xml:space="preserve">
-    <value>Utilizar servidores alcançáveis através de IPv4</value>
+    <value>Utilizar servidores alcançáveis por IPv4</value>
   </data>
   <data name="default_settings_configuration_ipv6" xml:space="preserve">
     <value>A utilizar Servidor IPv6</value>
   </data>
   <data name="default_settings_configuration_ipv6_tooltip" xml:space="preserve">
-    <value>Utilizar servidores alcançáveis através de IPv6 (não ligar se ligação IPv6 indisponível)</value>
+    <value>Utilizar servidores alcançáveis por IPv6 (não ligar se ligação IPv6 indisponível)</value>
   </data>
   <data name="default_settings_configuration_dnssec" xml:space="preserve">
     <value>Utilizar apenas servidores com suporte para DNSSEC</value>
@@ -160,10 +160,10 @@
     <value>Apenas servidores sem filtro</value>
   </data>
   <data name="default_settings_configuration_nofilter_tooltip" xml:space="preserve">
-    <value>Servidor não deve forçar a sua própria lista negra (para controlo parental, bloqueio de anúncios...)</value>
+    <value>Servidor não deve impor a sua própria lista negra (para controlo parental, bloqueio de anúncios...)</value>
   </data>
   <data name="tabitem_mainmenu" xml:space="preserve">
-    <value>Menu Principal</value>
+    <value>Menu principal</value>
   </data>
   <data name="loader_administrative_rights_available" xml:space="preserve">
     <value>Direitos de administrador disponíveis</value>
@@ -217,7 +217,7 @@
     <value>A carregar {0}...</value>
   </data>
   <data name="loader_missing_files" xml:space="preserve">
-    <value>Ficheiros em falta na pasta {0}:\n{1}\n\nPensar em nova instalação de {2}</value>
+    <value>Ficheiros em falta na pasta {0}:\n{1}\n\nPonderar nova instalação de {2}</value>
   </data>
   <data name="loader_all_files_available" xml:space="preserve">
     <value>Todos os ficheiros necessários foram encontrados</value>
@@ -235,7 +235,7 @@
     <value>Ver no GitHub</value>
   </data>
   <data name="tabitem_querylog" xml:space="preserve">
-    <value>Registo de Interrogações</value>
+    <value>Registo de interrogações</value>
   </data>
   <data name="querylog" xml:space="preserve">
     <value>Registo de interrogações</value>
@@ -253,10 +253,10 @@
     <value>Limpar Lista</value>
   </data>
   <data name="querylog_button_block" xml:space="preserve">
-    <value>Bloquear Selecionados</value>
+    <value>Bloquear selecionados</value>
   </data>
   <data name="domainblocklog" xml:space="preserve">
-    <value>Registo de Domínios Bloqueados</value>
+    <value>Registo de domínios bloqueados</value>
   </data>
   <data name="domainblocklog_waiting_for_data" xml:space="preserve">
     <value>a aguardar interrogações de DNS bloqueadas</value>
@@ -268,46 +268,46 @@
     <value>Fonte:</value>
   </data>
   <data name="domainblocklog_button_clear" xml:space="preserve">
-    <value>Limpar Lista</value>
+    <value>Limpar lista</value>
   </data>
   <data name="tabitem_domainblocklog" xml:space="preserve">
-    <value>Registo de Bloqueio de Domínios</value>
+    <value>Registo de bloqueio de domínios</value>
   </data>
   <data name="tabitem_addressblocklog" xml:space="preserve">
-    <value>Registo de Bloqueio de Endereços</value>
+    <value>Registo de bloqueio de endereços</value>
   </data>
   <data name="tabitem_domainblacklist" xml:space="preserve">
-    <value>Lista Negra de Domínios</value>
+    <value>Lista negra de domínios</value>
   </data>
   <data name="tabitem_addressblacklist" xml:space="preserve">
-    <value>Lista Negra de Endereços</value>
+    <value>Lista negra de endereços</value>
   </data>
   <data name="settings" xml:space="preserve">
     <value>Definições</value>
   </data>
   <data name="settings_domain_blacklist" xml:space="preserve">
-    <value>Mostrar o Separador &quot;Lista Negra de Domínios&quot;</value>
+    <value>Mostrar o separador &quot;Lista negra de domínios&quot;</value>
   </data>
   <data name="settings_address_blacklist" xml:space="preserve">
-    <value>Mostrar o Separador &quot;Lista Negra de Endereços&quot;</value>
+    <value>Mostrar o separador &quot;Lista negra de endereços&quot;</value>
   </data>
   <data name="settings_domain_block" xml:space="preserve">
-    <value>Mostrar o Separador &quot;Registo de Bloqueio de Domínios&quot;</value>
+    <value>Mostrar o separador &quot;Registo de bloqueio de domínios&quot;</value>
   </data>
   <data name="settings_address_block" xml:space="preserve">
-    <value>Mostrar o Separador &quot;Registo de Bloqueio de Endereços&quot;</value>
+    <value>Mostrar o separador &quot;Registo de bloqueio de endereços&quot;</value>
   </data>
   <data name="settings_query_log" xml:space="preserve">
-    <value>Mostrar o Separador &quot;Registo de Interrogações&quot;</value>
+    <value>Mostrar o separador &quot;Registo de interrogações&quot;</value>
   </data>
   <data name="tabitem_resolvers" xml:space="preserve">
     <value>Resolutores</value>
   </data>
   <data name="tabitem_advanced_settings" xml:space="preserve">
-    <value>Definições Avançadas</value>
+    <value>Definições avançadas</value>
   </data>
   <data name="settings_advanced_settings" xml:space="preserve">
-    <value>Mostrar o Separador &quot;Definições Avançadas&quot;</value>
+    <value>Mostrar o separador &quot;Definições avançadas&quot;</value>
   </data>
   <data name="yes" xml:space="preserve">
     <value>sim</value>
@@ -328,7 +328,7 @@
     <value>A desinstalar o serviço</value>
   </data>
   <data name="advanced_settings_uninstall_title" xml:space="preserve">
-    <value>Desinstalar o serviço</value>
+    <value>A desinstalar o serviço</value>
   </data>
   <data name="advanced_settings_uninstall_text" xml:space="preserve">
     <value>Remover o serviço do Windows instalado</value>
@@ -349,7 +349,7 @@
     <value>No modo automático, todos os servidores disponíveis são utilizados. O dnscrypt-proxy seleciona automaticamente os resolutores mais rápidos.</value>
   </data>
   <data name="resolvers_dnscrypt_automatic_mode" xml:space="preserve">
-    <value>Modo Automático</value>
+    <value>Modo automático</value>
   </data>
   <data name="disabled" xml:space="preserve">
     <value>Desligado</value>
@@ -358,7 +358,7 @@
     <value>Ligado</value>
   </data>
   <data name="resolvers_available_resolvers_header" xml:space="preserve">
-    <value>Resolutores Disponíveis</value>
+    <value>Resolutores disponíveis</value>
   </data>
   <data name="loader_redistributable_package_check" xml:space="preserve">
     <value>A verificar Microsoft Visual C++ Redistributable for Visual Studio 2017</value>
@@ -389,22 +389,22 @@
     <value>Desinstalação bem-sucedida</value>
   </data>
   <data name="message_content_uninstallation_successful" xml:space="preserve">
-    <value>Desinstalação efetuada com sucesso! Os pedidos de DNS deixaram de ser encriptados</value>
+    <value>Desinstalação efetuada com sucesso! Os pedidos de DNS deixaram de ser encriptados.</value>
   </data>
   <data name="message_title_uninstallation_error" xml:space="preserve">
     <value>Erro na desinstalação</value>
   </data>
   <data name="message_content_uninstallation_error" xml:space="preserve">
-    <value>Não foi possível efetuar a desinstalação. Tente parar o serviço manualmente e desinstalá-lo novamente.</value>
+    <value>Não foi possível efetuar a desinstalação. Experimente parar o serviço manualmente e desinstalá-lo novamente.</value>
   </data>
   <data name="open_log_directory" xml:space="preserve">
     <value>Abrir o diretório dos registos</value>
   </data>
   <data name="settings_update_auto" xml:space="preserve">
-    <value>Verificar por atualizações no início</value>
+    <value>Procurar atualizações no arranque</value>
   </data>
   <data name="settings_update_channel" xml:space="preserve">
-    <value>Canal de Atualização:</value>
+    <value>Canal de atualização:</value>
   </data>
   <data name="advanced_settings_dnscache_content" xml:space="preserve">
     <value>Cache de DNS para reduzir a latência e o tráfego de saída</value>
@@ -428,13 +428,13 @@
     <value>Adicionar um novo domínio à lista branca</value>
   </data>
   <data name="message_content_new_whitelist_rule" xml:space="preserve">
-    <value>Exemplo: *.exemple.com, ads.*, *sex*, pode também adicionar uma lista de regras separada por vírgulas</value>
+    <value>Exemplo: *.example.com, ads.*, *sex*, pode também adicionar uma lista de regras separada por vírgulas</value>
   </data>
   <data name="message_title_new_blacklist_rule" xml:space="preserve">
     <value>Adicionar um novo domínio à lista negra</value>
   </data>
   <data name="message_content_new_blacklist_rule" xml:space="preserve">
-    <value>Exemplo: *.example.com, ads.*, *sex*,pode também adicionar uma lista de regras separada por vírgulas, um ficheiro que comece com:my-custom-rules.txt ou um URL que comece com http:// ou https://. </value>
+    <value>Exemplo: *.example.com, ads.*, *sex*, pode também adicionar uma lista de regras separada por vírgulas, um ficheiro que comece com: my-custom-rules.txt ou um URL que comece com http:// ou https://. </value>
   </data>
   <data name="working_dialog_title" xml:space="preserve">
     <value>As listas estão fundidas...</value>
@@ -470,40 +470,40 @@
     <value>Adicionar uma nova regra à lista branca</value>
   </data>
   <data name="whitelist_rules_header" xml:space="preserve">
-    <value>Regras da Lista Branca</value>
+    <value>Regras da lista branca</value>
   </data>
   <data name="whitelist_rules_sub_header" xml:space="preserve">
     <value>(todas as entradas são ignoradas durante a geração da lista negra)</value>
   </data>
   <data name="whitelist_rules_path" xml:space="preserve">
-    <value>Regras da Lista Branca:</value>
+    <value>Regras da lista branca:</value>
   </data>
   <data name="blacklist_rules_header" xml:space="preserve">
-    <value>Regras da Lista Negra</value>
+    <value>Regras da lista negra</value>
   </data>
   <data name="blacklist_rules_sub_header" xml:space="preserve">
     <value>(todas as entradas estão fundidas a uma lista negra)</value>
   </data>
   <data name="blacklist_rules_path" xml:space="preserve">
-    <value>Regras da Lista Negra:</value>
+    <value>Regras da lista negra:</value>
   </data>
   <data name="blacklist_path" xml:space="preserve">
-    <value>Lista Negra:</value>
+    <value>Lista negra:</value>
   </data>
   <data name="blacklist_header" xml:space="preserve">
-    <value>Listas Negra e Branca de Domínios</value>
+    <value>Listas negra e branca de domínios</value>
   </data>
   <data name="advanced_settings_globalresolver" xml:space="preserve">
-    <value>Resolutor Global</value>
+    <value>Resolutor global</value>
   </data>
   <data name="advanced_settings_globalresolver_content" xml:space="preserve">
     <value>Se deseja que este computador atue como dispositivo de ponte de ligação para outros (ex. smartphones ou outros computadores)</value>
   </data>
   <data name="advanced_settings_fallback_resolver" xml:space="preserve">
-    <value>Resolvedor de Recurso</value>
+    <value>Resolvedor de recurso</value>
   </data>
   <data name="advanced_settings_fallback_resolver_content" xml:space="preserve">
-    <value>Este é um resolvedor de DNS normal, não encriptado, que será apenas usado para consultas instantâneas ao aceder à lista inicial de resolvedores, e somente se a configuração de DNS do sistema não funcionar. Pessoas na China podem precisar usar 114.114.114.114:53 aqui.</value>
+    <value>Este é um resolvedor de DNS normal, não encriptado, que será apenas usado para consultas instantâneas ao aceder à lista inicial de resolvedores, e somente se a configuração de DNS do sistema não funcionar. Pessoas na China podem precisar colocar 114.114.114.114:53 aqui.</value>
   </data>
   <data name="trayicon_tooltip" xml:space="preserve">
     <value>Simple DNSCrypt</value>
@@ -512,10 +512,10 @@
     <value>Sair</value>
   </data>
   <data name="address_settings_listen_addresses" xml:space="preserve">
-    <value>Endereços Escutados</value>
+    <value>Endereços escutados</value>
   </data>
   <data name="address_settings_manage_listen_addresses" xml:space="preserve">
-    <value>Gerir Endereços em Escuta</value>
+    <value>Gerir endereços em escuta</value>
   </data>
   <data name="address_settings_description" xml:space="preserve">
     <value>Lista de endereços locais e portas para escutar. Podem ser IPv4 e/ou IPv6.</value>
@@ -536,7 +536,7 @@
     <value>Minimizar para a bandeja ao fechar</value>
   </data>
   <data name="settings_start_in_tray" xml:space="preserve">
-    <value>Iniciar o Simple DNSCrypt na bandeja</value>
+    <value>Iniciar o Simple DNSCrypt na barra de tarefas</value>
   </data>
   <data name="settings_update_silent" xml:space="preserve">
     <value>Instalar silencionsamente novas versões</value>
@@ -545,7 +545,7 @@
     <value>Proxies</value>
   </data>
   <data name="proxy_manage_proxies" xml:space="preserve">
-    <value>Gerir Proxies</value>
+    <value>Gerir proxies</value>
   </data>
   <data name="proxy_http_header" xml:space="preserve">
     <value>Proxy HTTP/HTTPS</value>
@@ -557,108 +557,108 @@
     <value>Proxy SOCKS</value>
   </data>
   <data name="proxy_socks_sub" xml:space="preserve">
-    <value>Pode rotear todas as ligações TCP para um nó local do Tor. Uma vez que o Tor não suporta UDP, deve ativar Forçar TCP (Definições Avançadas) também.</value>
+    <value>Pode rotear todas as ligações TCP para um nó local do Tor. Uma vez que o Tor não suporta UDP, deve igualmente ativar Forçar TCP (Definições avançadas).</value>
   </data>
   <data name="advanced_settings_netprobe_timeout" xml:space="preserve">
-    <value>Netprobe Timeout</value>
+    <value>Netprobe timeout</value>
   </data>
   <data name="advanced_settings_netprobe_timeout_content" xml:space="preserve">
-    <value>Maximum time (in seconds) to wait for network connectivity before initializing the proxy. Useful if the proxy is automatically started at boot, and network connectivity is not guaranteed to be immediately available. Use 0 to disable.</value>
+    <value>Tempo máximo (em segundos) de espera por ligação à rede antes de inicialização do proxy. Útil se o proxy for automaticamente iniciado com o arranque e a ligação à rede não estiver imediatamente disponível. Colocar 0 para desativar.</value>
   </data>
   <data name="default_settings_configuration_dnscrypt" xml:space="preserve">
     <value>DNSCrypt</value>
   </data>
   <data name="default_settings_configuration_dnscrypt_tooltip" xml:space="preserve">
-    <value>Use servers implementing the DNSCrypt protocol</value>
+    <value>Utilizar servidores que implementam o protocolo DNSCrypt</value>
   </data>
   <data name="default_settings_configuration_doh" xml:space="preserve">
-    <value>DNS-over-HTTPS</value>
+    <value>DNS sobre HTTPS</value>
   </data>
   <data name="default_settings_configuration_doh_tooltip" xml:space="preserve">
-    <value>Use servers implementing the DNS-over-HTTPS protocol</value>
+    <value>Utilizar servidores que implementam o protocolo DNS sobre HTTPS</value>
   </data>
   <data name="loader_restore_config" xml:space="preserve">
-    <value>Restore {0}</value>
+    <value>Restaurar {0}</value>
   </data>
   <data name="settings_backup_and_restore_config" xml:space="preserve">
-    <value>Backup and restore dnscrypt configuration on update</value>
+    <value>Fazer cópia de segurança e restaurar a configuração do DNSCrypt ao atualizar</value>
   </data>
   <data name="tabitem_cloakandforward" xml:space="preserve">
-    <value>Cloak and Forward</value>
+    <value>Encobrir e fazer forward</value>
   </data>
   <data name="cloaking" xml:space="preserve">
-    <value>Cloaking</value>
+    <value>Encobrimento</value>
   </data>
   <data name="cloaking_path" xml:space="preserve">
-    <value>Cloaking Rules:</value>
+    <value>Regras do encobrimento:</value>
   </data>
   <data name="cloaking_rules_header" xml:space="preserve">
-    <value>Cloaking Rules</value>
+    <value>Regras do encobrimento</value>
   </data>
   <data name="cloaking_rules_sub_header" xml:space="preserve">
-    <value>(active cloaking rules)</value>
+    <value>(regras ativas de encobrimento)</value>
   </data>
   <data name="button_cloaking_add" xml:space="preserve">
-    <value>Add a new cloaking rule</value>
+    <value>Adicionar nova regra de encobrimento</value>
   </data>
   <data name="button_cloaking_remove" xml:space="preserve">
-    <value>Remove selected cloaking rule</value>
+    <value>Remover regra selecionada de encobrimento</value>
   </data>
   <data name="button_cloaking_import" xml:space="preserve">
-    <value>Import existing cloaking rules</value>
+    <value>Importar regras existentes de encobrimento</value>
   </data>
   <data name="button_cloaking_export" xml:space="preserve">
-    <value>Export cloaking rules</value>
+    <value>Exportar regras de encobrimento</value>
   </data>
   <data name="rule_window_cloaking_header" xml:space="preserve">
-    <value>Add new cloaking rule</value>
+    <value>Adicionar nova regra de encobrimento</value>
   </data>
   <data name="rule_window_cloaking_key_text" xml:space="preserve">
-    <value>Rule source (eg: www.google.*)</value>
+    <value>Origem da regra (ex.: www.google.*)</value>
   </data>
   <data name="rule_window_cloaking_value_text" xml:space="preserve">
-    <value>Rule target (eg: forcesafesearch.google.com)</value>
+    <value>Destino da regra (ex.: forcesafesearch.google.com)</value>
   </data>
   <data name="forwarding" xml:space="preserve">
     <value>Forwarding</value>
   </data>
   <data name="forwarding_path" xml:space="preserve">
-    <value>Forwarding Rules:</value>
+    <value>Regras de forwarding:</value>
   </data>
   <data name="forwarding_rules_header" xml:space="preserve">
-    <value>Forwarding Rules</value>
+    <value>Regras de forwarding</value>
   </data>
   <data name="forwarding_rules_sub_header" xml:space="preserve">
-    <value>(active forwarding rules)</value>
+    <value>(regras ativas de forwarding)</value>
   </data>
   <data name="button_forwarding_add" xml:space="preserve">
-    <value>Add a new forwarding rule</value>
+    <value>Adicionar nova regra de forwarding</value>
   </data>
   <data name="button_forwarding_remove" xml:space="preserve">
-    <value>Remove selected forwarding rule</value>
+    <value>Remover regra selecionada de forwarding</value>
   </data>
   <data name="button_forwarding_import" xml:space="preserve">
-    <value>Import existing forwarding rules</value>
+    <value>Importar regras existentes de forwarding</value>
   </data>
   <data name="button_forwarding_export" xml:space="preserve">
-    <value>Export forwarding rules</value>
+    <value>Exportar regras de forwarding</value>
   </data>
   <data name="rule_window_forwarding_header" xml:space="preserve">
-    <value>Add new forwarding rule</value>
+    <value>Adicionar nova regra de forwarding</value>
   </data>
   <data name="rule_window_forwarding_key_text" xml:space="preserve">
-    <value>Rule source (eg: example.com)</value>
+    <value>Origem da regra (ex.: exemplo.com)</value>
   </data>
   <data name="rule_window_forwarding_value_text" xml:space="preserve">
-    <value>Rule target (eg: 9.9.9.9,8.8.8.8)</value>
+    <value>Destino da regra (ex.: 9.9.9.9,8.8.8.8)</value>
   </data>
   <data name="rule_window_add" xml:space="preserve">
-    <value>Add</value>
+    <value>Adicionar</value>
   </data>
   <data name="rule_window_abort" xml:space="preserve">
-    <value>Abort</value>
+    <value>Abortar</value>
   </data>
   <data name="settings_cloak_and_forward" xml:space="preserve">
-    <value>Show &quot;Cloak and Forward&quot; Tab</value>
+    <value>Mostrar separador &quot;Encobrir e fazer forward&quot;</value>
   </data>
 </root>
