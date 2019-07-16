@@ -63,6 +63,7 @@ namespace SimpleDnsCrypt.Helper
 				new Language {Name = "Swedish", ShortCode = "sv", CultureCode = "sv-SV"},
 				new Language {Name = "Thai", ShortCode = "th", CultureCode = "th-TH"},
 				new Language {Name = "Turkish", ShortCode = "tr", CultureCode = "tr-TR"},
+				new Language {Name = "Ukrainian", ShortCode = "uk", CultureCode = "uk-UA"},
 				new Language {Name = "Vietnamese", ShortCode = "vi", CultureCode = "vi-VN"},
 			};
 			supportedLanguages.OrderBy(l => l.Name);
