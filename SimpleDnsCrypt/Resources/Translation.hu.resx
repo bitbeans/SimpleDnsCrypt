@@ -331,10 +331,10 @@
     <value>A szolgáltatás eltávolítása</value>
   </data>
   <data name="advanced_settings_uninstall_text" xml:space="preserve">
-    <value>Távolítsa el a telepített Windows szolgáltatást</value>
+    <value>A telepített Windows szolgáltatás eltávolítása</value>
   </data>
   <data name="advanced_settings_uninstall_button" xml:space="preserve">
-    <value>Távolítsa el a szolgáltatást</value>
+    <value>Szolgáltatás eltávolítása</value>
   </data>
   <data name="default_settings_apply_settings" xml:space="preserve">
     <value>Beállítások alkalmazása</value>
@@ -407,7 +407,7 @@
     <value>Csatorna frissítése:</value>
   </data>
   <data name="advanced_settings_dnscache_content" xml:space="preserve">
-    <value>DNS gyorsítótár a késleltetés és a kimenő forgalom csökkentése érdekében</value>
+    <value>DNS gyorsítótár használata,  a késleltetés és a kimenő forgalom csökkentése érdekében</value>
   </data>
   <data name="advanced_settings_blockipv6" xml:space="preserve">
     <value>IPv6 blokkolása</value>
