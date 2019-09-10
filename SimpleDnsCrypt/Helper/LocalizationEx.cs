@@ -59,6 +59,7 @@ namespace SimpleDnsCrypt.Helper
 				new Language {Name = "Portuguese (Brasil)", ShortCode = "pt-br", CultureCode = "pt-BR"},
 				new Language {Name = "Romanian", ShortCode = "ro", CultureCode = "ro-RO"},
 				new Language {Name = "Russian", ShortCode = "ru", CultureCode = "ru-RU"},
+				new Language {Name = "Slovenian", ShortCode = "sl", CultureCode = "sl-SI"},
 				new Language {Name = "Spanish", ShortCode = "es", CultureCode = "es-ES"},
 				new Language {Name = "Swedish", ShortCode = "sv", CultureCode = "sv-SV"},
 				new Language {Name = "Thai", ShortCode = "th", CultureCode = "th-TH"},
