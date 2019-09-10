@@ -563,7 +563,7 @@
     <value>Netprobe időtúllépés</value>
   </data>
   <data name="advanced_settings_netprobe_timeout_content" xml:space="preserve">
-    <value>Maximális idő (másodpercben) a hálózati kapcsolat várakozásához a proxy inicializálása előtt. Hasznos, ha a proxy automatikusan elindul a rendszerindításkor, és a hálózati kapcsolat nem garantáltan azonnal elérhető. A 0 gombbal tiltsa le.</value>
+    <value>Maximális idő (másodpercben) a hálózati kapcsolat várakozásához a proxy inicializálása előtt. Hasznos, ha a proxy automatikusan elindul a rendszerindításkor, és a hálózati kapcsolat nem garantáltan azonnal elérhető. A &quot;0&quot; érték megadásával letiltható.</value>
   </data>
   <data name="default_settings_configuration_dnscrypt" xml:space="preserve">
     <value>DNSCrypt</value>
