@@ -39,9 +39,11 @@ namespace SimpleDnsCrypt.Models
 		private int _log_files_max_age;
 		private int _log_files_max_backups;
 		private bool _block_ipv6;
+		private int _reject_ttl;
 		private string _forwarding_rules;
 		private string _cloaking_rules;
-		private int _cache_neg_ttl;
+		private int _cache_neg_min_ttl;
+		private int _cache_neg_max_ttl;
 		private int _cache_max_ttl;
 		private int _cache_min_ttl;
 		private int _cache_size;
@@ -51,7 +53,7 @@ namespace SimpleDnsCrypt.Models
 		private Dictionary<string, Static> _static;
 		private string _proxy;
 		private ObservableCollection<string> _disabled_server_names;
-		private bool _refused_code_in_responses;
+		private string _blocked_query_response;
 
 		[TomlIgnore]
 		public new bool IsNotifying
@@ -139,17 +141,18 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		/// <summary>
-		/// Use the REFUSED return code for blocked responses
-		/// Setting this to `false` means that some responses will be lies.
-		/// Unfortunately, `false` appears to be required for Android 8+
+		///		Response for blocked queries.  Options are `refused`, `hinfo` (default) or
+		///		an IP response.  To give an IP response, use the format `a:<IPv4>,aaaa:<IPv6>`.
+		///		Using the `hinfo` option means that some responses will be lies.
+		///		Unfortunately, the `hinfo` option appears to be required for Android 8+
 		/// </summary>
-		public bool refused_code_in_responses
+		public string blocked_query_response
 		{
-			get => _refused_code_in_responses;
+			get => _blocked_query_response;
 			set
 			{
-				_refused_code_in_responses = value;
-				NotifyOfPropertyChange(() => refused_code_in_responses);
+				_blocked_query_response = value;
+				NotifyOfPropertyChange(() => blocked_query_response);
 			}
 		}
 
@@ -360,7 +363,7 @@ namespace SimpleDnsCrypt.Models
 				NotifyOfPropertyChange(() => lb_estimator);
 			}
 		}
-		
+
 		/// <summary>
 		/// Maximum time (in seconds) to wait for network connectivity before initializing the proxy.
 		/// Useful if the proxy is automatically started at boot, and network
@@ -540,6 +543,19 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		/// <summary>
+		///		TTL for synthetic responses sent when a request has been blocked (due to IPv6 or blacklists).
+		/// </summary>
+		public int reject_ttl
+		{
+			get => _reject_ttl;
+			set
+			{
+				_reject_ttl = value;
+				NotifyOfPropertyChange(() => reject_ttl);
+			}
+		}
+
+		/// <summary>
 		///     Forwarding rule file.
 		/// </summary>
 		public string forwarding_rules
@@ -564,7 +580,7 @@ namespace SimpleDnsCrypt.Models
 				NotifyOfPropertyChange(() => cloaking_rules);
 			}
 		}
-		
+
 		/// <summary>
 		///     Enable a DNS cache to reduce latency and outgoing traffic.
 		/// </summary>
@@ -618,15 +634,28 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		/// <summary>
-		///     TTL for negatively cached entries.
+		///     Minimum TTL for negatively cached entries.
 		/// </summary>
-		public int cache_neg_ttl
+		public int cache_neg_min_ttl
 		{
-			get => _cache_neg_ttl;
+			get => _cache_neg_min_ttl;
 			set
 			{
-				_cache_neg_ttl = value;
-				NotifyOfPropertyChange(() => cache_neg_ttl);
+				_cache_neg_min_ttl = value;
+				NotifyOfPropertyChange(() => cache_neg_min_ttl);
+			}
+		}
+
+		/// <summary>
+		///     Maximum TTL for negatively cached entries
+		/// </summary>
+		public int cache_neg_max_ttl
+		{
+			get => _cache_neg_max_ttl;
+			set
+			{
+				_cache_neg_max_ttl = value;
+				NotifyOfPropertyChange(() => cache_neg_max_ttl);
 			}
 		}
 

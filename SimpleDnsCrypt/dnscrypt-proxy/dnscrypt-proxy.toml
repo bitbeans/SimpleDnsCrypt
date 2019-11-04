@@ -8,7 +8,7 @@ require_dnssec = true
 require_nolog = true
 require_nofilter = true
 force_tcp = false
-timeout = 2500
+timeout = 5000
 keepalive = 30
 cert_refresh_delay = 240
 fallback_resolver = '9.9.9.9:53'
@@ -19,13 +19,14 @@ log_files_max_size = 10
 log_files_max_age = 7
 log_files_max_backups = 1
 block_ipv6 = true
+reject_ttl = 600
 cache = true
-cache_size = 256
-cache_min_ttl = 600
+cache_size = 1024
+cache_min_ttl = 2400
 cache_max_ttl = 86400
-cache_neg_ttl = 60
+cache_neg_min_ttl = 60
+cache_neg_max_ttl = 600
 disabled_server_names = []
-refused_code_in_responses = false
 [query_log]
   format = 'ltsv'
 
@@ -41,6 +42,12 @@ refused_code_in_responses = false
   [sources.'public-resolvers']
   urls = ['https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v2/public-resolvers.md', 'https://download.dnscrypt.info/resolvers-list/v2/public-resolvers.md']
   cache_file = 'public-resolvers.md'
+  minisign_key = 'RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3'
+  prefix = ''
+
+  [sources.'relays']
+  urls = ['https://github.com/DNSCrypt/dnscrypt-resolvers/raw/master/v2/relays.md', 'https://download.dnscrypt.info/resolvers-list/v2/relays.md']
+  cache_file = 'relays.md'
   minisign_key = 'RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3'
   refresh_delay = 72
   prefix = ''
