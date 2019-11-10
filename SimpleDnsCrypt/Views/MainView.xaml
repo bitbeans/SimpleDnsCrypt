@@ -103,64 +103,62 @@
                                             </TextBlock>
                                         </Grid>
                                         <UniformGrid Columns="2">
-                                            <StackPanel Orientation="Horizontal">
-                                                <StackPanel Orientation="Vertical">
-                                                    <CheckBox IsChecked="{Binding DnscryptProxyConfiguration.ipv4_servers}"
+                                            <StackPanel Orientation="Vertical">
+                                                <CheckBox IsChecked="{Binding DnscryptProxyConfiguration.ipv4_servers}"
                                                           Margin="5"
                                                           Content="{lex:Loc Key=default_settings_configuration_ipv4}"
                                                           ToolTip="{lex:Loc Key=default_settings_configuration_ipv4_tooltip}"
                                                           Cursor="Hand" Foreground="#FF575757" />
-                                                    <CheckBox IsChecked="{Binding DnscryptProxyConfiguration.ipv6_servers}"
+                                                <CheckBox IsChecked="{Binding DnscryptProxyConfiguration.ipv6_servers}"
                                                           Margin="5"
                                                           Content="{lex:Loc Key=default_settings_configuration_ipv6}"
                                                           ToolTip="{lex:Loc Key=default_settings_configuration_ipv6_tooltip}"
                                                           Cursor="Hand" Foreground="#FF575757" />
-                                                    <CheckBox
+                                                <CheckBox
                                                     IsChecked="{Binding DnscryptProxyConfiguration.require_dnssec}"
                                                     Margin="5"
                                                     Content="{lex:Loc Key=default_settings_configuration_dnssec}"
                                                     ToolTip="{lex:Loc Key=default_settings_configuration_dnssec_tooltip}"
                                                     Cursor="Hand" Foreground="#FF575757" />
-                                                    <CheckBox
+                                                <CheckBox
                                                     IsChecked="{Binding DnscryptProxyConfiguration.require_nolog}"
                                                     Margin="5"
                                                     Content="{lex:Loc Key=default_settings_configuration_nolog}"
                                                     ToolTip="{lex:Loc Key=default_settings_configuration_nolog_tooltip}"
                                                     Cursor="Hand" Foreground="#FF575757" />
-                                                    <CheckBox
+                                                <CheckBox
                                                     IsChecked="{Binding DnscryptProxyConfiguration.require_nofilter}"
                                                     Margin="5"
                                                     Content="{lex:Loc Key=default_settings_configuration_nofilter}"
                                                     ToolTip="{lex:Loc Key=default_settings_configuration_nofilter_tooltip}"
                                                     Cursor="Hand" Foreground="#FF575757" />
-                                                </StackPanel>
-                                                <StackPanel Orientation="Vertical">
-                                                    <CheckBox IsChecked="{Binding DnscryptProxyConfiguration.dnscrypt_servers}"
+                                            </StackPanel>
+                                            <StackPanel Orientation="Vertical">
+                                                <CheckBox IsChecked="{Binding DnscryptProxyConfiguration.dnscrypt_servers}"
                                                               Margin="5"
                                                               Content="{lex:Loc Key=default_settings_configuration_dnscrypt}"
                                                               ToolTip="{lex:Loc Key=default_settings_configuration_dnscrypt_tooltip}"
                                                               Cursor="Hand" Foreground="#FF575757" />
-                                                    <CheckBox IsChecked="{Binding DnscryptProxyConfiguration.doh_servers}"
+                                                <CheckBox IsChecked="{Binding DnscryptProxyConfiguration.doh_servers}"
                                                               Margin="5"
                                                               Content="{lex:Loc Key=default_settings_configuration_doh}"
                                                               ToolTip="{lex:Loc Key=default_settings_configuration_doh_tooltip}"
                                                               Cursor="Hand" Foreground="#FF575757" />
-                                                </StackPanel>
                                             </StackPanel>
-                                            <Grid>
-                                                <Grid.RowDefinitions>
-                                                    <RowDefinition Height="Auto" />
-                                                    <RowDefinition Height="*" />
-                                                </Grid.RowDefinitions>
+                                        </UniformGrid>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
 
-                                                <Button x:Name="SaveDnsCryptConfiguration" Grid.Row="1" Height="32"
+                                            <Button x:Name="SaveDnsCryptConfiguration" Grid.Row="1" Height="32"
                                                         Width="Auto"
                                                         VerticalAlignment="Bottom" HorizontalAlignment="Right"
                                                         Content="{lex:Loc Key=default_settings_apply_settings}"
                                                         Cursor="Hand"
                                                         Style="{DynamicResource CustomAccentedSquareButtonStyle}" />
-                                            </Grid>
-                                        </UniformGrid>
+                                        </Grid>
                                     </StackPanel>
                                 </Border>
                                 <Border BorderThickness="1" Background="#198AB328" Padding="10,10" Margin="0,14,0,0"
@@ -852,7 +850,7 @@
                                                                     Opacity="0.8" BorderBrush="#FF575757"
                                                                     HorizontalAlignment="Right" VerticalAlignment="Top"
                                                                     TextAlignment="Right"/>
-                                           <!-- <TextBox
+                                            <!-- <TextBox
                                                 IsEnabled="{Binding IsWorkingOnService, Converter={StaticResource ReverseBoolToEnabledConverter}}"
                                                 Grid.Row="0" Grid.Column="2" Cursor="Hand" Width="Auto"
                                                
