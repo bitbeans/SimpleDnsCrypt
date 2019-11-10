@@ -122,6 +122,7 @@
     <Compile Include="Helper\NavigationService.cs" />
     <Compile Include="Helper\PatchHelper.cs" />
     <Compile Include="Helper\PrerequisiteHelper.cs" />
+    <Compile Include="Helper\ProcessHelper.cs" />
     <Compile Include="Helper\ValidationHelper.cs" />
     <Compile Include="Helper\VersionHelper.cs" />
     <Compile Include="Logger\NLogLogger.cs" />

@@ -61,8 +61,8 @@ namespace SimpleDnsCrypt.Helper
 					Ipv6Support = nic.Supports(NetworkInterfaceComponent.IPv6),
 					OperationalStatus = nic.OperationalStatus
 				};
-
-				localNetworkInterface.UseDnsCrypt = IsUsingDnsCrypt(listenAddresses, localNetworkInterface);
+				// strict check if the interface supports IPv6
+				localNetworkInterface.UseDnsCrypt = IsUsingDnsCrypt(listenAddresses, localNetworkInterface, localNetworkInterface.Ipv6Support);
 				interfaces.Add(localNetworkInterface);
 			}
 			return interfaces;
