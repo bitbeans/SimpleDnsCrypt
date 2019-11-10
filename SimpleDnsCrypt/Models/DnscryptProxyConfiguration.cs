@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using DnsCrypt.Models;
 using Nett;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
