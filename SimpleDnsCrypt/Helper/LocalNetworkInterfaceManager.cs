@@ -74,10 +74,17 @@ namespace SimpleDnsCrypt.Helper
 		/// <param name="listenAddresses"></param>
 		/// <param name="localNetworkInterface">The interface to check.</param>
 		/// <returns><c>true</c> if a address was found, otherwise <c>false</c></returns>
-		public static bool IsUsingDnsCrypt(List<string> listenAddresses, LocalNetworkInterface localNetworkInterface)
+		public static bool IsUsingDnsCrypt(List<string> listenAddresses, LocalNetworkInterface localNetworkInterface, bool strictCheck = false)
 		{
 			if (listenAddresses == null) return false;
 			var addressOnly = (from listenAddress in listenAddresses let lastIndex = listenAddress.LastIndexOf(":", StringComparison.Ordinal) select listenAddress.Substring(0, lastIndex).Replace("[", "").Replace("]", "")).ToList();
+
+			if (strictCheck)
+			{
+				// check for ALL addresses
+				return addressOnly.Intersect(localNetworkInterface.Dns.Select(x => x.Address).ToList()).Count() == addressOnly.Count();
+			}
+
 			return localNetworkInterface.Dns.Any(d => addressOnly.Contains(d.Address));
 		}
 
