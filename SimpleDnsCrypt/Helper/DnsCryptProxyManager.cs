@@ -241,53 +241,6 @@ namespace SimpleDnsCrypt.Helper
 		}
 
 		/// <summary>
-		/// Get the list of available (inactive) resolvers for the enabled filters.
-		/// </summary>
-		/// <returns></returns>
-		[Obsolete("Use GetAllResolversWithoutFilters instead.")]
-		public static List<AvailableResolver> GetAllResolversWithFilters()
-		{
-			var resolvers = new List<AvailableResolver>();
-			var dnscryptFolder = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder);
-			// we use a second config file
-			var tmpToml = Path.Combine(dnscryptFolder, "_tmp_.toml");
-			if (File.Exists(tmpToml))
-			{
-				File.Delete(tmpToml);
-			}
-			File.Copy(Path.Combine(dnscryptFolder, Global.DnsCryptConfigurationFile), Path.Combine(dnscryptFolder, tmpToml));
-			var config = Toml.ReadFile<DnscryptProxyConfiguration>(tmpToml);
-			//clear the array
-			config.server_names = null;
-			Toml.WriteFile(config, tmpToml);
-			var dnsCryptProxyExecutablePath = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, Global.DnsCryptProxyExecutableName);
-			var result = ProcessHelper.ExecuteWithArguments(dnsCryptProxyExecutablePath, "-config _tmp_.toml -list -json");
-			if (!result.Success) return resolvers;
-			if (string.IsNullOrEmpty(result.StandardOutput)) return resolvers;
-			try
-			{
-				var res = JsonConvert.DeserializeObject<List<AvailableResolver>>(result.StandardOutput);
-				if (res.Count > 0)
-				{
-					resolvers = res;
-				}
-			}
-			catch (Exception exception)
-			{
-				Log.Error(exception);
-			}
-			finally
-			{
-				if (File.Exists(tmpToml))
-				{
-					File.Delete(tmpToml);
-				}
-			}
-			return resolvers;
-		}
-
-
-		/// <summary>
 		/// Install the dnscrypt-proxy service.
 		/// </summary>
 		/// <returns></returns>
