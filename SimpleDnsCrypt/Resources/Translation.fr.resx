@@ -533,7 +533,7 @@
     <value>Liste des adresses locales et des ports à écouter. Peut être IPv4 et/ou IPv6</value>
   </data>
   <data name="address_settings_add" xml:space="preserve">
-    <value>Ajouter une nouvelle address d&apos;écoute</value>
+    <value>Ajouter une nouvelle adresse d&apos;écoute</value>
   </data>
   <data name="address_settings_remove" xml:space="preserve">
     <value>supprimer l&apos;adresse d&apos;écoute sélectionnée</value>
@@ -602,64 +602,64 @@
     <value>Masquer</value>
   </data>
   <data name="cloaking_path" xml:space="preserve">
-    <value>Cloaking Rules:</value>
+    <value>Règles de masquage :</value>
   </data>
   <data name="cloaking_rules_header" xml:space="preserve">
-    <value>Cloaking Rules</value>
+    <value>Règles de masquage</value>
   </data>
   <data name="cloaking_rules_sub_header" xml:space="preserve">
-    <value>(active cloaking rules)</value>
+    <value>(Règles de masquage actives)</value>
   </data>
   <data name="button_cloaking_add" xml:space="preserve">
-    <value>Add a new cloaking rule</value>
+    <value>Ajouter une nouvelle règle de masquage</value>
   </data>
   <data name="button_cloaking_remove" xml:space="preserve">
-    <value>Remove selected cloaking rule</value>
+    <value>Supprimer la règle de masquage sélectionnée</value>
   </data>
   <data name="button_cloaking_import" xml:space="preserve">
-    <value>Import existing cloaking rules</value>
+    <value>Importer des règles de masquage existantes</value>
   </data>
   <data name="button_cloaking_export" xml:space="preserve">
-    <value>Export cloaking rules</value>
+    <value>Exporter les règles de masquage</value>
   </data>
   <data name="rule_window_cloaking_header" xml:space="preserve">
-    <value>Add new cloaking rule</value>
+    <value>Ajouter une nouvelle règle de masquage</value>
   </data>
   <data name="rule_window_cloaking_key_text" xml:space="preserve">
-    <value>Rule source (eg: www.google.*)</value>
+    <value>Source de la règle (par exemple : www.google.*)</value>
   </data>
   <data name="rule_window_cloaking_value_text" xml:space="preserve">
-    <value>Rule target (eg: forcesafesearch.google.com)</value>
+    <value>Règle cible (par exemple : forcesafesearch.google.com)</value>
   </data>
   <data name="forwarding" xml:space="preserve">
-    <value>Forwarding</value>
+    <value>Rediriger</value>
   </data>
   <data name="forwarding_path" xml:space="preserve">
-    <value>Forwarding Rules:</value>
+    <value>Règles de redirection :</value>
   </data>
   <data name="forwarding_rules_header" xml:space="preserve">
-    <value>Forwarding Rules</value>
+    <value>Règles de redirection</value>
   </data>
   <data name="forwarding_rules_sub_header" xml:space="preserve">
-    <value>(active forwarding rules)</value>
+    <value>(règles de redirection actives)</value>
   </data>
   <data name="button_forwarding_add" xml:space="preserve">
-    <value>Add a new forwarding rule</value>
+    <value>Ajouter une nouvelle règle de redirection</value>
   </data>
   <data name="button_forwarding_remove" xml:space="preserve">
-    <value>Remove selected forwarding rule</value>
+    <value>Supprimer la règle de redirection sélectionnée</value>
   </data>
   <data name="button_forwarding_import" xml:space="preserve">
-    <value>Import existing forwarding rules</value>
+    <value>Importer les règles de redirection existantes</value>
   </data>
   <data name="button_forwarding_export" xml:space="preserve">
-    <value>Export forwarding rules</value>
+    <value>Exporter les règles de redirection</value>
   </data>
   <data name="rule_window_forwarding_header" xml:space="preserve">
-    <value>Add new forwarding rule</value>
+    <value>Ajouter une nouvelle règle de redirection</value>
   </data>
   <data name="rule_window_forwarding_key_text" xml:space="preserve">
-    <value>Rule source (eg: example.com)</value>
+    <value>Source de la règle (par exemple : example.com)</value>
   </data>
   <data name="rule_window_forwarding_value_text" xml:space="preserve">
     <value>Cible de la règle (par exemple: 9.9.9.9.8.8.8.8)</value>
