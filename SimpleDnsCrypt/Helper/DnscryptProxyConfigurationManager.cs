@@ -26,7 +26,8 @@ namespace SimpleDnsCrypt.Helper
 			{
 				var configFile = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, Global.DnsCryptConfigurationFile);
 				if (!File.Exists(configFile)) return false;
-				DnscryptProxyConfiguration = Toml.ReadFile<DnscryptProxyConfiguration>(configFile);
+				var settings = TomlSettings.Create(s => s.ConfigurePropertyMapping(m => m.UseTargetPropertySelector(standardSelectors => standardSelectors.IgnoreCase)));
+				DnscryptProxyConfiguration = Toml.ReadFile<DnscryptProxyConfiguration>(configFile, settings);
 				return true;
 			}
 			catch (Exception)
@@ -44,7 +45,8 @@ namespace SimpleDnsCrypt.Helper
 			try
 			{
 				var configFile = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, Global.DnsCryptConfigurationFile);
-				Toml.WriteFile(DnscryptProxyConfiguration, configFile);
+				var settings = TomlSettings.Create(s => s.ConfigurePropertyMapping(m => m.UseKeyGenerator(standardGenerators => standardGenerators.LowerCase)));
+				Toml.WriteFile(DnscryptProxyConfiguration, configFile, settings);
 				return true;
 			}
 			catch (Exception)

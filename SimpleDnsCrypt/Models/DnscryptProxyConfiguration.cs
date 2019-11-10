@@ -679,6 +679,7 @@ namespace SimpleDnsCrypt.Models
 		/// </summary>
 		public Blacklist ip_blacklist { get; set; }
 
+		public AnonymizedDns anonymized_dns { get; set; }
 
 		/// <summary>
 		/// </summary>
@@ -705,6 +706,64 @@ namespace SimpleDnsCrypt.Models
 			}
 		}
 	}
+
+	public class AnonymizedDns : PropertyChangedBase
+	{
+		[TomlIgnore]
+		public new bool IsNotifying
+		{
+			get => base.IsNotifying;
+			set => base.IsNotifying = value;
+		}
+
+		private List<Route> _routes;
+
+		public List<Route> routes
+		{
+			get => _routes;
+			set
+			{
+				_routes = value;
+				NotifyOfPropertyChange(() => _routes);
+			}
+		}
+	}
+
+
+	public class Route : PropertyChangedBase
+	{
+		[TomlIgnore]
+		public new bool IsNotifying
+		{
+			get => base.IsNotifying;
+			set => base.IsNotifying = value;
+		}
+
+		private string _server_name;
+
+		public string server_name
+		{
+			get => _server_name;
+			set
+			{
+				_server_name = value;
+				NotifyOfPropertyChange(() => _server_name);
+			}
+		}
+
+		private List<string> _via;
+
+		public List<string> via
+		{
+			get => _via;
+			set
+			{
+				_via = value;
+				NotifyOfPropertyChange(() => _via);
+			}
+		}
+	}
+
 
 	/// <summary>
 	/// </summary>
