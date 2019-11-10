@@ -39,7 +39,7 @@ namespace SimpleDnsCrypt.Helper
 					{
 						using (var remoteUpdateDataStreamReader = new StreamReader(remoteUpdateDataStream))
 						{
-							var deserializer = new DeserializerBuilder().WithTypeConverter(new UriYamlTypeConverter()).WithNamingConvention(new CamelCaseNamingConvention()).Build();
+							var deserializer = new DeserializerBuilder().WithNamingConvention(CamelCaseNamingConvention.Instance).Build();
 							remoteUpdate = deserializer.Deserialize<RemoteUpdate>(remoteUpdateDataStreamReader);
 						}
 					}
