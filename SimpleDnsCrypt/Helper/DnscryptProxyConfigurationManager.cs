@@ -7,19 +7,19 @@ using System.IO;
 namespace SimpleDnsCrypt.Helper
 {
 	/// <summary>
-	/// 
+	/// Class to load and save the dnscrypt configuration (TOML format).
 	/// </summary>
 	public static class DnscryptProxyConfigurationManager
 	{
 		/// <summary>
-		/// 
+		/// The global dnscrypt configuration.
 		/// </summary>
 		public static DnscryptProxyConfiguration DnscryptProxyConfiguration { get; set; }
 
 		/// <summary>
-		/// 
+		/// Loads the configuration from a .toml file.
 		/// </summary>
-		/// <returns></returns>
+		/// <returns><c>true</c> on success, otherwise <c>false</c></returns>
 		public static bool LoadConfiguration()
 		{
 			try
@@ -37,9 +37,9 @@ namespace SimpleDnsCrypt.Helper
 		}
 
 		/// <summary>
-		/// 
+		/// Saves the configuration to a .toml file.
 		/// </summary>
-		/// <returns></returns>
+		/// <returns><c>true</c> on success, otherwise <c>false</c></returns>
 		public static bool SaveConfiguration()
 		{
 			try
