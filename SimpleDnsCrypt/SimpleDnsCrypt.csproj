@@ -123,6 +123,7 @@
     <Compile Include="Helper\PatchHelper.cs" />
     <Compile Include="Helper\PrerequisiteHelper.cs" />
     <Compile Include="Helper\ProcessHelper.cs" />
+    <Compile Include="Helper\RelayHelper.cs" />
     <Compile Include="Helper\ValidationHelper.cs" />
     <Compile Include="Helper\VersionHelper.cs" />
     <Compile Include="Logger\NLogLogger.cs" />
@@ -495,7 +496,7 @@
       <Version>0.1.1</Version>
     </PackageReference>
     <PackageReference Include="DnsCrypt.Stamps">
-      <Version>0.2.0</Version>
+      <Version>0.2.2</Version>
     </PackageReference>
     <PackageReference Include="Fody">
       <Version>6.0.0</Version>

@@ -37,6 +37,8 @@ disabled_server_names = []
 
 [ip_blacklist]
 
+[anonymized_dns]
+
 [sources]
 
   [sources.'public-resolvers']

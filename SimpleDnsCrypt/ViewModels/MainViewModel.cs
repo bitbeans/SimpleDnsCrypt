@@ -309,7 +309,6 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 		}
 
-
 		public bool IsSavingConfiguration
 		{
 			get => _isSavingConfiguration;
@@ -327,8 +326,8 @@ namespace SimpleDnsCrypt.ViewModels
 			{
 				_isOperatingAsGlobalResolver = value;
 				DnscryptProxyConfiguration.listen_addresses = _isOperatingAsGlobalResolver
-					? new ObservableCollection<string> {Global.GlobalResolver}
-					: new ObservableCollection<string> {Global.DefaultResolverIpv4, Global.DefaultResolverIpv6};
+					? new ObservableCollection<string> { Global.GlobalResolver }
+					: new ObservableCollection<string> { Global.DefaultResolverIpv4, Global.DefaultResolverIpv6 };
 				NotifyOfPropertyChange(() => IsOperatingAsGlobalResolver);
 			}
 		}
@@ -406,7 +405,7 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 
 			if (DnscryptProxyConfiguration != null && (DnscryptProxyConfiguration.server_names == null ||
-			                                           DnscryptProxyConfiguration.server_names.Count == 0))
+													   DnscryptProxyConfiguration.server_names.Count == 0))
 			{
 				_isDnsCryptAutomaticModeEnabled = true;
 			}
@@ -475,7 +474,7 @@ namespace SimpleDnsCrypt.ViewModels
 			if (propertyChangedEventArgs != null)
 			{
 				if (propertyChangedEventArgs.PropertyName.Equals("IsInitialized") ||
-				    propertyChangedEventArgs.PropertyName.Equals("IsActive")) return;
+					propertyChangedEventArgs.PropertyName.Equals("IsActive")) return;
 
 				switch (propertyChangedEventArgs.PropertyName)
 				{
@@ -530,10 +529,10 @@ namespace SimpleDnsCrypt.ViewModels
 			{
 				if (selectionChangedEventArgs.Source.GetType() != typeof(TabControl)) return;
 				if (selectionChangedEventArgs.AddedItems.Count != 1) return;
-				var tabItem = (TabItem) selectionChangedEventArgs.AddedItems[0];
-				if (string.IsNullOrEmpty((string) tabItem.Tag)) return;
+				var tabItem = (TabItem)selectionChangedEventArgs.AddedItems[0];
+				if (string.IsNullOrEmpty((string)tabItem.Tag)) return;
 
-				switch ((string) tabItem.Tag)
+				switch ((string)tabItem.Tag)
 				{
 					case "mainTab":
 						SelectedTab = Tabs.MainTab;
@@ -700,7 +699,7 @@ namespace SimpleDnsCrypt.ViewModels
 							s.IsInServerList = true;
 						}
 					}
-					
+
 					DnscryptProxyConfiguration.server_names = selectedServerNames;
 					if (DnscryptProxyConfiguration?.server_names?.Count == 0)
 					{
@@ -935,12 +934,28 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 		}
 
+		private void PrepareRoutes()
+		{
+			//anonymized_dns
+			var relays = RelayHelper.GetRelays();
+			if (relays != null && relays.Count > 0)
+			{
+				var availableResolvers = DnsCryptProxyManager.GetAvailableResolvers();
+				var onlyDnsCryptServers = availableResolvers.Where(s => s.Protocol.Equals("DNSCrypt"));
+				if (onlyDnsCryptServers.Count() > 0)
+				{
+
+				}
+			}
+		}
+
 		/// <summary>
 		///     Get the list of available resolvers for the enabled filters.
 		/// </summary>
 		/// <remarks>Current solution is not very effective.</remarks>
 		private void LoadResolvers()
 		{
+			PrepareRoutes();
 			var availableResolvers = DnsCryptProxyManager.GetAvailableResolvers();
 			var allResolversWithoutFilters = DnsCryptProxyManager.GetAllResolversWithoutFilters();
 			var allResolversWithFilters = new List<AvailableResolver>();
@@ -1100,7 +1115,7 @@ namespace SimpleDnsCrypt.ViewModels
 
 		public bool HasErrors => _validationErrors.Any();
 
-		
+
 		private void ValidateFallbackResolver()
 		{
 			if (string.IsNullOrEmpty(_fallbackResolver))
