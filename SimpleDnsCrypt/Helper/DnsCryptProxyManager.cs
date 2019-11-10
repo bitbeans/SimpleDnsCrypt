@@ -1,18 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.IO;
-using System.Security.AccessControl;
-using System.ServiceProcess;
-using System.Text;
-using System.Threading;
-using Caliburn.Micro;
+﻿using Caliburn.Micro;
 using Microsoft.Win32;
 using Nett;
 using Newtonsoft.Json;
 using SimpleDnsCrypt.Config;
 using SimpleDnsCrypt.Models;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Security.AccessControl;
+using System.ServiceProcess;
+using System.Threading;
 
 namespace SimpleDnsCrypt.Helper
 {
@@ -166,7 +164,8 @@ namespace SimpleDnsCrypt.Helper
 		/// <returns></returns>
 		public static string GetVersion()
 		{
-			var result = ExecuteWithArguments("-version");
+			var dnsCryptProxyExecutablePath = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, Global.DnsCryptProxyExecutableName);
+			var result = ProcessHelper.ExecuteWithArguments(dnsCryptProxyExecutablePath, "-version");
 			return result.Success ? result.StandardOutput.Replace(Environment.NewLine, "") : string.Empty;
 		}
 
@@ -178,7 +177,8 @@ namespace SimpleDnsCrypt.Helper
 		{
 			try
 			{
-				var result = ExecuteWithArguments("-check");
+				var dnsCryptProxyExecutablePath = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, Global.DnsCryptProxyExecutableName);
+				var result = ProcessHelper.ExecuteWithArguments(dnsCryptProxyExecutablePath, "-check");
 				return result.Success;
 			}
 			catch (Exception exception)
@@ -195,7 +195,8 @@ namespace SimpleDnsCrypt.Helper
 		public static List<AvailableResolver> GetAvailableResolvers()
 		{
 			var resolvers = new List<AvailableResolver>();
-			var result = ExecuteWithArguments("-list -json");
+			var dnsCryptProxyExecutablePath = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, Global.DnsCryptProxyExecutableName);
+			var result = ProcessHelper.ExecuteWithArguments(dnsCryptProxyExecutablePath, "-list -json");
 			if (!result.Success) return resolvers;
 			if (string.IsNullOrEmpty(result.StandardOutput)) return resolvers;
 			try
@@ -220,7 +221,8 @@ namespace SimpleDnsCrypt.Helper
 		public static List<AvailableResolver> GetAllResolversWithoutFilters()
 		{
 			var resolvers = new List<AvailableResolver>();
-			var result = ExecuteWithArguments("-list-all -json");
+			var dnsCryptProxyExecutablePath = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, Global.DnsCryptProxyExecutableName);
+			var result = ProcessHelper.ExecuteWithArguments(dnsCryptProxyExecutablePath, "-list-all -json");
 			if (!result.Success) return resolvers;
 			if (string.IsNullOrEmpty(result.StandardOutput)) return resolvers;
 			try
@@ -258,7 +260,8 @@ namespace SimpleDnsCrypt.Helper
 			//clear the array
 			config.server_names = null;
 			Toml.WriteFile(config, tmpToml);
-			var result = ExecuteWithArguments("-config _tmp_.toml -list -json");
+			var dnsCryptProxyExecutablePath = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, Global.DnsCryptProxyExecutableName);
+			var result = ProcessHelper.ExecuteWithArguments(dnsCryptProxyExecutablePath, "-config _tmp_.toml -list -json");
 			if (!result.Success) return resolvers;
 			if (string.IsNullOrEmpty(result.StandardOutput)) return resolvers;
 			try
@@ -290,7 +293,8 @@ namespace SimpleDnsCrypt.Helper
 		/// <returns></returns>
 		public static bool Install()
 		{
-			var result = ExecuteWithArguments("-service install");
+			var dnsCryptProxyExecutablePath = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, Global.DnsCryptProxyExecutableName);
+			var result = ProcessHelper.ExecuteWithArguments(dnsCryptProxyExecutablePath, "-service install");
 			if (result.Success)
 			{
 				return true;
@@ -320,7 +324,8 @@ namespace SimpleDnsCrypt.Helper
 		/// <returns></returns>
 		public static bool Uninstall()
 		{
-			var result = ExecuteWithArguments("-service uninstall");
+			var dnsCryptProxyExecutablePath = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, Global.DnsCryptProxyExecutableName);
+			var result = ProcessHelper.ExecuteWithArguments(dnsCryptProxyExecutablePath, "-service uninstall");
 			try
 			{
 				var eventLogKey = Registry.LocalMachine.OpenSubKey(@"SYSTEM\CurrentControlSet\Services\EventLog\Application\dnscrypt-proxy",
@@ -337,101 +342,6 @@ namespace SimpleDnsCrypt.Helper
 			}
 
 			return result.Success;
-		}
-
-
-		/// <summary>
-		/// 
-		/// </summary>
-		/// <param name="arguments"></param>
-		/// <returns></returns>
-		private static ProcessResult ExecuteWithArguments(string arguments)
-		{
-			var processResult = new ProcessResult();
-			try
-			{
-				var dnsCryptProxyExecutablePath = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder,
-					Global.DnsCryptProxyExecutableName);
-				if (!File.Exists(dnsCryptProxyExecutablePath))
-				{
-					throw new Exception($"Missing {dnsCryptProxyExecutablePath}");
-				}
-
-				const int timeout = 9000;
-				using (var process = new Process())
-				{
-					process.StartInfo.FileName = dnsCryptProxyExecutablePath;
-					process.StartInfo.Arguments = arguments;
-					process.StartInfo.UseShellExecute = false;
-					process.StartInfo.CreateNoWindow = true;
-					process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-					process.StartInfo.RedirectStandardOutput = true;
-					process.StartInfo.RedirectStandardError = true;
-
-					var output = new StringBuilder();
-					var error = new StringBuilder();
-
-					using (var outputWaitHandle = new AutoResetEvent(false))
-					using (var errorWaitHandle = new AutoResetEvent(false))
-					{
-						process.OutputDataReceived += (sender, e) =>
-						{
-							if (e.Data == null)
-							{
-								outputWaitHandle.Set();
-							}
-							else
-							{
-								output.AppendLine(e.Data);
-							}
-						};
-						process.ErrorDataReceived += (sender, e) =>
-						{
-							if (e.Data == null)
-							{
-								errorWaitHandle.Set();
-							}
-							else
-							{
-								error.AppendLine(e.Data);
-							}
-						};
-						process.Start();
-						process.BeginOutputReadLine();
-						process.BeginErrorReadLine();
-						if (process.WaitForExit(timeout) &&
-							outputWaitHandle.WaitOne(timeout) &&
-							errorWaitHandle.WaitOne(timeout))
-						{
-							if (process.ExitCode == 0)
-							{
-								processResult.StandardOutput = output.ToString();
-								processResult.StandardError = error.ToString();
-								processResult.Success = true;
-							}
-							else
-							{
-								processResult.StandardOutput = output.ToString();
-								processResult.StandardError = error.ToString();
-								Log.Warn(processResult.StandardError);
-								processResult.Success = false;
-							}
-						}
-						else
-						{
-							// Timed out.
-							throw new Exception("Timed out");
-						}
-					}
-				}
-			}
-			catch (Exception exception)
-			{
-				Log.Error(exception);
-				processResult.StandardError = exception.Message;
-				processResult.Success = false;
-			}
-			return processResult;
 		}
 	}
 }

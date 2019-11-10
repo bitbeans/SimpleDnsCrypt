@@ -1,12 +1,11 @@
-﻿using Microsoft.Win32;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Net.NetworkInformation;
-using Caliburn.Micro;
+﻿using Caliburn.Micro;
+using Microsoft.Win32;
 using SimpleDnsCrypt.Config;
 using SimpleDnsCrypt.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.NetworkInformation;
 
 namespace SimpleDnsCrypt.Helper
 {
@@ -167,51 +166,63 @@ namespace SimpleDnsCrypt.Helper
 				{
 					dnsServers = new List<DnsServer>();
 				}
-				using (var process = new Process())
+
+				var delete4 = ProcessHelper.ExecuteWithArguments("netsh", "interface ipv4 delete dns \"" + localNetworkInterface.Name + "\" all");
+				if (delete4 != null)
 				{
-					var processStartInfoV4 = new ProcessStartInfo("netsh",
-						"interface ipv4 delete dns \"" + localNetworkInterface.Name + "\" all")
+					if (!delete4.Success)
 					{
-						WindowStyle = ProcessWindowStyle.Hidden,
-						CreateNoWindow = true
-					};
-					process.StartInfo = processStartInfoV4;
-					process.Start();
+						Log.Warn("failed to delete DNS (IPv4)");
+					}
+				}
+				else
+				{
+					Log.Warn("failed to delete DNS (IPv4)");
+				}
 
-
-					var processStartInfoV6 = new ProcessStartInfo("netsh",
-						"interface ipv6 delete dns \"" + localNetworkInterface.Name + "\" all")
+				var delete6 = ProcessHelper.ExecuteWithArguments("netsh", "interface ipv6 delete dns \"" + localNetworkInterface.Name + "\" all");
+				if (delete6 != null)
+				{
+					if (!delete6.Success)
 					{
-						WindowStyle = ProcessWindowStyle.Hidden,
-						CreateNoWindow = true
-					};
-					process.StartInfo = processStartInfoV6;
-					process.Start();
+						Log.Warn("failed to delete DNS (IPv6)");
+					}
+				}
+				else
+				{
+					Log.Warn("failed to delete DNS (IPv6)");
+				}
 
-
-					foreach (var dnsServer in dnsServers)
+				foreach (var dnsServer in dnsServers)
+				{
+					if (dnsServer.Type == NetworkInterfaceComponent.IPv4)
 					{
-						if (dnsServer.Type == NetworkInterfaceComponent.IPv4)
+						var add4 = ProcessHelper.ExecuteWithArguments("netsh", "interface ipv4 add dns \"" + localNetworkInterface.Name + "\" " + dnsServer.Address + " validate=no");
+						if (add4 != null)
 						{
-							var processStartInfo = new ProcessStartInfo("netsh",
-								"interface ipv4 add dns \"" + localNetworkInterface.Name + "\" " + dnsServer.Address + " validate=no")
+							if (!add4.Success)
 							{
-								WindowStyle = ProcessWindowStyle.Hidden,
-								CreateNoWindow = true
-							};
-							process.StartInfo = processStartInfo;
-							process.Start();
+								Log.Warn("failed to add DNS (IPv4)");
+							}
 						}
 						else
 						{
-							var processStartInfo = new ProcessStartInfo("netsh",
-								"interface ipv6 add dns \"" + localNetworkInterface.Name + "\" " + dnsServer.Address + " validate=no")
+							Log.Warn("failed to add DNS (IPv4)");
+						}
+					}
+					else
+					{
+						var add6 = ProcessHelper.ExecuteWithArguments("netsh", "interface ipv6 add dns \"" + localNetworkInterface.Name + "\" " + dnsServer.Address + " validate=no");
+						if (add6 != null)
+						{
+							if (!add6.Success)
 							{
-								WindowStyle = ProcessWindowStyle.Hidden,
-								CreateNoWindow = true
-							};
-							process.StartInfo = processStartInfo;
-							process.Start();
+								Log.Warn("failed to add DNS (IPv6)");
+							}
+						}
+						else
+						{
+							Log.Warn("failed to add DNS (IPv6)");
 						}
 					}
 				}
