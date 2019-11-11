@@ -4,6 +4,13 @@ using Newtonsoft.Json;
 
 namespace SimpleDnsCrypt.Models
 {
+	public enum RouteState
+	{
+		Empty = 0,
+		Invalid = 1,
+		Valid = 2
+	}
+
 	public class AvailableResolver : PropertyChangedBase
 	{
 		private bool _isInServerList;
@@ -15,6 +22,8 @@ namespace SimpleDnsCrypt.Models
 		private string _description;
 		private bool _ipv6;
 		private List<int> _ports;
+		private Route _route;
+		private RouteState _routeState;
 
 		[JsonIgnore]
 		public string ToolTip => $"Ports: {string.Join(",", _ports.ToArray())}";
@@ -29,6 +38,28 @@ namespace SimpleDnsCrypt.Models
 			{
 				_isInServerList = value;
 				NotifyOfPropertyChange(() => IsInServerList);
+			}
+		}
+
+		[JsonIgnore]
+		public RouteState RouteState
+		{
+			get => _routeState;
+			set
+			{
+				_routeState = value;
+				NotifyOfPropertyChange(() => RouteState);
+			}
+		}
+
+		[JsonIgnore]
+		public Route Route
+		{
+			get => _route;
+			set
+			{
+				_route = value;
+				NotifyOfPropertyChange(() => Route);
 			}
 		}
 

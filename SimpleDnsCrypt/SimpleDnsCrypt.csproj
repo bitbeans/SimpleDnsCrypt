@@ -103,8 +103,10 @@
     <Compile Include="Converters\LicenseLinkToVisibilityConverter.cs" />
     <Compile Include="Converters\LocalDateConverter.cs" />
     <Compile Include="Converters\MessageBoxTypeToColor.cs" />
+    <Compile Include="Converters\ProtocolToVisibilityConverter.cs" />
     <Compile Include="Converters\QueryLogTypeToColorConverter.cs" />
     <Compile Include="Converters\ReverseBoolToEnabledConverter.cs" />
+    <Compile Include="Converters\RouteStateToColorConverter.cs" />
     <Compile Include="Converters\ServerListBackgroundConverter.cs" />
     <Compile Include="Converters\TextLengthToFontSizeConverter.cs" />
     <Compile Include="Converters\UninstallToEnableConverter.cs" />
@@ -531,7 +533,7 @@
       <Version>4.6.8</Version>
     </PackageReference>
     <PackageReference Include="WPFLocalizeExtension">
-      <Version>3.3.1</Version>
+      <Version>3.4.0-alpha0039</Version>
     </PackageReference>
     <PackageReference Include="XAMLMarkupExtensions">
       <Version>1.6.0</Version>

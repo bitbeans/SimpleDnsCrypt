@@ -1,4 +1,5 @@
 using Caliburn.Micro;
+using DnsCrypt.Models;
 using SimpleDnsCrypt.Config;
 using SimpleDnsCrypt.Extensions;
 using SimpleDnsCrypt.Helper;
@@ -61,6 +62,7 @@ namespace SimpleDnsCrypt.ViewModels
 		private QueryLogViewModel _queryLogViewModel;
 
 		private BindableCollection<AvailableResolver> _resolvers;
+		private BindableCollection<StampFileEntry> _relays;
 		private Language _selectedLanguage;
 		private int _selectedTabIndex;
 
@@ -102,6 +104,7 @@ namespace SimpleDnsCrypt.ViewModels
 			_addressBlacklistViewModel = new AddressBlacklistViewModel(_windowManager, _events);
 			_cloakAndForwardViewModel = new CloakAndForwardViewModel(_windowManager, _events);
 			_resolvers = new BindableCollection<AvailableResolver>();
+			_relays = new BindableCollection<StampFileEntry>();
 		}
 
 		public Tabs SelectedTab { get; set; }
@@ -934,18 +937,32 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 		}
 
+		public void HandleManageRoutes(AvailableResolver availableResolver)
+		{
+			if (availableResolver != null)
+			{
+				if (availableResolver.Protocol.Equals("DNSCrypt"))
+				{
+					if (availableResolver.Route != null)
+					{
+						//TODO: edit
+					}
+					else
+					{
+						//TODO: add?/remove?
+					}
+				}
+			}
+		}
+
 		private void PrepareRoutes()
 		{
 			//anonymized_dns
+			_relays.Clear();
 			var relays = RelayHelper.GetRelays();
 			if (relays != null && relays.Count > 0)
 			{
-				var availableResolvers = DnsCryptProxyManager.GetAvailableResolvers();
-				var onlyDnsCryptServers = availableResolvers.Where(s => s.Protocol.Equals("DNSCrypt"));
-				if (onlyDnsCryptServers.Count() > 0)
-				{
-
-				}
+				_relays.AddRange(relays);
 			}
 		}
 
@@ -1000,6 +1017,38 @@ namespace SimpleDnsCrypt.ViewModels
 				{
 					if (!r.Name.Equals(resolver.Name)) continue;
 					first = r;
+					//TODO: optimize
+					if (_dnscryptProxyConfiguration.anonymized_dns != null)
+					{
+						if (_dnscryptProxyConfiguration.anonymized_dns.routes != null)
+						{
+							if (_dnscryptProxyConfiguration.anonymized_dns.routes.Count > 0)
+							{
+								var route = _dnscryptProxyConfiguration.anonymized_dns.routes.Where(re => re.server_name.Equals(resolver.Name)).FirstOrDefault();
+								if (route != null)
+								{
+									first.Route = route;
+									if (_relays != null && _relays.Count > 0)
+									{
+										var relays = _relays.Select(x => x.Name).ToList();
+										var valid = first.Route.via.Intersect(relays).Count() == first.Route.via.Count();
+										if (valid)
+										{
+											first.RouteState = RouteState.Valid;
+										}
+										else
+										{
+											first.RouteState = RouteState.Invalid;
+										}
+									}
+									else
+									{
+										first.RouteState = RouteState.Invalid;
+									}
+								}
+							}
+						}
+					}
 					break;
 				}
 

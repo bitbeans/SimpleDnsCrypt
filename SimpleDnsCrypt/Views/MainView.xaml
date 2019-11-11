@@ -7,6 +7,7 @@
              xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
              xmlns:converters="clr-namespace:SimpleDnsCrypt.Converters"
              xmlns:customControls="clr-namespace:SimpleDnsCrypt.Controls"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              lex:LocalizeDictionary.DesignCulture="en"
              lex:LocalizeDictionary.OutputMissingKeys="False"
              lex:ResxLocalizationProvider.DefaultAssembly="SimpleDnsCrypt"
@@ -33,6 +34,8 @@
             <converters:IntegerToVisibilityConverter x:Key="IntegerToVisibilityConverter" />
             <converters:HeightConverter x:Key="HeightConverter" />
             <converters:UninstallToEnableConverter x:Key="UninstallToEnableConverter" />
+            <converters:ProtocolToVisibilityConverter x:Key="ProtocolToVisibilityConverter" />
+            <converters:RouteStateToColorConverter x:Key="RouteStateToColorConverter" />
         </ResourceDictionary>
     </UserControl.Resources>
     <Grid Background="#198AB328">
@@ -512,35 +515,44 @@
                                                                         <RowDefinition />
                                                                     </Grid.RowDefinitions>
                                                                     <Grid.ColumnDefinitions>
-                                                                        <ColumnDefinition/>
-                                                                        <ColumnDefinition/>
+                                                                        <ColumnDefinition Width="30"/>
+                                                                        <ColumnDefinition Width="*"/>
                                                                     </Grid.ColumnDefinitions>
-                                                                    <TextBlock FontWeight="Bold" Foreground="White"
-                                                                               Margin="5,2" Grid.Row="0" Grid.Column="0"
-                                                                               Text="{Binding DisplayName}" />
-
-                                                                    <Button Grid.Row="0" Grid.Column="1"
-                                                                    Background="White"
-                                                                    Width="30"
-                                                                    Height="30"
-                                                                    Cursor="Hand"
-                                                                    HorizontalContentAlignment="Center"
-                                                                    VerticalContentAlignment="Center"
-                                                                    BorderBrush="{DynamicResource AccentColorBrush}"
-                                                                    FocusVisualStyle="{DynamicResource MahApps.Metro.Styles.MetroCircleFocusVisual}"
-                                                                    Style="{DynamicResource MahApps.Metro.Styles.MetroCircleButtonStyle}"
-                                                                    Margin="5,0,0,0">
+                                                                    <TextBlock  Foreground="White"
+                                                                               Margin="5,2" Grid.Row="0" Grid.Column="1"
+                                                                               Text="{Binding DisplayName}" HorizontalAlignment="Right" />
+                                                                    <Button Grid.Row="0" Grid.Column="0"
+                                                                            Visibility="{Binding Protocol, Converter={StaticResource ProtocolToVisibilityConverter}}"
+                                                                            Background="White"
+                                                                            Width="20"
+                                                                            Height="20"
+                                                                            Cursor="Hand"
+                                                                            HorizontalContentAlignment="Center"
+                                                                            VerticalContentAlignment="Center"
+                                                                            BorderBrush="{Binding RouteState, Converter={StaticResource RouteStateToColorConverter}}"
+                                                                            FocusVisualStyle="{DynamicResource MahApps.Metro.Styles.MetroCircleFocusVisual}"
+                                                                            Style="{DynamicResource MahApps.Metro.Styles.MetroCircleButtonStyle}"
+                                                                            Margin="5,2,0,2" HorizontalAlignment="Left" VerticalAlignment="Top">
                                                                         <iconPacks:PackIconMaterial
-                                                                    Kind="Shuffle"
-                                                                    Width="15"
-                                                                    Height="15"
-                                                                    HorizontalContentAlignment="Center"
-                                                                    VerticalContentAlignment="Center"
-                                                                    Foreground="{DynamicResource AccentColorBrush}" />
+                                                                            Kind="Shuffle"
+                                                                            Width="10"
+                                                                            Height="10"
+                                                                            HorizontalContentAlignment="Center"
+                                                                            VerticalContentAlignment="Center" >
+                                                                            <iconPacks:PackIconMaterial.Foreground>
+                                                                                <SolidColorBrush Color="{Binding RouteState, Converter={StaticResource RouteStateToColorConverter}}"/>
+                                                                            </iconPacks:PackIconMaterial.Foreground>
+                                                                        </iconPacks:PackIconMaterial>
                                                                         <Button.ToolTip>
-                                                                            <Label Content="configure routes"
-                                                                       FontWeight="DemiBold" />
+                                                                            <Label Content="configure routes" FontWeight="DemiBold" />
                                                                         </Button.ToolTip>
+                                                                        <i:Interaction.Triggers>
+                                                                            <i:EventTrigger EventName="Click">
+                                                                                <cal:ActionMessage MethodName="HandleManageRoutes">
+                                                                                    <cal:Parameter Value="{Binding}" />
+                                                                                </cal:ActionMessage>
+                                                                            </i:EventTrigger>
+                                                                        </i:Interaction.Triggers>
                                                                     </Button>
                                                                     <TextBlock Foreground="White" Margin="5,2"
                                                                                Grid.ColumnSpan="2"
