@@ -47,6 +47,11 @@ namespace SimpleDnsCrypt.ViewModels
 		private DomainBlacklistViewModel _domainBlacklistViewModel;
 		private DomainBlockLogViewModel _domainBlockLogViewModel;
 		private CloakAndForwardViewModel _cloakAndForwardViewModel;
+		private SettingsViewModel _settingsViewModel;
+		private QueryLogViewModel _queryLogViewModel;
+		private ListenAddressesViewModel _listenAddressesViewModel;
+		private RouteViewModel _routeViewModel;
+		private ProxiesViewModel _proxiesViewModel;
 		private bool _isDnsCryptAutomaticModeEnabled;
 		private bool _isOperatingAsGlobalResolver;
 		private bool _isResolverRunning;
@@ -54,21 +59,16 @@ namespace SimpleDnsCrypt.ViewModels
 		private bool _isSavingConfiguration;
 		private bool _isUninstallingService;
 		private bool _isWorkingOnService;
+
 		private ObservableCollection<Language> _languages;
 
 		private BindableCollection<LocalNetworkInterface> _localNetworkInterfaces =
 			new BindableCollection<LocalNetworkInterface>();
-
-		private QueryLogViewModel _queryLogViewModel;
-
 		private BindableCollection<AvailableResolver> _resolvers;
 		private BindableCollection<StampFileEntry> _relays;
 		private Language _selectedLanguage;
 		private int _selectedTabIndex;
 
-		private SettingsViewModel _settingsViewModel;
-		private ListenAddressesViewModel _listenAddressesViewModel;
-		private ProxiesViewModel _proxiesViewModel;
 		private bool _showHiddenCards;
 		private string _windowTitle;
 
@@ -96,6 +96,7 @@ namespace SimpleDnsCrypt.ViewModels
 			};
 			_settingsViewModel.PropertyChanged += SettingsViewModelOnPropertyChanged;
 			_listenAddressesViewModel = new ListenAddressesViewModel(_windowManager, _events);
+			_routeViewModel = new RouteViewModel(_windowManager);
 			_proxiesViewModel = new ProxiesViewModel(_windowManager, _events);
 			_queryLogViewModel = new QueryLogViewModel(_windowManager, _events);
 			_domainBlockLogViewModel = new DomainBlockLogViewModel(_windowManager, _events);
@@ -237,6 +238,17 @@ namespace SimpleDnsCrypt.ViewModels
 				if (value.Equals(_listenAddressesViewModel)) return;
 				_listenAddressesViewModel = value;
 				NotifyOfPropertyChange(() => ListenAddressesViewModel);
+			}
+		}
+
+		public RouteViewModel RouteViewModel
+		{
+			get => _routeViewModel;
+			set
+			{
+				if (value.Equals(_routeViewModel)) return;
+				_routeViewModel = value;
+				NotifyOfPropertyChange(() => RouteViewModel);
 			}
 		}
 
@@ -937,19 +949,31 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 		}
 
-		public void HandleManageRoutes(AvailableResolver availableResolver)
+		public async void HandleManageRoutes(AvailableResolver availableResolver)
 		{
 			if (availableResolver != null)
 			{
 				if (availableResolver.Protocol.Equals("DNSCrypt"))
 				{
-					if (availableResolver.Route != null)
+					dynamic settings = new ExpandoObject();
+					settings.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+					RouteViewModel.WindowTitle = "Route";
+					RouteViewModel.Resolver = availableResolver;
+					RouteViewModel.Relays = _relays;
+					var result = _windowManager.ShowDialog(RouteViewModel, null, settings);
+					if (result) return;
+
+					if (availableResolver.Route == null)
 					{
-						//TODO: edit
+						//removed route
+						await Task.Delay(1000).ConfigureAwait(false);
+						//TODO: implement, update config and restart service
 					}
-					else
+					if (availableResolver.Route != RouteViewModel.Resolver.Route)
 					{
-						//TODO: add?/remove?
+						//changed or added
+						await Task.Delay(1000).ConfigureAwait(false);
+						//TODO: implement, update config and restart service
 					}
 				}
 			}
