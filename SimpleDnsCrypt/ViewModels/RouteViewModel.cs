@@ -1,18 +1,20 @@
 ﻿using Caliburn.Micro;
 using DnsCrypt.Models;
+using GongSolutions.Wpf.DragDrop;
 using SimpleDnsCrypt.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.Composition;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Windows;
 
 namespace SimpleDnsCrypt.ViewModels
 {
 	[Export(typeof(RouteViewModel))]
-	public class RouteViewModel : Screen
+	public class RouteViewModel : Screen, IDropTarget
 	{
 		private readonly IWindowManager _windowManager;
 		private string _windowTitle;
@@ -52,5 +54,25 @@ namespace SimpleDnsCrypt.ViewModels
 		}
 
 		public BindableCollection<StampFileEntry> Relays { get; internal set; }
+
+		//Test
+		void IDropTarget.DragOver(IDropInfo dropInfo)
+		{
+			RouteViewModel sourceItem = dropInfo.Data as RouteViewModel;
+			RouteViewModel targetItem = dropInfo.TargetItem as RouteViewModel;
+
+			if (sourceItem != null && targetItem != null)
+			{
+
+			}
+		}
+
+		void IDropTarget.Drop(IDropInfo dropInfo)
+		{
+			RouteViewModel sourceItem = dropInfo.Data as RouteViewModel;
+			RouteViewModel targetItem = dropInfo.TargetItem as RouteViewModel;
+
+		}
 	}
+
 }

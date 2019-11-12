@@ -8,6 +8,7 @@
              xmlns:cal="http://www.caliburnproject.org"
              xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
              xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:dd="urn:gong-wpf-dragdrop"
              mc:Ignorable="d"
              Height="Auto" Width="450"
              lex:LocalizeDictionary.DesignCulture="en"
@@ -46,8 +47,13 @@
                     </TextBlock>
                 </StackPanel>
                 <TextBlock Text="{Binding Resolver.DisplayName}"></TextBlock>
-                <ListBox ItemsSource="{Binding Resolver.Route.via}"></ListBox>
-                <ListBox ItemsSource="{Binding Relays}" DisplayMemberPath="Name"></ListBox>
+                <ListBox dd:DragDrop.IsDropTarget="True"
+                         dd:DragDrop.DropHandler="{Binding}" 
+                         ItemsSource="{Binding Resolver.Route.via}"></ListBox>
+                <ListBox 
+                    dd:DragDrop.IsDragSource="True"
+                    ItemsSource="{Binding Relays}" 
+                    DisplayMemberPath="Name"></ListBox>
             </StackPanel>
         </Border>
     </Grid>
