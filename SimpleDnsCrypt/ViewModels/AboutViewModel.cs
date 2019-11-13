@@ -294,6 +294,16 @@ namespace SimpleDnsCrypt.ViewModels
 							LinkText = LocalizationEx.GetUiString("about_view_on_github", Thread.CurrentThread.CurrentCulture),
 							LinkUri = new Uri("https://github.com/punker76/MahApps.Metro.SimpleChildWindow")
 						}
+					},
+					new License
+					{
+						LicenseHeaderText = "gong-wpf-dragdrop",
+						LicenseText = await LoadLicense("gong-wpf-dragdrop.txt").ConfigureAwait(false),
+						LicenseCodeLink = new LicenseLink
+						{
+							LinkText = LocalizationEx.GetUiString("about_view_on_github", Thread.CurrentThread.CurrentCulture),
+							LinkUri = new Uri("https://github.com/punker76/gong-wpf-dragdrop")
+						}
 					}
 				};
 				var orderedList = tmpList.OrderBy(l => l.LicenseHeaderText);

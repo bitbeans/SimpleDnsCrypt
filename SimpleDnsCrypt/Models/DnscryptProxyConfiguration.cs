@@ -752,15 +752,15 @@ namespace SimpleDnsCrypt.Models
 			}
 		}
 
-		private List<string> _via;
+		private ObservableCollection<string> _via;
 
-		public List<string> via
+		public ObservableCollection<string> via
 		{
 			get => _via;
 			set
 			{
 				_via = value;
-				NotifyOfPropertyChange(() => _via);
+				NotifyOfPropertyChange(() => via);
 			}
 		}
 	}

@@ -472,6 +472,7 @@
   <ItemGroup>
     <Content Include="DNSx64\dnscrypt-proxy.exe" />
     <Content Include="DNSx86\dnscrypt-proxy.exe" />
+    <EmbeddedResource Include="Resources\Licenses\gong-wpf-dragdrop.txt" />
     <EmbeddedResource Include="Resources\Licenses\MahApps.Metro.SimpleChildWindow.txt" />
     <EmbeddedResource Include="Resources\Licenses\Hardcodet.NotifyIcon.txt" />
     <EmbeddedResource Include="Resources\Licenses\NLog.txt" />

@@ -544,7 +544,7 @@
                                                                             </iconPacks:PackIconMaterial.Foreground>
                                                                         </iconPacks:PackIconMaterial>
                                                                         <Button.ToolTip>
-                                                                            <Label Content="configure routes" FontWeight="DemiBold" />
+                                                                            <Label Content="{Binding RouteStateText}" FontWeight="DemiBold" />
                                                                         </Button.ToolTip>
                                                                         <i:Interaction.Triggers>
                                                                             <i:EventTrigger EventName="Click">

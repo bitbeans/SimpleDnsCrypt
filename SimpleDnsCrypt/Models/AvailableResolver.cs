@@ -53,6 +53,25 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		[JsonIgnore]
+		public string RouteStateText
+		{
+			get
+			{
+				switch (RouteState)
+				{
+					case RouteState.Empty:
+						return "configure routes (add)";
+					case RouteState.Invalid:
+						return "configure routes (invalid entries)";
+					case RouteState.Valid:
+						return "configure routes (change)";
+					default:
+						return "configure routes (unknown)";
+				}
+			}
+		}
+
+		[JsonIgnore]
 		public Route Route
 		{
 			get => _route;

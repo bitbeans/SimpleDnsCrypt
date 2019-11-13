@@ -1,14 +1,9 @@
 ﻿using Caliburn.Micro;
 using DnsCrypt.Models;
 using GongSolutions.Wpf.DragDrop;
-using SimpleDnsCrypt.Models;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel.Composition;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace SimpleDnsCrypt.ViewModels
@@ -16,18 +11,12 @@ namespace SimpleDnsCrypt.ViewModels
 	[Export(typeof(RouteViewModel))]
 	public class RouteViewModel : Screen, IDropTarget
 	{
-		private readonly IWindowManager _windowManager;
 		private string _windowTitle;
-		private AvailableResolver _resolver;
-
-		public RouteViewModel()
-		{
-		}
+		private string _resolver;
 
 		[ImportingConstructor]
-		public RouteViewModel(IWindowManager windowManager)
+		public RouteViewModel()
 		{
-			_windowManager = windowManager;
 		}
 
 		/// <summary>
@@ -43,7 +32,7 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 		}
 
-		public AvailableResolver Resolver
+		public string Resolver
 		{
 			get => _resolver;
 			set
@@ -53,26 +42,42 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 		}
 
+		private ObservableCollection<StampFileEntry> _route;
+
+		public ObservableCollection<StampFileEntry> Route
+		{
+			get => _route;
+			set
+			{
+				_route = value;
+				NotifyOfPropertyChange(() => Route);
+			}
+		}
+
 		public BindableCollection<StampFileEntry> Relays { get; internal set; }
 
-		//Test
+		public void Remove(StampFileEntry stampFileEntry)
+		{
+			if (stampFileEntry != null)
+			{
+				Route.Remove(stampFileEntry);
+			}
+		}
+
 		void IDropTarget.DragOver(IDropInfo dropInfo)
 		{
-			RouteViewModel sourceItem = dropInfo.Data as RouteViewModel;
-			RouteViewModel targetItem = dropInfo.TargetItem as RouteViewModel;
-
-			if (sourceItem != null && targetItem != null)
+			if (dropInfo.Data is StampFileEntry && dropInfo.TargetItem is StampFileEntry || dropInfo.TargetItem is null)
 			{
-
+				dropInfo.DropTargetAdorner = DropTargetAdorners.Highlight;
+				dropInfo.Effects = DragDropEffects.Move;
 			}
 		}
 
 		void IDropTarget.Drop(IDropInfo dropInfo)
 		{
-			RouteViewModel sourceItem = dropInfo.Data as RouteViewModel;
-			RouteViewModel targetItem = dropInfo.TargetItem as RouteViewModel;
-
+			var stampFileEntry = (StampFileEntry)dropInfo.Data;
+			if (Route.Where(s => s.Name.Equals(stampFileEntry.Name)).FirstOrDefault() != null) return;
+			Route.Add(stampFileEntry);
 		}
 	}
-
 }

@@ -96,7 +96,7 @@ namespace SimpleDnsCrypt.ViewModels
 			};
 			_settingsViewModel.PropertyChanged += SettingsViewModelOnPropertyChanged;
 			_listenAddressesViewModel = new ListenAddressesViewModel(_windowManager, _events);
-			_routeViewModel = new RouteViewModel(_windowManager);
+			_routeViewModel = new RouteViewModel();
 			_proxiesViewModel = new ProxiesViewModel(_windowManager, _events);
 			_queryLogViewModel = new QueryLogViewModel(_windowManager, _events);
 			_domainBlockLogViewModel = new DomainBlockLogViewModel(_windowManager, _events);
@@ -949,33 +949,114 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 		}
 
-		public async void HandleManageRoutes(AvailableResolver availableResolver)
+		public void HandleManageRoutes(AvailableResolver availableResolver)
 		{
-			if (availableResolver != null)
+			//TODO: optimize
+			try
 			{
-				if (availableResolver.Protocol.Equals("DNSCrypt"))
+				if (availableResolver != null)
 				{
-					dynamic settings = new ExpandoObject();
-					settings.WindowStartupLocation = WindowStartupLocation.CenterOwner;
-					RouteViewModel.WindowTitle = "Route";
-					RouteViewModel.Resolver = availableResolver;
-					RouteViewModel.Relays = _relays;
-					var result = _windowManager.ShowDialog(RouteViewModel, null, settings);
-					if (result) return;
+					if (availableResolver.Protocol.Equals("DNSCrypt"))
+					{
+						dynamic settings = new ExpandoObject();
+						settings.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+						RouteViewModel.WindowTitle = "Route (preview)";
+						RouteViewModel.Route = new ObservableCollection<StampFileEntry>();
+						if (availableResolver.Route != null)
+						{
+							if (availableResolver.Route.via != null)
+							{
+								for (var v = 0; v < availableResolver.Route.via.Count; v++)
+								{
+									var stampFileEntry = _relays.Where(r => r.Name.Equals(availableResolver.Route.via[v])).FirstOrDefault();
+									if (stampFileEntry != null)
+									{
+										//add only entries that are present in relays
+										RouteViewModel.Route.Add(stampFileEntry);
+									}
+									else
+									{
+										//remove non-existent relays from route
+										availableResolver.Route.via.RemoveAt(v);
+									}
+								}
+							}
+						}
+						RouteViewModel.Relays = _relays;
+						RouteViewModel.Resolver = availableResolver.DisplayName;
+						var result = _windowManager.ShowDialog(RouteViewModel, null, settings);
+						if (result) return;
 
-					if (availableResolver.Route == null)
-					{
-						//removed route
-						await Task.Delay(1000).ConfigureAwait(false);
-						//TODO: implement, update config and restart service
-					}
-					if (availableResolver.Route != RouteViewModel.Resolver.Route)
-					{
-						//changed or added
-						await Task.Delay(1000).ConfigureAwait(false);
-						//TODO: implement, update config and restart service
+						if (RouteViewModel.Route.Count() == 0)
+						{
+							//remove route
+							if (availableResolver.Route != null)
+							{
+								var oldRoute = _dnscryptProxyConfiguration.anonymized_dns.routes.FindIndex(r => r.server_name.Equals(availableResolver.Route.server_name));
+								if (oldRoute != -1)
+								{
+									_dnscryptProxyConfiguration.anonymized_dns.routes.RemoveAt(oldRoute);
+								}
+								SaveDnsCryptConfiguration();
+								LoadResolvers();
+							}
+						}
+						else
+						{
+							var oldRoute = -1;
+							if (availableResolver.Route != null && !string.IsNullOrEmpty(availableResolver.Route.server_name))
+							{
+								oldRoute = _dnscryptProxyConfiguration.anonymized_dns.routes.FindIndex(r => r.server_name.Equals(availableResolver.Route.server_name));
+							}
+							if (oldRoute != -1)
+							{
+								//update
+								_dnscryptProxyConfiguration.anonymized_dns.routes[oldRoute].via = new ObservableCollection<string>();
+								foreach (var stampFileEntry in RouteViewModel.Route)
+								{
+									if (_dnscryptProxyConfiguration.anonymized_dns.routes[oldRoute].via == null)
+									{
+										_dnscryptProxyConfiguration.anonymized_dns.routes[oldRoute].via = new ObservableCollection<string>();
+									}
+									_dnscryptProxyConfiguration.anonymized_dns.routes[oldRoute].via.Add(stampFileEntry.Name);
+								}
+							}
+							else
+							{
+								//create
+								var newRoute = new Route
+								{
+									server_name = availableResolver.Name,
+									via = new ObservableCollection<string>()
+								};
+								foreach (var stampFileEntry in RouteViewModel.Route)
+								{
+									newRoute.via.Add(stampFileEntry.Name);
+								}
+
+								if (_dnscryptProxyConfiguration.anonymized_dns == null)
+								{
+									_dnscryptProxyConfiguration.anonymized_dns = new AnonymizedDns();
+								}
+								if (_dnscryptProxyConfiguration.anonymized_dns.routes == null)
+								{
+									_dnscryptProxyConfiguration.anonymized_dns.routes = new List<Route>();
+								}
+								_dnscryptProxyConfiguration.anonymized_dns.routes.Add(newRoute);
+							}
+							SaveDnsCryptConfiguration();
+							LoadResolvers();
+						}
 					}
 				}
+			}
+			catch (Exception exception)
+			{
+				Log.Error(exception);
+			}
+			finally
+			{
+				IsWorkingOnService = false;
 			}
 		}
 
@@ -1082,9 +1163,13 @@ namespace SimpleDnsCrypt.ViewModels
 			_resolvers.Clear();
 
 			if (_isDnsCryptAutomaticModeEnabled)
+			{
 				foreach (var resolver in allResolversWithFilters)
+				{
 					resolver.IsInServerList = false;
-			_resolvers.AddRange(allResolversWithFilters);
+				}
+			}
+			_resolvers.AddRange(allResolversWithFilters.OrderBy(o => o.DisplayName));
 		}
 
 		#endregion
