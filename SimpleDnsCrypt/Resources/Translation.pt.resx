@@ -584,7 +584,7 @@
     <value>Fazer cópia de segurança e restaurar a configuração do DNSCrypt ao atualizar</value>
   </data>
   <data name="tabitem_cloakandforward" xml:space="preserve">
-    <value>Encobrir e fazer forward</value>
+    <value>Encobrir e reenviar</value>
   </data>
   <data name="cloaking" xml:space="preserve">
     <value>Encobrimento</value>
@@ -620,31 +620,31 @@
     <value>Destino da regra (ex.: forcesafesearch.google.com)</value>
   </data>
   <data name="forwarding" xml:space="preserve">
-    <value>Forwarding</value>
+    <value>Reenvio</value>
   </data>
   <data name="forwarding_path" xml:space="preserve">
-    <value>Regras de forwarding:</value>
+    <value>Regras de reenvio:</value>
   </data>
   <data name="forwarding_rules_header" xml:space="preserve">
-    <value>Regras de forwarding</value>
+    <value>Regras de reenvio</value>
   </data>
   <data name="forwarding_rules_sub_header" xml:space="preserve">
-    <value>(regras ativas de forwarding)</value>
+    <value>(regras ativas de reenvio)</value>
   </data>
   <data name="button_forwarding_add" xml:space="preserve">
-    <value>Adicionar nova regra de forwarding</value>
+    <value>Adicionar nova regra de reenvio</value>
   </data>
   <data name="button_forwarding_remove" xml:space="preserve">
-    <value>Remover regra selecionada de forwarding</value>
+    <value>Remover regra selecionada de reenvio</value>
   </data>
   <data name="button_forwarding_import" xml:space="preserve">
-    <value>Importar regras existentes de forwarding</value>
+    <value>Importar regras existentes de reenvio</value>
   </data>
   <data name="button_forwarding_export" xml:space="preserve">
-    <value>Exportar regras de forwarding</value>
+    <value>Exportar regras de reenvio</value>
   </data>
   <data name="rule_window_forwarding_header" xml:space="preserve">
-    <value>Adicionar nova regra de forwarding</value>
+    <value>Adicionar nova regra de reenvio</value>
   </data>
   <data name="rule_window_forwarding_key_text" xml:space="preserve">
     <value>Origem da regra (ex.: exemplo.com)</value>
@@ -659,6 +659,27 @@
     <value>Abortar</value>
   </data>
   <data name="settings_cloak_and_forward" xml:space="preserve">
-    <value>Mostrar separador &quot;Encobrir e fazer forward&quot;</value>
+    <value>Mostrar separador &quot;Encobrir e reenviar&quot;</value>
+  </data>
+  <data name="route_window_title" xml:space="preserve">
+    <value>Route (Anonymized DNS)</value>
+  </data>
+  <data name="route_via" xml:space="preserve">
+    <value>via following relay(s):</value>
+  </data>
+  <data name="route_drag_from_relays" xml:space="preserve">
+    <value>Drag &amp; Drop from available relays</value>
+  </data>
+  <data name="configure_routes_add" xml:space="preserve">
+    <value>Add route</value>
+  </data>
+  <data name="configure_routes_invalid" xml:space="preserve">
+    <value>Change route (invalid entries)</value>
+  </data>
+  <data name="configure_routes_change" xml:space="preserve">
+    <value>Change route</value>
+  </data>
+  <data name="configure_routes_unknown" xml:space="preserve">
+    <value>Change route (unknown status)</value>
   </data>
 </root>
