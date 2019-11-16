@@ -352,7 +352,7 @@
     <value>Режим DNSCrypt</value>
   </data>
   <data name="resolvers_dnscrypt_mode_description" xml:space="preserve">
-    <value>In automatic mode, all available servers are used. dnscrypt-proxy automatically selects the fastest resolvers.</value>
+    <value>У автоматичному режимі використовуються всі доступні сервери. dnscrypt-proxy автоматично вибирає найшвидший резольвер.</value>
   </data>
   <data name="resolvers_dnscrypt_automatic_mode" xml:space="preserve">
     <value>Автоматичний режим</value>
@@ -454,82 +454,84 @@
     <value>Створіть чорний список dnscrypt-proxy</value>
   </data>
   <data name="button_blacklist_import" xml:space="preserve">
-    <value>Import existing blacklist rules</value>
+    <value>Імпортувати існуючі правила чорного списку</value>
   </data>
   <data name="button_blacklist_export" xml:space="preserve">
-    <value>Export blacklist rules</value>
+    <value>Експортувати правила чорного списку</value>
   </data>
   <data name="button_blacklist_remove" xml:space="preserve">
-    <value>Remove selected blacklist rule</value>
+    <value>Видалити вибрані правила чорного списку</value>
   </data>
   <data name="button_blacklist_add" xml:space="preserve">
-    <value>Add a new blacklist rule</value>
+    <value>Додайте нове правило до чорного списку</value>
   </data>
   <data name="button_whitelist_import" xml:space="preserve">
-    <value>Import existing whitelist rules</value>
+    <value>Імпортувати існуючі правила білого списку</value>
   </data>
   <data name="button_whitelist_export" xml:space="preserve">
-    <value>Export whitelist rules</value>
+    <value>Експортувати правила білого списку</value>
   </data>
   <data name="button_whitelist_remove" xml:space="preserve">
-    <value>Remove selected whitelist rule</value>
+    <value>Видалити вибрані правила білого списку</value>
   </data>
   <data name="button_whitelist_add" xml:space="preserve">
-    <value>Add a new whitelist rule</value>
+    <value>Додайте нове правило до білого списку</value>
   </data>
   <data name="whitelist_rules_header" xml:space="preserve">
-    <value>Whitelist Rules</value>
+    <value>Правила білого списку</value>
   </data>
   <data name="whitelist_rules_sub_header" xml:space="preserve">
-    <value>(all entries are ignored during blacklist generation)</value>
+    <value>(всі записи ігноруються під час генерації чорних списків)</value>
   </data>
   <data name="whitelist_rules_path" xml:space="preserve">
-    <value>Whitelist Rules:</value>
+    <value>Правила білого списку</value>
   </data>
   <data name="blacklist_rules_header" xml:space="preserve">
-    <value>Blacklist Rules</value>
+    <value>Правила чорного списку</value>
   </data>
   <data name="blacklist_rules_sub_header" xml:space="preserve">
-    <value>(all entries are merged to a blacklist)</value>
+    <value>(всі записи будуть об&apos;єднані в чорний список)</value>
   </data>
   <data name="blacklist_rules_path" xml:space="preserve">
-    <value>Blacklist Rules:</value>
+    <value>Правила чорного списку</value>
   </data>
   <data name="blacklist_path" xml:space="preserve">
-    <value>Blacklist:</value>
+    <value>Чорний список</value>
   </data>
   <data name="blacklist_header" xml:space="preserve">
-    <value>Domain Blacklist and Whitelist</value>
+    <value>Чорний та Білий списки доменів</value>
   </data>
   <data name="advanced_settings_globalresolver" xml:space="preserve">
-    <value>Global Resolver</value>
+    <value>Глобальний резольвер</value>
   </data>
   <data name="advanced_settings_globalresolver_content" xml:space="preserve">
-    <value>If you want this computer to act as gateway device for others (eg. smartphones or other computers)</value>
+    <value>Якщо ви хочете, щоб цей комп&apos;ютер працював як шлюз  для інших пристроїв (наприклад, смартфонів або інших комп&apos;ютерів)</value>
   </data>
   <data name="advanced_settings_fallback_resolver" xml:space="preserve">
-    <value>Fallback Resolver</value>
+    <value>Резервний резольвер</value>
   </data>
   <data name="advanced_settings_fallback_resolver_content" xml:space="preserve">
-    <value>This is a normal, non-encrypted DNS resolver, that will be only used for one-shot queries when retrieving the initial resolvers list, and only if the system DNS configuration doesn&apos;t work. People in China may need to use 114.114.114.114:53 here.</value>
+    <value>Це нормальний, не зашифрований резольвер DNS, який буде використовуватися тільки для одноразових запитів при отриманні початкового списку резольверів, і тільки якщо конфігурація DNS системи не працює. В Китаї, можна використовувати 114.114.114.114:53 тут.</value>
   </data>
   <data name="trayicon_tooltip" xml:space="preserve">
     <value>Simple DNSCrypt</value>
   </data>
   <data name="trayicon_exit" xml:space="preserve">
-    <value>Exit</value>
+    <value>Вихід</value>
   </data>
   <data name="address_settings_listen_addresses" xml:space="preserve">
-    <value>Listen Addresses</value>
+    <value>Прослуховувані адреси</value>
+    <comment>Fuzzy</comment>
   </data>
   <data name="address_settings_manage_listen_addresses" xml:space="preserve">
-    <value>Manage Listen Addresses</value>
+    <value>Керувати прослуховуваними адресами</value>
+    <comment>Fuzzy</comment>
   </data>
   <data name="address_settings_description" xml:space="preserve">
-    <value>List of local addresses and ports to listen to. Can be IPv4 and/or IPv6.</value>
+    <value>Список локальних адрес і портів для прослуховування. Можуть бути IPv4 та / або IPv6.</value>
   </data>
   <data name="address_settings_add" xml:space="preserve">
-    <value>Add new listen address</value>
+    <value>Додати нові прослуховувані адреси</value>
   </data>
   <data name="address_settings_remove" xml:space="preserve">
     <value>Remove selected listen address</value>
@@ -538,28 +540,28 @@
     <value>Restore default listen addresses</value>
   </data>
   <data name="button_blacklist_clear" xml:space="preserve">
-    <value>Clear all blacklist rules</value>
+    <value>Очистити всі правила Чорного списку</value>
   </data>
   <data name="settings_tray_mode" xml:space="preserve">
-    <value>Minimize to tray when closing</value>
+    <value>Згортати до трею під час закриття</value>
   </data>
   <data name="settings_start_in_tray" xml:space="preserve">
-    <value>Start Simple DNSCrypt in tray</value>
+    <value>Запускати Simple DNSCrypt в треї</value>
   </data>
   <data name="settings_update_silent" xml:space="preserve">
-    <value>Silently install new versions</value>
+    <value>Встановлювати нові версії в фоні</value>
   </data>
   <data name="proxy_proxies" xml:space="preserve">
-    <value>Proxies</value>
+    <value>Проксі</value>
   </data>
   <data name="proxy_manage_proxies" xml:space="preserve">
-    <value>Manage Proxies</value>
+    <value>Керувати проксі</value>
   </data>
   <data name="proxy_http_header" xml:space="preserve">
     <value>HTTP/HTTPS proxy</value>
   </data>
   <data name="proxy_http_sub" xml:space="preserve">
-    <value>Only for DoH servers</value>
+    <value>Виключно для DoH серверів</value>
   </data>
   <data name="proxy_socks_header" xml:space="preserve">
     <value>SOCKS proxy</value>
@@ -568,49 +570,53 @@
     <value>You can route all TCP connections to a local Tor node. Tor doesn&apos;t support UDP, so you should enable Force TCP (Advanced Settings) as well.</value>
   </data>
   <data name="advanced_settings_netprobe_timeout" xml:space="preserve">
-    <value>Netprobe Timeout</value>
+    <value>Час очікування Netprobe</value>
   </data>
   <data name="advanced_settings_netprobe_timeout_content" xml:space="preserve">
     <value>Maximum time (in seconds) to wait for network connectivity before initializing the proxy. Useful if the proxy is automatically started at boot, and network connectivity is not guaranteed to be immediately available. Use 0 to disable.</value>
   </data>
   <data name="default_settings_configuration_dnscrypt" xml:space="preserve">
-    <value>DNSCrypt</value>
+    <value>
+DNSCrypt
+</value>
   </data>
   <data name="default_settings_configuration_dnscrypt_tooltip" xml:space="preserve">
-    <value>Use servers implementing the DNSCrypt protocol</value>
+    <value>Використовувати сервери, що реалізують протокол DNSCrypt</value>
   </data>
   <data name="default_settings_configuration_doh" xml:space="preserve">
-    <value>DNS-over-HTTPS</value>
+    <value>
+DNS-over-HTTPS
+</value>
   </data>
   <data name="default_settings_configuration_doh_tooltip" xml:space="preserve">
-    <value>Use servers implementing the DNS-over-HTTPS protocol</value>
+    <value>Використовувати сервери, що реалізують протокол DNS-over-HTTPS</value>
   </data>
   <data name="loader_restore_config" xml:space="preserve">
-    <value>Restore {0}</value>
+    <value>Відновити {0}</value>
   </data>
   <data name="settings_backup_and_restore_config" xml:space="preserve">
-    <value>Backup and restore dnscrypt configuration on update</value>
+    <value>Резервне копіювання та відновлення конфігурації dnscrypt під час оновлення</value>
   </data>
   <data name="tabitem_cloakandforward" xml:space="preserve">
-    <value>Cloak and Forward</value>
+    <value>Маскування та перенаправлення</value>
   </data>
   <data name="cloaking" xml:space="preserve">
-    <value>Cloaking</value>
+    <value>Маскування</value>
   </data>
   <data name="cloaking_path" xml:space="preserve">
-    <value>Cloaking Rules:</value>
+    <value>Правила маскування</value>
   </data>
   <data name="cloaking_rules_header" xml:space="preserve">
-    <value>Cloaking Rules</value>
+    <value>Правила маскування</value>
   </data>
   <data name="cloaking_rules_sub_header" xml:space="preserve">
-    <value>(active cloaking rules)</value>
+    <value>(активні правила маскування)</value>
   </data>
   <data name="button_cloaking_add" xml:space="preserve">
-    <value>Add a new cloaking rule</value>
+    <value>Додати нові правила маскування</value>
   </data>
   <data name="button_cloaking_remove" xml:space="preserve">
-    <value>Remove selected cloaking rule</value>
+    <value>Видалити обрані правила маскування</value>
   </data>
   <data name="button_cloaking_import" xml:space="preserve">
     <value>Import existing cloaking rules</value>
@@ -668,5 +674,26 @@
   </data>
   <data name="settings_cloak_and_forward" xml:space="preserve">
     <value>Show &quot;Cloak and Forward&quot; Tab</value>
+  </data>
+  <data name="route_window_title" xml:space="preserve">
+    <value>Route (Anonymized DNS)</value>
+  </data>
+  <data name="route_via" xml:space="preserve">
+    <value>via following relay(s):</value>
+  </data>
+  <data name="route_drag_from_relays" xml:space="preserve">
+    <value>Drag &amp; Drop from available relays</value>
+  </data>
+  <data name="configure_routes_add" xml:space="preserve">
+    <value>Add route</value>
+  </data>
+  <data name="configure_routes_invalid" xml:space="preserve">
+    <value>Change route (invalid entries)</value>
+  </data>
+  <data name="configure_routes_change" xml:space="preserve">
+    <value>Change route</value>
+  </data>
+  <data name="configure_routes_unknown" xml:space="preserve">
+    <value>Change route (unknown status)</value>
   </data>
 </root>
