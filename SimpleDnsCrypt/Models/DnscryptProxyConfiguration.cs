@@ -1,8 +1,10 @@
 ﻿using Caliburn.Micro;
 using DnsCrypt.Models;
 using Nett;
+using SimpleDnsCrypt.Config;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 
 // ReSharper disable InconsistentNaming
 
@@ -29,6 +31,7 @@ namespace SimpleDnsCrypt.Models
 		private int _cert_refresh_delay;
 		private bool _dnscrypt_ephemeral_keys;
 		private bool _tls_disable_session_tickets;
+		private bool _log;
 		private int _log_level;
 		private string _log_file;
 		private Dictionary<string, Source> _sources;
@@ -398,6 +401,37 @@ namespace SimpleDnsCrypt.Models
 			{
 				_netprobe_address = value;
 				NotifyOfPropertyChange(() => netprobe_address);
+			}
+		}
+
+		/// <summary>
+		///		Enable or disable dnscrypt proxy logging.
+		/// </summary>
+		[TomlIgnore]
+		public bool log
+		{
+			get
+			{
+				if (string.IsNullOrEmpty(log_file)) return false;
+				//TODO: make Configurable 
+				var logFile = Path.Combine(Directory.GetCurrentDirectory(), Global.LogDirectory, Global.DnsCryptLogFile);
+				return log_file.Equals(logFile);
+			}
+			set
+			{
+				_log = value;
+				if (value)
+				{
+					var logFile = Path.Combine(Directory.GetCurrentDirectory(), Global.LogDirectory, Global.DnsCryptLogFile);
+					_log_level = 0;
+					_log_file = logFile;
+				}
+				else
+				{
+					_log_level = 0;
+					_log_file = null;
+				}
+				NotifyOfPropertyChange(() => log);
 			}
 		}
 

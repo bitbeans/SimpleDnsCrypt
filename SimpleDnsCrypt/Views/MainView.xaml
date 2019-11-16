@@ -602,6 +602,7 @@
                                         </DrawingBrush>
                                     </Border.BorderBrush>
                                     <StackPanel Orientation="Vertical">
+                                        <!-- Listen Addresses begin -->
                                         <Grid>
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="Auto" />
@@ -639,6 +640,8 @@
                                                     Grid.Row="0" Grid.Column="1" Cursor="Hand" Content="{lex:Loc Key=address_settings_manage_listen_addresses}" x:Name="ListenAddresses" Margin="0,0,0,5"
                                                     HorizontalAlignment="Right" Style="{DynamicResource CustomAccentedSquareButtonStyle}" VerticalAlignment="Top"></Button>
                                         </Grid>
+                                        <!-- Listen Addresses end -->
+                                        <!-- DNS Cache begin -->
                                         <Grid>
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="Auto" />
@@ -679,6 +682,8 @@
                                                 HorizontalAlignment="Right" VerticalAlignment="Top">
                                             </controls:ToggleSwitchButton>
                                         </Grid>
+                                        <!-- DNS Cache end -->
+                                        <!-- Block IPv6 begin -->
                                         <Grid>
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="Auto" />
@@ -719,6 +724,8 @@
                                                 HorizontalAlignment="Right" VerticalAlignment="Top">
                                             </controls:ToggleSwitchButton>
                                         </Grid>
+                                        <!-- Block IPv6 end -->
+                                        <!-- Force TCP begin -->
                                         <Grid>
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="Auto" />
@@ -759,6 +766,8 @@
                                                 HorizontalAlignment="Right" VerticalAlignment="Top">
                                             </controls:ToggleSwitchButton>
                                         </Grid>
+                                        <!-- Force TCP end -->
+                                        <!-- Global Resolver begin -->
                                         <Grid>
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="Auto" />
@@ -799,6 +808,8 @@
                                                 HorizontalAlignment="Right" VerticalAlignment="Top">
                                             </controls:ToggleSwitchButton>
                                         </Grid>
+                                        <!-- Global Resolver end -->
+                                        <!-- Fallback Resolver begin -->
                                         <Grid>
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="Auto" />
@@ -851,6 +862,8 @@
                                                 </Validation.ErrorTemplate>
                                             </TextBox>
                                         </Grid>
+                                        <!-- Fallback Resolver end -->
+                                        <!-- Netprobe Timeout begin -->
                                         <Grid>
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="Auto" />
@@ -891,25 +904,50 @@
                                                                     Opacity="0.8" BorderBrush="#FF575757"
                                                                     HorizontalAlignment="Right" VerticalAlignment="Top"
                                                                     TextAlignment="Right"/>
-                                            <!-- <TextBox
-                                                IsEnabled="{Binding IsWorkingOnService, Converter={StaticResource ReverseBoolToEnabledConverter}}"
-                                                Grid.Row="0" Grid.Column="2" Cursor="Hand" Width="Auto"
-                                               
-                                                controls:TextBoxHelper.Watermark="0" Background="#FF8ab329"
-                                                Opacity="0.8" BorderBrush="#FF575757"
-                                                HorizontalAlignment="Right" VerticalAlignment="Top"
-                                                TextAlignment="Right" IsTabStop="False" Margin="0,0,-1,0">
-                                                <Validation.ErrorTemplate>
-                                                    <ControlTemplate>
-                                                        <Grid>
-                                                            <Border BorderThickness="1" BorderBrush="DarkOrange">
-                                                                <AdornedElementPlaceholder />
-                                                            </Border>
-                                                        </Grid>
-                                                    </ControlTemplate>
-                                                </Validation.ErrorTemplate>
-                                            </TextBox>-->
                                         </Grid>
+                                        <!-- Netprobe Timeout end -->
+                                        <!-- Logging begin -->
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <iconPacks:PackIconMaterial Grid.Column="0" Grid.Row="0" Height="20"
+                                                                        Width="20" Kind="Text"
+                                                                        Opacity="0.7"
+                                                                        Foreground="#FF8ab329"
+                                                                        HorizontalAlignment="Left"
+                                                                        VerticalAlignment="Center" />
+                                            <TextBlock Grid.Column="1" Grid.Row="0"
+                                                       Text="Proxy Logging"
+                                                       TextWrapping="Wrap" VerticalAlignment="Center"
+                                                       Foreground="#FF8ab329" FontSize="20"
+                                                       Opacity="0.7" Margin="5,0,0,3" FontWeight="Bold">
+                                            </TextBlock>
+                                        </Grid>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition />
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="35" />
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Foreground="#FF575757" Grid.Row="0" Grid.Column="0"
+                                                       TextWrapping="Wrap"
+                                                       Text="Log to dnscrypt-proxy.log (log_level: 0)"
+                                                       VerticalAlignment="Bottom"
+                                                       HorizontalAlignment="Left" Margin="0,0,0,5">
+                                            </TextBlock>
+                                            <controls:ToggleSwitchButton
+                                                IsEnabled="{Binding IsWorkingOnService, Converter={StaticResource ReverseBoolToEnabledConverter}}"
+                                                Grid.Row="0" Grid.Column="1" Cursor="Hand"
+                                                IsChecked="{Binding DnscryptProxyConfiguration.log}"
+                                                HorizontalAlignment="Right" VerticalAlignment="Top">
+                                            </controls:ToggleSwitchButton>
+                                        </Grid>
+                                        <!-- Logging end -->
                                         <Button x:Name="SaveAdvancedSettings"
                                                 Cursor="Hand"
                                                 Content="{lex:Loc Key=default_settings_apply_settings}"
