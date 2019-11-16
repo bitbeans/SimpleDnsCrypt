@@ -665,4 +665,25 @@ Fuzzy</comment>
   <data name="settings_cloak_and_forward" xml:space="preserve">
     <value>宛先変更と転送タブの表示</value>
   </data>
+  <data name="route_window_title" xml:space="preserve">
+    <value>Route (Anonymized DNS)</value>
+  </data>
+  <data name="route_via" xml:space="preserve">
+    <value>via following relay(s):</value>
+  </data>
+  <data name="route_drag_from_relays" xml:space="preserve">
+    <value>Drag &amp; Drop from available relays</value>
+  </data>
+  <data name="configure_routes_add" xml:space="preserve">
+    <value>Add route</value>
+  </data>
+  <data name="configure_routes_invalid" xml:space="preserve">
+    <value>Change route (invalid entries)</value>
+  </data>
+  <data name="configure_routes_change" xml:space="preserve">
+    <value>Change route</value>
+  </data>
+  <data name="configure_routes_unknown" xml:space="preserve">
+    <value>Change route (unknown status)</value>
+  </data>
 </root>
