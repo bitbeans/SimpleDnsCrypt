@@ -960,7 +960,6 @@ namespace SimpleDnsCrypt.ViewModels
 					{
 						dynamic settings = new ExpandoObject();
 						settings.WindowStartupLocation = WindowStartupLocation.CenterOwner;
-						RouteViewModel.WindowTitle = "Route (preview)";
 						RouteViewModel.Route = new ObservableCollection<StampFileEntry>();
 						if (availableResolver.Route != null)
 						{

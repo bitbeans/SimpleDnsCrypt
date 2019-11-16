@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
+using System.Threading;
 using Caliburn.Micro;
 using Newtonsoft.Json;
+using SimpleDnsCrypt.Helper;
 
 namespace SimpleDnsCrypt.Models
 {
@@ -60,13 +62,13 @@ namespace SimpleDnsCrypt.Models
 				switch (RouteState)
 				{
 					case RouteState.Empty:
-						return "configure routes (add)";
+						return LocalizationEx.GetUiString("configure_routes_add", Thread.CurrentThread.CurrentCulture);
 					case RouteState.Invalid:
-						return "configure routes (invalid entries)";
+						return LocalizationEx.GetUiString("configure_routes_invalid", Thread.CurrentThread.CurrentCulture);
 					case RouteState.Valid:
-						return "configure routes (change)";
+						return LocalizationEx.GetUiString("configure_routes_change", Thread.CurrentThread.CurrentCulture);
 					default:
-						return "configure routes (unknown)";
+						return LocalizationEx.GetUiString("configure_routes_unknown", Thread.CurrentThread.CurrentCulture);
 				}
 			}
 		}

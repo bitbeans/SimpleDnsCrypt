@@ -11,25 +11,11 @@ namespace SimpleDnsCrypt.ViewModels
 	[Export(typeof(RouteViewModel))]
 	public class RouteViewModel : Screen, IDropTarget
 	{
-		private string _windowTitle;
 		private string _resolver;
 
 		[ImportingConstructor]
 		public RouteViewModel()
 		{
-		}
-
-		/// <summary>
-		///     The title of the window.
-		/// </summary>
-		public string WindowTitle
-		{
-			get => _windowTitle;
-			set
-			{
-				_windowTitle = value;
-				NotifyOfPropertyChange(() => WindowTitle);
-			}
 		}
 
 		public string Resolver
