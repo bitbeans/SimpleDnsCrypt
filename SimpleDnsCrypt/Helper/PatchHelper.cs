@@ -39,6 +39,19 @@
 				DnscryptProxyConfigurationManager.DnscryptProxyConfiguration.cache_min_ttl = 2400;
 				DnscryptProxyConfigurationManager.DnscryptProxyConfiguration.cache_neg_min_ttl = 60;
 				DnscryptProxyConfigurationManager.DnscryptProxyConfiguration.cache_neg_max_ttl = 600;
+				var sources = DnscryptProxyConfigurationManager.DnscryptProxyConfiguration.sources;
+				if (!sources.ContainsKey("relays"))
+				{
+					sources.Add("relays", new Models.Source
+					{
+						urls = new string[] { "https://github.com/DNSCrypt/dnscrypt-resolvers/raw/master/v2/relays.md", "https://download.dnscrypt.info/resolvers-list/v2/relays.md" },
+						cache_file = "relays.md",
+						minisign_key = "RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3",
+						refresh_delay = 72,
+						prefix = ""
+					});
+					DnscryptProxyConfigurationManager.DnscryptProxyConfiguration.sources = sources;
+				}
 				return DnscryptProxyConfigurationManager.SaveConfiguration();
 			}
 			return false;
