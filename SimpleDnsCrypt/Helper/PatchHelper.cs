@@ -25,7 +25,7 @@
 				DnscryptProxyConfigurationManager.DnscryptProxyConfiguration.netprobe_timeout = 60;
 				return DnscryptProxyConfigurationManager.SaveConfiguration();
 			}
-			if (version.Equals("0.6.8") || version.Equals("0.6.9"))
+			if (version.Equals("0.6.8") || version.Equals("0.6.9") || version.Equals("0.7.0"))
 			{
 				//changed: timeout = 5000
 				//added: reject_ttl = 600
