@@ -104,6 +104,7 @@
     <Compile Include="Converters\LocalDateConverter.cs" />
     <Compile Include="Converters\MessageBoxTypeToColor.cs" />
     <Compile Include="Converters\ProtocolToVisibilityConverter.cs" />
+    <Compile Include="Converters\QueryLogReturnCodeToColorConverter.cs" />
     <Compile Include="Converters\QueryLogTypeToColorConverter.cs" />
     <Compile Include="Converters\ReverseBoolToEnabledConverter.cs" />
     <Compile Include="Converters\RouteStateToColorConverter.cs" />
