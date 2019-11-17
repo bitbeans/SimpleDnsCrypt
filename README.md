@@ -33,7 +33,7 @@ Microsoft Visual C++ Redistributable for Visual Studio 2017 [x64](https://aka.ms
 
 ### Installing
 
-To install Simple DNSCrypt use the latest (stable) MSI packages: [x86](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.6.9/SimpleDNSCrypt.msi) or [x64](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.6.9/SimpleDNSCrypt64.msi).
+To install Simple DNSCrypt use the latest (stable) MSI packages: [x86](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.7.0/SimpleDNSCrypt.msi) or [x64](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.7.0/SimpleDNSCrypt64.msi).
 
 #### Alternative
 
@@ -45,7 +45,7 @@ The MSI package and the SimpleDnsCrypt.exe are signed via a *COMODO RSA Code Sig
 The files are signed under the name: *Christian Hermann*
 
 You also can verify the MSI packages with [minisign](https://jedisct1.github.io/minisign/).
-The minisign signatures [x86](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.6.9/SimpleDNSCrypt.msi.minisig) and [x64](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.6.9/SimpleDNSCrypt64.msi.minisig) can be verified with the following command:
+The minisign signatures [x86](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.7.0/SimpleDNSCrypt.msi.minisig) and [x64](https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.7.0/SimpleDNSCrypt64.msi.minisig) can be verified with the following command:
 
 	minisign -Vm SimpleDNSCrypt.msi -P RWTSM+4BNNvkZPNkHgE88ETlhWa+0HDzU5CN8TvbyvmhVUcr6aQXfssV
 	minisign -Vm SimpleDNSCrypt64.msi -P RWTSM+4BNNvkZPNkHgE88ETlhWa+0HDzU5CN8TvbyvmhVUcr6aQXfssV
