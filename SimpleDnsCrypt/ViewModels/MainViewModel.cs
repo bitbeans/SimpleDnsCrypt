@@ -65,7 +65,7 @@ namespace SimpleDnsCrypt.ViewModels
 		private BindableCollection<LocalNetworkInterface> _localNetworkInterfaces =
 			new BindableCollection<LocalNetworkInterface>();
 		private BindableCollection<AvailableResolver> _resolvers;
-		private BindableCollection<StampFileEntry> _relays;
+		private readonly BindableCollection<StampFileEntry> _relays;
 		private Language _selectedLanguage;
 		private int _selectedTabIndex;
 
@@ -951,102 +951,92 @@ namespace SimpleDnsCrypt.ViewModels
 
 		public void HandleManageRoutes(AvailableResolver availableResolver)
 		{
-			//TODO: optimize
 			try
 			{
-				if (availableResolver != null)
+				if (availableResolver == null) return;
+				if (!availableResolver.Protocol.Equals("DNSCrypt")) return;
+				dynamic settings = new ExpandoObject();
+				settings.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+				RouteViewModel.Route = new ObservableCollection<StampFileEntry>();
+				if (availableResolver.Route?.via != null)
 				{
-					if (availableResolver.Protocol.Equals("DNSCrypt"))
+					for (var v = 0; v < availableResolver.Route.via.Count; v++)
 					{
-						dynamic settings = new ExpandoObject();
-						settings.WindowStartupLocation = WindowStartupLocation.CenterOwner;
-						RouteViewModel.Route = new ObservableCollection<StampFileEntry>();
-						if (availableResolver.Route != null)
+						var stampFileEntry = _relays.FirstOrDefault(r => r.Name.Equals(availableResolver.Route.via[v]));
+						if (stampFileEntry != null)
 						{
-							if (availableResolver.Route.via != null)
-							{
-								for (var v = 0; v < availableResolver.Route.via.Count; v++)
-								{
-									var stampFileEntry = _relays.Where(r => r.Name.Equals(availableResolver.Route.via[v])).FirstOrDefault();
-									if (stampFileEntry != null)
-									{
-										//add only entries that are present in relays
-										RouteViewModel.Route.Add(stampFileEntry);
-									}
-									else
-									{
-										//remove non-existent relays from route
-										availableResolver.Route.via.RemoveAt(v);
-									}
-								}
-							}
-						}
-						RouteViewModel.Relays = _relays;
-						RouteViewModel.Resolver = availableResolver.DisplayName;
-						var result = _windowManager.ShowDialog(RouteViewModel, null, settings);
-						if (result) return;
-
-						if (RouteViewModel.Route.Count() == 0)
-						{
-							//remove route
-							if (availableResolver.Route != null)
-							{
-								var oldRoute = _dnscryptProxyConfiguration.anonymized_dns.routes.FindIndex(r => r.server_name.Equals(availableResolver.Route.server_name));
-								if (oldRoute != -1)
-								{
-									_dnscryptProxyConfiguration.anonymized_dns.routes.RemoveAt(oldRoute);
-								}
-								SaveDnsCryptConfiguration();
-								LoadResolvers();
-							}
+							//add only entries that are present in relays
+							RouteViewModel.Route.Add(stampFileEntry);
 						}
 						else
 						{
-							var oldRoute = -1;
-							if (availableResolver.Route != null && !string.IsNullOrEmpty(availableResolver.Route.server_name))
-							{
-								oldRoute = _dnscryptProxyConfiguration.anonymized_dns.routes.FindIndex(r => r.server_name.Equals(availableResolver.Route.server_name));
-							}
-							if (oldRoute != -1)
-							{
-								//update
-								_dnscryptProxyConfiguration.anonymized_dns.routes[oldRoute].via = new ObservableCollection<string>();
-								foreach (var stampFileEntry in RouteViewModel.Route)
-								{
-									if (_dnscryptProxyConfiguration.anonymized_dns.routes[oldRoute].via == null)
-									{
-										_dnscryptProxyConfiguration.anonymized_dns.routes[oldRoute].via = new ObservableCollection<string>();
-									}
-									_dnscryptProxyConfiguration.anonymized_dns.routes[oldRoute].via.Add(stampFileEntry.Name);
-								}
-							}
-							else
-							{
-								//create
-								var newRoute = new Route
-								{
-									server_name = availableResolver.Name,
-									via = new ObservableCollection<string>()
-								};
-								foreach (var stampFileEntry in RouteViewModel.Route)
-								{
-									newRoute.via.Add(stampFileEntry.Name);
-								}
-
-								if (_dnscryptProxyConfiguration.anonymized_dns == null)
-								{
-									_dnscryptProxyConfiguration.anonymized_dns = new AnonymizedDns();
-								}
-								if (_dnscryptProxyConfiguration.anonymized_dns.routes == null)
-								{
-									_dnscryptProxyConfiguration.anonymized_dns.routes = new List<Route>();
-								}
-								_dnscryptProxyConfiguration.anonymized_dns.routes.Add(newRoute);
-							}
-							SaveDnsCryptConfiguration();
-							LoadResolvers();
+							//remove non-existent relays from route
+							availableResolver.Route.via.RemoveAt(v);
 						}
 					}
+				}
+				RouteViewModel.Relays = _relays;
+				RouteViewModel.Resolver = availableResolver.DisplayName;
+				var result = _windowManager.ShowDialog(RouteViewModel, null, settings);
+				if (result) return;
+
+				if (!RouteViewModel.Route.Any())
+				{
+					//remove route
+					if (availableResolver.Route == null) return;
+					var oldRoute = _dnscryptProxyConfiguration.anonymized_dns.routes.FindIndex(r => r.server_name.Equals(availableResolver.Route.server_name));
+					if (oldRoute != -1)
+					{
+						_dnscryptProxyConfiguration.anonymized_dns.routes.RemoveAt(oldRoute);
+					}
+					SaveDnsCryptConfiguration();
+					LoadResolvers();
+				}
+				else
+				{
+					var oldRoute = -1;
+					if (availableResolver.Route != null && !string.IsNullOrEmpty(availableResolver.Route.server_name))
+					{
+						oldRoute = _dnscryptProxyConfiguration.anonymized_dns.routes.FindIndex(r => r.server_name.Equals(availableResolver.Route.server_name));
+					}
+					if (oldRoute != -1)
+					{
+						//update
+						_dnscryptProxyConfiguration.anonymized_dns.routes[oldRoute].via = new ObservableCollection<string>();
+						foreach (var stampFileEntry in RouteViewModel.Route)
+						{
+							if (_dnscryptProxyConfiguration.anonymized_dns.routes[oldRoute].via == null)
+							{
+								_dnscryptProxyConfiguration.anonymized_dns.routes[oldRoute].via = new ObservableCollection<string>();
+							}
+							_dnscryptProxyConfiguration.anonymized_dns.routes[oldRoute].via.Add(stampFileEntry.Name);
+						}
+					}
+					else
+					{
+						//create
+						var newRoute = new Route
+						{
+							server_name = availableResolver.Name,
+							via = new ObservableCollection<string>()
+						};
+						foreach (var stampFileEntry in RouteViewModel.Route)
+						{
+							newRoute.via.Add(stampFileEntry.Name);
+						}
+
+						if (_dnscryptProxyConfiguration.anonymized_dns == null)
+						{
+							_dnscryptProxyConfiguration.anonymized_dns = new AnonymizedDns();
+						}
+						if (_dnscryptProxyConfiguration.anonymized_dns.routes == null)
+						{
+							_dnscryptProxyConfiguration.anonymized_dns.routes = new List<Route>();
+						}
+						_dnscryptProxyConfiguration.anonymized_dns.routes.Add(newRoute);
+					}
+					SaveDnsCryptConfiguration();
+					LoadResolvers();
 				}
 			}
 			catch (Exception exception)
@@ -1121,34 +1111,23 @@ namespace SimpleDnsCrypt.ViewModels
 				{
 					if (!r.Name.Equals(resolver.Name)) continue;
 					first = r;
-					//TODO: optimize
-					if (_dnscryptProxyConfiguration.anonymized_dns != null)
+					if (_dnscryptProxyConfiguration.anonymized_dns?.routes != null)
 					{
-						if (_dnscryptProxyConfiguration.anonymized_dns.routes != null)
+						if (_dnscryptProxyConfiguration.anonymized_dns.routes.Count > 0)
 						{
-							if (_dnscryptProxyConfiguration.anonymized_dns.routes.Count > 0)
+							var route = _dnscryptProxyConfiguration.anonymized_dns.routes.FirstOrDefault(re => re.server_name.Equals(resolver.Name));
+							if (route != null)
 							{
-								var route = _dnscryptProxyConfiguration.anonymized_dns.routes.Where(re => re.server_name.Equals(resolver.Name)).FirstOrDefault();
-								if (route != null)
+								first.Route = route;
+								if (_relays != null && _relays.Count > 0)
 								{
-									first.Route = route;
-									if (_relays != null && _relays.Count > 0)
-									{
-										var relays = _relays.Select(x => x.Name).ToList();
-										var valid = first.Route.via.Intersect(relays).Count() == first.Route.via.Count();
-										if (valid)
-										{
-											first.RouteState = RouteState.Valid;
-										}
-										else
-										{
-											first.RouteState = RouteState.Invalid;
-										}
-									}
-									else
-									{
-										first.RouteState = RouteState.Invalid;
-									}
+									var relays = _relays.Select(x => x.Name).ToList();
+									var valid = first.Route.via.Intersect(relays).Count() == first.Route.via.Count();
+									first.RouteState = valid ? RouteState.Valid : RouteState.Invalid;
+								}
+								else
+								{
+									first.RouteState = RouteState.Invalid;
 								}
 							}
 						}
@@ -1185,55 +1164,53 @@ namespace SimpleDnsCrypt.ViewModels
 				LocalizationEx.GetUiString("dialog_uninstall_title", Thread.CurrentThread.CurrentCulture),
 				MessageBoxButton.YesNo, BoxType.Default);
 
-			if (result == MessageBoxResult.Yes)
+			if (result != MessageBoxResult.Yes) return;
+			IsUninstallingService = true;
+
+			if (DnsCryptProxyManager.IsDnsCryptProxyRunning())
 			{
-				IsUninstallingService = true;
+				await Task.Run(() => { DnsCryptProxyManager.Stop(); }).ConfigureAwait(false);
+				await Task.Delay(Global.ServiceStopTime).ConfigureAwait(false);
+			}
 
-				if (DnsCryptProxyManager.IsDnsCryptProxyRunning())
-				{
-					await Task.Run(() => { DnsCryptProxyManager.Stop(); }).ConfigureAwait(false);
-					await Task.Delay(Global.ServiceStopTime).ConfigureAwait(false);
-				}
+			await Task.Run(() => { DnsCryptProxyManager.Uninstall(); }).ConfigureAwait(false);
+			await Task.Delay(Global.ServiceUninstallTime).ConfigureAwait(false);
+			_isResolverRunning = DnsCryptProxyManager.IsDnsCryptProxyRunning();
+			NotifyOfPropertyChange(() => IsResolverRunning);
 
-				await Task.Run(() => { DnsCryptProxyManager.Uninstall(); }).ConfigureAwait(false);
-				await Task.Delay(Global.ServiceUninstallTime).ConfigureAwait(false);
-				_isResolverRunning = DnsCryptProxyManager.IsDnsCryptProxyRunning();
-				NotifyOfPropertyChange(() => IsResolverRunning);
+			// recover the network interfaces (also the hidden and down cards)
+			var localNetworkInterfaces = LocalNetworkInterfaceManager.GetLocalNetworkInterfaces(
+				DnscryptProxyConfigurationManager.DnscryptProxyConfiguration.listen_addresses.ToList());
+			foreach (var localNetworkInterface in localNetworkInterfaces)
+			{
+				if (!localNetworkInterface.UseDnsCrypt) continue;
+				var status = LocalNetworkInterfaceManager.SetNameservers(localNetworkInterface, new List<DnsServer>());
+				var card = _localNetworkInterfaces.SingleOrDefault(n => n.Description.Equals(localNetworkInterface.Description));
+				if (card != null) card.UseDnsCrypt = !status;
+			}
 
-				// recover the network interfaces (also the hidden and down cards)
-				var localNetworkInterfaces = LocalNetworkInterfaceManager.GetLocalNetworkInterfaces(
-					DnscryptProxyConfigurationManager.DnscryptProxyConfiguration.listen_addresses.ToList());
-				foreach (var localNetworkInterface in localNetworkInterfaces)
-				{
-					if (!localNetworkInterface.UseDnsCrypt) continue;
-					var status = LocalNetworkInterfaceManager.SetNameservers(localNetworkInterface, new List<DnsServer>());
-					var card = _localNetworkInterfaces.SingleOrDefault(n => n.Description.Equals(localNetworkInterface.Description));
-					if (card != null) card.UseDnsCrypt = !status;
-				}
-
-				await Task.Delay(1000).ConfigureAwait(false);
-				ReloadLoadNetworkInterfaces();
-				IsUninstallingService = false;
-				if (!DnsCryptProxyManager.IsDnsCryptProxyInstalled())
-				{
-					IsServiceInstalled = false;
-					_windowManager.ShowMetroMessageBox(
-						LocalizationEx.GetUiString("message_content_uninstallation_successful",
-							Thread.CurrentThread.CurrentCulture),
-						LocalizationEx.GetUiString("message_title_uninstallation_successful",
-							Thread.CurrentThread.CurrentCulture),
-						MessageBoxButton.OK, BoxType.Default);
-				}
-				else
-				{
-					IsServiceInstalled = true;
-					_windowManager.ShowMetroMessageBox(
-						LocalizationEx.GetUiString("message_content_uninstallation_error",
-							Thread.CurrentThread.CurrentCulture),
-						LocalizationEx.GetUiString("message_title_uninstallation_error",
-							Thread.CurrentThread.CurrentCulture),
-						MessageBoxButton.OK, BoxType.Warning);
-				}
+			await Task.Delay(1000).ConfigureAwait(false);
+			ReloadLoadNetworkInterfaces();
+			IsUninstallingService = false;
+			if (!DnsCryptProxyManager.IsDnsCryptProxyInstalled())
+			{
+				IsServiceInstalled = false;
+				_windowManager.ShowMetroMessageBox(
+					LocalizationEx.GetUiString("message_content_uninstallation_successful",
+						Thread.CurrentThread.CurrentCulture),
+					LocalizationEx.GetUiString("message_title_uninstallation_successful",
+						Thread.CurrentThread.CurrentCulture),
+					MessageBoxButton.OK, BoxType.Default);
+			}
+			else
+			{
+				IsServiceInstalled = true;
+				_windowManager.ShowMetroMessageBox(
+					LocalizationEx.GetUiString("message_content_uninstallation_error",
+						Thread.CurrentThread.CurrentCulture),
+					LocalizationEx.GetUiString("message_title_uninstallation_error",
+						Thread.CurrentThread.CurrentCulture),
+					MessageBoxButton.OK, BoxType.Warning);
 			}
 		}
 
