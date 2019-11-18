@@ -59,6 +59,7 @@ namespace SimpleDnsCrypt.Models
 		private ObservableCollection<string> _disabled_server_names;
 		private string _blocked_query_response;
 
+
 		[TomlIgnore]
 		public new bool IsNotifying
 		{
@@ -716,6 +717,8 @@ namespace SimpleDnsCrypt.Models
 
 		public AnonymizedDns anonymized_dns { get; set; }
 
+		public BrokenImplementations broken_implementations { get; set; }
+
 		/// <summary>
 		/// </summary>
 		public Dictionary<string, Source> sources
@@ -764,6 +767,27 @@ namespace SimpleDnsCrypt.Models
 		}
 	}
 
+	public class BrokenImplementations : PropertyChangedBase
+	{
+		[TomlIgnore]
+		public new bool IsNotifying
+		{
+			get => base.IsNotifying;
+			set => base.IsNotifying = value;
+		}
+
+		private List<string> _broken_query_padding;
+
+		public List<string> broken_query_padding
+		{
+			get => _broken_query_padding;
+			set
+			{
+				_broken_query_padding = value;
+				NotifyOfPropertyChange(() => broken_query_padding);
+			}
+		}
+	}
 
 	public class Route : PropertyChangedBase
 	{

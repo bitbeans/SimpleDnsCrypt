@@ -1,4 +1,7 @@
-﻿namespace SimpleDnsCrypt.Helper
+﻿using System.Collections.Generic;
+using SimpleDnsCrypt.Models;
+
+namespace SimpleDnsCrypt.Helper
 {
 	/// <summary>
 	/// Class to update the configuration file. 
@@ -44,7 +47,7 @@
 				{
 					sources.Add("relays", new Models.Source
 					{
-						urls = new string[] { "https://github.com/DNSCrypt/dnscrypt-resolvers/raw/master/v2/relays.md", "https://download.dnscrypt.info/resolvers-list/v2/relays.md" },
+						urls = new[] { "https://github.com/DNSCrypt/dnscrypt-resolvers/raw/master/v2/relays.md", "https://download.dnscrypt.info/resolvers-list/v2/relays.md" },
 						cache_file = "relays.md",
 						minisign_key = "RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3",
 						refresh_delay = 72,
@@ -54,6 +57,33 @@
 				}
 				return DnscryptProxyConfigurationManager.SaveConfiguration();
 			}
+			if (version.Equals("0.7.1"))
+			{
+				//changed: ignore_system_dns = true
+				//added: broken_implementations
+				DnscryptProxyConfigurationManager.DnscryptProxyConfiguration.ignore_system_dns = true;
+				var sources = DnscryptProxyConfigurationManager.DnscryptProxyConfiguration.sources;
+				if (!sources.ContainsKey("relays"))
+				{
+					sources.Add("relays", new Models.Source
+					{
+						urls = new[] { "https://github.com/DNSCrypt/dnscrypt-resolvers/raw/master/v2/relays.md", "https://download.dnscrypt.info/resolvers-list/v2/relays.md" },
+						cache_file = "relays.md",
+						minisign_key = "RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3",
+						refresh_delay = 72,
+						prefix = ""
+					});
+					DnscryptProxyConfigurationManager.DnscryptProxyConfiguration.sources = sources;
+				}
+
+				DnscryptProxyConfigurationManager.DnscryptProxyConfiguration.broken_implementations =
+					new BrokenImplementations
+					{
+						broken_query_padding = new List<string> { "cisco", "cisco-ipv6", "cisco-familyshield" }
+					};
+				return DnscryptProxyConfigurationManager.SaveConfiguration();
+			}
+
 			return false;
 		}
 	}
