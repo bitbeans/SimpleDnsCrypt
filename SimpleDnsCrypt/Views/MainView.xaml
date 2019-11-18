@@ -25,6 +25,7 @@
             <converters:BoolToVisibilityCollapsedConverter x:Key="BoolToVisibilityCollapsedConverter" />
             <converters:ReverseBoolToEnabledConverter x:Key="ReverseBoolToEnabledConverter" />
             <converters:QueryLogTypeToColorConverter x:Key="QueryLogTypeToColorConverter" />
+            <converters:QueryLogReturnCodeToColorConverter x:Key="QueryLogReturnCodeToColorConverter" />
             <converters:LocalDateConverter x:Key="LocalDateConverter" />
             <converters:IntegerBoolToVisibilityConverter x:Key="IntegerBoolToVisibilityConverter" />
             <converters:ServerListBackgroundConverter x:Key="ServerListBackgroundConverter" />
@@ -1049,7 +1050,7 @@
                                                             <TextBlock Grid.Column="1" Text="{Binding Type}"
                                                                        Foreground="{Binding Type, Converter={StaticResource QueryLogTypeToColorConverter}}" />
                                                             <TextBlock Grid.Column="2" Text="{Binding ReturnCode}"
-                                                                       Foreground="#FF575757" />
+                                                                       Foreground="{Binding ReturnCode, Converter={StaticResource QueryLogReturnCodeToColorConverter}}" />
                                                             <TextBlock Grid.Column="3" Text="{Binding Address}"
                                                                        Foreground="#FF575757" />
                                                             <TextBlock Grid.Column="4" Text="{Binding Remote}"
