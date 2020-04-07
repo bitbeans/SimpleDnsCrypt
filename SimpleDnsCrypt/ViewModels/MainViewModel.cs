@@ -460,9 +460,12 @@ namespace SimpleDnsCrypt.ViewModels
 				}
 			}
 
-			if (DnscryptProxyConfiguration?.fallback_resolver != null)
+			if (DnscryptProxyConfiguration?.fallback_resolvers != null)
 			{
-				FallbackResolver = DnscryptProxyConfiguration.fallback_resolver;
+				if (DnscryptProxyConfiguration.fallback_resolvers.Count > 0)
+				{
+					FallbackResolvers = DnscryptProxyConfiguration.fallback_resolvers;
+				}
 			}
 
 			if (!string.IsNullOrEmpty(DnscryptProxyConfiguration?.cloaking_rules))
@@ -653,6 +656,11 @@ namespace SimpleDnsCrypt.ViewModels
 			{
 				SaveAdvancedSettings();
 			}
+		}
+
+		public async void ManageFallbackResolvers()
+		{
+
 		}
 
 		public async void ListenAddresses()
@@ -1226,15 +1234,15 @@ namespace SimpleDnsCrypt.ViewModels
 
 		#endregion
 
-		private string _fallbackResolver;
-		public string FallbackResolver
+		private ObservableCollection<string> _fallbackResolvers;
+		public ObservableCollection<string> FallbackResolvers
 		{
-			get => _fallbackResolver;
+			get => _fallbackResolvers;
 			set
 			{
-				_fallbackResolver = value;
-				ValidateFallbackResolver();
-				NotifyOfPropertyChange(() => FallbackResolver);
+				_fallbackResolvers = value;
+				ValidateFallbackResolvers();
+				NotifyOfPropertyChange(() => FallbackResolvers);
 			}
 		}
 
@@ -1250,26 +1258,30 @@ namespace SimpleDnsCrypt.ViewModels
 		public bool HasErrors => _validationErrors.Any();
 
 
-		private void ValidateFallbackResolver()
+		private void ValidateFallbackResolvers()
 		{
-			if (string.IsNullOrEmpty(_fallbackResolver))
+			var validatedFallbackResolvers = new ObservableCollection<string>();
+			foreach (var fallbackResolver in _fallbackResolvers)
 			{
-				_validationErrors.Add("FallbackResolver", "invalid");
-			}
-			else
-			{
-				var validatedFallbackResolver = ValidationHelper.ValidateIpEndpoint(_fallbackResolver);
-				if (!string.IsNullOrEmpty(validatedFallbackResolver))
+				if (string.IsNullOrEmpty(fallbackResolver))
 				{
-					_fallbackResolver = validatedFallbackResolver;
-					DnscryptProxyConfiguration.fallback_resolver = _fallbackResolver;
-					_validationErrors.Remove("FallbackResolver");
+					_validationErrors.Add("FallbackResolvers", "invalid");
 				}
 				else
 				{
-					_validationErrors.Add("FallbackResolver", "invalid");
+					var validatedFallbackResolver = ValidationHelper.ValidateIpEndpoint(fallbackResolver);
+					if (!string.IsNullOrEmpty(validatedFallbackResolver))
+					{
+						validatedFallbackResolvers.Add(validatedFallbackResolver);
+						_validationErrors.Remove("FallbackResolvers");
+					}
+					else
+					{
+						_validationErrors.Add("FallbackResolvers", "invalid");
+					}
 				}
 			}
+			DnscryptProxyConfiguration.fallback_resolvers = validatedFallbackResolvers;
 		}
 
 		#region Tray

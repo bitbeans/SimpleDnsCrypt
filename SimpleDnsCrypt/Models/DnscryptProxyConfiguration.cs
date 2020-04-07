@@ -43,6 +43,8 @@ namespace SimpleDnsCrypt.Models
 		private int _log_files_max_age;
 		private int _log_files_max_backups;
 		private bool _block_ipv6;
+		private bool _block_unqualified;
+		private bool _block_undelegated;
 		private int _reject_ttl;
 		private string _forwarding_rules;
 		private string _cloaking_rules;
@@ -52,7 +54,7 @@ namespace SimpleDnsCrypt.Models
 		private int _cache_min_ttl;
 		private int _cache_size;
 		private bool _cache;
-		private string _fallback_resolver;
+		private ObservableCollection<string> _fallback_resolvers;
 		private bool _ignore_system_dns;
 		private Dictionary<string, Static> _static;
 		private string _proxy;
@@ -489,24 +491,29 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		/// <summary>
-		///     Fallback resolver
-		///     This is a normal, non-encrypted DNS resolver, that will be only used
-		///     for one-shot queries when retrieving the initial resolvers list, and
-		///     only if the system DNS configuration doesn't work.
-		///     No user application queries will ever be leaked through this resolver,
-		///     and it will not be used after IP addresses of resolvers URLs have been found.
-		///     It will never be used if lists have already been cached, and if stamps
-		///     don't include host names without IP addresses.
-		///     It will not be used if the configured system DNS works.
-		///     A resolver supporting DNSSEC is recommended. This may become mandatory.
+		///     Fallback resolvers
+		/// 	These are normal, non-encrypted DNS resolvers, that will be only used
+		/// 	for one-shot queries when retrieving the initial resolvers list, and
+		/// 	only if the system DNS configuration doesn't work.
+		/// 	No user application queries will ever be leaked through these resolvers,
+		/// 	and they will not be used after IP addresses of resolvers URLs have been found.
+		/// 	They will never be used if lists have already been cached, and if stamps
+		/// 	don't include host names without IP addresses.
+		/// 	They will not be used if the configured system DNS works.
+		/// 	Resolvers supporting DNSSEC are recommended.
+		/// 	
+		/// 	People in China may need to use 114.114.114.114:53 here.
+		/// 	Other popular options include 8.8.8.8 and 1.1.1.1.
+		/// 	
+		/// 	If more than one resolver is specified, they will be tried in sequence.
 		/// </summary>
-		public string fallback_resolver
+		public ObservableCollection<string> fallback_resolvers
 		{
-			get => _fallback_resolver;
+			get => _fallback_resolvers;
 			set
 			{
-				_fallback_resolver = value;
-				NotifyOfPropertyChange(() => fallback_resolver);
+				_fallback_resolvers = value;
+				NotifyOfPropertyChange(() => fallback_resolvers);
 			}
 		}
 
@@ -575,6 +582,33 @@ namespace SimpleDnsCrypt.Models
 			{
 				_block_ipv6 = value;
 				NotifyOfPropertyChange(() => block_ipv6);
+			}
+		}
+
+		/// <summary>
+		///     Immediately respond to A and AAAA queries for host names without a domain name.
+		/// </summary>
+		public bool block_unqualified
+		{
+			get => _block_unqualified;
+			set
+			{
+				_block_unqualified = value;
+				NotifyOfPropertyChange(() => block_unqualified);
+			}
+		}
+
+		/// <summary>
+		///     Immediately respond to queries for local zones instead of leaking them to
+		///     upstream resolvers (always causing errors or timeouts).
+		/// </summary>
+		public bool block_undelegated
+		{
+			get => _block_undelegated;
+			set
+			{
+				_block_undelegated = value;
+				NotifyOfPropertyChange(() => block_undelegated);
 			}
 		}
 

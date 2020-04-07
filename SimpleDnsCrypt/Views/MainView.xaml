@@ -844,7 +844,10 @@
                                                        VerticalAlignment="Bottom"
                                                        HorizontalAlignment="Left" Margin="0,0,0,5">
                                             </TextBlock>
-                                            <TextBox
+                                            <Button IsEnabled="{Binding IsWorkingOnService, Converter={StaticResource ReverseBoolToEnabledConverter}}" Width="Auto"
+                                                    Grid.Row="0" Grid.Column="1" Cursor="Hand" Content="{lex:Loc Key=address_settings_manage_fallback_resolvers}" x:Name="ManageFallbackResolvers" Margin="0,0,0,5"
+                                                    HorizontalAlignment="Right" Style="{DynamicResource CustomAccentedSquareButtonStyle}" VerticalAlignment="Top"></Button>
+                                            <!--<TextBox
                                                 IsEnabled="{Binding IsWorkingOnService, Converter={StaticResource ReverseBoolToEnabledConverter}}"
                                                 Grid.Row="0" Grid.Column="1" Cursor="Hand" MinWidth="65" Width="Auto"
                                                 Text="{Binding FallbackResolver}"
@@ -861,7 +864,7 @@
                                                         </Grid>
                                                     </ControlTemplate>
                                                 </Validation.ErrorTemplate>
-                                            </TextBox>
+                                            </TextBox>-->
                                         </Grid>
                                         <!-- Fallback Resolver end -->
                                         <!-- Netprobe Timeout begin -->
