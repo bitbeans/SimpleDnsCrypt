@@ -121,61 +121,61 @@
     <value>بطاقات الشبكة</value>
   </data>
   <data name="default_settings_show_hidden_cards" xml:space="preserve">
-    <value>إظهار بطاقات الشبكة المخفية</value>
+    <value>عرض البطاقات المخفية</value>
   </data>
   <data name="default_settings_service_header" xml:space="preserve">
-    <value>الخدمة</value>
+    <value>الخدمات</value>
   </data>
   <data name="default_settings_service" xml:space="preserve">
-    <value>خدمة DNSCrypt</value>
+    <value>DNSCrypt Service</value>
   </data>
   <data name="default_settings_configuration" xml:space="preserve">
-    <value>ترتيب\تثبيت</value>
+    <value>ترتيب</value>
   </data>
   <data name="default_settings_configuration_ipv4" xml:space="preserve">
-    <value>اتسخدام خدام IPv4</value>
+    <value>Using IPv4 Server</value>
   </data>
   <data name="default_settings_configuration_ipv4_tooltip" xml:space="preserve">
-    <value>إستخدام خوادم التى يمكن الوصول إليها عبر IPv4</value>
+    <value>Use servers reachable over IPv4</value>
   </data>
   <data name="default_settings_configuration_ipv6" xml:space="preserve">
-    <value>إستخادم خادم IPv6</value>
+    <value>Using IPv6 Server</value>
   </data>
   <data name="default_settings_configuration_ipv6_tooltip" xml:space="preserve">
-    <value>إستخدام خوادم التى يمكن الوصول إليها عبر IPv6 (لا تفعلها إلا إذا كان ليدك إتصال IPv6)</value>
+    <value>Use servers reachable over IPv6 (do not enable if you don&apos;t have IPv6 connectivity)</value>
   </data>
   <data name="default_settings_configuration_dnssec" xml:space="preserve">
-    <value>فقط خوادم DNSSEC تكون مدعومة</value>
+    <value>Only servers with DNSSEC support</value>
   </data>
   <data name="default_settings_configuration_dnssec_tooltip" xml:space="preserve">
-    <value>الخادم يجب ان يكون يدعم إضافة DNS security</value>
+    <value>Server must support DNS security extensions</value>
   </data>
   <data name="default_settings_configuration_nolog" xml:space="preserve">
-    <value>فقط الخوادم بدون تسجيل</value>
+    <value>خوادم فقط دون تسجيل</value>
   </data>
   <data name="default_settings_configuration_nolog_tooltip" xml:space="preserve">
-    <value>الخادم يجب ان لايكون يسجل نشاطات المستخدم</value>
+    <value>يجب ألا يقوم الخادم بتسجيل استعلامات المستخدم</value>
   </data>
   <data name="default_settings_configuration_nofilter" xml:space="preserve">
-    <value>فقط الخوادم بدون فلتر</value>
+    <value>خوادم فقط دون مرشح</value>
   </data>
   <data name="default_settings_configuration_nofilter_tooltip" xml:space="preserve">
-    <value>يجب على الخادم ان لايكون له قائمة سوداء (للرقابة الأبوية, منع الإعلانات...)</value>
+    <value>يجب ألا يفرض الخادم القائمة السوداء الخاصة به (لمراقبة الوالدين ، ومنع الإعلانات ...)</value>
   </data>
   <data name="tabitem_mainmenu" xml:space="preserve">
     <value>القائمة الرئيسية</value>
   </data>
   <data name="loader_administrative_rights_available" xml:space="preserve">
-    <value>لدية حقوق إدارية</value>
+    <value>الحقوق الإدارية متوفرة</value>
   </data>
   <data name="loader_administrative_rights_missing" xml:space="preserve">
-    <value>ليس لدية حقوق إدارية</value>
+    <value>الحقوق الإدارية المفقودة</value>
   </data>
   <data name="loader_checking_version" xml:space="preserve">
-    <value>يبحث عن إصدار جديد...</value>
+    <value>التحقق من وجود نسخة جديدة</value>
   </data>
   <data name="loader_new_version_found" xml:space="preserve">
-    <value>لقد وجدت إصدار جديد: {0}</value>
+    <value>A newer version was found: {0}</value>
   </data>
   <data name="loader_starting_update" xml:space="preserve">
     <value>جارٍ التحديث...</value>
@@ -680,5 +680,14 @@
   </data>
   <data name="configure_routes_unknown" xml:space="preserve">
     <value>Change route (unknown status)</value>
+  </data>
+  <data name="advanced_settings_manage_fallback_resolvers" xml:space="preserve">
+    <value>manage fallback resolvers</value>
+  </data>
+  <data name="advanced_settings_fallback_resolvers" xml:space="preserve">
+    <value>Fallback Resolvers</value>
+  </data>
+  <data name="advanced_settings_fallback_resolvers_content" xml:space="preserve">
+    <value>These are normal, non-encrypted DNS resolvers, that will be only used for one-shot queries when retrieving the initial resolvers list, and only if the system DNS configuration doesn&apos;t work. No user application queries will ever be leaked through these resolvers, and they will not be used after IP addresses of resolvers URLs have been found. They will never be used if lists have already been cached, and if stamps don&apos;t include host names without IP addresses. They will not be used if the configured system DNS works. Resolvers supporting DNSSEC are recommended. People in China may need to use 114.114.114.114:53 here. If more than one resolver is specified, they will be tried in sequence.</value>
   </data>
 </root>

@@ -677,7 +677,7 @@ namespace SimpleDnsCrypt.ViewModels
 			settings.WindowStartupLocation = WindowStartupLocation.CenterOwner;
 			var oldAddressed = new List<string>(DnscryptProxyConfiguration.listen_addresses);
 			FallbackResolversViewModel.FallbackResolvers = DnscryptProxyConfiguration.fallback_resolvers;
-			FallbackResolversViewModel.WindowTitle = LocalizationEx.GetUiString("address_settings_listen_addresses", Thread.CurrentThread.CurrentCulture);
+			FallbackResolversViewModel.WindowTitle = LocalizationEx.GetUiString("advanced_settings_fallback_resolvers", Thread.CurrentThread.CurrentCulture);
 			var result = _windowManager.ShowDialog(FallbackResolversViewModel, null, settings);
 			if (!result)
 			{

@@ -39,7 +39,7 @@
                                                 Foreground="#FF8ab329"
                                                 HorizontalAlignment="Left"
                                                 VerticalAlignment="Center" />
-                    <TextBlock Text="{lex:Loc Key=fallback_resolver_settings_addresses}"
+                    <TextBlock Text="{lex:Loc Key=advanced_settings_fallback_resolvers}"
                                TextWrapping="Wrap" VerticalAlignment="Center"
                                Foreground="#FF8ab329" FontSize="20"
                                Opacity="0.7" Margin="5,0,0,3" FontWeight="Bold">

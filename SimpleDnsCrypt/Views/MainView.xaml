@@ -836,7 +836,7 @@
                                                 <ColumnDefinition Width="*"/>
                                             </Grid.ColumnDefinitions>
                                             <Grid.RowDefinitions>
-                                                <RowDefinition Height="35" />
+                                                <RowDefinition Height="*" />
                                             </Grid.RowDefinitions>
                                             <TextBlock Foreground="#FF575757" Grid.Row="0" Grid.Column="0"
                                                        TextWrapping="Wrap"

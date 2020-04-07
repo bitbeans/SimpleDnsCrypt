@@ -142,7 +142,7 @@
     <value>使用 IPv6 服务器</value>
   </data>
   <data name="default_settings_configuration_ipv6_tooltip" xml:space="preserve">
-    <value>使用支持 IPv6 的服务器（如果没有 IPv6 连接能力，请勿启用）</value>
+    <value>使用支持 IPv6 的服务器（如果不能连接到 IPv6网络，请勿启用）</value>
   </data>
   <data name="default_settings_configuration_dnssec" xml:space="preserve">
     <value>只显示支持 DNSSEC 的服务器</value>
@@ -232,13 +232,13 @@
     <value>许可文件</value>
   </data>
   <data name="about_view_on_github" xml:space="preserve">
-    <value>在 Github 上查看</value>
+    <value>在 GitHub 上查看</value>
   </data>
   <data name="tabitem_querylog" xml:space="preserve">
     <value>日志</value>
   </data>
   <data name="querylog" xml:space="preserve">
-    <value>日志</value>
+    <value>请求日志</value>
   </data>
   <data name="querylog_waiting_for_data" xml:space="preserve">
     <value>正在等待 DNS 查询结果</value>
@@ -436,7 +436,7 @@
     <value>示例： *.example.com, ads.*, *sex*。你也可以添加以逗号分隔开的规则列表，以my-custom-rules.txt 文档开头的文件，还可以添加以 http:// 或 https:// 开头的网络地址。</value>
   </data>
   <data name="working_dialog_title" xml:space="preserve">
-    <value>列表正在合併中......</value>
+    <value>列表正在合并中......</value>
   </data>
   <data name="button_select_path" xml:space="preserve">
     <value>请选择路径</value>
@@ -638,7 +638,7 @@
     <value>添加转发规则</value>
   </data>
   <data name="button_forwarding_remove" xml:space="preserve">
-    <value>删除指定转发规则</value>
+    <value>删除选中的转发规则</value>
   </data>
   <data name="button_forwarding_import" xml:space="preserve">
     <value>导入转发规则</value>
@@ -665,24 +665,33 @@
     <value>显示 “隐身与转发” 标签页</value>
   </data>
   <data name="route_window_title" xml:space="preserve">
-    <value>Route (Anonymized DNS)</value>
+    <value>线路(Anonymized DNS)</value>
   </data>
   <data name="route_via" xml:space="preserve">
-    <value>via following relay(s):</value>
+    <value>经过以下节点进行连接</value>
   </data>
   <data name="route_drag_from_relays" xml:space="preserve">
-    <value>Drag &amp; Drop from available relays</value>
+    <value>将有效节点拖放至此处</value>
   </data>
   <data name="configure_routes_add" xml:space="preserve">
-    <value>Add route</value>
+    <value>添加线路</value>
   </data>
   <data name="configure_routes_invalid" xml:space="preserve">
-    <value>Change route (invalid entries)</value>
+    <value>更换线路(接入点无效)</value>
   </data>
   <data name="configure_routes_change" xml:space="preserve">
-    <value>Change route</value>
+    <value>更换线路</value>
   </data>
   <data name="configure_routes_unknown" xml:space="preserve">
-    <value>Change route (unknown status)</value>
+    <value>更换线路(情况不明)</value>
+  </data>
+  <data name="advanced_settings_manage_fallback_resolvers" xml:space="preserve">
+    <value>manage fallback resolvers</value>
+  </data>
+  <data name="advanced_settings_fallback_resolvers" xml:space="preserve">
+    <value>Fallback Resolvers</value>
+  </data>
+  <data name="advanced_settings_fallback_resolvers_content" xml:space="preserve">
+    <value>These are normal, non-encrypted DNS resolvers, that will be only used for one-shot queries when retrieving the initial resolvers list, and only if the system DNS configuration doesn&apos;t work. No user application queries will ever be leaked through these resolvers, and they will not be used after IP addresses of resolvers URLs have been found. They will never be used if lists have already been cached, and if stamps don&apos;t include host names without IP addresses. They will not be used if the configured system DNS works. Resolvers supporting DNSSEC are recommended. People in China may need to use 114.114.114.114:53 here. If more than one resolver is specified, they will be tried in sequence.</value>
   </data>
 </root>

@@ -688,4 +688,13 @@ Kann IPv4 und/oder IPv6 sein.</value>
   <data name="configure_routes_unknown" xml:space="preserve">
     <value>Routen (unbekannter status)</value>
   </data>
+  <data name="advanced_settings_manage_fallback_resolvers" xml:space="preserve">
+    <value>Fallback Resolver verwalten</value>
+  </data>
+  <data name="advanced_settings_fallback_resolvers" xml:space="preserve">
+    <value>Fallback Resolver</value>
+  </data>
+  <data name="advanced_settings_fallback_resolvers_content" xml:space="preserve">
+    <value>Dies sind normale, unverschlüsselte DNS-Resolver, die nur für einmalige Abfragen beim Abrufen der ursprünglichen Resolverliste verwendet werden, und nur, wenn die DNS-Konfiguration des Systems nicht funktioniert. Über diese Resolver werden niemals Anfragen von Benutzeranwendungen geleaked, und sie werden nicht mehr verwendet, nachdem die IP-Adressen der Resolver-URLs gefunden wurden. Sie werden niemals verwendet, wenn die Listen bereits zwischengespeichert wurden und wenn die Stamps keine Hostnamen ohne IP-Adressen enthalten. Sie werden nicht verwendet, wenn das konfigurierte System-DNS funktioniert. Resolver, die DNSSEC unterstützen, werden empfohlen. Nutzer in China müssen hier möglicherweise 114.114.114.114.114:53 verwenden. Wenn mehr als ein Resolver angegeben wird, werden sie nacheinander versucht.</value>
+  </data>
 </root>
