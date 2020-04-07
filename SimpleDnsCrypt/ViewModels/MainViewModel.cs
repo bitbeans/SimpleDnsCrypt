@@ -50,6 +50,7 @@ namespace SimpleDnsCrypt.ViewModels
 		private SettingsViewModel _settingsViewModel;
 		private QueryLogViewModel _queryLogViewModel;
 		private ListenAddressesViewModel _listenAddressesViewModel;
+		private FallbackResolversViewModel _fallbackResolversViewModel;
 		private RouteViewModel _routeViewModel;
 		private ProxiesViewModel _proxiesViewModel;
 		private bool _isDnsCryptAutomaticModeEnabled;
@@ -95,11 +96,12 @@ namespace SimpleDnsCrypt.ViewModels
 				WindowTitle = LocalizationEx.GetUiString("settings", Thread.CurrentThread.CurrentCulture)
 			};
 			_settingsViewModel.PropertyChanged += SettingsViewModelOnPropertyChanged;
-			_listenAddressesViewModel = new ListenAddressesViewModel(_windowManager, _events);
+			_listenAddressesViewModel = new ListenAddressesViewModel();
+			_fallbackResolversViewModel = new FallbackResolversViewModel();
 			_routeViewModel = new RouteViewModel();
 			_proxiesViewModel = new ProxiesViewModel(_windowManager, _events);
 			_queryLogViewModel = new QueryLogViewModel(_windowManager, _events);
-			_domainBlockLogViewModel = new DomainBlockLogViewModel(_windowManager, _events);
+			_domainBlockLogViewModel = new DomainBlockLogViewModel();
 			_domainBlacklistViewModel = new DomainBlacklistViewModel(_windowManager, _events);
 			_addressBlockLogViewModel = new AddressBlockLogViewModel(_windowManager, _events);
 			_addressBlacklistViewModel = new AddressBlacklistViewModel(_windowManager, _events);
@@ -227,6 +229,17 @@ namespace SimpleDnsCrypt.ViewModels
 				if (value.Equals(_proxiesViewModel)) return;
 				_proxiesViewModel = value;
 				NotifyOfPropertyChange(() => ProxiesViewModel);
+			}
+		}
+
+		public FallbackResolversViewModel FallbackResolversViewModel
+		{
+			get => _fallbackResolversViewModel;
+			set
+			{
+				if (value.Equals(_fallbackResolversViewModel)) return;
+				_fallbackResolversViewModel = value;
+				NotifyOfPropertyChange(() => FallbackResolversViewModel);
 			}
 		}
 
@@ -658,9 +671,24 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 		}
 
-		public async void ManageFallbackResolvers()
+		public void ManageFallbackResolvers()
 		{
+			dynamic settings = new ExpandoObject();
+			settings.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+			var oldAddressed = new List<string>(DnscryptProxyConfiguration.listen_addresses);
+			FallbackResolversViewModel.FallbackResolvers = DnscryptProxyConfiguration.fallback_resolvers;
+			FallbackResolversViewModel.WindowTitle = LocalizationEx.GetUiString("address_settings_listen_addresses", Thread.CurrentThread.CurrentCulture);
+			var result = _windowManager.ShowDialog(FallbackResolversViewModel, null, settings);
+			if (!result)
+			{
+				if (FallbackResolversViewModel.FallbackResolvers.Count == 0) return;
 
+				var a = FallbackResolversViewModel.FallbackResolvers.Except(oldAddressed).ToList();
+				var b = oldAddressed.Except(FallbackResolversViewModel.FallbackResolvers).ToList();
+				if (!a.Any() && !b.Any()) return;
+				DnscryptProxyConfiguration.fallback_resolvers = FallbackResolversViewModel.FallbackResolvers;
+				SaveAdvancedSettings();
+			}
 		}
 
 		public async void ListenAddresses()

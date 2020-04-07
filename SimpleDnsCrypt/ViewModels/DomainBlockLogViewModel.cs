@@ -20,8 +20,6 @@ namespace SimpleDnsCrypt.ViewModels
 	public class DomainBlockLogViewModel : Screen
 	{
 		private static readonly ILog Log = LogManagerHelper.Factory();
-		private readonly IWindowManager _windowManager;
-		private readonly IEventAggregator _events;
 
 		private ObservableCollection<DomainBlockLogLine> _domainBlockLogLines;
 		private string _domainBlockLogFile;
@@ -29,11 +27,8 @@ namespace SimpleDnsCrypt.ViewModels
 		private DomainBlockLogLine _selectedDomainBlockLogLine;
 
 		[ImportingConstructor]
-		public DomainBlockLogViewModel(IWindowManager windowManager, IEventAggregator events)
+		public DomainBlockLogViewModel()
 		{
-			_windowManager = windowManager;
-			_events = events;
-			_events.Subscribe(this);
 			_isDomainBlockLogLogging = false;
 			_domainBlockLogLines = new ObservableCollection<DomainBlockLogLine>();
 		}

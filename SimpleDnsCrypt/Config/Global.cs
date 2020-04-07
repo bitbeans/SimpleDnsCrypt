@@ -93,6 +93,15 @@
 		public const string DefaultResolverIpv6 = "[::1]:53";
 
 		/// <summary>
+		///     List of the default fall back resolvers.
+		/// </summary>
+		public static readonly string[] DefaultFallbackResolvers =
+		{
+			"9.9.9.9:53",
+			"8.8.8.8:53"
+		};
+
+		/// <summary>
 		///     List of files must exist.
 		/// </summary>
 		public static readonly string[] DnsCryptProxyFiles =

@@ -824,7 +824,7 @@
                                                                         HorizontalAlignment="Left"
                                                                         VerticalAlignment="Center" />
                                             <TextBlock Grid.Column="1" Grid.Row="0"
-                                                       Text="{lex:Loc Key=advanced_settings_fallback_resolver}"
+                                                       Text="{lex:Loc Key=advanced_settings_fallback_resolvers}"
                                                        TextWrapping="Wrap" VerticalAlignment="Center"
                                                        Foreground="#FF8ab329" FontSize="20"
                                                        Opacity="0.7" Margin="5,0,0,3" FontWeight="Bold">
@@ -833,38 +833,20 @@
                                         <Grid>
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="550" />
-                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*"/>
                                             </Grid.ColumnDefinitions>
                                             <Grid.RowDefinitions>
-                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="35" />
                                             </Grid.RowDefinitions>
                                             <TextBlock Foreground="#FF575757" Grid.Row="0" Grid.Column="0"
                                                        TextWrapping="Wrap"
-                                                       Text="{lex:Loc Key=advanced_settings_fallback_resolver_content}"
+                                                       Text="{lex:Loc Key=advanced_settings_fallback_resolvers_content}"
                                                        VerticalAlignment="Bottom"
-                                                       HorizontalAlignment="Left" Margin="0,0,0,5">
+                                                       HorizontalAlignment="Left" Margin="0,0,0,0">
                                             </TextBlock>
                                             <Button IsEnabled="{Binding IsWorkingOnService, Converter={StaticResource ReverseBoolToEnabledConverter}}" Width="Auto"
-                                                    Grid.Row="0" Grid.Column="1" Cursor="Hand" Content="{lex:Loc Key=address_settings_manage_fallback_resolvers}" x:Name="ManageFallbackResolvers" Margin="0,0,0,5"
+                                                    Grid.Row="0" Grid.Column="1" Cursor="Hand" Content="{lex:Loc Key=advanced_settings_manage_fallback_resolvers}" x:Name="ManageFallbackResolvers" Margin="0,0,0,5"
                                                     HorizontalAlignment="Right" Style="{DynamicResource CustomAccentedSquareButtonStyle}" VerticalAlignment="Top"></Button>
-                                            <!--<TextBox
-                                                IsEnabled="{Binding IsWorkingOnService, Converter={StaticResource ReverseBoolToEnabledConverter}}"
-                                                Grid.Row="0" Grid.Column="1" Cursor="Hand" MinWidth="65" Width="Auto"
-                                                Text="{Binding FallbackResolver}"
-                                                controls:TextBoxHelper.Watermark="9.9.9.9:53" Background="#FF8ab329"
-                                                Opacity="0.8" BorderBrush="#FF575757"
-                                                HorizontalAlignment="Right" VerticalAlignment="Top"
-                                                TextAlignment="Right" IsTabStop="False">
-                                                <Validation.ErrorTemplate>
-                                                    <ControlTemplate>
-                                                        <Grid>
-                                                            <Border BorderThickness="1" BorderBrush="DarkOrange">
-                                                                <AdornedElementPlaceholder />
-                                                            </Border>
-                                                        </Grid>
-                                                    </ControlTemplate>
-                                                </Validation.ErrorTemplate>
-                                            </TextBox>-->
                                         </Grid>
                                         <!-- Fallback Resolver end -->
                                         <!-- Netprobe Timeout begin -->

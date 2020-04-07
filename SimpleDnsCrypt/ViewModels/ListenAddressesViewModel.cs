@@ -9,23 +9,15 @@ namespace SimpleDnsCrypt.ViewModels
 	[Export(typeof(ListenAddressesViewModel))]
 	public class ListenAddressesViewModel : Screen
 	{
-		private readonly IWindowManager _windowManager;
-		private readonly IEventAggregator _events;
 		private string _windowTitle;
 		private ObservableCollection<string> _listenAddresses;
 		private string _selectedListenAddress;
 		private string _addressInput;
 
-		public ListenAddressesViewModel()
-		{
-		}
 
 		[ImportingConstructor]
-		public ListenAddressesViewModel(IWindowManager windowManager, IEventAggregator events)
+		public ListenAddressesViewModel()
 		{
-			_windowManager = windowManager;
-			_events = events;
-			_events.Subscribe(this);
 			_listenAddresses = new ObservableCollection<string>();
 		}
 

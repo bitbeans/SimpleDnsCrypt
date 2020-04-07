@@ -171,6 +171,7 @@
     <Compile Include="ViewModels\AddressBlacklistViewModel.cs" />
     <Compile Include="ViewModels\AddressBlockLogViewModel.cs" />
     <Compile Include="ViewModels\CloakAndForwardViewModel.cs" />
+    <Compile Include="ViewModels\FallbackResolversViewModel.cs" />
     <Compile Include="ViewModels\ListenAddressesViewModel.cs" />
     <Compile Include="ViewModels\MetroMessageBoxViewModel.cs" />
     <Compile Include="ViewModels\ProxiesViewModel.cs" />
@@ -220,6 +221,10 @@
     <Page Include="Styles\CustomMetroListBoxItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FallbackResolversView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\ListenAddressesView.xaml">
       <SubType>Designer</SubType>
