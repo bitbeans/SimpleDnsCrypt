@@ -684,12 +684,12 @@
     <value>Rotayı değiştir (bilinmeyen durum)</value>
   </data>
   <data name="advanced_settings_manage_fallback_resolvers" xml:space="preserve">
-    <value>manage fallback resolvers</value>
+    <value>yedek çözücüleri yönetme</value>
   </data>
   <data name="advanced_settings_fallback_resolvers" xml:space="preserve">
-    <value>Fallback Resolvers</value>
+    <value>Yedek Çözücüler</value>
   </data>
   <data name="advanced_settings_fallback_resolvers_content" xml:space="preserve">
-    <value>These are normal, non-encrypted DNS resolvers, that will be only used for one-shot queries when retrieving the initial resolvers list, and only if the system DNS configuration doesn&apos;t work. No user application queries will ever be leaked through these resolvers, and they will not be used after IP addresses of resolvers URLs have been found. They will never be used if lists have already been cached, and if stamps don&apos;t include host names without IP addresses. They will not be used if the configured system DNS works. Resolvers supporting DNSSEC are recommended. People in China may need to use 114.114.114.114:53 here. If more than one resolver is specified, they will be tried in sequence.</value>
+    <value>Bunlar normal, şifrelenmemiş DNS çözücüleridir; bunlar yalnızca ilk çözümleyiciler listesi alınırken tek seferlik sorgular için ve yalnızca sistem DNS yapılandırması çalışmazsa kullanılır. Bu çözümleyicilerden hiçbir kullanıcı uygulaması sorgusu sızdırılmaz ve çözümleyici URL&apos;lerinin IP adresleri bulunduktan sonra kullanılmaz. Listeler önceden önbelleğe alınmışsa ve damgalar IP adresleri olmayan ana bilgisayar adlarını içermiyorsa asla kullanılmazlar. Yapılandırılan sistem DNS çalışırsa kullanılmazlar. DNSSEC&apos;yi destekleyen çözümleyiciler önerilir. Çin&apos;deki insanların burada 114.114.114.114:53 kullanmaları gerekebilir. Birden fazla çözümleyici belirtilirse, sırayla denenir.</value>
   </data>
 </root>
