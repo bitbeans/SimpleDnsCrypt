@@ -60,6 +60,8 @@ namespace SimpleDnsCrypt.ViewModels
 		private bool _isSavingConfiguration;
 		private bool _isUninstallingService;
 		private bool _isWorkingOnService;
+		private int _windowWidth;
+		private int _windowHeight;
 
 		private ObservableCollection<Language> _languages;
 
@@ -85,6 +87,8 @@ namespace SimpleDnsCrypt.ViewModels
 			_windowManager = windowManager;
 			_events = events;
 			_events.Subscribe(this);
+			_windowWidth = Properties.Settings.Default.WindowWidth;
+			_windowHeight= Properties.Settings.Default.WindowHeight;
 			_windowTitle =
 				$"{Global.ApplicationName} {VersionHelper.PublishVersion} {VersionHelper.PublishBuild} [dnscrypt-proxy {DnsCryptProxyManager.GetVersion()}]";
 			SelectedTab = Tabs.MainTab;
@@ -95,6 +99,7 @@ namespace SimpleDnsCrypt.ViewModels
 			{
 				WindowTitle = LocalizationEx.GetUiString("settings", Thread.CurrentThread.CurrentCulture)
 			};
+
 			_settingsViewModel.PropertyChanged += SettingsViewModelOnPropertyChanged;
 			_listenAddressesViewModel = new ListenAddressesViewModel();
 			_fallbackResolversViewModel = new FallbackResolversViewModel();
@@ -391,6 +396,26 @@ namespace SimpleDnsCrypt.ViewModels
 		}
 
 		/// <summary>
+		/// Closing the main window.
+		/// </summary>
+		/// <param name="cancelEventArgs"></param>
+		public void OnClose(CancelEventArgs cancelEventArgs)
+		{
+			try
+			{
+				Properties.Settings.Default.WindowWidth = WindowWidth;
+				Properties.Settings.Default.WindowHeight = WindowHeight;
+				Properties.Settings.Default.Save();
+			}
+			catch (Exception exception)
+			{
+				Log.Error(exception);
+			}
+		}
+
+		
+
+		/// <summary>
 		///     The title of the window.
 		/// </summary>
 		public string WindowTitle
@@ -400,6 +425,32 @@ namespace SimpleDnsCrypt.ViewModels
 			{
 				_windowTitle = value;
 				NotifyOfPropertyChange(() => WindowTitle);
+			}
+		}
+
+		/// <summary>
+		///		The width of the main window.
+		/// </summary>
+		public int WindowWidth
+		{
+			get => _windowWidth;
+			set
+			{
+				_windowWidth = value;
+				NotifyOfPropertyChange(() => WindowWidth);
+			}
+		}
+
+		/// <summary>
+		///		The height of the main window.
+		/// </summary>
+		public int WindowHeight
+		{
+			get => _windowHeight;
+			set
+			{
+				_windowHeight = value;
+				NotifyOfPropertyChange(() => WindowHeight);
 			}
 		}
 
@@ -609,7 +660,7 @@ namespace SimpleDnsCrypt.ViewModels
 
 		public void About()
 		{
-			var win = new AboutViewModel(_windowManager, _events)
+			var win = new AboutViewModel()
 			{
 				WindowTitle = LocalizationEx.GetUiString("about", Thread.CurrentThread.CurrentCulture)
 			};

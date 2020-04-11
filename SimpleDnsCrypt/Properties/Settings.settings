@@ -68,5 +68,11 @@
     <Setting Name="ForwardingRulesFile" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="WindowWidth" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">825</Value>
+    </Setting>
+    <Setting Name="WindowHeight" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">875</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

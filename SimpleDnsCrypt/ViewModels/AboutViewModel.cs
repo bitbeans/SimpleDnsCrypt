@@ -16,23 +16,14 @@ namespace SimpleDnsCrypt.ViewModels
 	[Export(typeof(AboutViewModel))]
 	public class AboutViewModel : Screen
 	{
-		private readonly IWindowManager _windowManager;
-		private readonly IEventAggregator _events;
 		private string _windowTitle;
 
 		private BindableCollection<License> _licenses;
 		private License _selectedLicense;
 
+		[ImportingConstructor]
 		public AboutViewModel()
 		{
-		}
-
-		[ImportingConstructor]
-		public AboutViewModel(IWindowManager windowManager, IEventAggregator events)
-		{
-			_windowManager = windowManager;
-			_events = events;
-			_events.Subscribe(this);
 			AddLicenses();
 			SelectedLicense = _licenses[0];
 		}
