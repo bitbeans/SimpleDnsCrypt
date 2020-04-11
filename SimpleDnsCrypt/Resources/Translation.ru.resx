@@ -502,7 +502,7 @@
     <value>Резервный резольвер</value>
   </data>
   <data name="advanced_settings_fallback_resolver_content" xml:space="preserve">
-    <value>Это обычный, не зашифрованный DNS резольвер, который будет использоваться только для однократных запросов при получении списка резольверов и только в случае, если DNS системы не работает. В Китае можно использовать 114.114.114.114:53.</value>
+    <value>Это обычные, не зашифрованные DNS-резольверы, которые будут использоваться одноразово при получении начального списка и только в случае, если DNS системы не работает. В Китае можно использовать 114.114.114.114:53.</value>
   </data>
   <data name="trayicon_tooltip" xml:space="preserve">
     <value>Simple DNSCrypt</value>
@@ -563,7 +563,7 @@
     <value>Таймаут проверки сети</value>
   </data>
   <data name="advanced_settings_netprobe_timeout_content" xml:space="preserve">
-    <value>Время (в секундах) ожидания подключения к сети перед инициализацией прокси-сервера. Полезно, если прокси-сервер в автозагрузке, а сетевое подключение отложено или имеет задержку. Используйте 0 для отключения.</value>
+    <value>Время (в секундах) ожидания подключения к сети, перед инициализацией прокси-сервера. Полезно, если прокси-сервер в автозагрузке, а сетевое подключение отложено или имеет задержку. Используйте 0 для отключения.</value>
   </data>
   <data name="default_settings_configuration_dnscrypt" xml:space="preserve">
     <value>DNSCrypt</value>
@@ -602,7 +602,7 @@
     <value>Добавить новое правило маскировки</value>
   </data>
   <data name="button_cloaking_remove" xml:space="preserve">
-    <value>Удалить выбранное правило маскировк</value>
+    <value>Удалить выбранное правило маскировки</value>
   </data>
   <data name="button_cloaking_import" xml:space="preserve">
     <value>Импорт существующих правил маскировки</value>
@@ -674,21 +674,21 @@
     <value>Добавить маршрут</value>
   </data>
   <data name="configure_routes_invalid" xml:space="preserve">
-    <value>Изменение маршрута (недопустимые записи)</value>
+    <value>Измените маршрут (недопустимые записи)</value>
   </data>
   <data name="configure_routes_change" xml:space="preserve">
     <value>Изменить маршрут</value>
   </data>
   <data name="configure_routes_unknown" xml:space="preserve">
-    <value>Изменение маршрута (неизвестный статус)</value>
+    <value>Измените маршрут (неизвестный статус)</value>
   </data>
   <data name="advanced_settings_manage_fallback_resolvers" xml:space="preserve">
-    <value>manage fallback resolvers</value>
+    <value>резервные резольверы</value>
   </data>
   <data name="advanced_settings_fallback_resolvers" xml:space="preserve">
-    <value>Fallback Resolvers</value>
+    <value>Резервные резольверы</value>
   </data>
   <data name="advanced_settings_fallback_resolvers_content" xml:space="preserve">
-    <value>These are normal, non-encrypted DNS resolvers, that will be only used for one-shot queries when retrieving the initial resolvers list, and only if the system DNS configuration doesn&apos;t work. No user application queries will ever be leaked through these resolvers, and they will not be used after IP addresses of resolvers URLs have been found. They will never be used if lists have already been cached, and if stamps don&apos;t include host names without IP addresses. They will not be used if the configured system DNS works. Resolvers supporting DNSSEC are recommended. People in China may need to use 114.114.114.114:53 here. If more than one resolver is specified, they will be tried in sequence.</value>
+    <value>Это обычные, не зашифрованные DNS-резольверы, которые будут использоваться одноразово при получении начального списка и только в случае, если DNS системы не работает. Они не будут использоваться после: нахождения IP URL-адресов резольверов, если списки уже кэшированы, IP имен хостов известны или работает системный DNS. Для других программ эти резольверы всегда недоступны. Рекомендуется использовать резольверы с поддержкой DNSSEC. В Китае, возможно, придется использовать 114.114.114.114:53. Если указано более одного резольвера, то они будут опробованы последовательно.</value>
   </data>
 </root>
