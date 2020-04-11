@@ -789,6 +789,7 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		private List<Route> _routes;
+		private bool _skip_incompatible;
 
 		public List<Route> routes
 		{
@@ -797,6 +798,19 @@ namespace SimpleDnsCrypt.Models
 			{
 				_routes = value;
 				NotifyOfPropertyChange(() => _routes);
+			}
+		}
+
+		/// <summary>
+		/// skip resolvers incompatible with anonymization instead of using them directly.
+		/// </summary>
+		public bool skip_incompatible
+		{
+			get => _skip_incompatible;
+			set
+			{
+				_skip_incompatible = value;
+				NotifyOfPropertyChange(() => skip_incompatible);
 			}
 		}
 	}
@@ -811,6 +825,7 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		private List<string> _broken_query_padding;
+		private List<string> _fragments_blocked;
 
 		public List<string> broken_query_padding
 		{
@@ -819,6 +834,16 @@ namespace SimpleDnsCrypt.Models
 			{
 				_broken_query_padding = value;
 				NotifyOfPropertyChange(() => broken_query_padding);
+			}
+		}
+
+		public List<string> fragments_blocked
+		{
+			get => _fragments_blocked;
+			set
+			{
+				_fragments_blocked = value;
+				NotifyOfPropertyChange(() => fragments_blocked);
 			}
 		}
 	}

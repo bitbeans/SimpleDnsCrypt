@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using SimpleDnsCrypt.Config;
 using SimpleDnsCrypt.Models;
 
 namespace SimpleDnsCrypt.Helper
@@ -60,8 +62,14 @@ namespace SimpleDnsCrypt.Helper
 			if (version.Equals("0.7.1"))
 			{
 				//changed: ignore_system_dns = true
+				//changed: block_unqualified = true
+				//changed: block_undelegated = true
 				//added: broken_implementations
+				//added: fallback_resolvers (instead of fallback_resolver)
 				DnscryptProxyConfigurationManager.DnscryptProxyConfiguration.ignore_system_dns = true;
+				DnscryptProxyConfigurationManager.DnscryptProxyConfiguration.block_unqualified = true;
+				DnscryptProxyConfigurationManager.DnscryptProxyConfiguration.block_undelegated = true;
+				DnscryptProxyConfigurationManager.DnscryptProxyConfiguration.fallback_resolvers = new ObservableCollection<string>(Global.DefaultFallbackResolvers);
 				var sources = DnscryptProxyConfigurationManager.DnscryptProxyConfiguration.sources;
 				if (!sources.ContainsKey("relays"))
 				{
@@ -79,7 +87,12 @@ namespace SimpleDnsCrypt.Helper
 				DnscryptProxyConfigurationManager.DnscryptProxyConfiguration.broken_implementations =
 					new BrokenImplementations
 					{
-						broken_query_padding = new List<string> { "cisco", "cisco-ipv6", "cisco-familyshield" }
+						//broken_query_padding = new List<string> { "cisco", "cisco-ipv6", "cisco-familyshield" },
+						fragments_blocked = new List<string> { "cisco", "cisco-ipv6", "cisco-familyshield", 
+							"cisco-familyshield-ipv6", "quad9-dnscrypt-ip4-filter-alt", "quad9-dnscrypt-ip4-filter-pri", 
+							"quad9-dnscrypt-ip4-nofilter-alt", "quad9-dnscrypt-ip4-nofilter-pri", "quad9-dnscrypt-ip6-filter-alt", 
+							"quad9-dnscrypt-ip6-filter-pri", "quad9-dnscrypt-ip6-nofilter-alt", "quad9-dnscrypt-ip6-nofilter-pri", 
+							"cleanbrowsing-adult", "cleanbrowsing-family-ipv6", "cleanbrowsing-family", "cleanbrowsing-security" }
 					};
 				return DnscryptProxyConfigurationManager.SaveConfiguration();
 			}

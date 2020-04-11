@@ -413,7 +413,6 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 		}
 
-		
 
 		/// <summary>
 		///     The title of the window.
