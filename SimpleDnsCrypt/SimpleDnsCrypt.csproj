@@ -1,46 +1,27 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{3B555A42-C19F-405D-A983-6D3B95E65265}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>SimpleDnsCrypt</RootNamespace>
-    <AssemblyName>SimpleDnsCrypt</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
+    <TargetFramework>net461</TargetFramework>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <PlatformTarget>x64</PlatformTarget>
-    <OutputPath>bin\x64\Debug\</OutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
-    <PlatformTarget>x64</PlatformTarget>
-    <OutputPath>bin\x64\Release\</OutputPath>
+    <AssemblyTitle>Simple DnsCrypt</AssemblyTitle>
+    <Product>Simple DnsCrypt</Product>
+    <Description>Simple management tool for dnscrypt-proxy</Description>
+    <Copyright>Copyright © 2015 - 2019 Christian Hermann</Copyright>
+    <AssemblyVersion>0.7.1</AssemblyVersion>
+    <FileVersion>0.7.1</FileVersion>
+    <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
+    <UseWPF>true</UseWPF>
+    <PostBuildEvent>copy "$(ProjectDir)DNS$(PlatformName)\*" "$(ProjectDir)$(OutDir)\dnscrypt-proxy\"</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\x86\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
     <DebugType>full</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
-    <OutputPath>bin\x86\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
@@ -50,393 +31,160 @@
   <PropertyGroup>
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <PropertyGroup>
+    <TargetFrameworkSDKToolsDirectory Condition=" '$(PlatformTarget)' == 'x64'">$(TargetFrameworkSDKToolsDirectory)$(PlatformTarget)\</TargetFrameworkSDKToolsDirectory>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(ProjectDir)DNS$(PlatformName)\*" "$(ProjectDir)$(OutDir)\dnscrypt-proxy\"</PostBuildEvent>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Configuration" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.IO.Compression, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
     <Reference Include="System.Management" />
-    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xaml">
-      <RequiredTargetFramework>4.0</RequiredTargetFramework>
-    </Reference>
+    <Reference Include="System.Xaml" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </ApplicationDefinition>
-    <Compile Include="AppBootstrapper.cs" />
-    <Compile Include="AppWindowManager.cs" />
-    <Compile Include="Config\Global.cs" />
-    <Compile Include="Controls\BaseMetroDialog.xaml.cs">
-      <DependentUpon>BaseMetroDialog.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\LoggingListView.cs" />
-    <Compile Include="Converters\BoolToForegroundConverter.cs" />
-    <Compile Include="Converters\BoolToTextConverter.cs" />
-    <Compile Include="Converters\BoolToVisibilityConverter.cs" />
-    <Compile Include="Converters\BoolToVisibilityCollapsedConverter.cs" />
-    <Compile Include="Converters\EnumToCollectionConverter.cs" />
-    <Compile Include="Converters\HeightConverter.cs" />
-    <Compile Include="Converters\IntegerBoolToVisibilityConverter.cs" />
-    <Compile Include="Converters\IntegerToBoolConverter.cs" />
-    <Compile Include="Converters\IntegerToVisibilityConverter.cs" />
-    <Compile Include="Converters\InterfaceTypeToIconConverter.cs" />
-    <Compile Include="Converters\InUseToBackgroundConverter.cs" />
-    <Compile Include="Converters\LicenseLinkToVisibilityConverter.cs" />
-    <Compile Include="Converters\LocalDateConverter.cs" />
-    <Compile Include="Converters\MessageBoxTypeToColor.cs" />
-    <Compile Include="Converters\ProtocolToVisibilityConverter.cs" />
-    <Compile Include="Converters\QueryLogReturnCodeToColorConverter.cs" />
-    <Compile Include="Converters\QueryLogTypeToColorConverter.cs" />
-    <Compile Include="Converters\ReverseBoolToEnabledConverter.cs" />
-    <Compile Include="Converters\RouteStateToColorConverter.cs" />
-    <Compile Include="Converters\ServerListBackgroundConverter.cs" />
-    <Compile Include="Converters\TextLengthToFontSizeConverter.cs" />
-    <Compile Include="Converters\UninstallToEnableConverter.cs" />
-    <Compile Include="Extensions\Base64UrlExtensions.cs" />
-    <Compile Include="Extensions\ColorConverterExtensions.cs" />
-    <Compile Include="Extensions\WindowManagerExtensions.cs" />
-    <Compile Include="Helper\ApplicationUpdater.cs" />
-    <Compile Include="Helper\AuthenticodeTools.cs" />
-    <Compile Include="Helper\DnscryptProxyConfigurationManager.cs" />
-    <Compile Include="Helper\DnsCryptProxyManager.cs" />
-    <Compile Include="Helper\EnumHelper.cs" />
-    <Compile Include="Helper\LocalizationEx.cs" />
-    <Compile Include="Helper\LocalNetworkInterfaceManager.cs" />
-    <Compile Include="Helper\LogManagerHelper.cs" />
-    <Compile Include="Helper\NavigationService.cs" />
-    <Compile Include="Helper\PatchHelper.cs" />
-    <Compile Include="Helper\PrerequisiteHelper.cs" />
-    <Compile Include="Helper\ProcessHelper.cs" />
-    <Compile Include="Helper\RelayHelper.cs" />
-    <Compile Include="Helper\ValidationHelper.cs" />
-    <Compile Include="Helper\VersionHelper.cs" />
-    <Compile Include="Logger\NLogLogger.cs" />
-    <Compile Include="LogMode.cs" />
-    <Compile Include="Models\AddressBlockLogLine.cs" />
-    <Compile Include="Models\AddRuleWindowResult.cs" />
-    <Compile Include="Models\AvailableResolver.cs" />
-    <Compile Include="Models\BoxType.cs" />
-    <Compile Include="Models\DomainBlockLogLine.cs" />
-    <Compile Include="Models\DnscryptProxyConfiguration.cs" />
-    <Compile Include="Models\DnsServer.cs" />
-    <Compile Include="Models\Language.cs" />
-    <Compile Include="Models\License.cs" />
-    <Compile Include="Models\LocalNetworkInterface.cs" />
-    <Compile Include="Models\ProcessResult.cs" />
-    <Compile Include="Models\QueryLogLine.cs" />
-    <Compile Include="Models\QueryLogLineType.cs" />
-    <Compile Include="Models\RemoteUpdate.cs" />
-    <Compile Include="Models\Rule.cs" />
-    <Compile Include="Models\ValueDescription.cs" />
-    <Compile Include="Resources\Translation.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Translation.resx</DependentUpon>
-    </Compile>
-    <Page Include="Controls\BaseMetroDialog.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Styles\CustomAccentedSquareButtonStyle.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Styles\HyperlinkButton.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Styles\ModalStyle.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Compile Include="ViewModels\AddressBlacklistViewModel.cs" />
-    <Compile Include="ViewModels\AddressBlockLogViewModel.cs" />
-    <Compile Include="ViewModels\CloakAndForwardViewModel.cs" />
-    <Compile Include="ViewModels\FallbackResolversViewModel.cs" />
-    <Compile Include="ViewModels\ListenAddressesViewModel.cs" />
-    <Compile Include="ViewModels\MetroMessageBoxViewModel.cs" />
-    <Compile Include="ViewModels\ProxiesViewModel.cs" />
-    <Compile Include="ViewModels\RouteViewModel.cs" />
-    <Compile Include="ViewModels\SettingsViewModel.cs" />
-    <Compile Include="ViewModels\AboutViewModel.cs" />
-    <Compile Include="ViewModels\DomainBlacklistViewModel.cs" />
-    <Compile Include="ViewModels\DomainBlockLogViewModel.cs" />
-    <Compile Include="ViewModels\LoaderViewModel.cs" />
-    <Compile Include="ViewModels\QueryLogViewModel.cs" />
-    <Compile Include="ViewModels\MainViewModel.cs" />
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ViewModels\SystemTrayViewModel.cs" />
-    <Compile Include="Windows\AddRuleWindow.xaml.cs">
-      <DependentUpon>AddRuleWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\BaseMessageDialogWindow.xaml.cs">
-      <DependentUpon>BaseMessageDialogWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\BaseTrayWindow.xaml.cs">
-      <DependentUpon>BaseTrayWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\SplashDialogWindow.xaml.cs">
-      <DependentUpon>SplashDialogWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\BaseDialogWindow.xaml.cs">
-      <DependentUpon>BaseDialogWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\BaseWindow.xaml.cs">
-      <DependentUpon>BaseWindow.xaml</DependentUpon>
-    </Compile>
-    <Page Include="Resources\ResourceDictionaries\ResourceLibrary.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Styles\HyperLink.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Styles\LinkHeaderStyle.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Styles\CustomMetroListBoxItem.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\FallbackResolversView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\ListenAddressesView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\MetroMessageBoxView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\ProxiesView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\RouteView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\SettingsView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\AboutView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\LoaderView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\MainView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\SystemTrayView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\AddRuleWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\BaseMessageDialogWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\BaseTrayWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\SplashDialogWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Windows\BaseDialogWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\BaseWindow.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Translation.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Translation.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Translation.ar.resx">
+    <EmbeddedResource Update="Resources\Translation.ar.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Translation.ja.resx">
+    <EmbeddedResource Update="Resources\Translation.ja.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Translation.ko.resx">
+    <EmbeddedResource Update="Resources\Translation.ko.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Translation.ms.resx">
+    <EmbeddedResource Update="Resources\Translation.ms.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Translation.ro.resx">
+    <EmbeddedResource Update="Resources\Translation.ro.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Translation.th.resx">
+    <EmbeddedResource Update="Resources\Translation.th.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Translation.fi.resx">
+    <EmbeddedResource Update="Resources\Translation.fi.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Translation.cs.resx">
+    <EmbeddedResource Update="Resources\Translation.cs.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Translation.bg.resx">
+    <EmbeddedResource Update="Resources\Translation.bg.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Translation.vi.resx">
+    <EmbeddedResource Update="Resources\Translation.vi.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Translation.hu.resx">
+    <EmbeddedResource Update="Resources\Translation.hu.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Translation.zh-hans.resx">
+    <EmbeddedResource Update="Resources\Translation.zh-hans.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Translation.zh-hant.resx">
+    <EmbeddedResource Update="Resources\Translation.zh-hant.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Translation.de.resx">
+    <EmbeddedResource Update="Resources\Translation.de.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Translation.pt.resx">
+    <EmbeddedResource Update="Resources\Translation.pt.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Translation.ru.resx">
+    <EmbeddedResource Update="Resources\Translation.ru.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Translation.en.resx">
+    <EmbeddedResource Update="Resources\Translation.en.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Translation.es.resx">
+    <EmbeddedResource Update="Resources\Translation.es.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Translation.fr.resx">
+    <EmbeddedResource Update="Resources\Translation.fr.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Translation.id.resx">
+    <EmbeddedResource Update="Resources\Translation.id.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Translation.pl.resx">
+    <EmbeddedResource Update="Resources\Translation.pl.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Translation.el.resx">
+    <EmbeddedResource Update="Resources\Translation.el.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Translation.he.resx">
+    <EmbeddedResource Update="Resources\Translation.he.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Translation.it.resx">
+    <EmbeddedResource Update="Resources\Translation.it.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Translation.tr.resx">
+    <EmbeddedResource Update="Resources\Translation.tr.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Translation.fa.resx">
+    <EmbeddedResource Update="Resources\Translation.fa.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Translation.sv.resx">
+    <EmbeddedResource Update="Resources\Translation.sv.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Translation.da.resx">
+    <EmbeddedResource Update="Resources\Translation.da.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Translation.pt-br.resx">
+    <EmbeddedResource Update="Resources\Translation.pt-br.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Translation.fil.resx">
+    <EmbeddedResource Update="Resources\Translation.fil.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Translation.nl.resx">
+    <EmbeddedResource Update="Resources\Translation.nl.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Translation.uk.resx">
+    <EmbeddedResource Update="Resources\Translation.uk.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Translation.sl.resx">
+    <EmbeddedResource Update="Resources\Translation.sl.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Translation.resx</DependentUpon>
     </EmbeddedResource>
@@ -446,15 +194,6 @@
     </None>
     <None Include="dnscrypt-proxy\LICENSE">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -497,74 +236,70 @@
     <None Include="FodyWeavers.xml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Baseclass.Contrib.Nuget.Output">
-      <Version>2.4.3</Version>
-    </PackageReference>
-    <PackageReference Include="Caliburn.Micro">
-      <Version>3.2.0</Version>
-    </PackageReference>
-    <PackageReference Include="Costura.Fody">
-      <Version>4.1.0</Version>
-    </PackageReference>
-    <PackageReference Include="DnsCrypt.Blacklist">
-      <Version>0.1.1</Version>
-    </PackageReference>
-    <PackageReference Include="DnsCrypt.Stamps">
-      <Version>0.2.2</Version>
-    </PackageReference>
-    <PackageReference Include="Fody">
-      <Version>6.1.1</Version>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    <PackageReference Include="Baseclass.Contrib.Nuget.Output" Version="2.4.3" />
+    <PackageReference Include="Caliburn.Micro" Version="3.2.0" />
+    <PackageReference Include="Costura.Fody" Version="4.1.0" />
+    <PackageReference Include="DnsCrypt.Blacklist" Version="0.1.1" />
+    <PackageReference Include="DnsCrypt.Stamps" Version="0.2.2" />
+    <PackageReference Include="Fody" Version="6.1.1">
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="gong-wpf-dragdrop">
-      <Version>2.2.0</Version>
-    </PackageReference>
-    <PackageReference Include="Hardcodet.NotifyIcon.Wpf">
-      <Version>1.0.8</Version>
-    </PackageReference>
-    <PackageReference Include="helper-net">
-      <Version>0.2.0</Version>
-    </PackageReference>
-    <PackageReference Include="libsodium-net">
-      <Version>0.10.0</Version>
-    </PackageReference>
-    <PackageReference Include="MahApps.Metro">
-      <Version>1.6.5</Version>
-    </PackageReference>
-    <PackageReference Include="MahApps.Metro.IconPacks.Material">
-      <Version>3.7.0</Version>
-    </PackageReference>
-    <PackageReference Include="MahApps.Metro.SimpleChildWindow">
-      <Version>1.5.0</Version>
-    </PackageReference>
-    <PackageReference Include="minisign-net">
-      <Version>0.1.2</Version>
-    </PackageReference>
-    <PackageReference Include="Nett">
-      <Version>0.15.0</Version>
-    </PackageReference>
-    <PackageReference Include="Newtonsoft.Json">
-      <Version>12.0.3</Version>
-    </PackageReference>
-    <PackageReference Include="NLog">
-      <Version>4.7.0</Version>
-    </PackageReference>
-    <PackageReference Include="WPFLocalizeExtension">
-      <Version>3.4.0-alpha0039</Version>
-    </PackageReference>
-    <PackageReference Include="XAMLMarkupExtensions">
-      <Version>1.6.0</Version>
-    </PackageReference>
-    <PackageReference Include="YamlDotNet">
-      <Version>8.1.0</Version>
-    </PackageReference>
+    <PackageReference Include="gong-wpf-dragdrop" Version="2.2.0" />
+    <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="1.0.8" />
+    <PackageReference Include="helper-net" Version="0.2.0" />
+    <PackageReference Include="libsodium-net" Version="0.10.0" />
+    <PackageReference Include="MahApps.Metro" Version="1.6.5" />
+    <PackageReference Include="MahApps.Metro.IconPacks.Material" Version="3.7.0" />
+    <PackageReference Include="MahApps.Metro.SimpleChildWindow" Version="1.5.0" />
+    <PackageReference Include="minisign-net" Version="0.1.2" />
+    <PackageReference Include="Nett" Version="0.15.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="NLog" Version="4.7.0" />
+    <PackageReference Include="WPFLocalizeExtension" Version="3.4.0-alpha0039" />
+    <PackageReference Include="XAMLMarkupExtensions" Version="1.6.0" />
+    <PackageReference Include="YamlDotNet" Version="8.1.0" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <TargetFrameworkSDKToolsDirectory Condition=" '$(PlatformTarget)' == 'x64'">$(TargetFrameworkSDKToolsDirectory)$(PlatformTarget)\</TargetFrameworkSDKToolsDirectory>
-  </PropertyGroup>
-  <PropertyGroup>
-    <PostBuildEvent>copy "$(ProjectDir)DNS$(PlatformName)\*" "$(ProjectDir)$(OutDir)\dnscrypt-proxy\"</PostBuildEvent>
-  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="obj\x64\Debug\.NETFramework,Version=v4.6.1.AssemblyAttributes.cs" />
+    <Compile Remove="obj\x64\Debug\App.g.cs" />
+    <Compile Remove="obj\x64\Debug\App.g.i.cs" />
+    <Compile Remove="obj\x64\Debug\GeneratedInternalTypeHelper.g.cs" />
+    <Compile Remove="obj\x64\Debug\GeneratedInternalTypeHelper.g.i.cs" />
+    <Compile Remove="obj\x64\Debug\SimpleDnsCrypt_Content.g.cs" />
+    <Compile Remove="obj\x64\Debug\SimpleDnsCrypt_Content.g.i.cs" />
+    <Compile Remove="obj\x64\Debug\Controls\BaseMetroDialog.g.cs" />
+    <Compile Remove="obj\x64\Debug\Controls\BaseMetroDialog.g.i.cs" />
+    <Compile Remove="obj\x64\Debug\Views\AboutView.g.cs" />
+    <Compile Remove="obj\x64\Debug\Views\AboutView.g.i.cs" />
+    <Compile Remove="obj\x64\Debug\Views\FallbackResolversView.g.cs" />
+    <Compile Remove="obj\x64\Debug\Views\FallbackResolversView.g.i.cs" />
+    <Compile Remove="obj\x64\Debug\Views\ListenAddressesView.g.cs" />
+    <Compile Remove="obj\x64\Debug\Views\ListenAddressesView.g.i.cs" />
+    <Compile Remove="obj\x64\Debug\Views\LoaderView.g.cs" />
+    <Compile Remove="obj\x64\Debug\Views\LoaderView.g.i.cs" />
+    <Compile Remove="obj\x64\Debug\Views\MainView.g.cs" />
+    <Compile Remove="obj\x64\Debug\Views\MainView.g.i.cs" />
+    <Compile Remove="obj\x64\Debug\Views\MetroMessageBoxView.g.cs" />
+    <Compile Remove="obj\x64\Debug\Views\MetroMessageBoxView.g.i.cs" />
+    <Compile Remove="obj\x64\Debug\Views\ProxiesView.g.cs" />
+    <Compile Remove="obj\x64\Debug\Views\ProxiesView.g.i.cs" />
+    <Compile Remove="obj\x64\Debug\Views\RouteView.g.cs" />
+    <Compile Remove="obj\x64\Debug\Views\RouteView.g.i.cs" />
+    <Compile Remove="obj\x64\Debug\Views\SettingsView.g.cs" />
+    <Compile Remove="obj\x64\Debug\Views\SettingsView.g.i.cs" />
+    <Compile Remove="obj\x64\Debug\Views\SystemTrayView.g.cs" />
+    <Compile Remove="obj\x64\Debug\Views\SystemTrayView.g.i.cs" />
+    <Compile Remove="obj\x64\Debug\Windows\AddRuleWindow.g.cs" />
+    <Compile Remove="obj\x64\Debug\Windows\AddRuleWindow.g.i.cs" />
+    <Compile Remove="obj\x64\Debug\Windows\BaseDialogWindow.g.cs" />
+    <Compile Remove="obj\x64\Debug\Windows\BaseDialogWindow.g.i.cs" />
+    <Compile Remove="obj\x64\Debug\Windows\BaseMessageDialogWindow.g.cs" />
+    <Compile Remove="obj\x64\Debug\Windows\BaseMessageDialogWindow.g.i.cs" />
+    <Compile Remove="obj\x64\Debug\Windows\BaseTrayWindow.g.cs" />
+    <Compile Remove="obj\x64\Debug\Windows\BaseTrayWindow.g.i.cs" />
+    <Compile Remove="obj\x64\Debug\Windows\BaseWindow.g.cs" />
+    <Compile Remove="obj\x64\Debug\Windows\BaseWindow.g.i.cs" />
+    <Compile Remove="obj\x64\Debug\Windows\SplashDialogWindow.g.cs" />
+    <Compile Remove="obj\x64\Debug\Windows\SplashDialogWindow.g.i.cs" />
+  </ItemGroup>
 </Project>
