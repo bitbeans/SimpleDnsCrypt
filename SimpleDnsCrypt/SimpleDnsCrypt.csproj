@@ -14,16 +14,16 @@
     <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
     <UseWPF>true</UseWPF>
     <PostBuildEvent>copy "$(ProjectDir)DNS$(PlatformName)\*" "$(ProjectDir)$(OutDir)\dnscrypt-proxy\"</PostBuildEvent>
+    <Prefer32Bit>true</Prefer32Bit>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <PostBuildEvent>copy "$(ProjectDir)DNS$(PlatformName)\*" "$(ProjectDir)$(OutDir)\dnscrypt-proxy\"</PostBuildEvent>
+    <PostBuildEvent>copy "$(ProjectDir)DNS$(PlatformName)\*" "$(ProjectDir)$(OutDir)\dnscrypt-proxy\"</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugType>full</DebugType>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <DebugType>pdbonly</DebugType>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Images\simplednscrypt.ico</ApplicationIcon>
