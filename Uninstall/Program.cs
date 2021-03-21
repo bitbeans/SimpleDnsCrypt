@@ -12,8 +12,15 @@ namespace Uninstall
 	internal class Program
 	{
 		private const string DnsCryptProxyFolder = "dnscrypt-proxy";
-		private const string DnsCryptProxyExecutableName = "dnscrypt-proxy.exe";
+		private const string DnsCryptProxyExecutableName64 = "dnscrypt-proxy64.exe";
+		private const string DnsCryptProxyExecutableName86 = "dnscrypt-proxy86.exe";
 		private const string DnsCryptProxyConfigName = "dnscrypt-proxy.toml";
+
+		private static string DnsCryptProxyExecutablePath => Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
+																		  DnsCryptProxyFolder,
+																		  Environment.Is64BitOperatingSystem
+																			  ? DnsCryptProxyExecutableName64
+																			  : DnsCryptProxyExecutableName86);
 
 		private static void Main(string[] args)
 		{
@@ -67,7 +74,7 @@ namespace Uninstall
 		internal static void StopService()
 		{
 			Console.WriteLine("stopping dnscrypt service");
-			var dnsCryptProxyExecutablePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, DnsCryptProxyFolder, DnsCryptProxyExecutableName);
+			var dnsCryptProxyExecutablePath = DnsCryptProxyExecutablePath;
 			ExecuteWithArguments(dnsCryptProxyExecutablePath, "-service stop");
 		}
 
@@ -77,7 +84,7 @@ namespace Uninstall
 		internal static void UninstallService()
 		{
 			Console.WriteLine("removing dnscrypt service");
-			var dnsCryptProxyExecutablePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, DnsCryptProxyFolder, DnsCryptProxyExecutableName);
+			var dnsCryptProxyExecutablePath = DnsCryptProxyExecutablePath;
 			ExecuteWithArguments(dnsCryptProxyExecutablePath, "-service uninstall");
 			Registry.LocalMachine.DeleteSubKey(@"SYSTEM\CurrentControlSet\Services\EventLog\Application\dnscrypt-proxy", false);
 		}

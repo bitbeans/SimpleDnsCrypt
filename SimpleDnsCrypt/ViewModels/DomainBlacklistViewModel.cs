@@ -15,7 +15,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DnsCrypt.Blacklist;
 using Application = System.Windows.Application;
-using OpenFileDialog = Microsoft.Win32.OpenFileDialog;
 using Screen = Caliburn.Micro.Screen;
 
 
@@ -283,8 +282,7 @@ namespace SimpleDnsCrypt.ViewModels
 					RestoreDirectory = true
 				};
 				var result = openWhitelistFileDialog.ShowDialog();
-				if (result == null) return;
-				if (!result.Value) return;
+				if (result != DialogResult.OK) return;
 				var whitelistLines = await DomainBlacklist.ReadAllLinesAsync(openWhitelistFileDialog.FileName);
 				var parsed = DomainBlacklist.ParseBlacklist(whitelistLines, true);
 				var enumerable = parsed as string[] ?? parsed.ToArray();
@@ -559,8 +557,7 @@ namespace SimpleDnsCrypt.ViewModels
 					RestoreDirectory = true
 				};
 				var result = openBlacklistFileDialog.ShowDialog();
-				if (result == null) return;
-				if (!result.Value) return;
+				if (result != DialogResult.OK) return;
 				var blacklistLines = await DomainBlacklist.ReadAllLinesAsync(openBlacklistFileDialog.FileName);
 				var parsed = DomainBlacklist.ParseBlacklist(blacklistLines, true);
 				var enumerable = parsed as string[] ?? parsed.ToArray();

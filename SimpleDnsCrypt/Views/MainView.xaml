@@ -225,12 +225,12 @@
                                                                        Foreground="{DynamicResource AccentColorBrush}"
                                                                        Margin="0" HorizontalAlignment="Center"
                                                                        VerticalAlignment="Center" />
-                                            <controls:ToggleSwitchButton
+                                            <controls:ToggleSwitch
                                                 IsEnabled="{Binding IsWorkingOnService, Converter={StaticResource ReverseBoolToEnabledConverter}}"
                                                 Grid.Row="0" Grid.Column="2" Cursor="Hand"
-                                                IsChecked="{Binding IsResolverRunning}"
+                                                IsOn="{Binding IsResolverRunning}"
                                                 HorizontalAlignment="Right" VerticalAlignment="Top">
-                                            </controls:ToggleSwitchButton>
+                                            </controls:ToggleSwitch>
 
                                             <Label Foreground="#FF575757" Grid.Row="1" Grid.Column="0"
                                                    Content="{lex:Loc Key=advanced_settings_uninstall_text}"
@@ -297,11 +297,11 @@
                                                        Foreground="#FF8ab329" FontSize="20"
                                                        Opacity="0.7" Margin="5,0,0,3" FontWeight="Bold">
                                             </TextBlock>
-                                            <controls:ToggleSwitch Cursor="Hand" IsChecked="{Binding ShowHiddenCards}"
+                                            <controls:ToggleSwitch Cursor="Hand" IsOn="{Binding ShowHiddenCards}"
                                                                    Foreground="#FF575757" Grid.Column="2" Grid.Row="0"
                                                                    HorizontalAlignment="Right"
-                                                                   OffLabel="{lex:Loc Key=default_settings_show_hidden_cards}"
-                                                                   OnLabel="{lex:Loc Key=default_settings_show_hidden_cards}">
+                                                                   OffContent="{lex:Loc Key=default_settings_show_hidden_cards}"
+                                                                   OnContent="{lex:Loc Key=default_settings_show_hidden_cards}">
                                             </controls:ToggleSwitch>
                                         </Grid>
                                         <ItemsControl ItemsSource="{Binding LocalNetworkInterfaces}">
@@ -400,9 +400,9 @@
                                         <TextBlock Foreground="#FF575757" Margin="0,5,0,0"
                                                    Text="{lex:Loc Key=resolvers_dnscrypt_mode_description}" />
                                         <controls:ToggleSwitch Foreground="#FF575757" Cursor="Hand"
-                                                               IsChecked="{Binding IsDnsCryptAutomaticModeEnabled}"
-                                                               OnLabel="{lex:Loc Key=enabled}"
-                                                               OffLabel="{lex:Loc Key=disabled}"
+                                                               IsOn="{Binding IsDnsCryptAutomaticModeEnabled}"
+                                                               OnContent="{lex:Loc Key=enabled}"
+                                                               OffContent="{lex:Loc Key=disabled}"
                                                                Header="{lex:Loc Key=resolvers_dnscrypt_automatic_mode}"
                                                                Margin="0,5,0,0" />
                                     </StackPanel>
@@ -676,12 +676,12 @@
                                                        VerticalAlignment="Bottom"
                                                        HorizontalAlignment="Left" Margin="0,0,0,5">
                                             </TextBlock>
-                                            <controls:ToggleSwitchButton
+                                            <controls:ToggleSwitch
                                                 IsEnabled="{Binding IsWorkingOnService, Converter={StaticResource ReverseBoolToEnabledConverter}}"
                                                 Grid.Row="0" Grid.Column="1" Cursor="Hand"
-                                                IsChecked="{Binding DnscryptProxyConfiguration.cache}"
+                                                IsOn="{Binding DnscryptProxyConfiguration.cache}"
                                                 HorizontalAlignment="Right" VerticalAlignment="Top">
-                                            </controls:ToggleSwitchButton>
+                                            </controls:ToggleSwitch>
                                         </Grid>
                                         <!-- DNS Cache end -->
                                         <!-- Block IPv6 begin -->
@@ -718,12 +718,12 @@
                                                        VerticalAlignment="Bottom"
                                                        HorizontalAlignment="Left" Margin="0,0,0,5">
                                             </TextBlock>
-                                            <controls:ToggleSwitchButton
+                                            <controls:ToggleSwitch
                                                 IsEnabled="{Binding IsWorkingOnService, Converter={StaticResource ReverseBoolToEnabledConverter}}"
                                                 Grid.Row="0" Grid.Column="1" Cursor="Hand"
-                                                IsChecked="{Binding DnscryptProxyConfiguration.block_ipv6}"
+                                                IsOn="{Binding DnscryptProxyConfiguration.block_ipv6}"
                                                 HorizontalAlignment="Right" VerticalAlignment="Top">
-                                            </controls:ToggleSwitchButton>
+                                            </controls:ToggleSwitch>
                                         </Grid>
                                         <!-- Block IPv6 end -->
                                         <!-- Force TCP begin -->
@@ -760,12 +760,12 @@
                                                        VerticalAlignment="Bottom"
                                                        HorizontalAlignment="Left" Margin="0,0,0,5">
                                             </TextBlock>
-                                            <controls:ToggleSwitchButton
+                                            <controls:ToggleSwitch
                                                 IsEnabled="{Binding IsWorkingOnService, Converter={StaticResource ReverseBoolToEnabledConverter}}"
                                                 Grid.Row="0" Grid.Column="1" Cursor="Hand"
-                                                IsChecked="{Binding DnscryptProxyConfiguration.force_tcp}"
+                                                IsOn="{Binding DnscryptProxyConfiguration.force_tcp}"
                                                 HorizontalAlignment="Right" VerticalAlignment="Top">
-                                            </controls:ToggleSwitchButton>
+                                            </controls:ToggleSwitch>
                                         </Grid>
                                         <!-- Force TCP end -->
                                         <!-- Global Resolver begin -->
@@ -802,12 +802,12 @@
                                                        VerticalAlignment="Bottom"
                                                        HorizontalAlignment="Left" Margin="0,0,0,5">
                                             </TextBlock>
-                                            <controls:ToggleSwitchButton
+                                            <controls:ToggleSwitch
                                                 IsEnabled="{Binding IsWorkingOnService, Converter={StaticResource ReverseBoolToEnabledConverter}}"
                                                 Grid.Row="0" Grid.Column="1" Cursor="Hand"
-                                                IsChecked="{Binding IsOperatingAsGlobalResolver}"
+                                                IsOn="{Binding IsOperatingAsGlobalResolver}"
                                                 HorizontalAlignment="Right" VerticalAlignment="Top">
-                                            </controls:ToggleSwitchButton>
+                                            </controls:ToggleSwitch>
                                         </Grid>
                                         <!-- Global Resolver end -->
                                         <!-- Fallback Resolver begin -->
@@ -926,12 +926,12 @@
                                                        VerticalAlignment="Bottom"
                                                        HorizontalAlignment="Left" Margin="0,0,0,5">
                                             </TextBlock>
-                                            <controls:ToggleSwitchButton
+                                            <controls:ToggleSwitch
                                                 IsEnabled="{Binding IsWorkingOnService, Converter={StaticResource ReverseBoolToEnabledConverter}}"
                                                 Grid.Row="0" Grid.Column="1" Cursor="Hand"
-                                                IsChecked="{Binding DnscryptProxyConfiguration.log}"
+                                                IsOn="{Binding DnscryptProxyConfiguration.log}"
                                                 HorizontalAlignment="Right" VerticalAlignment="Top">
-                                            </controls:ToggleSwitchButton>
+                                            </controls:ToggleSwitch>
                                         </Grid>
                                         <!-- Logging end -->
                                         <Button x:Name="SaveAdvancedSettings"
@@ -994,12 +994,12 @@
                                                        Foreground="#FF8ab329" FontSize="20"
                                                        Opacity="0.7" Margin="5,0,0,3" FontWeight="Bold">
                                             </TextBlock>
-                                            <controls:ToggleSwitchButton Grid.Column="2" Grid.Row="0"
+                                            <controls:ToggleSwitch Grid.Column="2" Grid.Row="0"
                                                                          Cursor="Hand"
-                                                                         IsChecked="{Binding IsQueryLogLogging}"
+                                                                         IsOn="{Binding IsQueryLogLogging}"
                                                                          HorizontalAlignment="Right"
                                                                          VerticalAlignment="Top" Margin="0,0,10,0">
-                                            </controls:ToggleSwitchButton>
+                                            </controls:ToggleSwitch>
                                         </Grid>
                                         <Grid Grid.Row="1">
                                             <customControls:LoggingListView SelectedItem="{Binding SelectedQueryLogLine}"
@@ -1232,9 +1232,9 @@
                                                    Foreground="#FF8ab329" FontSize="20"
                                                    Opacity="0.7" Margin="5,0,0,0" FontWeight="Bold">
                                     </TextBlock>
-                                    <controls:ToggleSwitchButton HorizontalAlignment="Right" Margin="0,0,5,0"
+                                    <controls:ToggleSwitch HorizontalAlignment="Right" Margin="0,0,5,0"
                                                                      Cursor="Hand"
-                                                                     IsChecked="{Binding IsCloakingEnabled}"
+                                                                     IsOn="{Binding IsCloakingEnabled}"
                                                                      Grid.Column="1" Grid.Row="0" />
                                     <Grid Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Margin="0,10,0,0">
                                         <Grid.ColumnDefinitions>
@@ -1430,9 +1430,9 @@
                                                    Foreground="#FF8ab329" FontSize="20"
                                                    Opacity="0.7" FontWeight="Bold">
                                     </TextBlock>
-                                    <controls:ToggleSwitchButton HorizontalAlignment="Right" Margin="0,7,5,0"
+                                    <controls:ToggleSwitch HorizontalAlignment="Right" Margin="0,7,5,0"
                                                                      Cursor="Hand"
-                                                                     IsChecked="{Binding IsForwardingEnabled}"
+                                                                     IsOn="{Binding IsForwardingEnabled}"
                                                                      Grid.Column="1" Grid.Row="4" />
                                     <Grid Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" Margin="0,10,0,0">
                                         <Grid.ColumnDefinitions>
@@ -1668,12 +1668,12 @@
                                                        Foreground="#FF8ab329" FontSize="20"
                                                        Opacity="0.7" Margin="5,0,0,3" FontWeight="Bold">
                                             </TextBlock>
-                                            <controls:ToggleSwitchButton Grid.Column="2" Grid.Row="0"
+                                            <controls:ToggleSwitch Grid.Column="2" Grid.Row="0"
                                                                          Cursor="Hand"
-                                                                         IsChecked="{Binding IsDomainBlockLogLogging}"
+                                                                         IsOn="{Binding IsDomainBlockLogLogging}"
                                                                          HorizontalAlignment="Right"
                                                                          VerticalAlignment="Top" Margin="0,0,10,0">
-                                            </controls:ToggleSwitchButton>
+                                            </controls:ToggleSwitch>
                                         </Grid>
                                         <Grid Grid.Row="1">
                                             <ListView SelectedItem="{Binding SelectedDomainBlockLogLine}"
@@ -1927,9 +1927,9 @@
                                                    Foreground="#FF8ab329" FontSize="20"
                                                    Opacity="0.7" Margin="5,0,0,0" FontWeight="Bold">
                                     </TextBlock>
-                                    <controls:ToggleSwitchButton HorizontalAlignment="Right" Margin="0,0,5,0"
+                                    <controls:ToggleSwitch HorizontalAlignment="Right" Margin="0,0,5,0"
                                                                      Cursor="Hand"
-                                                                     IsChecked="{Binding IsBlacklistEnabled}"
+                                                                     IsOn="{Binding IsBlacklistEnabled}"
                                                                      Grid.Column="1" Grid.Row="0" />
                                     <Grid Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Margin="0,10,0,0">
                                         <Grid.ColumnDefinitions>
