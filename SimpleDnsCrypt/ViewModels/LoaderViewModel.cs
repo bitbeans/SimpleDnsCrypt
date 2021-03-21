@@ -1,5 +1,4 @@
 ﻿using Caliburn.Micro;
-using minisign;
 using SimpleDnsCrypt.Config;
 using SimpleDnsCrypt.Helper;
 using SimpleDnsCrypt.Models;
@@ -218,22 +217,22 @@ namespace SimpleDnsCrypt.ViewModels
 
 				if (Properties.Settings.Default.TrayMode)
 				{
-					Execute.OnUIThread(() => _windowManager.ShowWindow(_systemTrayViewModel));
+					await Execute.OnUIThreadAsync(() => _windowManager.ShowWindowAsync(_systemTrayViewModel));
 					if (Properties.Settings.Default.StartInTray)
 					{
 						Execute.OnUIThread(() => _systemTrayViewModel.HideWindow());
 					}
 					else
 					{
-						Execute.OnUIThread(() => _windowManager.ShowWindow(_mainViewModel));
+						await Execute.OnUIThreadAsync(() => _windowManager.ShowWindowAsync(_mainViewModel));
 					}
 				}
 				else
 				{
-					Execute.OnUIThread(() => _windowManager.ShowWindow(_mainViewModel));
+					await Execute.OnUIThreadAsync(() => _windowManager.ShowWindowAsync(_mainViewModel));
 				}
 
-				TryClose(true);
+				await TryCloseAsync(true);
 			}
 			catch (Exception exception)
 			{
@@ -327,10 +326,10 @@ namespace SimpleDnsCrypt.ViewModels
 					var s = signature.Split('\n');
 					var trimmedComment = s[2].Replace("trusted comment: ", "").Trim();
 					var trustedCommentBinary = Encoding.UTF8.GetBytes(trimmedComment);
-					var loadedSignature = Minisign.LoadSignature(Convert.FromBase64String(s[1]), trustedCommentBinary,
+					var loadedSignature = Minisign.Core.LoadSignature(Convert.FromBase64String(s[1]), trustedCommentBinary,
 						Convert.FromBase64String(s[3]));
-					var publicKey = Minisign.LoadPublicKeyFromString(Global.ApplicationUpdatePublicKey);
-					var valid = Minisign.ValidateSignature(installer, loadedSignature, publicKey);
+					var publicKey = Minisign.Core.LoadPublicKeyFromString(Global.ApplicationUpdatePublicKey);
+					var valid = Minisign.Core.ValidateSignature(installer, loadedSignature, publicKey);
 
 					if (valid)
 					{

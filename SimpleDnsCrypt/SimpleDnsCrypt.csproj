@@ -61,9 +61,8 @@
     <PackageReference Include="DnsCrypt.Blacklist" Version="0.1.1" />
     <PackageReference Include="DnsCrypt.Stamps" Version="0.2.2" />
     <PackageReference Include="gong-wpf-dragdrop" Version="2.3.2" />
-    <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="1.0.8" />
+    <PackageReference Include="Hardcodet.NotifyIcon.Wpf.NetCore" Version="1.0.18" />
     <PackageReference Include="helper-net" Version="0.2.0" />
-    <PackageReference Include="libsodium-net" Version="0.10.0" />
     <PackageReference Include="MahApps.Metro" Version="2.4.4" />
     <PackageReference Include="MahApps.Metro.IconPacks.Material" Version="3.7.0" />
     <PackageReference Include="MahApps.Metro.SimpleChildWindow" Version="2.0.0" />
@@ -72,6 +71,7 @@
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="NLog" Version="4.7.0" />
     <PackageReference Include="Ookii.Dialogs.Wpf" Version="3.1.0" />
+    <PackageReference Include="Sodium.Core" Version="1.2.3" />
     <PackageReference Include="System.ComponentModel.Composition" Version="5.0.0" />
     <PackageReference Include="System.ServiceProcess.ServiceController" Version="5.0.0" />
     <PackageReference Include="WPFLocalizeExtension" Version="3.8.0" />

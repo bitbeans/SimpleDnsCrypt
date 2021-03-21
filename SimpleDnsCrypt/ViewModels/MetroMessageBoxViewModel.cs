@@ -118,7 +118,7 @@ namespace SimpleDnsCrypt.ViewModels
 		public void No()
 		{
 			Result = MessageBoxResult.No;
-			TryClose(false);
+			TryCloseAsync(false);
 		}
 
 		/// <summary>
@@ -127,7 +127,7 @@ namespace SimpleDnsCrypt.ViewModels
 		public void Yes()
 		{
 			Result = MessageBoxResult.Yes;
-			TryClose(true);
+			TryCloseAsync(true);
 		}
 
 		/// <summary>
@@ -136,7 +136,7 @@ namespace SimpleDnsCrypt.ViewModels
 		public void Cancel()
 		{
 			Result = MessageBoxResult.Cancel;
-			TryClose(false);
+			TryCloseAsync(false);
 		}
 
 		/// <summary>
@@ -145,7 +145,7 @@ namespace SimpleDnsCrypt.ViewModels
 		public void Ok()
 		{
 			Result = MessageBoxResult.OK;
-			TryClose(true);
+			TryCloseAsync(true);
 		}
 	}
 }

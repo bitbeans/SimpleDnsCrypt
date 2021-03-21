@@ -7,7 +7,7 @@
              xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
              xmlns:converters="clr-namespace:SimpleDnsCrypt.Converters"
              xmlns:customControls="clr-namespace:SimpleDnsCrypt.Controls"
-             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
              lex:LocalizeDictionary.DesignCulture="en"
              lex:LocalizeDictionary.OutputMissingKeys="False"
              lex:ResxLocalizationProvider.DefaultAssembly="SimpleDnsCrypt"

@@ -1,4 +1,6 @@
-﻿using Caliburn.Micro;
+﻿using System.Threading;
+using System.Threading.Tasks;
+using Caliburn.Micro;
 using System.Windows;
 
 namespace SimpleDnsCrypt.ViewModels
@@ -16,9 +18,9 @@ namespace SimpleDnsCrypt.ViewModels
 			_mainViewModel = mainViewModel;
 		}
 
-		protected override void OnActivate()
+		protected override async Task OnActivateAsync(CancellationToken cancellationToken)
 		{
-			base.OnActivate();
+			await base.OnActivateAsync(cancellationToken);
 
 			NotifyOfPropertyChange(() => CanShowWindow);
 			NotifyOfPropertyChange(() => CanHideWindow);
@@ -28,7 +30,7 @@ namespace SimpleDnsCrypt.ViewModels
 		{
 			if (!_mainViewModel.IsActive)
 			{
-				_windowManager.ShowWindow(_mainViewModel);
+				_windowManager.ShowWindowAsync(_mainViewModel);
 			}
 			NotifyOfPropertyChange(() => CanShowWindow);
 			NotifyOfPropertyChange(() => CanHideWindow);
@@ -38,7 +40,7 @@ namespace SimpleDnsCrypt.ViewModels
 
 		public void HideWindow()
 		{
-			_mainViewModel.TryClose();
+			_mainViewModel.TryCloseAsync();
 
 			NotifyOfPropertyChange(() => CanShowWindow);
 			NotifyOfPropertyChange(() => CanHideWindow);
