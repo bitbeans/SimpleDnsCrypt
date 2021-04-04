@@ -42,14 +42,16 @@ namespace SimpleDnsCrypt.Windows
 		{
 			var addRuleWindowResult = new AddRuleWindowResult
 			{
-				Result = true, RuleKey = RuleKey.Text, RuleValue = RuleValue.Text
+				Result = true,
+				RuleKey = RuleKey.Text,
+				RuleValue = RuleValue.Text
 			};
 			Close(addRuleWindowResult);
 		}
 
 		private void AbortButtonClick(object sender, RoutedEventArgs e)
 		{
-			var addRuleWindowResult = new AddRuleWindowResult {Result = false};
+			var addRuleWindowResult = new AddRuleWindowResult { Result = false };
 			Close(addRuleWindowResult);
 		}
 	}

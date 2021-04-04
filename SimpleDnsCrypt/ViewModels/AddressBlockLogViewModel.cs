@@ -85,7 +85,7 @@ namespace SimpleDnsCrypt.ViewModels
 
 		private void AddressBlockLog(DnscryptProxyConfiguration dnscryptProxyConfiguration)
 		{
-			
+
 		}
 	}
 }

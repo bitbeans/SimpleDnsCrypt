@@ -26,11 +26,11 @@ namespace SimpleDnsCrypt.ViewModels
 	{
 		private static readonly ILog Log = LogManagerHelper.Factory();
 		private readonly IWindowManager _windowManager;
-	    private readonly IEventAggregator _events;
+		private readonly IEventAggregator _events;
 
 		private BindableCollection<string> _domainBlacklistRules;
 		private BindableCollection<string> _domainWhitelistRules;
-		
+
 		private string _selectedDomainBlacklistEntry;
 		private string _selectedDomainWhitelistEntry;
 		private string _domainWhitelistRuleFilePath;
@@ -45,20 +45,20 @@ namespace SimpleDnsCrypt.ViewModels
 		/// <param name="windowManager">The window manager</param>
 		/// <param name="events">The events</param>
 		[ImportingConstructor]
-	    public DomainBlacklistViewModel(IWindowManager windowManager, IEventAggregator events)
-	    {
-		    _windowManager = windowManager;
-		    _events = events;
-		    _events.Subscribe(this);
-		    _domainBlacklistRules = new BindableCollection<string>();
-		    _domainWhitelistRules = new BindableCollection<string>();
+		public DomainBlacklistViewModel(IWindowManager windowManager, IEventAggregator events)
+		{
+			_windowManager = windowManager;
+			_events = events;
+			_events.Subscribe(this);
+			_domainBlacklistRules = new BindableCollection<string>();
+			_domainWhitelistRules = new BindableCollection<string>();
 
-		    if (!string.IsNullOrEmpty(Properties.Settings.Default.DomainBlacklistFile))
-		    {
+			if (!string.IsNullOrEmpty(Properties.Settings.Default.DomainBlacklistFile))
+			{
 				_domainBlacklistFile = Properties.Settings.Default.DomainBlacklistFile;
 			}
 			else
-		    {
+			{
 				//set default
 				_domainBlacklistFile = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, Global.BlacklistFileName);
 				Properties.Settings.Default.DomainBlacklistFile = _domainBlacklistFile;
@@ -66,36 +66,36 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 
 			if (!string.IsNullOrEmpty(Properties.Settings.Default.DomainWhitelistRules))
-		    {
-			    _domainWhitelistRuleFilePath = Properties.Settings.Default.DomainWhitelistRules;
-			    Task.Run(async () =>
-			    {
+			{
+				_domainWhitelistRuleFilePath = Properties.Settings.Default.DomainWhitelistRules;
+				Task.Run(async () =>
+				{
 					await ReadWhitelistRulesFromFile();
 				});
-		    }
-		    else
-		    {
+			}
+			else
+			{
 				//set default
 				_domainWhitelistRuleFilePath = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, Global.WhitelistRuleFileName);
-			    Properties.Settings.Default.DomainWhitelistRules = _domainWhitelistRuleFilePath;
-			    Properties.Settings.Default.Save();
+				Properties.Settings.Default.DomainWhitelistRules = _domainWhitelistRuleFilePath;
+				Properties.Settings.Default.Save();
 			}
 
-		    if (!string.IsNullOrEmpty(Properties.Settings.Default.DomainBlacklistRules))
-		    {
-			    _domainBlacklistRuleFilePath = Properties.Settings.Default.DomainBlacklistRules;
-			    Task.Run(async () =>
-			    {
-				    await ReadBlacklistRulesFromFile();
-			    });
-		    }
-		    else
-		    {
+			if (!string.IsNullOrEmpty(Properties.Settings.Default.DomainBlacklistRules))
+			{
+				_domainBlacklistRuleFilePath = Properties.Settings.Default.DomainBlacklistRules;
+				Task.Run(async () =>
+				{
+					await ReadBlacklistRulesFromFile();
+				});
+			}
+			else
+			{
 				//set default
-			    _domainBlacklistRuleFilePath = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, Global.BlacklistRuleFileName);
-			    Properties.Settings.Default.DomainBlacklistRules = _domainBlacklistRuleFilePath;
-			    Properties.Settings.Default.Save();
-		    }
+				_domainBlacklistRuleFilePath = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, Global.BlacklistRuleFileName);
+				Properties.Settings.Default.DomainBlacklistRules = _domainBlacklistRuleFilePath;
+				Properties.Settings.Default.Save();
+			}
 		}
 
 		public string DomainBlacklistFile
@@ -143,7 +143,7 @@ namespace SimpleDnsCrypt.ViewModels
 					}
 
 					if (string.IsNullOrEmpty(dnscryptProxyConfiguration.blacklist.log_format) ||
-					    !dnscryptProxyConfiguration.blacklist.log_format.Equals(defaultLogFormat))
+						!dnscryptProxyConfiguration.blacklist.log_format.Equals(defaultLogFormat))
 					{
 						dnscryptProxyConfiguration.blacklist.log_format = defaultLogFormat;
 						saveAndRestartService = true;
@@ -405,7 +405,7 @@ namespace SimpleDnsCrypt.ViewModels
 
 				if (string.IsNullOrEmpty(dialogResult)) return;
 				dialogResult = dialogResult.Replace(" ", "");
-				var list = dialogResult.Split(new []{','}, StringSplitOptions.RemoveEmptyEntries);
+				var list = dialogResult.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
 				var parsed = DomainBlacklist.ParseBlacklist(list, true);
 				var enumerable = parsed as string[] ?? parsed.ToArray();
 				if (enumerable.Length <= 0) return;
@@ -439,9 +439,9 @@ namespace SimpleDnsCrypt.ViewModels
 				var blacklistLocalRules = new List<string>();
 				foreach (var blacklistRule in blacklistRules)
 				{
-					if (blacklistRule.StartsWith("http://") || 
-					    blacklistRule.StartsWith("https://") ||
-					    blacklistRule.StartsWith("file:"))
+					if (blacklistRule.StartsWith("http://") ||
+						blacklistRule.StartsWith("https://") ||
+						blacklistRule.StartsWith("file:"))
 					{
 						blacklistSource.Add(blacklistRule);
 					}
@@ -457,7 +457,7 @@ namespace SimpleDnsCrypt.ViewModels
 				var rules = await DomainBlacklist.Build(blacklistSource, new List<string>(_domainWhitelistRules));
 				if (rules != null)
 				{
-					File.WriteAllLines(_domainBlacklistFile, rules);  
+					File.WriteAllLines(_domainBlacklistFile, rules);
 				}
 
 				if (DnsCryptProxyManager.IsDnsCryptProxyInstalled())
@@ -525,7 +525,7 @@ namespace SimpleDnsCrypt.ViewModels
 				{
 					DomainBlacklistRules.AddRange(enumerable);
 				}
-				
+
 				DomainBlacklistRules.AddRange(remote);
 				SaveBlacklistRulesToFile();
 			}

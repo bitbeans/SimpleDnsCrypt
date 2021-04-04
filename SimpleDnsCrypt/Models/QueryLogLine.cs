@@ -21,8 +21,8 @@ namespace SimpleDnsCrypt.Models
 		FORWARD,
 		DROP,
 		REJECT,
-	    SYNTH,
-	    PARSE_ERROR,
+		SYNTH,
+		PARSE_ERROR,
 		NXDOMAIN,
 		RESPONSE_ERROR,
 		SERVER_ERROR,
@@ -38,7 +38,8 @@ namespace SimpleDnsCrypt.Models
 		public QueryLogLineType Type { get; set; }
 		public QueryLogReturnCode ReturnCode { get; set; }
 		public bool Cached { get; set; }
-		public string CachedText {
+		public string CachedText
+		{
 			get
 			{
 				if (Cached)
@@ -76,7 +77,7 @@ namespace SimpleDnsCrypt.Models
 				}
 				if (parts[1].StartsWith("host:"))
 				{
-					Address = parts[1].Split(new[] {':'}, 2)[1];
+					Address = parts[1].Split(new[] { ':' }, 2)[1];
 				}
 				if (parts[2].StartsWith("message:"))
 				{
@@ -84,7 +85,7 @@ namespace SimpleDnsCrypt.Models
 				}
 				if (parts[3].StartsWith("type:"))
 				{
-					if (Enum.TryParse(parts[3].Split(new[] {":"}, StringSplitOptions.RemoveEmptyEntries)[1].Trim(),
+					if (Enum.TryParse(parts[3].Split(new[] { ":" }, StringSplitOptions.RemoveEmptyEntries)[1].Trim(),
 						out QueryLogLineType queryLogLineType))
 					{
 						Type = queryLogLineType;

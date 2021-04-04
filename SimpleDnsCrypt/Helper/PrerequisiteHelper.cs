@@ -10,7 +10,7 @@ using SimpleDnsCrypt.Config;
 
 namespace SimpleDnsCrypt.Helper
 {
-	public static class  PrerequisiteHelper
+	public static class PrerequisiteHelper
 	{
 		private static readonly ILog Log = LogManagerHelper.Factory();
 

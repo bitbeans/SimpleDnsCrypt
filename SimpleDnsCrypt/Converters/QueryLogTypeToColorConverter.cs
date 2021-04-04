@@ -9,7 +9,7 @@ namespace SimpleDnsCrypt.Converters
 	{
 		public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
 		{
-			var logLineType = (QueryLogLineType) value;
+			var logLineType = (QueryLogLineType)value;
 			switch (logLineType)
 			{
 				case QueryLogLineType.A:

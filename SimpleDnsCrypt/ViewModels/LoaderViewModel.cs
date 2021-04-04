@@ -216,7 +216,7 @@ namespace SimpleDnsCrypt.ViewModels
 				_mainViewModel.Initialize();
 				ProgressText = LocalizationEx.GetUiString("loader_starting", Thread.CurrentThread.CurrentCulture);
 
-				if(Properties.Settings.Default.TrayMode)
+				if (Properties.Settings.Default.TrayMode)
 				{
 					Execute.OnUIThread(() => _windowManager.ShowWindow(_systemTrayViewModel));
 					if (Properties.Settings.Default.StartInTray)
@@ -280,9 +280,9 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 
 			var selectedLanguage = languages.SingleOrDefault(l => l.ShortCode.Equals(LocalizeDictionary.Instance.Culture.TwoLetterISOLanguageName)) ??
-			                       languages.SingleOrDefault(l => l.ShortCode.Equals(LocalizeDictionary.Instance.Culture.Name));
+								   languages.SingleOrDefault(l => l.ShortCode.Equals(LocalizeDictionary.Instance.Culture.Name));
 
-			
+
 			_mainViewModel = new MainViewModel(_windowManager, _events)
 			{
 				Languages = languages,
@@ -292,7 +292,7 @@ namespace SimpleDnsCrypt.ViewModels
 
 			InitializeApplication();
 		}
-		
+
 		public string TitleText
 		{
 			get => _titleText;
@@ -382,7 +382,7 @@ namespace SimpleDnsCrypt.ViewModels
 					report[proxyFile] = LocalizationEx.GetUiString("loader_missing", Thread.CurrentThread.CurrentCulture);
 				}
 				// exclude this check on dev folders
-				
+
 				if (proxyFilePath.Contains("bin\\Debug") || proxyFilePath.Contains("bin\\Release") || proxyFilePath.Contains("bin\\x64")) continue;
 				// dnscrypt-resolvers.* files are signed with minisign
 				//TODO: re-enable

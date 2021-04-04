@@ -88,7 +88,7 @@ namespace SimpleDnsCrypt.ViewModels
 			_events = events;
 			_events.Subscribe(this);
 			_windowWidth = Properties.Settings.Default.WindowWidth;
-			_windowHeight= Properties.Settings.Default.WindowHeight;
+			_windowHeight = Properties.Settings.Default.WindowHeight;
 			_windowTitle =
 				$"{Global.ApplicationName} {VersionHelper.PublishVersion} {VersionHelper.PublishBuild} [dnscrypt-proxy {DnsCryptProxyManager.GetVersion()}]";
 			SelectedTab = Tabs.MainTab;

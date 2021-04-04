@@ -103,7 +103,7 @@ namespace SimpleDnsCrypt.ViewModels
 						if (line.StartsWith("#")) continue;
 						var tmp = line.ToLower().Trim();
 						if (string.IsNullOrEmpty(tmp)) continue;
-						var lineParts = tmp.Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries);
+						var lineParts = tmp.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 						if (lineParts.Length != 2) continue;
 						var rule = new Rule
 						{
@@ -410,7 +410,7 @@ namespace SimpleDnsCrypt.ViewModels
 						if (line.StartsWith("#")) continue;
 						var tmp = line.ToLower().Trim();
 						if (string.IsNullOrEmpty(tmp)) continue;
-						var lineParts = tmp.Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries);
+						var lineParts = tmp.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 						if (lineParts.Length != 2) continue;
 						var rule = new Rule
 						{
@@ -561,7 +561,7 @@ namespace SimpleDnsCrypt.ViewModels
 
 				if (!addRuleWindowResult.Result) return;
 				if (string.IsNullOrEmpty(addRuleWindowResult.RuleKey) ||
-				    string.IsNullOrEmpty(addRuleWindowResult.RuleValue)) return;
+					string.IsNullOrEmpty(addRuleWindowResult.RuleValue)) return;
 				var tmp = new Rule
 				{
 					Key = addRuleWindowResult.RuleKey,
