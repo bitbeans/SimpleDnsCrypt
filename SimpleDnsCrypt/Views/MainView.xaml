@@ -1498,9 +1498,17 @@
                                                       IsEnabled="{Binding IsWorking, Converter={StaticResource ReverseBoolToEnabledConverter}}"
                                                       ScrollViewer.VerticalScrollBarVisibility="Visible"
                                                       ScrollViewer.CanContentScroll="True"
-                                                      MinHeight="180" MinWidth="680"
+                                                      MinHeight="180" MaxHeight="600" MinWidth="680"
                                                       SelectedItem="{Binding Path=SelectedForwardingEntry}"
                                                       ItemsSource="{Binding Path=ForwardingRules}">
+                                            <ListView.ItemsPanel>
+                                                <ItemsPanelTemplate>
+                                                    <VirtualizingStackPanel 
+                                                        IsVirtualizing="True"
+                                                        VirtualizationMode="Recycling">
+                                                    </VirtualizingStackPanel>
+                                                </ItemsPanelTemplate>
+                                            </ListView.ItemsPanel>
                                             <ListView.ItemTemplate>
                                                 <DataTemplate>
                                                     <UniformGrid Columns="2">
