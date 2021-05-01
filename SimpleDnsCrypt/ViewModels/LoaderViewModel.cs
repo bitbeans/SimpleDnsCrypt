@@ -1,5 +1,4 @@
 ﻿using Caliburn.Micro;
-using minisign;
 using SimpleDnsCrypt.Config;
 using SimpleDnsCrypt.Helper;
 using SimpleDnsCrypt.Models;
@@ -216,24 +215,24 @@ namespace SimpleDnsCrypt.ViewModels
 				_mainViewModel.Initialize();
 				ProgressText = LocalizationEx.GetUiString("loader_starting", Thread.CurrentThread.CurrentCulture);
 
-				if(Properties.Settings.Default.TrayMode)
+				if (Properties.Settings.Default.TrayMode)
 				{
-					Execute.OnUIThread(() => _windowManager.ShowWindow(_systemTrayViewModel));
+					await Execute.OnUIThreadAsync(() => _windowManager.ShowWindowAsync(_systemTrayViewModel));
 					if (Properties.Settings.Default.StartInTray)
 					{
 						Execute.OnUIThread(() => _systemTrayViewModel.HideWindow());
 					}
 					else
 					{
-						Execute.OnUIThread(() => _windowManager.ShowWindow(_mainViewModel));
+						await Execute.OnUIThreadAsync(() => _windowManager.ShowWindowAsync(_mainViewModel));
 					}
 				}
 				else
 				{
-					Execute.OnUIThread(() => _windowManager.ShowWindow(_mainViewModel));
+					await Execute.OnUIThreadAsync(() => _windowManager.ShowWindowAsync(_mainViewModel));
 				}
 
-				TryClose(true);
+				await TryCloseAsync(true);
 			}
 			catch (Exception exception)
 			{
@@ -280,9 +279,9 @@ namespace SimpleDnsCrypt.ViewModels
 			}
 
 			var selectedLanguage = languages.SingleOrDefault(l => l.ShortCode.Equals(LocalizeDictionary.Instance.Culture.TwoLetterISOLanguageName)) ??
-			                       languages.SingleOrDefault(l => l.ShortCode.Equals(LocalizeDictionary.Instance.Culture.Name));
+								   languages.SingleOrDefault(l => l.ShortCode.Equals(LocalizeDictionary.Instance.Culture.Name));
 
-			
+
 			_mainViewModel = new MainViewModel(_windowManager, _events)
 			{
 				Languages = languages,
@@ -292,7 +291,7 @@ namespace SimpleDnsCrypt.ViewModels
 
 			InitializeApplication();
 		}
-		
+
 		public string TitleText
 		{
 			get => _titleText;
@@ -327,10 +326,10 @@ namespace SimpleDnsCrypt.ViewModels
 					var s = signature.Split('\n');
 					var trimmedComment = s[2].Replace("trusted comment: ", "").Trim();
 					var trustedCommentBinary = Encoding.UTF8.GetBytes(trimmedComment);
-					var loadedSignature = Minisign.LoadSignature(Convert.FromBase64String(s[1]), trustedCommentBinary,
+					var loadedSignature = Minisign.Core.LoadSignature(Convert.FromBase64String(s[1]), trustedCommentBinary,
 						Convert.FromBase64String(s[3]));
-					var publicKey = Minisign.LoadPublicKeyFromString(Global.ApplicationUpdatePublicKey);
-					var valid = Minisign.ValidateSignature(installer, loadedSignature, publicKey);
+					var publicKey = Minisign.Core.LoadPublicKeyFromString(Global.ApplicationUpdatePublicKey);
+					var valid = Minisign.Core.ValidateSignature(installer, loadedSignature, publicKey);
 
 					if (valid)
 					{
@@ -382,7 +381,7 @@ namespace SimpleDnsCrypt.ViewModels
 					report[proxyFile] = LocalizationEx.GetUiString("loader_missing", Thread.CurrentThread.CurrentCulture);
 				}
 				// exclude this check on dev folders
-				
+
 				if (proxyFilePath.Contains("bin\\Debug") || proxyFilePath.Contains("bin\\Release") || proxyFilePath.Contains("bin\\x64")) continue;
 				// dnscrypt-resolvers.* files are signed with minisign
 				//TODO: re-enable

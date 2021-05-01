@@ -44,7 +44,8 @@
 		/// </summary>
 		public const string DnsCryptProxyFolder = "dnscrypt-proxy";
 
-		public const string DnsCryptProxyExecutableName = "dnscrypt-proxy.exe";
+		public const string DnsCryptProxyExecutableName86 = "dnscrypt-proxy86.exe";
+		public const string DnsCryptProxyExecutableName64 = "dnscrypt-proxy64.exe";
 
 		public const string DnsCryptConfigurationFile = "dnscrypt-proxy.toml";
 
@@ -106,7 +107,8 @@
 		/// </summary>
 		public static readonly string[] DnsCryptProxyFiles =
 		{
-			"dnscrypt-proxy.exe",
+			DnsCryptProxyExecutableName64,
+			DnsCryptProxyExecutableName86,
 			"dnscrypt-proxy.toml",
 			"LICENSE"
 		};

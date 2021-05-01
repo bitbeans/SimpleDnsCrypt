@@ -96,7 +96,7 @@ namespace SimpleDnsCrypt
 
 				var loader = _container.GetExportedValue<LoaderViewModel>();
 				var windowManager = IoC.Get<IWindowManager>();
-				windowManager.ShowDialog(loader);
+				windowManager.ShowDialogAsync(loader);
 			}
 			catch (Exception exception)
 			{

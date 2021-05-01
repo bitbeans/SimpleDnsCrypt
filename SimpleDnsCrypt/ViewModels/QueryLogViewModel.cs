@@ -188,7 +188,7 @@ namespace SimpleDnsCrypt.ViewModels
 					}
 
 					if (string.IsNullOrEmpty(dnscryptProxyConfiguration.query_log.format) ||
-					    !dnscryptProxyConfiguration.query_log.format.Equals(defaultLogFormat))
+						!dnscryptProxyConfiguration.query_log.format.Equals(defaultLogFormat))
 					{
 						dnscryptProxyConfiguration.query_log.format = defaultLogFormat;
 						saveAndRestartService = true;

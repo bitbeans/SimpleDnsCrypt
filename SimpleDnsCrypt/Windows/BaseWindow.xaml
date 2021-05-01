@@ -38,7 +38,7 @@
             <Button Cursor="Hand" x:Name="Proxies" cal:Message.Attach="Proxies" ToolTip="{lex:Loc Key=proxy_manage_proxies}">
                 <iconPacks:PackIconMaterial Kind="AccountNetwork"/>
             </Button>
-            <ComboBox Style="{StaticResource MetroComboBox}"
+            <ComboBox Style="{StaticResource MahApps.Styles.ComboBox}"
                       ItemsSource="{Binding Languages}"
                       SelectedItem="{Binding SelectedLanguage}"
                       IsEnabled="True"
