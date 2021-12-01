@@ -229,11 +229,6 @@ namespace SimpleDnsCrypt.Models
 		}
 
 		/// <summary>
-		///     linux only.
-		/// </summary>
-		public bool daemonize { get; set; } = false;
-
-		/// <summary>
 		///     Always use TCP to connect to upstream servers.
 		/// </summary>
 		public bool force_tcp
@@ -986,7 +981,7 @@ namespace SimpleDnsCrypt.Models
 	public class Blacklist : PropertyChangedBase
 	{
 		private string _log_format;
-		private string _blacklist_file;
+		private string _blocked_names_file;
 		private string _log_file;
 
 		[TomlIgnore]
@@ -999,13 +994,13 @@ namespace SimpleDnsCrypt.Models
 		/// <summary>
 		///     Path to the file of blocking rules.
 		/// </summary>
-		public string blacklist_file
+		public string blocked_names_file
 		{
-			get => _blacklist_file;
+			get => _blocked_names_file;
 			set
 			{
-				_blacklist_file = value;
-				NotifyOfPropertyChange(() => blacklist_file);
+				_blocked_names_file = value;
+				NotifyOfPropertyChange(() => blocked_names_file);
 			}
 		}
 
