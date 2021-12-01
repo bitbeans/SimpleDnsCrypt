@@ -506,11 +506,11 @@ namespace SimpleDnsCrypt.ViewModels
 				DomainBlockLogViewModel.IsDomainBlockLogLogging = true;
 			}
 
-			if (!string.IsNullOrEmpty(DnscryptProxyConfiguration?.blocked_names?.blacklist_file))
+			if (!string.IsNullOrEmpty(DnscryptProxyConfiguration?.blocked_names?.blocked_names_file))
 			{
-				if (!File.Exists(DnscryptProxyConfiguration.blocked_names.blacklist_file))
+				if (!File.Exists(DnscryptProxyConfiguration.blocked_names.blocked_names_file))
 				{
-					File.Create(DnscryptProxyConfiguration.blocked_names.blacklist_file).Dispose();
+					File.Create(DnscryptProxyConfiguration.blocked_names.blocked_names_file).Dispose();
 				}
 				DomainBlacklistViewModel.IsBlacklistEnabled = true;
 			}
