@@ -742,12 +742,12 @@ namespace SimpleDnsCrypt.Models
 		/// <summary>
 		///     Pattern-based blocking (blacklists).
 		/// </summary>
-		public Blacklist blacklist { get; set; }
+		public Blacklist blocked_names { get; set; }
 
 		/// <summary>
 		///     Pattern-based IP blocking (IP blacklists).
 		/// </summary>
-		public Blacklist ip_blacklist { get; set; }
+		public Blacklist blocked_ips { get; set; }
 
 		public AnonymizedDns anonymized_dns { get; set; }
 

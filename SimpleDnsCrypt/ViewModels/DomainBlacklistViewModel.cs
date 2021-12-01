@@ -132,9 +132,9 @@ namespace SimpleDnsCrypt.ViewModels
 					if (dnscryptProxyConfiguration == null) return;
 
 					var saveAndRestartService = false;
-					if (dnscryptProxyConfiguration.blacklist == null)
+					if (dnscryptProxyConfiguration.blocked_names == null)
 					{
-						dnscryptProxyConfiguration.blacklist = new Blacklist
+						dnscryptProxyConfiguration.blocked_names = new Blacklist
 						{
 							blacklist_file = _domainBlacklistFile,
 							log_format = defaultLogFormat
@@ -142,16 +142,16 @@ namespace SimpleDnsCrypt.ViewModels
 						saveAndRestartService = true;
 					}
 
-					if (string.IsNullOrEmpty(dnscryptProxyConfiguration.blacklist.log_format) ||
-					    !dnscryptProxyConfiguration.blacklist.log_format.Equals(defaultLogFormat))
+					if (string.IsNullOrEmpty(dnscryptProxyConfiguration.blocked_names.log_format) ||
+					    !dnscryptProxyConfiguration.blocked_names.log_format.Equals(defaultLogFormat))
 					{
-						dnscryptProxyConfiguration.blacklist.log_format = defaultLogFormat;
+						dnscryptProxyConfiguration.blocked_names.log_format = defaultLogFormat;
 						saveAndRestartService = true;
 					}
 
-					if (string.IsNullOrEmpty(dnscryptProxyConfiguration.blacklist.blacklist_file))
+					if (string.IsNullOrEmpty(dnscryptProxyConfiguration.blocked_names.blacklist_file))
 					{
-						dnscryptProxyConfiguration.blacklist.blacklist_file = _domainBlacklistFile;
+						dnscryptProxyConfiguration.blocked_names.blacklist_file = _domainBlacklistFile;
 						saveAndRestartService = true;
 					}
 
@@ -196,7 +196,7 @@ namespace SimpleDnsCrypt.ViewModels
 				{
 					//disable blacklist again
 					_isBlacklistEnabled = false;
-					dnscryptProxyConfiguration.blacklist.blacklist_file = null;
+					dnscryptProxyConfiguration.blocked_names.blacklist_file = null;
 					DnscryptProxyConfigurationManager.DnscryptProxyConfiguration = dnscryptProxyConfiguration;
 					DnscryptProxyConfigurationManager.SaveConfiguration();
 					if (DnsCryptProxyManager.IsDnsCryptProxyRunning())
