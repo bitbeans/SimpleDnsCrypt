@@ -563,7 +563,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <TargetFrameworkSDKToolsDirectory Condition=" '$(PlatformTarget)' == 'x64'">$(TargetFrameworkSDKToolsDirectory)$(PlatformTarget)\</TargetFrameworkSDKToolsDirectory>
+    <TargetFrameworkSDKToolsDirectory Condition=" '$(PlatformTarget)' == 'x64'">$(TargetFrameworkSDKToolsDirectory)\</TargetFrameworkSDKToolsDirectory>
   </PropertyGroup>
   <PropertyGroup>
     <PostBuildEvent>copy "$(ProjectDir)DNS$(PlatformName)\*" "$(ProjectDir)$(OutDir)\dnscrypt-proxy\"</PostBuildEvent>
