@@ -96,6 +96,19 @@ namespace SimpleDnsCrypt.Helper
 					};
 				return DnscryptProxyConfigurationManager.SaveConfiguration();
 			}
+			if (version.Equals("0.7.2"))
+			{
+				//removed: daemonize
+				var configFile = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder, Global.DnsCryptConfigurationFile);
+				if (!System.IO.File.Exists(configFile)) return false;
+				var settings = Nett.TomlSettings.Create(s => s.ConfigurePropertyMapping(m => m.UseTargetPropertySelector(standardSelectors => standardSelectors.IgnoreCase)));
+
+				Nett.TomlTable toml = Nett.Toml.ReadFile(configFile);
+				toml.Remove("daemonize");
+				DnscryptProxyConfigurationManager.DnscryptProxyConfiguration = Nett.Toml.ReadString<DnscryptProxyConfiguration>(toml.ToString(), settings);
+				
+				return DnscryptProxyConfigurationManager.SaveConfiguration();
+			}
 
 			return false;
 		}

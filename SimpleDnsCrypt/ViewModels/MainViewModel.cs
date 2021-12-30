@@ -497,20 +497,20 @@ namespace SimpleDnsCrypt.ViewModels
 				QueryLogViewModel.IsQueryLogLogging = true;
 			}
 
-			if (!string.IsNullOrEmpty(DnscryptProxyConfiguration?.blacklist?.log_file))
+			if (!string.IsNullOrEmpty(DnscryptProxyConfiguration?.blocked_names?.log_file))
 			{
-				if (!File.Exists(DnscryptProxyConfiguration.blacklist.log_file))
+				if (!File.Exists(DnscryptProxyConfiguration.blocked_names.log_file))
 				{
-					File.Create(DnscryptProxyConfiguration.blacklist.log_file).Dispose();
+					File.Create(DnscryptProxyConfiguration.blocked_names.log_file).Dispose();
 				}
 				DomainBlockLogViewModel.IsDomainBlockLogLogging = true;
 			}
 
-			if (!string.IsNullOrEmpty(DnscryptProxyConfiguration?.blacklist?.blacklist_file))
+			if (!string.IsNullOrEmpty(DnscryptProxyConfiguration?.blocked_names?.blocked_names_file))
 			{
-				if (!File.Exists(DnscryptProxyConfiguration.blacklist.blacklist_file))
+				if (!File.Exists(DnscryptProxyConfiguration.blocked_names.blocked_names_file))
 				{
-					File.Create(DnscryptProxyConfiguration.blacklist.blacklist_file).Dispose();
+					File.Create(DnscryptProxyConfiguration.blocked_names.blocked_names_file).Dispose();
 				}
 				DomainBlacklistViewModel.IsBlacklistEnabled = true;
 			}

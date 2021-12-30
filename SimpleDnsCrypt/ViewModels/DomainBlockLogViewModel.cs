@@ -132,9 +132,9 @@ namespace SimpleDnsCrypt.ViewModels
 					if (dnscryptProxyConfiguration == null) return;
 
 					var saveAndRestartService = false;
-					if (dnscryptProxyConfiguration.blacklist == null)
+					if (dnscryptProxyConfiguration.blocked_names == null)
 					{
-						dnscryptProxyConfiguration.blacklist = new Blacklist
+						dnscryptProxyConfiguration.blocked_names = new Blacklist
 						{
 							log_file = Global.DomainBlockLogFileName,
 							log_format = defaultLogFormat
@@ -142,16 +142,16 @@ namespace SimpleDnsCrypt.ViewModels
 						saveAndRestartService = true;
 					}
 
-					if (string.IsNullOrEmpty(dnscryptProxyConfiguration.blacklist.log_format) ||
-						!dnscryptProxyConfiguration.blacklist.log_format.Equals(defaultLogFormat))
+					if (string.IsNullOrEmpty(dnscryptProxyConfiguration.blocked_names.log_format) ||
+						!dnscryptProxyConfiguration.blocked_names.log_format.Equals(defaultLogFormat))
 					{
-						dnscryptProxyConfiguration.blacklist.log_format = defaultLogFormat;
+						dnscryptProxyConfiguration.blocked_names.log_format = defaultLogFormat;
 						saveAndRestartService = true;
 					}
 
-					if (string.IsNullOrEmpty(dnscryptProxyConfiguration.blacklist.log_file))
+					if (string.IsNullOrEmpty(dnscryptProxyConfiguration.blocked_names.log_file))
 					{
-						dnscryptProxyConfiguration.blacklist.log_file = Global.DomainBlockLogFileName;
+						dnscryptProxyConfiguration.blocked_names.log_file = Global.DomainBlockLogFileName;
 						saveAndRestartService = true;
 					}
 
@@ -187,7 +187,7 @@ namespace SimpleDnsCrypt.ViewModels
 					}
 
 					DomainBlockLogFile = Path.Combine(Directory.GetCurrentDirectory(), Global.DnsCryptProxyFolder,
-						dnscryptProxyConfiguration.blacklist.log_file);
+						dnscryptProxyConfiguration.blocked_names.log_file);
 
 					if (!string.IsNullOrEmpty(_domainBlockLogFile))
 					{
@@ -238,7 +238,7 @@ namespace SimpleDnsCrypt.ViewModels
 				{
 					//disable block log again
 					_isDomainBlockLogLogging = false;
-					dnscryptProxyConfiguration.blacklist.log_file = null;
+					dnscryptProxyConfiguration.blocked_names.log_file = null;
 					DnscryptProxyConfigurationManager.DnscryptProxyConfiguration = dnscryptProxyConfiguration;
 					DnscryptProxyConfigurationManager.SaveConfiguration();
 					if (DnsCryptProxyManager.IsDnsCryptProxyRunning())
