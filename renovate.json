@@ -1,0 +1,5 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Onboarding preset for use with NEU-RO-IT's repos",
+  "extends": ["github>neu-ro-it/.github"]
+}
