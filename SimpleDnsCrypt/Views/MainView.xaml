@@ -498,6 +498,11 @@
                                             <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,5,0,0">
                                                 <ItemsControl ItemsSource="{Binding Resolvers}" IsEnabled="True"
                                                               Margin="0">
+                                                    <ItemsControl.ItemContainerStyle>
+                                                        <Style TargetType="ContentPresenter">
+                                                            <Setter Property="CacheMode" Value="BitmapCache"/>
+                                                        </Style>
+                                                    </ItemsControl.ItemContainerStyle>
                                                     <ItemsControl.ItemsPanel>
                                                         <ItemsPanelTemplate>
                                                             <UniformGrid Columns="3" />
@@ -505,7 +510,7 @@
                                                     </ItemsControl.ItemsPanel>
                                                     <ItemsControl.ItemTemplate>
                                                         <DataTemplate>
-                                                            <Border BorderThickness="0.2" Background="White"
+                                                            <Border BorderThickness="0.2" Background="White" 
                                                                     Padding="1">
                                                                 <Grid Cursor="Hand"
                                                                       cal:Message.Attach="[Event MouseLeftButtonDown] = [Action ResolverClicked($dataContext)]"

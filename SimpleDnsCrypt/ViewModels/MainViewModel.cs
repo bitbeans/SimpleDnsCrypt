@@ -1149,93 +1149,75 @@ namespace SimpleDnsCrypt.ViewModels
 		/// <summary>
 		///     Get the list of available resolvers for the enabled filters.
 		/// </summary>
-		/// <remarks>Current solution is not very effective.</remarks>
-		private void LoadResolvers()
+		private async void LoadResolvers()
 		{
-			PrepareRoutes();
-			var availableResolvers = DnsCryptProxyManager.GetAvailableResolvers();
 			var allResolversWithoutFilters = DnsCryptProxyManager.GetAllResolversWithoutFilters();
-			var allResolversWithFilters = new List<AvailableResolver>();
 
-			foreach (var resolver in allResolversWithoutFilters)
+			var allResolversWithFilters = FilterResolvers(allResolversWithoutFilters);
+
+			if (_dnscryptProxyConfiguration.anonymized_dns?.routes?.Any() == true)
 			{
-				if (_dnscryptProxyConfiguration.doh_servers)
-					if (!_dnscryptProxyConfiguration.dnscrypt_servers)
-						if (!resolver.Protocol.Equals("DoH"))
-							continue;
-
-				if (_dnscryptProxyConfiguration.dnscrypt_servers)
-					if (!_dnscryptProxyConfiguration.doh_servers)
-						if (!resolver.Protocol.Equals("DNSCrypt"))
-							continue;
-
-				if (!_dnscryptProxyConfiguration.doh_servers && !_dnscryptProxyConfiguration.dnscrypt_servers)
-					continue;
-
-				if (_dnscryptProxyConfiguration.require_dnssec)
-					if (!resolver.DnsSec)
-						continue;
-
-				if (_dnscryptProxyConfiguration.require_nofilter)
-					if (!resolver.NoFilter)
-						continue;
-
-				if (_dnscryptProxyConfiguration.require_nolog)
-					if (!resolver.NoLog)
-						continue;
-
-				if (resolver.Ipv6)
-					if (!_dnscryptProxyConfiguration.ipv6_servers)
-						continue;
-				allResolversWithFilters.Add(resolver);
+				PrepareRoutes();
+				UpdateRouteStates(allResolversWithFilters);
 			}
-
-			foreach (var resolver in availableResolvers)
-			{
-				AvailableResolver first = null;
-				foreach (var r in allResolversWithFilters)
-				{
-					if (!r.Name.Equals(resolver.Name)) continue;
-					first = r;
-					if (_dnscryptProxyConfiguration.anonymized_dns?.routes != null)
-					{
-						if (_dnscryptProxyConfiguration.anonymized_dns.routes.Count > 0)
-						{
-							var route = _dnscryptProxyConfiguration.anonymized_dns.routes.FirstOrDefault(re => re.server_name.Equals(resolver.Name));
-							if (route != null)
-							{
-								first.Route = route;
-								if (_relays != null && _relays.Count > 0)
-								{
-									var relays = _relays.Select(x => x.Name).ToList();
-									var valid = first.Route.via.Intersect(relays).Count() == first.Route.via.Count();
-									first.RouteState = valid ? RouteState.Valid : RouteState.Invalid;
-								}
-								else
-								{
-									first.RouteState = RouteState.Invalid;
-								}
-							}
-						}
-					}
-					break;
-				}
-
-				if (first != null) first.IsInServerList = true;
-			}
-
-			_resolvers.Clear();
 
 			if (_isDnsCryptAutomaticModeEnabled)
+				Parallel.ForEach(allResolversWithFilters, resolver => resolver.IsInServerList = false);
+
+			Parallel.ForEach(allResolversWithFilters, resolver => resolver.ComputeValues());
+
+			await Application.Current.Dispatcher.InvokeAsync(() =>
 			{
-				foreach (var resolver in allResolversWithFilters)
-				{
-					resolver.IsInServerList = false;
-				}
-			}
-			_resolvers.AddRange(allResolversWithFilters.OrderBy(o => o.DisplayName));
+				_resolvers.Clear();
+				_resolvers.AddRange(allResolversWithFilters.OrderBy(o => o.DisplayName));
+			});
 		}
 
+		private List<AvailableResolver> FilterResolvers(List<AvailableResolver> resolvers)
+		{
+			var dohServers = _dnscryptProxyConfiguration.doh_servers;
+			var dnscryptServers = _dnscryptProxyConfiguration.dnscrypt_servers;
+			var requireDnssec = _dnscryptProxyConfiguration.require_dnssec;
+			var requireNofilter = _dnscryptProxyConfiguration.require_nofilter;
+			var requireNolog = _dnscryptProxyConfiguration.require_nolog;
+			var ipv6Servers = _dnscryptProxyConfiguration.ipv6_servers;
+
+			return resolvers.AsParallel().Where(resolver =>
+			{
+				if (!dohServers && !dnscryptServers) return false;
+				if (requireDnssec && !resolver.DnsSec) return false;
+				if (requireNofilter && !resolver.NoFilter) return false;
+				if (requireNolog && !resolver.NoLog) return false;
+				if (!ipv6Servers && resolver.Ipv6) return false;
+				if (dohServers && !dnscryptServers && !resolver.Protocol.Equals("DoH")) return false;
+				if (dnscryptServers && !dohServers && !resolver.Protocol.Equals("DNSCrypt")) return false;
+
+				return true;
+			}).ToList();
+		}
+
+		private void UpdateRouteStates(List<AvailableResolver> resolvers)
+		{
+			var relays = _relays?.Select(x => x.Name).ToList();
+
+			Parallel.ForEach(resolvers, r =>
+			{
+				var route = _dnscryptProxyConfiguration.anonymized_dns.routes.FirstOrDefault(re => re.server_name.Equals(r.Name));
+				if (route != null)
+				{
+					r.Route = route;
+					if (relays != null)
+					{
+						var valid = r.Route.via.Intersect(relays).Count() == r.Route.via.Count();
+						r.RouteState = valid ? RouteState.Valid : RouteState.Invalid;
+					}
+					else
+					{
+						r.RouteState = RouteState.Invalid;
+					}
+				}
+			});
+		}
 		#endregion
 
 		#region Advanced Settings
