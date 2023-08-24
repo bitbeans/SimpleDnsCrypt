@@ -26,11 +26,14 @@ namespace SimpleDnsCrypt.Models
 		private List<int> _ports;
 		private Route _route;
 		private RouteState _routeState;
+		private string _routeStateText;
+		private string _toolTip;
+		private string _displayName;
 
 		[JsonIgnore]
-		public string ToolTip => $"Ports: {string.Join(",", _ports.ToArray())}";
+		public string ToolTip => _toolTip;
 		[JsonIgnore]
-		public string DisplayName => $"{_name} ({_protocol})";
+		public string DisplayName => _displayName;
 
 		[JsonIgnore]
 		public bool IsInServerList
@@ -57,20 +60,7 @@ namespace SimpleDnsCrypt.Models
 		[JsonIgnore]
 		public string RouteStateText
 		{
-			get
-			{
-				switch (RouteState)
-				{
-					case RouteState.Empty:
-						return LocalizationEx.GetUiString("configure_routes_add", Thread.CurrentThread.CurrentCulture);
-					case RouteState.Invalid:
-						return LocalizationEx.GetUiString("configure_routes_invalid", Thread.CurrentThread.CurrentCulture);
-					case RouteState.Valid:
-						return LocalizationEx.GetUiString("configure_routes_change", Thread.CurrentThread.CurrentCulture);
-					default:
-						return LocalizationEx.GetUiString("configure_routes_unknown", Thread.CurrentThread.CurrentCulture);
-				}
-			}
+			get => _routeStateText;
 		}
 
 		[JsonIgnore]
@@ -170,6 +160,29 @@ namespace SimpleDnsCrypt.Models
 				_description = value;
 				NotifyOfPropertyChange(() => Description);
 			}
+		}
+
+		public void ComputeValues()
+		{
+			switch (RouteState)
+			{
+				case RouteState.Empty:
+					_routeStateText = LocalizationEx.GetUiString("configure_routes_add", Thread.CurrentThread.CurrentCulture);
+					break;
+				case RouteState.Invalid:
+					_routeStateText = LocalizationEx.GetUiString("configure_routes_invalid", Thread.CurrentThread.CurrentCulture);
+					break;
+				case RouteState.Valid:
+					_routeStateText = LocalizationEx.GetUiString("configure_routes_change", Thread.CurrentThread.CurrentCulture);
+					break;
+				default:
+					_routeStateText = LocalizationEx.GetUiString("configure_routes_unknown", Thread.CurrentThread.CurrentCulture);
+					break;
+			}
+
+			_toolTip = $"Ports: {string.Join(",", _ports.ToArray())}";
+
+			_displayName = $"{_name} ({_protocol})";
 		}
 	}
 }
