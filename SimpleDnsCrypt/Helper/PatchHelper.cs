@@ -49,7 +49,7 @@ namespace SimpleDnsCrypt.Helper
 				{
 					sources.Add("relays", new Models.Source
 					{
-						urls = new[] { "https://github.com/DNSCrypt/dnscrypt-resolvers/raw/master/v2/relays.md", "https://download.dnscrypt.info/resolvers-list/v2/relays.md" },
+						urls = new[] { "https://github.com/DNSCrypt/dnscrypt-resolvers/raw/master/v3/relays.md", "https://download.dnscrypt.info/resolvers-list/v3/relays.md" },
 						cache_file = "relays.md",
 						minisign_key = "RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3",
 						refresh_delay = 72,
@@ -75,7 +75,7 @@ namespace SimpleDnsCrypt.Helper
 				{
 					sources.Add("relays", new Models.Source
 					{
-						urls = new[] { "https://github.com/DNSCrypt/dnscrypt-resolvers/raw/master/v2/relays.md", "https://download.dnscrypt.info/resolvers-list/v2/relays.md" },
+						urls = new[] { "https://github.com/DNSCrypt/dnscrypt-resolvers/raw/master/v3/relays.md", "https://download.dnscrypt.info/resolvers-list/v3/relays.md" },
 						cache_file = "relays.md",
 						minisign_key = "RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3",
 						refresh_delay = 72,
