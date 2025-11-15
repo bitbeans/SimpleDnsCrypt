@@ -109,6 +109,27 @@ namespace SimpleDnsCrypt.Helper
 				
 				return DnscryptProxyConfigurationManager.SaveConfiguration();
 			}
+			if(version.Equals("0.7.3"))
+			{
+				//update relays and resolvers
+				var sources = DnscryptProxyConfigurationManager.DnscryptProxyConfiguration.sources;
+				if (sources.ContainsKey("relays"))
+				{
+					if(sources["relays"].urls[0].Contains("/v2/") && sources["relays"].urls[1].Contains("/v2/"))
+					{
+						sources["relays"].urls = new[] { "https://github.com/DNSCrypt/dnscrypt-resolvers/raw/master/v3/relays.md", "https://download.dnscrypt.info/resolvers-list/v3/relays.md" };
+					}
+				}
+				if (sources.ContainsKey("public-resolvers"))
+				{
+					if (sources["public-resolvers"].urls[0].Contains("/v2/") && sources["public-resolvers"].urls[1].Contains("/v2/"))
+					{
+						sources["public-resolvers"].urls = new[] { "https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/public-resolvers.md", "https://download.dnscrypt.info/resolvers-list/v3/public-resolvers.md" };
+					}
+				}
+
+				return DnscryptProxyConfigurationManager.SaveConfiguration();
+			}
 
 			return false;
 		}
